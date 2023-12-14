@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddDataSource`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain.</p><br>
-    ///   - [`name(impl Into<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data source.</p><br>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain to add the data source to.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::set_name):<br>required: **true**<br><p>A name for the data source.</p><br>
     ///   - [`data_source_type(DataSourceType)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::data_source_type) / [`set_data_source_type(Option<DataSourceType>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::set_data_source_type):<br>required: **true**<br><p>The type of data source.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::set_description):<br>required: **false**<br><p>A description of the data source.</p><br>
     /// - On success, responds with [`AddDataSourceOutput`](crate::operation::add_data_source::AddDataSourceOutput) with field(s):
-    ///   - [`message(Option<String>)`](crate::operation::add_data_source::AddDataSourceOutput::message): <p>A message associated with the data source.</p>
+    ///   - [`message(Option<String>)`](crate::operation::add_data_source::AddDataSourceOutput::message): <p>A message associated with creation of the data source.</p>
     /// - On failure, responds with [`SdkError<AddDataSourceError>`](crate::operation::add_data_source::AddDataSourceError)
     pub fn add_data_source(&self) -> crate::operation::add_data_source::builders::AddDataSourceFluentBuilder {
         crate::operation::add_data_source::builders::AddDataSourceFluentBuilder::new(self.handle.clone())

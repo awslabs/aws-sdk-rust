@@ -47,6 +47,8 @@ pub use crate::types::_http_endpoint_configuration::HttpEndpointConfiguration;
 
 pub use crate::types::_splunk_destination_update::SplunkDestinationUpdate;
 
+pub use crate::types::_splunk_buffering_hints::SplunkBufferingHints;
+
 pub use crate::types::_splunk_s3_backup_mode::SplunkS3BackupMode;
 
 pub use crate::types::_splunk_retry_options::SplunkRetryOptions;
@@ -386,6 +388,8 @@ mod _schema_configuration;
 mod _serializer;
 
 mod _source_description;
+
+mod _splunk_buffering_hints;
 
 mod _splunk_destination_configuration;
 

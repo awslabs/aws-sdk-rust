@@ -24,62 +24,71 @@ pub fn ser_create_dashboard_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.link_sharing_configuration {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("LinkSharingConfiguration").start_object();
-        crate::protocol_serde::shape_link_sharing_configuration::ser_link_sharing_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+    if let Some(var_8) = &input.link_entities {
+        let mut array_9 = object.key("LinkEntities").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
     }
-    if let Some(var_10) = &input.name {
-        object.key("Name").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.parameters {
+    if let Some(var_11) = &input.link_sharing_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Parameters").start_object();
-        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_12, var_11)?;
+        let mut object_12 = object.key("LinkSharingConfiguration").start_object();
+        crate::protocol_serde::shape_link_sharing_configuration::ser_link_sharing_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.permissions {
-        let mut array_14 = object.key("Permissions").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.name {
+        object.key("Name").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("Parameters").start_object();
+        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.permissions {
+        let mut array_17 = object.key("Permissions").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_14.finish();
+        array_17.finish();
     }
-    if let Some(var_17) = &input.source_entity {
+    if let Some(var_20) = &input.source_entity {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("SourceEntity").start_object();
-        crate::protocol_serde::shape_dashboard_source_entity::ser_dashboard_source_entity(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_21 = object.key("SourceEntity").start_object();
+        crate::protocol_serde::shape_dashboard_source_entity::ser_dashboard_source_entity(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_19) = &input.tags {
-        let mut array_20 = object.key("Tags").start_array();
-        for item_21 in var_19 {
+    if let Some(var_22) = &input.tags {
+        let mut array_23 = object.key("Tags").start_array();
+        for item_24 in var_22 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_22, item_21)?;
-                object_22.finish();
+                let mut object_25 = array_23.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_25, item_24)?;
+                object_25.finish();
             }
         }
-        array_20.finish();
+        array_23.finish();
     }
-    if let Some(var_23) = &input.theme_arn {
-        object.key("ThemeArn").string(var_23.as_str());
+    if let Some(var_26) = &input.theme_arn {
+        object.key("ThemeArn").string(var_26.as_str());
     }
-    if let Some(var_24) = &input.validation_strategy {
+    if let Some(var_27) = &input.validation_strategy {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("ValidationStrategy").start_object();
-        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_28 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_28, var_27)?;
+        object_28.finish();
     }
-    if let Some(var_26) = &input.version_description {
-        object.key("VersionDescription").string(var_26.as_str());
+    if let Some(var_29) = &input.version_description {
+        object.key("VersionDescription").string(var_29.as_str());
     }
     Ok(())
 }

@@ -13,11 +13,15 @@ pub use crate::types::error::_invalid_kms_resource_exception::InvalidKmsResource
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
 
+pub use crate::types::error::_invalid_source_exception::InvalidSourceException;
+
 mod _concurrent_modification_exception;
 
 mod _invalid_argument_exception;
 
 mod _invalid_kms_resource_exception;
+
+mod _invalid_source_exception;
 
 mod _limit_exceeded_exception;
 

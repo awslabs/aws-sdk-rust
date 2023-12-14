@@ -573,6 +573,10 @@ pub use crate::types::_combo_chart_visual::ComboChartVisualBuilder;
 
 pub use crate::types::_combo_chart_configuration::ComboChartConfigurationBuilder;
 
+pub use crate::types::_single_axis_options::SingleAxisOptionsBuilder;
+
+pub use crate::types::_y_axis_options::YAxisOptionsBuilder;
+
 pub use crate::types::_combo_chart_sort_configuration::ComboChartSortConfigurationBuilder;
 
 pub use crate::types::_combo_chart_field_wells::ComboChartFieldWellsBuilder;
@@ -582,6 +586,8 @@ pub use crate::types::_combo_chart_aggregated_field_wells::ComboChartAggregatedF
 pub use crate::types::_scatter_plot_visual::ScatterPlotVisualBuilder;
 
 pub use crate::types::_scatter_plot_configuration::ScatterPlotConfigurationBuilder;
+
+pub use crate::types::_scatter_plot_sort_configuration::ScatterPlotSortConfigurationBuilder;
 
 pub use crate::types::_scatter_plot_field_wells::ScatterPlotFieldWellsBuilder;
 

@@ -294,6 +294,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Mechanical Turk | [aws-sdk-mturk](https://crates.io/crates/aws-sdk-mturk) ([docs](https://docs.rs/aws-sdk-mturk)) |
 | Amazon MemoryDB | [aws-sdk-memorydb](https://crates.io/crates/aws-sdk-memorydb) ([docs](https://docs.rs/aws-sdk-memorydb)) |
 | Amazon Neptune | [aws-sdk-neptune](https://crates.io/crates/aws-sdk-neptune) ([docs](https://docs.rs/aws-sdk-neptune)) |
+| Amazon Neptune Graph | [aws-sdk-neptunegraph](https://crates.io/crates/aws-sdk-neptunegraph) ([docs](https://docs.rs/aws-sdk-neptunegraph)) |
 | Amazon NeptuneData | [aws-sdk-neptunedata](https://crates.io/crates/aws-sdk-neptunedata) ([docs](https://docs.rs/aws-sdk-neptunedata)) |
 | Amazon Omics | [aws-sdk-omics](https://crates.io/crates/aws-sdk-omics) ([docs](https://docs.rs/aws-sdk-omics)) |
 | Amazon OpenSearch Ingestion | [aws-sdk-osis](https://crates.io/crates/aws-sdk-osis) ([docs](https://docs.rs/aws-sdk-osis)) |

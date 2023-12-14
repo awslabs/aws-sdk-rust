@@ -22,7 +22,7 @@ impl ListPartnershipsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPartnerships`.
 ///
-/// <p>Lists the partnerships associated with your Amazon Web Services account for your current or specified region. Partnerships link trading partners with your profile and a specific transformer, so that the EDI (electronic data interchange) documents that they upload to Amazon S3 can be processed according to their specifications.</p>
+/// <p>Lists the partnerships associated with your Amazon Web Services account for your current or specified region. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPartnershipsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

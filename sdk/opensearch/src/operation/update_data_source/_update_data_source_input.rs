@@ -6,11 +6,11 @@
 pub struct UpdateDataSourceInput {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data source.</p>
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDataSourceInput {
@@ -18,7 +18,7 @@ impl UpdateDataSourceInput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -26,7 +26,7 @@ impl UpdateDataSourceInput {
     pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
         self.data_source_type.as_ref()
     }
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -63,18 +63,18 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -93,17 +93,17 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         &self.data_source_type
     }
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

@@ -22,7 +22,7 @@ impl DeleteCapabilityInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCapability`.
 ///
-/// <p>Deletes the specified capability. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>
+/// <p>Deletes the specified capability. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCapabilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -289,6 +289,8 @@ pub use crate::types::_detect_mitigation_action_execution::DetectMitigationActio
 
 pub use crate::types::_certificate::CertificateBuilder;
 
+pub use crate::types::_certificate_provider_summary::CertificateProviderSummaryBuilder;
+
 pub use crate::types::_ca_certificate::CaCertificateBuilder;
 
 pub use crate::types::_authorizer_summary::AuthorizerSummaryBuilder;

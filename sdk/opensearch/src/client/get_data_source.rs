@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain.</p><br>
-    ///   - [`name(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data source.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data source to get information about.</p><br>
     /// - On success, responds with [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput) with field(s):
     ///   - [`data_source_type(Option<DataSourceType>)`](crate::operation::get_data_source::GetDataSourceOutput::data_source_type): <p>The type of data source.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::name): <p>The name of the data source.</p>

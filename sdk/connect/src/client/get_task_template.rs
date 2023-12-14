@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`status(Option<TaskTemplateStatus>)`](crate::operation::get_task_template::GetTaskTemplateOutput::status): <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_task_template::GetTaskTemplateOutput::last_modified_time): <p>The timestamp when the task template was last modified.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_task_template::GetTaskTemplateOutput::created_time): <p>The timestamp when the task template was created.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_task_template::GetTaskTemplateOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_task_template::GetTaskTemplateOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<GetTaskTemplateError>`](crate::operation::get_task_template::GetTaskTemplateError)
     pub fn get_task_template(&self) -> crate::operation::get_task_template::builders::GetTaskTemplateFluentBuilder {
         crate::operation::get_task_template::builders::GetTaskTemplateFluentBuilder::new(self.handle.clone())

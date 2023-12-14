@@ -22,7 +22,7 @@ impl ListTransformersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTransformers`.
 ///
-/// <p>Lists the available transformers. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>
+/// <p>Lists the available transformers. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTransformersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

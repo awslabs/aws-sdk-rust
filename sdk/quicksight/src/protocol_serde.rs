@@ -311,6 +311,8 @@ pub(crate) mod shape_update_analysis_permissions;
 
 pub(crate) mod shape_update_dashboard;
 
+pub(crate) mod shape_update_dashboard_links;
+
 pub(crate) mod shape_update_dashboard_permissions;
 
 pub(crate) mod shape_update_dashboard_published_version;
@@ -484,6 +486,8 @@ pub(crate) mod shape_update_analysis_input;
 pub(crate) mod shape_update_analysis_permissions_input;
 
 pub(crate) mod shape_update_dashboard_input;
+
+pub(crate) mod shape_update_dashboard_links_input;
 
 pub(crate) mod shape_update_dashboard_permissions_input;
 
@@ -666,6 +670,8 @@ pub(crate) mod shape_ingestion;
 pub(crate) mod shape_ingestions;
 
 pub(crate) mod shape_ip_restriction_rule_map;
+
+pub(crate) mod shape_link_entity_arn_list;
 
 pub(crate) mod shape_link_sharing_configuration;
 
@@ -1879,6 +1885,8 @@ pub(crate) mod shape_sankey_diagram_sort_configuration;
 
 pub(crate) mod shape_scatter_plot_field_wells;
 
+pub(crate) mod shape_scatter_plot_sort_configuration;
+
 pub(crate) mod shape_section_based_layout_canvas_size_options;
 
 pub(crate) mod shape_series_item;
@@ -1888,6 +1896,8 @@ pub(crate) mod shape_sheet_control_info_icon_label_options;
 pub(crate) mod shape_sheet_visual_scoping_configurations;
 
 pub(crate) mod shape_short_format_text;
+
+pub(crate) mod shape_single_axis_options;
 
 pub(crate) mod shape_small_multiples_options;
 
@@ -2190,6 +2200,8 @@ pub(crate) mod shape_visual_custom_action_list;
 pub(crate) mod shape_waterfall_chart_aggregated_field_wells;
 
 pub(crate) mod shape_word_cloud_aggregated_field_wells;
+
+pub(crate) mod shape_y_axis_options;
 
 pub(crate) mod shape_arc_axis_display_range;
 

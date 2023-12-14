@@ -36,6 +36,8 @@ pub struct Contact {
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about Amazon Connect Wisdom.</p>
     pub wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -102,6 +104,10 @@ impl Contact {
     pub fn wisdom_info(&self) -> ::std::option::Option<&crate::types::WisdomInfo> {
         self.wisdom_info.as_ref()
     }
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl Contact {
     /// Creates a new builder-style object to manufacture [`Contact`](crate::types::Contact).
@@ -130,6 +136,7 @@ pub struct ContactBuilder {
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -356,6 +363,26 @@ impl ContactBuilder {
     pub fn get_wisdom_info(&self) -> &::std::option::Option<crate::types::WisdomInfo> {
         &self.wisdom_info
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -375,6 +402,7 @@ impl ContactBuilder {
             scheduled_timestamp: self.scheduled_timestamp,
             related_contact_id: self.related_contact_id,
             wisdom_info: self.wisdom_info,
+            tags: self.tags,
         }
     }
 }

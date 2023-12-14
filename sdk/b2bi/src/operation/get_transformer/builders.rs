@@ -22,7 +22,7 @@ impl GetTransformerInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTransformer`.
 ///
-/// <p>Retrieves the details for the transformer specified by the transformer ID. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>
+/// <p>Retrieves the details for the transformer specified by the transformer ID. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTransformerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

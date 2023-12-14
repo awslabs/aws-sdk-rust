@@ -43,6 +43,9 @@ pub mod disassociate_accounts;
 /// Types for the `DisassociatePricingRules` operation.
 pub mod disassociate_pricing_rules;
 
+/// Types for the `GetBillingGroupCostReport` operation.
+pub mod get_billing_group_cost_report;
+
 /// Types for the `ListAccountAssociations` operation.
 pub mod list_account_associations;
 

@@ -22,7 +22,7 @@ impl ListProfilesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListProfiles`.
 ///
-/// <p>Lists the profiles associated with your Amazon Web Services account for your current or specified region. Profiles contain basic information about you and your business.</p>
+/// <p>Lists the profiles associated with your Amazon Web Services account for your current or specified region. A profile is the mechanism used to create the concept of a private network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProfilesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

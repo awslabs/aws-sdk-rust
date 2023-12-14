@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddDataSourceInput {
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data source.</p>
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
@@ -14,11 +14,11 @@ pub struct AddDataSourceInput {
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl AddDataSourceInput {
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -48,33 +48,33 @@ pub struct AddDataSourceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl AddDataSourceInputBuilder {
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

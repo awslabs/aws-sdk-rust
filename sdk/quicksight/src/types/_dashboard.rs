@@ -18,6 +18,8 @@ pub struct Dashboard {
     pub last_published_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this dashboard was updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub link_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Dashboard {
     /// <p>Dashboard ID.</p>
@@ -48,6 +50,12 @@ impl Dashboard {
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.link_entities.is_none()`.
+    pub fn link_entities(&self) -> &[::std::string::String] {
+        self.link_entities.as_deref().unwrap_or_default()
+    }
 }
 impl Dashboard {
     /// Creates a new builder-style object to manufacture [`Dashboard`](crate::types::Dashboard).
@@ -67,6 +75,7 @@ pub struct DashboardBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_published_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) link_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DashboardBuilder {
     /// <p>Dashboard ID.</p>
@@ -167,6 +176,26 @@ impl DashboardBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
+    /// Appends an item to `link_entities`.
+    ///
+    /// To override the contents of this collection use [`set_link_entities`](Self::set_link_entities).
+    ///
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn link_entities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.link_entities.unwrap_or_default();
+        v.push(input.into());
+        self.link_entities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn set_link_entities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.link_entities = input;
+        self
+    }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn get_link_entities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.link_entities
+    }
     /// Consumes the builder and constructs a [`Dashboard`](crate::types::Dashboard).
     pub fn build(self) -> crate::types::Dashboard {
         crate::types::Dashboard {
@@ -177,6 +206,7 @@ impl DashboardBuilder {
             created_time: self.created_time,
             last_published_time: self.last_published_time,
             last_updated_time: self.last_updated_time,
+            link_entities: self.link_entities,
         }
     }
 }

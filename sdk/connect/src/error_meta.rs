@@ -6443,6 +6443,32 @@ impl From<crate::operation::suspend_contact_recording::SuspendContactRecordingEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_contact::TagContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_contact::TagContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_contact::TagContactError> for Error {
+    fn from(err: crate::operation::tag_contact::TagContactError) -> Self {
+        match err {
+            crate::operation::tag_contact::TagContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::tag_contact::TagContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::tag_contact::TagContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::tag_contact::TagContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_contact::TagContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_contact::TagContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6496,6 +6522,32 @@ impl From<crate::operation::transfer_contact::TransferContactError> for Error {
             }
             crate::operation::transfer_contact::TransferContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::transfer_contact::TransferContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_contact::UntagContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_contact::UntagContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_contact::UntagContactError> for Error {
+    fn from(err: crate::operation::untag_contact::UntagContactError) -> Self {
+        match err {
+            crate::operation::untag_contact::UntagContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::untag_contact::UntagContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::untag_contact::UntagContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::untag_contact::UntagContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_contact::UntagContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_contact::UntagContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

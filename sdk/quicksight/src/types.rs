@@ -763,6 +763,12 @@ pub use crate::types::_combo_chart_visual::ComboChartVisual;
 
 pub use crate::types::_combo_chart_configuration::ComboChartConfiguration;
 
+pub use crate::types::_single_axis_options::SingleAxisOptions;
+
+pub use crate::types::_y_axis_options::YAxisOptions;
+
+pub use crate::types::_single_y_axis_option::SingleYAxisOption;
+
 pub use crate::types::_bars_arrangement::BarsArrangement;
 
 pub use crate::types::_combo_chart_sort_configuration::ComboChartSortConfiguration;
@@ -774,6 +780,8 @@ pub use crate::types::_combo_chart_aggregated_field_wells::ComboChartAggregatedF
 pub use crate::types::_scatter_plot_visual::ScatterPlotVisual;
 
 pub use crate::types::_scatter_plot_configuration::ScatterPlotConfiguration;
+
+pub use crate::types::_scatter_plot_sort_configuration::ScatterPlotSortConfiguration;
 
 pub use crate::types::_scatter_plot_field_wells::ScatterPlotFieldWells;
 
@@ -3323,6 +3331,8 @@ mod _scatter_plot_configuration;
 
 mod _scatter_plot_field_wells;
 
+mod _scatter_plot_sort_configuration;
+
 mod _scatter_plot_unaggregated_field_wells;
 
 mod _scatter_plot_visual;
@@ -3418,6 +3428,10 @@ mod _simple_cluster_marker;
 mod _simple_numerical_aggregation_function;
 
 mod _simple_total_aggregation_function;
+
+mod _single_axis_options;
+
+mod _single_y_axis_option;
 
 mod _slider_control_display_options;
 
@@ -3834,6 +3848,8 @@ mod _word_cloud_word_orientation;
 mod _word_cloud_word_padding;
 
 mod _word_cloud_word_scaling;
+
+mod _y_axis_options;
 
 /// Builders
 pub mod builders;

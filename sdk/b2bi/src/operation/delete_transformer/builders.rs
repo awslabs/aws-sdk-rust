@@ -22,7 +22,7 @@ impl DeleteTransformerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTransformer`.
 ///
-/// <p>Deletes the specified transformer. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>
+/// <p>Deletes the specified transformer. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTransformerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

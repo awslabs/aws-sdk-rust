@@ -451,6 +451,8 @@ mod update_analysis_permissions;
 
 mod update_dashboard;
 
+mod update_dashboard_links;
+
 mod update_dashboard_permissions;
 
 mod update_dashboard_published_version;

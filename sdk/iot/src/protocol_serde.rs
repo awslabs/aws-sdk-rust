@@ -63,6 +63,8 @@ pub(crate) mod shape_create_billing_group;
 
 pub(crate) mod shape_create_certificate_from_csr;
 
+pub(crate) mod shape_create_certificate_provider;
+
 pub(crate) mod shape_create_custom_metric;
 
 pub(crate) mod shape_create_dimension;
@@ -132,6 +134,8 @@ pub(crate) mod shape_delete_billing_group;
 pub(crate) mod shape_delete_ca_certificate;
 
 pub(crate) mod shape_delete_certificate;
+
+pub(crate) mod shape_delete_certificate_provider;
 
 pub(crate) mod shape_delete_custom_metric;
 
@@ -206,6 +210,8 @@ pub(crate) mod shape_describe_billing_group;
 pub(crate) mod shape_describe_ca_certificate;
 
 pub(crate) mod shape_describe_certificate;
+
+pub(crate) mod shape_describe_certificate_provider;
 
 pub(crate) mod shape_describe_custom_metric;
 
@@ -324,6 +330,8 @@ pub(crate) mod shape_list_authorizers;
 pub(crate) mod shape_list_billing_groups;
 
 pub(crate) mod shape_list_ca_certificates;
+
+pub(crate) mod shape_list_certificate_providers;
 
 pub(crate) mod shape_list_certificates;
 
@@ -489,6 +497,8 @@ pub(crate) mod shape_update_ca_certificate;
 
 pub(crate) mod shape_update_certificate;
 
+pub(crate) mod shape_update_certificate_provider;
+
 pub(crate) mod shape_update_custom_metric;
 
 pub(crate) mod shape_update_dimension;
@@ -570,6 +580,8 @@ pub(crate) mod shape_create_authorizer_input;
 pub(crate) mod shape_create_billing_group_input;
 
 pub(crate) mod shape_create_certificate_from_csr_input;
+
+pub(crate) mod shape_create_certificate_provider_input;
 
 pub(crate) mod shape_create_custom_metric_input;
 
@@ -741,6 +753,8 @@ pub(crate) mod shape_update_billing_group_input;
 
 pub(crate) mod shape_update_ca_certificate_input;
 
+pub(crate) mod shape_update_certificate_provider_input;
+
 pub(crate) mod shape_update_custom_metric_input;
 
 pub(crate) mod shape_update_dimension_input;
@@ -876,6 +890,10 @@ pub(crate) mod shape_ca_certificate_description;
 pub(crate) mod shape_ca_certificates;
 
 pub(crate) mod shape_certificate_description;
+
+pub(crate) mod shape_certificate_provider_account_default_for_operations;
+
+pub(crate) mod shape_certificate_providers;
 
 pub(crate) mod shape_certificates;
 
@@ -1130,6 +1148,8 @@ pub(crate) mod shape_bucket;
 pub(crate) mod shape_ca_certificate;
 
 pub(crate) mod shape_certificate;
+
+pub(crate) mod shape_certificate_provider_summary;
 
 pub(crate) mod shape_certificate_validity;
 

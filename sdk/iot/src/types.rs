@@ -137,6 +137,8 @@ pub use crate::types::_dimension_type::DimensionType;
 
 pub use crate::types::_custom_metric_type::CustomMetricType;
 
+pub use crate::types::_certificate_provider_operation::CertificateProviderOperation;
+
 pub use crate::types::_certificate_status::CertificateStatus;
 
 pub use crate::types::_registration_config::RegistrationConfig;
@@ -402,6 +404,8 @@ pub use crate::types::_detect_mitigation_action_execution::DetectMitigationActio
 pub use crate::types::_detect_mitigation_action_execution_status::DetectMitigationActionExecutionStatus;
 
 pub use crate::types::_certificate::Certificate;
+
+pub use crate::types::_certificate_provider_summary::CertificateProviderSummary;
 
 pub use crate::types::_ca_certificate::CaCertificate;
 
@@ -694,6 +698,10 @@ mod _certificate;
 mod _certificate_description;
 
 mod _certificate_mode;
+
+mod _certificate_provider_operation;
+
+mod _certificate_provider_summary;
 
 mod _certificate_status;
 

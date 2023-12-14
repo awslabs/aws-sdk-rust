@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestMappingInput {
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub input_file_content: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub mapping_template: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct TestMappingInput {
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
 }
 impl TestMappingInput {
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn input_file_content(&self) -> ::std::option::Option<&str> {
         self.input_file_content.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct TestMappingInputBuilder {
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,
 }
 impl TestMappingInputBuilder {
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     /// This field is required.
     pub fn input_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn set_input_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_file_content = input;
         self
     }
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn get_input_file_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_file_content
     }

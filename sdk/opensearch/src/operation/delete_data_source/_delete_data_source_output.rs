@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataSourceOutput {
-    /// <p>A message associated with the initiated request.</p>
+    /// <p>A message associated with deletion of the data source.</p>
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteDataSourceOutput {
-    /// <p>A message associated with the initiated request.</p>
+    /// <p>A message associated with deletion of the data source.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct DeleteDataSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteDataSourceOutputBuilder {
-    /// <p>A message associated with the initiated request.</p>
+    /// <p>A message associated with deletion of the data source.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A message associated with the initiated request.</p>
+    /// <p>A message associated with deletion of the data source.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>A message associated with the initiated request.</p>
+    /// <p>A message associated with deletion of the data source.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

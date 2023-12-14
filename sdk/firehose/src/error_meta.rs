@@ -9,6 +9,8 @@ pub enum Error {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
     InvalidKmsResourceException(crate::types::error::InvalidKmsResourceException),
+    /// <p>Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression is enabled.</p>
+    InvalidSourceException(crate::types::error::InvalidSourceException),
     /// <p>You have already reached the limit for a requested resource.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource is already in use and not available for this operation.</p>
@@ -32,6 +34,7 @@ impl ::std::fmt::Display for Error {
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
             Error::InvalidArgumentException(inner) => inner.fmt(f),
             Error::InvalidKmsResourceException(inner) => inner.fmt(f),
+            Error::InvalidSourceException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -60,6 +63,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConcurrentModificationException(inner) => inner.meta(),
             Self::InvalidArgumentException(inner) => inner.meta(),
             Self::InvalidKmsResourceException(inner) => inner.meta(),
+            Self::InvalidSourceException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -227,6 +231,7 @@ impl From<crate::operation::put_record::PutRecordError> for Error {
         match err {
             crate::operation::put_record::PutRecordError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::put_record::PutRecordError::InvalidKmsResourceException(inner) => Error::InvalidKmsResourceException(inner),
+            crate::operation::put_record::PutRecordError::InvalidSourceException(inner) => Error::InvalidSourceException(inner),
             crate::operation::put_record::PutRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_record::PutRecordError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::put_record::PutRecordError::Unhandled(inner) => Error::Unhandled(inner),
@@ -252,6 +257,7 @@ impl From<crate::operation::put_record_batch::PutRecordBatchError> for Error {
         match err {
             crate::operation::put_record_batch::PutRecordBatchError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::put_record_batch::PutRecordBatchError::InvalidKmsResourceException(inner) => Error::InvalidKmsResourceException(inner),
+            crate::operation::put_record_batch::PutRecordBatchError::InvalidSourceException(inner) => Error::InvalidSourceException(inner),
             crate::operation::put_record_batch::PutRecordBatchError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_record_batch::PutRecordBatchError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::put_record_batch::PutRecordBatchError::Unhandled(inner) => Error::Unhandled(inner),
@@ -431,6 +437,7 @@ impl ::std::error::Error for Error {
             Error::ConcurrentModificationException(inner) => inner.source(),
             Error::InvalidArgumentException(inner) => inner.source(),
             Error::InvalidKmsResourceException(inner) => inner.source(),
+            Error::InvalidSourceException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -445,6 +452,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConcurrentModificationException(e) => e.request_id(),
             Self::InvalidArgumentException(e) => e.request_id(),
             Self::InvalidKmsResourceException(e) => e.request_id(),
+            Self::InvalidSourceException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

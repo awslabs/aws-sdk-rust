@@ -22,7 +22,7 @@ impl DeleteDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataSource`.
 ///
-/// <p>Deletes the data source.</p>
+/// <p>Deletes a direct-query data source. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-delete.html">Deleting an Amazon OpenSearch Service data source with Amazon S3</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl DeleteDataSourceFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to delete.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

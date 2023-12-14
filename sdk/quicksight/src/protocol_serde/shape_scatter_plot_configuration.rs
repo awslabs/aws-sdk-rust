@@ -9,53 +9,59 @@ pub fn ser_scatter_plot_configuration(
         crate::protocol_serde::shape_scatter_plot_field_wells::ser_scatter_plot_field_wells(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.x_axis_label_options {
+    if let Some(var_3) = &input.sort_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("XAxisLabelOptions").start_object();
-        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_4, var_3)?;
+        let mut object_4 = object.key("SortConfiguration").start_object();
+        crate::protocol_serde::shape_scatter_plot_sort_configuration::ser_scatter_plot_sort_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.x_axis_display_options {
+    if let Some(var_5) = &input.x_axis_label_options {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("XAxisDisplayOptions").start_object();
-        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(&mut object_6, var_5)?;
+        let mut object_6 = object.key("XAxisLabelOptions").start_object();
+        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.y_axis_label_options {
+    if let Some(var_7) = &input.x_axis_display_options {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("YAxisLabelOptions").start_object();
-        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_8, var_7)?;
+        let mut object_8 = object.key("XAxisDisplayOptions").start_object();
+        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.y_axis_display_options {
+    if let Some(var_9) = &input.y_axis_label_options {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("YAxisDisplayOptions").start_object();
-        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(&mut object_10, var_9)?;
+        let mut object_10 = object.key("YAxisLabelOptions").start_object();
+        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.legend {
+    if let Some(var_11) = &input.y_axis_display_options {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Legend").start_object();
-        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_12, var_11)?;
+        let mut object_12 = object.key("YAxisDisplayOptions").start_object();
+        crate::protocol_serde::shape_axis_display_options::ser_axis_display_options(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.data_labels {
+    if let Some(var_13) = &input.legend {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("DataLabels").start_object();
-        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_14, var_13)?;
+        let mut object_14 = object.key("Legend").start_object();
+        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.tooltip {
+    if let Some(var_15) = &input.data_labels {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("Tooltip").start_object();
-        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_16, var_15)?;
+        let mut object_16 = object.key("DataLabels").start_object();
+        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.visual_palette {
+    if let Some(var_17) = &input.tooltip {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("VisualPalette").start_object();
-        crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_18, var_17)?;
+        let mut object_18 = object.key("Tooltip").start_object();
+        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_18, var_17)?;
         object_18.finish();
+    }
+    if let Some(var_19) = &input.visual_palette {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("VisualPalette").start_object();
+        crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }
@@ -79,6 +85,11 @@ where
                             builder = builder.set_field_wells(crate::protocol_serde::shape_scatter_plot_field_wells::de_scatter_plot_field_wells(
                                 tokens,
                             )?);
+                        }
+                        "SortConfiguration" => {
+                            builder = builder.set_sort_configuration(
+                                crate::protocol_serde::shape_scatter_plot_sort_configuration::de_scatter_plot_sort_configuration(tokens)?,
+                            );
                         }
                         "XAxisLabelOptions" => {
                             builder = builder.set_x_axis_label_options(

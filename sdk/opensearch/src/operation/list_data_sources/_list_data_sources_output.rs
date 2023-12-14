@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSourcesOutput {
-    /// <p>A list of the data sources.</p>
+    /// <p>A list of data sources associated with specified domain.</p>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceDetails>>,
     _request_id: Option<String>,
 }
 impl ListDataSourcesOutput {
-    /// <p>A list of the data sources.</p>
+    /// <p>A list of data sources associated with specified domain.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
     pub fn data_sources(&self) -> &[crate::types::DataSourceDetails] {
@@ -40,19 +40,19 @@ impl ListDataSourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>A list of the data sources.</p>
+    /// <p>A list of data sources associated with specified domain.</p>
     pub fn data_sources(mut self, input: crate::types::DataSourceDetails) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
         v.push(input);
         self.data_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the data sources.</p>
+    /// <p>A list of data sources associated with specified domain.</p>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceDetails>>) -> Self {
         self.data_sources = input;
         self
     }
-    /// <p>A list of the data sources.</p>
+    /// <p>A list of data sources associated with specified domain.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceDetails>> {
         &self.data_sources
     }

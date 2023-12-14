@@ -35,6 +35,8 @@ pub use crate::types::_http_endpoint_configuration::HttpEndpointConfigurationBui
 
 pub use crate::types::_splunk_destination_update::SplunkDestinationUpdateBuilder;
 
+pub use crate::types::_splunk_buffering_hints::SplunkBufferingHintsBuilder;
+
 pub use crate::types::_splunk_retry_options::SplunkRetryOptionsBuilder;
 
 pub use crate::types::_amazonopensearchservice_destination_update::AmazonopensearchserviceDestinationUpdateBuilder;

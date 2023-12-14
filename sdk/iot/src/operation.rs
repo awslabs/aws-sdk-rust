@@ -61,6 +61,9 @@ pub mod create_billing_group;
 /// Types for the `CreateCertificateFromCsr` operation.
 pub mod create_certificate_from_csr;
 
+/// Types for the `CreateCertificateProvider` operation.
+pub mod create_certificate_provider;
+
 /// Types for the `CreateCustomMetric` operation.
 pub mod create_custom_metric;
 
@@ -156,6 +159,9 @@ pub mod delete_ca_certificate;
 
 /// Types for the `DeleteCertificate` operation.
 pub mod delete_certificate;
+
+/// Types for the `DeleteCertificateProvider` operation.
+pub mod delete_certificate_provider;
 
 /// Types for the `DeleteCustomMetric` operation.
 pub mod delete_custom_metric;
@@ -267,6 +273,9 @@ pub mod describe_ca_certificate;
 
 /// Types for the `DescribeCertificate` operation.
 pub mod describe_certificate;
+
+/// Types for the `DescribeCertificateProvider` operation.
+pub mod describe_certificate_provider;
 
 /// Types for the `DescribeCustomMetric` operation.
 pub mod describe_custom_metric;
@@ -444,6 +453,9 @@ pub mod list_billing_groups;
 
 /// Types for the `ListCACertificates` operation.
 pub mod list_ca_certificates;
+
+/// Types for the `ListCertificateProviders` operation.
+pub mod list_certificate_providers;
 
 /// Types for the `ListCertificates` operation.
 pub mod list_certificates;
@@ -684,6 +696,9 @@ pub mod update_ca_certificate;
 
 /// Types for the `UpdateCertificate` operation.
 pub mod update_certificate;
+
+/// Types for the `UpdateCertificateProvider` operation.
+pub mod update_certificate_provider;
 
 /// Types for the `UpdateCustomMetric` operation.
 pub mod update_custom_metric;

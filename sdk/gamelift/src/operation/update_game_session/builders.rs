@@ -199,4 +199,22 @@ impl UpdateGameSessionFluentBuilder {
     pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         self.inner.get_protection_policy()
     }
+    /// Appends an item to `GameProperties`.
+    ///
+    /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
+    ///
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
+        self.inner = self.inner.game_properties(input);
+        self
+    }
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
+        self.inner = self.inner.set_game_properties(input);
+        self
+    }
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+        self.inner.get_game_properties()
+    }
 }

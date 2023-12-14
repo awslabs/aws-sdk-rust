@@ -26,6 +26,8 @@ pub struct LineChartConfiguration {
     pub secondary_y_axis_display_options: ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     /// <p>The options that determine the presentation of the secondary y-axis label.</p>
     pub secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub single_axis_options: ::std::option::Option<crate::types::SingleAxisOptions>,
     /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
     pub default_series_settings: ::std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
     /// <p>The series item configuration of a line chart.</p>
@@ -90,6 +92,10 @@ impl LineChartConfiguration {
     pub fn secondary_y_axis_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.secondary_y_axis_label_options.as_ref()
     }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn single_axis_options(&self) -> ::std::option::Option<&crate::types::SingleAxisOptions> {
+        self.single_axis_options.as_ref()
+    }
     /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
     pub fn default_series_settings(&self) -> ::std::option::Option<&crate::types::LineChartDefaultSeriesSettings> {
         self.default_series_settings.as_ref()
@@ -151,6 +157,7 @@ pub struct LineChartConfigurationBuilder {
     pub(crate) primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) secondary_y_axis_display_options: ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     pub(crate) secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) single_axis_options: ::std::option::Option<crate::types::SingleAxisOptions>,
     pub(crate) default_series_settings: ::std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
     pub(crate) series: ::std::option::Option<::std::vec::Vec<crate::types::SeriesItem>>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
@@ -321,6 +328,20 @@ impl LineChartConfigurationBuilder {
     pub fn get_secondary_y_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.secondary_y_axis_label_options
     }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn single_axis_options(mut self, input: crate::types::SingleAxisOptions) -> Self {
+        self.single_axis_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn set_single_axis_options(mut self, input: ::std::option::Option<crate::types::SingleAxisOptions>) -> Self {
+        self.single_axis_options = input;
+        self
+    }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn get_single_axis_options(&self) -> &::std::option::Option<crate::types::SingleAxisOptions> {
+        &self.single_axis_options
+    }
     /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
     pub fn default_series_settings(mut self, input: crate::types::LineChartDefaultSeriesSettings) -> Self {
         self.default_series_settings = ::std::option::Option::Some(input);
@@ -468,6 +489,7 @@ impl LineChartConfigurationBuilder {
             primary_y_axis_label_options: self.primary_y_axis_label_options,
             secondary_y_axis_display_options: self.secondary_y_axis_display_options,
             secondary_y_axis_label_options: self.secondary_y_axis_label_options,
+            single_axis_options: self.single_axis_options,
             default_series_settings: self.default_series_settings,
             series: self.series,
             legend: self.legend,

@@ -16,6 +16,7 @@
 ///     PlatformType::Windows => { /* ... */ },
 ///     PlatformType::WindowsServer2016 => { /* ... */ },
 ///     PlatformType::WindowsServer2019 => { /* ... */ },
+///     PlatformType::WindowsServer2022 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum PlatformType {
     WindowsServer2016,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2022,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for PlatformType {
             "WINDOWS" => PlatformType::Windows,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
+            "WINDOWS_SERVER_2022" => PlatformType::WindowsServer2022,
             other => PlatformType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +85,19 @@ impl PlatformType {
             PlatformType::Windows => "WINDOWS",
             PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
             PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
+            PlatformType::WindowsServer2022 => "WINDOWS_SERVER_2022",
             PlatformType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AMAZON_LINUX2", "WINDOWS", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019"]
+        &[
+            "AMAZON_LINUX2",
+            "WINDOWS",
+            "WINDOWS_SERVER_2016",
+            "WINDOWS_SERVER_2019",
+            "WINDOWS_SERVER_2022",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for PlatformType {

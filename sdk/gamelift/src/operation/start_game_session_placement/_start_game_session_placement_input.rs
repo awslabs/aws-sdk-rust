@@ -7,7 +7,7 @@ pub struct StartGameSessionPlacementInput {
     pub placement_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value.</p>
     pub game_session_queue_name: ::std::option::Option<::std::string::String>,
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
     pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub maximum_player_session_count: ::std::option::Option<i32>,
@@ -29,7 +29,7 @@ impl StartGameSessionPlacementInput {
     pub fn game_session_queue_name(&self) -> ::std::option::Option<&str> {
         self.game_session_queue_name.as_deref()
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
     pub fn game_properties(&self) -> &[crate::types::GameProperty] {
@@ -115,19 +115,19 @@ impl StartGameSessionPlacementInputBuilder {
     ///
     /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
     ///
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
     pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
         let mut v = self.game_properties.unwrap_or_default();
         v.push(input);
         self.game_properties = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
     pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
         self.game_properties = input;
         self
     }
-    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
     pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
         &self.game_properties
     }

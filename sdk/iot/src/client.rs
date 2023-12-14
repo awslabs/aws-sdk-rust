@@ -176,6 +176,8 @@ mod create_billing_group;
 
 mod create_certificate_from_csr;
 
+mod create_certificate_provider;
+
 mod create_custom_metric;
 
 mod create_dimension;
@@ -267,6 +269,8 @@ mod delete_ca_certificate;
 
 mod delete_certificate;
 
+mod delete_certificate_provider;
+
 mod delete_custom_metric;
 
 mod delete_dimension;
@@ -340,6 +344,8 @@ mod describe_billing_group;
 mod describe_ca_certificate;
 
 mod describe_certificate;
+
+mod describe_certificate_provider;
 
 mod describe_custom_metric;
 
@@ -458,6 +464,8 @@ mod list_authorizers;
 mod list_billing_groups;
 
 mod list_ca_certificates;
+
+mod list_certificate_providers;
 
 mod list_certificates;
 
@@ -618,6 +626,8 @@ mod update_billing_group;
 mod update_ca_certificate;
 
 mod update_certificate;
+
+mod update_certificate_provider;
 
 mod update_custom_metric;
 

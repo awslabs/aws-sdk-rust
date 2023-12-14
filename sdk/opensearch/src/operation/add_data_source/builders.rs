@@ -22,7 +22,7 @@ impl AddDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `AddDataSource`.
 ///
-/// <p>Adds the data source on the domain.</p>
+/// <p>Creates a new direct-query data source to the specified domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Creating Amazon OpenSearch Service data source integrations with Amazon S3</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl AddDataSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>The name of the domain.</p>
+    /// <p>The name of the domain to add the data source to.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>A name for the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

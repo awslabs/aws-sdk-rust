@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListAccountAssociations`](crate::operation::list_account_associations) operation has
-/// a [`Client::list_account_associations`], function which returns a builder for that operation.
+/// For example, the [`GetBillingGroupCostReport`](crate::operation::get_billing_group_cost_report) operation has
+/// a [`Client::get_billing_group_cost_report`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_account_associations()
-///     .billing_period("example")
+/// let result = client.get_billing_group_cost_report()
+///     .arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -163,7 +163,7 @@ mod create_pricing_rule;
 /// # let client: aws_sdk_billingconductor::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_account_associations()
+/// let result = client.get_billing_group_cost_report()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -190,6 +190,8 @@ mod delete_pricing_rule;
 mod disassociate_accounts;
 
 mod disassociate_pricing_rules;
+
+mod get_billing_group_cost_report;
 
 mod list_account_associations;
 

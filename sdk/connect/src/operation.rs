@@ -544,11 +544,17 @@ pub mod submit_contact_evaluation;
 /// Types for the `SuspendContactRecording` operation.
 pub mod suspend_contact_recording;
 
+/// Types for the `TagContact` operation.
+pub mod tag_contact;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `TransferContact` operation.
 pub mod transfer_contact;
+
+/// Types for the `UntagContact` operation.
+pub mod untag_contact;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;

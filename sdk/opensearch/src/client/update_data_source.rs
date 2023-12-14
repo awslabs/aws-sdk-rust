@@ -4,11 +4,11 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain.</p><br>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data source.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data source to modify.</p><br>
     ///   - [`data_source_type(DataSourceType)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::data_source_type) / [`set_data_source_type(Option<DataSourceType>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::set_data_source_type):<br>required: **true**<br><p>The type of data source.</p><br>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::set_description):<br>required: **false**<br><p>A description of the data source.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::set_description):<br>required: **false**<br><p>A new description of the data source.</p><br>
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput) with field(s):
-    ///   - [`message(Option<String>)`](crate::operation::update_data_source::UpdateDataSourceOutput::message): <p>A message associated with the data source.</p>
+    ///   - [`message(Option<String>)`](crate::operation::update_data_source::UpdateDataSourceOutput::message): <p>A message associated with the updated data source.</p>
     /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::operation::update_data_source::UpdateDataSourceError)
     pub fn update_data_source(&self) -> crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder {
         crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::new(self.handle.clone())

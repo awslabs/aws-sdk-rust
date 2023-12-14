@@ -249,6 +249,8 @@ pub enum PutRecordBatchError {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails. This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.</p>
     InvalidKmsResourceException(crate::types::error::InvalidKmsResourceException),
+    /// <p>Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression is enabled.</p>
+    InvalidSourceException(crate::types::error::InvalidSourceException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The service is unavailable. Back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.</p>
@@ -288,6 +290,7 @@ impl PutRecordBatchError {
         match self {
             Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidKmsResourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidSourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -300,6 +303,10 @@ impl PutRecordBatchError {
     /// Returns `true` if the error kind is `PutRecordBatchError::InvalidKmsResourceException`.
     pub fn is_invalid_kms_resource_exception(&self) -> bool {
         matches!(self, Self::InvalidKmsResourceException(_))
+    }
+    /// Returns `true` if the error kind is `PutRecordBatchError::InvalidSourceException`.
+    pub fn is_invalid_source_exception(&self) -> bool {
+        matches!(self, Self::InvalidSourceException(_))
     }
     /// Returns `true` if the error kind is `PutRecordBatchError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -315,6 +322,7 @@ impl ::std::error::Error for PutRecordBatchError {
         match self {
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidKmsResourceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSourceException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -326,6 +334,7 @@ impl ::std::fmt::Display for PutRecordBatchError {
         match self {
             Self::InvalidArgumentException(_inner) => _inner.fmt(f),
             Self::InvalidKmsResourceException(_inner) => _inner.fmt(f),
+            Self::InvalidSourceException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -351,6 +360,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutRecordBatc
         match self {
             Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidKmsResourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

@@ -22,7 +22,7 @@ impl CreateCapabilityInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCapability`.
 ///
-/// <p>Instantiates a capability based on the specified parameters. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>
+/// <p>Instantiates a capability based on the specified parameters. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCapabilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

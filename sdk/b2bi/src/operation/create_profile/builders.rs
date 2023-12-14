@@ -22,7 +22,7 @@ impl CreateProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateProfile`.
 ///
-/// <p>Creates a customer profile. You can have up to five customer profiles, each representing a distinct private network. Profiles contain basic information about you and your business.</p>
+/// <p>Creates a customer profile. You can have up to five customer profiles, each representing a distinct private network. A profile is the mechanism used to create the concept of a private network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

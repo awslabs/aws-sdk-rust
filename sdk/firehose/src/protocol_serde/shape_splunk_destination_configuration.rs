@@ -45,5 +45,11 @@ pub fn ser_splunk_destination_configuration(
         crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.buffering_hints {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("BufferingHints").start_object();
+        crate::protocol_serde::shape_splunk_buffering_hints::ser_splunk_buffering_hints(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

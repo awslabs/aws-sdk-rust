@@ -6,7 +6,7 @@
 pub struct GetDataSourceInput {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to get information about.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetDataSourceInput {
@@ -14,7 +14,7 @@ impl GetDataSourceInput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to get information about.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -49,18 +49,18 @@ impl GetDataSourceInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to get information about.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to get information about.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to get information about.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

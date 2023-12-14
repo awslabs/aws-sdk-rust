@@ -44,6 +44,8 @@ pub struct CreateDashboardInput {
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure that contains the permissions of a shareable link to the dashboard.</p>
     pub link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub link_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDashboardInput {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -121,6 +123,12 @@ impl CreateDashboardInput {
     pub fn link_sharing_configuration(&self) -> ::std::option::Option<&crate::types::LinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.link_entities.is_none()`.
+    pub fn link_entities(&self) -> &[::std::string::String] {
+        self.link_entities.as_deref().unwrap_or_default()
+    }
 }
 impl CreateDashboardInput {
     /// Creates a new builder-style object to manufacture [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
@@ -147,6 +155,7 @@ pub struct CreateDashboardInputBuilder {
     pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
     pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
+    pub(crate) link_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -405,6 +414,26 @@ impl CreateDashboardInputBuilder {
     pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
         &self.link_sharing_configuration
     }
+    /// Appends an item to `link_entities`.
+    ///
+    /// To override the contents of this collection use [`set_link_entities`](Self::set_link_entities).
+    ///
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn link_entities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.link_entities.unwrap_or_default();
+        v.push(input.into());
+        self.link_entities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn set_link_entities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.link_entities = input;
+        self
+    }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn get_link_entities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.link_entities
+    }
     /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
     pub fn build(
         self,
@@ -424,6 +453,7 @@ impl CreateDashboardInputBuilder {
             validation_strategy: self.validation_strategy,
             folder_arns: self.folder_arns,
             link_sharing_configuration: self.link_sharing_configuration,
+            link_entities: self.link_entities,
         })
     }
 }

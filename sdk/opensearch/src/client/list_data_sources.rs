@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain.</p><br>
     /// - On success, responds with [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput) with field(s):
-    ///   - [`data_sources(Option<Vec::<DataSourceDetails>>)`](crate::operation::list_data_sources::ListDataSourcesOutput::data_sources): <p>A list of the data sources.</p>
+    ///   - [`data_sources(Option<Vec::<DataSourceDetails>>)`](crate::operation::list_data_sources::ListDataSourcesOutput::data_sources): <p>A list of data sources associated with specified domain.</p>
     /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
     pub fn list_data_sources(&self) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
         crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())

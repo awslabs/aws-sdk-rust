@@ -8,7 +8,7 @@ pub struct MetricToRetain {
     pub metric: ::std::string::String,
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
-    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub export_metric: ::std::option::Option<bool>,
 }
 impl MetricToRetain {
@@ -21,7 +21,7 @@ impl MetricToRetain {
     pub fn metric_dimension(&self) -> ::std::option::Option<&crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
     }
-    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub fn export_metric(&self) -> ::std::option::Option<bool> {
         self.export_metric
     }
@@ -71,17 +71,17 @@ impl MetricToRetainBuilder {
     pub fn get_metric_dimension(&self) -> &::std::option::Option<crate::types::MetricDimension> {
         &self.metric_dimension
     }
-    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub fn export_metric(mut self, input: bool) -> Self {
         self.export_metric = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub fn set_export_metric(mut self, input: ::std::option::Option<bool>) -> Self {
         self.export_metric = input;
         self
     }
-    /// <p>Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export the corresponding metrics.</p>
+    /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub fn get_export_metric(&self) -> &::std::option::Option<bool> {
         &self.export_metric
     }

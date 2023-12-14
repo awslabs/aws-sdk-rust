@@ -385,9 +385,13 @@ pub(crate) mod shape_submit_contact_evaluation;
 
 pub(crate) mod shape_suspend_contact_recording;
 
+pub(crate) mod shape_tag_contact;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_transfer_contact;
+
+pub(crate) mod shape_untag_contact;
 
 pub(crate) mod shape_untag_resource;
 
@@ -692,6 +696,8 @@ pub(crate) mod shape_stop_contact_streaming_input;
 pub(crate) mod shape_submit_contact_evaluation_input;
 
 pub(crate) mod shape_suspend_contact_recording_input;
+
+pub(crate) mod shape_tag_contact_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -1118,6 +1124,8 @@ pub(crate) mod shape_contact_filter;
 pub(crate) mod shape_contact_flow_module_summary;
 
 pub(crate) mod shape_contact_flow_summary;
+
+pub(crate) mod shape_contact_tag_map;
 
 pub(crate) mod shape_control_plane_tag_filter;
 

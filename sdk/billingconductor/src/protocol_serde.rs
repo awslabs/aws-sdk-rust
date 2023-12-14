@@ -51,6 +51,8 @@ pub(crate) mod shape_disassociate_accounts;
 
 pub(crate) mod shape_disassociate_pricing_rules;
 
+pub(crate) mod shape_get_billing_group_cost_report;
+
 pub(crate) mod shape_list_account_associations;
 
 pub(crate) mod shape_list_billing_group_cost_reports;
@@ -125,6 +127,8 @@ pub(crate) mod shape_disassociate_accounts_input;
 
 pub(crate) mod shape_disassociate_pricing_rules_input;
 
+pub(crate) mod shape_get_billing_group_cost_report_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_account_associations_input;
@@ -173,7 +177,11 @@ pub(crate) mod shape_associate_resources_response_list;
 
 pub(crate) mod shape_billing_group_cost_report_list;
 
+pub(crate) mod shape_billing_group_cost_report_results_list;
+
 pub(crate) mod shape_billing_group_list;
+
+pub(crate) mod shape_billing_period_range;
 
 pub(crate) mod shape_computation_preference;
 
@@ -233,6 +241,8 @@ pub(crate) mod shape_associate_resource_response_element;
 
 pub(crate) mod shape_billing_group_cost_report_element;
 
+pub(crate) mod shape_billing_group_cost_report_result_element;
+
 pub(crate) mod shape_billing_group_list_element;
 
 pub(crate) mod shape_create_free_tier_config;
@@ -273,9 +283,13 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_associate_resource_error;
 
+pub(crate) mod shape_attributes_list;
+
 pub(crate) mod shape_list_billing_group_account_grouping;
 
 pub(crate) mod shape_tiering;
+
+pub(crate) mod shape_attribute;
 
 pub(crate) mod shape_free_tier_config;
 

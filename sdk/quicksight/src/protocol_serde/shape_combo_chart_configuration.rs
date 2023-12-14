@@ -54,53 +54,59 @@ pub fn ser_combo_chart_configuration(
         crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.color_label_options {
+    if let Some(var_18) = &input.single_axis_options {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("ColorLabelOptions").start_object();
-        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_19, var_18)?;
+        let mut object_19 = object.key("SingleAxisOptions").start_object();
+        crate::protocol_serde::shape_single_axis_options::ser_single_axis_options(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.legend {
+    if let Some(var_20) = &input.color_label_options {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("Legend").start_object();
-        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_21, var_20)?;
+        let mut object_21 = object.key("ColorLabelOptions").start_object();
+        crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_21, var_20)?;
         object_21.finish();
     }
-    if let Some(var_22) = &input.bar_data_labels {
+    if let Some(var_22) = &input.legend {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("BarDataLabels").start_object();
-        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_23, var_22)?;
+        let mut object_23 = object.key("Legend").start_object();
+        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.line_data_labels {
+    if let Some(var_24) = &input.bar_data_labels {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("LineDataLabels").start_object();
+        let mut object_25 = object.key("BarDataLabels").start_object();
         crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_25, var_24)?;
         object_25.finish();
     }
-    if let Some(var_26) = &input.tooltip {
+    if let Some(var_26) = &input.line_data_labels {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("Tooltip").start_object();
-        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_27, var_26)?;
+        let mut object_27 = object.key("LineDataLabels").start_object();
+        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_27, var_26)?;
         object_27.finish();
     }
-    if let Some(var_28) = &input.reference_lines {
-        let mut array_29 = object.key("ReferenceLines").start_array();
-        for item_30 in var_28 {
+    if let Some(var_28) = &input.tooltip {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("Tooltip").start_object();
+        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_29, var_28)?;
+        object_29.finish();
+    }
+    if let Some(var_30) = &input.reference_lines {
+        let mut array_31 = object.key("ReferenceLines").start_array();
+        for item_32 in var_30 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_reference_line::ser_reference_line(&mut object_31, item_30)?;
-                object_31.finish();
+                let mut object_33 = array_31.value().start_object();
+                crate::protocol_serde::shape_reference_line::ser_reference_line(&mut object_33, item_32)?;
+                object_33.finish();
             }
         }
-        array_29.finish();
+        array_31.finish();
     }
-    if let Some(var_32) = &input.visual_palette {
+    if let Some(var_34) = &input.visual_palette {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("VisualPalette").start_object();
-        crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_33, var_32)?;
-        object_33.finish();
+        let mut object_35 = object.key("VisualPalette").start_object();
+        crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_35, var_34)?;
+        object_35.finish();
     }
     Ok(())
 }
@@ -163,6 +169,10 @@ where
                             builder = builder.set_secondary_y_axis_label_options(
                                 crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
                             );
+                        }
+                        "SingleAxisOptions" => {
+                            builder =
+                                builder.set_single_axis_options(crate::protocol_serde::shape_single_axis_options::de_single_axis_options(tokens)?);
                         }
                         "ColorLabelOptions" => {
                             builder = builder.set_color_label_options(

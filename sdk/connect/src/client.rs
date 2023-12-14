@@ -525,9 +525,13 @@ mod submit_contact_evaluation;
 
 mod suspend_contact_recording;
 
+mod tag_contact;
+
 mod tag_resource;
 
 mod transfer_contact;
+
+mod untag_contact;
 
 mod untag_resource;
 

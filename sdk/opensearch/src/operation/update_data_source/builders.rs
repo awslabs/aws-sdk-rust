@@ -22,7 +22,7 @@ impl UpdateDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataSource`.
 ///
-/// <p>Updates the data source on the domain.</p>
+/// <p>Updates a direct-query data source. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Working with Amazon OpenSearch Service data source integrations with Amazon S3</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the data source.</p>
+    /// <p>The name of the data source to modify.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -150,17 +150,17 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         self.inner.get_data_source_type()
     }
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the data source.</p>
+    /// <p>A new description of the data source.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

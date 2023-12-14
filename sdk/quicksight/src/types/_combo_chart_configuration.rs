@@ -30,6 +30,8 @@ pub struct ComboChartConfiguration {
     pub secondary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's secondary y-axis(line) field well.</p>
     pub secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub single_axis_options: ::std::option::Option<crate::types::SingleAxisOptions>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
     pub color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The legend display setup of the visual.</p>
@@ -92,6 +94,10 @@ impl ComboChartConfiguration {
     pub fn secondary_y_axis_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.secondary_y_axis_label_options.as_ref()
     }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn single_axis_options(&self) -> ::std::option::Option<&crate::types::SingleAxisOptions> {
+        self.single_axis_options.as_ref()
+    }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
     pub fn color_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.color_label_options.as_ref()
@@ -145,6 +151,7 @@ pub struct ComboChartConfigurationBuilder {
     pub(crate) primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) secondary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) single_axis_options: ::std::option::Option<crate::types::SingleAxisOptions>,
     pub(crate) color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) bar_data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
@@ -304,6 +311,20 @@ impl ComboChartConfigurationBuilder {
     pub fn get_secondary_y_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.secondary_y_axis_label_options
     }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn single_axis_options(mut self, input: crate::types::SingleAxisOptions) -> Self {
+        self.single_axis_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn set_single_axis_options(mut self, input: ::std::option::Option<crate::types::SingleAxisOptions>) -> Self {
+        self.single_axis_options = input;
+        self
+    }
+    /// <p>The settings of a chart's single axis configuration.</p>
+    pub fn get_single_axis_options(&self) -> &::std::option::Option<crate::types::SingleAxisOptions> {
+        &self.single_axis_options
+    }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
     pub fn color_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
         self.color_label_options = ::std::option::Option::Some(input);
@@ -426,6 +447,7 @@ impl ComboChartConfigurationBuilder {
             primary_y_axis_label_options: self.primary_y_axis_label_options,
             secondary_y_axis_display_options: self.secondary_y_axis_display_options,
             secondary_y_axis_label_options: self.secondary_y_axis_label_options,
+            single_axis_options: self.single_axis_options,
             color_label_options: self.color_label_options,
             legend: self.legend,
             bar_data_labels: self.bar_data_labels,

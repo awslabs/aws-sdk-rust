@@ -1165,6 +1165,18 @@ pub(crate) fn s3_source_correct_errors(mut builder: crate::types::builders::S3So
     builder
 }
 
+pub(crate) fn snapshot_s3_destination_configuration_correct_errors(
+    mut builder: crate::types::builders::SnapshotS3DestinationConfigurationBuilder,
+) -> crate::types::builders::SnapshotS3DestinationConfigurationBuilder {
+    if builder.bucket_configuration.is_none() {
+        builder.bucket_configuration = {
+            let builder = crate::types::builders::S3BucketConfigurationBuilder::default();
+            crate::serde_util::s3_bucket_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn string_dataset_parameter_correct_errors(
     mut builder: crate::types::builders::StringDatasetParameterBuilder,
 ) -> crate::types::builders::StringDatasetParameterBuilder {
@@ -2467,6 +2479,13 @@ pub(crate) fn reference_line_correct_errors(
             let builder = crate::types::builders::ReferenceLineDataConfigurationBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn y_axis_options_correct_errors(mut builder: crate::types::builders::YAxisOptionsBuilder) -> crate::types::builders::YAxisOptionsBuilder {
+    if builder.y_axis.is_none() {
+        builder.y_axis = "no value was set".parse::<crate::types::SingleYAxisOption>().ok()
     }
     builder
 }

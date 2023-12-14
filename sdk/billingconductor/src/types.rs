@@ -107,6 +107,14 @@ pub use crate::types::_account_associations_list_element::AccountAssociationsLis
 
 pub use crate::types::_list_account_associations_filter::ListAccountAssociationsFilter;
 
+pub use crate::types::_billing_group_cost_report_result_element::BillingGroupCostReportResultElement;
+
+pub use crate::types::_attribute::Attribute;
+
+pub use crate::types::_group_by_attribute_name::GroupByAttributeName;
+
+pub use crate::types::_billing_period_range::BillingPeriodRange;
+
 mod _account_associations_list_element;
 
 mod _account_grouping;
@@ -117,11 +125,17 @@ mod _associate_resource_error_reason;
 
 mod _associate_resource_response_element;
 
+mod _attribute;
+
 mod _billing_group_cost_report_element;
+
+mod _billing_group_cost_report_result_element;
 
 mod _billing_group_list_element;
 
 mod _billing_group_status;
+
+mod _billing_period_range;
 
 mod _computation_preference;
 
@@ -152,6 +166,8 @@ mod _custom_line_item_version_list_element;
 mod _disassociate_resource_response_element;
 
 mod _free_tier_config;
+
+mod _group_by_attribute_name;
 
 mod _line_item_filter;
 

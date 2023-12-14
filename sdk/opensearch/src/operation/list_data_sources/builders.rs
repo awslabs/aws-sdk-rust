@@ -22,7 +22,7 @@ impl ListDataSourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDataSources`.
 ///
-/// <p>A list of the data source details of the domain.</p>
+/// <p>Lists direct-query data sources for a specific domain. For more information, see For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3.html">Working with Amazon OpenSearch Service direct queries with Amazon S3</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

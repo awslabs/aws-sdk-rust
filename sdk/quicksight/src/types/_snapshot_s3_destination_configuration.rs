@@ -28,6 +28,7 @@ pub struct SnapshotS3DestinationConfigurationBuilder {
 }
 impl SnapshotS3DestinationConfigurationBuilder {
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
+    /// This field is required.
     pub fn bucket_configuration(mut self, input: crate::types::S3BucketConfiguration) -> Self {
         self.bucket_configuration = ::std::option::Option::Some(input);
         self

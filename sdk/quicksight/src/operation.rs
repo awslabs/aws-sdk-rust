@@ -433,6 +433,9 @@ pub mod update_analysis_permissions;
 /// Types for the `UpdateDashboard` operation.
 pub mod update_dashboard;
 
+/// Types for the `UpdateDashboardLinks` operation.
+pub mod update_dashboard_links;
+
 /// Types for the `UpdateDashboardPermissions` operation.
 pub mod update_dashboard_permissions;
 

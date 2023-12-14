@@ -22,7 +22,7 @@ impl TestMappingInputBuilder {
 }
 /// Fluent builder constructing a request to `TestMapping`.
 ///
-/// <p>Maps the input file according to the provided template file.</p>
+/// <p>Maps the input file according to the provided template file. The API call downloads the file contents from the Amazon S3 location, and passes the contents in as a string, to the <code>inputFileContent</code> parameter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl TestMappingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn input_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_file_content(input.into());
         self
     }
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn set_input_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_file_content(input);
         self
     }
-    /// <p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>
+    /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn get_input_file_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_file_content()
     }

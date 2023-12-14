@@ -282,6 +282,7 @@ members = [
     "sdk/mwaa",
     "sdk/neptune",
     "sdk/neptunedata",
+    "sdk/neptunegraph",
     "sdk/networkfirewall",
     "sdk/networkmanager",
     "sdk/nimble",

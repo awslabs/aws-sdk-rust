@@ -356,4 +356,22 @@ impl CreateDashboardFluentBuilder {
     pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
         self.inner.get_link_sharing_configuration()
     }
+    /// Appends an item to `LinkEntities`.
+    ///
+    /// To override the contents of this collection use [`set_link_entities`](Self::set_link_entities).
+    ///
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn link_entities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.link_entities(input.into());
+        self
+    }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn set_link_entities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_link_entities(input);
+        self
+    }
+    /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
+    pub fn get_link_entities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_link_entities()
+    }
 }

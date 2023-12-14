@@ -22,7 +22,7 @@ impl GetProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `GetProfile`.
 ///
-/// <p>Retrieves the details for the profile specified by the profile ID. Profiles contain basic information about you and your business.</p>
+/// <p>Retrieves the details for the profile specified by the profile ID. A profile is the mechanism used to create the concept of a private network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

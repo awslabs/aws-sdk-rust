@@ -19,6 +19,8 @@ pub struct UpdateGameSessionInput {
     /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
 }
 impl UpdateGameSessionInput {
     /// <p>A unique identifier for the game session to update.</p>
@@ -47,6 +49,12 @@ impl UpdateGameSessionInput {
     pub fn protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.protection_policy.as_ref()
     }
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
+    pub fn game_properties(&self) -> &[crate::types::GameProperty] {
+        self.game_properties.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateGameSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
@@ -64,6 +72,7 @@ pub struct UpdateGameSessionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     pub(crate) protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
+    pub(crate) game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
 }
 impl UpdateGameSessionInputBuilder {
     /// <p>A unique identifier for the game session to update.</p>
@@ -155,6 +164,26 @@ impl UpdateGameSessionInputBuilder {
     pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.protection_policy
     }
+    /// Appends an item to `game_properties`.
+    ///
+    /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
+    ///
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
+        let mut v = self.game_properties.unwrap_or_default();
+        v.push(input);
+        self.game_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
+        self.game_properties = input;
+        self
+    }
+    /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this parameter to modify game properties in an active game session. This action adds new properties and modifies existing properties. There is no way to delete properties. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update the value of a game property</a>.</p>
+    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+        &self.game_properties
+    }
     /// Consumes the builder and constructs a [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
     pub fn build(
         self,
@@ -165,6 +194,7 @@ impl UpdateGameSessionInputBuilder {
             name: self.name,
             player_session_creation_policy: self.player_session_creation_policy,
             protection_policy: self.protection_policy,
+            game_properties: self.game_properties,
         })
     }
 }

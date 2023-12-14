@@ -110,6 +110,9 @@ where
                         "WisdomInfo" => {
                             builder = builder.set_wisdom_info(crate::protocol_serde::shape_wisdom_info::de_wisdom_info(tokens)?);
                         }
+                        "Tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_contact_tag_map::de_contact_tag_map(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

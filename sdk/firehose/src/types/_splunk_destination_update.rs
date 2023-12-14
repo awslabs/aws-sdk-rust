@@ -23,6 +23,8 @@ pub struct SplunkDestinationUpdate {
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
+    pub buffering_hints: ::std::option::Option<crate::types::SplunkBufferingHints>,
 }
 impl SplunkDestinationUpdate {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
@@ -62,6 +64,10 @@ impl SplunkDestinationUpdate {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
+    /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
+    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::SplunkBufferingHints> {
+        self.buffering_hints.as_ref()
+    }
 }
 impl SplunkDestinationUpdate {
     /// Creates a new builder-style object to manufacture [`SplunkDestinationUpdate`](crate::types::SplunkDestinationUpdate).
@@ -83,6 +89,7 @@ pub struct SplunkDestinationUpdateBuilder {
     pub(crate) s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) buffering_hints: ::std::option::Option<crate::types::SplunkBufferingHints>,
 }
 impl SplunkDestinationUpdateBuilder {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
@@ -214,6 +221,20 @@ impl SplunkDestinationUpdateBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
+    /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
+    pub fn buffering_hints(mut self, input: crate::types::SplunkBufferingHints) -> Self {
+        self.buffering_hints = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::SplunkBufferingHints>) -> Self {
+        self.buffering_hints = input;
+        self
+    }
+    /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
+    pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::SplunkBufferingHints> {
+        &self.buffering_hints
+    }
     /// Consumes the builder and constructs a [`SplunkDestinationUpdate`](crate::types::SplunkDestinationUpdate).
     pub fn build(self) -> crate::types::SplunkDestinationUpdate {
         crate::types::SplunkDestinationUpdate {
@@ -226,6 +247,7 @@ impl SplunkDestinationUpdateBuilder {
             s3_update: self.s3_update,
             processing_configuration: self.processing_configuration,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
+            buffering_hints: self.buffering_hints,
         }
     }
 }

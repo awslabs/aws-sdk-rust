@@ -72,71 +72,77 @@ pub fn ser_line_chart_configuration(
         crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.default_series_settings {
+    if let Some(var_24) = &input.single_axis_options {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("DefaultSeriesSettings").start_object();
-        crate::protocol_serde::shape_line_chart_default_series_settings::ser_line_chart_default_series_settings(&mut object_25, var_24)?;
+        let mut object_25 = object.key("SingleAxisOptions").start_object();
+        crate::protocol_serde::shape_single_axis_options::ser_single_axis_options(&mut object_25, var_24)?;
         object_25.finish();
     }
-    if let Some(var_26) = &input.series {
-        let mut array_27 = object.key("Series").start_array();
-        for item_28 in var_26 {
+    if let Some(var_26) = &input.default_series_settings {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("DefaultSeriesSettings").start_object();
+        crate::protocol_serde::shape_line_chart_default_series_settings::ser_line_chart_default_series_settings(&mut object_27, var_26)?;
+        object_27.finish();
+    }
+    if let Some(var_28) = &input.series {
+        let mut array_29 = object.key("Series").start_array();
+        for item_30 in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_29 = array_27.value().start_object();
-                crate::protocol_serde::shape_series_item::ser_series_item(&mut object_29, item_28)?;
-                object_29.finish();
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_series_item::ser_series_item(&mut object_31, item_30)?;
+                object_31.finish();
             }
         }
-        array_27.finish();
+        array_29.finish();
     }
-    if let Some(var_30) = &input.legend {
+    if let Some(var_32) = &input.legend {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("Legend").start_object();
-        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_31, var_30)?;
-        object_31.finish();
-    }
-    if let Some(var_32) = &input.data_labels {
-        #[allow(unused_mut)]
-        let mut object_33 = object.key("DataLabels").start_object();
-        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_33, var_32)?;
+        let mut object_33 = object.key("Legend").start_object();
+        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_33, var_32)?;
         object_33.finish();
     }
-    if let Some(var_34) = &input.reference_lines {
-        let mut array_35 = object.key("ReferenceLines").start_array();
-        for item_36 in var_34 {
+    if let Some(var_34) = &input.data_labels {
+        #[allow(unused_mut)]
+        let mut object_35 = object.key("DataLabels").start_object();
+        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_35, var_34)?;
+        object_35.finish();
+    }
+    if let Some(var_36) = &input.reference_lines {
+        let mut array_37 = object.key("ReferenceLines").start_array();
+        for item_38 in var_36 {
             {
                 #[allow(unused_mut)]
-                let mut object_37 = array_35.value().start_object();
-                crate::protocol_serde::shape_reference_line::ser_reference_line(&mut object_37, item_36)?;
-                object_37.finish();
+                let mut object_39 = array_37.value().start_object();
+                crate::protocol_serde::shape_reference_line::ser_reference_line(&mut object_39, item_38)?;
+                object_39.finish();
             }
         }
-        array_35.finish();
+        array_37.finish();
     }
-    if let Some(var_38) = &input.tooltip {
+    if let Some(var_40) = &input.tooltip {
         #[allow(unused_mut)]
-        let mut object_39 = object.key("Tooltip").start_object();
-        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_39, var_38)?;
-        object_39.finish();
+        let mut object_41 = object.key("Tooltip").start_object();
+        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_41, var_40)?;
+        object_41.finish();
     }
-    if let Some(var_40) = &input.contribution_analysis_defaults {
-        let mut array_41 = object.key("ContributionAnalysisDefaults").start_array();
-        for item_42 in var_40 {
+    if let Some(var_42) = &input.contribution_analysis_defaults {
+        let mut array_43 = object.key("ContributionAnalysisDefaults").start_array();
+        for item_44 in var_42 {
             {
                 #[allow(unused_mut)]
-                let mut object_43 = array_41.value().start_object();
-                crate::protocol_serde::shape_contribution_analysis_default::ser_contribution_analysis_default(&mut object_43, item_42)?;
-                object_43.finish();
+                let mut object_45 = array_43.value().start_object();
+                crate::protocol_serde::shape_contribution_analysis_default::ser_contribution_analysis_default(&mut object_45, item_44)?;
+                object_45.finish();
             }
         }
-        array_41.finish();
+        array_43.finish();
     }
-    if let Some(var_44) = &input.visual_palette {
+    if let Some(var_46) = &input.visual_palette {
         #[allow(unused_mut)]
-        let mut object_45 = object.key("VisualPalette").start_object();
-        crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_45, var_44)?;
-        object_45.finish();
+        let mut object_47 = object.key("VisualPalette").start_object();
+        crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_47, var_46)?;
+        object_47.finish();
     }
     Ok(())
 }
@@ -210,6 +216,10 @@ where
                             builder = builder.set_secondary_y_axis_label_options(
                                 crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
                             );
+                        }
+                        "SingleAxisOptions" => {
+                            builder =
+                                builder.set_single_axis_options(crate::protocol_serde::shape_single_axis_options::de_single_axis_options(tokens)?);
                         }
                         "DefaultSeriesSettings" => {
                             builder = builder.set_default_series_settings(

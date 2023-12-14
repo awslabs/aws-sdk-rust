@@ -22,7 +22,7 @@ impl UpdateProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateProfile`.
 ///
-/// <p>Updates the specified parameters for a profile. Profiles contain basic information about you and your business.</p>
+/// <p>Updates the specified parameters for a profile. A profile is the mechanism used to create the concept of a private network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

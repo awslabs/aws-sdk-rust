@@ -48,6 +48,21 @@ pub fn de_put_record_batch_http_error(
             }
             tmp
         }),
+        "InvalidSourceException" => crate::operation::put_record_batch::PutRecordBatchError::InvalidSourceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSourceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_source_exception::de_invalid_source_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_record_batch::PutRecordBatchError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::put_record_batch::PutRecordBatchError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

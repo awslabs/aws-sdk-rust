@@ -6,6 +6,8 @@
 pub struct ScatterPlotConfiguration {
     /// <p>The field wells of the visual.</p>
     pub field_wells: ::std::option::Option<crate::types::ScatterPlotFieldWells>,
+    /// <p>The sort configuration of a scatter plot.</p>
+    pub sort_configuration: ::std::option::Option<crate::types::ScatterPlotSortConfiguration>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>
     pub x_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label display options (grid line, range, scale, and axis step) of the scatter plot's x-axis.</p>
@@ -27,6 +29,10 @@ impl ScatterPlotConfiguration {
     /// <p>The field wells of the visual.</p>
     pub fn field_wells(&self) -> ::std::option::Option<&crate::types::ScatterPlotFieldWells> {
         self.field_wells.as_ref()
+    }
+    /// <p>The sort configuration of a scatter plot.</p>
+    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::ScatterPlotSortConfiguration> {
+        self.sort_configuration.as_ref()
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>
     pub fn x_axis_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
@@ -73,6 +79,7 @@ impl ScatterPlotConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScatterPlotConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::ScatterPlotFieldWells>,
+    pub(crate) sort_configuration: ::std::option::Option<crate::types::ScatterPlotSortConfiguration>,
     pub(crate) x_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) x_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
@@ -96,6 +103,20 @@ impl ScatterPlotConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
     pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::ScatterPlotFieldWells> {
         &self.field_wells
+    }
+    /// <p>The sort configuration of a scatter plot.</p>
+    pub fn sort_configuration(mut self, input: crate::types::ScatterPlotSortConfiguration) -> Self {
+        self.sort_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sort configuration of a scatter plot.</p>
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::ScatterPlotSortConfiguration>) -> Self {
+        self.sort_configuration = input;
+        self
+    }
+    /// <p>The sort configuration of a scatter plot.</p>
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::ScatterPlotSortConfiguration> {
+        &self.sort_configuration
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.</p>
     pub fn x_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -213,6 +234,7 @@ impl ScatterPlotConfigurationBuilder {
     pub fn build(self) -> crate::types::ScatterPlotConfiguration {
         crate::types::ScatterPlotConfiguration {
             field_wells: self.field_wells,
+            sort_configuration: self.sort_configuration,
             x_axis_label_options: self.x_axis_label_options,
             x_axis_display_options: self.x_axis_display_options,
             y_axis_label_options: self.y_axis_label_options,

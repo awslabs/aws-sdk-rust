@@ -67,6 +67,8 @@ pub(crate) mod shape_invalid_argument_exception;
 
 pub(crate) mod shape_invalid_kms_resource_exception;
 
+pub(crate) mod shape_invalid_source_exception;
+
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_delivery_streams_input;
@@ -192,6 +194,8 @@ pub(crate) mod shape_put_record_batch_response_entry;
 pub(crate) mod shape_redshift_retry_options;
 
 pub(crate) mod shape_source_description;
+
+pub(crate) mod shape_splunk_buffering_hints;
 
 pub(crate) mod shape_splunk_retry_options;
 

@@ -21,5 +21,17 @@ pub fn ser_update_game_session_input_input(
     if let Some(var_5) = &input.protection_policy {
         object.key("ProtectionPolicy").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.game_properties {
+        let mut array_7 = object.key("GameProperties").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_game_property::ser_game_property(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

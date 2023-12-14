@@ -22,7 +22,7 @@ impl DeleteProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProfile`.
 ///
-/// <p>Deletes the specified profile. Profiles contain basic information about you and your business.</p>
+/// <p>Deletes the specified profile. A profile is the mechanism used to create the concept of a private network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
