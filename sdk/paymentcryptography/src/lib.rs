@@ -32,7 +32,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
+//! aws-config = { version = "1.1.0", features = ["behavior-version-latest"] }
 //! aws-sdk-paymentcryptography = "1.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

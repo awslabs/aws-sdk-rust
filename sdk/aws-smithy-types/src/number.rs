@@ -77,9 +77,7 @@ macro_rules! to_unsigned_integer_converter {
                     Number::NegInt(v) => {
                         Err(TryFromNumberErrorKind::NegativeToUnsignedLossyConversion(v).into())
                     }
-                    Number::Float(v) => {
-                        Err(TryFromNumberErrorKind::FloatToIntegerLossyConversion(v).into())
-                    }
+                    Number::Float(v) => attempt_lossless!(v, $typ),
                 }
             }
         }
@@ -102,9 +100,7 @@ macro_rules! to_signed_integer_converter {
                 match value {
                     Number::PosInt(v) => Ok(Self::try_from(v)?),
                     Number::NegInt(v) => Ok(Self::try_from(v)?),
-                    Number::Float(v) => {
-                        Err(TryFromNumberErrorKind::FloatToIntegerLossyConversion(v).into())
-                    }
+                    Number::Float(v) => attempt_lossless!(v, $typ),
                 }
             }
         }
@@ -113,6 +109,17 @@ macro_rules! to_signed_integer_converter {
     ($typ:ident) => {
         to_signed_integer_converter!($typ, stringify!($typ));
     };
+}
+
+macro_rules! attempt_lossless {
+    ($value: expr, $typ: ty) => {{
+        let converted = $value as $typ;
+        if (converted as f64 == $value) {
+            Ok(converted)
+        } else {
+            Err(TryFromNumberErrorKind::FloatToIntegerLossyConversion($value).into())
+        }
+    }};
 }
 
 /// Converts to a `u64`. The conversion fails if it is lossy.
@@ -125,9 +132,7 @@ impl TryFrom<Number> for u64 {
             Number::NegInt(v) => {
                 Err(TryFromNumberErrorKind::NegativeToUnsignedLossyConversion(v).into())
             }
-            Number::Float(v) => {
-                Err(TryFromNumberErrorKind::FloatToIntegerLossyConversion(v).into())
-            }
+            Number::Float(v) => attempt_lossless!(v, u64),
         }
     }
 }
@@ -142,9 +147,7 @@ impl TryFrom<Number> for i64 {
         match value {
             Number::PosInt(v) => Ok(Self::try_from(v)?),
             Number::NegInt(v) => Ok(v),
-            Number::Float(v) => {
-                Err(TryFromNumberErrorKind::FloatToIntegerLossyConversion(v).into())
-            }
+            Number::Float(v) => attempt_lossless!(v, i64),
         }
     }
 }
@@ -236,6 +239,7 @@ mod test {
                     }
                 ));
             }
+            assert_eq!($typ::try_from(Number::Float(25.0)).unwrap(), 25);
         };
     }
 
@@ -302,6 +306,13 @@ mod test {
                     }
                 ));
             }
+
+            let range = || ($typ::MIN..=$typ::MAX);
+
+            for val in range().take(1024).chain(range().rev().take(1024)) {
+                assert_eq!(val, $typ::try_from(Number::Float(val as f64)).unwrap());
+                $typ::try_from(Number::Float((val as f64) + 0.1)).expect_err("not equivalent");
+            }
         };
     }
 
@@ -318,6 +329,19 @@ mod test {
                 }
             ));
         }
+        let range = || (i64::MIN..=i64::MAX);
+
+        for val in range().take(1024).chain(range().rev().take(1024)) {
+            // if we can actually represent the value
+            if ((val as f64) as i64) == val {
+                assert_eq!(val, i64::try_from(Number::Float(val as f64)).unwrap());
+            }
+            let fval = val as f64;
+            // at the limits of the range, we don't have this precision
+            if (fval + 0.1).fract() != 0.0 {
+                i64::try_from(Number::Float((val as f64) + 0.1)).expect_err("not equivalent");
+            }
+        }
     }
 
     #[test]
@@ -333,6 +357,11 @@ mod test {
     #[test]
     fn to_i8() {
         to_signed_converter_tests!(i8);
+        i8::try_from(Number::Float(-3200000.0)).expect_err("overflow");
+        i8::try_from(Number::Float(32.1)).expect_err("imprecise");
+        i8::try_from(Number::Float(i8::MAX as f64 + 0.1)).expect_err("imprecise");
+        i8::try_from(Number::Float(f64::NAN)).expect_err("nan");
+        i8::try_from(Number::Float(f64::INFINITY)).expect_err("nan");
     }
 
     #[test]
