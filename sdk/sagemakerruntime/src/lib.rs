@@ -186,9 +186,9 @@ mod serialization_settings;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
-mod serde_util;
-
 mod endpoint_lib;
+
+mod serde_util;
 
 mod json_errors;
 

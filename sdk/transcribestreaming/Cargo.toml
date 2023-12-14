@@ -76,8 +76,11 @@ version = "0.2.9"
 version = "0.14.26"
 features = ["stream"]
 
-[dependencies.regex]
-version = "1.5.5"
+[dependencies.once_cell]
+version = "1.16"
+
+[dependencies.regex-lite]
+version = "0.1.5"
 
 [dependencies.tracing]
 version = "0.1"

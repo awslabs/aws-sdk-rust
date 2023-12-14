@@ -88,8 +88,8 @@ version = "1.16"
 [dependencies.percent-encoding]
 version = "2.0.0"
 
-[dependencies.regex]
-version = "1.5.5"
+[dependencies.regex-lite]
+version = "0.1.5"
 
 [dependencies.tracing]
 version = "0.1"

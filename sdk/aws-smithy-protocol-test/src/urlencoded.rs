@@ -4,7 +4,7 @@
  */
 
 use crate::{pretty_comparison, ProtocolTestFailure};
-use regex::Regex;
+use regex_lite::Regex;
 
 fn rewrite_url_encoded_map_keys(input: &str) -> (String, String) {
     let mut itr = input.split('=');

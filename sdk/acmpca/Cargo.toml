@@ -61,8 +61,11 @@ version = "1.0.0"
 [dependencies.http]
 version = "0.2.9"
 
-[dependencies.regex]
-version = "1.5.5"
+[dependencies.once_cell]
+version = "1.16"
+
+[dependencies.regex-lite]
+version = "0.1.5"
 
 [dependencies.tracing]
 version = "0.1"

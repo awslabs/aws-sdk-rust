@@ -196,11 +196,11 @@ pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
+mod endpoint_lib;
+
 mod lens;
 
 mod ec2_query_errors;
-
-mod endpoint_lib;
 
 mod serde_util;
 

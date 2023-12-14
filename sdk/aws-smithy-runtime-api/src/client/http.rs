@@ -50,11 +50,13 @@
 //! [`tower`]: https://crates.io/crates/tower
 //! [`aws-smithy-runtime`]: https://crates.io/crates/aws-smithy-runtime
 
+use crate::box_error::BoxError;
 use crate::client::orchestrator::{HttpRequest, HttpResponse};
 use crate::client::result::ConnectorError;
 use crate::client::runtime_components::sealed::ValidateConfig;
-use crate::client::runtime_components::RuntimeComponents;
+use crate::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
 use crate::impl_shared_conversions;
+use aws_smithy_types::config_bag::ConfigBag;
 use std::fmt;
 use std::sync::Arc;
 use std::time::Duration;
@@ -143,6 +145,26 @@ pub trait HttpClient: Send + Sync + fmt::Debug {
         settings: &HttpConnectorSettings,
         components: &RuntimeComponents,
     ) -> SharedHttpConnector;
+
+    #[doc = include_str!("../../rustdoc/validate_base_client_config.md")]
+    fn validate_base_client_config(
+        &self,
+        runtime_components: &RuntimeComponentsBuilder,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ = (runtime_components, cfg);
+        Ok(())
+    }
+
+    #[doc = include_str!("../../rustdoc/validate_final_config.md")]
+    fn validate_final_config(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ = (runtime_components, cfg);
+        Ok(())
+    }
 }
 
 /// Shared HTTP client for use across multiple clients and requests.
@@ -170,7 +192,24 @@ impl HttpClient for SharedHttpClient {
     }
 }
 
-impl ValidateConfig for SharedHttpClient {}
+impl ValidateConfig for SharedHttpClient {
+    fn validate_base_client_config(
+        &self,
+        runtime_components: &super::runtime_components::RuntimeComponentsBuilder,
+        cfg: &aws_smithy_types::config_bag::ConfigBag,
+    ) -> Result<(), crate::box_error::BoxError> {
+        self.selector
+            .validate_base_client_config(runtime_components, cfg)
+    }
+
+    fn validate_final_config(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &aws_smithy_types::config_bag::ConfigBag,
+    ) -> Result<(), crate::box_error::BoxError> {
+        self.selector.validate_final_config(runtime_components, cfg)
+    }
+}
 
 impl_shared_conversions!(convert SharedHttpClient from HttpClient using SharedHttpClient::new);
 
