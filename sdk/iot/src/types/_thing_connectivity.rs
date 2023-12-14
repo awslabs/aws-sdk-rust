@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
-    pub connected: ::std::option::Option<bool>,
+    pub connected: bool,
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
     pub timestamp: ::std::option::Option<i64>,
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
@@ -13,7 +13,7 @@ pub struct ThingConnectivity {
 }
 impl ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
-    pub fn connected(&self) -> ::std::option::Option<bool> {
+    pub fn connected(&self) -> bool {
         self.connected
     }
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
@@ -86,7 +86,7 @@ impl ThingConnectivityBuilder {
     /// Consumes the builder and constructs a [`ThingConnectivity`](crate::types::ThingConnectivity).
     pub fn build(self) -> crate::types::ThingConnectivity {
         crate::types::ThingConnectivity {
-            connected: self.connected,
+            connected: self.connected.unwrap_or_default(),
             timestamp: self.timestamp,
             disconnect_reason: self.disconnect_reason,
         }

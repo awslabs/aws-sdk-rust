@@ -17,8 +17,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
-aws-sdk-sagemaker = "1.8.0"
+aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
+aws-sdk-sagemaker = "1.9.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

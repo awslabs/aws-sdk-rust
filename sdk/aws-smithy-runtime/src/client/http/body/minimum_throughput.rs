@@ -12,7 +12,6 @@ pub mod http_body_0_4_x;
 
 /// Options for a [`MinimumThroughputBody`].
 pub mod options;
-pub use throughput::Throughput;
 mod throughput;
 
 use aws_smithy_async::rt::sleep::Sleep;
@@ -22,8 +21,7 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::shared::IntoShared;
 use options::MinimumThroughputBodyOptions;
 use std::fmt;
-use std::time::SystemTime;
-use throughput::ThroughputLogs;
+use throughput::{Throughput, ThroughputLogs};
 
 pin_project_lite::pin_project! {
     /// A body-wrapping type that ensures data is being streamed faster than some lower limit.
@@ -43,7 +41,7 @@ pin_project_lite::pin_project! {
     }
 }
 
-const SIZE_OF_ONE_LOG: usize = std::mem::size_of::<(SystemTime, u64)>(); // 24 bytes per log
+const SIZE_OF_ONE_LOG: usize = std::mem::size_of::<(std::time::SystemTime, u64)>(); // 24 bytes per log
 const NUMBER_OF_LOGS_IN_ONE_KB: f64 = 1024.0 / SIZE_OF_ONE_LOG as f64;
 
 impl<B> MinimumThroughputBody<B> {
@@ -59,6 +57,7 @@ impl<B> MinimumThroughputBody<B> {
                 // Never keep more than 10KB of logs in memory. This currently
                 // equates to 426 logs.
                 (NUMBER_OF_LOGS_IN_ONE_KB * 10.0) as usize,
+                options.minimum_throughput().per_time_elapsed(),
             ),
             async_sleep: async_sleep.into_shared(),
             time_source: time_source.into_shared(),

@@ -5,21 +5,21 @@ pub fn ser_public_access_block_configuration(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.block_public_acls {
+    if input.block_public_acls {
         let mut inner_writer = scope.start_el("BlockPublicAcls").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.block_public_acls).encode());
     }
-    if let Some(var_2) = &input.ignore_public_acls {
+    if input.ignore_public_acls {
         let mut inner_writer = scope.start_el("IgnorePublicAcls").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.ignore_public_acls).encode());
     }
-    if let Some(var_3) = &input.block_public_policy {
+    if input.block_public_policy {
         let mut inner_writer = scope.start_el("BlockPublicPolicy").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.block_public_policy).encode());
     }
-    if let Some(var_4) = &input.restrict_public_buckets {
+    if input.restrict_public_buckets {
         let mut inner_writer = scope.start_el("RestrictPublicBuckets").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.restrict_public_buckets).encode());
     }
     scope.finish();
     Ok(())
@@ -34,7 +34,7 @@ pub fn de_public_access_block_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("BlockPublicAcls") /* BlockPublicAcls com.amazonaws.s3control#PublicAccessBlockConfiguration$BlockPublicAcls */ =>  {
-                let var_5 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -45,11 +45,11 @@ pub fn de_public_access_block_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_block_public_acls(var_5);
+                builder = builder.set_block_public_acls(var_1);
             }
             ,
             s if s.matches("IgnorePublicAcls") /* IgnorePublicAcls com.amazonaws.s3control#PublicAccessBlockConfiguration$IgnorePublicAcls */ =>  {
-                let var_6 =
+                let var_2 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -60,11 +60,11 @@ pub fn de_public_access_block_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_ignore_public_acls(var_6);
+                builder = builder.set_ignore_public_acls(var_2);
             }
             ,
             s if s.matches("BlockPublicPolicy") /* BlockPublicPolicy com.amazonaws.s3control#PublicAccessBlockConfiguration$BlockPublicPolicy */ =>  {
-                let var_7 =
+                let var_3 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -75,11 +75,11 @@ pub fn de_public_access_block_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_block_public_policy(var_7);
+                builder = builder.set_block_public_policy(var_3);
             }
             ,
             s if s.matches("RestrictPublicBuckets") /* RestrictPublicBuckets com.amazonaws.s3control#PublicAccessBlockConfiguration$RestrictPublicBuckets */ =>  {
-                let var_8 =
+                let var_4 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -90,7 +90,7 @@ pub fn de_public_access_block_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_restrict_public_buckets(var_8);
+                builder = builder.set_restrict_public_buckets(var_4);
             }
             ,
             _ => {}
