@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFileUploadUrlOutput {
-    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    /// <p>A temporary URL for the file that the Worker uploaded for the answer.</p>
     pub file_upload_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFileUploadUrlOutput {
-    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    /// <p>A temporary URL for the file that the Worker uploaded for the answer.</p>
     pub fn file_upload_url(&self) -> ::std::option::Option<&str> {
         self.file_upload_url.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetFileUploadUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetFileUploadUrlOutputBuilder {
-    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    /// <p>A temporary URL for the file that the Worker uploaded for the answer.</p>
     pub fn file_upload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_upload_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    /// <p>A temporary URL for the file that the Worker uploaded for the answer.</p>
     pub fn set_file_upload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_upload_url = input;
         self
     }
-    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    /// <p>A temporary URL for the file that the Worker uploaded for the answer.</p>
     pub fn get_file_upload_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_upload_url
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyOutput {
-    /// <p> The resource policy that was set after processing the request. </p>
+    /// <p>The resource policy that was set after processing the request.</p>
     pub policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
 }
 impl PutRepositoryPermissionsPolicyOutput {
-    /// <p> The resource policy that was set after processing the request. </p>
+    /// <p>The resource policy that was set after processing the request.</p>
     pub fn policy(&self) -> ::std::option::Option<&crate::types::ResourcePolicy> {
         self.policy.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct PutRepositoryPermissionsPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutRepositoryPermissionsPolicyOutputBuilder {
-    /// <p> The resource policy that was set after processing the request. </p>
+    /// <p>The resource policy that was set after processing the request.</p>
     pub fn policy(mut self, input: crate::types::ResourcePolicy) -> Self {
         self.policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The resource policy that was set after processing the request. </p>
+    /// <p>The resource policy that was set after processing the request.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::ResourcePolicy>) -> Self {
         self.policy = input;
         self
     }
-    /// <p> The resource policy that was set after processing the request. </p>
+    /// <p>The resource policy that was set after processing the request.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ResourcePolicy> {
         &self.policy
     }

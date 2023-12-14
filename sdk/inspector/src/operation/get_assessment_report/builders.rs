@@ -22,7 +22,7 @@ impl GetAssessmentReportInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAssessmentReport`.
 ///
-/// <p>Produces an assessment report that includes detailed and comprehensive results of a specified assessment run. </p>
+/// <p>Produces an assessment report that includes detailed and comprehensive results of a specified assessment run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssessmentReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl GetAssessmentReportFluentBuilder {
     pub fn get_report_file_format(&self) -> &::std::option::Option<crate::types::ReportFileFormat> {
         self.inner.get_report_file_format()
     }
-    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.</p>
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
         self.inner = self.inner.report_type(input);
         self
     }
-    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.</p>
     pub fn set_report_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.inner = self.inner.set_report_type(input);
         self
     }
-    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>.</p>
     pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
         self.inner.get_report_type()
     }

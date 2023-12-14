@@ -6,9 +6,9 @@
 pub struct ListJobsByPipelineInput {
     /// <p>The ID of the pipeline for which you want to get job information.</p>
     pub pipeline_id: ::std::option::Option<::std::string::String>,
-    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub ascending: ::std::option::Option<::std::string::String>,
-    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl ListJobsByPipelineInput {
@@ -16,11 +16,11 @@ impl ListJobsByPipelineInput {
     pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
-    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn ascending(&self) -> ::std::option::Option<&str> {
         self.ascending.as_deref()
     }
-    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn page_token(&self) -> ::std::option::Option<&str> {
         self.page_token.as_deref()
     }
@@ -56,31 +56,31 @@ impl ListJobsByPipelineInputBuilder {
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_id
     }
-    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn ascending(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ascending = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn set_ascending(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ascending = input;
         self
     }
-    /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
         &self.ascending
     }
-    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
     }
-    /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }

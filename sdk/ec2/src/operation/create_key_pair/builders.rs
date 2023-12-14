@@ -143,19 +143,19 @@ impl CreateKeyPairFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub fn key_type(mut self, input: crate::types::KeyType) -> Self {
         self.inner = self.inner.key_type(input);
         self
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
         self.inner = self.inner.set_key_type(input);
         self
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
         self.inner.get_key_type()
     }
@@ -178,19 +178,19 @@ impl CreateKeyPairFluentBuilder {
         self.inner.get_tag_specifications()
     }
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub fn key_format(mut self, input: crate::types::KeyFormat) -> Self {
         self.inner = self.inner.key_format(input);
         self
     }
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub fn set_key_format(mut self, input: ::std::option::Option<crate::types::KeyFormat>) -> Self {
         self.inner = self.inner.set_key_format(input);
         self
     }
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub fn get_key_format(&self) -> &::std::option::Option<crate::types::KeyFormat> {
         self.inner.get_key_format()
     }

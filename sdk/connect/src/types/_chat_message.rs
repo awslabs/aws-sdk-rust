@@ -6,11 +6,11 @@
 pub struct ChatMessage {
     /// <p>The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     pub content_type: ::std::string::String,
-    /// <p>The content of the chat message. </p>
+    /// <p>The content of the chat message.</p>
     /// <ul>
-    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
-    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
-    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
+    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub content: ::std::string::String,
 }
@@ -20,11 +20,11 @@ impl ChatMessage {
         use std::ops::Deref;
         self.content_type.deref()
     }
-    /// <p>The content of the chat message. </p>
+    /// <p>The content of the chat message.</p>
     /// <ul>
-    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
-    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
-    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
+    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub fn content(&self) -> &str {
         use std::ops::Deref;
@@ -61,32 +61,32 @@ impl ChatMessageBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
-    /// <p>The content of the chat message. </p>
+    /// <p>The content of the chat message.</p>
     /// <ul>
-    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
-    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
-    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
+    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content of the chat message. </p>
+    /// <p>The content of the chat message.</p>
     /// <ul>
-    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
-    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
-    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
+    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The content of the chat message. </p>
+    /// <p>The content of the chat message.</p>
     /// <ul>
-    /// <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li>
-    /// <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li>
-    /// <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li>
+    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content

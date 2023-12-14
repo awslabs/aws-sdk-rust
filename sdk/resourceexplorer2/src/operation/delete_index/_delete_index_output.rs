@@ -7,7 +7,7 @@ pub struct DeleteIndexOutput {
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the current state of the index. </p>
+    /// <p>Indicates the current state of the index.</p>
     pub state: ::std::option::Option<crate::types::IndexState>,
     /// <p>The date and time when you last updated this index.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -20,7 +20,7 @@ impl DeleteIndexOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Indicates the current state of the index. </p>
+    /// <p>Indicates the current state of the index.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IndexState> {
         self.state.as_ref()
     }
@@ -71,17 +71,17 @@ impl DeleteIndexOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Indicates the current state of the index. </p>
+    /// <p>Indicates the current state of the index.</p>
     pub fn state(mut self, input: crate::types::IndexState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the current state of the index. </p>
+    /// <p>Indicates the current state of the index.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IndexState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Indicates the current state of the index. </p>
+    /// <p>Indicates the current state of the index.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IndexState> {
         &self.state
     }

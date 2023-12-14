@@ -253,7 +253,7 @@ pub enum PurchaseReservedNodeOfferingError {
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
     /// <p>Specified offering does not exist.</p>
     ReservedNodeOfferingNotFoundFault(crate::types::error::ReservedNodeOfferingNotFoundFault),
-    /// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     ReservedNodeQuotaExceededFault(crate::types::error::ReservedNodeQuotaExceededFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),

@@ -24,7 +24,7 @@ impl DescribeQuerySuggestionsBlockListInputBuilder {
 ///
 /// <p>Gets information about a block list used for query suggestions for an index.</p>
 /// <p>This is used to check the current settings that are applied to a block list.</p>
-/// <p> <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p><code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsBlockListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

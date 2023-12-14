@@ -7,7 +7,7 @@ pub struct AddApplicationCloudWatchLoggingOptionInput {
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Kinesis Data Analytics application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub current_application_version_id: ::std::option::Option<i64>,
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
     pub cloud_watch_logging_option: ::std::option::Option<crate::types::CloudWatchLoggingOption>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
     pub fn current_application_version_id(&self) -> ::std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
     pub fn cloud_watch_logging_option(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOption> {
         self.cloud_watch_logging_option.as_ref()
     }
@@ -76,18 +76,18 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.current_application_version_id
     }
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
     /// This field is required.
     pub fn cloud_watch_logging_option(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.cloud_watch_logging_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
     pub fn set_cloud_watch_logging_option(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOption>) -> Self {
         self.cloud_watch_logging_option = input;
         self
     }
-    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+    /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).</p>
     pub fn get_cloud_watch_logging_option(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOption> {
         &self.cloud_watch_logging_option
     }

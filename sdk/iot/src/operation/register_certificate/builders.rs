@@ -138,21 +138,21 @@ impl RegisterCertificateFluentBuilder {
         self.inner.get_ca_certificate_pem()
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn set_as_active(mut self, input: bool) -> Self {
         self.inner = self.inner.set_as_active(input);
         self
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_set_as_active(input);
         self
     }
     /// <p>A boolean value that specifies if the certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     #[deprecated]
     pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
         self.inner.get_set_as_active()

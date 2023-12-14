@@ -12,7 +12,7 @@ pub struct AssetModelCompositeModel {
     pub r#type: ::std::string::String,
     /// <p>The asset property definitions for this composite model.</p>
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
-    /// <p> The ID of the asset model composite model. </p>
+    /// <p>The ID of the asset model composite model.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The external ID of the asset model composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl AssetModelCompositeModel {
     pub fn properties(&self) -> &[crate::types::AssetModelProperty] {
         self.properties.as_deref().unwrap_or_default()
     }
-    /// <p> The ID of the asset model composite model. </p>
+    /// <p>The ID of the asset model composite model.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -130,17 +130,17 @@ impl AssetModelCompositeModelBuilder {
     pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
         &self.properties
     }
-    /// <p> The ID of the asset model composite model. </p>
+    /// <p>The ID of the asset model composite model.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the asset model composite model. </p>
+    /// <p>The ID of the asset model composite model.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> The ID of the asset model composite model. </p>
+    /// <p>The ID of the asset model composite model.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

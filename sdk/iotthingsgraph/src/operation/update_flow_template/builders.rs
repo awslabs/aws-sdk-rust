@@ -22,7 +22,7 @@ impl UpdateFlowTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFlowTemplate`.
 ///
-/// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>
+/// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowTemplateFluentBuilder {
@@ -111,21 +111,21 @@ impl UpdateFlowTemplateFluentBuilder {
     }
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code></p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code></p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code></p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

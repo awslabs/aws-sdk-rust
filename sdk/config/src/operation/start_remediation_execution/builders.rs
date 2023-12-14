@@ -127,17 +127,17 @@ impl StartRemediationExecutionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
     ///
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub fn resource_keys(mut self, input: crate::types::ResourceKey) -> Self {
         self.inner = self.inner.resource_keys(input);
         self
     }
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
-    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
     pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
         self.inner.get_resource_keys()
     }

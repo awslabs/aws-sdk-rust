@@ -7,26 +7,26 @@ pub struct PromoteReadReplicaInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
+    /// <li><p>Must match the identifier of an existing read replica DB instance.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
     /// </ul>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
 }
@@ -34,9 +34,9 @@ impl PromoteReadReplicaInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
+    /// <li><p>Must match the identifier of an existing read replica DB instance.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -44,20 +44,20 @@ impl PromoteReadReplicaInput {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
     /// </ul>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
@@ -82,9 +82,9 @@ impl PromoteReadReplicaInputBuilder {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
+    /// <li><p>Must match the identifier of an existing read replica DB instance.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
@@ -93,9 +93,9 @@ impl PromoteReadReplicaInputBuilder {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
+    /// <li><p>Must match the identifier of an existing read replica DB instance.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
@@ -103,9 +103,9 @@ impl PromoteReadReplicaInputBuilder {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
+    /// <li><p>Must match the identifier of an existing read replica DB instance.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
@@ -113,8 +113,8 @@ impl PromoteReadReplicaInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -124,8 +124,8 @@ impl PromoteReadReplicaInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
@@ -135,46 +135,46 @@ impl PromoteReadReplicaInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
-    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window

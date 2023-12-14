@@ -11,8 +11,8 @@ pub struct CreateRestoreImageTaskInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
-    /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
+    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li><p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -33,8 +33,8 @@ impl CreateRestoreImageTaskInput {
     }
     /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
-    /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
+    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li><p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
@@ -114,8 +114,8 @@ impl CreateRestoreImageTaskInputBuilder {
     ///
     /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
-    /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
+    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li><p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
@@ -125,8 +125,8 @@ impl CreateRestoreImageTaskInputBuilder {
     }
     /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
-    /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
+    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li><p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
@@ -134,8 +134,8 @@ impl CreateRestoreImageTaskInputBuilder {
     }
     /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
-    /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
+    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li><p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications

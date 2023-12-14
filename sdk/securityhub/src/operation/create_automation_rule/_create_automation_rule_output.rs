@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAutomationRuleOutput {
-    /// <p> The Amazon Resource Name (ARN) of the automation rule that you created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the automation rule that you created.</p>
     pub rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAutomationRuleOutput {
-    /// <p> The Amazon Resource Name (ARN) of the automation rule that you created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the automation rule that you created.</p>
     pub fn rule_arn(&self) -> ::std::option::Option<&str> {
         self.rule_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateAutomationRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAutomationRuleOutputBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the automation rule that you created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the automation rule that you created.</p>
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the automation rule that you created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the automation rule that you created.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the automation rule that you created. </p>
+    /// <p>The Amazon Resource Name (ARN) of the automation rule that you created.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_arn
     }

@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bounce {
-    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code> </p>
+    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub bounce_type: ::std::option::Option<crate::types::BounceType>,
     /// <p>The subtype of the bounce, as determined by SES.</p>
     pub bounce_sub_type: ::std::option::Option<::std::string::String>,
-    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN. </p>
+    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub diagnostic_code: ::std::option::Option<::std::string::String>,
 }
 impl Bounce {
-    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code> </p>
+    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub fn bounce_type(&self) -> ::std::option::Option<&crate::types::BounceType> {
         self.bounce_type.as_ref()
     }
@@ -20,7 +20,7 @@ impl Bounce {
     pub fn bounce_sub_type(&self) -> ::std::option::Option<&str> {
         self.bounce_sub_type.as_deref()
     }
-    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN. </p>
+    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub fn diagnostic_code(&self) -> ::std::option::Option<&str> {
         self.diagnostic_code.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct BounceBuilder {
     pub(crate) diagnostic_code: ::std::option::Option<::std::string::String>,
 }
 impl BounceBuilder {
-    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code> </p>
+    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub fn bounce_type(mut self, input: crate::types::BounceType) -> Self {
         self.bounce_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code> </p>
+    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub fn set_bounce_type(mut self, input: ::std::option::Option<crate::types::BounceType>) -> Self {
         self.bounce_type = input;
         self
     }
-    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code> </p>
+    /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub fn get_bounce_type(&self) -> &::std::option::Option<crate::types::BounceType> {
         &self.bounce_type
     }
@@ -69,17 +69,17 @@ impl BounceBuilder {
     pub fn get_bounce_sub_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.bounce_sub_type
     }
-    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN. </p>
+    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub fn diagnostic_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.diagnostic_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN. </p>
+    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub fn set_diagnostic_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.diagnostic_code = input;
         self
     }
-    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN. </p>
+    /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub fn get_diagnostic_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.diagnostic_code
     }

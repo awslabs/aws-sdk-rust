@@ -23,12 +23,12 @@ impl GetKeyInputBuilder {
 /// Fluent builder constructing a request to `GetKey`.
 ///
 /// <p>Gets the key material for an Amazon Web Services Payment Cryptography key, including the immutable and mutable data specified when the key was created.</p>
-/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>CreateKey</code> </p> </li>
-/// <li> <p> <code>DeleteKey</code> </p> </li>
-/// <li> <p> <code>ListKeys</code> </p> </li>
+/// <li><p><code>CreateKey</code></p></li>
+/// <li><p><code>DeleteKey</code></p></li>
+/// <li><p><code>ListKeys</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKeyFluentBuilder {

@@ -22,7 +22,7 @@ impl StartExtensionPackAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `StartExtensionPackAssociation`.
 ///
-/// <p>Applies the extension pack to your target database. An extension pack is an add-on module that emulates functions present in a source database that are required when converting objects to the target database. </p>
+/// <p>Applies the extension pack to your target database. An extension pack is an add-on module that emulates functions present in a source database that are required when converting objects to the target database.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartExtensionPackAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

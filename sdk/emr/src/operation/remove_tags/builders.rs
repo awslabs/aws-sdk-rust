@@ -22,7 +22,7 @@ impl RemoveTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveTags`.
 ///
-/// <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>
+/// <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>.</p>
 /// <p>The following example removes the stack tag with value Prod from a cluster:</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFluentBuilder {

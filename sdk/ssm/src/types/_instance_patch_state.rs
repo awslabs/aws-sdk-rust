@@ -39,10 +39,10 @@ pub struct InstancePatchState {
     pub operation_start_time: ::aws_smithy_types::DateTime,
     /// <p>The time the most recent patching operation completed on the managed node.</p>
     pub operation_end_time: ::aws_smithy_types::DateTime,
-    /// <p>The type of patching operation that was performed: or </p>
+    /// <p>The type of patching operation that was performed: or</p>
     /// <ul>
-    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
-    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
+    /// <li><p><code>SCAN</code> assesses the patch compliance state.</p></li>
+    /// <li><p><code>INSTALL</code> installs missing patches.</p></li>
     /// </ul>
     pub operation: crate::types::PatchOperationType,
     /// <p>The time of the last attempt to patch the managed node with <code>NoReboot</code> specified as the reboot option.</p>
@@ -51,8 +51,8 @@ pub struct InstancePatchState {
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
-    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
+    /// <li><p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
+    /// <li><p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
     /// </ul>
     pub reboot_option: ::std::option::Option<crate::types::RebootOption>,
     /// <p>The number of patches per node that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
@@ -133,10 +133,10 @@ impl InstancePatchState {
     pub fn operation_end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.operation_end_time
     }
-    /// <p>The type of patching operation that was performed: or </p>
+    /// <p>The type of patching operation that was performed: or</p>
     /// <ul>
-    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
-    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
+    /// <li><p><code>SCAN</code> assesses the patch compliance state.</p></li>
+    /// <li><p><code>INSTALL</code> installs missing patches.</p></li>
     /// </ul>
     pub fn operation(&self) -> &crate::types::PatchOperationType {
         &self.operation
@@ -149,8 +149,8 @@ impl InstancePatchState {
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
-    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
+    /// <li><p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
+    /// <li><p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
     /// </ul>
     pub fn reboot_option(&self) -> ::std::option::Option<&crate::types::RebootOption> {
         self.reboot_option.as_ref()
@@ -469,29 +469,29 @@ impl InstancePatchStateBuilder {
     pub fn get_operation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.operation_end_time
     }
-    /// <p>The type of patching operation that was performed: or </p>
+    /// <p>The type of patching operation that was performed: or</p>
     /// <ul>
-    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
-    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
+    /// <li><p><code>SCAN</code> assesses the patch compliance state.</p></li>
+    /// <li><p><code>INSTALL</code> installs missing patches.</p></li>
     /// </ul>
     /// This field is required.
     pub fn operation(mut self, input: crate::types::PatchOperationType) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of patching operation that was performed: or </p>
+    /// <p>The type of patching operation that was performed: or</p>
     /// <ul>
-    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
-    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
+    /// <li><p><code>SCAN</code> assesses the patch compliance state.</p></li>
+    /// <li><p><code>INSTALL</code> installs missing patches.</p></li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::PatchOperationType>) -> Self {
         self.operation = input;
         self
     }
-    /// <p>The type of patching operation that was performed: or </p>
+    /// <p>The type of patching operation that was performed: or</p>
     /// <ul>
-    /// <li> <p> <code>SCAN</code> assesses the patch compliance state.</p> </li>
-    /// <li> <p> <code>INSTALL</code> installs missing patches.</p> </li>
+    /// <li><p><code>SCAN</code> assesses the patch compliance state.</p></li>
+    /// <li><p><code>INSTALL</code> installs missing patches.</p></li>
     /// </ul>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::PatchOperationType> {
         &self.operation
@@ -514,8 +514,8 @@ impl InstancePatchStateBuilder {
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
-    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
+    /// <li><p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
+    /// <li><p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
     /// </ul>
     pub fn reboot_option(mut self, input: crate::types::RebootOption) -> Self {
         self.reboot_option = ::std::option::Option::Some(input);
@@ -525,8 +525,8 @@ impl InstancePatchStateBuilder {
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
-    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
+    /// <li><p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
+    /// <li><p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
     /// </ul>
     pub fn set_reboot_option(mut self, input: ::std::option::Option<crate::types::RebootOption>) -> Self {
         self.reboot_option = input;
@@ -536,8 +536,8 @@ impl InstancePatchStateBuilder {
     /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li>
-    /// <li> <p> <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li>
+    /// <li><p><code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p></li>
+    /// <li><p><code>NoReboot</code>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p></li>
     /// </ul>
     pub fn get_reboot_option(&self) -> &::std::option::Option<crate::types::RebootOption> {
         &self.reboot_option

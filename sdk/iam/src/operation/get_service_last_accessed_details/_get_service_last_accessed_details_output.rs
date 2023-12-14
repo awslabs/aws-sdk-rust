@@ -9,7 +9,7 @@ pub struct GetServiceLastAccessedDetailsOutput {
     pub job_type: ::std::option::Option<crate::types::AccessAdvisorUsageGranularityType>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     pub job_creation_date: ::aws_smithy_types::DateTime,
-    /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
+    /// <p>A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
     pub services_last_accessed: ::std::vec::Vec<crate::types::ServiceLastAccessed>,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
@@ -35,7 +35,7 @@ impl GetServiceLastAccessedDetailsOutput {
     pub fn job_creation_date(&self) -> &::aws_smithy_types::DateTime {
         &self.job_creation_date
     }
-    /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
+    /// <p>A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
     pub fn services_last_accessed(&self) -> &[crate::types::ServiceLastAccessed] {
         use std::ops::Deref;
         self.services_last_accessed.deref()
@@ -133,19 +133,19 @@ impl GetServiceLastAccessedDetailsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_services_last_accessed`](Self::set_services_last_accessed).
     ///
-    /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
+    /// <p>A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
     pub fn services_last_accessed(mut self, input: crate::types::ServiceLastAccessed) -> Self {
         let mut v = self.services_last_accessed.unwrap_or_default();
         v.push(input);
         self.services_last_accessed = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
+    /// <p>A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
     pub fn set_services_last_accessed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceLastAccessed>>) -> Self {
         self.services_last_accessed = input;
         self
     }
-    /// <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
+    /// <p>A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
     pub fn get_services_last_accessed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceLastAccessed>> {
         &self.services_last_accessed
     }

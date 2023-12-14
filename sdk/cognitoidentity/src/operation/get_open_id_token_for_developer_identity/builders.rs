@@ -161,7 +161,7 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
     ///
-    /// <p>Use this operation to configure attribute mappings for custom providers. </p>
+    /// <p>Use this operation to configure attribute mappings for custom providers.</p>
     pub fn principal_tags(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -170,7 +170,7 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         self.inner = self.inner.principal_tags(k.into(), v.into());
         self
     }
-    /// <p>Use this operation to configure attribute mappings for custom providers. </p>
+    /// <p>Use this operation to configure attribute mappings for custom providers.</p>
     pub fn set_principal_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -178,7 +178,7 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         self.inner = self.inner.set_principal_tags(input);
         self
     }
-    /// <p>Use this operation to configure attribute mappings for custom providers. </p>
+    /// <p>Use this operation to configure attribute mappings for custom providers.</p>
     pub fn get_principal_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_principal_tags()
     }

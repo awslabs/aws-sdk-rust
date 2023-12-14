@@ -22,7 +22,7 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAssessmentFrameworkShare`.
 ///
-/// <p> Deletes a share request for a custom framework in Audit Manager. </p>
+/// <p>Deletes a share request for a custom framework in Audit Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

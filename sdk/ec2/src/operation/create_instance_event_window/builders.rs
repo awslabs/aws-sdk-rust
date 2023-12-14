@@ -29,8 +29,8 @@ impl CreateInstanceEventWindowInputBuilder {
 /// <p>Event windows are applicable only for scheduled events that stop, reboot, or terminate instances.</p>
 /// <p>Event windows are <i>not</i> applicable for:</p>
 /// <ul>
-/// <li> <p>Expedited scheduled events and network maintenance events. </p> </li>
-/// <li> <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
+/// <li><p>Expedited scheduled events and network maintenance events.</p></li>
+/// <li><p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p></li>
 /// </ul>
 /// </important>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled events</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -168,12 +168,12 @@ impl CreateInstanceEventWindowFluentBuilder {
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Only hour and day of the week values are supported.</p> </li>
-    /// <li> <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p> </li>
-    /// <li> <p>The minute, month, and year must be specified by <code>*</code>.</p> </li>
-    /// <li> <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p> </li>
-    /// <li> <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p> </li>
-    /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
+    /// <li><p>Only hour and day of the week values are supported.</p></li>
+    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,12 +183,12 @@ impl CreateInstanceEventWindowFluentBuilder {
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Only hour and day of the week values are supported.</p> </li>
-    /// <li> <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p> </li>
-    /// <li> <p>The minute, month, and year must be specified by <code>*</code>.</p> </li>
-    /// <li> <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p> </li>
-    /// <li> <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p> </li>
-    /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
+    /// <li><p>Only hour and day of the week values are supported.</p></li>
+    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -198,12 +198,12 @@ impl CreateInstanceEventWindowFluentBuilder {
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Only hour and day of the week values are supported.</p> </li>
-    /// <li> <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p> </li>
-    /// <li> <p>The minute, month, and year must be specified by <code>*</code>.</p> </li>
-    /// <li> <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p> </li>
-    /// <li> <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p> </li>
-    /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
+    /// <li><p>Only hour and day of the week values are supported.</p></li>
+    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {

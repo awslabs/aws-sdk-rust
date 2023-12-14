@@ -8,7 +8,7 @@ pub struct CollectorResponse {
     pub collector_referenced_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Fleet Advisor collector .</p>
     pub collector_name: ::std::option::Option<::std::string::String>,
-    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
     pub collector_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether the collector version is up to date.</p>
     pub version_status: ::std::option::Option<crate::types::VersionStatus>,
@@ -20,13 +20,13 @@ pub struct CollectorResponse {
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the last Fleet Advisor collector health check.</p>
     pub collector_health_check: ::std::option::Option<crate::types::CollectorHealthCheck>,
-    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub last_data_received: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub registered_date: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub created_date: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub modified_date: ::std::option::Option<::std::string::String>,
     /// <p>Describes a Fleet Advisor collector inventory.</p>
     pub inventory_data: ::std::option::Option<crate::types::InventoryData>,
@@ -40,7 +40,7 @@ impl CollectorResponse {
     pub fn collector_name(&self) -> ::std::option::Option<&str> {
         self.collector_name.as_deref()
     }
-    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
     pub fn collector_version(&self) -> ::std::option::Option<&str> {
         self.collector_version.as_deref()
     }
@@ -64,19 +64,19 @@ impl CollectorResponse {
     pub fn collector_health_check(&self) -> ::std::option::Option<&crate::types::CollectorHealthCheck> {
         self.collector_health_check.as_ref()
     }
-    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn last_data_received(&self) -> ::std::option::Option<&str> {
         self.last_data_received.as_deref()
     }
-    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn registered_date(&self) -> ::std::option::Option<&str> {
         self.registered_date.as_deref()
     }
-    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn created_date(&self) -> ::std::option::Option<&str> {
         self.created_date.as_deref()
     }
-    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn modified_date(&self) -> ::std::option::Option<&str> {
         self.modified_date.as_deref()
     }
@@ -139,17 +139,17 @@ impl CollectorResponseBuilder {
     pub fn get_collector_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.collector_name
     }
-    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
     pub fn collector_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
     pub fn set_collector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collector_version = input;
         self
     }
-    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
+    /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
     pub fn get_collector_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.collector_version
     }
@@ -223,59 +223,59 @@ impl CollectorResponseBuilder {
     pub fn get_collector_health_check(&self) -> &::std::option::Option<crate::types::CollectorHealthCheck> {
         &self.collector_health_check
     }
-    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn last_data_received(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_data_received = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_last_data_received(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_data_received = input;
         self
     }
-    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_last_data_received(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_data_received
     }
-    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn registered_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_registered_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registered_date = input;
         self
     }
-    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_registered_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.registered_date
     }
-    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
     }
-    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_date
     }
-    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.modified_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.modified_date = input;
         self
     }
-    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
+    /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_modified_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.modified_date
     }

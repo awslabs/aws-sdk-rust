@@ -129,19 +129,19 @@ impl DescribeCacheParametersFluentBuilder {
         self.inner.get_cache_parameter_group_name()
     }
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
         self
     }
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The parameter types to return.</p>
-    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
+    /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source()
     }

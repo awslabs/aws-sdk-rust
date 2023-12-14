@@ -141,8 +141,8 @@ impl UpdateApiCacheFluentBuilder {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn api_caching_behavior(mut self, input: crate::types::ApiCachingBehavior) -> Self {
         self.inner = self.inner.api_caching_behavior(input);
@@ -150,8 +150,8 @@ impl UpdateApiCacheFluentBuilder {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
         self.inner = self.inner.set_api_caching_behavior(input);
@@ -159,85 +159,85 @@ impl UpdateApiCacheFluentBuilder {
     }
     /// <p>Caching behavior.</p>
     /// <ul>
-    /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
-    /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
+    /// <li><p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <li><p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn get_api_caching_behavior(&self) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
         self.inner.get_api_caching_behavior()
     }
-    /// <p>The cache instance type. Valid values are </p>
+    /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li> <p> <code>SMALL</code> </p> </li>
-    /// <li> <p> <code>MEDIUM</code> </p> </li>
-    /// <li> <p> <code>LARGE</code> </p> </li>
-    /// <li> <p> <code>XLARGE</code> </p> </li>
-    /// <li> <p> <code>LARGE_2X</code> </p> </li>
-    /// <li> <p> <code>LARGE_4X</code> </p> </li>
-    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-    /// <li> <p> <code>LARGE_12X</code> </p> </li>
+    /// <li><p><code>SMALL</code></p></li>
+    /// <li><p><code>MEDIUM</code></p></li>
+    /// <li><p><code>LARGE</code></p></li>
+    /// <li><p><code>XLARGE</code></p></li>
+    /// <li><p><code>LARGE_2X</code></p></li>
+    /// <li><p><code>LARGE_4X</code></p></li>
+    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li><p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ApiCacheType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The cache instance type. Valid values are </p>
+    /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li> <p> <code>SMALL</code> </p> </li>
-    /// <li> <p> <code>MEDIUM</code> </p> </li>
-    /// <li> <p> <code>LARGE</code> </p> </li>
-    /// <li> <p> <code>XLARGE</code> </p> </li>
-    /// <li> <p> <code>LARGE_2X</code> </p> </li>
-    /// <li> <p> <code>LARGE_4X</code> </p> </li>
-    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-    /// <li> <p> <code>LARGE_12X</code> </p> </li>
+    /// <li><p><code>SMALL</code></p></li>
+    /// <li><p><code>MEDIUM</code></p></li>
+    /// <li><p><code>LARGE</code></p></li>
+    /// <li><p><code>XLARGE</code></p></li>
+    /// <li><p><code>LARGE_2X</code></p></li>
+    /// <li><p><code>LARGE_4X</code></p></li>
+    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li><p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApiCacheType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The cache instance type. Valid values are </p>
+    /// <p>The cache instance type. Valid values are</p>
     /// <ul>
-    /// <li> <p> <code>SMALL</code> </p> </li>
-    /// <li> <p> <code>MEDIUM</code> </p> </li>
-    /// <li> <p> <code>LARGE</code> </p> </li>
-    /// <li> <p> <code>XLARGE</code> </p> </li>
-    /// <li> <p> <code>LARGE_2X</code> </p> </li>
-    /// <li> <p> <code>LARGE_4X</code> </p> </li>
-    /// <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li>
-    /// <li> <p> <code>LARGE_12X</code> </p> </li>
+    /// <li><p><code>SMALL</code></p></li>
+    /// <li><p><code>MEDIUM</code></p></li>
+    /// <li><p><code>LARGE</code></p></li>
+    /// <li><p><code>XLARGE</code></p></li>
+    /// <li><p><code>LARGE_2X</code></p></li>
+    /// <li><p><code>LARGE_4X</code></p></li>
+    /// <li><p><code>LARGE_8X</code> (not available in all regions)</p></li>
+    /// <li><p><code>LARGE_12X</code></p></li>
     /// </ul>
     /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
     /// <p>The following legacy instance types are available, but their use is discouraged:</p>
     /// <ul>
-    /// <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li>
-    /// <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li>
-    /// <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
-    /// <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
-    /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
+    /// <li><p><b>T2_SMALL</b>: A t2.small instance type.</p></li>
+    /// <li><p><b>T2_MEDIUM</b>: A t2.medium instance type.</p></li>
+    /// <li><p><b>R4_LARGE</b>: A r4.large instance type.</p></li>
+    /// <li><p><b>R4_XLARGE</b>: A r4.xlarge instance type.</p></li>
+    /// <li><p><b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p></li>
+    /// <li><p><b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p></li>
+    /// <li><p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ApiCacheType> {
         self.inner.get_type()

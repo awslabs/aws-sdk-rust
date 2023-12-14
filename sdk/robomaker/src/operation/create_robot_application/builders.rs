@@ -22,7 +22,7 @@ impl CreateRobotApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRobotApplication`.
 ///
-/// <p>Creates a robot application. </p>
+/// <p>Creates a robot application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

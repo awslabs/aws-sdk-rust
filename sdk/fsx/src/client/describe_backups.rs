@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::set_next_token):<br>required: **false**<br><p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p><br>
     /// - On success, responds with [`DescribeBackupsOutput`](crate::operation::describe_backups::DescribeBackupsOutput) with field(s):
     ///   - [`backups(Option<Vec::<Backup>>)`](crate::operation::describe_backups::DescribeBackupsOutput::backups): <p>An array of backups.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::describe_backups::DescribeBackupsOutput::next_token): <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_backups::DescribeBackupsOutput::next_token): <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups.</p>
     /// - On failure, responds with [`SdkError<DescribeBackupsError>`](crate::operation::describe_backups::DescribeBackupsError)
     pub fn describe_backups(&self) -> crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder {
         crate::operation::describe_backups::builders::DescribeBackupsFluentBuilder::new(self.handle.clone())

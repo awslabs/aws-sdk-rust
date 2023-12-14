@@ -5,12 +5,12 @@
 pub struct UpdateShardCountInput {
     /// <p>The name of the stream.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
+    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub target_shard_count: ::std::option::Option<i32>,
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
@@ -23,12 +23,12 @@ impl UpdateShardCountInput {
     pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
+    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub fn target_shard_count(&self) -> ::std::option::Option<i32> {
         self.target_shard_count
@@ -73,35 +73,35 @@ impl UpdateShardCountInputBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_name
     }
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
+    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     /// This field is required.
     pub fn target_shard_count(mut self, input: i32) -> Self {
         self.target_shard_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
+    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub fn set_target_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_shard_count = input;
         self
     }
-    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
+    /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li> <p>Set this value to more than double your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value below half your current shard count for a stream.</p> </li>
-    /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
-    /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
+    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub fn get_target_shard_count(&self) -> &::std::option::Option<i32> {
         &self.target_shard_count

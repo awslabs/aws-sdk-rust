@@ -14,7 +14,7 @@ pub struct DatasetDescription {
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the dataset.</p>
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
-    /// <p>The status message for the dataset. </p>
+    /// <p>The status message for the dataset.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Statistics about the images in a dataset.</p>
     pub image_stats: ::std::option::Option<crate::types::DatasetImageStats>,
@@ -40,7 +40,7 @@ impl DatasetDescription {
     pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
     }
-    /// <p>The status message for the dataset. </p>
+    /// <p>The status message for the dataset.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -139,17 +139,17 @@ impl DatasetDescriptionBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
         &self.status
     }
-    /// <p>The status message for the dataset. </p>
+    /// <p>The status message for the dataset.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status message for the dataset. </p>
+    /// <p>The status message for the dataset.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p>The status message for the dataset. </p>
+    /// <p>The status message for the dataset.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }

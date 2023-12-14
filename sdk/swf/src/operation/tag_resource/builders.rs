@@ -128,19 +128,19 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The list of tags to add to a domain. </p>
+    /// <p>The list of tags to add to a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(mut self, input: crate::types::ResourceTag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The list of tags to add to a domain. </p>
+    /// <p>The list of tags to add to a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The list of tags to add to a domain. </p>
+    /// <p>The list of tags to add to a domain.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         self.inner.get_tags()

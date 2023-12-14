@@ -19,7 +19,7 @@ pub struct StartChangeRequestExecutionInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
     /// </note>
     pub auto_approve: ::std::option::Option<bool>,
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
@@ -28,8 +28,8 @@ pub struct StartChangeRequestExecutionInput {
     pub runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
+    /// <li><p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
@@ -66,7 +66,7 @@ impl StartChangeRequestExecutionInput {
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
     /// </note>
     pub fn auto_approve(&self) -> ::std::option::Option<bool> {
         self.auto_approve
@@ -81,8 +81,8 @@ impl StartChangeRequestExecutionInput {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
+    /// <li><p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -226,7 +226,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
     /// </note>
     pub fn auto_approve(mut self, input: bool) -> Self {
         self.auto_approve = ::std::option::Option::Some(input);
@@ -234,7 +234,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
     /// </note>
     pub fn set_auto_approve(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_approve = input;
@@ -242,7 +242,7 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
-    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>.</p>
     /// </note>
     pub fn get_auto_approve(&self) -> &::std::option::Option<bool> {
         &self.auto_approve
@@ -279,8 +279,8 @@ impl StartChangeRequestExecutionInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
+    /// <li><p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -290,8 +290,8 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
+    /// <li><p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -299,8 +299,8 @@ impl StartChangeRequestExecutionInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
+    /// <li><p><code>Key=Region,Value=us-east-2</code></p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

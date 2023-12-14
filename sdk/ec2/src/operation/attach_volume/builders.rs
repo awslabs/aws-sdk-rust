@@ -27,10 +27,10 @@ impl AttachVolumeInputBuilder {
 /// <p>After you attach an EBS volume, you must make it available. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make an EBS volume available for use</a>.</p>
 /// <p>If a volume has an Amazon Web Services Marketplace product code:</p>
 /// <ul>
-/// <li> <p>The volume can be attached only to a stopped instance.</p> </li>
-/// <li> <p>Amazon Web Services Marketplace product codes are copied from the volume to the instance.</p> </li>
-/// <li> <p>You must be subscribed to the product.</p> </li>
-/// <li> <p>The instance type and operating system of the instance must support the product. For example, you can't detach a volume from a Windows instance and attach it to a Linux instance.</p> </li>
+/// <li><p>The volume can be attached only to a stopped instance.</p></li>
+/// <li><p>Amazon Web Services Marketplace product codes are copied from the volume to the instance.</p></li>
+/// <li><p>You must be subscribed to the product.</p></li>
+/// <li><p>The instance type and operating system of the instance must support the product. For example, you can't detach a volume from a Windows instance and attach it to a Linux instance.</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach an Amazon EBS volume to an instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

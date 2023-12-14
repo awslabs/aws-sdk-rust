@@ -6,7 +6,7 @@
 pub struct Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
     pub text: ::std::option::Option<crate::types::Content>,
-    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
+    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more.</p>
     pub html: ::std::option::Option<crate::types::Content>,
 }
 impl Body {
@@ -14,7 +14,7 @@ impl Body {
     pub fn text(&self) -> ::std::option::Option<&crate::types::Content> {
         self.text.as_ref()
     }
-    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
+    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more.</p>
     pub fn html(&self) -> ::std::option::Option<&crate::types::Content> {
         self.html.as_ref()
     }
@@ -48,17 +48,17 @@ impl BodyBuilder {
     pub fn get_text(&self) -> &::std::option::Option<crate::types::Content> {
         &self.text
     }
-    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
+    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more.</p>
     pub fn html(mut self, input: crate::types::Content) -> Self {
         self.html = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
+    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more.</p>
     pub fn set_html(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
         self.html = input;
         self
     }
-    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
+    /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more.</p>
     pub fn get_html(&self) -> &::std::option::Option<crate::types::Content> {
         &self.html
     }

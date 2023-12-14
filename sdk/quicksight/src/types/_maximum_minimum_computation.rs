@@ -14,8 +14,8 @@ pub struct MaximumMinimumComputation {
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The type of computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <li><p>MAXIMUM: A maximum computation.</p></li>
+    /// <li><p>MINIMUM: A minimum computation.</p></li>
     /// </ul>
     pub r#type: crate::types::MaximumMinimumComputationType,
 }
@@ -39,8 +39,8 @@ impl MaximumMinimumComputation {
     }
     /// <p>The type of computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <li><p>MAXIMUM: A maximum computation.</p></li>
+    /// <li><p>MINIMUM: A minimum computation.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::MaximumMinimumComputationType {
         &self.r#type
@@ -123,8 +123,8 @@ impl MaximumMinimumComputationBuilder {
     }
     /// <p>The type of computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <li><p>MAXIMUM: A maximum computation.</p></li>
+    /// <li><p>MINIMUM: A minimum computation.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::MaximumMinimumComputationType) -> Self {
@@ -133,8 +133,8 @@ impl MaximumMinimumComputationBuilder {
     }
     /// <p>The type of computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <li><p>MAXIMUM: A maximum computation.</p></li>
+    /// <li><p>MINIMUM: A minimum computation.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MaximumMinimumComputationType>) -> Self {
         self.r#type = input;
@@ -142,8 +142,8 @@ impl MaximumMinimumComputationBuilder {
     }
     /// <p>The type of computation. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
-    /// <li> <p>MINIMUM: A minimum computation.</p> </li>
+    /// <li><p>MAXIMUM: A maximum computation.</p></li>
+    /// <li><p>MINIMUM: A minimum computation.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MaximumMinimumComputationType> {
         &self.r#type

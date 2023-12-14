@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionOutput {
-    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub application_version: ::std::option::Option<crate::types::ApplicationVersionDescription>,
     _request_id: Option<String>,
 }
 impl CreateApplicationVersionOutput {
-    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub fn application_version(&self) -> ::std::option::Option<&crate::types::ApplicationVersionDescription> {
         self.application_version.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct CreateApplicationVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateApplicationVersionOutputBuilder {
-    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub fn application_version(mut self, input: crate::types::ApplicationVersionDescription) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<crate::types::ApplicationVersionDescription>) -> Self {
         self.application_version = input;
         self
     }
-    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<crate::types::ApplicationVersionDescription> {
         &self.application_version
     }

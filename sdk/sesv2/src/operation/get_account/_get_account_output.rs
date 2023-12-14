@@ -8,9 +8,9 @@ pub struct GetAccountOutput {
     pub dedicated_ip_auto_warmup_enabled: bool,
     /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+    /// <li><p><code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p></li>
+    /// <li><p><code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p></li>
+    /// <li><p><code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p></li>
     /// </ul>
     pub enforcement_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not your account has production access in the current Amazon Web Services Region.</p>
@@ -36,9 +36,9 @@ impl GetAccountOutput {
     }
     /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+    /// <li><p><code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p></li>
+    /// <li><p><code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p></li>
+    /// <li><p><code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p></li>
     /// </ul>
     pub fn enforcement_status(&self) -> ::std::option::Option<&str> {
         self.enforcement_status.as_deref()
@@ -113,9 +113,9 @@ impl GetAccountOutputBuilder {
     }
     /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+    /// <li><p><code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p></li>
+    /// <li><p><code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p></li>
+    /// <li><p><code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p></li>
     /// </ul>
     pub fn enforcement_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enforcement_status = ::std::option::Option::Some(input.into());
@@ -123,9 +123,9 @@ impl GetAccountOutputBuilder {
     }
     /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+    /// <li><p><code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p></li>
+    /// <li><p><code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p></li>
+    /// <li><p><code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p></li>
     /// </ul>
     pub fn set_enforcement_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.enforcement_status = input;
@@ -133,9 +133,9 @@ impl GetAccountOutputBuilder {
     }
     /// <p>The reputation status of your Amazon SES account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>
-    /// <li> <p> <code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p> </li>
-    /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
+    /// <li><p><code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p></li>
+    /// <li><p><code>PROBATION</code> – We've identified potential issues with your Amazon SES account. We're placing your account under review while you work on correcting these issues.</p></li>
+    /// <li><p><code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p></li>
     /// </ul>
     pub fn get_enforcement_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.enforcement_status

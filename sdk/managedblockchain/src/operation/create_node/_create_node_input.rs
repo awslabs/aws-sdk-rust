@@ -8,8 +8,8 @@ pub struct CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li><p><code>n-ethereum-mainnet</code></p></li>
+    /// <li><p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
@@ -18,7 +18,7 @@ pub struct CreateNodeInput {
     /// <p>The properties of a node configuration.</p>
     pub node_configuration: ::std::option::Option<crate::types::NodeConfiguration>,
     /// <p>Tags to assign to the node.</p>
-    /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -30,8 +30,8 @@ impl CreateNodeInput {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li><p><code>n-ethereum-mainnet</code></p></li>
+    /// <li><p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn network_id(&self) -> ::std::option::Option<&str> {
         self.network_id.as_deref()
@@ -46,7 +46,7 @@ impl CreateNodeInput {
         self.node_configuration.as_ref()
     }
     /// <p>Tags to assign to the node.</p>
-    /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -88,8 +88,8 @@ impl CreateNodeInputBuilder {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li><p><code>n-ethereum-mainnet</code></p></li>
+    /// <li><p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,8 +99,8 @@ impl CreateNodeInputBuilder {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li><p><code>n-ethereum-mainnet</code></p></li>
+    /// <li><p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_id = input;
@@ -109,8 +109,8 @@ impl CreateNodeInputBuilder {
     /// <p>The unique identifier of the network for the node.</p>
     /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
     /// <ul>
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li><p><code>n-ethereum-mainnet</code></p></li>
+    /// <li><p><code>n-ethereum-goerli</code></p></li>
     /// </ul>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_id
@@ -152,7 +152,7 @@ impl CreateNodeInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags to assign to the node.</p>
-    /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
@@ -161,14 +161,14 @@ impl CreateNodeInputBuilder {
         self
     }
     /// <p>Tags to assign to the node.</p>
-    /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags to assign to the node.</p>
-    /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags

@@ -261,7 +261,7 @@ pub enum CreateDataSourceError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>A limit is exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The resource specified already exists. </p>
+    /// <p>The resource specified already exists.</p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

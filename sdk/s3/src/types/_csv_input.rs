@@ -6,13 +6,13 @@
 pub struct CsvInput {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
-    /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
-    /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
+    /// <li><p><code>NONE</code>: First line is not a header.</p></li>
+    /// <li><p><code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p></li>
+    /// <li><p><code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>).</p></li>
     /// </ul>
     pub file_header_info: ::std::option::Option<crate::types::FileHeaderInfo>,
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
-    /// <p>Default: <code>#</code> </p>
+    /// <p>Default: <code>#</code></p>
     pub comments: ::std::option::Option<::std::string::String>,
     /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
     pub quote_escape_character: ::std::option::Option<::std::string::String>,
@@ -22,8 +22,8 @@ pub struct CsvInput {
     pub field_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
-    /// <p>Default: <code>"</code> </p>
-    /// <p>Ancestors: <code>CSV</code> </p>
+    /// <p>Default: <code>"</code></p>
+    /// <p>Ancestors: <code>CSV</code></p>
     pub quote_character: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
     pub allow_quoted_record_delimiter: ::std::option::Option<bool>,
@@ -31,15 +31,15 @@ pub struct CsvInput {
 impl CsvInput {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
-    /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
-    /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
+    /// <li><p><code>NONE</code>: First line is not a header.</p></li>
+    /// <li><p><code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p></li>
+    /// <li><p><code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>).</p></li>
     /// </ul>
     pub fn file_header_info(&self) -> ::std::option::Option<&crate::types::FileHeaderInfo> {
         self.file_header_info.as_ref()
     }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
-    /// <p>Default: <code>#</code> </p>
+    /// <p>Default: <code>#</code></p>
     pub fn comments(&self) -> ::std::option::Option<&str> {
         self.comments.as_deref()
     }
@@ -57,8 +57,8 @@ impl CsvInput {
     }
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
-    /// <p>Default: <code>"</code> </p>
-    /// <p>Ancestors: <code>CSV</code> </p>
+    /// <p>Default: <code>"</code></p>
+    /// <p>Ancestors: <code>CSV</code></p>
     pub fn quote_character(&self) -> ::std::option::Option<&str> {
         self.quote_character.as_deref()
     }
@@ -89,9 +89,9 @@ pub struct CsvInputBuilder {
 impl CsvInputBuilder {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
-    /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
-    /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
+    /// <li><p><code>NONE</code>: First line is not a header.</p></li>
+    /// <li><p><code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p></li>
+    /// <li><p><code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>).</p></li>
     /// </ul>
     pub fn file_header_info(mut self, input: crate::types::FileHeaderInfo) -> Self {
         self.file_header_info = ::std::option::Option::Some(input);
@@ -99,9 +99,9 @@ impl CsvInputBuilder {
     }
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
-    /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
-    /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
+    /// <li><p><code>NONE</code>: First line is not a header.</p></li>
+    /// <li><p><code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p></li>
+    /// <li><p><code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>).</p></li>
     /// </ul>
     pub fn set_file_header_info(mut self, input: ::std::option::Option<crate::types::FileHeaderInfo>) -> Self {
         self.file_header_info = input;
@@ -109,27 +109,27 @@ impl CsvInputBuilder {
     }
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
-    /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
-    /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
+    /// <li><p><code>NONE</code>: First line is not a header.</p></li>
+    /// <li><p><code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p></li>
+    /// <li><p><code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>).</p></li>
     /// </ul>
     pub fn get_file_header_info(&self) -> &::std::option::Option<crate::types::FileHeaderInfo> {
         &self.file_header_info
     }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
-    /// <p>Default: <code>#</code> </p>
+    /// <p>Default: <code>#</code></p>
     pub fn comments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comments = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
-    /// <p>Default: <code>#</code> </p>
+    /// <p>Default: <code>#</code></p>
     pub fn set_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comments = input;
         self
     }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
-    /// <p>Default: <code>#</code> </p>
+    /// <p>Default: <code>#</code></p>
     pub fn get_comments(&self) -> &::std::option::Option<::std::string::String> {
         &self.comments
     }
@@ -177,24 +177,24 @@ impl CsvInputBuilder {
     }
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
-    /// <p>Default: <code>"</code> </p>
-    /// <p>Ancestors: <code>CSV</code> </p>
+    /// <p>Default: <code>"</code></p>
+    /// <p>Ancestors: <code>CSV</code></p>
     pub fn quote_character(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quote_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
-    /// <p>Default: <code>"</code> </p>
-    /// <p>Ancestors: <code>CSV</code> </p>
+    /// <p>Default: <code>"</code></p>
+    /// <p>Ancestors: <code>CSV</code></p>
     pub fn set_quote_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quote_character = input;
         self
     }
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
-    /// <p>Default: <code>"</code> </p>
-    /// <p>Ancestors: <code>CSV</code> </p>
+    /// <p>Default: <code>"</code></p>
+    /// <p>Ancestors: <code>CSV</code></p>
     pub fn get_quote_character(&self) -> &::std::option::Option<::std::string::String> {
         &self.quote_character
     }

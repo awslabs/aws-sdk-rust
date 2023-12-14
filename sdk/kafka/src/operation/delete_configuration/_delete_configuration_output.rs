@@ -5,7 +5,7 @@
 pub struct DeleteConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.</p>
     pub state: ::std::option::Option<crate::types::ConfigurationState>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl DeleteConfigurationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ConfigurationState> {
         self.state.as_ref()
     }
@@ -54,17 +54,17 @@ impl DeleteConfigurationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.</p>
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConfigurationState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ConfigurationState> {
         &self.state
     }

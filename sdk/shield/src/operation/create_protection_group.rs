@@ -250,15 +250,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateProtect
 pub enum CreateProtectionGroupError {
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
-    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::types::error::LimitsExceededException),
     /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::types::error::OptimisticLockException),
-    /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource already exists. If available, this exception includes details in additional properties.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

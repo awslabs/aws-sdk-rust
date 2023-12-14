@@ -8,9 +8,9 @@
 pub struct ReceiptRule {
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub name: ::std::string::String,
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
@@ -27,9 +27,9 @@ pub struct ReceiptRule {
 impl ReceiptRule {
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -81,9 +81,9 @@ pub struct ReceiptRuleBuilder {
 impl ReceiptRuleBuilder {
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,9 +92,9 @@ impl ReceiptRuleBuilder {
     }
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -102,9 +102,9 @@ impl ReceiptRuleBuilder {
     }
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
-    /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.).</p></li>
+    /// <li><p>Start and end with a letter or number.</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

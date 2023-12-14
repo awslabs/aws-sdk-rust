@@ -10,10 +10,10 @@ pub struct GetCloudFormationTemplateOutput {
     /// <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
     pub expiration_time: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>Status of the template creation workflow.</p>
-    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED</p>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The UUID returned by CreateCloudFormationTemplate.</p>
     /// <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -36,12 +36,12 @@ impl GetCloudFormationTemplateOutput {
         self.expiration_time.as_deref()
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(&self) -> ::std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
     /// <p>Status of the template creation workflow.</p>
-    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
@@ -124,36 +124,36 @@ impl GetCloudFormationTemplateOutputBuilder {
         &self.expiration_time
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.semantic_version
     }
     /// <p>Status of the template creation workflow.</p>
-    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the template creation workflow.</p>
-    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>Status of the template creation workflow.</p>
-    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
+    /// <p>Possible values: PREPARING | ACTIVE | EXPIRED</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }

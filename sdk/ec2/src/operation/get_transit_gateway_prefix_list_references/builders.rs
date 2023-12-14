@@ -143,13 +143,13 @@ impl GetTransitGatewayPrefixListReferencesFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>attachment.resource-id</code> - The ID of the resource for the attachment.</p> </li>
-    /// <li> <p> <code>attachment.resource-type</code> - The type of resource for the attachment. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li>
-    /// <li> <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-    /// <li> <p> <code>is-blackhole</code> - Whether traffic matching the route is blocked (<code>true</code> | <code>false</code>).</p> </li>
-    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
-    /// <li> <p> <code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p> </li>
+    /// <li><p><code>attachment.resource-id</code> - The ID of the resource for the attachment.</p></li>
+    /// <li><p><code>attachment.resource-type</code> - The type of resource for the attachment. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.</p></li>
+    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li><p><code>is-blackhole</code> - Whether traffic matching the route is blocked (<code>true</code> | <code>false</code>).</p></li>
+    /// <li><p><code>prefix-list-id</code> - The ID of the prefix list.</p></li>
+    /// <li><p><code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p></li>
+    /// <li><p><code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -157,13 +157,13 @@ impl GetTransitGatewayPrefixListReferencesFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>attachment.resource-id</code> - The ID of the resource for the attachment.</p> </li>
-    /// <li> <p> <code>attachment.resource-type</code> - The type of resource for the attachment. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li>
-    /// <li> <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-    /// <li> <p> <code>is-blackhole</code> - Whether traffic matching the route is blocked (<code>true</code> | <code>false</code>).</p> </li>
-    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
-    /// <li> <p> <code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p> </li>
+    /// <li><p><code>attachment.resource-id</code> - The ID of the resource for the attachment.</p></li>
+    /// <li><p><code>attachment.resource-type</code> - The type of resource for the attachment. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.</p></li>
+    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li><p><code>is-blackhole</code> - Whether traffic matching the route is blocked (<code>true</code> | <code>false</code>).</p></li>
+    /// <li><p><code>prefix-list-id</code> - The ID of the prefix list.</p></li>
+    /// <li><p><code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p></li>
+    /// <li><p><code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -171,13 +171,13 @@ impl GetTransitGatewayPrefixListReferencesFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>attachment.resource-id</code> - The ID of the resource for the attachment.</p> </li>
-    /// <li> <p> <code>attachment.resource-type</code> - The type of resource for the attachment. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.</p> </li>
-    /// <li> <p> <code>attachment.transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-    /// <li> <p> <code>is-blackhole</code> - Whether traffic matching the route is blocked (<code>true</code> | <code>false</code>).</p> </li>
-    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
-    /// <li> <p> <code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p> </li>
-    /// <li> <p> <code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p> </li>
+    /// <li><p><code>attachment.resource-id</code> - The ID of the resource for the attachment.</p></li>
+    /// <li><p><code>attachment.resource-type</code> - The type of resource for the attachment. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.</p></li>
+    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li><p><code>is-blackhole</code> - Whether traffic matching the route is blocked (<code>true</code> | <code>false</code>).</p></li>
+    /// <li><p><code>prefix-list-id</code> - The ID of the prefix list.</p></li>
+    /// <li><p><code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.</p></li>
+    /// <li><p><code>state</code> - The state of the prefix list reference (<code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code>).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_id):<br>required: **true**<br><p>The domain ID.</p><br>
-    ///   - [`retention_policy(RetentionPolicy)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::retention_policy) / [`set_retention_policy(Option<RetentionPolicy>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_retention_policy):<br>required: **false**<br><p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p><br>
+    ///   - [`retention_policy(RetentionPolicy)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::retention_policy) / [`set_retention_policy(Option<RetentionPolicy>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_retention_policy):<br>required: **false**<br><p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p><br>
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)
     pub fn delete_domain(&self) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {

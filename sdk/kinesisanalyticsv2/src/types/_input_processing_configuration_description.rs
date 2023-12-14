@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputProcessingConfigurationDescription {
-    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
+    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code></p>
     pub input_lambda_processor_description: ::std::option::Option<crate::types::InputLambdaProcessorDescription>,
 }
 impl InputProcessingConfigurationDescription {
-    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
+    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code></p>
     pub fn input_lambda_processor_description(&self) -> ::std::option::Option<&crate::types::InputLambdaProcessorDescription> {
         self.input_lambda_processor_description.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct InputProcessingConfigurationDescriptionBuilder {
     pub(crate) input_lambda_processor_description: ::std::option::Option<crate::types::InputLambdaProcessorDescription>,
 }
 impl InputProcessingConfigurationDescriptionBuilder {
-    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
+    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code></p>
     pub fn input_lambda_processor_description(mut self, input: crate::types::InputLambdaProcessorDescription) -> Self {
         self.input_lambda_processor_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
+    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code></p>
     pub fn set_input_lambda_processor_description(mut self, input: ::std::option::Option<crate::types::InputLambdaProcessorDescription>) -> Self {
         self.input_lambda_processor_description = input;
         self
     }
-    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
+    /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code></p>
     pub fn get_input_lambda_processor_description(&self) -> &::std::option::Option<crate::types::InputLambdaProcessorDescription> {
         &self.input_lambda_processor_description
     }

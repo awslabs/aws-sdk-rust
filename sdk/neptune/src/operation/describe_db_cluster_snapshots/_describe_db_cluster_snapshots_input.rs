@@ -6,22 +6,22 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
-    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p></li>
+    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p> </li>
-    /// <li> <p> <code>public</code> - Return all DB cluster snapshots that have been marked as public.</p> </li>
+    /// <li><p><code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p></li>
+    /// <li><p><code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p></li>
+    /// <li><p><code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p></li>
+    /// <li><p><code>public</code> - Return all DB cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -32,7 +32,7 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: ::std::option::Option<i32>,
-    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon account has been given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
     /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from another Amazon account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
@@ -45,7 +45,7 @@ impl DescribeDbClusterSnapshotsInput {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
@@ -53,18 +53,18 @@ impl DescribeDbClusterSnapshotsInput {
     /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
-    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p></li>
+    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p> </li>
-    /// <li> <p> <code>public</code> - Return all DB cluster snapshots that have been marked as public.</p> </li>
+    /// <li><p><code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p></li>
+    /// <li><p><code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p></li>
+    /// <li><p><code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p></li>
+    /// <li><p><code>public</code> - Return all DB cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -83,7 +83,7 @@ impl DescribeDbClusterSnapshotsInput {
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
-    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -122,7 +122,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -131,7 +131,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
@@ -140,7 +140,7 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
@@ -148,8 +148,8 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
-    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p></li>
+    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -158,8 +158,8 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
-    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p></li>
+    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = input;
@@ -168,18 +168,18 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>
-    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// <li><p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p></li>
+    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier
     }
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p> </li>
-    /// <li> <p> <code>public</code> - Return all DB cluster snapshots that have been marked as public.</p> </li>
+    /// <li><p><code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p></li>
+    /// <li><p><code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p></li>
+    /// <li><p><code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p></li>
+    /// <li><p><code>public</code> - Return all DB cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -189,10 +189,10 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     }
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p> </li>
-    /// <li> <p> <code>public</code> - Return all DB cluster snapshots that have been marked as public.</p> </li>
+    /// <li><p><code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p></li>
+    /// <li><p><code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p></li>
+    /// <li><p><code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p></li>
+    /// <li><p><code>public</code> - Return all DB cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -202,10 +202,10 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     }
     /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p> </li>
-    /// <li> <p> <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p> </li>
-    /// <li> <p> <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p> </li>
-    /// <li> <p> <code>public</code> - Return all DB cluster snapshots that have been marked as public.</p> </li>
+    /// <li><p><code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p></li>
+    /// <li><p><code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p></li>
+    /// <li><p><code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p></li>
+    /// <li><p><code>public</code> - Return all DB cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -252,17 +252,17 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
-    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }

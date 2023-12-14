@@ -4,31 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTableRowsInput {
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
-    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub workbook_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the table whose rows are being retrieved.</p>
-    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub table_id: ::std::option::Option<::std::string::String>,
-    /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
+    /// <p>This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned.</p>
     pub row_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of rows to return in each page of the results.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTableRowsInput {
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
-    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn workbook_id(&self) -> ::std::option::Option<&str> {
         self.workbook_id.as_deref()
     }
     /// <p>The ID of the table whose rows are being retrieved.</p>
-    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn table_id(&self) -> ::std::option::Option<&str> {
         self.table_id.as_deref()
     }
-    /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
+    /// <p>This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_ids.is_none()`.
     pub fn row_ids(&self) -> &[::std::string::String] {
@@ -38,8 +38,8 @@ impl ListTableRowsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -63,38 +63,38 @@ pub struct ListTableRowsInputBuilder {
 }
 impl ListTableRowsInputBuilder {
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
-    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
-    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn set_workbook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workbook_id = input;
         self
     }
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
-    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workbook_id
     }
     /// <p>The ID of the table whose rows are being retrieved.</p>
-    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     /// This field is required.
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the table whose rows are being retrieved.</p>
-    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_id = input;
         self
     }
     /// <p>The ID of the table whose rows are being retrieved.</p>
-    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_id
     }
@@ -102,19 +102,19 @@ impl ListTableRowsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_row_ids`](Self::set_row_ids).
     ///
-    /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
+    /// <p>This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned.</p>
     pub fn row_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.row_ids.unwrap_or_default();
         v.push(input.into());
         self.row_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
+    /// <p>This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned.</p>
     pub fn set_row_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.row_ids = input;
         self
     }
-    /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
+    /// <p>This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned.</p>
     pub fn get_row_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.row_ids
     }
@@ -132,20 +132,20 @@ impl ListTableRowsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
-    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
+    /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

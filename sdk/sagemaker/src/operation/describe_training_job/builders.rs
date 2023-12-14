@@ -22,7 +22,7 @@ impl DescribeTrainingJobInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTrainingJob`.
 ///
-/// <p>Returns information about a training job. </p>
+/// <p>Returns information about a training job.</p>
 /// <p>Some of the attributes below only appear if the training job successfully starts. If the training job fails, <code>TrainingJobStatus</code> is <code>Failed</code> and, depending on the <code>FailureReason</code>, attributes like <code>TrainingStartTime</code>, <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>, and <code>BillableTimeInSeconds</code> may not be present in the response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrainingJobFluentBuilder {

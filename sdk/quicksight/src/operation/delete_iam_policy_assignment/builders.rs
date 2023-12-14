@@ -122,17 +122,17 @@ impl DeleteIAMPolicyAssignmentFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The name of the assignment. </p>
+    /// <p>The name of the assignment.</p>
     pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_name(input.into());
         self
     }
-    /// <p>The name of the assignment. </p>
+    /// <p>The name of the assignment.</p>
     pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_name(input);
         self
     }
-    /// <p>The name of the assignment. </p>
+    /// <p>The name of the assignment.</p>
     pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assignment_name()
     }

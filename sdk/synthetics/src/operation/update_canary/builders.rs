@@ -126,29 +126,29 @@ impl UpdateCanaryFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     pub fn code(mut self, input: crate::types::CanaryCodeInput) -> Self {
         self.inner = self.inner.code(input);
         self
     }
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::CanaryCodeInput>) -> Self {
         self.inner = self.inner.set_code(input);
         self
     }
-    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::CanaryCodeInput> {
         self.inner.get_code()
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
     /// </ul>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
@@ -156,13 +156,13 @@ impl UpdateCanaryFluentBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
     /// </ul>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
@@ -170,13 +170,13 @@ impl UpdateCanaryFluentBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
+    /// <li><p><code>s3:PutObject</code></p></li>
+    /// <li><p><code>s3:GetBucketLocation</code></p></li>
+    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li><p><code>logs:CreateLogGroup</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
+    /// <li><p><code>logs:CreateLogStream</code></p></li>
     /// </ul>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()
@@ -272,19 +272,19 @@ impl UpdateCanaryFluentBuilder {
         self.inner.get_vpc_config()
     }
     /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
-    /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
+    /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a></p>
     pub fn visual_reference(mut self, input: crate::types::VisualReferenceInput) -> Self {
         self.inner = self.inner.visual_reference(input);
         self
     }
     /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
-    /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
+    /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a></p>
     pub fn set_visual_reference(mut self, input: ::std::option::Option<crate::types::VisualReferenceInput>) -> Self {
         self.inner = self.inner.set_visual_reference(input);
         self
     }
     /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
-    /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
+    /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a></p>
     pub fn get_visual_reference(&self) -> &::std::option::Option<crate::types::VisualReferenceInput> {
         self.inner.get_visual_reference()
     }

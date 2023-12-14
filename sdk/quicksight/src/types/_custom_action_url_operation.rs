@@ -9,9 +9,9 @@ pub struct CustomActionUrlOperation {
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
+    /// <li><p><code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p></li>
+    /// <li><p><code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p></li>
+    /// <li><p><code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p></li>
     /// </ul>
     pub url_target: crate::types::UrlTargetConfiguration,
 }
@@ -24,9 +24,9 @@ impl CustomActionUrlOperation {
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
+    /// <li><p><code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p></li>
+    /// <li><p><code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p></li>
+    /// <li><p><code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p></li>
     /// </ul>
     pub fn url_target(&self) -> &crate::types::UrlTargetConfiguration {
         &self.url_target
@@ -65,9 +65,9 @@ impl CustomActionUrlOperationBuilder {
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
+    /// <li><p><code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p></li>
+    /// <li><p><code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p></li>
+    /// <li><p><code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p></li>
     /// </ul>
     /// This field is required.
     pub fn url_target(mut self, input: crate::types::UrlTargetConfiguration) -> Self {
@@ -77,9 +77,9 @@ impl CustomActionUrlOperationBuilder {
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
+    /// <li><p><code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p></li>
+    /// <li><p><code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p></li>
+    /// <li><p><code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p></li>
     /// </ul>
     pub fn set_url_target(mut self, input: ::std::option::Option<crate::types::UrlTargetConfiguration>) -> Self {
         self.url_target = input;
@@ -88,9 +88,9 @@ impl CustomActionUrlOperationBuilder {
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li> <p> <code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p> </li>
-    /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
-    /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
+    /// <li><p><code>NEW_TAB</code>: Opens the target URL in a new browser tab.</p></li>
+    /// <li><p><code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p></li>
+    /// <li><p><code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p></li>
     /// </ul>
     pub fn get_url_target(&self) -> &::std::option::Option<crate::types::UrlTargetConfiguration> {
         &self.url_target

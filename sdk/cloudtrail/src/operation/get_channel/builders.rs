@@ -22,7 +22,7 @@ impl GetChannelInputBuilder {
 }
 /// Fluent builder constructing a request to `GetChannel`.
 ///
-/// <p> Returns information about a specific channel. </p>
+/// <p>Returns information about a specific channel.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

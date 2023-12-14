@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectorProfileInput {
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     pub connector_profile_config: ::std::option::Option<crate::types::ConnectorProfileConfig>,
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
@@ -15,15 +15,15 @@ pub struct UpdateConnectorProfileInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorProfileInput {
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     pub fn connector_profile_name(&self) -> ::std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
         self.connection_mode.as_ref()
     }
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     pub fn connector_profile_config(&self) -> ::std::option::Option<&crate::types::ConnectorProfileConfig> {
         self.connector_profile_config.as_ref()
     }
@@ -51,48 +51,48 @@ pub struct UpdateConnectorProfileInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorProfileInputBuilder {
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     /// This field is required.
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p>The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account.</p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_profile_name
     }
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     /// This field is required.
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }
-    /// <p> Indicates the connection mode and if it is public or private. </p>
+    /// <p>Indicates the connection mode and if it is public or private.</p>
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
         &self.connection_mode
     }
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     /// This field is required.
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
         self.connector_profile_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     pub fn set_connector_profile_config(mut self, input: ::std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
         self.connector_profile_config = input;
         self
     }
-    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// <p>Defines the connector-specific profile configuration and credentials.</p>
     pub fn get_connector_profile_config(&self) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
         &self.connector_profile_config
     }

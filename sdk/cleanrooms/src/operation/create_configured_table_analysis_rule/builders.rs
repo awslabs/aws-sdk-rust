@@ -108,17 +108,17 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configured_table_identifier(input.into());
         self
     }
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
     pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }
-    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID.</p>
     pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configured_table_identifier()
     }

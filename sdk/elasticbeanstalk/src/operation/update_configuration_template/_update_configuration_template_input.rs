@@ -5,27 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateInput {
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration template to update.</p>
-    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
     pub options_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
 }
 impl UpdateConfigurationTemplateInput {
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the configuration template to update.</p>
-    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -40,7 +40,7 @@ impl UpdateConfigurationTemplateInput {
         self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_remove.is_none()`.
     pub fn options_to_remove(&self) -> &[crate::types::OptionSpecification] {
@@ -66,38 +66,38 @@ pub struct UpdateConfigurationTemplateInputBuilder {
 }
 impl UpdateConfigurationTemplateInputBuilder {
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
     /// <p>The name of the application associated with the configuration template to update.</p>
-    /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
     /// <p>The name of the configuration template to update.</p>
-    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration template to update.</p>
-    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
     /// <p>The name of the configuration template to update.</p>
-    /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
@@ -140,7 +140,7 @@ impl UpdateConfigurationTemplateInputBuilder {
     /// To override the contents of this collection use [`set_options_to_remove`](Self::set_options_to_remove).
     ///
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
     pub fn options_to_remove(mut self, input: crate::types::OptionSpecification) -> Self {
         let mut v = self.options_to_remove.unwrap_or_default();
         v.push(input);
@@ -148,13 +148,13 @@ impl UpdateConfigurationTemplateInputBuilder {
         self
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
     pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
         self.options_to_remove = input;
         self
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
-    /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    /// <p>Constraint: You can remove only <code>UserDefined</code> configuration options.</p>
     pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
         &self.options_to_remove
     }

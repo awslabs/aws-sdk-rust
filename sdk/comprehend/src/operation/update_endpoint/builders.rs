@@ -136,17 +136,17 @@ impl UpdateEndpointFluentBuilder {
     pub fn get_desired_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_desired_model_arn()
     }
-    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_inference_units(input);
         self
     }
-    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn set_desired_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_inference_units(input);
         self
     }
-    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn get_desired_inference_units(&self) -> &::std::option::Option<i32> {
         self.inner.get_desired_inference_units()
     }

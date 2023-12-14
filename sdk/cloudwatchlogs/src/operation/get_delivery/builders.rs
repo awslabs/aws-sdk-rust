@@ -22,7 +22,7 @@ impl GetDeliveryInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDelivery`.
 ///
-/// <p>Returns complete information about one <i>delivery</i>. A delivery is a connection between a logical <i>delivery source</i> and a logical <i>delivery destination</i> </p>
+/// <p>Returns complete information about one <i>delivery</i>. A delivery is a connection between a logical <i>delivery source</i> and a logical <i>delivery destination</i></p>
 /// <p>You need to specify the delivery <code>id</code> in this operation. You can find the IDs of the deliveries in your account with the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeliveryFluentBuilder {

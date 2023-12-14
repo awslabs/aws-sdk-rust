@@ -9,10 +9,10 @@ pub struct DeleteBucketInput {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-    /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
-    /// <li> <p>The bucket has objects.</p> </li>
-    /// <li> <p>The bucket has access keys.</p> </li>
+    /// <li><p>The bucket is the origin of a distribution.</p></li>
+    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li><p>The bucket has objects.</p></li>
+    /// <li><p>The bucket has access keys.</p></li>
     /// </ul> <important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
@@ -27,10 +27,10 @@ impl DeleteBucketInput {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-    /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
-    /// <li> <p>The bucket has objects.</p> </li>
-    /// <li> <p>The bucket has access keys.</p> </li>
+    /// <li><p>The bucket is the origin of a distribution.</p></li>
+    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li><p>The bucket has objects.</p></li>
+    /// <li><p>The bucket has access keys.</p></li>
     /// </ul> <important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
@@ -74,10 +74,10 @@ impl DeleteBucketInputBuilder {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-    /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
-    /// <li> <p>The bucket has objects.</p> </li>
-    /// <li> <p>The bucket has access keys.</p> </li>
+    /// <li><p>The bucket is the origin of a distribution.</p></li>
+    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li><p>The bucket has objects.</p></li>
+    /// <li><p>The bucket has access keys.</p></li>
     /// </ul> <important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
@@ -88,10 +88,10 @@ impl DeleteBucketInputBuilder {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-    /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
-    /// <li> <p>The bucket has objects.</p> </li>
-    /// <li> <p>The bucket has access keys.</p> </li>
+    /// <li><p>The bucket is the origin of a distribution.</p></li>
+    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li><p>The bucket has objects.</p></li>
+    /// <li><p>The bucket has access keys.</p></li>
     /// </ul> <important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>
@@ -102,10 +102,10 @@ impl DeleteBucketInputBuilder {
     /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
     /// <p>You must force delete the bucket if it has one of the following conditions:</p>
     /// <ul>
-    /// <li> <p>The bucket is the origin of a distribution.</p> </li>
-    /// <li> <p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p> </li>
-    /// <li> <p>The bucket has objects.</p> </li>
-    /// <li> <p>The bucket has access keys.</p> </li>
+    /// <li><p>The bucket is the origin of a distribution.</p></li>
+    /// <li><p>The bucket has instances that were granted access to it using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p></li>
+    /// <li><p>The bucket has objects.</p></li>
+    /// <li><p>The bucket has access keys.</p></li>
     /// </ul> <important>
     /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>
     /// </important>

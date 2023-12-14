@@ -114,7 +114,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -124,7 +124,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -134,7 +134,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
@@ -143,11 +143,11 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code> </p>
+    /// <p>Example: <code>my-cluster2</code></p>
     pub fn new_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_db_cluster_identifier(input.into());
         self
@@ -156,11 +156,11 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code> </p>
+    /// <p>Example: <code>my-cluster2</code></p>
     pub fn set_new_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_db_cluster_identifier(input);
         self
@@ -169,11 +169,11 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster2</code> </p>
+    /// <p>Example: <code>my-cluster2</code></p>
     pub fn get_new_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_db_cluster_identifier()
     }
@@ -202,10 +202,10 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The number of days for which automated backups are retained. Specify a minimum value of <code>1</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35.</p> </li>
+    /// <li><p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_period(input);
@@ -213,10 +213,10 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The number of days for which automated backups are retained. Specify a minimum value of <code>1</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35.</p> </li>
+    /// <li><p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_period(input);
@@ -224,10 +224,10 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The number of days for which automated backups are retained. Specify a minimum value of <code>1</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 1 to 35.</p> </li>
+    /// <li><p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_backup_retention_period()
@@ -272,7 +272,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The port number on which the DB cluster accepts connections.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
@@ -280,7 +280,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The port number on which the DB cluster accepts connections.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
@@ -288,7 +288,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The port number on which the DB cluster accepts connections.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
@@ -297,9 +297,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can contain any printable ASCII character except "/", """, or "@".</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can contain any printable ASCII character except "/", """, or "@".</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
@@ -309,9 +309,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can contain any printable ASCII character except "/", """, or "@".</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can contain any printable ASCII character except "/", """, or "@".</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
@@ -321,9 +321,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>Can contain any printable ASCII character except "/", """, or "@".</p> </li>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li><p>Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>Can contain any printable ASCII character except "/", """, or "@".</p></li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_password()
@@ -350,10 +350,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
@@ -364,10 +364,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
@@ -378,10 +378,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_backup_window()
@@ -391,10 +391,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
@@ -405,10 +405,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
@@ -419,10 +419,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
@@ -449,10 +449,10 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora MySQL DB clusters only</p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Default: <code>0</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn backtrack_window(mut self, input: i64) -> Self {
         self.inner = self.inner.backtrack_window(input);
@@ -460,10 +460,10 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora MySQL DB clusters only</p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Default: <code>0</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_backtrack_window(input);
@@ -471,10 +471,10 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora MySQL DB clusters only</p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Default: <code>0</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
+    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
         self.inner.get_backtrack_window()
@@ -483,10 +483,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>Aurora MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>Aurora PostgreSQL - <code>postgresql</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li><p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -498,10 +498,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>Aurora MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>Aurora PostgreSQL - <code>postgresql</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li><p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -513,10 +513,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>Aurora MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>Aurora PostgreSQL - <code>postgresql</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <li><p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -526,13 +526,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>If the cluster that you're modifying has one or more read replicas, all replicas must be running an engine version that's the same or later than the version you specify.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
@@ -541,13 +541,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>If the cluster that you're modifying has one or more read replicas, all replicas must be running an engine version that's the same or later than the version you specify.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
@@ -556,13 +556,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>If the cluster that you're modifying has one or more read replicas, all replicas must be running an engine version that's the same or later than the version you specify.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for Aurora PostgreSQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for MySQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
+    /// <p><code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
@@ -571,7 +571,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
+    /// <li><p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p></li>
     /// </ul>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_major_version_upgrade(input);
@@ -581,7 +581,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
+    /// <li><p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p></li>
     /// </ul>
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_major_version_upgrade(input);
@@ -591,7 +591,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
+    /// <li><p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p></li>
     /// </ul>
     pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_major_version_upgrade()
@@ -603,8 +603,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
-    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
+    /// <li><p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p></li>
+    /// <li><p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p></li>
     /// </ul>
     pub fn db_instance_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_parameter_group_name(input.into());
@@ -617,8 +617,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
-    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
+    /// <li><p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p></li>
+    /// <li><p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p></li>
     /// </ul>
     pub fn set_db_instance_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_parameter_group_name(input);
@@ -631,8 +631,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Default: The existing name setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
-    /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
+    /// <li><p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p></li>
+    /// <li><p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p></li>
     /// </ul>
     pub fn get_db_instance_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_parameter_group_name()
@@ -811,13 +811,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li>
-    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// <li><p>Aurora DB clusters - <code>aurora | aurora-iopt1</code></p></li>
+    /// <li><p>Multi-AZ DB clusters - <code>io1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// <li><p>Aurora DB clusters - <code>aurora</code></p></li>
+    /// <li><p>Multi-AZ DB clusters - <code>io1</code></p></li>
     /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
@@ -829,13 +829,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li>
-    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// <li><p>Aurora DB clusters - <code>aurora | aurora-iopt1</code></p></li>
+    /// <li><p>Multi-AZ DB clusters - <code>io1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// <li><p>Aurora DB clusters - <code>aurora</code></p></li>
+    /// <li><p>Multi-AZ DB clusters - <code>io1</code></p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
@@ -847,13 +847,13 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li>
-    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// <li><p>Aurora DB clusters - <code>aurora | aurora-iopt1</code></p></li>
+    /// <li><p>Multi-AZ DB clusters - <code>io1</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-    /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
+    /// <li><p>Aurora DB clusters - <code>aurora</code></p></li>
+    /// <li><p>Multi-AZ DB clusters - <code>io1</code></p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
@@ -863,7 +863,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p> </li>
+    /// <li><p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p></li>
     /// </ul>
     pub fn iops(mut self, input: i32) -> Self {
         self.inner = self.inner.iops(input);
@@ -874,7 +874,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p> </li>
+    /// <li><p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p></li>
     /// </ul>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_iops(input);
@@ -885,7 +885,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p> </li>
+    /// <li><p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p></li>
     /// </ul>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         self.inner.get_iops()
@@ -910,8 +910,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
         self.inner = self.inner.monitoring_interval(input);
         self
@@ -919,8 +919,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_monitoring_interval(input);
         self
@@ -928,26 +928,26 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
         self.inner.get_monitoring_interval()
     }
-    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     pub fn monitoring_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitoring_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     pub fn set_monitoring_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1000,9 +1000,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
@@ -1014,9 +1014,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
@@ -1028,9 +1028,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
@@ -1056,34 +1056,34 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_type(input.into());
         self
     }
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
     }
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.inner = self.inner.manage_master_user_password(input);
@@ -1092,7 +1092,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_manage_master_user_password(input);
@@ -1101,18 +1101,18 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         self.inner.get_manage_master_user_password()
     }
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub fn rotate_master_user_password(mut self, input: bool) -> Self {
         self.inner = self.inner.rotate_master_user_password(input);
@@ -1120,11 +1120,11 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub fn set_rotate_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_rotate_master_user_password(input);
@@ -1132,11 +1132,11 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
+    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub fn get_rotate_master_user_password(&self) -> &::std::option::Option<bool> {
         self.inner.get_rotate_master_user_password()
@@ -1144,8 +1144,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
-    /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+    /// <li><p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p></li>
+    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -1157,8 +1157,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
-    /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+    /// <li><p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p></li>
+    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -1170,8 +1170,8 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p> </li>
-    /// <li> <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p> </li>
+    /// <li><p>The DB cluster doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.</p></li>
+    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -1209,7 +1209,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora Serverless v1 DB clusters only</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p> </li>
+    /// <li><p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p></li>
     /// </ul>
     pub fn allow_engine_mode_change(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_engine_mode_change(input);
@@ -1219,7 +1219,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora Serverless v1 DB clusters only</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p> </li>
+    /// <li><p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p></li>
     /// </ul>
     pub fn set_allow_engine_mode_change(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_engine_mode_change(input);
@@ -1229,7 +1229,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora Serverless v1 DB clusters only</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p> </li>
+    /// <li><p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p></li>
     /// </ul>
     pub fn get_allow_engine_mode_change(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_engine_mode_change()

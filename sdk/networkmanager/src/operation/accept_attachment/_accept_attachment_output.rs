@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptAttachmentOutput {
-    /// <p>The response to the attachment request. </p>
+    /// <p>The response to the attachment request.</p>
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }
 impl AcceptAttachmentOutput {
-    /// <p>The response to the attachment request. </p>
+    /// <p>The response to the attachment request.</p>
     pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
         self.attachment.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct AcceptAttachmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl AcceptAttachmentOutputBuilder {
-    /// <p>The response to the attachment request. </p>
+    /// <p>The response to the attachment request.</p>
     pub fn attachment(mut self, input: crate::types::Attachment) -> Self {
         self.attachment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The response to the attachment request. </p>
+    /// <p>The response to the attachment request.</p>
     pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
         self.attachment = input;
         self
     }
-    /// <p>The response to the attachment request. </p>
+    /// <p>The response to the attachment request.</p>
     pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
         &self.attachment
     }

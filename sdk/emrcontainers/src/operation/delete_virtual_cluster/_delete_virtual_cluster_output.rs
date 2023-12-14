@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVirtualClusterOutput {
-    /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    /// <p>This output contains the ID of the virtual cluster that will be deleted.</p>
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteVirtualClusterOutput {
-    /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    /// <p>This output contains the ID of the virtual cluster that will be deleted.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteVirtualClusterOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteVirtualClusterOutputBuilder {
-    /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    /// <p>This output contains the ID of the virtual cluster that will be deleted.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    /// <p>This output contains the ID of the virtual cluster that will be deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    /// <p>This output contains the ID of the virtual cluster that will be deleted.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

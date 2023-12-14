@@ -5,7 +5,7 @@
 pub struct ListTransactionsInput {
     /// <p>The catalog for which to list transactions. Defaults to the account ID of the caller.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub status_filter: ::std::option::Option<crate::types::TransactionStatusFilter>,
     /// <p>The maximum number of transactions to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListTransactionsInput {
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn status_filter(&self) -> ::std::option::Option<&crate::types::TransactionStatusFilter> {
         self.status_filter.as_ref()
     }
@@ -61,17 +61,17 @@ impl ListTransactionsInputBuilder {
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_id
     }
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn status_filter(mut self, input: crate::types::TransactionStatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::TransactionStatusFilter>) -> Self {
         self.status_filter = input;
         self
     }
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::TransactionStatusFilter> {
         &self.status_filter
     }

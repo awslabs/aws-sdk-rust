@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceAuth {
     /// <note>
-    /// <p> This data type is deprecated and is no longer accurate or used. </p>
+    /// <p>This data type is deprecated and is no longer accurate or used.</p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
     pub r#type: crate::types::SourceAuthType,
@@ -15,7 +15,7 @@ pub struct SourceAuth {
 }
 impl SourceAuth {
     /// <note>
-    /// <p> This data type is deprecated and is no longer accurate or used. </p>
+    /// <p>This data type is deprecated and is no longer accurate or used.</p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
     pub fn r#type(&self) -> &crate::types::SourceAuthType {
@@ -42,7 +42,7 @@ pub struct SourceAuthBuilder {
 }
 impl SourceAuthBuilder {
     /// <note>
-    /// <p> This data type is deprecated and is no longer accurate or used. </p>
+    /// <p>This data type is deprecated and is no longer accurate or used.</p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
     /// This field is required.
@@ -51,7 +51,7 @@ impl SourceAuthBuilder {
         self
     }
     /// <note>
-    /// <p> This data type is deprecated and is no longer accurate or used. </p>
+    /// <p>This data type is deprecated and is no longer accurate or used.</p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceAuthType>) -> Self {
@@ -59,7 +59,7 @@ impl SourceAuthBuilder {
         self
     }
     /// <note>
-    /// <p> This data type is deprecated and is no longer accurate or used. </p>
+    /// <p>This data type is deprecated and is no longer accurate or used.</p>
     /// </note>
     /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceAuthType> {

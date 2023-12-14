@@ -25,10 +25,10 @@ impl ListImageScanFindingAggregationsInputBuilder {
 /// <p>Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder uses to group results. For example, if you want to get a list of findings by severity level for one of your pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a filter, Image Builder returns an aggregation for your account.</p>
 /// <p>To streamline results, you can use the following filters in your request:</p>
 /// <ul>
-/// <li> <p> <code>accountId</code> </p> </li>
-/// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
-/// <li> <p> <code>imagePipelineArn</code> </p> </li>
-/// <li> <p> <code>vulnerabilityId</code> </p> </li>
+/// <li><p><code>accountId</code></p></li>
+/// <li><p><code>imageBuildVersionArn</code></p></li>
+/// <li><p><code>imagePipelineArn</code></p></li>
+/// <li><p><code>vulnerabilityId</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsFluentBuilder {

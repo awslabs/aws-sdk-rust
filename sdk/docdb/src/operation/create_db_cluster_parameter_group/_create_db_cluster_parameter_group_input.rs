@@ -7,7 +7,7 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <li><p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -23,7 +23,7 @@ impl CreateDbClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <li><p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -65,7 +65,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <li><p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -77,7 +77,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <li><p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -88,7 +88,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <li><p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>

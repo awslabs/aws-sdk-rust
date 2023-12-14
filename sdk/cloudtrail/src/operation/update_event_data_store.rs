@@ -248,13 +248,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateEventDa
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateEventDataStoreError {
-    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
     /// <p>An event data store with that name already exists.</p>
     EventDataStoreAlreadyExistsException(crate::types::error::EventDataStoreAlreadyExistsException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
-    /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
+    /// <p>This exception is thrown when you try to update or delete an event data store that currently has an import in progress.</p>
     EventDataStoreHasOngoingImportException(crate::types::error::EventDataStoreHasOngoingImportException),
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::types::error::EventDataStoreNotFoundException),
@@ -267,10 +267,10 @@ pub enum UpdateEventDataStoreError {
     /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
     /// <p>You can:</p>
     /// <ul>
-    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
-    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
-    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
-    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
+    /// <li><p>Specify a valid number of event selectors (1 to 5) for a trail.</p></li>
+    /// <li><p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p></li>
+    /// <li><p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p></li>
+    /// <li><p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p></li>
     /// </ul>
     InvalidEventSelectorsException(crate::types::error::InvalidEventSelectorsException),
     /// <p>For <code>PutInsightSelectors</code>, this exception is thrown when the formatting or syntax of the <code>InsightSelectors</code> JSON statement is not valid, or the specified <code>InsightType</code> in the <code>InsightSelectors</code> statement is not valid. Valid values for <code>InsightType</code> are <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code>. To enable Insights on an event data store, the destination event data store specified by the <code>InsightsDestination</code> parameter must log Insights events and the source event data store specified by the <code>EventDataStore</code> parameter must log management events.</p>
@@ -284,7 +284,7 @@ pub enum UpdateEventDataStoreError {
     KmsException(crate::types::error::KmsException),
     /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same Region.</p>
     KmsKeyNotFoundException(crate::types::error::KmsKeyNotFoundException),
-    /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
+    /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an event data store</a>.</p>
     NotOrganizationMasterAccountException(crate::types::error::NotOrganizationMasterAccountException),

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`attack_id(impl Into<String>)`](crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::attack_id) / [`set_attack_id(Option<String>)`](crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::set_attack_id):<br>required: **true**<br><p>The unique identifier (ID) for the attack.</p><br>
     /// - On success, responds with [`DescribeAttackOutput`](crate::operation::describe_attack::DescribeAttackOutput) with field(s):
-    ///   - [`attack(Option<AttackDetail>)`](crate::operation::describe_attack::DescribeAttackOutput::attack): <p>The attack that you requested. </p>
+    ///   - [`attack(Option<AttackDetail>)`](crate::operation::describe_attack::DescribeAttackOutput::attack): <p>The attack that you requested.</p>
     /// - On failure, responds with [`SdkError<DescribeAttackError>`](crate::operation::describe_attack::DescribeAttackError)
     pub fn describe_attack(&self) -> crate::operation::describe_attack::builders::DescribeAttackFluentBuilder {
         crate::operation::describe_attack::builders::DescribeAttackFluentBuilder::new(self.handle.clone())

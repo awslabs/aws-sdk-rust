@@ -8,7 +8,7 @@ pub struct EvaluationRequest {
     pub feature: ::std::string::String,
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub entity_id: ::std::string::String,
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub evaluation_context: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationRequest {
@@ -22,7 +22,7 @@ impl EvaluationRequest {
         use std::ops::Deref;
         self.entity_id.deref()
     }
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub fn evaluation_context(&self) -> ::std::option::Option<&str> {
         self.evaluation_context.as_deref()
     }
@@ -73,17 +73,17 @@ impl EvaluationRequestBuilder {
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id
     }
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub fn evaluation_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_context = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub fn set_evaluation_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_context = input;
         self
     }
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session.</p>
     pub fn get_evaluation_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_context
     }

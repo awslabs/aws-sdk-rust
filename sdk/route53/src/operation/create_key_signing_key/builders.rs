@@ -136,7 +136,7 @@ impl CreateKeySigningKeyFluentBuilder {
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hosted_zone_id()
     }
-    /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
+    /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>.</p>
     /// <p>You must configure the customer managed customer managed key as follows:</p>
     /// <dl>
     /// <dt>
@@ -163,13 +163,13 @@ impl CreateKeySigningKeyFluentBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li> <p>DescribeKey</p> </li>
-    /// <li> <p>GetPublicKey</p> </li>
-    /// <li> <p>Sign</p> </li>
+    /// <li><p>DescribeKey</p></li>
+    /// <li><p>GetPublicKey</p></li>
+    /// <li><p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
+    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -178,7 +178,7 @@ impl CreateKeySigningKeyFluentBuilder {
         self.inner = self.inner.key_management_service_arn(input.into());
         self
     }
-    /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
+    /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>.</p>
     /// <p>You must configure the customer managed customer managed key as follows:</p>
     /// <dl>
     /// <dt>
@@ -205,13 +205,13 @@ impl CreateKeySigningKeyFluentBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li> <p>DescribeKey</p> </li>
-    /// <li> <p>GetPublicKey</p> </li>
-    /// <li> <p>Sign</p> </li>
+    /// <li><p>DescribeKey</p></li>
+    /// <li><p>GetPublicKey</p></li>
+    /// <li><p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
+    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -220,7 +220,7 @@ impl CreateKeySigningKeyFluentBuilder {
         self.inner = self.inner.set_key_management_service_arn(input);
         self
     }
-    /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
+    /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>.</p>
     /// <p>You must configure the customer managed customer managed key as follows:</p>
     /// <dl>
     /// <dt>
@@ -247,13 +247,13 @@ impl CreateKeySigningKeyFluentBuilder {
     /// <dd>
     /// <p>The key policy must give permission for the following actions:</p>
     /// <ul>
-    /// <li> <p>DescribeKey</p> </li>
-    /// <li> <p>GetPublicKey</p> </li>
-    /// <li> <p>Sign</p> </li>
+    /// <li><p>DescribeKey</p></li>
+    /// <li><p>GetPublicKey</p></li>
+    /// <li><p>Sign</p></li>
     /// </ul>
     /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
     /// <ul>
-    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
+    /// <li><p><code>"Service": "dnssec-route53.amazonaws.com"</code></p></li>
     /// </ul>
     /// </dd>
     /// </dl>

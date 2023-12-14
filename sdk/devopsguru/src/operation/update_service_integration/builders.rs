@@ -22,7 +22,7 @@ impl UpdateServiceIntegrationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateServiceIntegration`.
 ///
-/// <p> Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>
+/// <p>Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateServiceIntegrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// <p>An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.</p>
     pub fn service_integration(mut self, input: crate::types::UpdateServiceIntegrationConfig) -> Self {
         self.inner = self.inner.service_integration(input);
         self
     }
-    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// <p>An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.</p>
     pub fn set_service_integration(mut self, input: ::std::option::Option<crate::types::UpdateServiceIntegrationConfig>) -> Self {
         self.inner = self.inner.set_service_integration(input);
         self
     }
-    /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// <p>An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.</p>
     pub fn get_service_integration(&self) -> &::std::option::Option<crate::types::UpdateServiceIntegrationConfig> {
         self.inner.get_service_integration()
     }

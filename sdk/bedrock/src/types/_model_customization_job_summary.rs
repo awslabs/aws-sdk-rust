@@ -10,11 +10,11 @@ pub struct ModelCustomizationJobSummary {
     pub base_model_arn: ::std::string::String,
     /// <p>Name of the customization job.</p>
     pub job_name: ::std::string::String,
-    /// <p>Status of the customization job. </p>
+    /// <p>Status of the customization job.</p>
     pub status: crate::types::ModelCustomizationJobStatus,
     /// <p>Time that the customization job was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Creation time of the custom model. </p>
+    /// <p>Creation time of the custom model.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Time that the customization job ended.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -41,7 +41,7 @@ impl ModelCustomizationJobSummary {
         use std::ops::Deref;
         self.job_name.deref()
     }
-    /// <p>Status of the customization job. </p>
+    /// <p>Status of the customization job.</p>
     pub fn status(&self) -> &crate::types::ModelCustomizationJobStatus {
         &self.status
     }
@@ -49,7 +49,7 @@ impl ModelCustomizationJobSummary {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>Creation time of the custom model. </p>
+    /// <p>Creation time of the custom model.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
@@ -138,18 +138,18 @@ impl ModelCustomizationJobSummaryBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>Status of the customization job. </p>
+    /// <p>Status of the customization job.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ModelCustomizationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Status of the customization job. </p>
+    /// <p>Status of the customization job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelCustomizationJobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Status of the customization job. </p>
+    /// <p>Status of the customization job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelCustomizationJobStatus> {
         &self.status
     }
@@ -167,18 +167,18 @@ impl ModelCustomizationJobSummaryBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>Creation time of the custom model. </p>
+    /// <p>Creation time of the custom model.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Creation time of the custom model. </p>
+    /// <p>Creation time of the custom model.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>Creation time of the custom model. </p>
+    /// <p>Creation time of the custom model.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }

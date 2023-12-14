@@ -22,7 +22,7 @@ impl GetWorkUnitResultsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetWorkUnitResults`.
 ///
-/// <p>Returns the work units resulting from the query. Work units can be executed in any order and in parallel. </p>
+/// <p>Returns the work units resulting from the query. Work units can be executed in any order and in parallel.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkUnitResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

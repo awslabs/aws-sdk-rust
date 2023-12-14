@@ -5,7 +5,7 @@
 pub struct GetPublicKeyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The exported public key. </p>
+    /// <p>The exported public key.</p>
     /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub public_key: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -15,11 +15,11 @@ pub struct GetPublicKeyOutput {
     pub customer_master_key_spec: ::std::option::Option<crate::types::CustomerMasterKeySpec>,
     /// <p>The type of the of the public key that was downloaded.</p>
     pub key_spec: ::std::option::Option<crate::types::KeySpec>,
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub key_usage: ::std::option::Option<crate::types::KeyUsageType>,
-    /// <p>The encryption algorithms that KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>The encryption algorithms that KMS supports for this key.</p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>,
     /// <p>The signing algorithms that KMS supports for this key.</p>
@@ -32,7 +32,7 @@ impl GetPublicKeyOutput {
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The exported public key. </p>
+    /// <p>The exported public key.</p>
     /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub fn public_key(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
@@ -48,13 +48,13 @@ impl GetPublicKeyOutput {
     pub fn key_spec(&self) -> ::std::option::Option<&crate::types::KeySpec> {
         self.key_spec.as_ref()
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn key_usage(&self) -> ::std::option::Option<&crate::types::KeyUsageType> {
         self.key_usage.as_ref()
     }
-    /// <p>The encryption algorithms that KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>The encryption algorithms that KMS supports for this key.</p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encryption_algorithms.is_none()`.
@@ -109,21 +109,21 @@ impl GetPublicKeyOutputBuilder {
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
-    /// <p>The exported public key. </p>
+    /// <p>The exported public key.</p>
     /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub fn public_key(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.public_key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The exported public key. </p>
+    /// <p>The exported public key.</p>
     /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub fn set_public_key(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.public_key = input;
         self
     }
-    /// <p>The exported public key. </p>
+    /// <p>The exported public key.</p>
     /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub fn get_public_key(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -163,20 +163,20 @@ impl GetPublicKeyOutputBuilder {
     pub fn get_key_spec(&self) -> &::std::option::Option<crate::types::KeySpec> {
         &self.key_spec
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn key_usage(mut self, input: crate::types::KeyUsageType) -> Self {
         self.key_usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsageType>) -> Self {
         self.key_usage = input;
         self
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted.</p>
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsageType> {
         &self.key_usage
     }
@@ -184,8 +184,8 @@ impl GetPublicKeyOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_encryption_algorithms`](Self::set_encryption_algorithms).
     ///
-    /// <p>The encryption algorithms that KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>The encryption algorithms that KMS supports for this key.</p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub fn encryption_algorithms(mut self, input: crate::types::EncryptionAlgorithmSpec) -> Self {
         let mut v = self.encryption_algorithms.unwrap_or_default();
@@ -193,15 +193,15 @@ impl GetPublicKeyOutputBuilder {
         self.encryption_algorithms = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The encryption algorithms that KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>The encryption algorithms that KMS supports for this key.</p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub fn set_encryption_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>>) -> Self {
         self.encryption_algorithms = input;
         self
     }
-    /// <p>The encryption algorithms that KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>The encryption algorithms that KMS supports for this key.</p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted.</p>
     /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub fn get_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithmSpec>> {
         &self.encryption_algorithms

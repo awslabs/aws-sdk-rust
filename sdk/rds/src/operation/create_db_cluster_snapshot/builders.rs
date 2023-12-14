@@ -113,11 +113,11 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster1-snapshot1</code></p>
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
         self
@@ -125,11 +125,11 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster1-snapshot1</code></p>
     pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
@@ -137,20 +137,20 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
+    /// <p>Example: <code>my-cluster1-snapshot1</code></p>
     pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_snapshot_identifier()
     }
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
@@ -158,9 +158,9 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
@@ -168,9 +168,9 @@ impl CreateDBClusterSnapshotFluentBuilder {
     /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
-    /// <p>Example: <code>my-cluster1</code> </p>
+    /// <p>Example: <code>my-cluster1</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }

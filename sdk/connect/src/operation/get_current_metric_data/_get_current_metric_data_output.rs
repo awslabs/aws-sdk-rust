@@ -10,7 +10,7 @@ pub struct GetCurrentMetricDataOutput {
     pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     pub data_snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The total count of the result, regardless of the current page size. </p>
+    /// <p>The total count of the result, regardless of the current page size.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
@@ -30,7 +30,7 @@ impl GetCurrentMetricDataOutput {
     pub fn data_snapshot_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.data_snapshot_time.as_ref()
     }
-    /// <p>The total count of the result, regardless of the current page size. </p>
+    /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn approximate_total_count(&self) -> ::std::option::Option<i64> {
         self.approximate_total_count
     }
@@ -109,17 +109,17 @@ impl GetCurrentMetricDataOutputBuilder {
     pub fn get_data_snapshot_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.data_snapshot_time
     }
-    /// <p>The total count of the result, regardless of the current page size. </p>
+    /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
         self.approximate_total_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total count of the result, regardless of the current page size. </p>
+    /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_total_count = input;
         self
     }
-    /// <p>The total count of the result, regardless of the current page size. </p>
+    /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }

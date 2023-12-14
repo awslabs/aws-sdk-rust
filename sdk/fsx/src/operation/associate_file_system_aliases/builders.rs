@@ -143,10 +143,10 @@ impl AssociateFileSystemAliasesFluentBuilder {
     ///
     /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,10 +155,10 @@ impl AssociateFileSystemAliasesFluentBuilder {
     }
     /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -167,10 +167,10 @@ impl AssociateFileSystemAliasesFluentBuilder {
     }
     /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

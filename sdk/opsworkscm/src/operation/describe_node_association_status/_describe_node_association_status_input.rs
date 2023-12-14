@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNodeAssociationStatusInput {
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub node_association_status_token: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNodeAssociationStatusInput {
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn node_association_status_token(&self) -> ::std::option::Option<&str> {
         self.node_association_status_token.as_deref()
     }
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DescribeNodeAssociationStatusInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNodeAssociationStatusInputBuilder {
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     /// This field is required.
     pub fn node_association_status_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_association_status_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn set_node_association_status_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_association_status_token = input;
         self
     }
-    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.</p>
     pub fn get_node_association_status_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_association_status_token
     }
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
-    /// <p>The name of the server from which to disassociate the node. </p>
+    /// <p>The name of the server from which to disassociate the node.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_name
     }

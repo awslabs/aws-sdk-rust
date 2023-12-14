@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfig {
-    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.</p>
     pub enable_answer_machine_detection: bool,
     /// <p>Wait for the answering machine prompt.</p>
     pub await_answer_machine_prompt: bool,
 }
 impl AnswerMachineDetectionConfig {
-    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.</p>
     pub fn enable_answer_machine_detection(&self) -> bool {
         self.enable_answer_machine_detection
     }
@@ -34,17 +34,17 @@ pub struct AnswerMachineDetectionConfigBuilder {
     pub(crate) await_answer_machine_prompt: ::std::option::Option<bool>,
 }
 impl AnswerMachineDetectionConfigBuilder {
-    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.</p>
     pub fn enable_answer_machine_detection(mut self, input: bool) -> Self {
         self.enable_answer_machine_detection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.</p>
     pub fn set_enable_answer_machine_detection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_answer_machine_detection = input;
         self
     }
-    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.</p>
     pub fn get_enable_answer_machine_detection(&self) -> &::std::option::Option<bool> {
         &self.enable_answer_machine_detection
     }

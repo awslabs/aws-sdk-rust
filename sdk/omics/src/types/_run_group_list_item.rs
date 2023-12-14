@@ -18,7 +18,7 @@ pub struct RunGroupListItem {
     pub max_duration: ::std::option::Option<i32>,
     /// <p>When the group was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The maximum GPUs that can be used by a run group. </p>
+    /// <p>The maximum GPUs that can be used by a run group.</p>
     pub max_gpus: ::std::option::Option<i32>,
 }
 impl RunGroupListItem {
@@ -50,7 +50,7 @@ impl RunGroupListItem {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p> The maximum GPUs that can be used by a run group. </p>
+    /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn max_gpus(&self) -> ::std::option::Option<i32> {
         self.max_gpus
     }
@@ -174,17 +174,17 @@ impl RunGroupListItemBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p> The maximum GPUs that can be used by a run group. </p>
+    /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.max_gpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum GPUs that can be used by a run group. </p>
+    /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_gpus = input;
         self
     }
-    /// <p> The maximum GPUs that can be used by a run group. </p>
+    /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
         &self.max_gpus
     }

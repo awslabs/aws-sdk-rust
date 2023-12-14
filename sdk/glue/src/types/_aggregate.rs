@@ -10,7 +10,7 @@ pub struct Aggregate {
     pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies the fields to group by.</p>
     pub groups: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
     pub aggs: ::std::vec::Vec<crate::types::AggregateOperation>,
 }
 impl Aggregate {
@@ -29,7 +29,7 @@ impl Aggregate {
         use std::ops::Deref;
         self.groups.deref()
     }
-    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
     pub fn aggs(&self) -> &[crate::types::AggregateOperation] {
         use std::ops::Deref;
         self.aggs.deref()
@@ -111,19 +111,19 @@ impl AggregateBuilder {
     ///
     /// To override the contents of this collection use [`set_aggs`](Self::set_aggs).
     ///
-    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
     pub fn aggs(mut self, input: crate::types::AggregateOperation) -> Self {
         let mut v = self.aggs.unwrap_or_default();
         v.push(input);
         self.aggs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
     pub fn set_aggs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>) -> Self {
         self.aggs = input;
         self
     }
-    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
     pub fn get_aggs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>> {
         &self.aggs
     }

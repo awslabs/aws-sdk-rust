@@ -12,7 +12,7 @@ pub struct Runbook {
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
+    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>.</p>
     pub target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
@@ -40,7 +40,7 @@ impl Runbook {
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
-    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
+    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>.</p>
     pub fn target_parameter_name(&self) -> ::std::option::Option<&str> {
         self.target_parameter_name.as_deref()
     }
@@ -148,17 +148,17 @@ impl RunbookBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.parameters
     }
-    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
+    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>.</p>
     pub fn target_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
+    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>.</p>
     pub fn set_target_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_parameter_name = input;
         self
     }
-    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>
+    /// <p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>.</p>
     pub fn get_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_parameter_name
     }

@@ -7,7 +7,7 @@ pub struct CreateCustomerGatewayInput {
     /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
     pub bgp_asn: ::std::option::Option<i32>,
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateCustomerGatewayInput {
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -29,7 +29,7 @@ impl CreateCustomerGatewayInput {
     pub fn bgp_asn(&self) -> ::std::option::Option<i32> {
         self.bgp_asn
     }
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
@@ -52,7 +52,7 @@ impl CreateCustomerGatewayInput {
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
@@ -99,17 +99,17 @@ impl CreateCustomerGatewayInputBuilder {
     pub fn get_bgp_asn(&self) -> &::std::option::Option<i32> {
         &self.bgp_asn
     }
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_ip
     }
@@ -179,17 +179,17 @@ impl CreateCustomerGatewayInputBuilder {
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }

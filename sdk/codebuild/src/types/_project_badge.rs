@@ -6,7 +6,7 @@
 pub struct ProjectBadge {
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub badge_enabled: bool,
-    /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
+    /// <p>The publicly-accessible URL through which you can access the build badge for your project.</p>
     pub badge_request_url: ::std::option::Option<::std::string::String>,
 }
 impl ProjectBadge {
@@ -14,7 +14,7 @@ impl ProjectBadge {
     pub fn badge_enabled(&self) -> bool {
         self.badge_enabled
     }
-    /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
+    /// <p>The publicly-accessible URL through which you can access the build badge for your project.</p>
     pub fn badge_request_url(&self) -> ::std::option::Option<&str> {
         self.badge_request_url.as_deref()
     }
@@ -48,17 +48,17 @@ impl ProjectBadgeBuilder {
     pub fn get_badge_enabled(&self) -> &::std::option::Option<bool> {
         &self.badge_enabled
     }
-    /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
+    /// <p>The publicly-accessible URL through which you can access the build badge for your project.</p>
     pub fn badge_request_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.badge_request_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
+    /// <p>The publicly-accessible URL through which you can access the build badge for your project.</p>
     pub fn set_badge_request_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.badge_request_url = input;
         self
     }
-    /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
+    /// <p>The publicly-accessible URL through which you can access the build badge for your project.</p>
     pub fn get_badge_request_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.badge_request_url
     }

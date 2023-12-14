@@ -249,7 +249,7 @@ pub enum ListMonitoredResourcesError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to a request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p> Contains information about data passed in to a field during a request that is not valid. </p>
+    /// <p>Contains information about data passed in to a field during a request that is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

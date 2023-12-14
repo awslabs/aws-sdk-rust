@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryOutput {
-    /// <p> A unique ID for the given query. </p>
+    /// <p>A unique ID for the given query.</p>
     pub query_id: ::std::string::String,
-    /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
+    /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> The result set rows returned by the query. </p>
+    /// <p>The result set rows returned by the query.</p>
     pub rows: ::std::vec::Vec<crate::types::Row>,
-    /// <p> The column data types of the returned result set. </p>
+    /// <p>The column data types of the returned result set.</p>
     pub column_info: ::std::vec::Vec<crate::types::ColumnInfo>,
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     _request_id: Option<String>,
 }
 impl QueryOutput {
-    /// <p> A unique ID for the given query. </p>
+    /// <p>A unique ID for the given query.</p>
     pub fn query_id(&self) -> &str {
         use std::ops::Deref;
         self.query_id.deref()
     }
-    /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
+    /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The result set rows returned by the query. </p>
+    /// <p>The result set rows returned by the query.</p>
     pub fn rows(&self) -> &[crate::types::Row] {
         use std::ops::Deref;
         self.rows.deref()
     }
-    /// <p> The column data types of the returned result set. </p>
+    /// <p>The column data types of the returned result set.</p>
     pub fn column_info(&self) -> &[crate::types::ColumnInfo] {
         use std::ops::Deref;
         self.column_info.deref()
@@ -64,32 +64,32 @@ pub struct QueryOutputBuilder {
     _request_id: Option<String>,
 }
 impl QueryOutputBuilder {
-    /// <p> A unique ID for the given query. </p>
+    /// <p>A unique ID for the given query.</p>
     /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A unique ID for the given query. </p>
+    /// <p>A unique ID for the given query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }
-    /// <p> A unique ID for the given query. </p>
+    /// <p>A unique ID for the given query.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
-    /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
+    /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
+    /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
+    /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -97,19 +97,19 @@ impl QueryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rows`](Self::set_rows).
     ///
-    /// <p> The result set rows returned by the query. </p>
+    /// <p>The result set rows returned by the query.</p>
     pub fn rows(mut self, input: crate::types::Row) -> Self {
         let mut v = self.rows.unwrap_or_default();
         v.push(input);
         self.rows = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The result set rows returned by the query. </p>
+    /// <p>The result set rows returned by the query.</p>
     pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>) -> Self {
         self.rows = input;
         self
     }
-    /// <p> The result set rows returned by the query. </p>
+    /// <p>The result set rows returned by the query.</p>
     pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Row>> {
         &self.rows
     }
@@ -117,19 +117,19 @@ impl QueryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_column_info`](Self::set_column_info).
     ///
-    /// <p> The column data types of the returned result set. </p>
+    /// <p>The column data types of the returned result set.</p>
     pub fn column_info(mut self, input: crate::types::ColumnInfo) -> Self {
         let mut v = self.column_info.unwrap_or_default();
         v.push(input);
         self.column_info = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The column data types of the returned result set. </p>
+    /// <p>The column data types of the returned result set.</p>
     pub fn set_column_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>) -> Self {
         self.column_info = input;
         self
     }
-    /// <p> The column data types of the returned result set. </p>
+    /// <p>The column data types of the returned result set.</p>
     pub fn get_column_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
         &self.column_info
     }

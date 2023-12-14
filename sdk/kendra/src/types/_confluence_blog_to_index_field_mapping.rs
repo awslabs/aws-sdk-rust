@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfluenceBlogToIndexFieldMapping {
-    /// <p>The name of the field in the data source. </p>
+    /// <p>The name of the field in the data source.</p>
     pub data_source_field_name: ::std::option::Option<crate::types::ConfluenceBlogFieldName>,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field you must specify the date format. If the field is not a date field, an exception is thrown.</p>
     pub date_field_format: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ConfluenceBlogToIndexFieldMapping {
     pub index_field_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfluenceBlogToIndexFieldMapping {
-    /// <p>The name of the field in the data source. </p>
+    /// <p>The name of the field in the data source.</p>
     pub fn data_source_field_name(&self) -> ::std::option::Option<&crate::types::ConfluenceBlogFieldName> {
         self.data_source_field_name.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct ConfluenceBlogToIndexFieldMappingBuilder {
     pub(crate) index_field_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfluenceBlogToIndexFieldMappingBuilder {
-    /// <p>The name of the field in the data source. </p>
+    /// <p>The name of the field in the data source.</p>
     pub fn data_source_field_name(mut self, input: crate::types::ConfluenceBlogFieldName) -> Self {
         self.data_source_field_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the field in the data source. </p>
+    /// <p>The name of the field in the data source.</p>
     pub fn set_data_source_field_name(mut self, input: ::std::option::Option<crate::types::ConfluenceBlogFieldName>) -> Self {
         self.data_source_field_name = input;
         self
     }
-    /// <p>The name of the field in the data source. </p>
+    /// <p>The name of the field in the data source.</p>
     pub fn get_data_source_field_name(&self) -> &::std::option::Option<crate::types::ConfluenceBlogFieldName> {
         &self.data_source_field_name
     }

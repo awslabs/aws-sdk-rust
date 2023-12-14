@@ -10,13 +10,13 @@ pub struct CreateFileSystemWindowsConfiguration {
     pub self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,
     /// <p>Specifies the file system deployment type, valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p> </li>
+    /// <li><p><code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p></li>
+    /// <li><p><code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p></li>
+    /// <li><p><code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
     pub deployment_type: ::std::option::Option<crate::types::WindowsDeploymentType>,
-    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency. </p>
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
     pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets the throughput capacity of an Amazon FSx file system, measured in megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
     pub throughput_capacity: ::std::option::Option<i32>,
@@ -32,10 +32,10 @@ pub struct CreateFileSystemWindowsConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
     /// <p>An alias name has to meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,15 +55,15 @@ impl CreateFileSystemWindowsConfiguration {
     }
     /// <p>Specifies the file system deployment type, valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p> </li>
+    /// <li><p><code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p></li>
+    /// <li><p><code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p></li>
+    /// <li><p><code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::WindowsDeploymentType> {
         self.deployment_type.as_ref()
     }
-    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency. </p>
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
     pub fn preferred_subnet_id(&self) -> ::std::option::Option<&str> {
         self.preferred_subnet_id.as_deref()
     }
@@ -91,10 +91,10 @@ impl CreateFileSystemWindowsConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
     /// <p>An alias name has to meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     ///
@@ -169,9 +169,9 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>Specifies the file system deployment type, valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p> </li>
+    /// <li><p><code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p></li>
+    /// <li><p><code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p></li>
+    /// <li><p><code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
     pub fn deployment_type(mut self, input: crate::types::WindowsDeploymentType) -> Self {
@@ -180,9 +180,9 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>Specifies the file system deployment type, valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p> </li>
+    /// <li><p><code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p></li>
+    /// <li><p><code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p></li>
+    /// <li><p><code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::WindowsDeploymentType>) -> Self {
@@ -191,25 +191,25 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>Specifies the file system deployment type, valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p> </li>
+    /// <li><p><code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also supports HDD storage type</p></li>
+    /// <li><p><code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p></li>
+    /// <li><p><code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::WindowsDeploymentType> {
         &self.deployment_type
     }
-    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency. </p>
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
     pub fn preferred_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency. </p>
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
     pub fn set_preferred_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_subnet_id = input;
         self
     }
-    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency. </p>
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
     pub fn get_preferred_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_subnet_id
     }
@@ -292,10 +292,10 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
     /// <p>An alias name has to meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -308,10 +308,10 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
     /// <p>An alias name has to meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -322,10 +322,10 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
     /// <p>An alias name has to meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li>
-    /// <li> <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p> </li>
-    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
-    /// <li> <p>Can start with a numeric.</p> </li>
+    /// <li><p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p></li>
+    /// <li><p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p></li>
+    /// <li><p>Cannot start or end with a hyphen.</p></li>
+    /// <li><p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

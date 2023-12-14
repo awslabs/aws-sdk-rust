@@ -251,7 +251,7 @@ pub enum GetParallelDataError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -22,8 +22,8 @@ impl RejectQualificationRequestInputBuilder {
 }
 /// Fluent builder constructing a request to `RejectQualificationRequest`.
 ///
-/// <p> The <code>RejectQualificationRequest</code> operation rejects a user's request for a Qualification. </p>
-/// <p> You can provide a text message explaining why the request was rejected. The Worker who made the request can see this message.</p>
+/// <p>The <code>RejectQualificationRequest</code> operation rejects a user's request for a Qualification.</p>
+/// <p>You can provide a text message explaining why the request was rejected. The Worker who made the request can see this message.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectQualificationRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl RejectQualificationRequestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
     pub fn qualification_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_request_id(input.into());
         self
     }
-    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
     pub fn set_qualification_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_request_id(input);
         self
     }
-    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    /// <p>The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation.</p>
     pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualification_request_id()
     }

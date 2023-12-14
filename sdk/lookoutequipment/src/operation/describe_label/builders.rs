@@ -22,7 +22,7 @@ impl DescribeLabelInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLabel`.
 ///
-/// <p> Returns the name of the label. </p>
+/// <p>Returns the name of the label.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLabelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeLabelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
-    /// <p> Returns the name of the group containing the label. </p>
+    /// <p>Returns the name of the group containing the label.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name()
     }
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_id(input.into());
         self
     }
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     pub fn set_label_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_id(input);
         self
     }
-    /// <p> Returns the ID of the label. </p>
+    /// <p>Returns the ID of the label.</p>
     pub fn get_label_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_id()
     }

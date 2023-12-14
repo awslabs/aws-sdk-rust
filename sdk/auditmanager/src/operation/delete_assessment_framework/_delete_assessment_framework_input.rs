@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkInput {
-    /// <p> The identifier for the custom framework. </p>
+    /// <p>The identifier for the custom framework.</p>
     pub framework_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentFrameworkInput {
-    /// <p> The identifier for the custom framework. </p>
+    /// <p>The identifier for the custom framework.</p>
     pub fn framework_id(&self) -> ::std::option::Option<&str> {
         self.framework_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteAssessmentFrameworkInputBuilder {
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentFrameworkInputBuilder {
-    /// <p> The identifier for the custom framework. </p>
+    /// <p>The identifier for the custom framework.</p>
     /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier for the custom framework. </p>
+    /// <p>The identifier for the custom framework.</p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_id = input;
         self
     }
-    /// <p> The identifier for the custom framework. </p>
+    /// <p>The identifier for the custom framework.</p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.framework_id
     }

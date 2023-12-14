@@ -51,7 +51,7 @@ pub enum Error {
     NotLatestPipelineExecutionException(crate::types::error::NotLatestPipelineExecutionException),
     /// <p>Exceeded the total size limit for all variables in the pipeline.</p>
     OutputVariablesSizeExceededException(crate::types::error::OutputVariablesSizeExceededException),
-    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
+    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline.</p>
     PipelineExecutionNotFoundException(crate::types::error::PipelineExecutionNotFoundException),
     /// <p>Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code> state, or it might no longer be in progress.</p>
     PipelineExecutionNotStoppableException(crate::types::error::PipelineExecutionNotStoppableException),

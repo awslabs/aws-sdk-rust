@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSessionEmbedUrlOutput {
-    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours.</p>
     pub embed_url: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -12,7 +12,7 @@ pub struct GetSessionEmbedUrlOutput {
     _request_id: Option<String>,
 }
 impl GetSessionEmbedUrlOutput {
-    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours.</p>
     pub fn embed_url(&self) -> ::std::option::Option<&str> {
         self.embed_url.as_deref()
     }
@@ -57,17 +57,17 @@ pub struct GetSessionEmbedUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSessionEmbedUrlOutputBuilder {
-    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours.</p>
     pub fn embed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.embed_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours.</p>
     pub fn set_embed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.embed_url = input;
         self
     }
-    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours.</p>
     pub fn get_embed_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.embed_url
     }

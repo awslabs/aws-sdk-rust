@@ -22,10 +22,10 @@ impl UpdateGameSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGameSession`.
 ///
-/// <p>Updates the mutable properties of a game session. </p>
-/// <p>To update a game session, specify the game session ID and the values you want to change. </p>
-/// <p>If successful, the updated <code>GameSession</code> object is returned. </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p>Updates the mutable properties of a game session.</p>
+/// <p>To update a game session, specify the game session ID and the values you want to change.</p>
+/// <p>If successful, the updated <code>GameSession</code> object is returned.</p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGameSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl UpdateGameSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_id()
     }
@@ -169,8 +169,8 @@ impl UpdateGameSessionFluentBuilder {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.inner = self.inner.protection_policy(input);
@@ -178,8 +178,8 @@ impl UpdateGameSessionFluentBuilder {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn set_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.inner = self.inner.set_protection_policy(input);
@@ -187,8 +187,8 @@ impl UpdateGameSessionFluentBuilder {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         self.inner.get_protection_policy()

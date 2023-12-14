@@ -22,8 +22,8 @@ impl PurchaseReservedNodeOfferingInputBuilder {
 }
 /// Fluent builder constructing a request to `PurchaseReservedNodeOffering`.
 ///
-/// <p>Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one or more of the offerings. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. You can call this API by providing a specific reserved node offering and the number of nodes you want to reserve. </p>
-/// <p> For more information about reserved node offerings, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p>Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one or more of the offerings. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. You can call this API by providing a specific reserved node offering and the number of nodes you want to reserve.</p>
+/// <p>For more information about reserved node offerings, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodeOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,19 +124,19 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
         self.inner.get_reserved_node_offering_id()
     }
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn node_count(mut self, input: i32) -> Self {
         self.inner = self.inner.node_count(input);
         self
     }
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_node_count(input);
         self
     }
     /// <p>The number of reserved nodes that you want to purchase.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn get_node_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_node_count()
     }

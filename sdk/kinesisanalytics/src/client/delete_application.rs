@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`application_name(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_name):<br>required: **true**<br><p>Name of the Amazon Kinesis Analytics application to delete.</p><br>
-    ///   - [`create_timestamp(DateTime)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::create_timestamp) / [`set_create_timestamp(Option<DateTime>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_create_timestamp):<br>required: **true**<br><p> You can use the <code>DescribeApplication</code> operation to get this value. </p><br>
+    ///   - [`create_timestamp(DateTime)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::create_timestamp) / [`set_create_timestamp(Option<DateTime>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_create_timestamp):<br>required: **true**<br><p>You can use the <code>DescribeApplication</code> operation to get this value.</p><br>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
     pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {

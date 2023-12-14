@@ -108,17 +108,17 @@ impl GetAssociatedResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self
     }
-    /// <p> The name, ID, or ARN of the application. </p>
+    /// <p>The name, ID, or ARN of the application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application()
     }
@@ -150,17 +150,17 @@ impl GetAssociatedResourceFluentBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource()
     }
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results. </p>
+    /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
@@ -168,31 +168,31 @@ impl GetAssociatedResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tag_status`](Self::set_resource_tag_status).
     ///
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub fn resource_tag_status(mut self, input: crate::types::ResourceItemStatus) -> Self {
         self.inner = self.inner.resource_tag_status(input);
         self
     }
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub fn set_resource_tag_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>>) -> Self {
         self.inner = self.inner.set_resource_tag_status(input);
         self
     }
-    /// <p> States whether an application tag is applied, not applied, in the process of being applied, or skipped. </p>
+    /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub fn get_resource_tag_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>> {
         self.inner.get_resource_tag_status()
     }
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional. </p>
+    /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

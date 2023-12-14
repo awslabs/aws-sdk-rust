@@ -166,10 +166,10 @@ impl DescribeCapacityReservationFleetsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>state</code> - The state of the Fleet (<code>submitted</code> | <code>modifying</code> | <code>active</code> | <code>partially_fulfilled</code> | <code>expiring</code> | <code>expired</code> | <code>cancelling</code> | <code>cancelled</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>instance-match-criteria</code> - The instance matching criteria for the Fleet. Only <code>open</code> is supported.</p> </li>
-    /// <li> <p> <code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p> </li>
-    /// <li> <p> <code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p> </li>
+    /// <li><p><code>state</code> - The state of the Fleet (<code>submitted</code> | <code>modifying</code> | <code>active</code> | <code>partially_fulfilled</code> | <code>expiring</code> | <code>expired</code> | <code>cancelling</code> | <code>cancelled</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>instance-match-criteria</code> - The instance matching criteria for the Fleet. Only <code>open</code> is supported.</p></li>
+    /// <li><p><code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p></li>
+    /// <li><p><code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -177,10 +177,10 @@ impl DescribeCapacityReservationFleetsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>state</code> - The state of the Fleet (<code>submitted</code> | <code>modifying</code> | <code>active</code> | <code>partially_fulfilled</code> | <code>expiring</code> | <code>expired</code> | <code>cancelling</code> | <code>cancelled</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>instance-match-criteria</code> - The instance matching criteria for the Fleet. Only <code>open</code> is supported.</p> </li>
-    /// <li> <p> <code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p> </li>
-    /// <li> <p> <code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p> </li>
+    /// <li><p><code>state</code> - The state of the Fleet (<code>submitted</code> | <code>modifying</code> | <code>active</code> | <code>partially_fulfilled</code> | <code>expiring</code> | <code>expired</code> | <code>cancelling</code> | <code>cancelled</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>instance-match-criteria</code> - The instance matching criteria for the Fleet. Only <code>open</code> is supported.</p></li>
+    /// <li><p><code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p></li>
+    /// <li><p><code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -188,10 +188,10 @@ impl DescribeCapacityReservationFleetsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>state</code> - The state of the Fleet (<code>submitted</code> | <code>modifying</code> | <code>active</code> | <code>partially_fulfilled</code> | <code>expiring</code> | <code>expired</code> | <code>cancelling</code> | <code>cancelled</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>instance-match-criteria</code> - The instance matching criteria for the Fleet. Only <code>open</code> is supported.</p> </li>
-    /// <li> <p> <code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p> </li>
-    /// <li> <p> <code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p> </li>
+    /// <li><p><code>state</code> - The state of the Fleet (<code>submitted</code> | <code>modifying</code> | <code>active</code> | <code>partially_fulfilled</code> | <code>expiring</code> | <code>expired</code> | <code>cancelling</code> | <code>cancelled</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>instance-match-criteria</code> - The instance matching criteria for the Fleet. Only <code>open</code> is supported.</p></li>
+    /// <li><p><code>tenancy</code> - The tenancy of the Fleet (<code>default</code> | <code>dedicated</code>).</p></li>
+    /// <li><p><code>allocation-strategy</code> - The allocation strategy used by the Fleet. Only <code>prioritized</code> is supported.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListBuiltInIn
 pub enum ListBuiltInIntentsError {
     /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>You have reached a quota for your bot. </p>
+    /// <p>You have reached a quota for your bot.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

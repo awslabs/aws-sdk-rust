@@ -7,7 +7,7 @@ pub struct UpdateOpsMetadataInput {
     pub ops_metadata_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to add to an OpsMetadata object.</p>
     pub metadata_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
-    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
     pub keys_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateOpsMetadataInput {
@@ -19,7 +19,7 @@ impl UpdateOpsMetadataInput {
     pub fn metadata_to_update(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.metadata_to_update.as_ref()
     }
-    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys_to_delete.is_none()`.
     pub fn keys_to_delete(&self) -> &[::std::string::String] {
@@ -84,19 +84,19 @@ impl UpdateOpsMetadataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_keys_to_delete`](Self::set_keys_to_delete).
     ///
-    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
     pub fn keys_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys_to_delete.unwrap_or_default();
         v.push(input.into());
         self.keys_to_delete = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
     pub fn set_keys_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keys_to_delete = input;
         self
     }
-    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    /// <p>The metadata keys to delete from the OpsMetadata object.</p>
     pub fn get_keys_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.keys_to_delete
     }

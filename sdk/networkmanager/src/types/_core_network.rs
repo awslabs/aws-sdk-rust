@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetwork {
-    /// <p>The ID of the global network that your core network is a part of. </p>
+    /// <p>The ID of the global network that your core network is a part of.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct CoreNetwork {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CoreNetwork {
-    /// <p>The ID of the global network that your core network is a part of. </p>
+    /// <p>The ID of the global network that your core network is a part of.</p>
     pub fn global_network_id(&self) -> ::std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
@@ -89,17 +89,17 @@ pub struct CoreNetworkBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CoreNetworkBuilder {
-    /// <p>The ID of the global network that your core network is a part of. </p>
+    /// <p>The ID of the global network that your core network is a part of.</p>
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the global network that your core network is a part of. </p>
+    /// <p>The ID of the global network that your core network is a part of.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
-    /// <p>The ID of the global network that your core network is a part of. </p>
+    /// <p>The ID of the global network that your core network is a part of.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_network_id
     }

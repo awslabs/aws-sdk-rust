@@ -6,7 +6,7 @@
 pub struct Asn1Subject {
     /// <p>Two-digit code that specifies the country in which the certificate subject located.</p>
     pub country: ::std::option::Option<::std::string::String>,
-    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
+    /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
     pub organization: ::std::option::Option<::std::string::String>,
     /// <p>A subdivision or unit of the organization (such as sales or finance) with which the certificate subject is affiliated.</p>
     pub organizational_unit: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct Asn1Subject {
     pub distinguished_name_qualifier: ::std::option::Option<::std::string::String>,
     /// <p>State in which the subject of the certificate is located.</p>
     pub state: ::std::option::Option<::std::string::String>,
-    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub common_name: ::std::option::Option<::std::string::String>,
     /// <p>The certificate serial number.</p>
@@ -44,7 +44,7 @@ impl Asn1Subject {
     pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
-    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
+    /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
     pub fn organization(&self) -> ::std::option::Option<&str> {
         self.organization.as_deref()
     }
@@ -60,7 +60,7 @@ impl Asn1Subject {
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub fn common_name(&self) -> ::std::option::Option<&str> {
         self.common_name.as_deref()
@@ -149,17 +149,17 @@ impl Asn1SubjectBuilder {
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }
-    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
+    /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
     pub fn organization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
+    /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
     pub fn set_organization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization = input;
         self
     }
-    /// <p>Legal name of the organization with which the certificate subject is affiliated. </p>
+    /// <p>Legal name of the organization with which the certificate subject is affiliated.</p>
     pub fn get_organization(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization
     }
@@ -205,19 +205,19 @@ impl Asn1SubjectBuilder {
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state
     }
-    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub fn common_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.common_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub fn set_common_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.common_name = input;
         self
     }
-    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit. </p>
+    /// <p>For CA and end-entity certificates in a private PKI, the common name (CN) can be any string within the length limit.</p>
     /// <p>Note: In publicly trusted certificates, the common name must be a fully qualified domain name (FQDN) associated with the certificate subject.</p>
     pub fn get_common_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.common_name

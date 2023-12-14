@@ -22,7 +22,7 @@ impl ModifyActivityStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyActivityStream`.
 ///
-/// <p>Changes the audit policy state of a database activity stream to either locked (default) or unlocked. A locked policy is read-only, whereas an unlocked policy is read/write. If your activity stream is started and locked, you can unlock it, customize your audit policy, and then lock your activity stream. Restarting the activity stream isn't required. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html"> Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>. </p>
+/// <p>Changes the audit policy state of a database activity stream to either locked (default) or unlocked. A locked policy is read-only, whereas an unlocked policy is read/write. If your activity stream is started and locked, you can unlock it, customize your audit policy, and then lock your activity stream. Restarting the activity stream isn't required. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html"> Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>.</p>
 /// <p>This operation is supported for RDS for Oracle and Microsoft SQL Server.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyActivityStreamFluentBuilder {

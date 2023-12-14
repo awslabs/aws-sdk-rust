@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHitTypeInput {
-    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    /// <p>The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it.</p>
     pub auto_approval_delay_in_seconds: ::std::option::Option<i64>,
-    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    /// <p>The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept.</p>
     pub assignment_duration_in_seconds: ::std::option::Option<i64>,
-    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    /// <p>The amount of money the Requester will pay a Worker for successfully completing the HIT.</p>
     pub reward: ::std::option::Option<::std::string::String>,
-    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    /// <p>The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    /// <p>One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs.</p>
     pub keywords: ::std::option::Option<::std::string::String>,
-    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    /// <p>A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    /// <p>Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure.</p>
     pub qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
 }
 impl CreateHitTypeInput {
-    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    /// <p>The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it.</p>
     pub fn auto_approval_delay_in_seconds(&self) -> ::std::option::Option<i64> {
         self.auto_approval_delay_in_seconds
     }
-    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    /// <p>The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept.</p>
     pub fn assignment_duration_in_seconds(&self) -> ::std::option::Option<i64> {
         self.assignment_duration_in_seconds
     }
-    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    /// <p>The amount of money the Requester will pay a Worker for successfully completing the HIT.</p>
     pub fn reward(&self) -> ::std::option::Option<&str> {
         self.reward.as_deref()
     }
-    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    /// <p>The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    /// <p>One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs.</p>
     pub fn keywords(&self) -> ::std::option::Option<&str> {
         self.keywords.as_deref()
     }
-    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    /// <p>A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    /// <p>Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualification_requirements.is_none()`.
     pub fn qualification_requirements(&self) -> &[crate::types::QualificationRequirement] {
@@ -70,91 +70,91 @@ pub struct CreateHitTypeInputBuilder {
     pub(crate) qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
 }
 impl CreateHitTypeInputBuilder {
-    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    /// <p>The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it.</p>
     pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
         self.auto_approval_delay_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    /// <p>The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it.</p>
     pub fn set_auto_approval_delay_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.auto_approval_delay_in_seconds = input;
         self
     }
-    /// <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    /// <p>The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it.</p>
     pub fn get_auto_approval_delay_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.auto_approval_delay_in_seconds
     }
-    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    /// <p>The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept.</p>
     /// This field is required.
     pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
         self.assignment_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    /// <p>The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept.</p>
     pub fn set_assignment_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.assignment_duration_in_seconds = input;
         self
     }
-    /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    /// <p>The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept.</p>
     pub fn get_assignment_duration_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.assignment_duration_in_seconds
     }
-    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    /// <p>The amount of money the Requester will pay a Worker for successfully completing the HIT.</p>
     /// This field is required.
     pub fn reward(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reward = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    /// <p>The amount of money the Requester will pay a Worker for successfully completing the HIT.</p>
     pub fn set_reward(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reward = input;
         self
     }
-    /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    /// <p>The amount of money the Requester will pay a Worker for successfully completing the HIT.</p>
     pub fn get_reward(&self) -> &::std::option::Option<::std::string::String> {
         &self.reward
     }
-    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    /// <p>The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned.</p>
     /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    /// <p>The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    /// <p>The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    /// <p>One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs.</p>
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keywords = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    /// <p>One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs.</p>
     pub fn set_keywords(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keywords = input;
         self
     }
-    /// <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    /// <p>One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs.</p>
     pub fn get_keywords(&self) -> &::std::option::Option<::std::string::String> {
         &self.keywords
     }
-    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    /// <p>A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it.</p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    /// <p>A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    /// <p>A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -162,19 +162,19 @@ impl CreateHitTypeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
     ///
-    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    /// <p>Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure.</p>
     pub fn qualification_requirements(mut self, input: crate::types::QualificationRequirement) -> Self {
         let mut v = self.qualification_requirements.unwrap_or_default();
         v.push(input);
         self.qualification_requirements = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    /// <p>Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure.</p>
     pub fn set_qualification_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
         self.qualification_requirements = input;
         self
     }
-    /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    /// <p>Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure.</p>
     pub fn get_qualification_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>> {
         &self.qualification_requirements
     }

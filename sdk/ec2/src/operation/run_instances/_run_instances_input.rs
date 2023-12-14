@@ -56,17 +56,17 @@ pub struct RunInstancesInput {
     /// <p>Constraints: Maximum 64 ASCII characters</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub disable_api_termination: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
@@ -84,11 +84,11 @@ pub struct RunInstancesInput {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -119,7 +119,7 @@ pub struct RunInstancesInput {
     pub private_dns_name_options: ::std::option::Option<crate::types::PrivateDnsNameOptionsRequest>,
     /// <p>The maintenance and recovery options for the instance.</p>
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest>,
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>.</p>
     pub disable_api_stop: ::std::option::Option<bool>,
     /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
     pub enable_primary_ipv6: ::std::option::Option<bool>,
@@ -222,7 +222,7 @@ impl RunInstancesInput {
         self.client_token.as_deref()
     }
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn disable_api_termination(&self) -> ::std::option::Option<bool> {
         self.disable_api_termination
     }
@@ -231,7 +231,7 @@ impl RunInstancesInput {
         self.dry_run
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
@@ -240,7 +240,7 @@ impl RunInstancesInput {
         self.iam_instance_profile.as_ref()
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::ShutdownBehavior> {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
@@ -274,11 +274,11 @@ impl RunInstancesInput {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     ///
@@ -337,7 +337,7 @@ impl RunInstancesInput {
     pub fn maintenance_options(&self) -> ::std::option::Option<&crate::types::InstanceMaintenanceOptionsRequest> {
         self.maintenance_options.as_ref()
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>.</p>
     pub fn disable_api_stop(&self) -> ::std::option::Option<bool> {
         self.disable_api_stop
     }
@@ -774,19 +774,19 @@ impl RunInstancesInputBuilder {
         &self.client_token
     }
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn disable_api_termination(mut self, input: bool) -> Self {
         self.disable_api_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_disable_api_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_api_termination = input;
         self
     }
     /// <p>If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_disable_api_termination(&self) -> &::std::option::Option<bool> {
         &self.disable_api_termination
     }
@@ -805,19 +805,19 @@ impl RunInstancesInputBuilder {
         &self.dry_run
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
         &self.ebs_optimized
     }
@@ -836,19 +836,19 @@ impl RunInstancesInputBuilder {
         &self.iam_instance_profile
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::ShutdownBehavior) -> Self {
         self.instance_initiated_shutdown_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::ShutdownBehavior>) -> Self {
         self.instance_initiated_shutdown_behavior = input;
         self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    /// <p>Default: <code>stop</code> </p>
+    /// <p>Default: <code>stop</code></p>
     pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
         &self.instance_initiated_shutdown_behavior
     }
@@ -954,11 +954,11 @@ impl RunInstancesInputBuilder {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
@@ -970,11 +970,11 @@ impl RunInstancesInputBuilder {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
@@ -984,11 +984,11 @@ impl RunInstancesInputBuilder {
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
     /// <p>You can specify tags for the following resources only:</p>
     /// <ul>
-    /// <li> <p>Instances</p> </li>
-    /// <li> <p>Volumes</p> </li>
-    /// <li> <p>Elastic graphics</p> </li>
-    /// <li> <p>Spot Instance requests</p> </li>
-    /// <li> <p>Network interfaces</p> </li>
+    /// <li><p>Instances</p></li>
+    /// <li><p>Volumes</p></li>
+    /// <li><p>Elastic graphics</p></li>
+    /// <li><p>Spot Instance requests</p></li>
+    /// <li><p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
@@ -1169,17 +1169,17 @@ impl RunInstancesInputBuilder {
     pub fn get_maintenance_options(&self) -> &::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest> {
         &self.maintenance_options
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>.</p>
     pub fn disable_api_stop(mut self, input: bool) -> Self {
         self.disable_api_stop = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>.</p>
     pub fn set_disable_api_stop(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_api_stop = input;
         self
     }
-    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>
+    /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>.</p>
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<bool> {
         &self.disable_api_stop
     }

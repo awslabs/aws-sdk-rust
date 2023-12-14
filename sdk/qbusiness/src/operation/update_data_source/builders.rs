@@ -108,17 +108,17 @@ impl UpdateDataSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

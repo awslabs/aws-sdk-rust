@@ -15,9 +15,9 @@ pub struct GetDiscoverySummaryOutput {
     pub agent_summary: ::std::option::Option<crate::types::CustomerAgentInfo>,
     /// <p>Details about discovered connectors, including connector status and health.</p>
     pub connector_summary: ::std::option::Option<crate::types::CustomerConnectorInfo>,
-    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    /// <p>Details about Migration Evaluator collectors, including collector status and health.</p>
     pub me_collector_summary: ::std::option::Option<crate::types::CustomerMeCollectorInfo>,
-    /// <p> Details about Agentless Collector collectors, including status. </p>
+    /// <p>Details about Agentless Collector collectors, including status.</p>
     pub agentless_collector_summary: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
     _request_id: Option<String>,
 }
@@ -46,11 +46,11 @@ impl GetDiscoverySummaryOutput {
     pub fn connector_summary(&self) -> ::std::option::Option<&crate::types::CustomerConnectorInfo> {
         self.connector_summary.as_ref()
     }
-    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    /// <p>Details about Migration Evaluator collectors, including collector status and health.</p>
     pub fn me_collector_summary(&self) -> ::std::option::Option<&crate::types::CustomerMeCollectorInfo> {
         self.me_collector_summary.as_ref()
     }
-    /// <p> Details about Agentless Collector collectors, including status. </p>
+    /// <p>Details about Agentless Collector collectors, including status.</p>
     pub fn agentless_collector_summary(&self) -> ::std::option::Option<&crate::types::CustomerAgentlessCollectorInfo> {
         self.agentless_collector_summary.as_ref()
     }
@@ -166,31 +166,31 @@ impl GetDiscoverySummaryOutputBuilder {
     pub fn get_connector_summary(&self) -> &::std::option::Option<crate::types::CustomerConnectorInfo> {
         &self.connector_summary
     }
-    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    /// <p>Details about Migration Evaluator collectors, including collector status and health.</p>
     pub fn me_collector_summary(mut self, input: crate::types::CustomerMeCollectorInfo) -> Self {
         self.me_collector_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    /// <p>Details about Migration Evaluator collectors, including collector status and health.</p>
     pub fn set_me_collector_summary(mut self, input: ::std::option::Option<crate::types::CustomerMeCollectorInfo>) -> Self {
         self.me_collector_summary = input;
         self
     }
-    /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
+    /// <p>Details about Migration Evaluator collectors, including collector status and health.</p>
     pub fn get_me_collector_summary(&self) -> &::std::option::Option<crate::types::CustomerMeCollectorInfo> {
         &self.me_collector_summary
     }
-    /// <p> Details about Agentless Collector collectors, including status. </p>
+    /// <p>Details about Agentless Collector collectors, including status.</p>
     pub fn agentless_collector_summary(mut self, input: crate::types::CustomerAgentlessCollectorInfo) -> Self {
         self.agentless_collector_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Details about Agentless Collector collectors, including status. </p>
+    /// <p>Details about Agentless Collector collectors, including status.</p>
     pub fn set_agentless_collector_summary(mut self, input: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>) -> Self {
         self.agentless_collector_summary = input;
         self
     }
-    /// <p> Details about Agentless Collector collectors, including status. </p>
+    /// <p>Details about Agentless Collector collectors, including status.</p>
     pub fn get_agentless_collector_summary(&self) -> &::std::option::Option<crate::types::CustomerAgentlessCollectorInfo> {
         &self.agentless_collector_summary
     }

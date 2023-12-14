@@ -21,7 +21,7 @@ pub struct CreateDevEndpointOutput {
     pub number_of_nodes: i32,
     /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
-    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
@@ -43,7 +43,7 @@ pub struct CreateDevEndpointOutput {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -88,7 +88,7 @@ impl CreateDevEndpointOutput {
     pub fn worker_type(&self) -> ::std::option::Option<&crate::types::WorkerType> {
         self.worker_type.as_ref()
     }
-    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn glue_version(&self) -> ::std::option::Option<&str> {
         self.glue_version.as_deref()
@@ -128,7 +128,7 @@ impl CreateDevEndpointOutput {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -305,19 +305,19 @@ impl CreateDevEndpointOutputBuilder {
     pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
         &self.worker_type
     }
-    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.glue_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.glue_version = input;
         self
     }
-    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.glue_version
@@ -441,7 +441,7 @@ impl CreateDevEndpointOutputBuilder {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -453,7 +453,7 @@ impl CreateDevEndpointOutputBuilder {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
@@ -463,7 +463,7 @@ impl CreateDevEndpointOutputBuilder {
     /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEntitiesInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub entity_type: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct ListEntitiesInput {
     pub entity_type_sort: ::std::option::Option<crate::types::EntityTypeSort>,
 }
 impl ListEntitiesInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -84,18 +84,18 @@ pub struct ListEntitiesInputBuilder {
     pub(crate) entity_type_sort: ::std::option::Option<crate::types::EntityTypeSort>,
 }
 impl ListEntitiesInputBuilder {
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }

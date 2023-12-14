@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePricingRulesOutput {
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociatePricingRulesOutput {
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct AssociatePricingRulesOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssociatePricingRulesOutputBuilder {
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

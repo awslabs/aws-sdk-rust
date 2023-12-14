@@ -5,7 +5,7 @@
 pub struct CreateCollectionOutput {
     /// <p>HTTP status code indicating the result of the operation.</p>
     pub status_code: ::std::option::Option<i32>,
-    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources.</p>
     pub collection_arn: ::std::option::Option<::std::string::String>,
     /// <p>Version number of the face detection model associated with the collection you are creating.</p>
     pub face_model_version: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl CreateCollectionOutput {
     pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
-    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources.</p>
     pub fn collection_arn(&self) -> ::std::option::Option<&str> {
         self.collection_arn.as_deref()
     }
@@ -61,17 +61,17 @@ impl CreateCollectionOutputBuilder {
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
         &self.status_code
     }
-    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources.</p>
     pub fn collection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources.</p>
     pub fn set_collection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources.</p>
     pub fn get_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_arn
     }

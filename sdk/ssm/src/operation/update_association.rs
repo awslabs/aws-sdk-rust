@@ -248,7 +248,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateAssocia
 pub enum UpdateAssociationError {
     /// <p>The specified association doesn't exist.</p>
     AssociationDoesNotExist(crate::types::error::AssociationDoesNotExist),
-    /// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
+    /// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions.</p>
     AssociationVersionLimitExceeded(crate::types::error::AssociationVersionLimitExceeded),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),

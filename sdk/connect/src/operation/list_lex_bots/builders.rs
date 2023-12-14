@@ -23,7 +23,7 @@ impl ListLexBotsInputBuilder {
 /// Fluent builder constructing a request to `ListLexBots`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-/// <p>Returns a paginated list of all the Amazon Lex V1 bots currently associated with the instance. To return both Amazon Lex V1 and V2 bots, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a> API. </p>
+/// <p>Returns a paginated list of all the Amazon Lex V1 bots currently associated with the instance. To return both Amazon Lex V1 and V2 bots, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLexBotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -143,17 +143,17 @@ impl ListLexBotsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
+    /// <p>The maximum number of results to return per page. If no value is specified, the default is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
+    /// <p>The maximum number of results to return per page. If no value is specified, the default is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
+    /// <p>The maximum number of results to return per page. If no value is specified, the default is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

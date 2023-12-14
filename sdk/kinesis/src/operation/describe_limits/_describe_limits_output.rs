@@ -7,9 +7,9 @@ pub struct DescribeLimitsOutput {
     pub shard_limit: i32,
     /// <p>The number of open shards.</p>
     pub open_shard_count: i32,
-    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    /// <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     pub on_demand_stream_count: i32,
-    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub on_demand_stream_count_limit: i32,
     _request_id: Option<String>,
 }
@@ -22,11 +22,11 @@ impl DescribeLimitsOutput {
     pub fn open_shard_count(&self) -> i32 {
         self.open_shard_count
     }
-    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    /// <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn on_demand_stream_count(&self) -> i32 {
         self.on_demand_stream_count
     }
-    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub fn on_demand_stream_count_limit(&self) -> i32 {
         self.on_demand_stream_count_limit
     }
@@ -84,33 +84,33 @@ impl DescribeLimitsOutputBuilder {
     pub fn get_open_shard_count(&self) -> &::std::option::Option<i32> {
         &self.open_shard_count
     }
-    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    /// <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     /// This field is required.
     pub fn on_demand_stream_count(mut self, input: i32) -> Self {
         self.on_demand_stream_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    /// <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn set_on_demand_stream_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_stream_count = input;
         self
     }
-    /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    /// <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     pub fn get_on_demand_stream_count(&self) -> &::std::option::Option<i32> {
         &self.on_demand_stream_count
     }
-    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     /// This field is required.
     pub fn on_demand_stream_count_limit(mut self, input: i32) -> Self {
         self.on_demand_stream_count_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub fn set_on_demand_stream_count_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_stream_count_limit = input;
         self
     }
-    /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub fn get_on_demand_stream_count_limit(&self) -> &::std::option::Option<i32> {
         &self.on_demand_stream_count_limit
     }

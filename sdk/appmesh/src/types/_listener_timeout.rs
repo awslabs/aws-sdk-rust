@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ListenerTimeout {
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     Grpc(crate::types::GrpcTimeout),
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     Http(crate::types::HttpTimeout),
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     Http2(crate::types::HttpTimeout),
-    /// <p>An object that represents types of timeouts. </p>
+    /// <p>An object that represents types of timeouts.</p>
     Tcp(crate::types::TcpTimeout),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

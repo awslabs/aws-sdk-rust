@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImportInput {
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
 }
 impl GetImportInput {
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     pub fn import_id(&self) -> ::std::option::Option<&str> {
         self.import_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
 }
 impl GetImportInputBuilder {
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     /// This field is required.
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_id = input;
         self
     }
-    /// <p> The ID for the import. </p>
+    /// <p>The ID for the import.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_id
     }

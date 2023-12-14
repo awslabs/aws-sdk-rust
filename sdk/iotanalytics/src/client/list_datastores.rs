@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p>  <p>The default value is 100.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p><br>
     /// - On success, responds with [`ListDatastoresOutput`](crate::operation::list_datastores::ListDatastoresOutput) with field(s):
     ///   - [`datastore_summaries(Option<Vec::<DatastoreSummary>>)`](crate::operation::list_datastores::ListDatastoresOutput::datastore_summaries): <p>A list of <code>DatastoreSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datastores::ListDatastoresOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>

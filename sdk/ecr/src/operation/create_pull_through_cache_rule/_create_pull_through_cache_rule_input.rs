@@ -7,15 +7,15 @@ pub struct CreatePullThroughCacheRuleInput {
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
-    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
-    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
-    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
-    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
-    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
-    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <li><p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <li><p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <li><p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <li><p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <li><p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <li><p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
     /// <custom>
     /// .azurecr.io
-    /// </custom></code> </p> </li>
+    /// </custom></code></p></li>
     /// </ul>
     pub upstream_registry_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
@@ -32,15 +32,15 @@ impl CreatePullThroughCacheRuleInput {
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
-    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
-    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
-    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
-    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
-    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
-    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <li><p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <li><p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <li><p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <li><p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <li><p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <li><p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
     /// <custom>
     /// .azurecr.io
-    /// </custom></code> </p> </li>
+    /// </custom></code></p></li>
     /// </ul>
     pub fn upstream_registry_url(&self) -> ::std::option::Option<&str> {
         self.upstream_registry_url.as_deref()
@@ -93,15 +93,15 @@ impl CreatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
-    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
-    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
-    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
-    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
-    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
-    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <li><p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <li><p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <li><p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <li><p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <li><p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <li><p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
     /// <custom>
     /// .azurecr.io
-    /// </custom></code> </p> </li>
+    /// </custom></code></p></li>
     /// </ul>
     /// This field is required.
     pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,15 +110,15 @@ impl CreatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
-    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
-    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
-    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
-    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
-    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
-    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <li><p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <li><p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <li><p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <li><p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <li><p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <li><p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
     /// <custom>
     /// .azurecr.io
-    /// </custom></code> </p> </li>
+    /// </custom></code></p></li>
     /// </ul>
     pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upstream_registry_url = input;
@@ -126,15 +126,15 @@ impl CreatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
-    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
-    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
-    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
-    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
-    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
-    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <li><p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <li><p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <li><p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <li><p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <li><p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <li><p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
     /// <custom>
     /// .azurecr.io
-    /// </custom></code> </p> </li>
+    /// </custom></code></p></li>
     /// </ul>
     pub fn get_upstream_registry_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.upstream_registry_url

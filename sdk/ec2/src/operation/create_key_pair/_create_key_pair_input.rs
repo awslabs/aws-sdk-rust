@@ -9,12 +9,12 @@ pub struct CreateKeyPairInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub key_type: ::std::option::Option<crate::types::KeyType>,
     /// <p>The tags to apply to the new key pair.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub key_format: ::std::option::Option<crate::types::KeyFormat>,
 }
 impl CreateKeyPairInput {
@@ -28,7 +28,7 @@ impl CreateKeyPairInput {
         self.dry_run
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub fn key_type(&self) -> ::std::option::Option<&crate::types::KeyType> {
         self.key_type.as_ref()
     }
@@ -39,7 +39,7 @@ impl CreateKeyPairInput {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub fn key_format(&self) -> ::std::option::Option<&crate::types::KeyFormat> {
         self.key_format.as_ref()
     }
@@ -95,19 +95,19 @@ impl CreateKeyPairInputBuilder {
         &self.dry_run
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub fn key_type(mut self, input: crate::types::KeyType) -> Self {
         self.key_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
         self.key_type = input;
         self
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
-    /// <p>Default: <code>rsa</code> </p>
+    /// <p>Default: <code>rsa</code></p>
     pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
         &self.key_type
     }
@@ -132,19 +132,19 @@ impl CreateKeyPairInputBuilder {
         &self.tag_specifications
     }
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub fn key_format(mut self, input: crate::types::KeyFormat) -> Self {
         self.key_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub fn set_key_format(mut self, input: ::std::option::Option<crate::types::KeyFormat>) -> Self {
         self.key_format = input;
         self
     }
     /// <p>The format of the key pair.</p>
-    /// <p>Default: <code>pem</code> </p>
+    /// <p>Default: <code>pem</code></p>
     pub fn get_key_format(&self) -> &::std::option::Option<crate::types::KeyFormat> {
         &self.key_format
     }

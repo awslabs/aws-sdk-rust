@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFirewallRuleGroup`](crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`firewall_rule_group_id(impl Into<String>)`](crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder::firewall_rule_group_id) / [`set_firewall_rule_group_id(Option<String>)`](crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder::set_firewall_rule_group_id):<br>required: **true**<br><p>The unique identifier of the firewall rule group. </p><br>
+    ///   - [`firewall_rule_group_id(impl Into<String>)`](crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder::firewall_rule_group_id) / [`set_firewall_rule_group_id(Option<String>)`](crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder::set_firewall_rule_group_id):<br>required: **true**<br><p>The unique identifier of the firewall rule group.</p><br>
     /// - On success, responds with [`GetFirewallRuleGroupOutput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput) with field(s):
-    ///   - [`firewall_rule_group(Option<FirewallRuleGroup>)`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput::firewall_rule_group): <p>A collection of rules used to filter DNS network traffic. </p>
+    ///   - [`firewall_rule_group(Option<FirewallRuleGroup>)`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput::firewall_rule_group): <p>A collection of rules used to filter DNS network traffic.</p>
     /// - On failure, responds with [`SdkError<GetFirewallRuleGroupError>`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupError)
     pub fn get_firewall_rule_group(&self) -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder {
         crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupFluentBuilder::new(self.handle.clone())

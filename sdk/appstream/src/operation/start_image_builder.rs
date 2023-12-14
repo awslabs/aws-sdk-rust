@@ -249,7 +249,7 @@ pub enum StartImageBuilderError {
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The image can't be updated because it's not compatible for updates.</p>
     IncompatibleImageException(crate::types::error::IncompatibleImageException),
-    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
+    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
     /// <p>The specified resource exists and is not in use, but isn't available.</p>
     ResourceNotAvailableException(crate::types::error::ResourceNotAvailableException),

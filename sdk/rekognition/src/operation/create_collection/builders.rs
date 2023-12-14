@@ -22,8 +22,8 @@ impl CreateCollectionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCollection`.
 ///
-/// <p>Creates a collection in an AWS Region. You can add faces to the collection using the <code>IndexFaces</code> operation. </p>
-/// <p>For example, you might create collections, one for each of your application users. A user can then index faces using the <code>IndexFaces</code> operation and persist results in a specific collection. Then, a user can search the collection for faces in the user-specific container. </p>
+/// <p>Creates a collection in an AWS Region. You can add faces to the collection using the <code>IndexFaces</code> operation.</p>
+/// <p>For example, you might create collections, one for each of your application users. A user can then index faces using the <code>IndexFaces</code> operation and persist results in a specific collection. Then, a user can search the collection for faces in the user-specific container.</p>
 /// <p>When you create a collection, it is associated with the latest version of the face model version.</p> <note>
 /// <p>Collection names are case-sensitive.</p>
 /// </note>
@@ -131,17 +131,17 @@ impl CreateCollectionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
+    /// <p>A set of tags (key-value pairs) that you want to attach to the collection.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
+    /// <p>A set of tags (key-value pairs) that you want to attach to the collection.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
+    /// <p>A set of tags (key-value pairs) that you want to attach to the collection.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

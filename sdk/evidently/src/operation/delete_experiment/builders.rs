@@ -23,7 +23,7 @@ impl DeleteExperimentInputBuilder {
 /// Fluent builder constructing a request to `DeleteExperiment`.
 ///
 /// <p>Deletes an Evidently experiment. The feature used for the experiment is not deleted.</p>
-/// <p>To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>. </p>
+/// <p>To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

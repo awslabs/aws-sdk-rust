@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodegroupHealth {
-    /// <p>Any issues that are associated with the node group. </p>
+    /// <p>Any issues that are associated with the node group.</p>
     pub issues: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
 }
 impl NodegroupHealth {
-    /// <p>Any issues that are associated with the node group. </p>
+    /// <p>Any issues that are associated with the node group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues.is_none()`.
     pub fn issues(&self) -> &[crate::types::Issue] {
@@ -33,19 +33,19 @@ impl NodegroupHealthBuilder {
     ///
     /// To override the contents of this collection use [`set_issues`](Self::set_issues).
     ///
-    /// <p>Any issues that are associated with the node group. </p>
+    /// <p>Any issues that are associated with the node group.</p>
     pub fn issues(mut self, input: crate::types::Issue) -> Self {
         let mut v = self.issues.unwrap_or_default();
         v.push(input);
         self.issues = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Any issues that are associated with the node group. </p>
+    /// <p>Any issues that are associated with the node group.</p>
     pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>) -> Self {
         self.issues = input;
         self
     }
-    /// <p>Any issues that are associated with the node group. </p>
+    /// <p>Any issues that are associated with the node group.</p>
     pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Issue>> {
         &self.issues
     }

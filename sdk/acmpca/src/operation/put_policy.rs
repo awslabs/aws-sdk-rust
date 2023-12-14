@@ -251,7 +251,7 @@ pub enum PutPolicyError {
     InvalidPolicyException(crate::types::error::InvalidPolicyException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::types::error::InvalidStateException),
-    /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource. </p>
+    /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource.</p>
     LockoutPreventedException(crate::types::error::LockoutPreventedException),
     /// <p>The request has failed for an unspecified reason.</p>
     RequestFailedException(crate::types::error::RequestFailedException),

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopAssessment`](crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_id(impl Into<String>)`](crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::set_assessment_id):<br>required: **true**<br><p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p><br>
+    ///   - [`assessment_id(impl Into<String>)`](crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder::set_assessment_id):<br>required: **true**<br><p>The <code>assessmentId</code> returned by <code>StartAssessment</code>.</p><br>
     /// - On success, responds with [`StopAssessmentOutput`](crate::operation::stop_assessment::StopAssessmentOutput)
     /// - On failure, responds with [`SdkError<StopAssessmentError>`](crate::operation::stop_assessment::StopAssessmentError)
     pub fn stop_assessment(&self) -> crate::operation::stop_assessment::builders::StopAssessmentFluentBuilder {

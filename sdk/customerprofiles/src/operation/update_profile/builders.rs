@@ -235,45 +235,45 @@ impl UpdateProfileFluentBuilder {
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_last_name()
     }
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub fn birth_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.birth_date(input.into());
         self
     }
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub fn set_birth_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_birth_date(input);
         self
     }
-    /// <p>The customer’s birth date. </p>
+    /// <p>The customer’s birth date.</p>
     pub fn get_birth_date(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_birth_date()
     }
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub fn gender(mut self, input: crate::types::Gender) -> Self {
         self.inner = self.inner.gender(input);
         self
     }
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub fn set_gender(mut self, input: ::std::option::Option<crate::types::Gender>) -> Self {
         self.inner = self.inner.set_gender(input);
         self
     }
-    /// <p>The gender with which the customer identifies. </p>
+    /// <p>The gender with which the customer identifies.</p>
     pub fn get_gender(&self) -> &::std::option::Option<crate::types::Gender> {
         self.inner.get_gender()
     }
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number(input.into());
         self
     }
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number(input);
         self
     }
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_phone_number()
     }
@@ -319,17 +319,17 @@ impl UpdateProfileFluentBuilder {
     pub fn get_business_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_business_phone_number()
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_address()
     }

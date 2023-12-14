@@ -131,19 +131,19 @@ impl DeleteTagsFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
     /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>
-    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

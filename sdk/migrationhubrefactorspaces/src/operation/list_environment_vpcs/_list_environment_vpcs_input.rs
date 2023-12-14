@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentVpcsInput {
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListEnvironmentVpcsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEnvironmentVpcsInput {
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_identifier.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListEnvironmentVpcsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListEnvironmentVpcsInputBuilder {
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_identifier = input;
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_identifier
     }

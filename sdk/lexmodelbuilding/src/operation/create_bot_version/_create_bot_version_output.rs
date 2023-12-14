@@ -9,15 +9,15 @@ pub struct CreateBotVersionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
     pub intents: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
-    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
     pub clarification_prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
     pub abort_statement: ::std::option::Option<crate::types::Statement>,
-    /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
+    /// <p>When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element.</p>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
+    /// <p>The date when the <code>$LATEST</code> version of this bot was updated.</p>
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the bot version was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -27,12 +27,12 @@ pub struct CreateBotVersionOutput {
     pub voice_id: ::std::option::Option<::std::string::String>,
     /// <p>Checksum identifying the version of the bot that was created.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the bot. </p>
+    /// <p>The version of the bot.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p> Specifies the target locale for the bot. </p>
+    /// <p>Specifies the target locale for the bot.</p>
     pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
-    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
     pub child_directed: ::std::option::Option<bool>,
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
     pub enable_model_improvements: ::std::option::Option<bool>,
@@ -55,7 +55,7 @@ impl CreateBotVersionOutput {
     pub fn intents(&self) -> &[crate::types::Intent] {
         self.intents.as_deref().unwrap_or_default()
     }
-    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
     pub fn clarification_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
         self.clarification_prompt.as_ref()
     }
@@ -63,7 +63,7 @@ impl CreateBotVersionOutput {
     pub fn abort_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
         self.abort_statement.as_ref()
     }
-    /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
+    /// <p>When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
@@ -71,7 +71,7 @@ impl CreateBotVersionOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
+    /// <p>The date when the <code>$LATEST</code> version of this bot was updated.</p>
     pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
@@ -91,16 +91,16 @@ impl CreateBotVersionOutput {
     pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
-    /// <p>The version of the bot. </p>
+    /// <p>The version of the bot.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p> Specifies the target locale for the bot. </p>
+    /// <p>Specifies the target locale for the bot.</p>
     pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
-    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
     pub fn child_directed(&self) -> ::std::option::Option<bool> {
         self.child_directed
     }
@@ -197,17 +197,17 @@ impl CreateBotVersionOutputBuilder {
     pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Intent>> {
         &self.intents
     }
-    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
     pub fn clarification_prompt(mut self, input: crate::types::Prompt) -> Self {
         self.clarification_prompt = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
     pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
         self.clarification_prompt = input;
         self
     }
-    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    /// <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>.</p>
     pub fn get_clarification_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
         &self.clarification_prompt
     }
@@ -225,17 +225,17 @@ impl CreateBotVersionOutputBuilder {
     pub fn get_abort_statement(&self) -> &::std::option::Option<crate::types::Statement> {
         &self.abort_statement
     }
-    /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
+    /// <p>When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
+    /// <p>When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
-    /// <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
+    /// <p>When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
@@ -253,17 +253,17 @@ impl CreateBotVersionOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
+    /// <p>The date when the <code>$LATEST</code> version of this bot was updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
+    /// <p>The date when the <code>$LATEST</code> version of this bot was updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
-    /// <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
+    /// <p>The date when the <code>$LATEST</code> version of this bot was updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
@@ -323,48 +323,48 @@ impl CreateBotVersionOutputBuilder {
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum
     }
-    /// <p>The version of the bot. </p>
+    /// <p>The version of the bot.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the bot. </p>
+    /// <p>The version of the bot.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version of the bot. </p>
+    /// <p>The version of the bot.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p> Specifies the target locale for the bot. </p>
+    /// <p>Specifies the target locale for the bot.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.locale = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies the target locale for the bot. </p>
+    /// <p>Specifies the target locale for the bot.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.locale = input;
         self
     }
-    /// <p> Specifies the target locale for the bot. </p>
+    /// <p>Specifies the target locale for the bot.</p>
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
         &self.locale
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
-    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
     pub fn child_directed(mut self, input: bool) -> Self {
         self.child_directed = ::std::option::Option::Some(input);
         self
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
-    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
     pub fn set_child_directed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.child_directed = input;
         self
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
-    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
     pub fn get_child_directed(&self) -> &::std::option::Option<bool> {
         &self.child_directed
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Principal {
-    /// <p> The group associated with the principal.</p>
+    /// <p>The group associated with the principal.</p>
     Group(crate::types::PrincipalGroup),
     /// <p>The user associated with the principal.</p>
     User(crate::types::PrincipalUser),

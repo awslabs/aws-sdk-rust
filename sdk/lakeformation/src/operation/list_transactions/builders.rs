@@ -129,17 +129,17 @@ impl ListTransactionsFluentBuilder {
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog_id()
     }
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn status_filter(mut self, input: crate::types::TransactionStatusFilter) -> Self {
         self.inner = self.inner.status_filter(input);
         self
     }
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::TransactionStatusFilter>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
-    /// <p> A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
+    /// <p>A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::TransactionStatusFilter> {
         self.inner.get_status_filter()
     }

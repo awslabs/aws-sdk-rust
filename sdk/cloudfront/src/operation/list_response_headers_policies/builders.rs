@@ -112,8 +112,8 @@ impl ListResponseHeadersPoliciesFluentBuilder {
     }
     /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ResponseHeadersPolicyType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -121,8 +121,8 @@ impl ListResponseHeadersPoliciesFluentBuilder {
     }
     /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -130,8 +130,8 @@ impl ListResponseHeadersPoliciesFluentBuilder {
     }
     /// <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyType> {
         self.inner.get_type()

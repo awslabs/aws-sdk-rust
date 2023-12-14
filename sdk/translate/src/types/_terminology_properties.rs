@@ -8,7 +8,7 @@ pub struct TerminologyProperties {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the custom terminology properties.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+    /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
     pub source_language_code: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct TerminologyProperties {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
     /// <dt>
     /// UNI
@@ -56,7 +56,7 @@ impl TerminologyProperties {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+    /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -90,7 +90,7 @@ impl TerminologyProperties {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
     /// <dt>
     /// UNI
@@ -176,17 +176,17 @@ impl TerminologyPropertiesBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+    /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+    /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+    /// <p>The Amazon Resource Name (ARN) of the custom terminology.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -294,7 +294,7 @@ impl TerminologyPropertiesBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
     /// <dt>
     /// UNI
@@ -313,7 +313,7 @@ impl TerminologyPropertiesBuilder {
         self.directionality = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
     /// <dt>
     /// UNI
@@ -332,7 +332,7 @@ impl TerminologyPropertiesBuilder {
         self.directionality = input;
         self
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
     /// <dt>
     /// UNI

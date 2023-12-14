@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have sufficient permissions to perform this action. </p>
+    /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A resource was in an inconsistent state during an update or a deletion.</p>
     ConflictException(crate::types::error::ConflictException),

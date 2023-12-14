@@ -15,7 +15,7 @@ pub struct RecognizeTextInput {
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the dialog between the user and the bot.</p>
     pub session_state: ::std::option::Option<crate::types::SessionState>,
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -44,7 +44,7 @@ impl RecognizeTextInput {
     pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
         self.session_state.as_ref()
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
@@ -176,7 +176,7 @@ impl RecognizeTextInputBuilder {
     ///
     /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
     ///
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn request_attributes(
         mut self,
@@ -188,7 +188,7 @@ impl RecognizeTextInputBuilder {
         self.request_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn set_request_attributes(
         mut self,
@@ -197,7 +197,7 @@ impl RecognizeTextInputBuilder {
         self.request_attributes = input;
         self
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
+    /// <p>Request-specific information passed between the client application and Amazon Lex V2</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_attributes

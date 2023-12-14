@@ -26,8 +26,8 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
 /// <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p>
 /// <p>This API operation requires the following IAM permissions:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigFluentBuilder {
@@ -144,31 +144,31 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
         self.inner.get_staging_distribution_id()
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
-    /// <p> <code>
+    /// <p><code>
     /// <primary etag>
     /// ,
     /// <staging etag></staging>
-    /// </primary></code> </p>
+    /// </primary></code></p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }

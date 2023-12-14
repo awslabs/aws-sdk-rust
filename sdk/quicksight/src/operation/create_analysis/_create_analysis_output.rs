@@ -7,7 +7,7 @@ pub struct CreateAnalysisOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis.</p>
     pub analysis_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the creation of the analysis. </p>
+    /// <p>The status of the creation of the analysis.</p>
     pub creation_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -24,7 +24,7 @@ impl CreateAnalysisOutput {
     pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>The status of the creation of the analysis. </p>
+    /// <p>The status of the creation of the analysis.</p>
     pub fn creation_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.creation_status.as_ref()
     }
@@ -89,17 +89,17 @@ impl CreateAnalysisOutputBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }
-    /// <p>The status of the creation of the analysis. </p>
+    /// <p>The status of the creation of the analysis.</p>
     pub fn creation_status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.creation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the creation of the analysis. </p>
+    /// <p>The status of the creation of the analysis.</p>
     pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.creation_status = input;
         self
     }
-    /// <p>The status of the creation of the analysis. </p>
+    /// <p>The status of the creation of the analysis.</p>
     pub fn get_creation_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.creation_status
     }

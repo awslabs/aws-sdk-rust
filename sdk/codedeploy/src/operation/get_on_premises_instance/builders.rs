@@ -22,7 +22,7 @@ impl GetOnPremisesInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetOnPremisesInstance`.
 ///
-/// <p> Gets information about an on-premises instance. </p>
+/// <p>Gets information about an on-premises instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOnPremisesInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetOnPremisesInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the on-premises instance about which to get information. </p>
+    /// <p>The name of the on-premises instance about which to get information.</p>
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
-    /// <p> The name of the on-premises instance about which to get information. </p>
+    /// <p>The name of the on-premises instance about which to get information.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
-    /// <p> The name of the on-premises instance about which to get information. </p>
+    /// <p>The name of the on-premises instance about which to get information.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_name()
     }

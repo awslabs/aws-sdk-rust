@@ -6,7 +6,7 @@ pub struct ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
     pub finding_aggregators: ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>>,
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-    /// <p>This operation currently only returns a single result. </p>
+    /// <p>This operation currently only returns a single result.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -18,7 +18,7 @@ impl ListFindingAggregatorsOutput {
         self.finding_aggregators.as_deref().unwrap_or_default()
     }
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-    /// <p>This operation currently only returns a single result. </p>
+    /// <p>This operation currently only returns a single result.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -65,19 +65,19 @@ impl ListFindingAggregatorsOutputBuilder {
         &self.finding_aggregators
     }
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-    /// <p>This operation currently only returns a single result. </p>
+    /// <p>This operation currently only returns a single result.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-    /// <p>This operation currently only returns a single result. </p>
+    /// <p>This operation currently only returns a single result.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
-    /// <p>This operation currently only returns a single result. </p>
+    /// <p>This operation currently only returns a single result.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

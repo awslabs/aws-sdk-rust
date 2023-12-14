@@ -11,7 +11,7 @@ pub struct DocumentAttributeTarget {
     pub key: ::std::string::String,
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
     pub value: ::std::option::Option<crate::types::DocumentAttributeValue>,
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub attribute_value_operator: ::std::option::Option<crate::types::AttributeValueOperator>,
 }
 impl DocumentAttributeTarget {
@@ -24,7 +24,7 @@ impl DocumentAttributeTarget {
     pub fn value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
         self.value.as_ref()
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub fn attribute_value_operator(&self) -> ::std::option::Option<&crate::types::AttributeValueOperator> {
         self.attribute_value_operator.as_ref()
     }
@@ -74,17 +74,17 @@ impl DocumentAttributeTargetBuilder {
     pub fn get_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
         &self.value
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub fn attribute_value_operator(mut self, input: crate::types::AttributeValueOperator) -> Self {
         self.attribute_value_operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub fn set_attribute_value_operator(mut self, input: ::std::option::Option<crate::types::AttributeValueOperator>) -> Self {
         self.attribute_value_operator = input;
         self
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub fn get_attribute_value_operator(&self) -> &::std::option::Option<crate::types::AttributeValueOperator> {
         &self.attribute_value_operator
     }

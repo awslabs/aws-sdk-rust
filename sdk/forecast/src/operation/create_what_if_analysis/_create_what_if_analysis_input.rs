@@ -10,9 +10,9 @@ pub struct CreateWhatIfAnalysisInput {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
@@ -30,9 +30,9 @@ impl CreateWhatIfAnalysisInput {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn time_series_selector(&self) -> ::std::option::Option<&crate::types::TimeSeriesSelector> {
         self.time_series_selector.as_ref()
@@ -94,9 +94,9 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn time_series_selector(mut self, input: crate::types::TimeSeriesSelector) -> Self {
         self.time_series_selector = ::std::option::Option::Some(input);
@@ -105,9 +105,9 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.time_series_selector = input;
@@ -116,9 +116,9 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li> <p> <code>DataSource</code> </p> </li>
-    /// <li> <p> <code>Format</code> </p> </li>
-    /// <li> <p> <code>Schema</code> </p> </li>
+    /// <li><p><code>DataSource</code></p></li>
+    /// <li><p><code>Format</code></p></li>
+    /// <li><p><code>Schema</code></p></li>
     /// </ul>
     pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         &self.time_series_selector

@@ -5,7 +5,7 @@
 pub struct UpdateEnabledControlInput {
     /// <p>A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code> is of type <code>Document</code>.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     pub enabled_control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEnabledControlInput {
@@ -15,7 +15,7 @@ impl UpdateEnabledControlInput {
     pub fn parameters(&self) -> &[crate::types::EnabledControlParameter] {
         self.parameters.as_deref().unwrap_or_default()
     }
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn enabled_control_identifier(&self) -> ::std::option::Option<&str> {
         self.enabled_control_identifier.as_deref()
     }
@@ -55,18 +55,18 @@ impl UpdateEnabledControlInputBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>> {
         &self.parameters
     }
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     /// This field is required.
     pub fn enabled_control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enabled_control_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn set_enabled_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.enabled_control_identifier = input;
         self
     }
-    /// <p> The ARN of the enabled control that will be updated. </p>
+    /// <p>The ARN of the enabled control that will be updated.</p>
     pub fn get_enabled_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.enabled_control_identifier
     }

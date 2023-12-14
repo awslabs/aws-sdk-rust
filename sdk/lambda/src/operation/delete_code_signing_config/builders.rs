@@ -22,7 +22,7 @@ impl DeleteCodeSigningConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCodeSigningConfig`.
 ///
-/// <p>Deletes the code signing configuration. You can delete the code signing configuration only if no function is using it. </p>
+/// <p>Deletes the code signing configuration. You can delete the code signing configuration only if no function is using it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

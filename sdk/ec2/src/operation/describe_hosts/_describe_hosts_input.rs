@@ -5,13 +5,13 @@
 pub struct DescribeHostsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the host.</p> </li>
-    /// <li> <p> <code>client-token</code> - The idempotency token that you provided when you allocated the host.</p> </li>
-    /// <li> <p> <code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p> </li>
-    /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li><p><code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone of the host.</p></li>
+    /// <li><p><code>client-token</code> - The idempotency token that you provided when you allocated the host.</p></li>
+    /// <li><p><code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p></li>
+    /// <li><p><code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub filter: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
@@ -25,13 +25,13 @@ pub struct DescribeHostsInput {
 impl DescribeHostsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the host.</p> </li>
-    /// <li> <p> <code>client-token</code> - The idempotency token that you provided when you allocated the host.</p> </li>
-    /// <li> <p> <code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p> </li>
-    /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li><p><code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone of the host.</p></li>
+    /// <li><p><code>client-token</code> - The idempotency token that you provided when you allocated the host.</p></li>
+    /// <li><p><code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p></li>
+    /// <li><p><code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter.is_none()`.
@@ -77,13 +77,13 @@ impl DescribeHostsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the host.</p> </li>
-    /// <li> <p> <code>client-token</code> - The idempotency token that you provided when you allocated the host.</p> </li>
-    /// <li> <p> <code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p> </li>
-    /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li><p><code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone of the host.</p></li>
+    /// <li><p><code>client-token</code> - The idempotency token that you provided when you allocated the host.</p></li>
+    /// <li><p><code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p></li>
+    /// <li><p><code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filter.unwrap_or_default();
@@ -93,13 +93,13 @@ impl DescribeHostsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the host.</p> </li>
-    /// <li> <p> <code>client-token</code> - The idempotency token that you provided when you allocated the host.</p> </li>
-    /// <li> <p> <code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p> </li>
-    /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li><p><code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone of the host.</p></li>
+    /// <li><p><code>client-token</code> - The idempotency token that you provided when you allocated the host.</p></li>
+    /// <li><p><code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p></li>
+    /// <li><p><code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filter = input;
@@ -107,13 +107,13 @@ impl DescribeHostsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the host.</p> </li>
-    /// <li> <p> <code>client-token</code> - The idempotency token that you provided when you allocated the host.</p> </li>
-    /// <li> <p> <code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p> </li>
-    /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li><p><code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone of the host.</p></li>
+    /// <li><p><code>client-token</code> - The idempotency token that you provided when you allocated the host.</p></li>
+    /// <li><p><code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p></li>
+    /// <li><p><code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p></li>
+    /// <li><p><code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filter

@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionContact {
-    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
+    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     pub contact_arn: ::std::string::String,
     /// <p>The type of contact for a resolution step.</p>
     pub r#type: crate::types::ContactType,
@@ -13,7 +13,7 @@ pub struct ResolutionContact {
     pub stage_index: ::std::option::Option<i32>,
 }
 impl ResolutionContact {
-    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
+    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     pub fn contact_arn(&self) -> &str {
         use std::ops::Deref;
         self.contact_arn.deref()
@@ -43,18 +43,18 @@ pub struct ResolutionContactBuilder {
     pub(crate) stage_index: ::std::option::Option<i32>,
 }
 impl ResolutionContactBuilder {
-    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
+    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
+    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
+    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_arn
     }

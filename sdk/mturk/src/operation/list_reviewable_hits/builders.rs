@@ -22,7 +22,7 @@ impl ListReviewableHiTsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListReviewableHITs`.
 ///
-/// <p> The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal to Reviewable or Status equal to Reviewing that belong to the Requester calling the operation. </p>
+/// <p>The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal to Reviewable or Status equal to Reviewing that belong to the Requester calling the operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReviewableHITsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl ListReviewableHITsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_reviewable_hits::paginator::ListReviewableHiTsPaginator {
         crate::operation::list_reviewable_hits::paginator::ListReviewableHiTsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
+    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hit_type_id(input.into());
         self
     }
-    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
+    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
     pub fn set_hit_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hit_type_id(input);
         self
     }
-    /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
+    /// <p>The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered</p>
     pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hit_type_id()
     }
-    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
+    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
     pub fn status(mut self, input: crate::types::ReviewableHitStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
+    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewableHitStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
+    /// <p>Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewableHitStatus> {
         self.inner.get_status()
     }
@@ -156,17 +156,17 @@ impl ListReviewableHITsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Limit the number of results returned. </p>
+    /// <p>Limit the number of results returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Limit the number of results returned. </p>
+    /// <p>Limit the number of results returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Limit the number of results returned. </p>
+    /// <p>Limit the number of results returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

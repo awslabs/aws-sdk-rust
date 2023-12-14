@@ -22,7 +22,7 @@ impl ListSourceCredentialsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSourceCredentials`.
 ///
-/// <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p>
+/// <p>Returns a list of <code>SourceCredentialsInfo</code> objects.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSourceCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

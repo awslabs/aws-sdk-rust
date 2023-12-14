@@ -6,8 +6,8 @@
 pub struct ConflictResolution {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
-    /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
-    /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
+    /// <li><p><code>RECENCY</code>: Uses the data that was most recently updated.</p></li>
+    /// <li><p><code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p></li>
     /// </ul>
     pub conflict_resolving_model: crate::types::ConflictResolvingModel,
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
@@ -16,8 +16,8 @@ pub struct ConflictResolution {
 impl ConflictResolution {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
-    /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
-    /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
+    /// <li><p><code>RECENCY</code>: Uses the data that was most recently updated.</p></li>
+    /// <li><p><code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p></li>
     /// </ul>
     pub fn conflict_resolving_model(&self) -> &crate::types::ConflictResolvingModel {
         &self.conflict_resolving_model
@@ -44,8 +44,8 @@ pub struct ConflictResolutionBuilder {
 impl ConflictResolutionBuilder {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
-    /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
-    /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
+    /// <li><p><code>RECENCY</code>: Uses the data that was most recently updated.</p></li>
+    /// <li><p><code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p></li>
     /// </ul>
     /// This field is required.
     pub fn conflict_resolving_model(mut self, input: crate::types::ConflictResolvingModel) -> Self {
@@ -54,8 +54,8 @@ impl ConflictResolutionBuilder {
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
-    /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
-    /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
+    /// <li><p><code>RECENCY</code>: Uses the data that was most recently updated.</p></li>
+    /// <li><p><code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p></li>
     /// </ul>
     pub fn set_conflict_resolving_model(mut self, input: ::std::option::Option<crate::types::ConflictResolvingModel>) -> Self {
         self.conflict_resolving_model = input;
@@ -63,8 +63,8 @@ impl ConflictResolutionBuilder {
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
-    /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
-    /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
+    /// <li><p><code>RECENCY</code>: Uses the data that was most recently updated.</p></li>
+    /// <li><p><code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p></li>
     /// </ul>
     pub fn get_conflict_resolving_model(&self) -> &::std::option::Option<crate::types::ConflictResolvingModel> {
         &self.conflict_resolving_model

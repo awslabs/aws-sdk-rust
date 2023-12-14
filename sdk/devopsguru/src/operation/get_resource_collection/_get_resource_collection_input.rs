@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceCollectionInput {
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     pub resource_collection_type: ::std::option::Option<crate::types::ResourceCollectionType>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceCollectionInput {
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     pub fn resource_collection_type(&self) -> ::std::option::Option<&crate::types::ResourceCollectionType> {
         self.resource_collection_type.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetResourceCollectionInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceCollectionInputBuilder {
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     /// This field is required.
     pub fn resource_collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
         self.resource_collection_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     pub fn set_resource_collection_type(mut self, input: ::std::option::Option<crate::types::ResourceCollectionType>) -> Self {
         self.resource_collection_type = input;
         self
     }
-    /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// <p>The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks.</p>
     pub fn get_resource_collection_type(&self) -> &::std::option::Option<crate::types::ResourceCollectionType> {
         &self.resource_collection_type
     }

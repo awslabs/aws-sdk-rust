@@ -14,7 +14,7 @@ pub struct DescribeSecretOutput {
     /// <p>Specifies whether automatic rotation is turned on for this secret.</p>
     /// <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
     pub rotation_enabled: ::std::option::Option<bool>,
-    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret.</p>
     pub rotation_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
     pub rotation_rules: ::std::option::Option<crate::types::RotationRulesType>,
@@ -32,11 +32,11 @@ pub struct DescribeSecretOutput {
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are:</p>
     /// <ul>
-    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
+    /// <li><p><code>AWSCURRENT</code>, which indicates the current version of the secret.</p></li>
+    /// <li><p><code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p></li>
+    /// <li><p><code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p></li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub version_ids_to_stages: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -44,13 +44,13 @@ pub struct DescribeSecretOutput {
     pub owning_service: ::std::option::Option<::std::string::String>,
     /// <p>The date the secret was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>.</p>
     pub primary_region: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the replicas of this secret and their status: </p>
+    /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
@@ -77,7 +77,7 @@ impl DescribeSecretOutput {
     pub fn rotation_enabled(&self) -> ::std::option::Option<bool> {
         self.rotation_enabled
     }
-    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret.</p>
     pub fn rotation_lambda_arn(&self) -> ::std::option::Option<&str> {
         self.rotation_lambda_arn.as_deref()
     }
@@ -113,11 +113,11 @@ impl DescribeSecretOutput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are:</p>
     /// <ul>
-    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
+    /// <li><p><code>AWSCURRENT</code>, which indicates the current version of the secret.</p></li>
+    /// <li><p><code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p></li>
+    /// <li><p><code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p></li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn version_ids_to_stages(
@@ -133,15 +133,15 @@ impl DescribeSecretOutput {
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>.</p>
     pub fn primary_region(&self) -> ::std::option::Option<&str> {
         self.primary_region.as_deref()
     }
-    /// <p>A list of the replicas of this secret and their status: </p>
+    /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_status.is_none()`.
@@ -260,17 +260,17 @@ impl DescribeSecretOutputBuilder {
     pub fn get_rotation_enabled(&self) -> &::std::option::Option<bool> {
         &self.rotation_enabled
     }
-    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret.</p>
     pub fn rotation_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret.</p>
     pub fn set_rotation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_lambda_arn = input;
         self
     }
-    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    /// <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret.</p>
     pub fn get_rotation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rotation_lambda_arn
     }
@@ -386,11 +386,11 @@ impl DescribeSecretOutputBuilder {
     /// To override the contents of this collection use [`set_version_ids_to_stages`](Self::set_version_ids_to_stages).
     ///
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are:</p>
     /// <ul>
-    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
+    /// <li><p><code>AWSCURRENT</code>, which indicates the current version of the secret.</p></li>
+    /// <li><p><code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p></li>
+    /// <li><p><code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p></li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn version_ids_to_stages(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
@@ -400,11 +400,11 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are:</p>
     /// <ul>
-    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
+    /// <li><p><code>AWSCURRENT</code>, which indicates the current version of the secret.</p></li>
+    /// <li><p><code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p></li>
+    /// <li><p><code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p></li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn set_version_ids_to_stages(
@@ -415,11 +415,11 @@ impl DescribeSecretOutputBuilder {
         self
     }
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
-    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
+    /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are:</p>
     /// <ul>
-    /// <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>
-    /// <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>
-    /// <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>
+    /// <li><p><code>AWSCURRENT</code>, which indicates the current version of the secret.</p></li>
+    /// <li><p><code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p></li>
+    /// <li><p><code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p></li>
     /// </ul>
     /// <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn get_version_ids_to_stages(
@@ -455,17 +455,17 @@ impl DescribeSecretOutputBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
-    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>.</p>
     pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>.</p>
     pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_region = input;
         self
     }
-    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    /// <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>.</p>
     pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.primary_region
     }
@@ -473,11 +473,11 @@ impl DescribeSecretOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
     ///
-    /// <p>A list of the replicas of this secret and their status: </p>
+    /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub fn replication_status(mut self, input: crate::types::ReplicationStatusType) -> Self {
         let mut v = self.replication_status.unwrap_or_default();
@@ -485,21 +485,21 @@ impl DescribeSecretOutputBuilder {
         self.replication_status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the replicas of this secret and their status: </p>
+    /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub fn set_replication_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>) -> Self {
         self.replication_status = input;
         self
     }
-    /// <p>A list of the replicas of this secret and their status: </p>
+    /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub fn get_replication_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
         &self.replication_status

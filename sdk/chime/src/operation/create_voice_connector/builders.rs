@@ -23,8 +23,8 @@ impl CreateVoiceConnectorInputBuilder {
 /// Fluent builder constructing a request to `CreateVoiceConnector`.
 ///
 /// <p>Creates an Amazon Chime Voice Connector under the administrator's AWS account. You can choose to create an Amazon Chime Voice Connector in a specific AWS Region.</p>
-/// <p>Enabling <code>CreateVoiceConnectorRequest$RequireEncryption</code> configures your Amazon Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked. </p> <important>
-/// <p> <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html">CreateVoiceConnector</a>, in the Amazon Chime SDK.</p>
+/// <p>Enabling <code>CreateVoiceConnectorRequest$RequireEncryption</code> configures your Amazon Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked.</p> <important>
+/// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html">CreateVoiceConnector</a>, in the Amazon Chime SDK.</p>
 /// <p>Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 /// </important>
 #[deprecated(note = "Replaced by CreateVoiceConnector in the Amazon Chime SDK Voice Namespace")]
@@ -127,17 +127,17 @@ impl CreateVoiceConnectorFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
+    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn aws_region(mut self, input: crate::types::VoiceConnectorAwsRegion) -> Self {
         self.inner = self.inner.aws_region(input);
         self
     }
-    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
+    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
         self.inner = self.inner.set_aws_region(input);
         self
     }
-    /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
+    /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<crate::types::VoiceConnectorAwsRegion> {
         self.inner.get_aws_region()
     }

@@ -5,9 +5,9 @@
 pub struct DescribeServersInput {
     /// <p>Describes the server with the specified ServerName.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeServersInput {
@@ -15,11 +15,11 @@ impl DescribeServersInput {
     pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -54,31 +54,31 @@ impl DescribeServersInputBuilder {
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_name
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAccountOutput {
-    /// <p> The status of the account registration request. </p>
+    /// <p>The status of the account registration request.</p>
     pub status: ::std::option::Option<crate::types::AccountStatus>,
     _request_id: Option<String>,
 }
 impl RegisterAccountOutput {
-    /// <p> The status of the account registration request. </p>
+    /// <p>The status of the account registration request.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AccountStatus> {
         self.status.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct RegisterAccountOutputBuilder {
     _request_id: Option<String>,
 }
 impl RegisterAccountOutputBuilder {
-    /// <p> The status of the account registration request. </p>
+    /// <p>The status of the account registration request.</p>
     pub fn status(mut self, input: crate::types::AccountStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of the account registration request. </p>
+    /// <p>The status of the account registration request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccountStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of the account registration request. </p>
+    /// <p>The status of the account registration request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccountStatus> {
         &self.status
     }

@@ -123,17 +123,17 @@ impl CreateBusinessReportScheduleFluentBuilder {
     pub fn get_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schedule_name()
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket_name()
     }
@@ -179,17 +179,17 @@ impl CreateBusinessReportScheduleFluentBuilder {
     pub fn get_content_range(&self) -> &::std::option::Option<crate::types::BusinessReportContentRange> {
         self.inner.get_content_range()
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub fn recurrence(mut self, input: crate::types::BusinessReportRecurrence) -> Self {
         self.inner = self.inner.recurrence(input);
         self
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::BusinessReportRecurrence>) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::BusinessReportRecurrence> {
         self.inner.get_recurrence()
     }

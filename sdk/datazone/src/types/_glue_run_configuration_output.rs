@@ -4,25 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueRunConfigurationOutput {
-    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub region: ::std::option::Option<::std::string::String>,
-    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub data_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
 }
 impl GlueRunConfigurationOutput {
-    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn data_access_role(&self) -> ::std::option::Option<&str> {
         self.data_access_role.as_deref()
     }
@@ -49,45 +49,45 @@ pub struct GlueRunConfigurationOutputBuilder {
     pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
 }
 impl GlueRunConfigurationOutputBuilder {
-    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
-    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn data_access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn set_data_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role = input;
         self
     }
-    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source. </p>
+    /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn get_data_access_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role
     }

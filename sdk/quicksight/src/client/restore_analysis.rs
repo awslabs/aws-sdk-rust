@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RestoreAnalysisOutput`](crate::operation::restore_analysis::RestoreAnalysisOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::restore_analysis::RestoreAnalysisOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::operation::restore_analysis::RestoreAnalysisOutput::arn): <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
-    ///   - [`analysis_id(Option<String>)`](crate::operation::restore_analysis::RestoreAnalysisOutput::analysis_id): <p>The ID of the analysis that you're restoring. </p>
+    ///   - [`analysis_id(Option<String>)`](crate::operation::restore_analysis::RestoreAnalysisOutput::analysis_id): <p>The ID of the analysis that you're restoring.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::restore_analysis::RestoreAnalysisOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<RestoreAnalysisError>`](crate::operation::restore_analysis::RestoreAnalysisError)
     pub fn restore_analysis(&self) -> crate::operation::restore_analysis::builders::RestoreAnalysisFluentBuilder {

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInventoryOutput {
-    /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
+    /// <p>Collection of inventory entities such as a collection of managed node inventory.</p>
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetInventoryOutput {
-    /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
+    /// <p>Collection of inventory entities such as a collection of managed node inventory.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
     pub fn entities(&self) -> &[crate::types::InventoryResultEntity] {
@@ -46,19 +46,19 @@ impl GetInventoryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
     ///
-    /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
+    /// <p>Collection of inventory entities such as a collection of managed node inventory.</p>
     pub fn entities(mut self, input: crate::types::InventoryResultEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
         v.push(input);
         self.entities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
+    /// <p>Collection of inventory entities such as a collection of managed node inventory.</p>
     pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>>) -> Self {
         self.entities = input;
         self
     }
-    /// <p>Collection of inventory entities such as a collection of managed node inventory. </p>
+    /// <p>Collection of inventory entities such as a collection of managed node inventory.</p>
     pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryResultEntity>> {
         &self.entities
     }

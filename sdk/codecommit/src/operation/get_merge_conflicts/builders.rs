@@ -156,17 +156,17 @@ impl GetMergeConflictsFluentBuilder {
     pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_commit_specifier()
     }
-    /// <p>The merge option or strategy you want to use to merge the code. </p>
+    /// <p>The merge option or strategy you want to use to merge the code.</p>
     pub fn merge_option(mut self, input: crate::types::MergeOptionTypeEnum) -> Self {
         self.inner = self.inner.merge_option(input);
         self
     }
-    /// <p>The merge option or strategy you want to use to merge the code. </p>
+    /// <p>The merge option or strategy you want to use to merge the code.</p>
     pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
         self.inner = self.inner.set_merge_option(input);
         self
     }
-    /// <p>The merge option or strategy you want to use to merge the code. </p>
+    /// <p>The merge option or strategy you want to use to merge the code.</p>
     pub fn get_merge_option(&self) -> &::std::option::Option<crate::types::MergeOptionTypeEnum> {
         self.inner.get_merge_option()
     }

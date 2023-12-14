@@ -6,7 +6,7 @@
 pub struct Repository {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     pub code_commit: ::std::option::Option<crate::types::CodeCommitRepository>,
-    /// <p> Information about a Bitbucket repository. </p>
+    /// <p>Information about a Bitbucket repository.</p>
     pub bitbucket: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     /// <p>Information about a GitHub Enterprise Server repository.</p>
     pub git_hub_enterprise_server: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
@@ -18,7 +18,7 @@ impl Repository {
     pub fn code_commit(&self) -> ::std::option::Option<&crate::types::CodeCommitRepository> {
         self.code_commit.as_ref()
     }
-    /// <p> Information about a Bitbucket repository. </p>
+    /// <p>Information about a Bitbucket repository.</p>
     pub fn bitbucket(&self) -> ::std::option::Option<&crate::types::ThirdPartySourceRepository> {
         self.bitbucket.as_ref()
     }
@@ -62,17 +62,17 @@ impl RepositoryBuilder {
     pub fn get_code_commit(&self) -> &::std::option::Option<crate::types::CodeCommitRepository> {
         &self.code_commit
     }
-    /// <p> Information about a Bitbucket repository. </p>
+    /// <p>Information about a Bitbucket repository.</p>
     pub fn bitbucket(mut self, input: crate::types::ThirdPartySourceRepository) -> Self {
         self.bitbucket = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information about a Bitbucket repository. </p>
+    /// <p>Information about a Bitbucket repository.</p>
     pub fn set_bitbucket(mut self, input: ::std::option::Option<crate::types::ThirdPartySourceRepository>) -> Self {
         self.bitbucket = input;
         self
     }
-    /// <p> Information about a Bitbucket repository. </p>
+    /// <p>Information about a Bitbucket repository.</p>
     pub fn get_bitbucket(&self) -> &::std::option::Option<crate::types::ThirdPartySourceRepository> {
         &self.bitbucket
     }

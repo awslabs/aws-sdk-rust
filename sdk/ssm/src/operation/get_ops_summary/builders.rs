@@ -22,7 +22,7 @@ impl GetOpsSummaryInputBuilder {
 }
 /// Fluent builder constructing a request to `GetOpsSummary`.
 ///
-/// <p>View a summary of operations metadata (OpsData) based on specified filters and aggregators. OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager Explorer. </p>
+/// <p>View a summary of operations metadata (OpsData) based on specified filters and aggregators. OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager Explorer.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOpsSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -132,17 +132,17 @@ impl GetOpsSummaryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub fn filters(mut self, input: crate::types::OpsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Optional filters used to scope down the returned OpsData. </p>
+    /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>> {
         self.inner.get_filters()
     }
@@ -182,17 +182,17 @@ impl GetOpsSummaryFluentBuilder {
     pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
         self.inner.get_result_attributes()
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

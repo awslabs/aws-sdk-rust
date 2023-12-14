@@ -7,15 +7,15 @@
 pub struct OnlineStoreConfig {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
     pub security_config: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
-    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
+    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
     /// <p>The default value is <code>False</code>.</p>
     pub enable_online_store: ::std::option::Option<bool>,
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub ttl_duration: ::std::option::Option<crate::types::TtlDuration>,
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li> <p> <code>Standard</code>: A managed low latency data store for feature groups.</p> </li>
-    /// <li> <p> <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval. </p> </li>
+    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
@@ -24,7 +24,7 @@ impl OnlineStoreConfig {
     pub fn security_config(&self) -> ::std::option::Option<&crate::types::OnlineStoreSecurityConfig> {
         self.security_config.as_ref()
     }
-    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
+    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn enable_online_store(&self) -> ::std::option::Option<bool> {
         self.enable_online_store
@@ -35,8 +35,8 @@ impl OnlineStoreConfig {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li> <p> <code>Standard</code>: A managed low latency data store for feature groups.</p> </li>
-    /// <li> <p> <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval. </p> </li>
+    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
@@ -73,19 +73,19 @@ impl OnlineStoreConfigBuilder {
     pub fn get_security_config(&self) -> &::std::option::Option<crate::types::OnlineStoreSecurityConfig> {
         &self.security_config
     }
-    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
+    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn enable_online_store(mut self, input: bool) -> Self {
         self.enable_online_store = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
+    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn set_enable_online_store(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_online_store = input;
         self
     }
-    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
+    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag.</p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn get_enable_online_store(&self) -> &::std::option::Option<bool> {
         &self.enable_online_store
@@ -106,8 +106,8 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li> <p> <code>Standard</code>: A managed low latency data store for feature groups.</p> </li>
-    /// <li> <p> <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval. </p> </li>
+    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
@@ -115,8 +115,8 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li> <p> <code>Standard</code>: A managed low latency data store for feature groups.</p> </li>
-    /// <li> <p> <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval. </p> </li>
+    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
@@ -124,8 +124,8 @@ impl OnlineStoreConfigBuilder {
     }
     /// <p>Option for different tiers of low latency storage for real-time data retrieval.</p>
     /// <ul>
-    /// <li> <p> <code>Standard</code>: A managed low latency data store for feature groups.</p> </li>
-    /// <li> <p> <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval. </p> </li>
+    /// <li><p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li><p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type

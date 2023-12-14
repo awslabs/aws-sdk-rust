@@ -128,17 +128,17 @@ impl PutCorsPolicyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
     ///
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     pub fn cors_policy(mut self, input: crate::types::CorsRule) -> Self {
         self.inner = self.inner.cors_policy(input);
         self
     }
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     pub fn set_cors_policy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>) -> Self {
         self.inner = self.inner.set_cors_policy(input);
         self
     }
-    /// <p>The CORS policy to apply to the container. </p>
+    /// <p>The CORS policy to apply to the container.</p>
     pub fn get_cors_policy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
         self.inner.get_cors_policy()
     }

@@ -8,16 +8,16 @@ pub struct ReplicaDescription {
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
-    /// <li> <p> <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
+    /// <li><p><code>CREATING</code> - The replica is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The replica is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The replica is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li><p><code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
     /// <p>If the Amazon Web Services Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
+    /// </note></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
     /// <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
     /// <p>Detailed information about the replica status.</p>
@@ -42,16 +42,16 @@ impl ReplicaDescription {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
-    /// <li> <p> <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
+    /// <li><p><code>CREATING</code> - The replica is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The replica is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The replica is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li><p><code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
     /// <p>If the Amazon Web Services Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
+    /// </note></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
     /// <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub fn replica_status(&self) -> ::std::option::Option<&crate::types::ReplicaStatus> {
         self.replica_status.as_ref()
@@ -125,16 +125,16 @@ impl ReplicaDescriptionBuilder {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
-    /// <li> <p> <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
+    /// <li><p><code>CREATING</code> - The replica is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The replica is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The replica is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li><p><code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
     /// <p>If the Amazon Web Services Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
+    /// </note></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
     /// <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub fn replica_status(mut self, input: crate::types::ReplicaStatus) -> Self {
         self.replica_status = ::std::option::Option::Some(input);
@@ -142,16 +142,16 @@ impl ReplicaDescriptionBuilder {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
-    /// <li> <p> <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
+    /// <li><p><code>CREATING</code> - The replica is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The replica is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The replica is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li><p><code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
     /// <p>If the Amazon Web Services Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
+    /// </note></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
     /// <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub fn set_replica_status(mut self, input: ::std::option::Option<crate::types::ReplicaStatus>) -> Self {
         self.replica_status = input;
@@ -159,16 +159,16 @@ impl ReplicaDescriptionBuilder {
     }
     /// <p>The current state of the replica:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The replica is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
-    /// <li> <p> <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
+    /// <li><p><code>CREATING</code> - The replica is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The replica is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The replica is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The replica is ready for use.</p></li>
+    /// <li><p><code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web Services Region has been disabled.</p> <note>
     /// <p>If the Amazon Web Services Region remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
-    /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
+    /// </note></li>
+    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the table is inaccessible.</p> <note>
     /// <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub fn get_replica_status(&self) -> &::std::option::Option<crate::types::ReplicaStatus> {
         &self.replica_status

@@ -147,49 +147,49 @@ impl ListWhatIfForecastExportsFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
-    /// <p> <b>Filter properties</b> </p>
+    /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
-    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
-    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p></li>
+    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p></li>
+    /// <li><p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
-    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
     /// <acct-id>
     /// :forecast/electricityWIFExport" } ]
-    /// </acct-id></code> </p>
+    /// </acct-id></code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
-    /// <p> <b>Filter properties</b> </p>
+    /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
-    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
-    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p></li>
+    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p></li>
+    /// <li><p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
-    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
     /// <acct-id>
     /// :forecast/electricityWIFExport" } ]
-    /// </acct-id></code> </p>
+    /// </acct-id></code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
-    /// <p> <b>Filter properties</b> </p>
+    /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
-    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p> </li>
-    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p></li>
+    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastExportArn</code> and <code>Status</code>.</p></li>
+    /// <li><p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all jobs that export a forecast named <i>electricityWIFExport</i>, specify the following filter:</p>
-    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <p><code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:
     /// <acct-id>
     /// :forecast/electricityWIFExport" } ]
-    /// </acct-id></code> </p>
+    /// </acct-id></code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

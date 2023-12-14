@@ -22,7 +22,7 @@ impl GetGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `GetGroup`.
 ///
-/// <p> Returns a list of IAM users that are in the specified IAM group. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
+/// <p>Returns a list of IAM users that are in the specified IAM group. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

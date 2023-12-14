@@ -11,7 +11,7 @@ pub struct VerifiedAccessLogOptions {
     /// <p>Sends Verified Access logs to Kinesis.</p>
     pub kinesis_data_firehose: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
     /// <p>The logging version.</p>
-    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
+    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code></p>
     pub log_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to include trust data sent by trust providers in the logs.</p>
     pub include_trust_context: ::std::option::Option<bool>,
@@ -30,7 +30,7 @@ impl VerifiedAccessLogOptions {
         self.kinesis_data_firehose.as_ref()
     }
     /// <p>The logging version.</p>
-    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
+    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code></p>
     pub fn log_version(&self) -> ::std::option::Option<&str> {
         self.log_version.as_deref()
     }
@@ -103,19 +103,19 @@ impl VerifiedAccessLogOptionsBuilder {
         &self.kinesis_data_firehose
     }
     /// <p>The logging version.</p>
-    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
+    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code></p>
     pub fn log_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logging version.</p>
-    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
+    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code></p>
     pub fn set_log_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_version = input;
         self
     }
     /// <p>The logging version.</p>
-    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
+    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code></p>
     pub fn get_log_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_version
     }

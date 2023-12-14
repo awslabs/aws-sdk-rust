@@ -261,17 +261,17 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_id()
     }
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
         self.inner = self.inner.accelerators(input);
         self
     }
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
         self.inner = self.inner.set_accelerators(input);
         self
     }
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
         self.inner.get_accelerators()
     }

@@ -263,7 +263,7 @@ pub enum DescribeTestSetGenerationError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You have reached a quota for your bot. </p>
+    /// <p>You have reached a quota for your bot.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

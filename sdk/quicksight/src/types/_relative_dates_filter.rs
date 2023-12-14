@@ -16,11 +16,11 @@ pub struct RelativeDatesFilter {
     pub time_granularity: crate::types::TimeGranularity,
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>PREVIOUS</code> </p> </li>
-    /// <li> <p> <code>THIS</code> </p> </li>
-    /// <li> <p> <code>LAST</code> </p> </li>
-    /// <li> <p> <code>NOW</code> </p> </li>
-    /// <li> <p> <code>NEXT</code> </p> </li>
+    /// <li><p><code>PREVIOUS</code></p></li>
+    /// <li><p><code>THIS</code></p></li>
+    /// <li><p><code>LAST</code></p></li>
+    /// <li><p><code>NOW</code></p></li>
+    /// <li><p><code>NEXT</code></p></li>
     /// </ul>
     pub relative_date_type: crate::types::RelativeDateType,
     /// <p>The date value of the filter.</p>
@@ -29,9 +29,9 @@ pub struct RelativeDatesFilter {
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub null_option: crate::types::FilterNullOption,
     /// <p>The configuration for the exclude period of the filter.</p>
@@ -61,11 +61,11 @@ impl RelativeDatesFilter {
     }
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>PREVIOUS</code> </p> </li>
-    /// <li> <p> <code>THIS</code> </p> </li>
-    /// <li> <p> <code>LAST</code> </p> </li>
-    /// <li> <p> <code>NOW</code> </p> </li>
-    /// <li> <p> <code>NEXT</code> </p> </li>
+    /// <li><p><code>PREVIOUS</code></p></li>
+    /// <li><p><code>THIS</code></p></li>
+    /// <li><p><code>LAST</code></p></li>
+    /// <li><p><code>NOW</code></p></li>
+    /// <li><p><code>NEXT</code></p></li>
     /// </ul>
     pub fn relative_date_type(&self) -> &crate::types::RelativeDateType {
         &self.relative_date_type
@@ -80,9 +80,9 @@ impl RelativeDatesFilter {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn null_option(&self) -> &crate::types::FilterNullOption {
         &self.null_option
@@ -191,11 +191,11 @@ impl RelativeDatesFilterBuilder {
     }
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>PREVIOUS</code> </p> </li>
-    /// <li> <p> <code>THIS</code> </p> </li>
-    /// <li> <p> <code>LAST</code> </p> </li>
-    /// <li> <p> <code>NOW</code> </p> </li>
-    /// <li> <p> <code>NEXT</code> </p> </li>
+    /// <li><p><code>PREVIOUS</code></p></li>
+    /// <li><p><code>THIS</code></p></li>
+    /// <li><p><code>LAST</code></p></li>
+    /// <li><p><code>NOW</code></p></li>
+    /// <li><p><code>NEXT</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn relative_date_type(mut self, input: crate::types::RelativeDateType) -> Self {
@@ -204,11 +204,11 @@ impl RelativeDatesFilterBuilder {
     }
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>PREVIOUS</code> </p> </li>
-    /// <li> <p> <code>THIS</code> </p> </li>
-    /// <li> <p> <code>LAST</code> </p> </li>
-    /// <li> <p> <code>NOW</code> </p> </li>
-    /// <li> <p> <code>NEXT</code> </p> </li>
+    /// <li><p><code>PREVIOUS</code></p></li>
+    /// <li><p><code>THIS</code></p></li>
+    /// <li><p><code>LAST</code></p></li>
+    /// <li><p><code>NOW</code></p></li>
+    /// <li><p><code>NEXT</code></p></li>
     /// </ul>
     pub fn set_relative_date_type(mut self, input: ::std::option::Option<crate::types::RelativeDateType>) -> Self {
         self.relative_date_type = input;
@@ -216,11 +216,11 @@ impl RelativeDatesFilterBuilder {
     }
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
-    /// <li> <p> <code>PREVIOUS</code> </p> </li>
-    /// <li> <p> <code>THIS</code> </p> </li>
-    /// <li> <p> <code>LAST</code> </p> </li>
-    /// <li> <p> <code>NOW</code> </p> </li>
-    /// <li> <p> <code>NEXT</code> </p> </li>
+    /// <li><p><code>PREVIOUS</code></p></li>
+    /// <li><p><code>THIS</code></p></li>
+    /// <li><p><code>LAST</code></p></li>
+    /// <li><p><code>NOW</code></p></li>
+    /// <li><p><code>NEXT</code></p></li>
     /// </ul>
     pub fn get_relative_date_type(&self) -> &::std::option::Option<crate::types::RelativeDateType> {
         &self.relative_date_type
@@ -255,9 +255,9 @@ impl RelativeDatesFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     /// This field is required.
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
@@ -266,9 +266,9 @@ impl RelativeDatesFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
         self.null_option = input;
@@ -276,9 +276,9 @@ impl RelativeDatesFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
         &self.null_option

@@ -7,7 +7,7 @@ pub struct DetachVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub force_detach: ::std::option::Option<bool>,
 }
 impl DetachVolumeInput {
@@ -16,7 +16,7 @@ impl DetachVolumeInput {
         self.volume_arn.as_deref()
     }
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn force_detach(&self) -> ::std::option::Option<bool> {
         self.force_detach
     }
@@ -52,19 +52,19 @@ impl DetachVolumeInputBuilder {
         &self.volume_arn
     }
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn force_detach(mut self, input: bool) -> Self {
         self.force_detach = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_force_detach(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_detach = input;
         self
     }
     /// <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_force_detach(&self) -> &::std::option::Option<bool> {
         &self.force_detach
     }

@@ -24,8 +24,8 @@ impl UpdateConnectorRegistrationInputBuilder {
 ///
 /// <p>Updates a custom connector that you've previously registered. This operation updates the connector with one of the following:</p>
 /// <ul>
-/// <li> <p>The latest version of the AWS Lambda function that's assigned to the connector</p> </li>
-/// <li> <p>A new AWS Lambda function that you specify</p> </li>
+/// <li><p>The latest version of the AWS Lambda function that's assigned to the connector</p></li>
+/// <li><p>A new AWS Lambda function that you specify</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorRegistrationFluentBuilder {

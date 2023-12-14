@@ -7,7 +7,7 @@ pub struct GetThreatIntelSetOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the threatIntelSet.</p>
     pub format: ::std::option::Option<crate::types::ThreatIntelSetFormat>,
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The status of threatIntelSet file uploaded.</p>
     pub status: ::std::option::Option<crate::types::ThreatIntelSetStatus>,
@@ -24,7 +24,7 @@ impl GetThreatIntelSetOutput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::ThreatIntelSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -91,18 +91,18 @@ impl GetThreatIntelSetOutputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::ThreatIntelSetFormat> {
         &self.format
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

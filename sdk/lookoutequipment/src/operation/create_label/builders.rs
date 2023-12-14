@@ -22,7 +22,7 @@ impl CreateLabelInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLabel`.
 ///
-/// <p> Creates a label for an event. </p>
+/// <p>Creates a label for an event.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLabelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,127 +108,127 @@ impl CreateLabelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of a group of labels. </p>
-    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// <p>The name of a group of labels.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
-    /// <p> The name of a group of labels. </p>
-    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// <p>The name of a group of labels.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
-    /// <p> The name of a group of labels. </p>
-    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// <p>The name of a group of labels.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name()
     }
-    /// <p> The start time of the labeled event. </p>
+    /// <p>The start time of the labeled event.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p> The start time of the labeled event. </p>
+    /// <p>The start time of the labeled event.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p> The start time of the labeled event. </p>
+    /// <p>The start time of the labeled event.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p> The end time of the labeled event. </p>
+    /// <p>The end time of the labeled event.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p> The end time of the labeled event. </p>
+    /// <p>The end time of the labeled event.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p> The end time of the labeled event. </p>
+    /// <p>The end time of the labeled event.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    /// <p>Indicates whether a labeled event represents an anomaly.</p>
     pub fn rating(mut self, input: crate::types::LabelRating) -> Self {
         self.inner = self.inner.rating(input);
         self
     }
-    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    /// <p>Indicates whether a labeled event represents an anomaly.</p>
     pub fn set_rating(mut self, input: ::std::option::Option<crate::types::LabelRating>) -> Self {
         self.inner = self.inner.set_rating(input);
         self
     }
-    /// <p> Indicates whether a labeled event represents an anomaly. </p>
+    /// <p>Indicates whether a labeled event represents an anomaly.</p>
     pub fn get_rating(&self) -> &::std::option::Option<crate::types::LabelRating> {
         self.inner.get_rating()
     }
-    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
-    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// <p>Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn fault_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fault_code(input.into());
         self
     }
-    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
-    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// <p>Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_fault_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fault_code(input);
         self
     }
-    /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
-    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// <p>Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn get_fault_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fault_code()
     }
-    /// <p> Metadata providing additional information about the label. </p>
+    /// <p>Metadata providing additional information about the label.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
         self
     }
-    /// <p> Metadata providing additional information about the label. </p>
+    /// <p>Metadata providing additional information about the label.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
-    /// <p> Metadata providing additional information about the label. </p>
+    /// <p>Metadata providing additional information about the label.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notes()
     }
-    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn equipment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.equipment(input.into());
         self
     }
-    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_equipment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_equipment(input);
         self
     }
-    /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
+    /// <p>Indicates that a label pertains to a particular piece of equipment.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn get_equipment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_equipment()
     }
-    /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    /// <p>A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

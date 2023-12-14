@@ -23,11 +23,11 @@ pub struct DbInstance {
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Provides the date and time the DB instance was created.</p>
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
-    /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
+    /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
@@ -59,9 +59,9 @@ pub struct DbInstance {
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
     pub iops: ::std::option::Option<i32>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
@@ -80,7 +80,7 @@ pub struct DbInstance {
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
-    /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
@@ -96,7 +96,7 @@ pub struct DbInstance {
     pub enhanced_monitoring_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
@@ -104,9 +104,9 @@ pub struct DbInstance {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub performance_insights_enabled: ::std::option::Option<bool>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -150,7 +150,7 @@ impl DbInstance {
     pub fn instance_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
-    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
@@ -158,7 +158,7 @@ impl DbInstance {
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
-    /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
+    /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
     pub fn db_security_groups(&self) -> &[crate::types::DbSecurityGroupMembership] {
@@ -232,13 +232,13 @@ impl DbInstance {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_group_memberships.is_none()`.
     pub fn option_group_memberships(&self) -> &[crate::types::OptionGroupMembership] {
         self.option_group_memberships.as_deref().unwrap_or_default()
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn character_set_name(&self) -> ::std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
@@ -277,7 +277,7 @@ impl DbInstance {
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
-    /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -311,7 +311,7 @@ impl DbInstance {
     pub fn monitoring_role_arn(&self) -> ::std::option::Option<&str> {
         self.monitoring_role_arn.as_deref()
     }
-    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
         self.promotion_tier
     }
@@ -327,11 +327,11 @@ impl DbInstance {
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn performance_insights_enabled(&self) -> ::std::option::Option<bool> {
         self.performance_insights_enabled
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
@@ -538,17 +538,17 @@ impl DbInstanceBuilder {
     pub fn get_instance_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.instance_create_time
     }
-    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
-    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
     }
@@ -570,19 +570,19 @@ impl DbInstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_db_security_groups`](Self::set_db_security_groups).
     ///
-    /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
+    /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub fn db_security_groups(mut self, input: crate::types::DbSecurityGroupMembership) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
         v.push(input);
         self.db_security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
+    /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>) -> Self {
         self.db_security_groups = input;
         self
     }
-    /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
+    /// <p>Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>> {
         &self.db_security_groups
     }
@@ -824,33 +824,33 @@ impl DbInstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_option_group_memberships`](Self::set_option_group_memberships).
     ///
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn option_group_memberships(mut self, input: crate::types::OptionGroupMembership) -> Self {
         let mut v = self.option_group_memberships.unwrap_or_default();
         v.push(input);
         self.option_group_memberships = ::std::option::Option::Some(v);
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_option_group_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>>) -> Self {
         self.option_group_memberships = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_option_group_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>> {
         &self.option_group_memberships
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn character_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.character_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.character_set_name = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.character_set_name
     }
@@ -975,17 +975,17 @@ impl DbInstanceBuilder {
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }
-    /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
@@ -1093,17 +1093,17 @@ impl DbInstanceBuilder {
     pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_role_arn
     }
-    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
     }
-    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
         &self.promotion_tier
     }
@@ -1149,31 +1149,31 @@ impl DbInstanceBuilder {
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn performance_insights_enabled(mut self, input: bool) -> Self {
         self.performance_insights_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_performance_insights_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.performance_insights_enabled = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_performance_insights_enabled(&self) -> &::std::option::Option<bool> {
         &self.performance_insights_enabled
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn performance_insights_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.performance_insights_kms_key_id
     }

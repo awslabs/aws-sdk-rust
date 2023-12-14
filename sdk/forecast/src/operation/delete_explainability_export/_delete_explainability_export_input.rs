@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExplainabilityExportInput {
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub explainability_export_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExplainabilityExportInput {
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn explainability_export_arn(&self) -> ::std::option::Option<&str> {
         self.explainability_export_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteExplainabilityExportInputBuilder {
     pub(crate) explainability_export_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExplainabilityExportInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     /// This field is required.
     pub fn explainability_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_export_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn set_explainability_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_export_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete.</p>
     pub fn get_explainability_export_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.explainability_export_arn
     }

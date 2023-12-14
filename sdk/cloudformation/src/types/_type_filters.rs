@@ -6,14 +6,14 @@
 pub struct TypeFilters {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
-    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+    /// <li><p><code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p></li>
+    /// <li><p><code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p></li>
+    /// <li><p><code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
-    /// <li> <p>Private extensions registered in the account.</p> </li>
-    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
+    /// <li><p>Private extensions registered in the account.</p></li>
+    /// <li><p>Public extensions from publishers other than Amazon, whether activated or not.</p></li>
+    /// </ul></li>
+    /// <li><p><code>AWS_TYPES</code>: Extensions available for use from Amazon.</p></li>
     /// </ul>
     pub category: ::std::option::Option<crate::types::Category>,
     /// <p>The id of the publisher of the extension.</p>
@@ -25,14 +25,14 @@ pub struct TypeFilters {
 impl TypeFilters {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
-    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+    /// <li><p><code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p></li>
+    /// <li><p><code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p></li>
+    /// <li><p><code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
-    /// <li> <p>Private extensions registered in the account.</p> </li>
-    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
+    /// <li><p>Private extensions registered in the account.</p></li>
+    /// <li><p>Public extensions from publishers other than Amazon, whether activated or not.</p></li>
+    /// </ul></li>
+    /// <li><p><code>AWS_TYPES</code>: Extensions available for use from Amazon.</p></li>
     /// </ul>
     pub fn category(&self) -> ::std::option::Option<&crate::types::Category> {
         self.category.as_ref()
@@ -65,14 +65,14 @@ pub struct TypeFiltersBuilder {
 impl TypeFiltersBuilder {
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
-    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+    /// <li><p><code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p></li>
+    /// <li><p><code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p></li>
+    /// <li><p><code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
-    /// <li> <p>Private extensions registered in the account.</p> </li>
-    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
+    /// <li><p>Private extensions registered in the account.</p></li>
+    /// <li><p>Public extensions from publishers other than Amazon, whether activated or not.</p></li>
+    /// </ul></li>
+    /// <li><p><code>AWS_TYPES</code>: Extensions available for use from Amazon.</p></li>
     /// </ul>
     pub fn category(mut self, input: crate::types::Category) -> Self {
         self.category = ::std::option::Option::Some(input);
@@ -80,14 +80,14 @@ impl TypeFiltersBuilder {
     }
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
-    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+    /// <li><p><code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p></li>
+    /// <li><p><code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p></li>
+    /// <li><p><code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
-    /// <li> <p>Private extensions registered in the account.</p> </li>
-    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
+    /// <li><p>Private extensions registered in the account.</p></li>
+    /// <li><p>Public extensions from publishers other than Amazon, whether activated or not.</p></li>
+    /// </ul></li>
+    /// <li><p><code>AWS_TYPES</code>: Extensions available for use from Amazon.</p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::Category>) -> Self {
         self.category = input;
@@ -95,14 +95,14 @@ impl TypeFiltersBuilder {
     }
     /// <p>The category of extensions to return.</p>
     /// <ul>
-    /// <li> <p> <code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p> </li>
-    /// <li> <p> <code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p> </li>
-    /// <li> <p> <code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+    /// <li><p><code>REGISTERED</code>: Private extensions that have been registered for this account and Region.</p></li>
+    /// <li><p><code>ACTIVATED</code>: Public extensions that have been activated for this account and Region.</p></li>
+    /// <li><p><code>THIRD_PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
     /// <ul>
-    /// <li> <p>Private extensions registered in the account.</p> </li>
-    /// <li> <p>Public extensions from publishers other than Amazon, whether activated or not.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
+    /// <li><p>Private extensions registered in the account.</p></li>
+    /// <li><p>Public extensions from publishers other than Amazon, whether activated or not.</p></li>
+    /// </ul></li>
+    /// <li><p><code>AWS_TYPES</code>: Extensions available for use from Amazon.</p></li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::Category> {
         &self.category

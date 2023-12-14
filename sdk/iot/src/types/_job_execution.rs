@@ -20,7 +20,7 @@ pub struct JobExecution {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information.</p>
     pub execution_number: ::std::option::Option<i64>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub version_number: i64,
@@ -60,7 +60,7 @@ impl JobExecution {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information.</p>
     pub fn execution_number(&self) -> ::std::option::Option<i64> {
         self.execution_number
     }
@@ -209,17 +209,17 @@ impl JobExecutionBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
         self.execution_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information.</p>
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.execution_number = input;
         self
     }
-    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
+    /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information.</p>
     pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
         &self.execution_number
     }

@@ -4,8 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operator {
-    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
+    /// <p>The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below.</p>
+    /// <p>The comparison operators EQ and REF_EQ act on the following fields:</p>
     /// <ul>
     /// <li>name</li>
     /// <li>@sphere</li>
@@ -18,7 +18,7 @@ pub struct Operator {
     /// <li>@actualStartTime</li>
     /// <li>@actualEndTime</li>
     /// </ul>
-    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
+    /// <p>The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:</p>
     /// <ul>
     /// <li>@scheduledStartTime</li>
     /// <li>@scheduledEndTime</li>
@@ -31,8 +31,8 @@ pub struct Operator {
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Operator {
-    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
+    /// <p>The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below.</p>
+    /// <p>The comparison operators EQ and REF_EQ act on the following fields:</p>
     /// <ul>
     /// <li>name</li>
     /// <li>@sphere</li>
@@ -45,7 +45,7 @@ impl Operator {
     /// <li>@actualStartTime</li>
     /// <li>@actualEndTime</li>
     /// </ul>
-    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
+    /// <p>The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:</p>
     /// <ul>
     /// <li>@scheduledStartTime</li>
     /// <li>@scheduledEndTime</li>
@@ -78,8 +78,8 @@ pub struct OperatorBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OperatorBuilder {
-    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
+    /// <p>The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below.</p>
+    /// <p>The comparison operators EQ and REF_EQ act on the following fields:</p>
     /// <ul>
     /// <li>name</li>
     /// <li>@sphere</li>
@@ -92,7 +92,7 @@ impl OperatorBuilder {
     /// <li>@actualStartTime</li>
     /// <li>@actualEndTime</li>
     /// </ul>
-    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
+    /// <p>The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:</p>
     /// <ul>
     /// <li>@scheduledStartTime</li>
     /// <li>@scheduledEndTime</li>
@@ -104,8 +104,8 @@ impl OperatorBuilder {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
+    /// <p>The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below.</p>
+    /// <p>The comparison operators EQ and REF_EQ act on the following fields:</p>
     /// <ul>
     /// <li>name</li>
     /// <li>@sphere</li>
@@ -118,7 +118,7 @@ impl OperatorBuilder {
     /// <li>@actualStartTime</li>
     /// <li>@actualEndTime</li>
     /// </ul>
-    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
+    /// <p>The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:</p>
     /// <ul>
     /// <li>@scheduledStartTime</li>
     /// <li>@scheduledEndTime</li>
@@ -130,8 +130,8 @@ impl OperatorBuilder {
         self.r#type = input;
         self
     }
-    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
-    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
+    /// <p>The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below.</p>
+    /// <p>The comparison operators EQ and REF_EQ act on the following fields:</p>
     /// <ul>
     /// <li>name</li>
     /// <li>@sphere</li>
@@ -144,7 +144,7 @@ impl OperatorBuilder {
     /// <li>@actualStartTime</li>
     /// <li>@actualEndTime</li>
     /// </ul>
-    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
+    /// <p>The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:</p>
     /// <ul>
     /// <li>@scheduledStartTime</li>
     /// <li>@scheduledEndTime</li>

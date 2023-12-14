@@ -164,17 +164,17 @@ impl CreateDataSourceFluentBuilder {
     pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_identifier()
     }
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
-    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets. </p>
+    /// <p>The unique identifier of the Amazon DataZone environment to which the data source publishes assets.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_identifier()
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetManagedScalingPolicyOutput {
-    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster.</p>
     pub managed_scaling_policy: ::std::option::Option<crate::types::ManagedScalingPolicy>,
     _request_id: Option<String>,
 }
 impl GetManagedScalingPolicyOutput {
-    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster.</p>
     pub fn managed_scaling_policy(&self) -> ::std::option::Option<&crate::types::ManagedScalingPolicy> {
         self.managed_scaling_policy.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetManagedScalingPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetManagedScalingPolicyOutputBuilder {
-    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster.</p>
     pub fn managed_scaling_policy(mut self, input: crate::types::ManagedScalingPolicy) -> Self {
         self.managed_scaling_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster.</p>
     pub fn set_managed_scaling_policy(mut self, input: ::std::option::Option<crate::types::ManagedScalingPolicy>) -> Self {
         self.managed_scaling_policy = input;
         self
     }
-    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster.</p>
     pub fn get_managed_scaling_policy(&self) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
         &self.managed_scaling_policy
     }

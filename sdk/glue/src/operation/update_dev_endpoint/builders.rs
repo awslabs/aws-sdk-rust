@@ -186,17 +186,17 @@ impl UpdateDevEndpointFluentBuilder {
     pub fn get_custom_libraries(&self) -> &::std::option::Option<crate::types::DevEndpointCustomLibraries> {
         self.inner.get_custom_libraries()
     }
-    /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
+    /// <p><code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
     pub fn update_etl_libraries(mut self, input: bool) -> Self {
         self.inner = self.inner.update_etl_libraries(input);
         self
     }
-    /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
+    /// <p><code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
     pub fn set_update_etl_libraries(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_update_etl_libraries(input);
         self
     }
-    /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
+    /// <p><code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
     pub fn get_update_etl_libraries(&self) -> &::std::option::Option<bool> {
         self.inner.get_update_etl_libraries()
     }
@@ -225,7 +225,7 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn add_arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -235,7 +235,7 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn set_add_arguments(
@@ -248,7 +248,7 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// <li><p><code>"--enable-glue-datacatalog": ""</code></p></li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn get_add_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

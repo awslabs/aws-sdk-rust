@@ -10,7 +10,7 @@ pub struct AdditionalInstanceConfiguration {
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
     /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p><i>#!/bin/bash</i></p>
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
@@ -24,7 +24,7 @@ impl AdditionalInstanceConfiguration {
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
     /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p><i>#!/bin/bash</i></p>
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
@@ -64,7 +64,7 @@ impl AdditionalInstanceConfigurationBuilder {
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
     /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p><i>#!/bin/bash</i></p>
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
@@ -75,7 +75,7 @@ impl AdditionalInstanceConfigurationBuilder {
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
     /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p><i>#!/bin/bash</i></p>
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
@@ -86,7 +86,7 @@ impl AdditionalInstanceConfigurationBuilder {
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
     /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
-    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p><i>#!/bin/bash</i></p>
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>

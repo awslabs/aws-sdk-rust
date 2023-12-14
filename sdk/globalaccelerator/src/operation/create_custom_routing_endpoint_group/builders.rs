@@ -22,7 +22,7 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCustomRoutingEndpointGroup`.
 ///
-/// <p>Create an endpoint group for the specified listener for a custom routing accelerator. An endpoint group is a collection of endpoints in one Amazon Web Services Region. </p>
+/// <p>Create an endpoint group for the specified listener for a custom routing accelerator. An endpoint group is a collection of endpoints in one Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

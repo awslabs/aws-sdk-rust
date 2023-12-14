@@ -22,7 +22,7 @@ impl ModifyScheduledActionInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyScheduledAction`.
 ///
-/// <p>Modifies a scheduled action. </p>
+/// <p>Modifies a scheduled action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyScheduledActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ModifyScheduledActionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the scheduled action to modify. </p>
+    /// <p>The name of the scheduled action to modify.</p>
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
-    /// <p>The name of the scheduled action to modify. </p>
+    /// <p>The name of the scheduled action to modify.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
-    /// <p>The name of the scheduled action to modify. </p>
+    /// <p>The name of the scheduled action to modify.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_action_name()
     }
-    /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn target_action(mut self, input: crate::types::ScheduledActionType) -> Self {
         self.inner = self.inner.target_action(input);
         self
     }
-    /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::ScheduledActionType>) -> Self {
         self.inner = self.inner.set_target_action(input);
         self
     }
-    /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn get_target_action(&self) -> &::std::option::Option<crate::types::ScheduledActionType> {
         self.inner.get_target_action()
     }
@@ -164,59 +164,59 @@ impl ModifyScheduledActionFluentBuilder {
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role()
     }
-    /// <p>A modified description of the scheduled action. </p>
+    /// <p>A modified description of the scheduled action.</p>
     pub fn scheduled_action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_description(input.into());
         self
     }
-    /// <p>A modified description of the scheduled action. </p>
+    /// <p>A modified description of the scheduled action.</p>
     pub fn set_scheduled_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_action_description(input);
         self
     }
-    /// <p>A modified description of the scheduled action. </p>
+    /// <p>A modified description of the scheduled action.</p>
     pub fn get_scheduled_action_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_action_description()
     }
-    /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    /// <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
+    /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled.</p>
     pub fn enable(mut self, input: bool) -> Self {
         self.inner = self.inner.enable(input);
         self
     }
-    /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
+    /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled.</p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable(input);
         self
     }
-    /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
+    /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled.</p>
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable()
     }

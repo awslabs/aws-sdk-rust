@@ -13,13 +13,13 @@ pub struct PutSlotTypeOutput {
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
     pub value_selection_strategy: ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
-    /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p><code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub create_version: ::std::option::Option<bool>,
     /// <p>The built-in slot type used as the parent of the slot type.</p>
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl PutSlotTypeOutput {
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -62,7 +62,7 @@ impl PutSlotTypeOutput {
     pub fn value_selection_strategy(&self) -> ::std::option::Option<&crate::types::SlotValueSelectionStrategy> {
         self.value_selection_strategy.as_ref()
     }
-    /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p><code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn create_version(&self) -> ::std::option::Option<bool> {
         self.create_version
     }
@@ -183,17 +183,17 @@ impl PutSlotTypeOutputBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
-    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
@@ -225,17 +225,17 @@ impl PutSlotTypeOutputBuilder {
     pub fn get_value_selection_strategy(&self) -> &::std::option::Option<crate::types::SlotValueSelectionStrategy> {
         &self.value_selection_strategy
     }
-    /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p><code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn create_version(mut self, input: bool) -> Self {
         self.create_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p><code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_version = input;
         self
     }
-    /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    /// <p><code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn get_create_version(&self) -> &::std::option::Option<bool> {
         &self.create_version
     }

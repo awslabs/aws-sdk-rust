@@ -22,9 +22,9 @@ impl AcceptQualificationRequestInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptQualificationRequest`.
 ///
-/// <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's request for a Qualification. </p>
-/// <p> Only the owner of the Qualification type can grant a Qualification request for that type. </p>
-/// <p> A successful request for the <code>AcceptQualificationRequest</code> operation returns with no errors and an empty body. </p>
+/// <p>The <code>AcceptQualificationRequest</code> operation approves a Worker's request for a Qualification.</p>
+/// <p>Only the owner of the Qualification type can grant a Qualification request for that type.</p>
+/// <p>A successful request for the <code>AcceptQualificationRequest</code> operation returns with no errors and an empty body.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptQualificationRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,17 +124,17 @@ impl AcceptQualificationRequestFluentBuilder {
     pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualification_request_id()
     }
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
         self.inner = self.inner.integer_value(input);
         self
     }
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_integer_value(input);
         self
     }
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
         self.inner.get_integer_value()
     }

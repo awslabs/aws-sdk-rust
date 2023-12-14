@@ -3,37 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAssessmentFrameworkInput {
-    /// <p> The name of the new custom framework. </p>
+    /// <p>The name of the new custom framework.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> An optional description for the new custom framework. </p>
+    /// <p>An optional description for the new custom framework.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
-    /// <p> The control sets that are associated with the framework. </p>
+    /// <p>The control sets that are associated with the framework.</p>
     pub control_sets: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>,
-    /// <p> The tags that are associated with the framework. </p>
+    /// <p>The tags that are associated with the framework.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssessmentFrameworkInput {
-    /// <p> The name of the new custom framework. </p>
+    /// <p>The name of the new custom framework.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> An optional description for the new custom framework. </p>
+    /// <p>An optional description for the new custom framework.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
-    /// <p> The control sets that are associated with the framework. </p>
+    /// <p>The control sets that are associated with the framework.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sets.is_none()`.
     pub fn control_sets(&self) -> &[crate::types::CreateAssessmentFrameworkControlSet] {
         self.control_sets.as_deref().unwrap_or_default()
     }
-    /// <p> The tags that are associated with the framework. </p>
+    /// <p>The tags that are associated with the framework.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -67,46 +67,46 @@ pub struct CreateAssessmentFrameworkInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssessmentFrameworkInputBuilder {
-    /// <p> The name of the new custom framework. </p>
+    /// <p>The name of the new custom framework.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the new custom framework. </p>
+    /// <p>The name of the new custom framework.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the new custom framework. </p>
+    /// <p>The name of the new custom framework.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> An optional description for the new custom framework. </p>
+    /// <p>An optional description for the new custom framework.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An optional description for the new custom framework. </p>
+    /// <p>An optional description for the new custom framework.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> An optional description for the new custom framework. </p>
+    /// <p>An optional description for the new custom framework.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub fn compliance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_type = input;
         self
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    /// <p>The compliance type that the new custom framework supports, such as CIS or HIPAA.</p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.compliance_type
     }
@@ -114,19 +114,19 @@ impl CreateAssessmentFrameworkInputBuilder {
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
-    /// <p> The control sets that are associated with the framework. </p>
+    /// <p>The control sets that are associated with the framework.</p>
     pub fn control_sets(mut self, input: crate::types::CreateAssessmentFrameworkControlSet) -> Self {
         let mut v = self.control_sets.unwrap_or_default();
         v.push(input);
         self.control_sets = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The control sets that are associated with the framework. </p>
+    /// <p>The control sets that are associated with the framework.</p>
     pub fn set_control_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>) -> Self {
         self.control_sets = input;
         self
     }
-    /// <p> The control sets that are associated with the framework. </p>
+    /// <p>The control sets that are associated with the framework.</p>
     pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>> {
         &self.control_sets
     }
@@ -134,19 +134,19 @@ impl CreateAssessmentFrameworkInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> The tags that are associated with the framework. </p>
+    /// <p>The tags that are associated with the framework.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> The tags that are associated with the framework. </p>
+    /// <p>The tags that are associated with the framework.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> The tags that are associated with the framework. </p>
+    /// <p>The tags that are associated with the framework.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

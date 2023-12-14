@@ -7,11 +7,11 @@ pub struct ListEndpointConfigsInput {
     pub sort_by: ::std::option::Option<crate::types::EndpointConfigSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::OrderKey>,
-    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of training jobs to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -27,7 +27,7 @@ impl ListEndpointConfigsInput {
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::OrderKey> {
         self.sort_order.as_ref()
     }
-    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -35,7 +35,7 @@ impl ListEndpointConfigsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string.</p>
     pub fn name_contains(&self) -> ::std::option::Option<&str> {
         self.name_contains.as_deref()
     }
@@ -96,17 +96,17 @@ impl ListEndpointConfigsInputBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::OrderKey> {
         &self.sort_order
     }
-    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
+    /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -124,17 +124,17 @@ impl ListEndpointConfigsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string.</p>
     pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
-    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
+    /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_contains
     }

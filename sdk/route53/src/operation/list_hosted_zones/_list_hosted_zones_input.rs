@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostedZonesInput {
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.</p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
     pub max_items: ::std::option::Option<i32>,
-    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
+    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set.</p>
     pub delegation_set_id: ::std::option::Option<::std::string::String>,
-    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    /// <p>(Optional) Specifies if the hosted zone is private.</p>
     pub hosted_zone_type: ::std::option::Option<crate::types::HostedZoneType>,
 }
 impl ListHostedZonesInput {
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.</p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -26,11 +26,11 @@ impl ListHostedZonesInput {
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
-    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
+    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set.</p>
     pub fn delegation_set_id(&self) -> ::std::option::Option<&str> {
         self.delegation_set_id.as_deref()
     }
-    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    /// <p>(Optional) Specifies if the hosted zone is private.</p>
     pub fn hosted_zone_type(&self) -> ::std::option::Option<&crate::types::HostedZoneType> {
         self.hosted_zone_type.as_ref()
     }
@@ -52,21 +52,21 @@ pub struct ListHostedZonesInputBuilder {
     pub(crate) hosted_zone_type: ::std::option::Option<crate::types::HostedZoneType>,
 }
 impl ListHostedZonesInputBuilder {
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.</p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.</p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request.</p>
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,31 +86,31 @@ impl ListHostedZonesInputBuilder {
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
-    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
+    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set.</p>
     pub fn delegation_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegation_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
+    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set.</p>
     pub fn set_delegation_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegation_set_id = input;
         self
     }
-    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
+    /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set.</p>
     pub fn get_delegation_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.delegation_set_id
     }
-    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    /// <p>(Optional) Specifies if the hosted zone is private.</p>
     pub fn hosted_zone_type(mut self, input: crate::types::HostedZoneType) -> Self {
         self.hosted_zone_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    /// <p>(Optional) Specifies if the hosted zone is private.</p>
     pub fn set_hosted_zone_type(mut self, input: ::std::option::Option<crate::types::HostedZoneType>) -> Self {
         self.hosted_zone_type = input;
         self
     }
-    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    /// <p>(Optional) Specifies if the hosted zone is private.</p>
     pub fn get_hosted_zone_type(&self) -> &::std::option::Option<crate::types::HostedZoneType> {
         &self.hosted_zone_type
     }

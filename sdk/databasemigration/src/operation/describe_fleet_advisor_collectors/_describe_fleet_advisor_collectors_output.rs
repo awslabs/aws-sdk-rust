@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorCollectorsOutput {
-    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data.</p>
     pub collectors: ::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeFleetAdvisorCollectorsOutput {
-    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collectors.is_none()`.
     pub fn collectors(&self) -> &[crate::types::CollectorResponse] {
         self.collectors.as_deref().unwrap_or_default()
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl DescribeFleetAdvisorCollectorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_collectors`](Self::set_collectors).
     ///
-    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data.</p>
     pub fn collectors(mut self, input: crate::types::CollectorResponse) -> Self {
         let mut v = self.collectors.unwrap_or_default();
         v.push(input);
         self.collectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data.</p>
     pub fn set_collectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>>) -> Self {
         self.collectors = input;
         self
     }
-    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
+    /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data.</p>
     pub fn get_collectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectorResponse>> {
         &self.collectors
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

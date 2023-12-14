@@ -246,7 +246,7 @@ pub enum CreateEnvironmentError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>A service limit or quota is exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p> You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

@@ -22,7 +22,7 @@ impl DeleteMonitoringScheduleInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMonitoringSchedule`.
 ///
-/// <p>Deletes a monitoring schedule. Also stops the schedule had not already been stopped. This does not delete the job execution history of the monitoring schedule. </p>
+/// <p>Deletes a monitoring schedule. Also stops the schedule had not already been stopped. This does not delete the job execution history of the monitoring schedule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMonitoringScheduleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

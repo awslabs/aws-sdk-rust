@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFleetInput {
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFleetInput {
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -33,32 +33,32 @@ pub struct UpdateFleetInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFleetInputBuilder {
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

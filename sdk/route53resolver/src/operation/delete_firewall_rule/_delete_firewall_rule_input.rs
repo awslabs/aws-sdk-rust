@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleInput {
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleInput {
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn firewall_rule_group_id(&self) -> ::std::option::Option<&str> {
         self.firewall_rule_group_id.as_deref()
     }
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
         self.firewall_domain_list_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteFirewallRuleInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleInputBuilder {
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     /// This field is required.
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_id = input;
         self
     }
-    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
+    /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
     pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_id
     }
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_domain_list_id = input;
         self
     }
-    /// <p>The ID of the domain list that's used in the rule. </p>
+    /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_domain_list_id
     }

@@ -14,7 +14,7 @@ pub struct MultiRegionAccessPointReport {
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     pub public_access_block: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The current status of the Multi-Region Access Point.</p>
-    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub status: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>,
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>,
@@ -38,7 +38,7 @@ impl MultiRegionAccessPointReport {
         self.public_access_block.as_ref()
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
-    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MultiRegionAccessPointStatus> {
         self.status.as_ref()
     }
@@ -128,19 +128,19 @@ impl MultiRegionAccessPointReportBuilder {
         &self.public_access_block
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
-    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub fn status(mut self, input: crate::types::MultiRegionAccessPointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
-    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
-    /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
+    /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MultiRegionAccessPointStatus> {
         &self.status
     }

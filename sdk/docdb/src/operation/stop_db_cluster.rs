@@ -242,11 +242,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopDBCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopDBClusterError {
-    /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing cluster. </p>
+    /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state. </p>
+    /// <p>The specified instance isn't in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

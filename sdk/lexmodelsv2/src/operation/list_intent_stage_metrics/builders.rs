@@ -24,13 +24,13 @@ impl ListIntentStageMetricsInputBuilder {
 ///
 /// <p>Retrieves summary metrics for the stages within intents in your bot. The following fields are required:</p>
 /// <ul>
-/// <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li>
-/// <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li>
+/// <li><p><code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p></li>
+/// <li><p><code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p></li>
 /// </ul>
 /// <p>Of the optional fields, you can organize the results in the following ways:</p>
 /// <ul>
-/// <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li>
-/// <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li>
+/// <li><p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p></li>
+/// <li><p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p></li>
 /// </ul>
 /// <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can only specify one <code>order</code> in a given request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -208,8 +208,8 @@ impl ListIntentStageMetricsFluentBuilder {
     ///
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
-    /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
+    /// <li><p><code>IntentStageName</code> – The name of the intent stage.</p></li>
+    /// <li><p><code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p></li>
     /// </ul>
     pub fn group_by(mut self, input: crate::types::AnalyticsIntentStageGroupBySpecification) -> Self {
         self.inner = self.inner.group_by(input);
@@ -217,8 +217,8 @@ impl ListIntentStageMetricsFluentBuilder {
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
-    /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
+    /// <li><p><code>IntentStageName</code> – The name of the intent stage.</p></li>
+    /// <li><p><code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p></li>
     /// </ul>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>>) -> Self {
         self.inner = self.inner.set_group_by(input);
@@ -226,8 +226,8 @@ impl ListIntentStageMetricsFluentBuilder {
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
-    /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
-    /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
+    /// <li><p><code>IntentStageName</code> – The name of the intent stage.</p></li>
+    /// <li><p><code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p></li>
     /// </ul>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>> {
         self.inner.get_group_by()

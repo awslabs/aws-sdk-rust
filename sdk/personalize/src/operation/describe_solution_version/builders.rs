@@ -22,7 +22,7 @@ impl DescribeSolutionVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSolutionVersion`.
 ///
-/// <p>Describes a specific version of a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> </p>
+/// <p>Describes a specific version of a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSolutionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

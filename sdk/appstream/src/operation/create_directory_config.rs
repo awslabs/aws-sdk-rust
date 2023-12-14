@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDirecto
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateDirectoryConfigError {
-    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>
+    /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
     /// <p>The specified role is invalid.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),

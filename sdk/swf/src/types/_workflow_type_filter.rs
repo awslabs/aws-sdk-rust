@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowTypeFilter {
-    /// <p> Name of the workflow type.</p>
+    /// <p>Name of the workflow type.</p>
     pub name: ::std::string::String,
     /// <p>Version of the workflow type.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowTypeFilter {
-    /// <p> Name of the workflow type.</p>
+    /// <p>Name of the workflow type.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -35,18 +35,18 @@ pub struct WorkflowTypeFilterBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowTypeFilterBuilder {
-    /// <p> Name of the workflow type.</p>
+    /// <p>Name of the workflow type.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Name of the workflow type.</p>
+    /// <p>Name of the workflow type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> Name of the workflow type.</p>
+    /// <p>Name of the workflow type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

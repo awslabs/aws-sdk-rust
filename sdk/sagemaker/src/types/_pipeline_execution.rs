@@ -28,7 +28,7 @@ pub struct PipelineExecution {
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The parallelism configuration applied to the pipeline execution.</p>
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub pipeline_parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>The selective execution configuration applied to the pipeline run.</p>
     pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
@@ -82,7 +82,7 @@ impl PipelineExecution {
     pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_parameters.is_none()`.
     pub fn pipeline_parameters(&self) -> &[crate::types::Parameter] {
@@ -292,19 +292,19 @@ impl PipelineExecutionBuilder {
     ///
     /// To override the contents of this collection use [`set_pipeline_parameters`](Self::set_pipeline_parameters).
     ///
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub fn pipeline_parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.pipeline_parameters.unwrap_or_default();
         v.push(input);
         self.pipeline_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub fn set_pipeline_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.pipeline_parameters = input;
         self
     }
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub fn get_pipeline_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.pipeline_parameters
     }

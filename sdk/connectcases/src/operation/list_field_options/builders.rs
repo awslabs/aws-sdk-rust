@@ -22,7 +22,7 @@ impl ListFieldOptionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFieldOptions`.
 ///
-/// <p>Lists all of the field options for a field identifier in the domain. </p>
+/// <p>Lists all of the field options for a field identifier in the domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFieldOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListFieldOptionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_field_options::paginator::ListFieldOptionsPaginator {
         crate::operation::list_field_options::paginator::ListFieldOptionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }

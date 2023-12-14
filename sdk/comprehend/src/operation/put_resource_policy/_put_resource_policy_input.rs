@@ -6,9 +6,9 @@ pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
     pub resource_policy: ::std::option::Option<::std::string::String>,
     /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
@@ -19,9 +19,9 @@ impl PutResourcePolicyInput {
         self.resource_arn.as_deref()
     }
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
     pub fn resource_policy(&self) -> ::std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
@@ -62,26 +62,26 @@ impl PutResourcePolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
     /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
         self
     }
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
-    /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
+    /// <p><code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code></p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
-    /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
+    /// <p><code>'{"attribute": "value", "attribute": ["value"]}'</code></p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy
     }

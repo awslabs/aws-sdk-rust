@@ -10,7 +10,7 @@ pub struct ConformancePackDetail {
     pub conformance_pack_arn: ::std::string::String,
     /// <p>ID of the conformance pack.</p>
     pub conformance_pack_id: ::std::string::String,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct ConformancePackDetail {
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
     pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
-    /// <p>The last time a conformation pack update was requested. </p>
+    /// <p>The last time a conformation pack update was requested.</p>
     pub last_update_requested_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services service that created the conformance pack.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
@@ -43,7 +43,7 @@ impl ConformancePackDetail {
         use std::ops::Deref;
         self.conformance_pack_id.deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> ::std::option::Option<&str> {
@@ -61,7 +61,7 @@ impl ConformancePackDetail {
     pub fn conformance_pack_input_parameters(&self) -> &[crate::types::ConformancePackInputParameter] {
         self.conformance_pack_input_parameters.as_deref().unwrap_or_default()
     }
-    /// <p>The last time a conformation pack update was requested. </p>
+    /// <p>The last time a conformation pack update was requested.</p>
     pub fn last_update_requested_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_requested_time.as_ref()
     }
@@ -141,21 +141,21 @@ impl ConformancePackDetailBuilder {
     pub fn get_conformance_pack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.conformance_pack_id
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_bucket = input;
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,17 +204,17 @@ impl ConformancePackDetailBuilder {
     pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
         &self.conformance_pack_input_parameters
     }
-    /// <p>The last time a conformation pack update was requested. </p>
+    /// <p>The last time a conformation pack update was requested.</p>
     pub fn last_update_requested_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_requested_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last time a conformation pack update was requested. </p>
+    /// <p>The last time a conformation pack update was requested.</p>
     pub fn set_last_update_requested_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_requested_time = input;
         self
     }
-    /// <p>The last time a conformation pack update was requested. </p>
+    /// <p>The last time a conformation pack update was requested.</p>
     pub fn get_last_update_requested_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_requested_time
     }

@@ -8,9 +8,9 @@ pub struct UpdateResourceInput {
     /// <p>The identifier of the resource to be updated.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
-    /// <li> <p>Email address: resource@domain.tld</p> </li>
-    /// <li> <p>Resource name: resource</p> </li>
+    /// <li><p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
+    /// <li><p>Email address: resource@domain.tld</p></li>
+    /// <li><p>Resource name: resource</p></li>
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource to be updated.</p>
@@ -32,9 +32,9 @@ impl UpdateResourceInput {
     /// <p>The identifier of the resource to be updated.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
-    /// <li> <p>Email address: resource@domain.tld</p> </li>
-    /// <li> <p>Resource name: resource</p> </li>
+    /// <li><p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
+    /// <li><p>Email address: resource@domain.tld</p></li>
+    /// <li><p>Resource name: resource</p></li>
     /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
@@ -98,9 +98,9 @@ impl UpdateResourceInputBuilder {
     /// <p>The identifier of the resource to be updated.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
-    /// <li> <p>Email address: resource@domain.tld</p> </li>
-    /// <li> <p>Resource name: resource</p> </li>
+    /// <li><p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
+    /// <li><p>Email address: resource@domain.tld</p></li>
+    /// <li><p>Resource name: resource</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,9 +110,9 @@ impl UpdateResourceInputBuilder {
     /// <p>The identifier of the resource to be updated.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
-    /// <li> <p>Email address: resource@domain.tld</p> </li>
-    /// <li> <p>Resource name: resource</p> </li>
+    /// <li><p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
+    /// <li><p>Email address: resource@domain.tld</p></li>
+    /// <li><p>Resource name: resource</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
@@ -121,9 +121,9 @@ impl UpdateResourceInputBuilder {
     /// <p>The identifier of the resource to be updated.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
-    /// <li> <p>Email address: resource@domain.tld</p> </li>
-    /// <li> <p>Resource name: resource</p> </li>
+    /// <li><p>Resource ID: r-0123456789a0123456789b0123456789</p></li>
+    /// <li><p>Email address: resource@domain.tld</p></li>
+    /// <li><p>Resource name: resource</p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id

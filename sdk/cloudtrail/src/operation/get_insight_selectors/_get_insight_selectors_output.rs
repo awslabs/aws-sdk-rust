@@ -7,9 +7,9 @@ pub struct GetInsightSelectorsOutput {
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
     pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
-    /// <p> The ARN of the source event data store that enabled Insights events. </p>
+    /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub insights_destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -24,11 +24,11 @@ impl GetInsightSelectorsOutput {
     pub fn insight_selectors(&self) -> &[crate::types::InsightSelector] {
         self.insight_selectors.as_deref().unwrap_or_default()
     }
-    /// <p> The ARN of the source event data store that enabled Insights events. </p>
+    /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
         self.event_data_store_arn.as_deref()
     }
-    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub fn insights_destination(&self) -> ::std::option::Option<&str> {
         self.insights_destination.as_deref()
     }
@@ -90,31 +90,31 @@ impl GetInsightSelectorsOutputBuilder {
     pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
         &self.insight_selectors
     }
-    /// <p> The ARN of the source event data store that enabled Insights events. </p>
+    /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub fn event_data_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the source event data store that enabled Insights events. </p>
+    /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store_arn = input;
         self
     }
-    /// <p> The ARN of the source event data store that enabled Insights events. </p>
+    /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_store_arn
     }
-    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub fn insights_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insights_destination = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub fn set_insights_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insights_destination = input;
         self
     }
-    /// <p> The ARN of the destination event data store that logs Insights events. </p>
+    /// <p>The ARN of the destination event data store that logs Insights events.</p>
     pub fn get_insights_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.insights_destination
     }

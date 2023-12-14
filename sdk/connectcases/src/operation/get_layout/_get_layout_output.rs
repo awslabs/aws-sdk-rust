@@ -9,7 +9,7 @@ pub struct GetLayoutOutput {
     pub layout_arn: ::std::string::String,
     /// <p>The name of the layout. It must be unique.</p>
     pub name: ::std::string::String,
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     pub content: ::std::option::Option<crate::types::LayoutContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
@@ -31,7 +31,7 @@ impl GetLayoutOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::LayoutContent> {
         self.content.as_ref()
     }
@@ -109,18 +109,18 @@ impl GetLayoutOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     /// This field is required.
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
         self.content = input;
         self
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
         &self.content
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectAssignmentInput {
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub assignment_id: ::std::option::Option<::std::string::String>,
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub requester_feedback: ::std::option::Option<::std::string::String>,
 }
 impl RejectAssignmentInput {
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn assignment_id(&self) -> ::std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn requester_feedback(&self) -> ::std::option::Option<&str> {
         self.requester_feedback.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct RejectAssignmentInputBuilder {
     pub(crate) requester_feedback: ::std::option::Option<::std::string::String>,
 }
 impl RejectAssignmentInputBuilder {
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     /// This field is required.
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_id = input;
         self
     }
-    /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// <p>The ID of the assignment. The assignment must correspond to a HIT created by the Requester.</p>
     pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assignment_id
     }
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     /// This field is required.
     pub fn requester_feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.requester_feedback = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn set_requester_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.requester_feedback = input;
         self
     }
-    /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// <p>A message for the Worker, which the Worker can see in the Status section of the web site.</p>
     pub fn get_requester_feedback(&self) -> &::std::option::Option<::std::string::String> {
         &self.requester_feedback
     }

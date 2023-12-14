@@ -22,7 +22,7 @@ impl ResetClusterParameterGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `ResetClusterParameterGroup`.
 ///
-/// <p>Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters. </p>
+/// <p>Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,20 +122,20 @@ impl ResetClusterParameterGroupFluentBuilder {
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parameter_group_name()
     }
-    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values.</p>
+    /// <p>Default: <code>true</code></p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.inner = self.inner.reset_all_parameters(input);
         self
     }
-    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values.</p>
+    /// <p>Default: <code>true</code></p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_all_parameters(input);
         self
     }
-    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values.</p>
+    /// <p>Default: <code>true</code></p>
     pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
         self.inner.get_reset_all_parameters()
     }
@@ -143,19 +143,19 @@ impl ResetClusterParameterGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
+    /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied.</p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
+    /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied.</p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
+    /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied.</p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateAccountsInput {
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The array of account IDs to disassociate. </p>
+    /// <p>The array of account IDs to disassociate.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateAccountsInput {
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The array of account IDs to disassociate. </p>
+    /// <p>The array of account IDs to disassociate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
@@ -35,18 +35,18 @@ pub struct DisassociateAccountsInputBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateAccountsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -54,19 +54,19 @@ impl DisassociateAccountsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The array of account IDs to disassociate. </p>
+    /// <p>The array of account IDs to disassociate.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The array of account IDs to disassociate. </p>
+    /// <p>The array of account IDs to disassociate.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The array of account IDs to disassociate. </p>
+    /// <p>The array of account IDs to disassociate.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

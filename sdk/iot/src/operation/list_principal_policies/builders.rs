@@ -23,7 +23,7 @@ impl ListPrincipalPoliciesInputBuilder {
 /// Fluent builder constructing a request to `ListPrincipalPolicies`.
 ///
 /// <p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito Identity format</a>.</p>
-/// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListAttachedPolicies</code> instead.</p>
+/// <p><b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListAttachedPolicies</code> instead.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a> action.</p>
 #[deprecated]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

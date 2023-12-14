@@ -28,7 +28,7 @@ pub struct ModelVersionDetail {
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The model version ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub training_result_v2: ::std::option::Option<crate::types::TrainingResultV2>,
 }
 impl ModelVersionDetail {
@@ -80,7 +80,7 @@ impl ModelVersionDetail {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub fn training_result_v2(&self) -> ::std::option::Option<&crate::types::TrainingResultV2> {
         self.training_result_v2.as_ref()
     }
@@ -279,17 +279,17 @@ impl ModelVersionDetailBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub fn training_result_v2(mut self, input: crate::types::TrainingResultV2) -> Self {
         self.training_result_v2 = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub fn set_training_result_v2(mut self, input: ::std::option::Option<crate::types::TrainingResultV2>) -> Self {
         self.training_result_v2 = input;
         self
     }
-    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    /// <p>The training result details. The details include the relative importance of the variables.</p>
     pub fn get_training_result_v2(&self) -> &::std::option::Option<crate::types::TrainingResultV2> {
         &self.training_result_v2
     }

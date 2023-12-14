@@ -10,7 +10,7 @@ pub struct S3StorageConfig {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
+    /// <li><p><code>"kms:GenerateDataKey"</code></p></li>
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 path where offline records are written.</p>
@@ -25,7 +25,7 @@ impl S3StorageConfig {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
+    /// <li><p><code>"kms:GenerateDataKey"</code></p></li>
     /// </ul>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -72,7 +72,7 @@ impl S3StorageConfigBuilder {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
+    /// <li><p><code>"kms:GenerateDataKey"</code></p></li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -81,7 +81,7 @@ impl S3StorageConfigBuilder {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
+    /// <li><p><code>"kms:GenerateDataKey"</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
@@ -90,7 +90,7 @@ impl S3StorageConfigBuilder {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
+    /// <li><p><code>"kms:GenerateDataKey"</code></p></li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id

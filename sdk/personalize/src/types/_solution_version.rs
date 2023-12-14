@@ -33,12 +33,12 @@ pub struct SolutionVersion {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING</p> </li>
-    /// <li> <p>CREATE IN_PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
-    /// <li> <p>CREATE STOPPING</p> </li>
-    /// <li> <p>CREATE STOPPED</p> </li>
+    /// <li><p>CREATE PENDING</p></li>
+    /// <li><p>CREATE IN_PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
+    /// <li><p>CREATE STOPPING</p></li>
+    /// <li><p>CREATE STOPPED</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If training a solution version fails, the reason for the failure.</p>
@@ -102,12 +102,12 @@ impl SolutionVersion {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING</p> </li>
-    /// <li> <p>CREATE IN_PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
-    /// <li> <p>CREATE STOPPING</p> </li>
-    /// <li> <p>CREATE STOPPED</p> </li>
+    /// <li><p>CREATE PENDING</p></li>
+    /// <li><p>CREATE IN_PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
+    /// <li><p>CREATE STOPPING</p></li>
+    /// <li><p>CREATE STOPPED</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -331,12 +331,12 @@ impl SolutionVersionBuilder {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING</p> </li>
-    /// <li> <p>CREATE IN_PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
-    /// <li> <p>CREATE STOPPING</p> </li>
-    /// <li> <p>CREATE STOPPED</p> </li>
+    /// <li><p>CREATE PENDING</p></li>
+    /// <li><p>CREATE IN_PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
+    /// <li><p>CREATE STOPPING</p></li>
+    /// <li><p>CREATE STOPPED</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -345,12 +345,12 @@ impl SolutionVersionBuilder {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING</p> </li>
-    /// <li> <p>CREATE IN_PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
-    /// <li> <p>CREATE STOPPING</p> </li>
-    /// <li> <p>CREATE STOPPED</p> </li>
+    /// <li><p>CREATE PENDING</p></li>
+    /// <li><p>CREATE IN_PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
+    /// <li><p>CREATE STOPPING</p></li>
+    /// <li><p>CREATE STOPPED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -359,12 +359,12 @@ impl SolutionVersionBuilder {
     /// <p>The status of the solution version.</p>
     /// <p>A solution version can be in one of the following states:</p>
     /// <ul>
-    /// <li> <p>CREATE PENDING</p> </li>
-    /// <li> <p>CREATE IN_PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
-    /// <li> <p>CREATE STOPPING</p> </li>
-    /// <li> <p>CREATE STOPPED</p> </li>
+    /// <li><p>CREATE PENDING</p></li>
+    /// <li><p>CREATE IN_PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
+    /// <li><p>CREATE STOPPING</p></li>
+    /// <li><p>CREATE STOPPED</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentity {
-    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
     pub s3_canonical_user_id: ::std::string::String,
@@ -12,7 +12,7 @@ pub struct CloudFrontOriginAccessIdentity {
     pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CloudFrontOriginAccessIdentity {
-    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -43,18 +43,18 @@ pub struct CloudFrontOriginAccessIdentityBuilder {
     pub(crate) cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CloudFrontOriginAccessIdentityBuilder {
-    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

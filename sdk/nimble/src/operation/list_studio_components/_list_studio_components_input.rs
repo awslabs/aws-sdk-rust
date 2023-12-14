@@ -7,9 +7,9 @@ pub struct ListStudioComponentsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>,
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the request to studio components that are of one of the given types.</p>
     pub types: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentType>>,
@@ -23,13 +23,13 @@ impl ListStudioComponentsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
     pub fn states(&self) -> &[crate::types::StudioComponentState] {
         self.states.as_deref().unwrap_or_default()
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -90,34 +90,34 @@ impl ListStudioComponentsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub fn states(mut self, input: crate::types::StudioComponentState) -> Self {
         let mut v = self.states.unwrap_or_default();
         v.push(input);
         self.states = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>>) -> Self {
         self.states = input;
         self
     }
-    /// <p>Filters the request to studio components that are in one of the given states. </p>
+    /// <p>Filters the request to studio components that are in one of the given states.</p>
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentState>> {
         &self.states
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

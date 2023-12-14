@@ -193,17 +193,17 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opt_out_list_name()
     }
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection_enabled(input);
         self
     }
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
     }
-    /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
+    /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }

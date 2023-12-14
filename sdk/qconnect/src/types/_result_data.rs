@@ -10,7 +10,7 @@ pub struct ResultData {
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>The relevance score of the results.</p>
     pub relevance_score: f64,
-    /// <p> Summary of the recommended content.</p>
+    /// <p>Summary of the recommended content.</p>
     pub data: ::std::option::Option<crate::types::DataSummary>,
     /// <p>The type of the query result.</p>
     pub r#type: ::std::option::Option<crate::types::QueryResultType>,
@@ -29,7 +29,7 @@ impl ResultData {
     pub fn relevance_score(&self) -> f64 {
         self.relevance_score
     }
-    /// <p> Summary of the recommended content.</p>
+    /// <p>Summary of the recommended content.</p>
     pub fn data(&self) -> ::std::option::Option<&crate::types::DataSummary> {
         self.data.as_ref()
     }
@@ -99,17 +99,17 @@ impl ResultDataBuilder {
     pub fn get_relevance_score(&self) -> &::std::option::Option<f64> {
         &self.relevance_score
     }
-    /// <p> Summary of the recommended content.</p>
+    /// <p>Summary of the recommended content.</p>
     pub fn data(mut self, input: crate::types::DataSummary) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Summary of the recommended content.</p>
+    /// <p>Summary of the recommended content.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::DataSummary>) -> Self {
         self.data = input;
         self
     }
-    /// <p> Summary of the recommended content.</p>
+    /// <p>Summary of the recommended content.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::DataSummary> {
         &self.data
     }

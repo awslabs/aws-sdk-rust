@@ -6,11 +6,11 @@ pub struct CreateIpSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
     pub format: ::std::option::Option<crate::types::IpSetFormat>,
-    /// <p>The URI of the file that contains the IPSet. </p>
+    /// <p>The URI of the file that contains the IPSet.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub activate: ::std::option::Option<bool>,
@@ -25,7 +25,7 @@ impl CreateIpSetInput {
         self.detector_id.as_deref()
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -33,7 +33,7 @@ impl CreateIpSetInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::IpSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the IPSet. </p>
+    /// <p>The URI of the file that contains the IPSet.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -86,20 +86,20 @@ impl CreateIpSetInputBuilder {
         &self.detector_id
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
-    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// <p>Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -118,18 +118,18 @@ impl CreateIpSetInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::IpSetFormat> {
         &self.format
     }
-    /// <p>The URI of the file that contains the IPSet. </p>
+    /// <p>The URI of the file that contains the IPSet.</p>
     /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URI of the file that contains the IPSet. </p>
+    /// <p>The URI of the file that contains the IPSet.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The URI of the file that contains the IPSet. </p>
+    /// <p>The URI of the file that contains the IPSet.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

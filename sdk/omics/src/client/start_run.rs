@@ -22,8 +22,8 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::start_run::StartRunOutput::id): <p>The run's ID.</p>
     ///   - [`status(Option<RunStatus>)`](crate::operation::start_run::StartRunOutput::status): <p>The run's status.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::start_run::StartRunOutput::tags): <p>The run's tags.</p>
-    ///   - [`uuid(Option<String>)`](crate::operation::start_run::StartRunOutput::uuid): <p> The universally unique identifier for a run. </p>
-    ///   - [`run_output_uri(Option<String>)`](crate::operation::start_run::StartRunOutput::run_output_uri): <p> The destination for workflow outputs. </p>
+    ///   - [`uuid(Option<String>)`](crate::operation::start_run::StartRunOutput::uuid): <p>The universally unique identifier for a run.</p>
+    ///   - [`run_output_uri(Option<String>)`](crate::operation::start_run::StartRunOutput::run_output_uri): <p>The destination for workflow outputs.</p>
     /// - On failure, responds with [`SdkError<StartRunError>`](crate::operation::start_run::StartRunError)
     pub fn start_run(&self) -> crate::operation::start_run::builders::StartRunFluentBuilder {
         crate::operation::start_run::builders::StartRunFluentBuilder::new(self.handle.clone())

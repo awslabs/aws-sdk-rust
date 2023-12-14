@@ -156,17 +156,17 @@ impl CreateLinkFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type()
     }
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     pub fn bandwidth(mut self, input: crate::types::Bandwidth) -> Self {
         self.inner = self.inner.bandwidth(input);
         self
     }
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::Bandwidth>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
     }
-    /// <p> The upload speed and download speed in Mbps. </p>
+    /// <p>The upload speed and download speed in Mbps.</p>
     pub fn get_bandwidth(&self) -> &::std::option::Option<crate::types::Bandwidth> {
         self.inner.get_bandwidth()
     }

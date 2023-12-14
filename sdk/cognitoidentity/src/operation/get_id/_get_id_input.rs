@@ -10,16 +10,16 @@ pub struct GetIdInput {
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
-    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
-    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <li><p>Facebook: <code>graph.facebook.com</code></p></li>
+    /// <li><p>Amazon Cognito user pool: <code>cognito-idp.
     /// <region>
     /// .amazonaws.com/
     /// <your_user_pool_id></your_user_pool_id>
-    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
-    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
-    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
-    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
-    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p></li>
+    /// <li><p>Google: <code>accounts.google.com</code></p></li>
+    /// <li><p>Amazon: <code>www.amazon.com</code></p></li>
+    /// <li><p>Twitter: <code>api.twitter.com</code></p></li>
+    /// <li><p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
     pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -34,16 +34,16 @@ impl GetIdInput {
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
-    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
-    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <li><p>Facebook: <code>graph.facebook.com</code></p></li>
+    /// <li><p>Amazon Cognito user pool: <code>cognito-idp.
     /// <region>
     /// .amazonaws.com/
     /// <your_user_pool_id></your_user_pool_id>
-    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
-    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
-    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
-    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
-    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p></li>
+    /// <li><p>Google: <code>accounts.google.com</code></p></li>
+    /// <li><p>Amazon: <code>www.amazon.com</code></p></li>
+    /// <li><p>Twitter: <code>api.twitter.com</code></p></li>
+    /// <li><p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
     pub fn logins(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.logins.as_ref()
@@ -100,16 +100,16 @@ impl GetIdInputBuilder {
     ///
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
-    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
-    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <li><p>Facebook: <code>graph.facebook.com</code></p></li>
+    /// <li><p>Amazon Cognito user pool: <code>cognito-idp.
     /// <region>
     /// .amazonaws.com/
     /// <your_user_pool_id></your_user_pool_id>
-    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
-    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
-    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
-    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
-    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p></li>
+    /// <li><p>Google: <code>accounts.google.com</code></p></li>
+    /// <li><p>Amazon: <code>www.amazon.com</code></p></li>
+    /// <li><p>Twitter: <code>api.twitter.com</code></p></li>
+    /// <li><p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
     pub fn logins(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.logins.unwrap_or_default();
@@ -119,16 +119,16 @@ impl GetIdInputBuilder {
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
-    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
-    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <li><p>Facebook: <code>graph.facebook.com</code></p></li>
+    /// <li><p>Amazon Cognito user pool: <code>cognito-idp.
     /// <region>
     /// .amazonaws.com/
     /// <your_user_pool_id></your_user_pool_id>
-    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
-    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
-    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
-    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
-    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p></li>
+    /// <li><p>Google: <code>accounts.google.com</code></p></li>
+    /// <li><p>Amazon: <code>www.amazon.com</code></p></li>
+    /// <li><p>Twitter: <code>api.twitter.com</code></p></li>
+    /// <li><p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
     pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.logins = input;
@@ -136,16 +136,16 @@ impl GetIdInputBuilder {
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
-    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
-    /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+    /// <li><p>Facebook: <code>graph.facebook.com</code></p></li>
+    /// <li><p>Amazon Cognito user pool: <code>cognito-idp.
     /// <region>
     /// .amazonaws.com/
     /// <your_user_pool_id></your_user_pool_id>
-    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
-    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
-    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
-    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
-    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
+    /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p></li>
+    /// <li><p>Google: <code>accounts.google.com</code></p></li>
+    /// <li><p>Amazon: <code>www.amazon.com</code></p></li>
+    /// <li><p>Twitter: <code>api.twitter.com</code></p></li>
+    /// <li><p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
     pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.logins

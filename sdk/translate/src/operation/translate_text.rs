@@ -245,21 +245,21 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TranslateText
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TranslateTextError {
-    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>. </p>
+    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>.</p>
     DetectedLanguageLowConfidenceException(crate::types::error::DetectedLanguageLowConfidenceException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The request that you made is not valid. Check your request to determine why it's not valid and then retry the request. </p>
+    /// <p>The request that you made is not valid. Check your request to determine why it's not valid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Amazon Translate service is temporarily unavailable. Wait a bit and then retry your request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
+    /// <p>The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request.</p>
     TextSizeLimitExceededException(crate::types::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     UnsupportedLanguagePairException(crate::types::error::UnsupportedLanguagePairException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

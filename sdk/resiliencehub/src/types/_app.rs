@@ -26,7 +26,7 @@ pub struct App {
     pub last_resiliency_score_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
     /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
     pub permission_model: ::std::option::Option<crate::types::PermissionModel>,
@@ -88,7 +88,7 @@ impl App {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
     pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
@@ -337,17 +337,17 @@ impl AppBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
         self.assessment_schedule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.assessment_schedule = input;
         self
     }
-    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values.</p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }

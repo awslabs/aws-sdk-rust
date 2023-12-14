@@ -150,17 +150,17 @@ impl CreateThreatIntelSetFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::ThreatIntelSetFormat> {
         self.inner.get_format()
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
+    /// <p>The URI of the file that contains the ThreatIntelSet.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }

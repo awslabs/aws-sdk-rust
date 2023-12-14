@@ -17,9 +17,9 @@ pub struct CreateStorageVirtualMachineInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
-    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
-    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
+    /// <li><p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
+    /// <li><p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <li><p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
     /// </ul>
     pub root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
@@ -52,9 +52,9 @@ impl CreateStorageVirtualMachineInput {
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
-    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
-    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
+    /// <li><p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
+    /// <li><p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <li><p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
     /// </ul>
     pub fn root_volume_security_style(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         self.root_volume_security_style.as_ref()
@@ -187,9 +187,9 @@ impl CreateStorageVirtualMachineInputBuilder {
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
-    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
-    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
+    /// <li><p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
+    /// <li><p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <li><p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
     /// </ul>
     pub fn root_volume_security_style(mut self, input: crate::types::StorageVirtualMachineRootVolumeSecurityStyle) -> Self {
         self.root_volume_security_style = ::std::option::Option::Some(input);
@@ -197,9 +197,9 @@ impl CreateStorageVirtualMachineInputBuilder {
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
-    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
-    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
+    /// <li><p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
+    /// <li><p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <li><p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
     /// </ul>
     pub fn set_root_volume_security_style(
         mut self,
@@ -210,9 +210,9 @@ impl CreateStorageVirtualMachineInputBuilder {
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
-    /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
-    /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
+    /// <li><p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
+    /// <li><p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <li><p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
     /// </ul>
     pub fn get_root_volume_security_style(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         &self.root_volume_security_style

@@ -19,7 +19,7 @@ pub enum Error {
     ConcurrentRunsExceededException(crate::types::error::ConcurrentRunsExceededException),
     /// <p>A specified condition was not satisfied.</p>
     ConditionCheckFailureException(crate::types::error::ConditionCheckFailureException),
-    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The specified crawler is not running.</p>
     CrawlerNotRunningException(crate::types::error::CrawlerNotRunningException),

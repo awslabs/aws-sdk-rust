@@ -109,19 +109,19 @@ impl UntagResourceFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
-    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
-    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
-    /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    /// <p><code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code></p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

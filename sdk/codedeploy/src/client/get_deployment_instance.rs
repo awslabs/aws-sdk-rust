@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeploymentInstance`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_deployment_id):<br>required: **true**<br><p> The unique ID of a deployment. </p><br>
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_instance_id):<br>required: **true**<br><p> The unique ID of an instance in the deployment group. </p><br>
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_deployment_id):<br>required: **true**<br><p>The unique ID of a deployment.</p><br>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder::set_instance_id):<br>required: **true**<br><p>The unique ID of an instance in the deployment group.</p><br>
     /// - On success, responds with [`GetDeploymentInstanceOutput`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput) with field(s):
-    ///   - [`instance_summary(Option<InstanceSummary>)`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput::instance_summary): <p> Information about the instance. </p>
+    ///   - [`instance_summary(Option<InstanceSummary>)`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput::instance_summary): <p>Information about the instance.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentInstanceError>`](crate::operation::get_deployment_instance::GetDeploymentInstanceError)
     #[deprecated(note = "This operation is deprecated, use GetDeploymentTarget instead.")]
     pub fn get_deployment_instance(&self) -> crate::operation::get_deployment_instance::builders::GetDeploymentInstanceFluentBuilder {

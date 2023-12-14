@@ -242,11 +242,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDBSubne
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDBSubnetGroupError {
-    /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group. </p>
+    /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The subnet group can't be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::types::error::InvalidDbSubnetGroupStateFault),
-    /// <p> The subnet isn't in the <i>available</i> state. </p>
+    /// <p>The subnet isn't in the <i>available</i> state.</p>
     InvalidDbSubnetStateFault(crate::types::error::InvalidDbSubnetStateFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

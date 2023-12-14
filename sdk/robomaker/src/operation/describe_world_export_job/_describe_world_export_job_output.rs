@@ -17,19 +17,19 @@ pub struct DescribeWorldExportJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running. </p>
+    /// <p>The world export job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed. </p>
+    /// <p>The world export job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -59,13 +59,13 @@ pub struct DescribeWorldExportJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -112,19 +112,19 @@ impl DescribeWorldExportJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running. </p>
+    /// <p>The world export job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed. </p>
+    /// <p>The world export job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -158,13 +158,13 @@ impl DescribeWorldExportJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -264,19 +264,19 @@ impl DescribeWorldExportJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running. </p>
+    /// <p>The world export job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed. </p>
+    /// <p>The world export job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -307,19 +307,19 @@ impl DescribeWorldExportJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running. </p>
+    /// <p>The world export job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed. </p>
+    /// <p>The world export job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -350,19 +350,19 @@ impl DescribeWorldExportJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world export job is running. </p>
+    /// <p>The world export job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world export job completed. </p>
+    /// <p>The world export job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// Canceled
@@ -406,13 +406,13 @@ impl DescribeWorldExportJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -443,13 +443,13 @@ impl DescribeWorldExportJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -480,13 +480,13 @@ impl DescribeWorldExportJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled

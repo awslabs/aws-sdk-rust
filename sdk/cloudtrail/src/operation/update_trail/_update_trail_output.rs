@@ -14,14 +14,14 @@ pub struct UpdateTrailOutput {
     #[deprecated]
     pub sns_topic_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    /// <p><code>arn:aws:sns:us-east-2:123456789012:MyTopic</code></p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: ::std::option::Option<bool>,
     /// <p>Specifies whether the trail exists in one Region or in all Regions.</p>
     pub is_multi_region_trail: ::std::option::Option<bool>,
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether log file integrity validation is enabled.</p>
     pub log_file_validation_enabled: ::std::option::Option<bool>,
@@ -30,7 +30,7 @@ pub struct UpdateTrailOutput {
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
     pub is_organization_trail: ::std::option::Option<bool>,
@@ -55,7 +55,7 @@ impl UpdateTrailOutput {
         self.sns_topic_name.as_deref()
     }
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    /// <p><code>arn:aws:sns:us-east-2:123456789012:MyTopic</code></p>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -68,7 +68,7 @@ impl UpdateTrailOutput {
         self.is_multi_region_trail
     }
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn trail_arn(&self) -> ::std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
@@ -85,7 +85,7 @@ impl UpdateTrailOutput {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -186,19 +186,19 @@ impl UpdateTrailOutputBuilder {
         &self.sns_topic_name
     }
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    /// <p><code>arn:aws:sns:us-east-2:123456789012:MyTopic</code></p>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    /// <p><code>arn:aws:sns:us-east-2:123456789012:MyTopic</code></p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
     /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    /// <p><code>arn:aws:sns:us-east-2:123456789012:MyTopic</code></p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_arn
     }
@@ -231,19 +231,19 @@ impl UpdateTrailOutputBuilder {
         &self.is_multi_region_trail
     }
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trail_arn = input;
         self
     }
     /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trail_arn
     }
@@ -290,19 +290,19 @@ impl UpdateTrailOutputBuilder {
         &self.cloud_watch_logs_role_arn
     }
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

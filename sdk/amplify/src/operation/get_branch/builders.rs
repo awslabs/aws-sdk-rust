@@ -22,7 +22,7 @@ impl GetBranchInputBuilder {
 }
 /// Fluent builder constructing a request to `GetBranch`.
 ///
-/// <p> Returns a branch for an Amplify app. </p>
+/// <p>Returns a branch for an Amplify app.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBranchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,31 +102,31 @@ impl GetBranchFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique ID for an Amplify app. </p>
+    /// <p>The unique ID for an Amplify app.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
-    /// <p> The unique ID for an Amplify app. </p>
+    /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
-    /// <p> The unique ID for an Amplify app. </p>
+    /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_id()
     }
-    /// <p>The name of the branch. </p>
+    /// <p>The name of the branch.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
         self
     }
-    /// <p>The name of the branch. </p>
+    /// <p>The name of the branch.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
     }
-    /// <p>The name of the branch. </p>
+    /// <p>The name of the branch.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_branch_name()
     }

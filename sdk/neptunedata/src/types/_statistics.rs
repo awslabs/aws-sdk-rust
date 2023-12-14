@@ -16,9 +16,9 @@ pub struct Statistics {
     pub note: ::std::option::Option<::std::string::String>,
     /// <p>A StatisticsSummary structure that contains:</p>
     /// <ul>
-    /// <li> <p> <code>signatureCount</code> - The total number of signatures across all characteristic sets.</p> </li>
-    /// <li> <p> <code>instanceCount</code> - The total number of characteristic-set instances.</p> </li>
-    /// <li> <p> <code>predicateCount</code> - The total number of unique predicates.</p> </li>
+    /// <li><p><code>signatureCount</code> - The total number of signatures across all characteristic sets.</p></li>
+    /// <li><p><code>instanceCount</code> - The total number of characteristic-set instances.</p></li>
+    /// <li><p><code>predicateCount</code> - The total number of unique predicates.</p></li>
     /// </ul>
     pub signature_info: ::std::option::Option<crate::types::StatisticsSummary>,
 }
@@ -45,9 +45,9 @@ impl Statistics {
     }
     /// <p>A StatisticsSummary structure that contains:</p>
     /// <ul>
-    /// <li> <p> <code>signatureCount</code> - The total number of signatures across all characteristic sets.</p> </li>
-    /// <li> <p> <code>instanceCount</code> - The total number of characteristic-set instances.</p> </li>
-    /// <li> <p> <code>predicateCount</code> - The total number of unique predicates.</p> </li>
+    /// <li><p><code>signatureCount</code> - The total number of signatures across all characteristic sets.</p></li>
+    /// <li><p><code>instanceCount</code> - The total number of characteristic-set instances.</p></li>
+    /// <li><p><code>predicateCount</code> - The total number of unique predicates.</p></li>
     /// </ul>
     pub fn signature_info(&self) -> ::std::option::Option<&crate::types::StatisticsSummary> {
         self.signature_info.as_ref()
@@ -144,9 +144,9 @@ impl StatisticsBuilder {
     }
     /// <p>A StatisticsSummary structure that contains:</p>
     /// <ul>
-    /// <li> <p> <code>signatureCount</code> - The total number of signatures across all characteristic sets.</p> </li>
-    /// <li> <p> <code>instanceCount</code> - The total number of characteristic-set instances.</p> </li>
-    /// <li> <p> <code>predicateCount</code> - The total number of unique predicates.</p> </li>
+    /// <li><p><code>signatureCount</code> - The total number of signatures across all characteristic sets.</p></li>
+    /// <li><p><code>instanceCount</code> - The total number of characteristic-set instances.</p></li>
+    /// <li><p><code>predicateCount</code> - The total number of unique predicates.</p></li>
     /// </ul>
     pub fn signature_info(mut self, input: crate::types::StatisticsSummary) -> Self {
         self.signature_info = ::std::option::Option::Some(input);
@@ -154,9 +154,9 @@ impl StatisticsBuilder {
     }
     /// <p>A StatisticsSummary structure that contains:</p>
     /// <ul>
-    /// <li> <p> <code>signatureCount</code> - The total number of signatures across all characteristic sets.</p> </li>
-    /// <li> <p> <code>instanceCount</code> - The total number of characteristic-set instances.</p> </li>
-    /// <li> <p> <code>predicateCount</code> - The total number of unique predicates.</p> </li>
+    /// <li><p><code>signatureCount</code> - The total number of signatures across all characteristic sets.</p></li>
+    /// <li><p><code>instanceCount</code> - The total number of characteristic-set instances.</p></li>
+    /// <li><p><code>predicateCount</code> - The total number of unique predicates.</p></li>
     /// </ul>
     pub fn set_signature_info(mut self, input: ::std::option::Option<crate::types::StatisticsSummary>) -> Self {
         self.signature_info = input;
@@ -164,9 +164,9 @@ impl StatisticsBuilder {
     }
     /// <p>A StatisticsSummary structure that contains:</p>
     /// <ul>
-    /// <li> <p> <code>signatureCount</code> - The total number of signatures across all characteristic sets.</p> </li>
-    /// <li> <p> <code>instanceCount</code> - The total number of characteristic-set instances.</p> </li>
-    /// <li> <p> <code>predicateCount</code> - The total number of unique predicates.</p> </li>
+    /// <li><p><code>signatureCount</code> - The total number of signatures across all characteristic sets.</p></li>
+    /// <li><p><code>instanceCount</code> - The total number of characteristic-set instances.</p></li>
+    /// <li><p><code>predicateCount</code> - The total number of unique predicates.</p></li>
     /// </ul>
     pub fn get_signature_info(&self) -> &::std::option::Option<crate::types::StatisticsSummary> {
         &self.signature_info

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRetrainingSchedulerInput {
-    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
+    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRetrainingSchedulerInput {
-    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
+    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteRetrainingSchedulerInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRetrainingSchedulerInputBuilder {
-    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
+    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
+    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
-    /// <p>The name of the model whose retraining scheduler you want to delete. </p>
+    /// <p>The name of the model whose retraining scheduler you want to delete.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }

@@ -22,7 +22,7 @@ impl CreateProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateProject`.
 ///
-/// <p> Creates an AWS Mobile Hub project. </p>
+/// <p>Creates an AWS Mobile Hub project.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl CreateProjectFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Name of the project. </p>
+    /// <p>Name of the project.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> Name of the project. </p>
+    /// <p>Name of the project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> Name of the project. </p>
+    /// <p>Name of the project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> Default region where project resources should be created. </p>
+    /// <p>Default region where project resources should be created.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region(input.into());
         self
     }
-    /// <p> Default region where project resources should be created. </p>
+    /// <p>Default region where project resources should be created.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_region(input);
         self
     }
-    /// <p> Default region where project resources should be created. </p>
+    /// <p>Default region where project resources should be created.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_region()
     }
-    /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    /// <p>ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.</p>
     pub fn contents(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.contents(input);
         self
     }
-    /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    /// <p>ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.</p>
     pub fn set_contents(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_contents(input);
         self
     }
-    /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
+    /// <p>ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.</p>
     pub fn get_contents(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_contents()
     }
-    /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
+    /// <p>Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
         self
     }
-    /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
+    /// <p>Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
-    /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
+    /// <p>Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_id()
     }

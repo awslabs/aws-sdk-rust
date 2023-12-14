@@ -6,7 +6,7 @@
 pub struct ConfigurableEnvironmentAction {
     /// <p>The type of a configurable action in a Amazon DataZone environment.</p>
     pub r#type: ::std::string::String,
-    /// <p>The authentication type of a configurable action of a Amazon DataZone environment. </p>
+    /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub auth: ::std::option::Option<crate::types::ConfigurableActionTypeAuthorization>,
     /// <p>The parameters of a configurable action in a Amazon DataZone environment.</p>
     pub parameters: ::std::vec::Vec<crate::types::ConfigurableActionParameter>,
@@ -17,7 +17,7 @@ impl ConfigurableEnvironmentAction {
         use std::ops::Deref;
         self.r#type.deref()
     }
-    /// <p>The authentication type of a configurable action of a Amazon DataZone environment. </p>
+    /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub fn auth(&self) -> ::std::option::Option<&crate::types::ConfigurableActionTypeAuthorization> {
         self.auth.as_ref()
     }
@@ -58,17 +58,17 @@ impl ConfigurableEnvironmentActionBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>The authentication type of a configurable action of a Amazon DataZone environment. </p>
+    /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub fn auth(mut self, input: crate::types::ConfigurableActionTypeAuthorization) -> Self {
         self.auth = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authentication type of a configurable action of a Amazon DataZone environment. </p>
+    /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub fn set_auth(mut self, input: ::std::option::Option<crate::types::ConfigurableActionTypeAuthorization>) -> Self {
         self.auth = input;
         self
     }
-    /// <p>The authentication type of a configurable action of a Amazon DataZone environment. </p>
+    /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub fn get_auth(&self) -> &::std::option::Option<crate::types::ConfigurableActionTypeAuthorization> {
         &self.auth
     }

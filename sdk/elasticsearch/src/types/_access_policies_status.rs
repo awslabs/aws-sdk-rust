@@ -6,7 +6,7 @@
 pub struct AccessPoliciesStatus {
     /// <p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank"> Configuring Access Policies</a>for more information.</p>
     pub options: ::std::string::String,
-    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AccessPoliciesStatus {
@@ -15,7 +15,7 @@ impl AccessPoliciesStatus {
         use std::ops::Deref;
         self.options.deref()
     }
-    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
@@ -50,18 +50,18 @@ impl AccessPoliciesStatusBuilder {
     pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
         &self.options
     }
-    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
+    /// <p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
         &self.status
     }

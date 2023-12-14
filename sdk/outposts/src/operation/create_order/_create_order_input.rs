@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOrderInput {
-    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The line items that make up the order.</p>
     pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
@@ -13,7 +13,7 @@ pub struct CreateOrderInput {
     pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
 }
 impl CreateOrderInput {
-    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_identifier(&self) -> ::std::option::Option<&str> {
         self.outpost_identifier.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct CreateOrderInputBuilder {
     pub(crate) payment_term: ::std::option::Option<crate::types::PaymentTerm>,
 }
 impl CreateOrderInputBuilder {
-    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     /// This field is required.
     pub fn outpost_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_identifier = input;
         self
     }
-    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_identifier
     }

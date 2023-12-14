@@ -108,17 +108,17 @@ impl DeleteSlotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the slot to delete. </p>
+    /// <p>The identifier of the slot to delete.</p>
     pub fn slot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slot_id(input.into());
         self
     }
-    /// <p>The identifier of the slot to delete. </p>
+    /// <p>The identifier of the slot to delete.</p>
     pub fn set_slot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slot_id(input);
         self
     }
-    /// <p>The identifier of the slot to delete. </p>
+    /// <p>The identifier of the slot to delete.</p>
     pub fn get_slot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slot_id()
     }

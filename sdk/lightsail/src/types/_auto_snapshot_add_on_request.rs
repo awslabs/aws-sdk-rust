@@ -3,10 +3,10 @@
 /// <p>Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.</p>
 /// <p>When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:</p>
 /// <ul>
-/// <li> <p>If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.</p> </li>
-/// <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.</p> </li>
-/// <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li>
-/// <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li>
+/// <li><p>If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.</p></li>
+/// <li><p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.</p></li>
+/// <li><p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p></li>
+/// <li><p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -14,9 +14,9 @@ pub struct AutoSnapshotAddOnRequest {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in <code>HH:00</code> format, and in an hourly increment.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
+    /// <li><p>Must be in <code>HH:00</code> format, and in an hourly increment.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p></li>
     /// </ul>
     pub snapshot_time_of_day: ::std::option::Option<::std::string::String>,
 }
@@ -24,9 +24,9 @@ impl AutoSnapshotAddOnRequest {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in <code>HH:00</code> format, and in an hourly increment.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
+    /// <li><p>Must be in <code>HH:00</code> format, and in an hourly increment.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p></li>
     /// </ul>
     pub fn snapshot_time_of_day(&self) -> ::std::option::Option<&str> {
         self.snapshot_time_of_day.as_deref()
@@ -49,9 +49,9 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in <code>HH:00</code> format, and in an hourly increment.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
+    /// <li><p>Must be in <code>HH:00</code> format, and in an hourly increment.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p></li>
     /// </ul>
     pub fn snapshot_time_of_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_time_of_day = ::std::option::Option::Some(input.into());
@@ -60,9 +60,9 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in <code>HH:00</code> format, and in an hourly increment.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
+    /// <li><p>Must be in <code>HH:00</code> format, and in an hourly increment.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p></li>
     /// </ul>
     pub fn set_snapshot_time_of_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_time_of_day = input;
@@ -71,9 +71,9 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in <code>HH:00</code> format, and in an hourly increment.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
+    /// <li><p>Must be in <code>HH:00</code> format, and in an hourly increment.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p></li>
     /// </ul>
     pub fn get_snapshot_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_time_of_day

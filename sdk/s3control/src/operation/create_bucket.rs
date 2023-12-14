@@ -267,7 +267,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateBucketE
 pub enum CreateBucketError {
     /// <p>The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the Outposts in this Region. Select a different name and try again.</p>
     BucketAlreadyExists(crate::types::error::BucketAlreadyExists),
-    /// <p>The Outposts bucket you tried to create already exists, and you own it. </p>
+    /// <p>The Outposts bucket you tried to create already exists, and you own it.</p>
     BucketAlreadyOwnedByYou(crate::types::error::BucketAlreadyOwnedByYou),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

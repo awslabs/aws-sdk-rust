@@ -5,7 +5,7 @@
 pub struct CreateDatastoreInput {
     /// <p>The name of the data store.</p>
     pub datastore_name: ::std::option::Option<::std::string::String>,
-    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub datastore_storage: ::std::option::Option<crate::types::DatastoreStorage>,
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
@@ -15,7 +15,7 @@ pub struct CreateDatastoreInput {
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: ::std::option::Option<crate::types::FileFormatConfiguration>,
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
 impl CreateDatastoreInput {
@@ -23,7 +23,7 @@ impl CreateDatastoreInput {
     pub fn datastore_name(&self) -> ::std::option::Option<&str> {
         self.datastore_name.as_deref()
     }
-    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn datastore_storage(&self) -> ::std::option::Option<&crate::types::DatastoreStorage> {
         self.datastore_storage.as_ref()
     }
@@ -43,7 +43,7 @@ impl CreateDatastoreInput {
     pub fn file_format_configuration(&self) -> ::std::option::Option<&crate::types::FileFormatConfiguration> {
         self.file_format_configuration.as_ref()
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn datastore_partitions(&self) -> ::std::option::Option<&crate::types::DatastorePartitions> {
         self.datastore_partitions.as_ref()
     }
@@ -82,17 +82,17 @@ impl CreateDatastoreInputBuilder {
     pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_name
     }
-    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn datastore_storage(mut self, input: crate::types::DatastoreStorage) -> Self {
         self.datastore_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn set_datastore_storage(mut self, input: ::std::option::Option<crate::types::DatastoreStorage>) -> Self {
         self.datastore_storage = input;
         self
     }
-    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn get_datastore_storage(&self) -> &::std::option::Option<crate::types::DatastoreStorage> {
         &self.datastore_storage
     }
@@ -150,17 +150,17 @@ impl CreateDatastoreInputBuilder {
     pub fn get_file_format_configuration(&self) -> &::std::option::Option<crate::types::FileFormatConfiguration> {
         &self.file_format_configuration
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn datastore_partitions(mut self, input: crate::types::DatastorePartitions) -> Self {
         self.datastore_partitions = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn set_datastore_partitions(mut self, input: ::std::option::Option<crate::types::DatastorePartitions>) -> Self {
         self.datastore_partitions = input;
         self
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn get_datastore_partitions(&self) -> &::std::option::Option<crate::types::DatastorePartitions> {
         &self.datastore_partitions
     }

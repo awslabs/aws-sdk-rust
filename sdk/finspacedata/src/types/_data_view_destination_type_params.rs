@@ -6,26 +6,26 @@
 pub struct DataViewDestinationTypeParams {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
-    /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
-    /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
+    /// <li><p><code>GLUE_TABLE</code> – Glue table destination type.</p></li>
+    /// <li><p><code>S3</code> – S3 destination type.</p></li>
     /// </ul>
     pub destination_type: ::std::string::String,
     /// <p>Dataview export file format.</p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
-    /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
+    /// <li><p><code>PARQUET</code> – Parquet export file format.</p></li>
+    /// <li><p><code>DELIMITED_TEXT</code> – Delimited text export file format.</p></li>
     /// </ul>
     pub s3_destination_export_file_format: ::std::option::Option<crate::types::ExportFileFormat>,
     /// <p>Format Options for S3 Destination type.</p>
-    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
-    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
+    /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
     pub s3_destination_export_file_format_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DataViewDestinationTypeParams {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
-    /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
-    /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
+    /// <li><p><code>GLUE_TABLE</code> – Glue table destination type.</p></li>
+    /// <li><p><code>S3</code> – S3 destination type.</p></li>
     /// </ul>
     pub fn destination_type(&self) -> &str {
         use std::ops::Deref;
@@ -33,15 +33,15 @@ impl DataViewDestinationTypeParams {
     }
     /// <p>Dataview export file format.</p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
-    /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
+    /// <li><p><code>PARQUET</code> – Parquet export file format.</p></li>
+    /// <li><p><code>DELIMITED_TEXT</code> – Delimited text export file format.</p></li>
     /// </ul>
     pub fn s3_destination_export_file_format(&self) -> ::std::option::Option<&crate::types::ExportFileFormat> {
         self.s3_destination_export_file_format.as_ref()
     }
     /// <p>Format Options for S3 Destination type.</p>
-    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
-    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
+    /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
     pub fn s3_destination_export_file_format_options(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -67,8 +67,8 @@ pub struct DataViewDestinationTypeParamsBuilder {
 impl DataViewDestinationTypeParamsBuilder {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
-    /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
-    /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
+    /// <li><p><code>GLUE_TABLE</code> – Glue table destination type.</p></li>
+    /// <li><p><code>S3</code> – S3 destination type.</p></li>
     /// </ul>
     /// This field is required.
     pub fn destination_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,8 +77,8 @@ impl DataViewDestinationTypeParamsBuilder {
     }
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
-    /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
-    /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
+    /// <li><p><code>GLUE_TABLE</code> – Glue table destination type.</p></li>
+    /// <li><p><code>S3</code> – S3 destination type.</p></li>
     /// </ul>
     pub fn set_destination_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_type = input;
@@ -86,16 +86,16 @@ impl DataViewDestinationTypeParamsBuilder {
     }
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
-    /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
-    /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
+    /// <li><p><code>GLUE_TABLE</code> – Glue table destination type.</p></li>
+    /// <li><p><code>S3</code> – S3 destination type.</p></li>
     /// </ul>
     pub fn get_destination_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_type
     }
     /// <p>Dataview export file format.</p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
-    /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
+    /// <li><p><code>PARQUET</code> – Parquet export file format.</p></li>
+    /// <li><p><code>DELIMITED_TEXT</code> – Delimited text export file format.</p></li>
     /// </ul>
     pub fn s3_destination_export_file_format(mut self, input: crate::types::ExportFileFormat) -> Self {
         self.s3_destination_export_file_format = ::std::option::Option::Some(input);
@@ -103,8 +103,8 @@ impl DataViewDestinationTypeParamsBuilder {
     }
     /// <p>Dataview export file format.</p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
-    /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
+    /// <li><p><code>PARQUET</code> – Parquet export file format.</p></li>
+    /// <li><p><code>DELIMITED_TEXT</code> – Delimited text export file format.</p></li>
     /// </ul>
     pub fn set_s3_destination_export_file_format(mut self, input: ::std::option::Option<crate::types::ExportFileFormat>) -> Self {
         self.s3_destination_export_file_format = input;
@@ -112,8 +112,8 @@ impl DataViewDestinationTypeParamsBuilder {
     }
     /// <p>Dataview export file format.</p>
     /// <ul>
-    /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
-    /// <li> <p> <code>DELIMITED_TEXT</code> – Delimited text export file format.</p> </li>
+    /// <li><p><code>PARQUET</code> – Parquet export file format.</p></li>
+    /// <li><p><code>DELIMITED_TEXT</code> – Delimited text export file format.</p></li>
     /// </ul>
     pub fn get_s3_destination_export_file_format(&self) -> &::std::option::Option<crate::types::ExportFileFormat> {
         &self.s3_destination_export_file_format
@@ -123,8 +123,8 @@ impl DataViewDestinationTypeParamsBuilder {
     /// To override the contents of this collection use [`set_s3_destination_export_file_format_options`](Self::set_s3_destination_export_file_format_options).
     ///
     /// <p>Format Options for S3 Destination type.</p>
-    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
-    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
+    /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
     pub fn s3_destination_export_file_format_options(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -136,8 +136,8 @@ impl DataViewDestinationTypeParamsBuilder {
         self
     }
     /// <p>Format Options for S3 Destination type.</p>
-    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
-    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
+    /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
     pub fn set_s3_destination_export_file_format_options(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -146,8 +146,8 @@ impl DataViewDestinationTypeParamsBuilder {
         self
     }
     /// <p>Format Options for S3 Destination type.</p>
-    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code> </p>
-    /// <p> <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> </p>
+    /// <p>Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code></p>
+    /// <p><code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code></p>
     pub fn get_s3_destination_export_file_format_options(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

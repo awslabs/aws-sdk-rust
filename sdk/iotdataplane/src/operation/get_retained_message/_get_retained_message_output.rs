@@ -14,7 +14,7 @@ pub struct GetRetainedMessageOutput {
     pub last_modified_time: i64,
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub user_properties: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
@@ -37,7 +37,7 @@ impl GetRetainedMessageOutput {
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn user_properties(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.user_properties.as_ref()
     }
@@ -124,21 +124,21 @@ impl GetRetainedMessageOutputBuilder {
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn user_properties(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.user_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn set_user_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.user_properties = input;
         self
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn get_user_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.user_properties
     }

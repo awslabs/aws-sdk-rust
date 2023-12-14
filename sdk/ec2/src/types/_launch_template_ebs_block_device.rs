@@ -8,7 +8,7 @@ pub struct LaunchTemplateEbsBlockDevice {
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
-    /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl LaunchTemplateEbsBlockDevice {
     pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
-    /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
@@ -104,17 +104,17 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
         &self.delete_on_termination
     }
-    /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
-    /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
+    /// <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }

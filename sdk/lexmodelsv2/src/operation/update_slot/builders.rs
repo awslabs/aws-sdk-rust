@@ -150,17 +150,17 @@ impl UpdateSlotFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The unique identifier of the new slot type to associate with this slot. </p>
+    /// <p>The unique identifier of the new slot type to associate with this slot.</p>
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slot_type_id(input.into());
         self
     }
-    /// <p>The unique identifier of the new slot type to associate with this slot. </p>
+    /// <p>The unique identifier of the new slot type to associate with this slot.</p>
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slot_type_id(input);
         self
     }
-    /// <p>The unique identifier of the new slot type to associate with this slot. </p>
+    /// <p>The unique identifier of the new slot type to associate with this slot.</p>
     pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slot_type_id()
     }
@@ -178,17 +178,17 @@ impl UpdateSlotFluentBuilder {
     pub fn get_value_elicitation_setting(&self) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
         self.inner.get_value_elicitation_setting()
     }
-    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
+    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs.</p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
         self.inner = self.inner.obfuscation_setting(input);
         self
     }
-    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
+    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs.</p>
     pub fn set_obfuscation_setting(mut self, input: ::std::option::Option<crate::types::ObfuscationSetting>) -> Self {
         self.inner = self.inner.set_obfuscation_setting(input);
         self
     }
-    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
+    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs.</p>
     pub fn get_obfuscation_setting(&self) -> &::std::option::Option<crate::types::ObfuscationSetting> {
         self.inner.get_obfuscation_setting()
     }

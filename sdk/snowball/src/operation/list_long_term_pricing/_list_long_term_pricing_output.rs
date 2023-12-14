@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLongTermPricingOutput {
-    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
     pub long_term_pricing_entries: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLongTermPricingOutput {
-    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.long_term_pricing_entries.is_none()`.
     pub fn long_term_pricing_entries(&self) -> &[crate::types::LongTermPricingListEntry] {
@@ -46,19 +46,19 @@ impl ListLongTermPricingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_long_term_pricing_entries`](Self::set_long_term_pricing_entries).
     ///
-    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
     pub fn long_term_pricing_entries(mut self, input: crate::types::LongTermPricingListEntry) -> Self {
         let mut v = self.long_term_pricing_entries.unwrap_or_default();
         v.push(input);
         self.long_term_pricing_entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
     pub fn set_long_term_pricing_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>>) -> Self {
         self.long_term_pricing_entries = input;
         self
     }
-    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type.</p>
     pub fn get_long_term_pricing_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LongTermPricingListEntry>> {
         &self.long_term_pricing_entries
     }

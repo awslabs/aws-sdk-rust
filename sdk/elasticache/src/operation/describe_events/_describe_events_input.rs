@@ -9,10 +9,10 @@ pub struct DescribeEventsInput {
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of minutes worth of events to retrieve.</p>
     pub duration: ::std::option::Option<i32>,
@@ -33,12 +33,12 @@ impl DescribeEventsInput {
         self.source_type.as_ref()
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -106,36 +106,36 @@ impl DescribeEventsInputBuilder {
         &self.source_type
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    /// <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    /// <p><b>Example:</b> 2017-03-30T07:03:49.555Z</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

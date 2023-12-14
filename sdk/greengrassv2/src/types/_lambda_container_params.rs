@@ -8,7 +8,7 @@ pub struct LambdaContainerParams {
     /// <p>Default: <code>16384</code> (16 MB)</p>
     pub memory_size_in_kb: ::std::option::Option<i32>,
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub mount_ro_sysfs: ::std::option::Option<bool>,
     /// <p>The list of volumes that the container can access.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>>,
@@ -22,7 +22,7 @@ impl LambdaContainerParams {
         self.memory_size_in_kb
     }
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn mount_ro_sysfs(&self) -> ::std::option::Option<bool> {
         self.mount_ro_sysfs
     }
@@ -74,19 +74,19 @@ impl LambdaContainerParamsBuilder {
         &self.memory_size_in_kb
     }
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn mount_ro_sysfs(mut self, input: bool) -> Self {
         self.mount_ro_sysfs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_mount_ro_sysfs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mount_ro_sysfs = input;
         self
     }
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_mount_ro_sysfs(&self) -> &::std::option::Option<bool> {
         &self.mount_ro_sysfs
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOpsItemEventsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of event information for the specified OpsItems.</p>
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventSummary>>,
     _request_id: Option<String>,
 }
 impl ListOpsItemEventsOutput {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -42,17 +42,17 @@ pub struct ListOpsItemEventsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListOpsItemEventsOutputBuilder {
-    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -4,41 +4,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceEventSummary {
-    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    /// <p>The name of the inference scheduler being used for the inference events.</p>
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the starting time of an inference event. </p>
+    /// <p>Indicates the starting time of an inference event.</p>
     pub event_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates the ending time of an inference event. </p>
+    /// <p>Indicates the ending time of an inference event.</p>
     pub event_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub diagnostics: ::std::option::Option<::std::string::String>,
-    /// <p> Indicates the size of an inference event in seconds. </p>
+    /// <p>Indicates the size of an inference event in seconds.</p>
     pub event_duration_in_seconds: ::std::option::Option<i64>,
 }
 impl InferenceEventSummary {
-    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub fn inference_scheduler_arn(&self) -> ::std::option::Option<&str> {
         self.inference_scheduler_arn.as_deref()
     }
-    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    /// <p>The name of the inference scheduler being used for the inference events.</p>
     pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
-    /// <p>Indicates the starting time of an inference event. </p>
+    /// <p>Indicates the starting time of an inference event.</p>
     pub fn event_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
-    /// <p>Indicates the ending time of an inference event. </p>
+    /// <p>Indicates the ending time of an inference event.</p>
     pub fn event_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
-    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub fn diagnostics(&self) -> ::std::option::Option<&str> {
         self.diagnostics.as_deref()
     }
-    /// <p> Indicates the size of an inference event in seconds. </p>
+    /// <p>Indicates the size of an inference event in seconds.</p>
     pub fn event_duration_in_seconds(&self) -> ::std::option::Option<i64> {
         self.event_duration_in_seconds
     }
@@ -62,87 +62,87 @@ pub struct InferenceEventSummaryBuilder {
     pub(crate) event_duration_in_seconds: ::std::option::Option<i64>,
 }
 impl InferenceEventSummaryBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub fn inference_scheduler_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event. </p>
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_scheduler_arn
     }
-    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    /// <p>The name of the inference scheduler being used for the inference events.</p>
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    /// <p>The name of the inference scheduler being used for the inference events.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
-    /// <p>The name of the inference scheduler being used for the inference events. </p>
+    /// <p>The name of the inference scheduler being used for the inference events.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_scheduler_name
     }
-    /// <p>Indicates the starting time of an inference event. </p>
+    /// <p>Indicates the starting time of an inference event.</p>
     pub fn event_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the starting time of an inference event. </p>
+    /// <p>Indicates the starting time of an inference event.</p>
     pub fn set_event_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_start_time = input;
         self
     }
-    /// <p>Indicates the starting time of an inference event. </p>
+    /// <p>Indicates the starting time of an inference event.</p>
     pub fn get_event_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_start_time
     }
-    /// <p>Indicates the ending time of an inference event. </p>
+    /// <p>Indicates the ending time of an inference event.</p>
     pub fn event_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the ending time of an inference event. </p>
+    /// <p>Indicates the ending time of an inference event.</p>
     pub fn set_event_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_end_time = input;
         self
     }
-    /// <p>Indicates the ending time of an inference event. </p>
+    /// <p>Indicates the ending time of an inference event.</p>
     pub fn get_event_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.event_end_time
     }
-    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub fn diagnostics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.diagnostics = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub fn set_diagnostics(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.diagnostics = input;
         self
     }
-    /// <p> An array which specifies the names and values of all sensors contributing to an inference event.</p>
+    /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub fn get_diagnostics(&self) -> &::std::option::Option<::std::string::String> {
         &self.diagnostics
     }
-    /// <p> Indicates the size of an inference event in seconds. </p>
+    /// <p>Indicates the size of an inference event in seconds.</p>
     pub fn event_duration_in_seconds(mut self, input: i64) -> Self {
         self.event_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the size of an inference event in seconds. </p>
+    /// <p>Indicates the size of an inference event in seconds.</p>
     pub fn set_event_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.event_duration_in_seconds = input;
         self
     }
-    /// <p> Indicates the size of an inference event in seconds. </p>
+    /// <p>Indicates the size of an inference event in seconds.</p>
     pub fn get_event_duration_in_seconds(&self) -> &::std::option::Option<i64> {
         &self.event_duration_in_seconds
     }

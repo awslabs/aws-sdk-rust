@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseRecommendationsInput {
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>,
     /// <p>The ID of the Amazon Web Services account for which to return license recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return license recommendations.</p>
@@ -20,24 +20,24 @@ pub struct GetLicenseRecommendationsInput {
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetLicenseRecommendationsInput {
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
     pub fn resource_arns(&self) -> &[::std::string::String] {
         self.resource_arns.as_deref().unwrap_or_default()
     }
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::LicenseRecommendationFilter] {
@@ -74,56 +74,56 @@ impl GetLicenseRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
-    /// <p> The ARN that identifies the Amazon EC2 instance. </p>
-    /// <p> The following is the format of the ARN: </p>
-    /// <p> <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> </p>
+    /// <p>The ARN that identifies the Amazon EC2 instance.</p>
+    /// <p>The following is the format of the ARN:</p>
+    /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The token to advance to the next page of license recommendations. </p>
+    /// <p>The token to advance to the next page of license recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> The maximum number of license recommendations to return with a single request. </p>
-    /// <p> To retrieve the remaining results, make another request with the returned <code>nextToken</code> value. </p>
+    /// <p>The maximum number of license recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -131,19 +131,19 @@ impl GetLicenseRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     pub fn filters(mut self, input: crate::types::LicenseRecommendationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p> An array of objects to specify a filter that returns a more specific list of license recommendations. </p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>> {
         &self.filters
     }

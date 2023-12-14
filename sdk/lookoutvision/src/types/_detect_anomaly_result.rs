@@ -13,10 +13,10 @@ pub struct DetectAnomalyResult {
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub anomaly_mask: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl DetectAnomalyResult {
@@ -35,14 +35,14 @@ impl DetectAnomalyResult {
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomalies.is_none()`.
     pub fn anomalies(&self) -> &[crate::types::Anomaly] {
         self.anomalies.as_deref().unwrap_or_default()
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn anomaly_mask(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.anomaly_mask.as_ref()
     }
@@ -114,7 +114,7 @@ impl DetectAnomalyResultBuilder {
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn anomalies(mut self, input: crate::types::Anomaly) -> Self {
         let mut v = self.anomalies.unwrap_or_default();
         v.push(input);
@@ -124,7 +124,7 @@ impl DetectAnomalyResultBuilder {
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>) -> Self {
         self.anomalies = input;
         self
@@ -132,24 +132,24 @@ impl DetectAnomalyResultBuilder {
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn get_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
         &self.anomalies
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn anomaly_mask(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.anomaly_mask = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn set_anomaly_mask(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.anomaly_mask = input;
         self
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
-    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn get_anomaly_mask(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.anomaly_mask
     }

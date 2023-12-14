@@ -6,10 +6,10 @@
 pub struct DescribeChapCredentialsOutput {
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
     /// <ul>
-    /// <li> <p> <b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
-    /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
+    /// <li><p><b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p></li>
+    /// <li><p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p></li>
     /// </ul>
     pub chap_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
     _request_id: Option<String>,
@@ -17,10 +17,10 @@ pub struct DescribeChapCredentialsOutput {
 impl DescribeChapCredentialsOutput {
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
     /// <ul>
-    /// <li> <p> <b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
-    /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
+    /// <li><p><b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p></li>
+    /// <li><p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.chap_credentials.is_none()`.
@@ -54,10 +54,10 @@ impl DescribeChapCredentialsOutputBuilder {
     ///
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
     /// <ul>
-    /// <li> <p> <b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
-    /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
+    /// <li><p><b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p></li>
+    /// <li><p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p></li>
     /// </ul>
     pub fn chap_credentials(mut self, input: crate::types::ChapInfo) -> Self {
         let mut v = self.chap_credentials.unwrap_or_default();
@@ -67,10 +67,10 @@ impl DescribeChapCredentialsOutputBuilder {
     }
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
     /// <ul>
-    /// <li> <p> <b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
-    /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
+    /// <li><p><b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p></li>
+    /// <li><p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p></li>
     /// </ul>
     pub fn set_chap_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>) -> Self {
         self.chap_credentials = input;
@@ -78,10 +78,10 @@ impl DescribeChapCredentialsOutputBuilder {
     }
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
     /// <ul>
-    /// <li> <p> <b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> </li>
-    /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
-    /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
+    /// <li><p><b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p></li>
+    /// <li><p><b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p></li>
+    /// <li><p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p></li>
     /// </ul>
     pub fn get_chap_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>> {
         &self.chap_credentials

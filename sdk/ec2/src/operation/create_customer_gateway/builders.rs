@@ -127,17 +127,17 @@ impl CreateCustomerGatewayFluentBuilder {
     pub fn get_bgp_asn(&self) -> &::std::option::Option<i32> {
         self.inner.get_bgp_asn()
     }
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_ip(input.into());
         self
     }
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_ip(input);
         self
     }
-    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    /// <p><i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_public_ip()
     }
@@ -204,17 +204,17 @@ impl CreateCustomerGatewayFluentBuilder {
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_name()
     }
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_address(input.into());
         self
     }
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_address(input);
         self
     }
-    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    /// <p>IPv4 address for the customer gateway device's outside interface. The address must be static.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_address()
     }

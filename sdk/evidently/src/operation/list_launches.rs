@@ -270,7 +270,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListLaunchesE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListLaunchesError {
-    /// <p>You do not have sufficient permissions to perform this action. </p>
+    /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request was denied because of request throttling. Retry the request.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

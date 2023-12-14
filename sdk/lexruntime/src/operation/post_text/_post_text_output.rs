@@ -11,7 +11,7 @@ pub struct PostTextOutput {
     /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
     /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
     pub alternative_intents: ::std::option::Option<::std::vec::Vec<crate::types::PredictedIntent>>,
-    /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+    /// <p>The intent slots that Amazon Lex detected from the user input in the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of key-value pairs representing the session-specific context information.</p>
@@ -26,25 +26,25 @@ pub struct PostTextOutput {
     pub sentiment_response: ::std::option::Option<crate::types::SentimentResponse>,
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
-    /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
-    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
-    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
+    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li><p><code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p></li>
+    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub message_format: ::std::option::Option<crate::types::MessageFormatType>,
-    /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
+    /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface.</p>
     /// <ul>
-    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
-    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
-    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
-    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
+    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit user intent.</p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p></li>
+    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.</p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent.</p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p></li>
+    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent.</p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately.</p></li>
+    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li><p><code>Failed</code> - Conveys that the conversation with the user failed.</p> <p>This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent.</p></li>
     /// </ul>
     pub dialog_state: ::std::option::Option<crate::types::DialogState>,
-    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
-    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
+    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function).</p>
     pub response_card: ::std::option::Option<crate::types::ResponseCard>,
     /// <p>A unique identifier for the session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -72,7 +72,7 @@ impl PostTextOutput {
     pub fn alternative_intents(&self) -> &[crate::types::PredictedIntent] {
         self.alternative_intents.as_deref().unwrap_or_default()
     }
-    /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+    /// <p>The intent slots that Amazon Lex detected from the user input in the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.slots.as_ref()
@@ -95,31 +95,31 @@ impl PostTextOutput {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
-    /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
-    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
-    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
+    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li><p><code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p></li>
+    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn message_format(&self) -> ::std::option::Option<&crate::types::MessageFormatType> {
         self.message_format.as_ref()
     }
-    /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
+    /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface.</p>
     /// <ul>
-    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
-    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
-    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
-    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
+    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit user intent.</p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p></li>
+    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.</p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent.</p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p></li>
+    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent.</p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately.</p></li>
+    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li><p><code>Failed</code> - Conveys that the conversation with the user failed.</p> <p>This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent.</p></li>
     /// </ul>
     pub fn dialog_state(&self) -> ::std::option::Option<&crate::types::DialogState> {
         self.dialog_state.as_ref()
     }
-    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub fn slot_to_elicit(&self) -> ::std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
-    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
+    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function).</p>
     pub fn response_card(&self) -> ::std::option::Option<&crate::types::ResponseCard> {
         self.response_card.as_ref()
     }
@@ -251,7 +251,7 @@ impl PostTextOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
-    /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+    /// <p>The intent slots that Amazon Lex detected from the user input in the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
@@ -259,13 +259,13 @@ impl PostTextOutputBuilder {
         self.slots = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+    /// <p>The intent slots that Amazon Lex detected from the user input in the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn set_slots(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.slots = input;
         self
     }
-    /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+    /// <p>The intent slots that Amazon Lex detected from the user input in the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.slots
@@ -339,10 +339,10 @@ impl PostTextOutputBuilder {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
-    /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
-    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
-    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
+    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li><p><code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p></li>
+    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn message_format(mut self, input: crate::types::MessageFormatType) -> Self {
         self.message_format = ::std::option::Option::Some(input);
@@ -350,10 +350,10 @@ impl PostTextOutputBuilder {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
-    /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
-    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
-    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
+    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li><p><code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p></li>
+    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatType>) -> Self {
         self.message_format = input;
@@ -361,77 +361,77 @@ impl PostTextOutputBuilder {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
-    /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
-    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
-    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
+    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li><p><code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p></li>
+    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn get_message_format(&self) -> &::std::option::Option<crate::types::MessageFormatType> {
         &self.message_format
     }
-    /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
+    /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface.</p>
     /// <ul>
-    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
-    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
-    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
-    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
+    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit user intent.</p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p></li>
+    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.</p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent.</p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p></li>
+    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent.</p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately.</p></li>
+    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li><p><code>Failed</code> - Conveys that the conversation with the user failed.</p> <p>This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent.</p></li>
     /// </ul>
     pub fn dialog_state(mut self, input: crate::types::DialogState) -> Self {
         self.dialog_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
+    /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface.</p>
     /// <ul>
-    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
-    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
-    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
-    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
+    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit user intent.</p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p></li>
+    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.</p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent.</p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p></li>
+    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent.</p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately.</p></li>
+    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li><p><code>Failed</code> - Conveys that the conversation with the user failed.</p> <p>This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent.</p></li>
     /// </ul>
     pub fn set_dialog_state(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.dialog_state = input;
         self
     }
-    /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
+    /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface.</p>
     /// <ul>
-    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
-    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
-    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
-    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
-    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
-    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
+    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit user intent.</p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p></li>
+    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response.</p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent.</p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p></li>
+    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent.</p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately.</p></li>
+    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent.</p></li>
+    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li><p><code>Failed</code> - Conveys that the conversation with the user failed.</p> <p>This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent.</p></li>
     /// </ul>
     pub fn get_dialog_state(&self) -> &::std::option::Option<crate::types::DialogState> {
         &self.dialog_state
     }
-    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub fn slot_to_elicit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub fn set_slot_to_elicit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_to_elicit = input;
         self
     }
-    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub fn get_slot_to_elicit(&self) -> &::std::option::Option<::std::string::String> {
         &self.slot_to_elicit
     }
-    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
+    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function).</p>
     pub fn response_card(mut self, input: crate::types::ResponseCard) -> Self {
         self.response_card = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
+    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function).</p>
     pub fn set_response_card(mut self, input: ::std::option::Option<crate::types::ResponseCard>) -> Self {
         self.response_card = input;
         self
     }
-    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
+    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function).</p>
     pub fn get_response_card(&self) -> &::std::option::Option<crate::types::ResponseCard> {
         &self.response_card
     }

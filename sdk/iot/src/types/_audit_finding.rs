@@ -24,7 +24,7 @@ pub struct AuditFinding {
     pub reason_for_non_compliance: ::std::option::Option<::std::string::String>,
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
     pub reason_for_non_compliance_code: ::std::option::Option<::std::string::String>,
-    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
+    /// <p>Indicates whether the audit finding was suppressed or not during reporting.</p>
     pub is_suppressed: ::std::option::Option<bool>,
 }
 impl AuditFinding {
@@ -70,7 +70,7 @@ impl AuditFinding {
     pub fn reason_for_non_compliance_code(&self) -> ::std::option::Option<&str> {
         self.reason_for_non_compliance_code.as_deref()
     }
-    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
+    /// <p>Indicates whether the audit finding was suppressed or not during reporting.</p>
     pub fn is_suppressed(&self) -> ::std::option::Option<bool> {
         self.is_suppressed
     }
@@ -245,17 +245,17 @@ impl AuditFindingBuilder {
     pub fn get_reason_for_non_compliance_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason_for_non_compliance_code
     }
-    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
+    /// <p>Indicates whether the audit finding was suppressed or not during reporting.</p>
     pub fn is_suppressed(mut self, input: bool) -> Self {
         self.is_suppressed = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
+    /// <p>Indicates whether the audit finding was suppressed or not during reporting.</p>
     pub fn set_is_suppressed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_suppressed = input;
         self
     }
-    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
+    /// <p>Indicates whether the audit finding was suppressed or not during reporting.</p>
     pub fn get_is_suppressed(&self) -> &::std::option::Option<bool> {
         &self.is_suppressed
     }

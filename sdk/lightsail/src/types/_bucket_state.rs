@@ -7,8 +7,8 @@ pub struct BucketState {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li>
-    /// <li> <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p> </li>
+    /// <li><p><code>OK</code> - The bucket is in a running state.</p></li>
+    /// <li><p><code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p></li>
     /// </ul>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A message that describes the state of the bucket.</p>
@@ -18,8 +18,8 @@ impl BucketState {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li>
-    /// <li> <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p> </li>
+    /// <li><p><code>OK</code> - The bucket is in a running state.</p></li>
+    /// <li><p><code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p></li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
@@ -47,8 +47,8 @@ impl BucketStateBuilder {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li>
-    /// <li> <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p> </li>
+    /// <li><p><code>OK</code> - The bucket is in a running state.</p></li>
+    /// <li><p><code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p></li>
     /// </ul>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -57,8 +57,8 @@ impl BucketStateBuilder {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li>
-    /// <li> <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p> </li>
+    /// <li><p><code>OK</code> - The bucket is in a running state.</p></li>
+    /// <li><p><code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
@@ -67,8 +67,8 @@ impl BucketStateBuilder {
     /// <p>The state code of the bucket.</p>
     /// <p>The following codes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li>
-    /// <li> <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p> </li>
+    /// <li><p><code>OK</code> - The bucket is in a running state.</p></li>
+    /// <li><p><code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p></li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code

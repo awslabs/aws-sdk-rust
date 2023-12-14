@@ -12,10 +12,10 @@ pub struct BlueprintRun {
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
-    /// <li> <p>Running — The blueprint run is in progress.</p> </li>
-    /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
-    /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
-    /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
+    /// <li><p>Running — The blueprint run is in progress.</p></li>
+    /// <li><p>Succeeded — The blueprint run completed successfully.</p></li>
+    /// <li><p>Failed — The blueprint run failed and rollback is complete.</p></li>
+    /// <li><p>Rolling Back — The blueprint run failed and rollback is in progress.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::BlueprintRunState>,
     /// <p>The date and time that the blueprint run started.</p>
@@ -46,10 +46,10 @@ impl BlueprintRun {
     }
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
-    /// <li> <p>Running — The blueprint run is in progress.</p> </li>
-    /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
-    /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
-    /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
+    /// <li><p>Running — The blueprint run is in progress.</p></li>
+    /// <li><p>Succeeded — The blueprint run completed successfully.</p></li>
+    /// <li><p>Failed — The blueprint run failed and rollback is complete.</p></li>
+    /// <li><p>Rolling Back — The blueprint run failed and rollback is in progress.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::BlueprintRunState> {
         self.state.as_ref()
@@ -146,10 +146,10 @@ impl BlueprintRunBuilder {
     }
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
-    /// <li> <p>Running — The blueprint run is in progress.</p> </li>
-    /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
-    /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
-    /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
+    /// <li><p>Running — The blueprint run is in progress.</p></li>
+    /// <li><p>Succeeded — The blueprint run completed successfully.</p></li>
+    /// <li><p>Failed — The blueprint run failed and rollback is complete.</p></li>
+    /// <li><p>Rolling Back — The blueprint run failed and rollback is in progress.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::BlueprintRunState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -157,10 +157,10 @@ impl BlueprintRunBuilder {
     }
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
-    /// <li> <p>Running — The blueprint run is in progress.</p> </li>
-    /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
-    /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
-    /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
+    /// <li><p>Running — The blueprint run is in progress.</p></li>
+    /// <li><p>Succeeded — The blueprint run completed successfully.</p></li>
+    /// <li><p>Failed — The blueprint run failed and rollback is complete.</p></li>
+    /// <li><p>Rolling Back — The blueprint run failed and rollback is in progress.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::BlueprintRunState>) -> Self {
         self.state = input;
@@ -168,10 +168,10 @@ impl BlueprintRunBuilder {
     }
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
-    /// <li> <p>Running — The blueprint run is in progress.</p> </li>
-    /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
-    /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
-    /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
+    /// <li><p>Running — The blueprint run is in progress.</p></li>
+    /// <li><p>Succeeded — The blueprint run completed successfully.</p></li>
+    /// <li><p>Failed — The blueprint run failed and rollback is complete.</p></li>
+    /// <li><p>Rolling Back — The blueprint run failed and rollback is in progress.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::BlueprintRunState> {
         &self.state

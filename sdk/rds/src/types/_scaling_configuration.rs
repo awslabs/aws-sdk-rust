@@ -23,8 +23,8 @@ pub struct ScalingConfiguration {
     /// <p>Specify a value between 300 and 86,400 seconds.</p>
     pub seconds_until_auto_pause: ::std::option::Option<i32>,
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
-    /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
+    /// <p><code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
+    /// <p><code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -60,8 +60,8 @@ impl ScalingConfiguration {
         self.seconds_until_auto_pause
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
-    /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
+    /// <p><code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
+    /// <p><code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -177,8 +177,8 @@ impl ScalingConfigurationBuilder {
         &self.seconds_until_auto_pause
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
-    /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
+    /// <p><code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
+    /// <p><code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -187,8 +187,8 @@ impl ScalingConfigurationBuilder {
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
-    /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
+    /// <p><code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
+    /// <p><code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -197,8 +197,8 @@ impl ScalingConfigurationBuilder {
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    /// <p> <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
-    /// <p> <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
+    /// <p><code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.</p>
+    /// <p><code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in the timeout period.</p> <important>
     /// <p>If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>

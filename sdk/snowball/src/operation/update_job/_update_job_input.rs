@@ -9,7 +9,7 @@ pub struct UpdateJobInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new or updated <code>Notification</code> object.</p>
     pub notification: ::std::option::Option<crate::types::Notification>,
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub resources: ::std::option::Option<crate::types::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
@@ -40,7 +40,7 @@ impl UpdateJobInput {
     pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
         self.notification.as_ref()
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub fn resources(&self) -> ::std::option::Option<&crate::types::JobResource> {
         self.resources.as_ref()
     }
@@ -141,17 +141,17 @@ impl UpdateJobInputBuilder {
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
         &self.notification
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
         self.resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub fn get_resources(&self) -> &::std::option::Option<crate::types::JobResource> {
         &self.resources
     }

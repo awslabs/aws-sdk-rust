@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`streaming_image_id(impl Into<String>)`](crate::operation::get_streaming_image::builders::GetStreamingImageFluentBuilder::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::operation::get_streaming_image::builders::GetStreamingImageFluentBuilder::set_streaming_image_id):<br>required: **true**<br><p>The streaming image ID.</p><br>
-    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_streaming_image::builders::GetStreamingImageFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_streaming_image::builders::GetStreamingImageFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID. </p><br>
+    ///   - [`studio_id(impl Into<String>)`](crate::operation::get_streaming_image::builders::GetStreamingImageFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::get_streaming_image::builders::GetStreamingImageFluentBuilder::set_studio_id):<br>required: **true**<br><p>The studio ID.</p><br>
     /// - On success, responds with [`GetStreamingImageOutput`](crate::operation::get_streaming_image::GetStreamingImageOutput) with field(s):
     ///   - [`streaming_image(Option<StreamingImage>)`](crate::operation::get_streaming_image::GetStreamingImageOutput::streaming_image): <p>The streaming image.</p>
     /// - On failure, responds with [`SdkError<GetStreamingImageError>`](crate::operation::get_streaming_image::GetStreamingImageError)

@@ -243,19 +243,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateEventSu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateEventSubscriptionError {
-    /// <p>You have reached the maximum number of event subscriptions. </p>
+    /// <p>You have reached the maximum number of event subscriptions.</p>
     EventSubscriptionQuotaExceededFault(crate::types::error::EventSubscriptionQuotaExceededFault),
-    /// <p>Amazon SNS has responded that there is a problem with the specified topic. </p>
+    /// <p>Amazon SNS has responded that there is a problem with the specified topic.</p>
     SnsInvalidTopicFault(crate::types::error::SnsInvalidTopicFault),
-    /// <p>You do not have permission to publish to the SNS topic Amazon Resource Name (ARN). </p>
+    /// <p>You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).</p>
     SnsNoAuthorizationFault(crate::types::error::SnsNoAuthorizationFault),
-    /// <p>The SNS topic Amazon Resource Name (ARN) does not exist. </p>
+    /// <p>The SNS topic Amazon Resource Name (ARN) does not exist.</p>
     SnsTopicArnNotFoundFault(crate::types::error::SnsTopicArnNotFoundFault),
-    /// <p>The requested source could not be found. </p>
+    /// <p>The requested source could not be found.</p>
     SourceNotFoundFault(crate::types::error::SourceNotFoundFault),
-    /// <p>The provided subscription name already exists. </p>
+    /// <p>The provided subscription name already exists.</p>
     SubscriptionAlreadyExistFault(crate::types::error::SubscriptionAlreadyExistFault),
-    /// <p>The provided category does not exist. </p>
+    /// <p>The provided category does not exist.</p>
     SubscriptionCategoryNotFoundFault(crate::types::error::SubscriptionCategoryNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

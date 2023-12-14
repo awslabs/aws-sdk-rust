@@ -24,7 +24,7 @@ impl DeleteEvaluationInputBuilder {
 ///
 /// <p>Assigns the <code>DELETED</code> status to an <code>Evaluation</code>, rendering it unusable.</p>
 /// <p>After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code> operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-/// <p> <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.</p>
+/// <p><b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

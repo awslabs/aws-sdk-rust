@@ -21,9 +21,9 @@ pub struct AuthenticateCognitoActionConfig {
     pub authentication_request_extra_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
-    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
-    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
+    /// <li><p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p></li>
+    /// <li><p>allow<code></code> - Allow the request to be forwarded to the target.</p></li>
+    /// <li><p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p></li>
     /// </ul>
     pub on_unauthenticated_request: ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
 }
@@ -61,9 +61,9 @@ impl AuthenticateCognitoActionConfig {
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
-    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
-    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
+    /// <li><p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p></li>
+    /// <li><p>allow<code></code> - Allow the request to be forwarded to the target.</p></li>
+    /// <li><p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p></li>
     /// </ul>
     pub fn on_unauthenticated_request(&self) -> ::std::option::Option<&crate::types::AuthenticateCognitoActionConditionalBehaviorEnum> {
         self.on_unauthenticated_request.as_ref()
@@ -211,9 +211,9 @@ impl AuthenticateCognitoActionConfigBuilder {
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
-    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
-    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
+    /// <li><p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p></li>
+    /// <li><p>allow<code></code> - Allow the request to be forwarded to the target.</p></li>
+    /// <li><p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p></li>
     /// </ul>
     pub fn on_unauthenticated_request(mut self, input: crate::types::AuthenticateCognitoActionConditionalBehaviorEnum) -> Self {
         self.on_unauthenticated_request = ::std::option::Option::Some(input);
@@ -221,9 +221,9 @@ impl AuthenticateCognitoActionConfigBuilder {
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
-    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
-    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
+    /// <li><p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p></li>
+    /// <li><p>allow<code></code> - Allow the request to be forwarded to the target.</p></li>
+    /// <li><p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p></li>
     /// </ul>
     pub fn set_on_unauthenticated_request(
         mut self,
@@ -234,9 +234,9 @@ impl AuthenticateCognitoActionConfigBuilder {
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
-    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
-    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
+    /// <li><p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p></li>
+    /// <li><p>allow<code></code> - Allow the request to be forwarded to the target.</p></li>
+    /// <li><p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p></li>
     /// </ul>
     pub fn get_on_unauthenticated_request(&self) -> &::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum> {
         &self.on_unauthenticated_request

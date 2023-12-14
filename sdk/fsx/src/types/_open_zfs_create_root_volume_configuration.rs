@@ -8,18 +8,18 @@ pub struct OpenZfsCreateRootVolumeConfiguration {
     pub record_size_kib: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
+    /// <li><p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
+    /// <li><p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
     /// </ul>
     pub data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     /// <p>The configuration object for mounting a file system.</p>
     pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_snapshots: ::std::option::Option<bool>,
-    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
+    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur.</p>
     pub read_only: ::std::option::Option<bool>,
 }
 impl OpenZfsCreateRootVolumeConfiguration {
@@ -29,9 +29,9 @@ impl OpenZfsCreateRootVolumeConfiguration {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
+    /// <li><p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
+    /// <li><p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
     /// </ul>
     pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
@@ -48,11 +48,11 @@ impl OpenZfsCreateRootVolumeConfiguration {
     pub fn user_and_group_quotas(&self) -> &[crate::types::OpenZfsUserOrGroupQuota] {
         self.user_and_group_quotas.as_deref().unwrap_or_default()
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn copy_tags_to_snapshots(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshots
     }
-    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
+    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur.</p>
     pub fn read_only(&self) -> ::std::option::Option<bool> {
         self.read_only
     }
@@ -92,9 +92,9 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
+    /// <li><p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
+    /// <li><p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
     /// </ul>
     pub fn data_compression_type(mut self, input: crate::types::OpenZfsDataCompressionType) -> Self {
         self.data_compression_type = ::std::option::Option::Some(input);
@@ -102,9 +102,9 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
+    /// <li><p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
+    /// <li><p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
     /// </ul>
     pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>) -> Self {
         self.data_compression_type = input;
@@ -112,9 +112,9 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
-    /// <li> <p> <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p> </li>
-    /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
+    /// <li><p><code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p></li>
+    /// <li><p><code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD) compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize on-disk storage utilization.</p></li>
+    /// <li><p><code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p></li>
     /// </ul>
     pub fn get_data_compression_type(&self) -> &::std::option::Option<crate::types::OpenZfsDataCompressionType> {
         &self.data_compression_type
@@ -159,31 +159,31 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     pub fn get_user_and_group_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
         &self.user_and_group_quotas
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn copy_tags_to_snapshots(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshots = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn set_copy_tags_to_snapshots(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshots = input;
         self
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value.</p>
     pub fn get_copy_tags_to_snapshots(&self) -> &::std::option::Option<bool> {
         &self.copy_tags_to_snapshots
     }
-    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
+    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur.</p>
     pub fn read_only(mut self, input: bool) -> Self {
         self.read_only = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
+    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur.</p>
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
     }
-    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
+    /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur.</p>
     pub fn get_read_only(&self) -> &::std::option::Option<bool> {
         &self.read_only
     }

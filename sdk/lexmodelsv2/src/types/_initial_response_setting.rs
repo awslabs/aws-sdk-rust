@@ -10,7 +10,7 @@ pub struct InitialResponseSetting {
     pub next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
     pub conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
-    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation.</p>
     pub code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
 }
 impl InitialResponseSetting {
@@ -26,7 +26,7 @@ impl InitialResponseSetting {
     pub fn conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.conditional.as_ref()
     }
-    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation.</p>
     pub fn code_hook(&self) -> ::std::option::Option<&crate::types::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
     }
@@ -90,17 +90,17 @@ impl InitialResponseSettingBuilder {
     pub fn get_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.conditional
     }
-    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation.</p>
     pub fn code_hook(mut self, input: crate::types::DialogCodeHookInvocationSetting) -> Self {
         self.code_hook = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation.</p>
     pub fn set_code_hook(mut self, input: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>) -> Self {
         self.code_hook = input;
         self
     }
-    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation.</p>
     pub fn get_code_hook(&self) -> &::std::option::Option<crate::types::DialogCodeHookInvocationSetting> {
         &self.code_hook
     }

@@ -122,17 +122,17 @@ impl CopyBackupToRegionFluentBuilder {
     pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_region()
     }
-    /// <p>The ID of the backup that will be copied to the destination region. </p>
+    /// <p>The ID of the backup that will be copied to the destination region.</p>
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());
         self
     }
-    /// <p>The ID of the backup that will be copied to the destination region. </p>
+    /// <p>The ID of the backup that will be copied to the destination region.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_id(input);
         self
     }
-    /// <p>The ID of the backup that will be copied to the destination region. </p>
+    /// <p>The ID of the backup that will be copied to the destination region.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_id()
     }

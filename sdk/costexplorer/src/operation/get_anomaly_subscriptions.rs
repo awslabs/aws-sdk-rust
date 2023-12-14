@@ -258,7 +258,7 @@ pub enum GetAnomalySubscriptionsError {
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The cost anomaly subscription does not exist for the account. </p>
+    /// <p>The cost anomaly subscription does not exist for the account.</p>
     UnknownSubscriptionException(crate::types::error::UnknownSubscriptionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

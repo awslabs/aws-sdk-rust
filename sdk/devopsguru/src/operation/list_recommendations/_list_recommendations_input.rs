@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationsInput {
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A locale that specifies the language to use for recommendations.</p>
     pub locale: ::std::option::Option<crate::types::Locale>,
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListRecommendationsInput {
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
@@ -25,7 +25,7 @@ impl ListRecommendationsInput {
     pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
         self.locale.as_ref()
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct ListRecommendationsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListRecommendationsInputBuilder {
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
-    /// <p> The ID of the requested insight. </p>
+    /// <p>The ID of the requested insight.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }
@@ -90,17 +90,17 @@ impl ListRecommendationsInputBuilder {
     pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
         &self.locale
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account. </p>
+    /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

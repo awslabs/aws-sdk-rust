@@ -22,7 +22,7 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder {
 }
 /// Fluent builder constructing a request to `NotifyTerminateProvisionedProductEngineWorkflowResult`.
 ///
-/// <p> Notifies the result of the terminate engine execution. </p>
+/// <p>Notifies the result of the terminate engine execution.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
+    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
     pub fn workflow_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_token(input.into());
         self
     }
-    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
+    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
     pub fn set_workflow_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_token(input);
         self
     }
-    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
+    /// <p>The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts.</p>
     pub fn get_workflow_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_token()
     }
-    /// <p> The identifier of the record. </p>
+    /// <p>The identifier of the record.</p>
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_id(input.into());
         self
     }
-    /// <p> The identifier of the record. </p>
+    /// <p>The identifier of the record.</p>
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_id(input);
         self
     }
-    /// <p> The identifier of the record. </p>
+    /// <p>The identifier of the record.</p>
     pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_record_id()
     }
-    /// <p> The status of the terminate engine execution. </p>
+    /// <p>The status of the terminate engine execution.</p>
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p> The status of the terminate engine execution. </p>
+    /// <p>The status of the terminate engine execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EngineWorkflowStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p> The status of the terminate engine execution. </p>
+    /// <p>The status of the terminate engine execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EngineWorkflowStatus> {
         self.inner.get_status()
     }
-    /// <p> The reason why the terminate engine execution failed. </p>
+    /// <p>The reason why the terminate engine execution failed.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.failure_reason(input.into());
         self
     }
-    /// <p> The reason why the terminate engine execution failed. </p>
+    /// <p>The reason why the terminate engine execution failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_failure_reason(input);
         self
     }
-    /// <p> The reason why the terminate engine execution failed. </p>
+    /// <p>The reason why the terminate engine execution failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_failure_reason()
     }
-    /// <p> The idempotency token that identifies the terminate engine execution. </p>
+    /// <p>The idempotency token that identifies the terminate engine execution.</p>
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
-    /// <p> The idempotency token that identifies the terminate engine execution. </p>
+    /// <p>The idempotency token that identifies the terminate engine execution.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
-    /// <p> The idempotency token that identifies the terminate engine execution. </p>
+    /// <p>The idempotency token that identifies the terminate engine execution.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idempotency_token()
     }

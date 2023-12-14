@@ -264,7 +264,7 @@ pub enum CreateVPCConnectionError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>A limit is exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The resource specified already exists. </p>
+    /// <p>The resource specified already exists.</p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

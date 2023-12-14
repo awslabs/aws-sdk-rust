@@ -9,7 +9,7 @@ pub struct GetTableInput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The transaction ID at which to read the table contents. </p>
+    /// <p>The transaction ID at which to read the table contents.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -27,7 +27,7 @@ impl GetTableInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The transaction ID at which to read the table contents. </p>
+    /// <p>The transaction ID at which to read the table contents.</p>
     pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
@@ -98,17 +98,17 @@ impl GetTableInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The transaction ID at which to read the table contents. </p>
+    /// <p>The transaction ID at which to read the table contents.</p>
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The transaction ID at which to read the table contents. </p>
+    /// <p>The transaction ID at which to read the table contents.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
-    /// <p>The transaction ID at which to read the table contents. </p>
+    /// <p>The transaction ID at which to read the table contents.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }

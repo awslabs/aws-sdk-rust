@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePricingPlanInput {
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePricingPlanInput {
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -49,46 +49,46 @@ pub struct UpdatePricingPlanInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePricingPlanInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

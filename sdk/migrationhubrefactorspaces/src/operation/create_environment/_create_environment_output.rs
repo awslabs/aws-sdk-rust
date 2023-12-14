@@ -15,7 +15,7 @@ pub struct CreateEnvironmentOutput {
     pub network_fabric_type: ::std::option::Option<crate::types::NetworkFabricType>,
     /// <p>The Amazon Web Services account ID of environment owner.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current state of the environment. </p>
+    /// <p>The current state of the environment.</p>
     pub state: ::std::option::Option<crate::types::EnvironmentState>,
     /// <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -50,7 +50,7 @@ impl CreateEnvironmentOutput {
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
-    /// <p>The current state of the environment. </p>
+    /// <p>The current state of the environment.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::EnvironmentState> {
         self.state.as_ref()
     }
@@ -197,17 +197,17 @@ impl CreateEnvironmentOutputBuilder {
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
-    /// <p>The current state of the environment. </p>
+    /// <p>The current state of the environment.</p>
     pub fn state(mut self, input: crate::types::EnvironmentState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the environment. </p>
+    /// <p>The current state of the environment.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EnvironmentState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of the environment. </p>
+    /// <p>The current state of the environment.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EnvironmentState> {
         &self.state
     }

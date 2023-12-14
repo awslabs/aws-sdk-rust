@@ -22,7 +22,7 @@ impl DeleteScheduledQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteScheduledQuery`.
 ///
-/// <p>Deletes a given scheduled query. This is an irreversible operation. </p>
+/// <p>Deletes a given scheduled query. This is an irreversible operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteScheduledQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteScheduledQueryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the scheduled query. </p>
+    /// <p>The ARN of the scheduled query.</p>
     pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_query_arn(input.into());
         self
     }
-    /// <p>The ARN of the scheduled query. </p>
+    /// <p>The ARN of the scheduled query.</p>
     pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_query_arn(input);
         self
     }
-    /// <p>The ARN of the scheduled query. </p>
+    /// <p>The ARN of the scheduled query.</p>
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_query_arn()
     }

@@ -14,7 +14,7 @@ pub struct SearchUsersInput {
     /// <p>Filters to be applied to search results.</p>
     pub search_filter: ::std::option::Option<crate::types::UserSearchFilter>,
     /// <p>The search criteria to be used to return users.</p> <note>
-    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub search_criteria: ::std::option::Option<crate::types::UserSearchCriteria>,
 }
@@ -38,7 +38,7 @@ impl SearchUsersInput {
         self.search_filter.as_ref()
     }
     /// <p>The search criteria to be used to return users.</p> <note>
-    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::UserSearchCriteria> {
         self.search_criteria.as_ref()
@@ -126,21 +126,21 @@ impl SearchUsersInputBuilder {
         &self.search_filter
     }
     /// <p>The search criteria to be used to return users.</p> <note>
-    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(mut self, input: crate::types::UserSearchCriteria) -> Self {
         self.search_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>The search criteria to be used to return users.</p> <note>
-    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::UserSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
     /// <p>The search criteria to be used to return users.</p> <note>
-    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::UserSearchCriteria> {
         &self.search_criteria

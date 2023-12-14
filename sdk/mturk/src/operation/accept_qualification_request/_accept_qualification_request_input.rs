@@ -5,7 +5,7 @@
 pub struct AcceptQualificationRequestInput {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
     pub qualification_request_id: ::std::option::Option<::std::string::String>,
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub integer_value: ::std::option::Option<i32>,
 }
 impl AcceptQualificationRequestInput {
@@ -13,7 +13,7 @@ impl AcceptQualificationRequestInput {
     pub fn qualification_request_id(&self) -> ::std::option::Option<&str> {
         self.qualification_request_id.as_deref()
     }
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub fn integer_value(&self) -> ::std::option::Option<i32> {
         self.integer_value
     }
@@ -48,17 +48,17 @@ impl AcceptQualificationRequestInputBuilder {
     pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualification_request_id
     }
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
         self.integer_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.integer_value = input;
         self
     }
-    /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// <p>The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.</p>
     pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
         &self.integer_value
     }

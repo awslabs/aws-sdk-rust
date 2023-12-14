@@ -155,9 +155,9 @@ impl ListSyncResourcesFluentBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::SyncResourceFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -166,9 +166,9 @@ impl ListSyncResourcesFluentBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -177,9 +177,9 @@ impl ListSyncResourcesFluentBuilder {
     /// <p>A list of objects that filter the request.</p>
     /// <p>The following filter combinations are supported:</p>
     /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <li><p>Filter with state</p></li>
+    /// <li><p>Filter with ResourceType and ResourceId</p></li>
+    /// <li><p>Filter with ResourceType and ExternalId</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
         self.inner.get_filters()

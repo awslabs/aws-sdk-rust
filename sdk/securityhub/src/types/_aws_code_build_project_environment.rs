@@ -13,8 +13,8 @@ pub struct AwsCodeBuildProjectEnvironment {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p> </li>
-    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
+    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub image_pull_credentials_type: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct AwsCodeBuildProjectEnvironment {
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
-    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
+    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code></p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectEnvironment {
@@ -45,8 +45,8 @@ impl AwsCodeBuildProjectEnvironment {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p> </li>
-    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
+    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn image_pull_credentials_type(&self) -> ::std::option::Option<&str> {
@@ -60,7 +60,7 @@ impl AwsCodeBuildProjectEnvironment {
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
-    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
+    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code></p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -140,8 +140,8 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p> </li>
-    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
+    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn image_pull_credentials_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +151,8 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p> </li>
-    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
+    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn set_image_pull_credentials_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -162,8 +162,8 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li> <p> <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p> </li>
-    /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
+    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn get_image_pull_credentials_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,7 +187,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
-    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
+    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code></p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -196,7 +196,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
-    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
+    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code></p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
@@ -205,7 +205,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
-    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
+    /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code></p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

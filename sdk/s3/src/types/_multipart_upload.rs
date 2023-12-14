@@ -11,11 +11,11 @@ pub struct MultipartUpload {
     /// <p>Date and time at which the multipart upload was initiated.</p>
     pub initiated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The class of storage used to store the object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
-    /// <p>Specifies the owner of the object that is part of the multipart upload. </p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
+    /// <p>Specifies the owner of the object that is part of the multipart upload.</p> <note>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
     /// </note>
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>Identifies who initiated the multipart upload.</p>
@@ -37,13 +37,13 @@ impl MultipartUpload {
         self.initiated.as_ref()
     }
     /// <p>The class of storage used to store the object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>Specifies the owner of the object that is part of the multipart upload. </p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
+    /// <p>Specifies the owner of the object that is part of the multipart upload.</p> <note>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
     /// </note>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
@@ -120,41 +120,41 @@ impl MultipartUploadBuilder {
         &self.initiated
     }
     /// <p>The class of storage used to store the object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>The class of storage used to store the object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The class of storage used to store the object.</p> <note>
-    /// <p> <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
+    /// <p><b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported by directory buckets to store objects.</p>
     /// </note>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
         &self.storage_class
     }
-    /// <p>Specifies the owner of the object that is part of the multipart upload. </p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
+    /// <p>Specifies the owner of the object that is part of the multipart upload.</p> <note>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
     /// </note>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the owner of the object that is part of the multipart upload. </p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
+    /// <p>Specifies the owner of the object that is part of the multipart upload.</p> <note>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
     /// </note>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>Specifies the owner of the object that is part of the multipart upload. </p> <note>
-    /// <p> <b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
+    /// <p>Specifies the owner of the object that is part of the multipart upload.</p> <note>
+    /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the objects.</p>
     /// </note>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
         &self.owner

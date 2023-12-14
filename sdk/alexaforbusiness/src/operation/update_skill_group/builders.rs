@@ -109,17 +109,17 @@ impl UpdateSkillGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the skill group to update. </p>
+    /// <p>The ARN of the skill group to update.</p>
     pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_group_arn(input.into());
         self
     }
-    /// <p>The ARN of the skill group to update. </p>
+    /// <p>The ARN of the skill group to update.</p>
     pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
-    /// <p>The ARN of the skill group to update. </p>
+    /// <p>The ARN of the skill group to update.</p>
     pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_skill_group_arn()
     }

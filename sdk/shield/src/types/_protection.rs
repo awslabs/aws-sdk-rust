@@ -10,11 +10,11 @@ pub struct Protection {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection.</p>
     pub health_check_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
     pub protection_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.</p>
     pub application_layer_automatic_response_configuration: ::std::option::Option<crate::types::ApplicationLayerAutomaticResponseConfiguration>,
 }
 impl Protection {
@@ -30,7 +30,7 @@ impl Protection {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.health_check_ids.is_none()`.
     pub fn health_check_ids(&self) -> &[::std::string::String] {
@@ -40,7 +40,7 @@ impl Protection {
     pub fn protection_arn(&self) -> ::std::option::Option<&str> {
         self.protection_arn.as_deref()
     }
-    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.</p>
     pub fn application_layer_automatic_response_configuration(
         &self,
     ) -> ::std::option::Option<&crate::types::ApplicationLayerAutomaticResponseConfiguration> {
@@ -113,19 +113,19 @@ impl ProtectionBuilder {
     ///
     /// To override the contents of this collection use [`set_health_check_ids`](Self::set_health_check_ids).
     ///
-    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection.</p>
     pub fn health_check_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.health_check_ids.unwrap_or_default();
         v.push(input.into());
         self.health_check_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection.</p>
     pub fn set_health_check_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.health_check_ids = input;
         self
     }
-    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection.</p>
     pub fn get_health_check_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.health_check_ids
     }
@@ -143,12 +143,12 @@ impl ProtectionBuilder {
     pub fn get_protection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.protection_arn
     }
-    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.</p>
     pub fn application_layer_automatic_response_configuration(mut self, input: crate::types::ApplicationLayerAutomaticResponseConfiguration) -> Self {
         self.application_layer_automatic_response_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.</p>
     pub fn set_application_layer_automatic_response_configuration(
         mut self,
         input: ::std::option::Option<crate::types::ApplicationLayerAutomaticResponseConfiguration>,
@@ -156,7 +156,7 @@ impl ProtectionBuilder {
         self.application_layer_automatic_response_configuration = input;
         self
     }
-    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.</p>
     pub fn get_application_layer_automatic_response_configuration(
         &self,
     ) -> &::std::option::Option<crate::types::ApplicationLayerAutomaticResponseConfiguration> {

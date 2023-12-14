@@ -6,12 +6,12 @@ pub struct UpdateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub branch_filter: ::std::option::Option<::std::string::String>,
-    /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    /// <p>A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.</p>
     pub rotate_secret: ::std::option::Option<bool>,
-    /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>.</p>
     pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
@@ -22,16 +22,16 @@ impl UpdateWebhookInput {
         self.project_name.as_deref()
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn branch_filter(&self) -> ::std::option::Option<&str> {
         self.branch_filter.as_deref()
     }
-    /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    /// <p>A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.</p>
     pub fn rotate_secret(&self) -> ::std::option::Option<bool> {
         self.rotate_secret
     }
-    /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_groups.is_none()`.
     pub fn filter_groups(&self) -> &[::std::vec::Vec<crate::types::WebhookFilter>] {
@@ -76,36 +76,36 @@ impl UpdateWebhookInputBuilder {
         &self.project_name
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn branch_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn set_branch_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_filter = input;
         self
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn get_branch_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.branch_filter
     }
-    /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    /// <p>A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.</p>
     pub fn rotate_secret(mut self, input: bool) -> Self {
         self.rotate_secret = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    /// <p>A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.</p>
     pub fn set_rotate_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotate_secret = input;
         self
     }
-    /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    /// <p>A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.</p>
     pub fn get_rotate_secret(&self) -> &::std::option::Option<bool> {
         &self.rotate_secret
     }
@@ -113,19 +113,19 @@ impl UpdateWebhookInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
     ///
-    /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>.</p>
     pub fn filter_groups(mut self, input: ::std::vec::Vec<crate::types::WebhookFilter>) -> Self {
         let mut v = self.filter_groups.unwrap_or_default();
         v.push(input);
         self.filter_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>.</p>
     pub fn set_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>) -> Self {
         self.filter_groups = input;
         self
     }
-    /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>.</p>
     pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
         &self.filter_groups
     }

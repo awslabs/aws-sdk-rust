@@ -143,19 +143,19 @@ impl CreateThingFluentBuilder {
         self.inner.get_thing_type_name()
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
         self.inner = self.inner.attribute_payload(input);
         self
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
     pub fn set_attribute_payload(mut self, input: ::std::option::Option<crate::types::AttributePayload>) -> Self {
         self.inner = self.inner.set_attribute_payload(input);
         self
     }
     /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
-    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+    /// <p><code>{\"attributes\":{\"string1\":\"string2\"}}</code></p>
     pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
         self.inner.get_attribute_payload()
     }

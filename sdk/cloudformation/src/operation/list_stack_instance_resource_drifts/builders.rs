@@ -23,7 +23,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
 /// Fluent builder constructing a request to `ListStackInstanceResourceDrifts`.
 ///
 /// <p>Returns drift information for resources in a stack instance.</p> <note>
-/// <p> <code>ListStackInstanceResourceDrifts</code> returns drift information for the most recent drift detection operation. If an operation is in progress, it may only return partial results.</p>
+/// <p><code>ListStackInstanceResourceDrifts</code> returns drift information for the most recent drift detection operation. If an operation is in progress, it may only return partial results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackInstanceResourceDriftsFluentBuilder {
@@ -156,23 +156,23 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_stack_instance_resource_drift_statuses`](Self::set_stack_instance_resource_drift_statuses).
     ///
-    /// <p>The resource drift status of the stack instance. </p>
+    /// <p>The resource drift status of the stack instance.</p>
     /// <ul>
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
+    /// <li><p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
+    /// <li><p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
+    /// <li><p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
     pub fn stack_instance_resource_drift_statuses(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.inner = self.inner.stack_instance_resource_drift_statuses(input);
         self
     }
-    /// <p>The resource drift status of the stack instance. </p>
+    /// <p>The resource drift status of the stack instance.</p>
     /// <ul>
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
+    /// <li><p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
+    /// <li><p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
+    /// <li><p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
     pub fn set_stack_instance_resource_drift_statuses(
         mut self,
@@ -181,12 +181,12 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
         self.inner = self.inner.set_stack_instance_resource_drift_statuses(input);
         self
     }
-    /// <p>The resource drift status of the stack instance. </p>
+    /// <p>The resource drift status of the stack instance.</p>
     /// <ul>
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
+    /// <li><p><code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p></li>
+    /// <li><p><code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p></li>
+    /// <li><p><code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p></li>
+    /// <li><p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
     pub fn get_stack_instance_resource_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
         self.inner.get_stack_instance_resource_drift_statuses()
@@ -236,8 +236,8 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     pub fn call_as(mut self, input: crate::types::CallAs) -> Self {
         self.inner = self.inner.call_as(input);
@@ -246,8 +246,8 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.inner = self.inner.set_call_as(input);
@@ -256,8 +256,8 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
-    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+    /// <li><p>If you are signed in to the management account, specify <code>SELF</code>.</p></li>
+    /// <li><p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
         self.inner.get_call_as()

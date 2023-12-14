@@ -8,16 +8,16 @@ pub struct DescribeBundleTasksInput {
     pub bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>bundle-id</code> - The ID of the bundle task.</p> </li>
-    /// <li> <p> <code>error-code</code> - If the task failed, the error code returned.</p> </li>
-    /// <li> <p> <code>error-message</code> - If the task failed, the error message returned.</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p> </li>
-    /// <li> <p> <code>s3-prefix</code> - The beginning of the AMI name.</p> </li>
-    /// <li> <p> <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
+    /// <li><p><code>bundle-id</code> - The ID of the bundle task.</p></li>
+    /// <li><p><code>error-code</code> - If the task failed, the error code returned.</p></li>
+    /// <li><p><code>error-message</code> - If the task failed, the error message returned.</p></li>
+    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li><p><code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p></li>
+    /// <li><p><code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p></li>
+    /// <li><p><code>s3-prefix</code> - The beginning of the AMI name.</p></li>
+    /// <li><p><code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p></li>
+    /// <li><p><code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>update-time</code> - The time of the most recent update for the task.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -33,16 +33,16 @@ impl DescribeBundleTasksInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>bundle-id</code> - The ID of the bundle task.</p> </li>
-    /// <li> <p> <code>error-code</code> - If the task failed, the error code returned.</p> </li>
-    /// <li> <p> <code>error-message</code> - If the task failed, the error message returned.</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p> </li>
-    /// <li> <p> <code>s3-prefix</code> - The beginning of the AMI name.</p> </li>
-    /// <li> <p> <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
+    /// <li><p><code>bundle-id</code> - The ID of the bundle task.</p></li>
+    /// <li><p><code>error-code</code> - If the task failed, the error code returned.</p></li>
+    /// <li><p><code>error-message</code> - If the task failed, the error message returned.</p></li>
+    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li><p><code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p></li>
+    /// <li><p><code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p></li>
+    /// <li><p><code>s3-prefix</code> - The beginning of the AMI name.</p></li>
+    /// <li><p><code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p></li>
+    /// <li><p><code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>update-time</code> - The time of the most recent update for the task.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -99,16 +99,16 @@ impl DescribeBundleTasksInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>bundle-id</code> - The ID of the bundle task.</p> </li>
-    /// <li> <p> <code>error-code</code> - If the task failed, the error code returned.</p> </li>
-    /// <li> <p> <code>error-message</code> - If the task failed, the error message returned.</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p> </li>
-    /// <li> <p> <code>s3-prefix</code> - The beginning of the AMI name.</p> </li>
-    /// <li> <p> <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
+    /// <li><p><code>bundle-id</code> - The ID of the bundle task.</p></li>
+    /// <li><p><code>error-code</code> - If the task failed, the error code returned.</p></li>
+    /// <li><p><code>error-message</code> - If the task failed, the error message returned.</p></li>
+    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li><p><code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p></li>
+    /// <li><p><code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p></li>
+    /// <li><p><code>s3-prefix</code> - The beginning of the AMI name.</p></li>
+    /// <li><p><code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p></li>
+    /// <li><p><code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>update-time</code> - The time of the most recent update for the task.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -118,16 +118,16 @@ impl DescribeBundleTasksInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>bundle-id</code> - The ID of the bundle task.</p> </li>
-    /// <li> <p> <code>error-code</code> - If the task failed, the error code returned.</p> </li>
-    /// <li> <p> <code>error-message</code> - If the task failed, the error message returned.</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p> </li>
-    /// <li> <p> <code>s3-prefix</code> - The beginning of the AMI name.</p> </li>
-    /// <li> <p> <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
+    /// <li><p><code>bundle-id</code> - The ID of the bundle task.</p></li>
+    /// <li><p><code>error-code</code> - If the task failed, the error code returned.</p></li>
+    /// <li><p><code>error-message</code> - If the task failed, the error message returned.</p></li>
+    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li><p><code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p></li>
+    /// <li><p><code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p></li>
+    /// <li><p><code>s3-prefix</code> - The beginning of the AMI name.</p></li>
+    /// <li><p><code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p></li>
+    /// <li><p><code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>update-time</code> - The time of the most recent update for the task.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -135,16 +135,16 @@ impl DescribeBundleTasksInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>bundle-id</code> - The ID of the bundle task.</p> </li>
-    /// <li> <p> <code>error-code</code> - If the task failed, the error code returned.</p> </li>
-    /// <li> <p> <code>error-message</code> - If the task failed, the error message returned.</p> </li>
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
-    /// <li> <p> <code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p> </li>
-    /// <li> <p> <code>s3-prefix</code> - The beginning of the AMI name.</p> </li>
-    /// <li> <p> <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
+    /// <li><p><code>bundle-id</code> - The ID of the bundle task.</p></li>
+    /// <li><p><code>error-code</code> - If the task failed, the error code returned.</p></li>
+    /// <li><p><code>error-message</code> - If the task failed, the error message returned.</p></li>
+    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li><p><code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p></li>
+    /// <li><p><code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p></li>
+    /// <li><p><code>s3-prefix</code> - The beginning of the AMI name.</p></li>
+    /// <li><p><code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p></li>
+    /// <li><p><code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>update-time</code> - The time of the most recent update for the task.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

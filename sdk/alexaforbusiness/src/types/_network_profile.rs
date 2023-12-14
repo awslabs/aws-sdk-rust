@@ -14,13 +14,13 @@ pub struct NetworkProfile {
     pub ssid: ::std::option::Option<::std::string::String>,
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub security_type: ::std::option::Option<crate::types::NetworkSecurityType>,
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub eap_method: ::std::option::Option<crate::types::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
     pub current_password: ::std::option::Option<::std::string::String>,
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub next_password: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub trust_anchors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,7 +46,7 @@ impl NetworkProfile {
     pub fn security_type(&self) -> ::std::option::Option<&crate::types::NetworkSecurityType> {
         self.security_type.as_ref()
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn eap_method(&self) -> ::std::option::Option<&crate::types::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
@@ -54,11 +54,11 @@ impl NetworkProfile {
     pub fn current_password(&self) -> ::std::option::Option<&str> {
         self.current_password.as_deref()
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn next_password(&self) -> ::std::option::Option<&str> {
         self.next_password.as_deref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -178,17 +178,17 @@ impl NetworkProfileBuilder {
     pub fn get_security_type(&self) -> &::std::option::Option<crate::types::NetworkSecurityType> {
         &self.security_type
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn eap_method(mut self, input: crate::types::NetworkEapMethod) -> Self {
         self.eap_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn set_eap_method(mut self, input: ::std::option::Option<crate::types::NetworkEapMethod>) -> Self {
         self.eap_method = input;
         self
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn get_eap_method(&self) -> &::std::option::Option<crate::types::NetworkEapMethod> {
         &self.eap_method
     }
@@ -206,31 +206,31 @@ impl NetworkProfileBuilder {
     pub fn get_current_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_password
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn next_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn set_next_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_password = input;
         self
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword.</p>
     pub fn get_next_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_password
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_arn
     }

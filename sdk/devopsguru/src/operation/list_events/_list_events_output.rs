@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventsOutput {
-    /// <p> A list of the requested events. </p>
+    /// <p>A list of the requested events.</p>
     pub events: ::std::vec::Vec<crate::types::Event>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEventsOutput {
-    /// <p> A list of the requested events. </p>
+    /// <p>A list of the requested events.</p>
     pub fn events(&self) -> &[crate::types::Event] {
         use std::ops::Deref;
         self.events.deref()
@@ -45,19 +45,19 @@ impl ListEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
-    /// <p> A list of the requested events. </p>
+    /// <p>A list of the requested events.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
         self.events = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of the requested events. </p>
+    /// <p>A list of the requested events.</p>
     pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
-    /// <p> A list of the requested events. </p>
+    /// <p>A list of the requested events.</p>
     pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
         &self.events
     }

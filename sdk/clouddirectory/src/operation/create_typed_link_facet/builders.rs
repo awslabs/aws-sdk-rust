@@ -122,17 +122,17 @@ impl CreateTypedLinkFacetFluentBuilder {
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schema_arn()
     }
-    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn facet(mut self, input: crate::types::TypedLinkFacet) -> Self {
         self.inner = self.inner.facet(input);
         self
     }
-    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn set_facet(mut self, input: ::std::option::Option<crate::types::TypedLinkFacet>) -> Self {
         self.inner = self.inner.set_facet(input);
         self
     }
-    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+    /// <p><code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn get_facet(&self) -> &::std::option::Option<crate::types::TypedLinkFacet> {
         self.inner.get_facet()
     }

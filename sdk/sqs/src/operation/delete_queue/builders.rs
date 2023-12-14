@@ -23,7 +23,7 @@ impl DeleteQueueInputBuilder {
 /// Fluent builder constructing a request to `DeleteQueue`.
 ///
 /// <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents.</p> <important>
-/// <p>Be careful with the <code>DeleteQueue</code> action: When you delete a queue, any messages in the queue are no longer available. </p>
+/// <p>Be careful with the <code>DeleteQueue</code> action: When you delete a queue, any messages in the queue are no longer available.</p>
 /// </important>
 /// <p>When you delete a queue, the deletion process takes up to 60 seconds. Requests you send involving that queue during the 60 seconds might succeed. For example, a <code> <code>SendMessage</code> </code> request might succeed, but after 60 seconds the queue and the message you sent no longer exist.</p>
 /// <p>When you delete a queue, you must wait at least 60 seconds before creating a queue with the same name.</p> <note>

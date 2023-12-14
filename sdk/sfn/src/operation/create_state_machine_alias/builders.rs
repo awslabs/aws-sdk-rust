@@ -26,13 +26,13 @@ impl CreateStateMachineAliasInputBuilder {
 /// <p>You can also map an alias to split <code>StartExecution</code> requests between two versions of a state machine. To do this, add a second <code>RoutingConfig</code> object in the <code>routingConfiguration</code> parameter. You must also specify the percentage of execution run requests each version should receive in both <code>RoutingConfig</code> objects. Step Functions randomly chooses which version runs a given execution based on the percentage you specify.</p>
 /// <p>To create an alias that points to a single version, specify a single <code>RoutingConfig</code> object with a <code>weight</code> set to 100.</p>
 /// <p>You can create up to 100 aliases for each state machine. You must delete unused aliases using the <code>DeleteStateMachineAlias</code> API action.</p>
-/// <p> <code>CreateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the <code>stateMachineArn</code>, <code>description</code>, <code>name</code>, and <code>routingConfiguration</code> parameters. Requests that contain the same values for these parameters return a successful idempotent response without creating a duplicate resource.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><code>CreateStateMachineAlias</code> is an idempotent API. Step Functions bases the idempotency check on the <code>stateMachineArn</code>, <code>description</code>, <code>name</code>, and <code>routingConfiguration</code> parameters. Requests that contain the same values for these parameters return a successful idempotent response without creating a duplicate resource.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>DescribeStateMachineAlias</code> </p> </li>
-/// <li> <p> <code>ListStateMachineAliases</code> </p> </li>
-/// <li> <p> <code>UpdateStateMachineAlias</code> </p> </li>
-/// <li> <p> <code>DeleteStateMachineAlias</code> </p> </li>
+/// <li><p><code>DescribeStateMachineAlias</code></p></li>
+/// <li><p><code>ListStateMachineAliases</code></p></li>
+/// <li><p><code>UpdateStateMachineAlias</code></p></li>
+/// <li><p><code>DeleteStateMachineAlias</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStateMachineAliasFluentBuilder {

@@ -22,7 +22,7 @@ impl DeleteDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDomain`.
 ///
-/// <p>Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again using IAM Identity Center. Use with caution. All of the members of the domain will lose access to their EFS volume, including data, notebooks, and other artifacts. </p>
+/// <p>Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again using IAM Identity Center. Use with caution. All of the members of the domain will lose access to their EFS volume, including data, notebooks, and other artifacts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl DeleteDomainFluentBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
     pub fn retention_policy(mut self, input: crate::types::RetentionPolicy) -> Self {
         self.inner = self.inner.retention_policy(input);
         self
     }
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
     pub fn set_retention_policy(mut self, input: ::std::option::Option<crate::types::RetentionPolicy>) -> Self {
         self.inner = self.inner.set_retention_policy(input);
         self
     }
-    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
+    /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).</p>
     pub fn get_retention_policy(&self) -> &::std::option::Option<crate::types::RetentionPolicy> {
         self.inner.get_retention_policy()
     }

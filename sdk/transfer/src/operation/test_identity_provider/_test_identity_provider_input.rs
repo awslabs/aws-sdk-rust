@@ -8,10 +8,10 @@ pub struct TestIdentityProviderInput {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub server_protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>The source IP address of the account to be tested.</p>
@@ -29,10 +29,10 @@ impl TestIdentityProviderInput {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub fn server_protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.server_protocol.as_ref()
@@ -97,10 +97,10 @@ impl TestIdentityProviderInputBuilder {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub fn server_protocol(mut self, input: crate::types::Protocol) -> Self {
         self.server_protocol = ::std::option::Option::Some(input);
@@ -109,10 +109,10 @@ impl TestIdentityProviderInputBuilder {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.server_protocol = input;
@@ -121,10 +121,10 @@ impl TestIdentityProviderInputBuilder {
     /// <p>The type of file transfer protocol to be tested.</p>
     /// <p>The available protocols are:</p>
     /// <ul>
-    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
-    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
-    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
-    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
+    /// <li><p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p></li>
+    /// <li><p>File Transfer Protocol Secure (FTPS)</p></li>
+    /// <li><p>File Transfer Protocol (FTP)</p></li>
+    /// <li><p>Applicability Statement 2 (AS2)</p></li>
     /// </ul>
     pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.server_protocol

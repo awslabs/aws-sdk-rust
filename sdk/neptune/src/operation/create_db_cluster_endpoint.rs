@@ -247,9 +247,9 @@ pub enum CreateDBClusterEndpointError {
     DbClusterEndpointAlreadyExistsFault(crate::types::error::DbClusterEndpointAlreadyExistsFault),
     /// <p>The cluster already has the maximum number of custom endpoints.</p>
     DbClusterEndpointQuotaExceededFault(crate::types::error::DbClusterEndpointQuotaExceededFault),
-    /// <p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
+    /// <p><i>DBClusterIdentifier</i> does not refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
-    /// <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
+    /// <p><i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The DB cluster is not in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),

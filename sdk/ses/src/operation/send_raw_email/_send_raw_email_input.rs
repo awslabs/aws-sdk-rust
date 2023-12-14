@@ -13,15 +13,15 @@ pub struct SendRawEmailInput {
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     pub raw_message: ::std::option::Option<crate::types::RawMessage>,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.</p>
@@ -62,15 +62,15 @@ impl SendRawEmailInput {
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     pub fn raw_message(&self) -> ::std::option::Option<&crate::types::RawMessage> {
         self.raw_message.as_ref()
@@ -175,15 +175,15 @@ impl SendRawEmailInputBuilder {
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     /// This field is required.
     pub fn raw_message(mut self, input: crate::types::RawMessage) -> Self {
@@ -192,15 +192,15 @@ impl SendRawEmailInputBuilder {
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     pub fn set_raw_message(mut self, input: ::std::option::Option<crate::types::RawMessage>) -> Self {
         self.raw_message = input;
@@ -208,15 +208,15 @@ impl SendRawEmailInputBuilder {
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>The entire message must be base64-encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
-    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// <li><p>The message has to contain a header and a body, separated by a blank line.</p></li>
+    /// <li><p>All of the required header fields must be present in the message.</p></li>
+    /// <li><p>Each part of a multipart MIME message must be formatted properly.</p></li>
+    /// <li><p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/dg/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>The entire message must be base64-encoded.</p></li>
+    /// <li><p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p></li>
+    /// <li><p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
     /// , must not exceed 1,000 characters.
-    /// </crlf></p> </li>
+    /// </crlf></p></li>
     /// </ul>
     pub fn get_raw_message(&self) -> &::std::option::Option<crate::types::RawMessage> {
         &self.raw_message

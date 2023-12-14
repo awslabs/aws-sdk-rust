@@ -108,17 +108,17 @@ impl TagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the container. </p>
+    /// <p>The Amazon Resource Name (ARN) for the container.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the container. </p>
+    /// <p>The Amazon Resource Name (ARN) for the container.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the container. </p>
+    /// <p>The Amazon Resource Name (ARN) for the container.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource()
     }

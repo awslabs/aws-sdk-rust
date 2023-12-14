@@ -22,7 +22,7 @@ impl GetAssessmentReportUrlInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAssessmentReportUrl`.
 ///
-/// <p> Gets the URL of an assessment report in Audit Manager. </p>
+/// <p>Gets the URL of an assessment report in Audit Manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetAssessmentReportUrlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn assessment_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_report_id(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn set_assessment_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_report_id(input);
         self
     }
-    /// <p> The unique identifier for the assessment report. </p>
+    /// <p>The unique identifier for the assessment report.</p>
     pub fn get_assessment_report_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_report_id()
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p> The unique identifier for the assessment. </p>
+    /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaInput {
-    /// <p>The ARN of the primary secret. </p>
+    /// <p>The ARN of the primary secret.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationToReplicaInput {
-    /// <p>The ARN of the primary secret. </p>
+    /// <p>The ARN of the primary secret.</p>
     pub fn secret_id(&self) -> ::std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct StopReplicationToReplicaInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationToReplicaInputBuilder {
-    /// <p>The ARN of the primary secret. </p>
+    /// <p>The ARN of the primary secret.</p>
     /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the primary secret. </p>
+    /// <p>The ARN of the primary secret.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
     }
-    /// <p>The ARN of the primary secret. </p>
+    /// <p>The ARN of the primary secret.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_id
     }

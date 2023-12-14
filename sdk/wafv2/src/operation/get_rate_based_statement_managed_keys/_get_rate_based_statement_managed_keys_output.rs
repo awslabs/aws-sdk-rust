@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeysOutput {
-    /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    /// <p>The keys that are of Internet Protocol version 4 (IPv4).</p>
     pub managed_keys_ipv4: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>,
-    /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    /// <p>The keys that are of Internet Protocol version 6 (IPv6).</p>
     pub managed_keys_ipv6: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>,
     _request_id: Option<String>,
 }
 impl GetRateBasedStatementManagedKeysOutput {
-    /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    /// <p>The keys that are of Internet Protocol version 4 (IPv4).</p>
     pub fn managed_keys_ipv4(&self) -> ::std::option::Option<&crate::types::RateBasedStatementManagedKeysIpSet> {
         self.managed_keys_ipv4.as_ref()
     }
-    /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    /// <p>The keys that are of Internet Protocol version 6 (IPv6).</p>
     pub fn managed_keys_ipv6(&self) -> ::std::option::Option<&crate::types::RateBasedStatementManagedKeysIpSet> {
         self.managed_keys_ipv6.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct GetRateBasedStatementManagedKeysOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetRateBasedStatementManagedKeysOutputBuilder {
-    /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    /// <p>The keys that are of Internet Protocol version 4 (IPv4).</p>
     pub fn managed_keys_ipv4(mut self, input: crate::types::RateBasedStatementManagedKeysIpSet) -> Self {
         self.managed_keys_ipv4 = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    /// <p>The keys that are of Internet Protocol version 4 (IPv4).</p>
     pub fn set_managed_keys_ipv4(mut self, input: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>) -> Self {
         self.managed_keys_ipv4 = input;
         self
     }
-    /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    /// <p>The keys that are of Internet Protocol version 4 (IPv4).</p>
     pub fn get_managed_keys_ipv4(&self) -> &::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet> {
         &self.managed_keys_ipv4
     }
-    /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    /// <p>The keys that are of Internet Protocol version 6 (IPv6).</p>
     pub fn managed_keys_ipv6(mut self, input: crate::types::RateBasedStatementManagedKeysIpSet) -> Self {
         self.managed_keys_ipv6 = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    /// <p>The keys that are of Internet Protocol version 6 (IPv6).</p>
     pub fn set_managed_keys_ipv6(mut self, input: ::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet>) -> Self {
         self.managed_keys_ipv6 = input;
         self
     }
-    /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    /// <p>The keys that are of Internet Protocol version 6 (IPv6).</p>
     pub fn get_managed_keys_ipv6(&self) -> &::std::option::Option<crate::types::RateBasedStatementManagedKeysIpSet> {
         &self.managed_keys_ipv6
     }

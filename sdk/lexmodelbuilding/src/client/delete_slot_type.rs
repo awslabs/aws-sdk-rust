@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSlotType`](crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the slot type. The name is case sensitive. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the slot type. The name is case sensitive.</p><br>
     /// - On success, responds with [`DeleteSlotTypeOutput`](crate::operation::delete_slot_type::DeleteSlotTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteSlotTypeError>`](crate::operation::delete_slot_type::DeleteSlotTypeError)
     pub fn delete_slot_type(&self) -> crate::operation::delete_slot_type::builders::DeleteSlotTypeFluentBuilder {

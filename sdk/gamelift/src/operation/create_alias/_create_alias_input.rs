@@ -7,7 +7,7 @@ pub struct CreateAliasInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of the alias.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
     /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -21,7 +21,7 @@ impl CreateAliasInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn routing_strategy(&self) -> ::std::option::Option<&crate::types::RoutingStrategy> {
         self.routing_strategy.as_ref()
     }
@@ -78,18 +78,18 @@ impl CreateAliasInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     /// This field is required.
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
         self.routing_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
         self.routing_strategy = input;
         self
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
         &self.routing_strategy
     }

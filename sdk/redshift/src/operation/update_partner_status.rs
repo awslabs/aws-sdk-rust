@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdatePartner
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdatePartnerStatusError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The name of the partner was not found.</p>
     PartnerNotFoundFault(crate::types::error::PartnerNotFoundFault),

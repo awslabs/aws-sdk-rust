@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRetrainingSchedulersOutput {
-    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date. </p>
+    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     pub retraining_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>>,
     /// <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRetrainingSchedulersOutput {
-    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date. </p>
+    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retraining_scheduler_summaries.is_none()`.
     pub fn retraining_scheduler_summaries(&self) -> &[crate::types::RetrainingSchedulerSummary] {
@@ -46,14 +46,14 @@ impl ListRetrainingSchedulersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_retraining_scheduler_summaries`](Self::set_retraining_scheduler_summaries).
     ///
-    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date. </p>
+    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     pub fn retraining_scheduler_summaries(mut self, input: crate::types::RetrainingSchedulerSummary) -> Self {
         let mut v = self.retraining_scheduler_summaries.unwrap_or_default();
         v.push(input);
         self.retraining_scheduler_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date. </p>
+    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     pub fn set_retraining_scheduler_summaries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>>,
@@ -61,7 +61,7 @@ impl ListRetrainingSchedulersOutputBuilder {
         self.retraining_scheduler_summaries = input;
         self
     }
-    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date. </p>
+    /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     pub fn get_retraining_scheduler_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrainingSchedulerSummary>> {
         &self.retraining_scheduler_summaries
     }

@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopyDBCluster
 pub enum CopyDBClusterParameterGroupError {
     /// <p>A parameter group with the same name already exists.</p>
     DbParameterGroupAlreadyExistsFault(crate::types::error::DbParameterGroupAlreadyExistsFault),
-    /// <p> <code>DBParameterGroupName</code> doesn't refer to an existing parameter group. </p>
+    /// <p><code>DBParameterGroupName</code> doesn't refer to an existing parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
     /// <p>This request would cause you to exceed the allowed number of parameter groups.</p>
     DbParameterGroupQuotaExceededFault(crate::types::error::DbParameterGroupQuotaExceededFault),

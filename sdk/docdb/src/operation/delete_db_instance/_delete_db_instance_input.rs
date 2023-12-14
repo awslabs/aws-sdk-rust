@@ -7,7 +7,7 @@ pub struct DeleteDbInstanceInput {
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing instance.</p> </li>
+    /// <li><p>Must match the name of an existing instance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -15,7 +15,7 @@ impl DeleteDbInstanceInput {
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing instance.</p> </li>
+    /// <li><p>Must match the name of an existing instance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -38,7 +38,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing instance.</p> </li>
+    /// <li><p>Must match the name of an existing instance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -48,7 +48,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing instance.</p> </li>
+    /// <li><p>Must match the name of an existing instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -57,7 +57,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing instance.</p> </li>
+    /// <li><p>Must match the name of an existing instance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier

@@ -7,8 +7,8 @@ pub struct CreateProfileInput {
     pub as2_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines the type of profile to create:</p>
     /// <ul>
-    /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
-    /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+    /// <li><p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p></li>
+    /// <li><p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p></li>
     /// </ul>
     pub profile_type: ::std::option::Option<crate::types::ProfileType>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
@@ -23,8 +23,8 @@ impl CreateProfileInput {
     }
     /// <p>Determines the type of profile to create:</p>
     /// <ul>
-    /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
-    /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+    /// <li><p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p></li>
+    /// <li><p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p></li>
     /// </ul>
     pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileType> {
         self.profile_type.as_ref()
@@ -76,8 +76,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Determines the type of profile to create:</p>
     /// <ul>
-    /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
-    /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+    /// <li><p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p></li>
+    /// <li><p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p></li>
     /// </ul>
     /// This field is required.
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
@@ -86,8 +86,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Determines the type of profile to create:</p>
     /// <ul>
-    /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
-    /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+    /// <li><p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p></li>
+    /// <li><p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p></li>
     /// </ul>
     pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
         self.profile_type = input;
@@ -95,8 +95,8 @@ impl CreateProfileInputBuilder {
     }
     /// <p>Determines the type of profile to create:</p>
     /// <ul>
-    /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
-    /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
+    /// <li><p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p></li>
+    /// <li><p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p></li>
     /// </ul>
     pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
         &self.profile_type

@@ -7,13 +7,13 @@ pub struct CapacityConfiguration {
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li>
+    /// <li><p><code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p></li>
+    /// <li><p><code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p></li>
+    /// <li><p><code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p></li>
+    /// <li><p><code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li><p><code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li><p><code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li><p><code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
     /// </ul>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances running in a cluster.</p>
@@ -23,13 +23,13 @@ impl CapacityConfiguration {
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li>
+    /// <li><p><code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p></li>
+    /// <li><p><code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p></li>
+    /// <li><p><code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p></li>
+    /// <li><p><code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li><p><code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li><p><code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li><p><code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
     /// </ul>
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
@@ -57,13 +57,13 @@ impl CapacityConfigurationBuilder {
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li>
+    /// <li><p><code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p></li>
+    /// <li><p><code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p></li>
+    /// <li><p><code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p></li>
+    /// <li><p><code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li><p><code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li><p><code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li><p><code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
     /// </ul>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -72,13 +72,13 @@ impl CapacityConfigurationBuilder {
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li>
+    /// <li><p><code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p></li>
+    /// <li><p><code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p></li>
+    /// <li><p><code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p></li>
+    /// <li><p><code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li><p><code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li><p><code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li><p><code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
     /// </ul>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
@@ -87,13 +87,13 @@ impl CapacityConfigurationBuilder {
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li>
-    /// <li> <p> <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p> </li>
+    /// <li><p><code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and 2 vCPUs.</p></li>
+    /// <li><p><code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and 4 vCPUs.</p></li>
+    /// <li><p><code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and 8 vCPUs.</p></li>
+    /// <li><p><code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory and 16 vCPUs.</p></li>
+    /// <li><p><code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory and 32 vCPUs.</p></li>
+    /// <li><p><code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory and 64 vCPUs.</p></li>
+    /// <li><p><code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
     /// </ul>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type

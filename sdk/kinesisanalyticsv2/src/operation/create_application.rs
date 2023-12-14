@@ -266,7 +266,7 @@ pub enum CreateApplicationError {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

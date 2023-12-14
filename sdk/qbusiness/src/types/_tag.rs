@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
-    /// <p> The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
+    /// <p>The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
     pub key: ::std::string::String,
     /// <p>The value associated with the tag. The value may be an empty string but it can't be null.</p>
     pub value: ::std::string::String,
 }
 impl Tag {
-    /// <p> The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
+    /// <p>The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
     pub fn key(&self) -> &str {
         use std::ops::Deref;
         self.key.deref()
@@ -36,18 +36,18 @@ pub struct TagBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl TagBuilder {
-    /// <p> The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
+    /// <p>The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
+    /// <p>The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p> The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
+    /// <p>The key for the tag. Keys are not case sensitive and must be unique for the Amazon Q application or data source.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

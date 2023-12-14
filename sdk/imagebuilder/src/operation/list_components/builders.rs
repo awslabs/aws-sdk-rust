@@ -35,7 +35,7 @@ impl ListComponentsInputBuilder {
 /// </patch>
 /// </minor>
 /// </major></p>
-/// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+/// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComponentsFluentBuilder {
@@ -148,12 +148,12 @@ impl ListComponentsFluentBuilder {
     ///
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li> <p> <code>description</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <li><p><code>description</code></p></li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>platform</code></p></li>
+    /// <li><p><code>supportedOsVersion</code></p></li>
+    /// <li><p><code>type</code></p></li>
+    /// <li><p><code>version</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -161,12 +161,12 @@ impl ListComponentsFluentBuilder {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li> <p> <code>description</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <li><p><code>description</code></p></li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>platform</code></p></li>
+    /// <li><p><code>supportedOsVersion</code></p></li>
+    /// <li><p><code>type</code></p></li>
+    /// <li><p><code>version</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -174,12 +174,12 @@ impl ListComponentsFluentBuilder {
     }
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
-    /// <li> <p> <code>description</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>platform</code> </p> </li>
-    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
-    /// <li> <p> <code>type</code> </p> </li>
-    /// <li> <p> <code>version</code> </p> </li>
+    /// <li><p><code>description</code></p></li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>platform</code></p></li>
+    /// <li><p><code>supportedOsVersion</code></p></li>
+    /// <li><p><code>type</code></p></li>
+    /// <li><p><code>version</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

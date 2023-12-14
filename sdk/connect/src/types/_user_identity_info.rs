@@ -11,7 +11,7 @@ pub struct UserIdentityInfo {
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
-    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
     pub secondary_email: ::std::option::Option<::std::string::String>,
     /// <p>The user's mobile number.</p>
     pub mobile: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl UserIdentityInfo {
         self.email.as_deref()
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
-    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
     pub fn secondary_email(&self) -> ::std::option::Option<&str> {
         self.secondary_email.as_deref()
     }
@@ -100,19 +100,19 @@ impl UserIdentityInfoBuilder {
         &self.email
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
-    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
     pub fn secondary_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secondary_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
-    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
     pub fn set_secondary_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secondary_email = input;
         self
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
-    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
     pub fn get_secondary_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.secondary_email
     }

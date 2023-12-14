@@ -22,7 +22,7 @@ impl RemoveTagsFromVaultInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveTagsFromVault`.
 ///
-/// <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon S3 Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault. </p>
+/// <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon S3 Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromVaultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

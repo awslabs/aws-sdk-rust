@@ -2,8 +2,8 @@
 
 /// <p>Inspect one of the headers in the web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. The name isn't case sensitive.</p>
 /// <p>You can filter and inspect all headers with the <code>FieldToMatch</code> setting <code>Headers</code>.</p>
-/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
-/// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> </p>
+/// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification.</p>
+/// <p>Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleHeader {

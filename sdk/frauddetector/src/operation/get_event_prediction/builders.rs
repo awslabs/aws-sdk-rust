@@ -204,10 +204,10 @@ impl GetEventPredictionFluentBuilder {
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p><b>For Amazon Fraud Detector trained models:</b></p>
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    /// <p> <b>For imported SageMaker models:</b> </p>
-    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
+    /// <p><b>For imported SageMaker models:</b></p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.</p>
     pub fn event_variables(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -220,10 +220,10 @@ impl GetEventPredictionFluentBuilder {
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p><b>For Amazon Fraud Detector trained models:</b></p>
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    /// <p> <b>For imported SageMaker models:</b> </p>
-    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
+    /// <p><b>For imported SageMaker models:</b></p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.</p>
     pub fn set_event_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -235,10 +235,10 @@ impl GetEventPredictionFluentBuilder {
     /// <p>You must provide at least one eventVariable</p>
     /// </important>
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p><b>For Amazon Fraud Detector trained models:</b></p>
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    /// <p> <b>For imported SageMaker models:</b> </p>
-    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
+    /// <p><b>For imported SageMaker models:</b></p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.</p>
     pub fn get_event_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_event_variables()
     }

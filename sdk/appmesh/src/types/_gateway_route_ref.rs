@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteRef {
-    /// <p>The name of the service mesh that the resource resides in. </p>
+    /// <p>The name of the service mesh that the resource resides in.</p>
     pub mesh_name: ::std::string::String,
     /// <p>The name of the gateway route.</p>
     pub gateway_route_name: ::std::string::String,
@@ -24,7 +24,7 @@ pub struct GatewayRouteRef {
     pub last_updated_at: ::aws_smithy_types::DateTime,
 }
 impl GatewayRouteRef {
-    /// <p>The name of the service mesh that the resource resides in. </p>
+    /// <p>The name of the service mesh that the resource resides in.</p>
     pub fn mesh_name(&self) -> &str {
         use std::ops::Deref;
         self.mesh_name.deref()
@@ -89,18 +89,18 @@ pub struct GatewayRouteRefBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GatewayRouteRefBuilder {
-    /// <p>The name of the service mesh that the resource resides in. </p>
+    /// <p>The name of the service mesh that the resource resides in.</p>
     /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the service mesh that the resource resides in. </p>
+    /// <p>The name of the service mesh that the resource resides in.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_name = input;
         self
     }
-    /// <p>The name of the service mesh that the resource resides in. </p>
+    /// <p>The name of the service mesh that the resource resides in.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.mesh_name
     }

@@ -9,11 +9,11 @@ pub struct GetComplianceDetailsByResourceInput {
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by compliance.</p>
-    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl GetComplianceDetailsByResourceInput {
         self.resource_id.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_types.is_none()`.
     pub fn compliance_types(&self) -> &[crate::types::ComplianceType] {
@@ -38,7 +38,7 @@ impl GetComplianceDetailsByResourceInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn resource_evaluation_id(&self) -> ::std::option::Option<&str> {
@@ -96,7 +96,7 @@ impl GetComplianceDetailsByResourceInputBuilder {
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
     ///
     /// <p>Filters the results by compliance.</p>
-    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         let mut v = self.compliance_types.unwrap_or_default();
         v.push(input);
@@ -104,13 +104,13 @@ impl GetComplianceDetailsByResourceInputBuilder {
         self
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn set_compliance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>) -> Self {
         self.compliance_types = input;
         self
     }
     /// <p>Filters the results by compliance.</p>
-    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    /// <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn get_compliance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
         &self.compliance_types
     }
@@ -128,21 +128,21 @@ impl GetComplianceDetailsByResourceInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn resource_evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_evaluation_id = input;
         self
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {

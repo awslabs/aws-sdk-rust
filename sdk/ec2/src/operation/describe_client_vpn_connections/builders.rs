@@ -134,8 +134,8 @@ impl DescribeClientVpnConnectionsFluentBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -143,8 +143,8 @@ impl DescribeClientVpnConnectionsFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -152,8 +152,8 @@ impl DescribeClientVpnConnectionsFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
-    /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
+    /// <li><p><code>connection-id</code> - The ID of the connection.</p></li>
+    /// <li><p><code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

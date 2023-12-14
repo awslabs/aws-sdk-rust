@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::set_workload_id):<br>required: **true**<br><p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p><br>
-    ///   - [`milestone_number(i32)`](crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::milestone_number) / [`set_milestone_number(Option<i32>)`](crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::set_milestone_number):<br>required: **true**<br><p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p><br>
+    ///   - [`milestone_number(i32)`](crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::milestone_number) / [`set_milestone_number(Option<i32>)`](crate::operation::get_milestone::builders::GetMilestoneFluentBuilder::set_milestone_number):<br>required: **true**<br><p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p><br>
     /// - On success, responds with [`GetMilestoneOutput`](crate::operation::get_milestone::GetMilestoneOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::get_milestone::GetMilestoneOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`milestone(Option<Milestone>)`](crate::operation::get_milestone::GetMilestoneOutput::milestone): <p>A milestone return object.</p>

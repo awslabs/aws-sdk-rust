@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateEventSu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateEventSubscriptionError {
-    /// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     EventSubscriptionQuotaExceededFault(crate::types::error::EventSubscriptionQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::types::error::InvalidTagFault),

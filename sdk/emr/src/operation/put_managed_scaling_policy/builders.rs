@@ -22,7 +22,7 @@ impl PutManagedScalingPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutManagedScalingPolicy`.
 ///
-/// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as Amazon EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
+/// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as Amazon EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutManagedScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl PutManagedScalingPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
+    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
         self
     }
-    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
+    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
-    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
+    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_id()
     }
-    /// <p>Specifies the constraints for the managed scaling policy. </p>
+    /// <p>Specifies the constraints for the managed scaling policy.</p>
     pub fn managed_scaling_policy(mut self, input: crate::types::ManagedScalingPolicy) -> Self {
         self.inner = self.inner.managed_scaling_policy(input);
         self
     }
-    /// <p>Specifies the constraints for the managed scaling policy. </p>
+    /// <p>Specifies the constraints for the managed scaling policy.</p>
     pub fn set_managed_scaling_policy(mut self, input: ::std::option::Option<crate::types::ManagedScalingPolicy>) -> Self {
         self.inner = self.inner.set_managed_scaling_policy(input);
         self
     }
-    /// <p>Specifies the constraints for the managed scaling policy. </p>
+    /// <p>Specifies the constraints for the managed scaling policy.</p>
     pub fn get_managed_scaling_policy(&self) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
         self.inner.get_managed_scaling_policy()
     }

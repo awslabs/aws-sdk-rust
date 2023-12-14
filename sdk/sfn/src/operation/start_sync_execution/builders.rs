@@ -23,7 +23,7 @@ impl StartSyncExecutionInputBuilder {
 /// Fluent builder constructing a request to `StartSyncExecution`.
 ///
 /// <p>Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code> is not available for <code>STANDARD</code> workflows.</p> <note>
-/// <p> <code>StartSyncExecution</code> will return a <code>200 OK</code> response, even if your execution fails, because the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine code and configuration. </p>
+/// <p><code>StartSyncExecution</code> will return a <code>200 OK</code> response, even if your execution fails, because the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine code and configuration.</p>
 /// </note> <note>
 /// <p>This API action isn't logged in CloudTrail.</p>
 /// </note>
@@ -141,8 +141,8 @@ impl StartSyncExecutionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
+    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,8 +150,8 @@ impl StartSyncExecutionFluentBuilder {
         self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
+    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -159,8 +159,8 @@ impl StartSyncExecutionFluentBuilder {
         self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
+    /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {

@@ -25,7 +25,7 @@ impl ListBucketsInputBuilder {
 /// <note>
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
-/// <p>Returns a list of all buckets owned by the authenticated sender of the request. To use this operation, you must have the <code>s3:ListAllMyBuckets</code> permission. </p>
+/// <p>Returns a list of all buckets owned by the authenticated sender of the request. To use this operation, you must have the <code>s3:ListAllMyBuckets</code> permission.</p>
 /// <p>For information about Amazon S3 buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBucketsFluentBuilder {

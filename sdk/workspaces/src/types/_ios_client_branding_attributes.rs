@@ -9,24 +9,24 @@ pub struct IosClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub logo_url: ::std::option::Option<::std::string::String>,
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub logo2x_url: ::std::option::Option<::std::string::String>,
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub logo3x_url: ::std::option::Option<::std::string::String>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub support_link: ::std::option::Option<::std::string::String>,
@@ -41,21 +41,21 @@ impl IosClientBrandingAttributes {
         self.logo_url.as_deref()
     }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo2x_url(&self) -> ::std::option::Option<&str> {
         self.logo2x_url.as_deref()
     }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo3x_url(&self) -> ::std::option::Option<&str> {
         self.logo3x_url.as_deref()
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_email(&self) -> ::std::option::Option<&str> {
@@ -63,8 +63,8 @@ impl IosClientBrandingAttributes {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_link(&self) -> ::std::option::Option<&str> {
@@ -114,49 +114,49 @@ impl IosClientBrandingAttributesBuilder {
         &self.logo_url
     }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo2x_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logo2x_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn set_logo2x_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logo2x_url = input;
         self
     }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn get_logo2x_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.logo2x_url
     }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn logo3x_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logo3x_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn set_logo3x_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logo3x_url = input;
         self
     }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x).The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
-    /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
+    /// <p>For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     pub fn get_logo3x_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.logo3x_url
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,8 +165,8 @@ impl IosClientBrandingAttributesBuilder {
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -175,8 +175,8 @@ impl IosClientBrandingAttributesBuilder {
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default email is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +184,8 @@ impl IosClientBrandingAttributesBuilder {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn support_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,8 +194,8 @@ impl IosClientBrandingAttributesBuilder {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_support_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -204,8 +204,8 @@ impl IosClientBrandingAttributesBuilder {
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
-    /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
-    /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
+    /// <li><p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p></li>
+    /// <li><p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_support_link(&self) -> &::std::option::Option<::std::string::String> {

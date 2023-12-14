@@ -10,7 +10,7 @@ pub struct ListServicesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>>,
 }
@@ -26,7 +26,7 @@ impl ListServicesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -91,7 +91,7 @@ impl ListServicesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn filters(mut self, input: crate::types::ServiceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -99,13 +99,13 @@ impl ListServicesInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>> {
         &self.filters

@@ -22,7 +22,7 @@ impl GetQualificationTypeInputBuilder {
 }
 /// Fluent builder constructing a request to `GetQualificationType`.
 ///
-/// <p> The <code>GetQualificationType</code>operation retrieves information about a Qualification type using its ID. </p>
+/// <p>The <code>GetQualificationType</code>operation retrieves information about a Qualification type using its ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQualificationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

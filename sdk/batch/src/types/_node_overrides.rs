@@ -8,9 +8,9 @@
 pub struct NodeOverrides {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
-    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
-    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li><p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p></li>
+    /// <li><p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
+    /// <li><p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
     /// </ul>
     pub num_nodes: ::std::option::Option<i32>,
     /// <p>The node property overrides for the job.</p>
@@ -19,9 +19,9 @@ pub struct NodeOverrides {
 impl NodeOverrides {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
-    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
-    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li><p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p></li>
+    /// <li><p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
+    /// <li><p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
     /// </ul>
     pub fn num_nodes(&self) -> ::std::option::Option<i32> {
         self.num_nodes
@@ -50,9 +50,9 @@ pub struct NodeOverridesBuilder {
 impl NodeOverridesBuilder {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
-    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
-    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li><p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p></li>
+    /// <li><p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
+    /// <li><p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
     /// </ul>
     pub fn num_nodes(mut self, input: i32) -> Self {
         self.num_nodes = ::std::option::Option::Some(input);
@@ -60,9 +60,9 @@ impl NodeOverridesBuilder {
     }
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
-    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
-    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li><p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p></li>
+    /// <li><p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
+    /// <li><p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
     /// </ul>
     pub fn set_num_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_nodes = input;
@@ -70,9 +70,9 @@ impl NodeOverridesBuilder {
     }
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
-    /// <li> <p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p> </li>
-    /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
-    /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
+    /// <li><p>There must be at least one node range in your job definition that has an open upper boundary, such as <code>:</code> or <code>n:</code>.</p></li>
+    /// <li><p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
+    /// <li><p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
     /// </ul>
     pub fn get_num_nodes(&self) -> &::std::option::Option<i32> {
         &self.num_nodes

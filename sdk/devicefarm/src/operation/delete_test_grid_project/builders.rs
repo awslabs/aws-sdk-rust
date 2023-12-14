@@ -22,7 +22,7 @@ impl DeleteTestGridProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTestGridProject`.
 ///
-/// <p> Deletes a Selenium testing project and all content generated under it. </p> <important>
+/// <p>Deletes a Selenium testing project and all content generated under it.</p> <important>
 /// <p>You cannot undo this operation.</p>
 /// </important> <note>
 /// <p>You cannot delete a project if it has active sessions.</p>

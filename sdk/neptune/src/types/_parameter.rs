@@ -18,7 +18,7 @@ pub struct Parameter {
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
+    /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub is_modifiable: ::std::option::Option<bool>,
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
@@ -54,7 +54,7 @@ impl Parameter {
     pub fn allowed_values(&self) -> ::std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
+    /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
@@ -188,17 +188,17 @@ impl ParameterBuilder {
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_values
     }
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
+    /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
+    /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
     }
-    /// <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
+    /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
         &self.is_modifiable
     }

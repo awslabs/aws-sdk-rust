@@ -242,11 +242,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPricingPl
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListPricingPlansError {
-    /// <p>You do not have sufficient access to perform this action. </p>
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An unexpected error occurred while processing a request. </p>
+    /// <p>An unexpected error occurred while processing a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request was denied due to request throttling. </p>
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input doesn't match with the constraints specified by Amazon Web Services.</p>
     ValidationException(crate::types::error::ValidationException),

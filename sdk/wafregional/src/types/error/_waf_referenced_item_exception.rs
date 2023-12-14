@@ -2,8 +2,8 @@
 
 /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
 /// <ul>
-/// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
-/// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
+/// <li><p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p></li>
+/// <li><p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

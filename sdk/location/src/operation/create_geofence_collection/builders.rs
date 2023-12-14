@@ -111,9 +111,9 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
-    /// <li> <p>Must be a unique geofence collection name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
+    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique geofence collection name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
@@ -122,9 +122,9 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
-    /// <li> <p>Must be a unique geofence collection name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
+    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique geofence collection name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
@@ -133,9 +133,9 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
-    /// <li> <p>Must be a unique geofence collection name.</p> </li>
-    /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
+    /// <li><p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p></li>
+    /// <li><p>Must be a unique geofence collection name.</p></li>
+    /// <li><p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p></li>
     /// </ul>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collection_name()
@@ -193,60 +193,60 @@ impl CreateGeofenceCollectionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Format: <code>"key" : "value"</code></p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li> <p>Maximum 50 tags per resource</p> </li>
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
+    /// <li><p>Maximum 50 tags per resource</p></li>
+    /// <li><p>Each resource tag must be unique with a maximum of one value.</p></li>
+    /// <li><p>Maximum key length: 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length: 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }

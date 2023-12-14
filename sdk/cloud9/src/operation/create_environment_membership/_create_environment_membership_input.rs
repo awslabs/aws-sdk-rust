@@ -9,8 +9,8 @@ pub struct CreateEnvironmentMembershipInput {
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub permissions: ::std::option::Option<crate::types::MemberPermissions>,
 }
@@ -25,8 +25,8 @@ impl CreateEnvironmentMembershipInput {
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn permissions(&self) -> ::std::option::Option<&crate::types::MemberPermissions> {
         self.permissions.as_ref()
@@ -80,8 +80,8 @@ impl CreateEnvironmentMembershipInputBuilder {
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     /// This field is required.
     pub fn permissions(mut self, input: crate::types::MemberPermissions) -> Self {
@@ -90,8 +90,8 @@ impl CreateEnvironmentMembershipInputBuilder {
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::MemberPermissions>) -> Self {
         self.permissions = input;
@@ -99,8 +99,8 @@ impl CreateEnvironmentMembershipInputBuilder {
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
-    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
-    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// <li><p><code>read-only</code>: Has read-only access to the environment.</p></li>
+    /// <li><p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::MemberPermissions> {
         &self.permissions

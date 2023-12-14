@@ -7,7 +7,7 @@ pub struct StartSpeakerEnrollmentJobInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A name for your speaker enrollment job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl StartSpeakerEnrollmentJobInput {
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -109,18 +109,18 @@ impl StartSpeakerEnrollmentJobInputBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }

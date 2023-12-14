@@ -22,7 +22,7 @@ impl PutRetentionConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `PutRetentionConfiguration`.
 ///
-/// <p>Creates and updates the retention configuration with details about retention period (number of days) that Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the default object. </p> <note>
+/// <p>Creates and updates the retention configuration with details about retention period (number of days) that Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the default object.</p> <note>
 /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

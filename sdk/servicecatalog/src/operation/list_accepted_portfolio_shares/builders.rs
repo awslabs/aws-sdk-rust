@@ -116,8 +116,8 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -125,8 +125,8 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -134,8 +134,8 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()
@@ -170,9 +170,9 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
-    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
-    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
-    /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
+    /// <li><p><code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p></li>
+    /// <li><p><code>AWS_SERVICECATALOG</code> - Deprecated type.</p></li>
+    /// <li><p><code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p></li>
     /// </ul>
     pub fn portfolio_share_type(mut self, input: crate::types::PortfolioShareType) -> Self {
         self.inner = self.inner.portfolio_share_type(input);
@@ -180,9 +180,9 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
-    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
-    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
-    /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
+    /// <li><p><code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p></li>
+    /// <li><p><code>AWS_SERVICECATALOG</code> - Deprecated type.</p></li>
+    /// <li><p><code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p></li>
     /// </ul>
     pub fn set_portfolio_share_type(mut self, input: ::std::option::Option<crate::types::PortfolioShareType>) -> Self {
         self.inner = self.inner.set_portfolio_share_type(input);
@@ -190,9 +190,9 @@ impl ListAcceptedPortfolioSharesFluentBuilder {
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
-    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
-    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
-    /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
+    /// <li><p><code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p></li>
+    /// <li><p><code>AWS_SERVICECATALOG</code> - Deprecated type.</p></li>
+    /// <li><p><code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p></li>
     /// </ul>
     pub fn get_portfolio_share_type(&self) -> &::std::option::Option<crate::types::PortfolioShareType> {
         self.inner.get_portfolio_share_type()

@@ -6,7 +6,7 @@
 pub struct MemberSummary {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub account_id: ::std::string::String,
-    /// <p>The status of the member. </p>
+    /// <p>The status of the member.</p>
     pub status: crate::types::MemberStatus,
     /// <p>The member's display name.</p>
     pub display_name: ::std::string::String,
@@ -20,7 +20,7 @@ pub struct MemberSummary {
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the member's associated membership, if present.</p>
     pub membership_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     pub payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
 impl MemberSummary {
@@ -29,7 +29,7 @@ impl MemberSummary {
         use std::ops::Deref;
         self.account_id.deref()
     }
-    /// <p>The status of the member. </p>
+    /// <p>The status of the member.</p>
     pub fn status(&self) -> &crate::types::MemberStatus {
         &self.status
     }
@@ -59,7 +59,7 @@ impl MemberSummary {
     pub fn membership_arn(&self) -> ::std::option::Option<&str> {
         self.membership_arn.as_deref()
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::PaymentConfiguration> {
         self.payment_configuration.as_ref()
     }
@@ -101,18 +101,18 @@ impl MemberSummaryBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The status of the member. </p>
+    /// <p>The status of the member.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::MemberStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the member. </p>
+    /// <p>The status of the member.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MemberStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the member. </p>
+    /// <p>The status of the member.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MemberStatus> {
         &self.status
     }
@@ -209,18 +209,18 @@ impl MemberSummaryBuilder {
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_arn
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     /// This field is required.
     pub fn payment_configuration(mut self, input: crate::types::PaymentConfiguration) -> Self {
         self.payment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::PaymentConfiguration>) -> Self {
         self.payment_configuration = input;
         self
     }
-    /// <p>The collaboration member's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
         &self.payment_configuration
     }

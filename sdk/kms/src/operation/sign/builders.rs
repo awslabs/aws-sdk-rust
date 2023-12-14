@@ -23,22 +23,22 @@ impl SignInputBuilder {
 /// Fluent builder constructing a request to `Sign`.
 ///
 /// <p>Creates a <a href="https://en.wikipedia.org/wiki/Digital_signature">digital signature</a> for a message or message digest by using the private key in an asymmetric signing KMS key. To verify the signature, use the <code>Verify</code> operation, or use the public key in the same asymmetric KMS key outside of KMS. For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p>Digital signatures are generated and verified by using asymmetric key pair, such as an RSA or ECC pair that is represented by an asymmetric KMS key. The key owner (or an authorized user) uses their private key to sign a message. Anyone with the public key can verify that the message was signed with that particular private key and that the message hasn't changed since it was signed. </p>
+/// <p>Digital signatures are generated and verified by using asymmetric key pair, such as an RSA or ECC pair that is represented by an asymmetric KMS key. The key owner (or an authorized user) uses their private key to sign a message. Anyone with the public key can verify that the message was signed with that particular private key and that the message hasn't changed since it was signed.</p>
 /// <p>To use the <code>Sign</code> operation, provide the following information:</p>
 /// <ul>
-/// <li> <p>Use the <code>KeyId</code> parameter to identify an asymmetric KMS key with a <code>KeyUsage</code> value of <code>SIGN_VERIFY</code>. To get the <code>KeyUsage</code> value of a KMS key, use the <code>DescribeKey</code> operation. The caller must have <code>kms:Sign</code> permission on the KMS key.</p> </li>
-/// <li> <p>Use the <code>Message</code> parameter to specify the message or message digest to sign. You can submit messages of up to 4096 bytes. To sign a larger message, generate a hash digest of the message, and then provide the hash digest in the <code>Message</code> parameter. To indicate whether the message is a full message or a digest, use the <code>MessageType</code> parameter.</p> </li>
-/// <li> <p>Choose a signing algorithm that is compatible with the KMS key. </p> </li>
+/// <li><p>Use the <code>KeyId</code> parameter to identify an asymmetric KMS key with a <code>KeyUsage</code> value of <code>SIGN_VERIFY</code>. To get the <code>KeyUsage</code> value of a KMS key, use the <code>DescribeKey</code> operation. The caller must have <code>kms:Sign</code> permission on the KMS key.</p></li>
+/// <li><p>Use the <code>Message</code> parameter to specify the message or message digest to sign. You can submit messages of up to 4096 bytes. To sign a larger message, generate a hash digest of the message, and then provide the hash digest in the <code>Message</code> parameter. To indicate whether the message is a full message or a digest, use the <code>MessageType</code> parameter.</p></li>
+/// <li><p>Choose a signing algorithm that is compatible with the KMS key.</p></li>
 /// </ul> <important>
 /// <p>When signing a message, be sure to record the KMS key and the signing algorithm. This information is required to verify the signature.</p>
 /// </important> <note>
-/// <p>Best practices recommend that you limit the time during which any signature is effective. This deters an attack where the actor uses a signed message to establish validity repeatedly or long after the message is superseded. Signatures do not include a timestamp, but you can include a timestamp in the signed message to help you detect when its time to refresh the signature. </p>
+/// <p>Best practices recommend that you limit the time during which any signature is effective. This deters an attack where the actor uses a signed message to establish validity repeatedly or long after the message is superseded. Signatures do not include a timestamp, but you can include a timestamp in the signed message to help you detect when its time to refresh the signature.</p>
 /// </note>
-/// <p>To verify the signature that this operation generates, use the <code>Verify</code> operation. Or use the <code>GetPublicKey</code> operation to download the public key and then use the public key to verify the signature outside of KMS. </p>
+/// <p>To verify the signature that this operation generates, use the <code>Verify</code> operation. Or use the <code>GetPublicKey</code> operation to download the public key and then use the public key to verify the signature outside of KMS.</p>
 /// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p> <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN in the value of the <code>KeyId</code> parameter.</p>
-/// <p> <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Sign</a> (key policy)</p>
-/// <p> <b>Related operations</b>: <code>Verify</code> </p>
+/// <p><b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN in the value of the <code>KeyId</code> parameter.</p>
+/// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Sign</a> (key policy)</p>
+/// <p><b>Related operations</b>: <code>Verify</code></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SignFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,10 +115,10 @@ impl SignFluentBuilder {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,10 +129,10 @@ impl SignFluentBuilder {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -143,10 +143,10 @@ impl SignFluentBuilder {
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
-    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li><p>Alias name: <code>alias/ExampleAlias</code></p></li>
+    /// <li><p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,10 +177,10 @@ impl SignFluentBuilder {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, this can cause verification failures when verifying with a system that assumes a single hash.</p>
     /// <p>The hashing algorithm in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.inner = self.inner.message_type(input);
@@ -194,10 +194,10 @@ impl SignFluentBuilder {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, this can cause verification failures when verifying with a system that assumes a single hash.</p>
     /// <p>The hashing algorithm in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.inner = self.inner.set_message_type(input);
@@ -211,10 +211,10 @@ impl SignFluentBuilder {
     /// <p>You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest is hashed again while signing. However, this can cause verification failures when verifying with a system that assumes a single hash.</p>
     /// <p>The hashing algorithm in that <code>Sign</code> uses is based on the <code>SigningAlgorithm</code> value.</p>
     /// <ul>
-    /// <li> <p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p> </li>
-    /// <li> <p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p> </li>
-    /// <li> <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p> </li>
+    /// <li><p>Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.</p></li>
+    /// <li><p>Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.</p></li>
+    /// <li><p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         self.inner.get_message_type()
@@ -240,36 +240,36 @@ impl SignFluentBuilder {
     pub fn get_grant_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_grant_tokens()
     }
-    /// <p>Specifies the signing algorithm to use when signing the message. </p>
+    /// <p>Specifies the signing algorithm to use when signing the message.</p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmSpec) -> Self {
         self.inner = self.inner.signing_algorithm(input);
         self
     }
-    /// <p>Specifies the signing algorithm to use when signing the message. </p>
+    /// <p>Specifies the signing algorithm to use when signing the message.</p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithmSpec>) -> Self {
         self.inner = self.inner.set_signing_algorithm(input);
         self
     }
-    /// <p>Specifies the signing algorithm to use when signing the message. </p>
+    /// <p>Specifies the signing algorithm to use when signing the message.</p>
     /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key. When signing with RSA key pairs, RSASSA-PSS algorithms are preferred. We include RSASSA-PKCS1-v1_5 algorithms for compatibility with existing applications.</p>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
         self.inner.get_signing_algorithm()
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
         self
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()

@@ -13,8 +13,8 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -24,9 +24,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>It must contain 1 to 63 alphanumeric characters.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -34,12 +34,12 @@ pub struct CreateDbInstanceInput {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>Must contain a letter.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 8 alphanumeric characters.</p></li>
+    /// <li><p>Must contain a letter.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -55,9 +55,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -67,9 +67,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -79,9 +79,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -89,10 +89,10 @@ pub struct CreateDbInstanceInput {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// <li><p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -102,9 +102,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 63 letters, numbers, or underscores.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -118,11 +118,11 @@ pub struct CreateDbInstanceInput {
     /// <p>The identifier for this DB instance. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.</p>
@@ -133,8 +133,8 @@ pub struct CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -143,8 +143,8 @@ pub struct CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -153,9 +153,9 @@ pub struct CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -164,9 +164,9 @@ pub struct CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -175,9 +175,9 @@ pub struct CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -186,9 +186,9 @@ pub struct CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -197,21 +197,21 @@ pub struct CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned IOPS storage (io1):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Provisioned IOPS storage (io1):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 100 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Magnetic storage (standard):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 100 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Magnetic storage (standard):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>
-    /// </ul> </li>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 1024.</p></li>
+    /// </ul></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -222,26 +222,26 @@ pub struct CreateDbInstanceInput {
     /// <p>Not every database engine is available in every Amazon Web Services Region.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> (for Aurora MySQL DB instances)</p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>aurora-mysql</code> (for Aurora MySQL DB instances)</p></li>
+    /// <li><p><code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The name for the master user.</p>
@@ -249,26 +249,26 @@ pub struct CreateDbInstanceInput {
     /// <p>This setting is required for RDS DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master user.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
@@ -283,81 +283,81 @@ pub struct CreateDbInstanceInput {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p> </li>
-    /// <li> <p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> </li>
+    /// <li><p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li><p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p></li>
     /// </ul>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB subnet group.</p> </li>
-    /// <li> <p>Must not be <code>default</code>.</p> </li>
+    /// <li><p>Must match the name of an existing DB subnet group.</p></li>
+    /// <li><p>Must not be <code>default</code>.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>. </p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance. If you don't specify a value, then Amazon RDS uses the default DB parameter group for the specified DB engine and version.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to <code>0</code> disables automated backups.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
-    /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>This setting doesn't apply to Aurora DB instances. The port number is managed by the cluster.</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>1521</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p> </li>
+    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The version number of the database engine to use.</p>
@@ -422,20 +422,20 @@ pub struct CreateDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
-    /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li><p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p></li>
+    /// <li><p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p></li>
     /// </ul>
     pub iops: ::std::option::Option<i32>,
     /// <p>The option group to associate the DB instance with.</p>
@@ -445,8 +445,8 @@ pub struct CreateDbInstanceInput {
     /// <p>For supported engines, the character set (<code>CharacterSet</code>) to associate the DB instance with.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p> </li>
-    /// <li> <p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p> </li>
+    /// <li><p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p></li>
+    /// <li><p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p></li>
     /// </ul>
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
@@ -458,13 +458,13 @@ pub struct CreateDbInstanceInput {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Tags to assign to the DB instance.</p>
@@ -475,7 +475,7 @@ pub struct CreateDbInstanceInput {
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -498,34 +498,34 @@ pub struct CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub domain_fqdn: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the distinguished name format.</p> </li>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Must be in the distinguished name format.</p></li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub domain_ou: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
     pub domain_auth_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub domain_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting.</p>
@@ -533,8 +533,8 @@ pub struct CreateDbInstanceInput {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -543,14 +543,14 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Default: <code>1</code> </p>
-    /// <p>Valid Values: <code>0 - 15</code> </p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Valid Values: <code>0 - 15</code></p>
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The time zone of the DB instance. The time zone parameter is currently supported only by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
@@ -558,8 +558,8 @@ pub struct CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -574,9 +574,9 @@ pub struct CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -584,17 +584,17 @@ pub struct CreateDbInstanceInput {
     /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
+    /// <li><p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -607,8 +607,8 @@ pub struct CreateDbInstanceInput {
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Storage is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Storage is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub max_allocated_storage: ::std::option::Option<i32>,
     /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -620,35 +620,35 @@ pub struct CreateDbInstanceInput {
     /// <p>This setting is required for RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
-    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// <li><p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li><p><code>region</code> (Amazon Web Services Region)</p></li>
     /// </ul>
-    /// <p>Default: <code>region</code> </p>
+    /// <p>Default: <code>region</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>The storage throughput value for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
@@ -666,10 +666,10 @@ pub struct CreateDbInstanceInput {
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
-    /// <p>Note the following restrictions: </p>
+    /// <p>Note the following restrictions:</p>
     /// <ul>
-    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
-    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// <li><p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p></li>
+    /// <li><p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p></li>
     /// </ul>
     pub multi_tenant: ::std::option::Option<bool>,
 }
@@ -683,8 +683,8 @@ impl CreateDbInstanceInput {
     /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -694,9 +694,9 @@ impl CreateDbInstanceInput {
     /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>It must contain 1 to 63 alphanumeric characters.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -704,12 +704,12 @@ impl CreateDbInstanceInput {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>Must contain a letter.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 8 alphanumeric characters.</p></li>
+    /// <li><p>Must contain a letter.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -725,9 +725,9 @@ impl CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -737,9 +737,9 @@ impl CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -749,9 +749,9 @@ impl CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -759,10 +759,10 @@ impl CreateDbInstanceInput {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// <li><p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -772,9 +772,9 @@ impl CreateDbInstanceInput {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 63 letters, numbers, or underscores.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -790,11 +790,11 @@ impl CreateDbInstanceInput {
     /// <p>The identifier for this DB instance. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -807,8 +807,8 @@ impl CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -817,8 +817,8 @@ impl CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -827,9 +827,9 @@ impl CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -838,9 +838,9 @@ impl CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -849,9 +849,9 @@ impl CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -860,9 +860,9 @@ impl CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -871,21 +871,21 @@ impl CreateDbInstanceInput {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned IOPS storage (io1):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Provisioned IOPS storage (io1):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 100 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Magnetic storage (standard):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 100 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Magnetic storage (standard):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>
-    /// </ul> </li>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 1024.</p></li>
+    /// </ul></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -900,26 +900,26 @@ impl CreateDbInstanceInput {
     /// <p>Not every database engine is available in every Amazon Web Services Region.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> (for Aurora MySQL DB instances)</p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>aurora-mysql</code> (for Aurora MySQL DB instances)</p></li>
+    /// <li><p><code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
@@ -929,9 +929,9 @@ impl CreateDbInstanceInput {
     /// <p>This setting is required for RDS DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
@@ -940,17 +940,17 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -975,32 +975,32 @@ impl CreateDbInstanceInput {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p> </li>
-    /// <li> <p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> </li>
+    /// <li><p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li><p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p></li>
     /// </ul>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB subnet group.</p> </li>
-    /// <li> <p>Must not be <code>default</code>.</p> </li>
+    /// <li><p>Must match the name of an existing DB subnet group.</p></li>
+    /// <li><p>Must not be <code>default</code>.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
-    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>. </p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
@@ -1009,21 +1009,21 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to <code>0</code> disables automated backups.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
-    /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
@@ -1032,29 +1032,29 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>This setting doesn't apply to Aurora DB instances. The port number is managed by the cluster.</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>1521</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p> </li>
+    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
@@ -1062,8 +1062,8 @@ impl CreateDbInstanceInput {
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
@@ -1134,12 +1134,12 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
@@ -1148,8 +1148,8 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
-    /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li><p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p></li>
+    /// <li><p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p></li>
     /// </ul>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
@@ -1163,8 +1163,8 @@ impl CreateDbInstanceInput {
     /// <p>For supported engines, the character set (<code>CharacterSet</code>) to associate the DB instance with.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p> </li>
-    /// <li> <p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p> </li>
+    /// <li><p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p></li>
+    /// <li><p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p></li>
     /// </ul>
     pub fn character_set_name(&self) -> ::std::option::Option<&str> {
         self.character_set_name.as_deref()
@@ -1180,13 +1180,13 @@ impl CreateDbInstanceInput {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
@@ -1205,7 +1205,7 @@ impl CreateDbInstanceInput {
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -1238,8 +1238,8 @@ impl CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
@@ -1247,33 +1247,33 @@ impl CreateDbInstanceInput {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn domain_fqdn(&self) -> ::std::option::Option<&str> {
         self.domain_fqdn.as_deref()
     }
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the distinguished name format.</p> </li>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Must be in the distinguished name format.</p></li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn domain_ou(&self) -> ::std::option::Option<&str> {
         self.domain_ou.as_deref()
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
     pub fn domain_auth_secret_arn(&self) -> ::std::option::Option<&str> {
         self.domain_auth_secret_arn.as_deref()
     }
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_dns_ips.is_none()`.
     pub fn domain_dns_ips(&self) -> &[::std::string::String] {
@@ -1287,8 +1287,8 @@ impl CreateDbInstanceInput {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub fn monitoring_interval(&self) -> ::std::option::Option<i32> {
         self.monitoring_interval
     }
@@ -1301,16 +1301,16 @@ impl CreateDbInstanceInput {
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Default: <code>1</code> </p>
-    /// <p>Valid Values: <code>0 - 15</code> </p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Valid Values: <code>0 - 15</code></p>
     pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
         self.promotion_tier
     }
@@ -1322,8 +1322,8 @@ impl CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
@@ -1344,9 +1344,9 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -1356,17 +1356,17 @@ impl CreateDbInstanceInput {
     /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
+    /// <li><p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
@@ -1389,8 +1389,8 @@ impl CreateDbInstanceInput {
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Storage is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Storage is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn max_allocated_storage(&self) -> ::std::option::Option<i32> {
         self.max_allocated_storage
@@ -1406,9 +1406,9 @@ impl CreateDbInstanceInput {
     /// <p>This setting is required for RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
@@ -1417,18 +1417,18 @@ impl CreateDbInstanceInput {
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
-    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// <li><p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li><p><code>region</code> (Amazon Web Services Region)</p></li>
     /// </ul>
-    /// <p>Default: <code>region</code> </p>
+    /// <p>Default: <code>region</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn backup_target(&self) -> ::std::option::Option<&str> {
         self.backup_target.as_deref()
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
@@ -1439,10 +1439,10 @@ impl CreateDbInstanceInput {
         self.storage_throughput
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_user_password
@@ -1470,10 +1470,10 @@ impl CreateDbInstanceInput {
         self.dedicated_log_volume
     }
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
-    /// <p>Note the following restrictions: </p>
+    /// <p>Note the following restrictions:</p>
     /// <ul>
-    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
-    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// <li><p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p></li>
+    /// <li><p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p></li>
     /// </ul>
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
         self.multi_tenant
@@ -1563,8 +1563,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1574,9 +1574,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>It must contain 1 to 63 alphanumeric characters.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1584,12 +1584,12 @@ impl CreateDbInstanceInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>Must contain a letter.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 8 alphanumeric characters.</p></li>
+    /// <li><p>Must contain a letter.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1605,9 +1605,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1617,9 +1617,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1629,9 +1629,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1639,10 +1639,10 @@ impl CreateDbInstanceInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// <li><p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1652,9 +1652,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 63 letters, numbers, or underscores.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1677,8 +1677,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1688,9 +1688,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>It must contain 1 to 63 alphanumeric characters.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1698,12 +1698,12 @@ impl CreateDbInstanceInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>Must contain a letter.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 8 alphanumeric characters.</p></li>
+    /// <li><p>Must contain a letter.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1719,9 +1719,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1731,9 +1731,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1743,9 +1743,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1753,10 +1753,10 @@ impl CreateDbInstanceInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// <li><p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1766,9 +1766,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 63 letters, numbers, or underscores.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1791,8 +1791,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1802,9 +1802,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>It must contain 1 to 63 alphanumeric characters.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1812,12 +1812,12 @@ impl CreateDbInstanceInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>Must contain a letter.</p> </li>
-    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// <li><p>Must contain 1 to 8 alphanumeric characters.</p></li>
+    /// <li><p>Must contain a letter.</p></li>
+    /// <li><p>Can't be a word reserved by the database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1833,9 +1833,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1845,9 +1845,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1857,9 +1857,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 64 letters or numbers.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1867,10 +1867,10 @@ impl CreateDbInstanceInputBuilder {
     /// </dt>
     /// <dd>
     /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Default: <code>ORCL</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// <li><p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1880,9 +1880,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// <li><p>Must contain 1 to 63 letters, numbers, or underscores.</p></li>
+    /// <li><p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p></li>
+    /// <li><p>Can't be a word reserved by the specified database engine.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1898,11 +1898,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The identifier for this DB instance. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
@@ -1911,11 +1911,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The identifier for this DB instance. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
@@ -1923,11 +1923,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The identifier for this DB instance. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
@@ -1940,8 +1940,8 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1950,8 +1950,8 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1960,9 +1960,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1971,9 +1971,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1982,9 +1982,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -1993,9 +1993,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2004,21 +2004,21 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned IOPS storage (io1):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Provisioned IOPS storage (io1):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 100 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Magnetic storage (standard):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 100 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Magnetic storage (standard):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>
-    /// </ul> </li>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 1024.</p></li>
+    /// </ul></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -2035,8 +2035,8 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2045,8 +2045,8 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2055,9 +2055,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2066,9 +2066,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2077,9 +2077,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2088,9 +2088,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2099,21 +2099,21 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned IOPS storage (io1):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Provisioned IOPS storage (io1):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 100 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Magnetic storage (standard):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 100 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Magnetic storage (standard):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>
-    /// </ul> </li>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 1024.</p></li>
+    /// </ul></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -2130,8 +2130,8 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2140,8 +2140,8 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2150,9 +2150,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2161,9 +2161,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2172,9 +2172,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2183,9 +2183,9 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li>
-    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li>
-    /// <li> <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
+    /// <li><p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <li><p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -2194,21 +2194,21 @@ impl CreateDbInstanceInputBuilder {
     /// <dd>
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
-    /// <li> <p>General Purpose (SSD) storage (gp2, gp3):</p>
+    /// <li><p>General Purpose (SSD) storage (gp2, gp3):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Provisioned IOPS storage (io1):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Provisioned IOPS storage (io1):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 100 to 16384.</p> </li>
-    /// </ul> </li>
-    /// <li> <p>Magnetic storage (standard):</p>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 100 to 16384.</p></li>
+    /// </ul></li>
+    /// <li><p>Magnetic storage (standard):</p>
     /// <ul>
-    /// <li> <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p> </li>
-    /// <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>
-    /// </ul> </li>
+    /// <li><p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p></li>
+    /// <li><p>Web and Express editions: Must be an integer from 20 to 1024.</p></li>
+    /// </ul></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -2234,26 +2234,26 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not every database engine is available in every Amazon Web Services Region.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> (for Aurora MySQL DB instances)</p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>aurora-mysql</code> (for Aurora MySQL DB instances)</p></li>
+    /// <li><p><code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -2264,26 +2264,26 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not every database engine is available in every Amazon Web Services Region.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> (for Aurora MySQL DB instances)</p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>aurora-mysql</code> (for Aurora MySQL DB instances)</p></li>
+    /// <li><p><code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
@@ -2293,26 +2293,26 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not every database engine is available in every Amazon Web Services Region.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>aurora-mysql</code> (for Aurora MySQL DB instances)</p> </li>
-    /// <li> <p> <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
-    /// <li> <p> <code>db2-ae</code> </p> </li>
-    /// <li> <p> <code>db2-se</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
-    /// <li> <p> <code>mysql</code> </p> </li>
-    /// <li> <p> <code>oracle-ee</code> </p> </li>
-    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-    /// <li> <p> <code>oracle-se2</code> </p> </li>
-    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
-    /// <li> <p> <code>postgres</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
-    /// <li> <p> <code>sqlserver-se</code> </p> </li>
-    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
-    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// <li><p><code>aurora-mysql</code> (for Aurora MySQL DB instances)</p></li>
+    /// <li><p><code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p></li>
+    /// <li><p><code>db2-ae</code></p></li>
+    /// <li><p><code>db2-se</code></p></li>
+    /// <li><p><code>mariadb</code></p></li>
+    /// <li><p><code>mysql</code></p></li>
+    /// <li><p><code>oracle-ee</code></p></li>
+    /// <li><p><code>oracle-ee-cdb</code></p></li>
+    /// <li><p><code>oracle-se2</code></p></li>
+    /// <li><p><code>oracle-se2-cdb</code></p></li>
+    /// <li><p><code>postgres</code></p></li>
+    /// <li><p><code>sqlserver-ee</code></p></li>
+    /// <li><p><code>sqlserver-se</code></p></li>
+    /// <li><p><code>sqlserver-ex</code></p></li>
+    /// <li><p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
@@ -2322,9 +2322,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting is required for RDS DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
@@ -2335,9 +2335,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting is required for RDS DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
@@ -2348,9 +2348,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting is required for RDS DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
+    /// <li><p>Must be 1 to 16 letters, numbers, or underscores.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
@@ -2359,17 +2359,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
@@ -2379,17 +2379,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
@@ -2399,17 +2399,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
-    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
-    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
-    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
-    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -2468,10 +2468,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p> </li>
-    /// <li> <p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> </li>
+    /// <li><p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li><p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p></li>
     /// </ul>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -2481,10 +2481,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p> </li>
-    /// <li> <p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> </li>
+    /// <li><p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li><p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p></li>
     /// </ul>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
@@ -2494,20 +2494,20 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p> </li>
-    /// <li> <p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p> </li>
+    /// <li><p>The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.</p></li>
+    /// <li><p>The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p></li>
     /// </ul>
-    /// <p>Example: <code>us-east-1d</code> </p>
+    /// <p>Example: <code>us-east-1d</code></p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB subnet group.</p> </li>
-    /// <li> <p>Must not be <code>default</code>.</p> </li>
+    /// <li><p>Must match the name of an existing DB subnet group.</p></li>
+    /// <li><p>Must not be <code>default</code>.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -2515,10 +2515,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB subnet group.</p> </li>
-    /// <li> <p>Must not be <code>default</code>.</p> </li>
+    /// <li><p>Must match the name of an existing DB subnet group.</p></li>
+    /// <li><p>Must not be <code>default</code>.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
@@ -2526,50 +2526,50 @@ impl CreateDbInstanceInputBuilder {
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB subnet group.</p> </li>
-    /// <li> <p>Must not be <code>default</code>.</p> </li>
+    /// <li><p>Must match the name of an existing DB subnet group.</p></li>
+    /// <li><p>Must not be <code>default</code>.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_name
     }
-    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>. </p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>. </p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
-    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>The time range each week during which system maintenance can occur. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li>
-    /// <li> <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>. </p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred backup window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred backup window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
@@ -2578,9 +2578,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -2590,9 +2590,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -2602,21 +2602,21 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>The first character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to <code>0</code> disables automated backups.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
-    /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -2624,12 +2624,12 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to <code>0</code> disables automated backups.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
-    /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
@@ -2637,12 +2637,12 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to <code>0</code> disables automated backups.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35.</p> </li>
-    /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
-    /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
+    /// <li><p>Must be a value from 0 to 35.</p></li>
+    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
@@ -2651,10 +2651,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -2664,10 +2664,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -2677,29 +2677,29 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>
-    /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
-    /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
-    /// <li> <p>Must be at least 30 minutes.</p> </li>
+    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li><p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>This setting doesn't apply to Aurora DB instances. The port number is managed by the cluster.</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>1521</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p> </li>
+    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -2707,19 +2707,19 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>This setting doesn't apply to Aurora DB instances. The port number is managed by the cluster.</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>1521</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p> </li>
+    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
@@ -2727,19 +2727,19 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>This setting doesn't apply to Aurora DB instances. The port number is managed by the cluster.</p>
-    /// <p>Valid Values: <code>1150-65535</code> </p>
+    /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>1521</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>5432</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p> </li>
+    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
@@ -2747,8 +2747,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -2757,8 +2757,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
@@ -2767,8 +2767,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
@@ -2967,12 +2967,12 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
@@ -2982,12 +2982,12 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
@@ -2997,12 +2997,12 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>bring-your-own-license | license-included</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql-license</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
@@ -3011,8 +3011,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
-    /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li><p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p></li>
+    /// <li><p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p></li>
     /// </ul>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -3022,8 +3022,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
-    /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li><p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p></li>
+    /// <li><p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p></li>
     /// </ul>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
@@ -3033,8 +3033,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
-    /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li><p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p></li>
+    /// <li><p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p></li>
     /// </ul>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
@@ -3062,8 +3062,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For supported engines, the character set (<code>CharacterSet</code>) to associate the DB instance with.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p> </li>
-    /// <li> <p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p> </li>
+    /// <li><p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p></li>
+    /// <li><p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p></li>
     /// </ul>
     pub fn character_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.character_set_name = ::std::option::Option::Some(input.into());
@@ -3072,8 +3072,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For supported engines, the character set (<code>CharacterSet</code>) to associate the DB instance with.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p> </li>
-    /// <li> <p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p> </li>
+    /// <li><p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p></li>
+    /// <li><p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p></li>
     /// </ul>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.character_set_name = input;
@@ -3082,8 +3082,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For supported engines, the character set (<code>CharacterSet</code>) to associate the DB instance with.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p> </li>
-    /// <li> <p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p> </li>
+    /// <li><p>Amazon Aurora - The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p></li>
+    /// <li><p>RDS Custom - However, if you need to change the character set, you can change it on the database itself.</p></li>
     /// </ul>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.character_set_name
@@ -3111,13 +3111,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -3129,13 +3129,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
@@ -3147,13 +3147,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
-    /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
+    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p></li>
+    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p></li>
     /// </ul>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
@@ -3198,7 +3198,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -3207,7 +3207,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
@@ -3216,7 +3216,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
@@ -3305,8 +3305,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -3316,8 +3316,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
@@ -3327,8 +3327,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
@@ -3336,9 +3336,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn domain_fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_fqdn = ::std::option::Option::Some(input.into());
         self
@@ -3346,9 +3346,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn set_domain_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_fqdn = input;
         self
@@ -3356,19 +3356,19 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+    /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn get_domain_fqdn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_fqdn
     }
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the distinguished name format.</p> </li>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Must be in the distinguished name format.</p></li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn domain_ou(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_ou = ::std::option::Option::Some(input.into());
         self
@@ -3376,10 +3376,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the distinguished name format.</p> </li>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Must be in the distinguished name format.</p></li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn set_domain_ou(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_ou = input;
         self
@@ -3387,27 +3387,27 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be in the distinguished name format.</p> </li>
-    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// <li><p>Must be in the distinguished name format.</p></li>
+    /// <li><p>Can't be longer than 64 characters.</p></li>
     /// </ul>
-    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
+    /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn get_domain_ou(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_ou
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
     pub fn domain_auth_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_auth_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
     pub fn set_domain_auth_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_auth_secret_arn = input;
         self
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
-    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
+    /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code></p>
     pub fn get_domain_auth_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_auth_secret_arn
     }
@@ -3418,9 +3418,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub fn domain_dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_dns_ips.unwrap_or_default();
         v.push(input.into());
@@ -3430,9 +3430,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub fn set_domain_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_dns_ips = input;
         self
@@ -3440,9 +3440,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
+    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
-    /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+    /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_dns_ips
     }
@@ -3466,8 +3466,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
         self.monitoring_interval = ::std::option::Option::Some(input);
         self
@@ -3475,8 +3475,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_interval = input;
         self
@@ -3484,8 +3484,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
-    /// <p>Default: <code>0</code> </p>
+    /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code></p>
+    /// <p>Default: <code>0</code></p>
     pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
         &self.monitoring_interval
     }
@@ -3512,8 +3512,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn domain_iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_iam_role_name = ::std::option::Option::Some(input.into());
@@ -3522,8 +3522,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn set_domain_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_iam_role_name = input;
@@ -3532,32 +3532,32 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (The domain is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_iam_role_name
     }
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Default: <code>1</code> </p>
-    /// <p>Valid Values: <code>0 - 15</code> </p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Valid Values: <code>0 - 15</code></p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Default: <code>1</code> </p>
-    /// <p>Valid Values: <code>0 - 15</code> </p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Valid Values: <code>0 - 15</code></p>
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
     }
     /// <p>The order of priority in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
-    /// <p>Default: <code>1</code> </p>
-    /// <p>Valid Values: <code>0 - 15</code> </p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Valid Values: <code>0 - 15</code></p>
     pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
         &self.promotion_tier
     }
@@ -3579,8 +3579,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.enable_iam_database_authentication = ::std::option::Option::Some(input);
@@ -3590,8 +3590,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_iam_database_authentication = input;
@@ -3601,8 +3601,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
@@ -3651,9 +3651,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -3665,9 +3665,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -3679,9 +3679,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>7</code> </p> </li>
-    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-    /// <li> <p> <code>731</code> </p> </li>
+    /// <li><p><code>7</code></p></li>
+    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li><p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -3695,17 +3695,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
+    /// <li><p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
@@ -3716,17 +3716,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
+    /// <li><p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
@@ -3735,17 +3735,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
-    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
-    /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
-    /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
-    /// <li> <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code> </p> </li>
-    /// <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+    /// <li><p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <li><p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
+    /// <li><p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <li><p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
+    /// <li><p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
     /// </ul>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
@@ -3794,8 +3794,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Storage is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Storage is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn max_allocated_storage(mut self, input: i32) -> Self {
         self.max_allocated_storage = ::std::option::Option::Some(input);
@@ -3805,8 +3805,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Storage is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Storage is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn set_max_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allocated_storage = input;
@@ -3816,8 +3816,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li> <p>Amazon Aurora (Storage is managed by the DB cluster.)</p> </li>
-    /// <li> <p>RDS Custom</p> </li>
+    /// <li><p>Amazon Aurora (Storage is managed by the DB cluster.)</p></li>
+    /// <li><p>RDS Custom</p></li>
     /// </ul>
     pub fn get_max_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.max_allocated_storage
@@ -3849,9 +3849,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting is required for RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_iam_instance_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -3862,9 +3862,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting is required for RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_custom_iam_instance_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -3875,9 +3875,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting is required for RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>The profile must exist in your account.</p> </li>
-    /// <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p> </li>
-    /// <li> <p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p> </li>
+    /// <li><p>The profile must exist in your account.</p></li>
+    /// <li><p>The profile must have an IAM role that Amazon EC2 has permissions to assume.</p></li>
+    /// <li><p>The instance profile name and the associated IAM role name must start with the prefix <code>AWSRDSCustom</code>.</p></li>
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
@@ -3886,10 +3886,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
-    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// <li><p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li><p><code>region</code> (Amazon Web Services Region)</p></li>
     /// </ul>
-    /// <p>Default: <code>region</code> </p>
+    /// <p>Default: <code>region</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_target = ::std::option::Option::Some(input.into());
@@ -3898,10 +3898,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
-    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// <li><p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li><p><code>region</code> (Amazon Web Services Region)</p></li>
     /// </ul>
-    /// <p>Default: <code>region</code> </p>
+    /// <p>Default: <code>region</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_target = input;
@@ -3910,34 +3910,34 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The location for storing automated backups and manual snapshots.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
-    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// <li><p><code>outposts</code> (Amazon Web Services Outposts)</p></li>
+    /// <li><p><code>region</code> (Amazon Web Services Region)</p></li>
     /// </ul>
-    /// <p>Default: <code>region</code> </p>
+    /// <p>Default: <code>region</code></p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_target
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
         self
     }
     /// <p>The network type of the DB instance.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
+    /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
@@ -3962,30 +3962,30 @@ impl CreateDbInstanceInputBuilder {
         &self.storage_throughput
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.manage_master_user_password = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manage_master_user_password = input;
         self
     }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
+    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.manage_master_user_password
@@ -4065,30 +4065,30 @@ impl CreateDbInstanceInputBuilder {
         &self.dedicated_log_volume
     }
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
-    /// <p>Note the following restrictions: </p>
+    /// <p>Note the following restrictions:</p>
     /// <ul>
-    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
-    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// <li><p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p></li>
+    /// <li><p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p></li>
     /// </ul>
     pub fn multi_tenant(mut self, input: bool) -> Self {
         self.multi_tenant = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
-    /// <p>Note the following restrictions: </p>
+    /// <p>Note the following restrictions:</p>
     /// <ul>
-    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
-    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// <li><p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p></li>
+    /// <li><p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p></li>
     /// </ul>
     pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_tenant = input;
         self
     }
     /// <p>Specifies whether to use the multi-tenant configuration or the single-tenant configuration (default). This parameter only applies to RDS for Oracle container database (CDB) engines.</p>
-    /// <p>Note the following restrictions: </p>
+    /// <p>Note the following restrictions:</p>
     /// <ul>
-    /// <li> <p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p> </li>
-    /// <li> <p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p> </li>
+    /// <li><p>The DB engine that you specify in the request must support the multi-tenant configuration. If you attempt to enable the multi-tenant configuration on a DB engine that doesn't support it, the request fails.</p></li>
+    /// <li><p>If you specify the multi-tenant configuration when you create your DB instance, you can't later modify this DB instance to use the single-tenant configuration.</p></li>
     /// </ul>
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {
         &self.multi_tenant

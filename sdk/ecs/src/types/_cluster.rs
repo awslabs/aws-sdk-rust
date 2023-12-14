@@ -54,26 +54,26 @@ pub struct Cluster {
     pub active_services_count: i32,
     /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
     /// <ul>
-    /// <li> <p>runningEC2TasksCount</p> </li>
-    /// <li> <p>RunningFargateTasksCount</p> </li>
-    /// <li> <p>pendingEC2TasksCount</p> </li>
-    /// <li> <p>pendingFargateTasksCount</p> </li>
-    /// <li> <p>activeEC2ServiceCount</p> </li>
-    /// <li> <p>activeFargateServiceCount</p> </li>
-    /// <li> <p>drainingEC2ServiceCount</p> </li>
-    /// <li> <p>drainingFargateServiceCount</p> </li>
+    /// <li><p>runningEC2TasksCount</p></li>
+    /// <li><p>RunningFargateTasksCount</p></li>
+    /// <li><p>pendingEC2TasksCount</p></li>
+    /// <li><p>pendingFargateTasksCount</p></li>
+    /// <li><p>activeEC2ServiceCount</p></li>
+    /// <li><p>activeFargateServiceCount</p></li>
+    /// <li><p>drainingEC2ServiceCount</p></li>
+    /// <li><p>drainingFargateServiceCount</p></li>
     /// </ul>
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
@@ -177,14 +177,14 @@ impl Cluster {
     }
     /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
     /// <ul>
-    /// <li> <p>runningEC2TasksCount</p> </li>
-    /// <li> <p>RunningFargateTasksCount</p> </li>
-    /// <li> <p>pendingEC2TasksCount</p> </li>
-    /// <li> <p>pendingFargateTasksCount</p> </li>
-    /// <li> <p>activeEC2ServiceCount</p> </li>
-    /// <li> <p>activeFargateServiceCount</p> </li>
-    /// <li> <p>drainingEC2ServiceCount</p> </li>
-    /// <li> <p>drainingFargateServiceCount</p> </li>
+    /// <li><p>runningEC2TasksCount</p></li>
+    /// <li><p>RunningFargateTasksCount</p></li>
+    /// <li><p>pendingEC2TasksCount</p></li>
+    /// <li><p>pendingFargateTasksCount</p></li>
+    /// <li><p>activeEC2ServiceCount</p></li>
+    /// <li><p>activeFargateServiceCount</p></li>
+    /// <li><p>drainingEC2ServiceCount</p></li>
+    /// <li><p>drainingFargateServiceCount</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
@@ -194,13 +194,13 @@ impl Cluster {
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -504,14 +504,14 @@ impl ClusterBuilder {
     ///
     /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
     /// <ul>
-    /// <li> <p>runningEC2TasksCount</p> </li>
-    /// <li> <p>RunningFargateTasksCount</p> </li>
-    /// <li> <p>pendingEC2TasksCount</p> </li>
-    /// <li> <p>pendingFargateTasksCount</p> </li>
-    /// <li> <p>activeEC2ServiceCount</p> </li>
-    /// <li> <p>activeFargateServiceCount</p> </li>
-    /// <li> <p>drainingEC2ServiceCount</p> </li>
-    /// <li> <p>drainingFargateServiceCount</p> </li>
+    /// <li><p>runningEC2TasksCount</p></li>
+    /// <li><p>RunningFargateTasksCount</p></li>
+    /// <li><p>pendingEC2TasksCount</p></li>
+    /// <li><p>pendingFargateTasksCount</p></li>
+    /// <li><p>activeEC2ServiceCount</p></li>
+    /// <li><p>activeFargateServiceCount</p></li>
+    /// <li><p>drainingEC2ServiceCount</p></li>
+    /// <li><p>drainingFargateServiceCount</p></li>
     /// </ul>
     pub fn statistics(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.statistics.unwrap_or_default();
@@ -521,14 +521,14 @@ impl ClusterBuilder {
     }
     /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
     /// <ul>
-    /// <li> <p>runningEC2TasksCount</p> </li>
-    /// <li> <p>RunningFargateTasksCount</p> </li>
-    /// <li> <p>pendingEC2TasksCount</p> </li>
-    /// <li> <p>pendingFargateTasksCount</p> </li>
-    /// <li> <p>activeEC2ServiceCount</p> </li>
-    /// <li> <p>activeFargateServiceCount</p> </li>
-    /// <li> <p>drainingEC2ServiceCount</p> </li>
-    /// <li> <p>drainingFargateServiceCount</p> </li>
+    /// <li><p>runningEC2TasksCount</p></li>
+    /// <li><p>RunningFargateTasksCount</p></li>
+    /// <li><p>pendingEC2TasksCount</p></li>
+    /// <li><p>pendingFargateTasksCount</p></li>
+    /// <li><p>activeEC2ServiceCount</p></li>
+    /// <li><p>activeFargateServiceCount</p></li>
+    /// <li><p>drainingEC2ServiceCount</p></li>
+    /// <li><p>drainingFargateServiceCount</p></li>
     /// </ul>
     pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.statistics = input;
@@ -536,14 +536,14 @@ impl ClusterBuilder {
     }
     /// <p>Additional information about your clusters that are separated by launch type. They include the following:</p>
     /// <ul>
-    /// <li> <p>runningEC2TasksCount</p> </li>
-    /// <li> <p>RunningFargateTasksCount</p> </li>
-    /// <li> <p>pendingEC2TasksCount</p> </li>
-    /// <li> <p>pendingFargateTasksCount</p> </li>
-    /// <li> <p>activeEC2ServiceCount</p> </li>
-    /// <li> <p>activeFargateServiceCount</p> </li>
-    /// <li> <p>drainingEC2ServiceCount</p> </li>
-    /// <li> <p>drainingFargateServiceCount</p> </li>
+    /// <li><p>runningEC2TasksCount</p></li>
+    /// <li><p>RunningFargateTasksCount</p></li>
+    /// <li><p>pendingEC2TasksCount</p></li>
+    /// <li><p>pendingFargateTasksCount</p></li>
+    /// <li><p>activeEC2ServiceCount</p></li>
+    /// <li><p>activeFargateServiceCount</p></li>
+    /// <li><p>drainingEC2ServiceCount</p></li>
+    /// <li><p>drainingFargateServiceCount</p></li>
     /// </ul>
     pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.statistics
@@ -555,13 +555,13 @@ impl ClusterBuilder {
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -572,13 +572,13 @@ impl ClusterBuilder {
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -587,13 +587,13 @@ impl ClusterBuilder {
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case-sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

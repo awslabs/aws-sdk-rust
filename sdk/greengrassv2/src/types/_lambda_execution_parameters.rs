@@ -18,13 +18,13 @@ pub struct LambdaExecutionParameters {
     pub status_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// <li><p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p></li>
+    /// <li><p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub pinned: ::std::option::Option<bool>,
     /// <p>The encoding type that the Lambda function supports.</p>
-    /// <p>Default: <code>json</code> </p>
+    /// <p>Default: <code>json</code></p>
     pub input_payload_encoding_type: ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
     pub exec_args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -62,15 +62,15 @@ impl LambdaExecutionParameters {
     }
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// <li><p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p></li>
+    /// <li><p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn pinned(&self) -> ::std::option::Option<bool> {
         self.pinned
     }
     /// <p>The encoding type that the Lambda function supports.</p>
-    /// <p>Default: <code>json</code> </p>
+    /// <p>Default: <code>json</code></p>
     pub fn input_payload_encoding_type(&self) -> ::std::option::Option<&crate::types::LambdaInputPayloadEncodingType> {
         self.input_payload_encoding_type.as_ref()
     }
@@ -205,47 +205,47 @@ impl LambdaExecutionParametersBuilder {
     }
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// <li><p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p></li>
+    /// <li><p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn pinned(mut self, input: bool) -> Self {
         self.pinned = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// <li><p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p></li>
+    /// <li><p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn set_pinned(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pinned = input;
         self
     }
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// <li><p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p></li>
+    /// <li><p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p></li>
     /// </ul>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn get_pinned(&self) -> &::std::option::Option<bool> {
         &self.pinned
     }
     /// <p>The encoding type that the Lambda function supports.</p>
-    /// <p>Default: <code>json</code> </p>
+    /// <p>Default: <code>json</code></p>
     pub fn input_payload_encoding_type(mut self, input: crate::types::LambdaInputPayloadEncodingType) -> Self {
         self.input_payload_encoding_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encoding type that the Lambda function supports.</p>
-    /// <p>Default: <code>json</code> </p>
+    /// <p>Default: <code>json</code></p>
     pub fn set_input_payload_encoding_type(mut self, input: ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>) -> Self {
         self.input_payload_encoding_type = input;
         self
     }
     /// <p>The encoding type that the Lambda function supports.</p>
-    /// <p>Default: <code>json</code> </p>
+    /// <p>Default: <code>json</code></p>
     pub fn get_input_payload_encoding_type(&self) -> &::std::option::Option<crate::types::LambdaInputPayloadEncodingType> {
         &self.input_payload_encoding_type
     }

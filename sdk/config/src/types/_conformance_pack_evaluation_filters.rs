@@ -9,7 +9,7 @@ pub struct ConformancePackEvaluationFilters {
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
-    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
+    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by resource IDs.</p> <note>
     /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
@@ -28,7 +28,7 @@ impl ConformancePackEvaluationFilters {
     pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
-    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
+    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -95,17 +95,17 @@ impl ConformancePackEvaluationFiltersBuilder {
     pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
         &self.compliance_type
     }
-    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
+    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
+    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
+    /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

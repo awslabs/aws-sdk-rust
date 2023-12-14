@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserMatch {
-    /// <p> Describes the UserID metadata.</p>
+    /// <p>Describes the UserID metadata.</p>
     pub similarity: ::std::option::Option<f32>,
-    /// <p> Confidence in the match of this UserID with the input face. </p>
+    /// <p>Confidence in the match of this UserID with the input face.</p>
     pub user: ::std::option::Option<crate::types::MatchedUser>,
 }
 impl UserMatch {
-    /// <p> Describes the UserID metadata.</p>
+    /// <p>Describes the UserID metadata.</p>
     pub fn similarity(&self) -> ::std::option::Option<f32> {
         self.similarity
     }
-    /// <p> Confidence in the match of this UserID with the input face. </p>
+    /// <p>Confidence in the match of this UserID with the input face.</p>
     pub fn user(&self) -> ::std::option::Option<&crate::types::MatchedUser> {
         self.user.as_ref()
     }
@@ -34,31 +34,31 @@ pub struct UserMatchBuilder {
     pub(crate) user: ::std::option::Option<crate::types::MatchedUser>,
 }
 impl UserMatchBuilder {
-    /// <p> Describes the UserID metadata.</p>
+    /// <p>Describes the UserID metadata.</p>
     pub fn similarity(mut self, input: f32) -> Self {
         self.similarity = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes the UserID metadata.</p>
+    /// <p>Describes the UserID metadata.</p>
     pub fn set_similarity(mut self, input: ::std::option::Option<f32>) -> Self {
         self.similarity = input;
         self
     }
-    /// <p> Describes the UserID metadata.</p>
+    /// <p>Describes the UserID metadata.</p>
     pub fn get_similarity(&self) -> &::std::option::Option<f32> {
         &self.similarity
     }
-    /// <p> Confidence in the match of this UserID with the input face. </p>
+    /// <p>Confidence in the match of this UserID with the input face.</p>
     pub fn user(mut self, input: crate::types::MatchedUser) -> Self {
         self.user = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Confidence in the match of this UserID with the input face. </p>
+    /// <p>Confidence in the match of this UserID with the input face.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::MatchedUser>) -> Self {
         self.user = input;
         self
     }
-    /// <p> Confidence in the match of this UserID with the input face. </p>
+    /// <p>Confidence in the match of this UserID with the input face.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::MatchedUser> {
         &self.user
     }

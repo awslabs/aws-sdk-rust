@@ -20,7 +20,7 @@ pub struct Channel {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub last_message_arrival_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Channel {
@@ -54,7 +54,7 @@ impl Channel {
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn last_message_arrival_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
@@ -180,21 +180,21 @@ impl ChannelBuilder {
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn last_message_arrival_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_message_arrival_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn set_last_message_arrival_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_message_arrival_time = input;
         self
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn get_last_message_arrival_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_message_arrival_time
     }

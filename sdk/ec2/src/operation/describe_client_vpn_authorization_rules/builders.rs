@@ -168,9 +168,9 @@ impl DescribeClientVpnAuthorizationRulesFluentBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>description</code> - The description of the authorization rule.</p> </li>
-    /// <li> <p> <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p> </li>
-    /// <li> <p> <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p> </li>
+    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -178,9 +178,9 @@ impl DescribeClientVpnAuthorizationRulesFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>description</code> - The description of the authorization rule.</p> </li>
-    /// <li> <p> <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p> </li>
-    /// <li> <p> <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p> </li>
+    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -188,9 +188,9 @@ impl DescribeClientVpnAuthorizationRulesFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>description</code> - The description of the authorization rule.</p> </li>
-    /// <li> <p> <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p> </li>
-    /// <li> <p> <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p> </li>
+    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

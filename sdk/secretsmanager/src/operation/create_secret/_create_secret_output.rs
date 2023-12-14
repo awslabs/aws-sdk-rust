@@ -11,9 +11,9 @@ pub struct CreateSecretOutput {
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
@@ -33,9 +33,9 @@ impl CreateSecretOutput {
     }
     /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_status.is_none()`.
@@ -114,9 +114,9 @@ impl CreateSecretOutputBuilder {
     ///
     /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub fn replication_status(mut self, input: crate::types::ReplicationStatusType) -> Self {
         let mut v = self.replication_status.unwrap_or_default();
@@ -126,9 +126,9 @@ impl CreateSecretOutputBuilder {
     }
     /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub fn set_replication_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>) -> Self {
         self.replication_status = input;
@@ -136,9 +136,9 @@ impl CreateSecretOutputBuilder {
     }
     /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
-    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
-    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
-    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// <li><p><code>Failed</code>, which indicates that the replica was not created.</p></li>
+    /// <li><p><code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p></li>
+    /// <li><p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub fn get_replication_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
         &self.replication_status

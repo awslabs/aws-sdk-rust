@@ -7,7 +7,7 @@ pub struct SubmitFeedbackInput {
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
     pub click_feedback_items: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>,
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
     pub relevance_feedback_items: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>>,
@@ -21,7 +21,7 @@ impl SubmitFeedbackInput {
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.click_feedback_items.is_none()`.
     pub fn click_feedback_items(&self) -> &[crate::types::ClickFeedback] {
@@ -85,19 +85,19 @@ impl SubmitFeedbackInputBuilder {
     ///
     /// To override the contents of this collection use [`set_click_feedback_items`](Self::set_click_feedback_items).
     ///
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
     pub fn click_feedback_items(mut self, input: crate::types::ClickFeedback) -> Self {
         let mut v = self.click_feedback_items.unwrap_or_default();
         v.push(input);
         self.click_feedback_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
     pub fn set_click_feedback_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>>) -> Self {
         self.click_feedback_items = input;
         self
     }
-    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user.</p>
     pub fn get_click_feedback_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>> {
         &self.click_feedback_items
     }

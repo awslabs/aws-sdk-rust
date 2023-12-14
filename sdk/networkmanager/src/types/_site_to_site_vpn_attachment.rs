@@ -6,7 +6,7 @@
 pub struct SiteToSiteVpnAttachment {
     /// <p>Provides details about a site-to-site VPN attachment.</p>
     pub attachment: ::std::option::Option<crate::types::Attachment>,
-    /// <p>The ARN of the site-to-site VPN attachment. </p>
+    /// <p>The ARN of the site-to-site VPN attachment.</p>
     pub vpn_connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl SiteToSiteVpnAttachment {
@@ -14,7 +14,7 @@ impl SiteToSiteVpnAttachment {
     pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
         self.attachment.as_ref()
     }
-    /// <p>The ARN of the site-to-site VPN attachment. </p>
+    /// <p>The ARN of the site-to-site VPN attachment.</p>
     pub fn vpn_connection_arn(&self) -> ::std::option::Option<&str> {
         self.vpn_connection_arn.as_deref()
     }
@@ -48,17 +48,17 @@ impl SiteToSiteVpnAttachmentBuilder {
     pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
         &self.attachment
     }
-    /// <p>The ARN of the site-to-site VPN attachment. </p>
+    /// <p>The ARN of the site-to-site VPN attachment.</p>
     pub fn vpn_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the site-to-site VPN attachment. </p>
+    /// <p>The ARN of the site-to-site VPN attachment.</p>
     pub fn set_vpn_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_arn = input;
         self
     }
-    /// <p>The ARN of the site-to-site VPN attachment. </p>
+    /// <p>The ARN of the site-to-site VPN attachment.</p>
     pub fn get_vpn_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_connection_arn
     }

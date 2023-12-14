@@ -6,7 +6,7 @@ pub struct FailoverGlobalClusterInput {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
@@ -15,13 +15,13 @@ pub struct FailoverGlobalClusterInput {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
     /// </ul>
     pub allow_data_loss: ::std::option::Option<bool>,
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
     /// </ul>
     pub switchover: ::std::option::Option<bool>,
 }
@@ -29,7 +29,7 @@ impl FailoverGlobalClusterInput {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
@@ -42,7 +42,7 @@ impl FailoverGlobalClusterInput {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
     /// </ul>
     pub fn allow_data_loss(&self) -> ::std::option::Option<bool> {
         self.allow_data_loss
@@ -50,7 +50,7 @@ impl FailoverGlobalClusterInput {
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
     /// </ul>
     pub fn switchover(&self) -> ::std::option::Option<bool> {
         self.switchover
@@ -76,7 +76,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,7 +86,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
@@ -95,7 +95,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
@@ -119,7 +119,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
     /// </ul>
     pub fn allow_data_loss(mut self, input: bool) -> Self {
         self.allow_data_loss = ::std::option::Option::Some(input);
@@ -129,7 +129,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
     /// </ul>
     pub fn set_allow_data_loss(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_data_loss = input;
@@ -139,7 +139,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
     /// </ul>
     pub fn get_allow_data_loss(&self) -> &::std::option::Option<bool> {
         &self.allow_data_loss
@@ -147,7 +147,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
     /// </ul>
     pub fn switchover(mut self, input: bool) -> Self {
         self.switchover = ::std::option::Option::Some(input);
@@ -156,7 +156,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
     /// </ul>
     pub fn set_switchover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.switchover = input;
@@ -165,7 +165,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// <li><p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
     /// </ul>
     pub fn get_switchover(&self) -> &::std::option::Option<bool> {
         &self.switchover

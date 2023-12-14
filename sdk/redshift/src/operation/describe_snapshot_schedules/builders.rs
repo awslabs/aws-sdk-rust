@@ -22,7 +22,7 @@ impl DescribeSnapshotSchedulesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSnapshotSchedules`.
 ///
-/// <p>Returns a list of snapshot schedules. </p>
+/// <p>Returns a list of snapshot schedules.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSnapshotSchedulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

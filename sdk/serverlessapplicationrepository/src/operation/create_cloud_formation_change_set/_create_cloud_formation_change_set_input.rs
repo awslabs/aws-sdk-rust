@@ -27,7 +27,7 @@ pub struct CreateCloudFormationChangeSetInput {
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
     pub rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
@@ -88,7 +88,7 @@ impl CreateCloudFormationChangeSetInput {
         self.rollback_configuration.as_ref()
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(&self) -> ::std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
@@ -301,19 +301,19 @@ impl CreateCloudFormationChangeSetInputBuilder {
         &self.rollback_configuration
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.semantic_version
     }

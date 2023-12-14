@@ -11,14 +11,14 @@ pub struct DescribeDbInstanceAutomatedBackupsInput {
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
     /// <ul>
-    /// <li> <p> <code>status</code> </p>
+    /// <li><p><code>status</code></p>
     /// <ul>
-    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
-    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
+    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li><p><code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p></li>
+    /// </ul></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -42,14 +42,14 @@ impl DescribeDbInstanceAutomatedBackupsInput {
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
     /// <ul>
-    /// <li> <p> <code>status</code> </p>
+    /// <li><p><code>status</code></p>
     /// <ul>
-    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
-    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
+    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li><p><code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p></li>
+    /// </ul></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
     ///
@@ -125,14 +125,14 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
     /// <ul>
-    /// <li> <p> <code>status</code> </p>
+    /// <li><p><code>status</code></p>
     /// <ul>
-    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
-    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
+    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li><p><code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p></li>
+    /// </ul></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -144,14 +144,14 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
     /// <ul>
-    /// <li> <p> <code>status</code> </p>
+    /// <li><p><code>status</code></p>
     /// <ul>
-    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
-    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
+    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li><p><code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p></li>
+    /// </ul></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
@@ -161,14 +161,14 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
     /// <ul>
-    /// <li> <p> <code>status</code> </p>
+    /// <li><p><code>status</code></p>
     /// <ul>
-    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
-    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
-    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
-    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
+    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li><p><code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p></li>
+    /// </ul></li>
+    /// <li><p><code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p></li>
+    /// <li><p><code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteInput {
-    /// <p> The ID of the environment in which the route is being updated. </p>
+    /// <p>The ID of the environment in which the route is being updated.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
-    /// <p> The ID of the application within which the route is being updated. </p>
+    /// <p>The ID of the application within which the route is being updated.</p>
     pub application_identifier: ::std::option::Option<::std::string::String>,
-    /// <p> The unique identifier of the route to update. </p>
+    /// <p>The unique identifier of the route to update.</p>
     pub route_identifier: ::std::option::Option<::std::string::String>,
-    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated.</p>
     pub activation_state: ::std::option::Option<crate::types::RouteActivationState>,
 }
 impl UpdateRouteInput {
-    /// <p> The ID of the environment in which the route is being updated. </p>
+    /// <p>The ID of the environment in which the route is being updated.</p>
     pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_identifier.as_deref()
     }
-    /// <p> The ID of the application within which the route is being updated. </p>
+    /// <p>The ID of the application within which the route is being updated.</p>
     pub fn application_identifier(&self) -> ::std::option::Option<&str> {
         self.application_identifier.as_deref()
     }
-    /// <p> The unique identifier of the route to update. </p>
+    /// <p>The unique identifier of the route to update.</p>
     pub fn route_identifier(&self) -> ::std::option::Option<&str> {
         self.route_identifier.as_deref()
     }
-    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated.</p>
     pub fn activation_state(&self) -> ::std::option::Option<&crate::types::RouteActivationState> {
         self.activation_state.as_ref()
     }
@@ -47,63 +47,63 @@ pub struct UpdateRouteInputBuilder {
     pub(crate) activation_state: ::std::option::Option<crate::types::RouteActivationState>,
 }
 impl UpdateRouteInputBuilder {
-    /// <p> The ID of the environment in which the route is being updated. </p>
+    /// <p>The ID of the environment in which the route is being updated.</p>
     /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the environment in which the route is being updated. </p>
+    /// <p>The ID of the environment in which the route is being updated.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_identifier = input;
         self
     }
-    /// <p> The ID of the environment in which the route is being updated. </p>
+    /// <p>The ID of the environment in which the route is being updated.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_identifier
     }
-    /// <p> The ID of the application within which the route is being updated. </p>
+    /// <p>The ID of the application within which the route is being updated.</p>
     /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the application within which the route is being updated. </p>
+    /// <p>The ID of the application within which the route is being updated.</p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
-    /// <p> The ID of the application within which the route is being updated. </p>
+    /// <p>The ID of the application within which the route is being updated.</p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_identifier
     }
-    /// <p> The unique identifier of the route to update. </p>
+    /// <p>The unique identifier of the route to update.</p>
     /// This field is required.
     pub fn route_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier of the route to update. </p>
+    /// <p>The unique identifier of the route to update.</p>
     pub fn set_route_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_identifier = input;
         self
     }
-    /// <p> The unique identifier of the route to update. </p>
+    /// <p>The unique identifier of the route to update.</p>
     pub fn get_route_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.route_identifier
     }
-    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated.</p>
     /// This field is required.
     pub fn activation_state(mut self, input: crate::types::RouteActivationState) -> Self {
         self.activation_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated.</p>
     pub fn set_activation_state(mut self, input: ::std::option::Option<crate::types::RouteActivationState>) -> Self {
         self.activation_state = input;
         self
     }
-    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated.</p>
     pub fn get_activation_state(&self) -> &::std::option::Option<crate::types::RouteActivationState> {
         &self.activation_state
     }

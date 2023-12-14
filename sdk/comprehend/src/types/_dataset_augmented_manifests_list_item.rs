@@ -14,8 +14,8 @@ pub struct DatasetAugmentedManifestsListItem {
     pub annotation_data_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
     pub source_documents_s3_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
-    /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument.</p>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
     pub document_type: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
 }
 impl DatasetAugmentedManifestsListItem {
@@ -39,8 +39,8 @@ impl DatasetAugmentedManifestsListItem {
     pub fn source_documents_s3_uri(&self) -> ::std::option::Option<&str> {
         self.source_documents_s3_uri.as_deref()
     }
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
-    /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument.</p>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
     pub fn document_type(&self) -> ::std::option::Option<&crate::types::AugmentedManifestsDocumentTypeFormat> {
         self.document_type.as_ref()
     }
@@ -132,20 +132,20 @@ impl DatasetAugmentedManifestsListItemBuilder {
     pub fn get_source_documents_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_documents_s3_uri
     }
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
-    /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument.</p>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
     pub fn document_type(mut self, input: crate::types::AugmentedManifestsDocumentTypeFormat) -> Self {
         self.document_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
-    /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument.</p>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
     pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>) -> Self {
         self.document_type = input;
         self
     }
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
-    /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument.</p>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
     pub fn get_document_type(&self) -> &::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat> {
         &self.document_type
     }

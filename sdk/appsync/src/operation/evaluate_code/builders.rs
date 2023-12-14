@@ -22,7 +22,7 @@ impl EvaluateCodeInputBuilder {
 }
 /// Fluent builder constructing a request to `EvaluateCode`.
 ///
-/// <p>Evaluates the given code and returns the response. The code definition requirements depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request function takes the incoming request after a GraphQL operation is parsed and converts it into a request configuration for the selected data source operation. The response function interprets responses from the data source and maps it to the shape of the GraphQL field output type. </p>
+/// <p>Evaluates the given code and returns the response. The code definition requirements depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request function takes the incoming request after a GraphQL operation is parsed and converts it into a request configuration for the selected data source operation. The response function interprets responses from the data source and maps it to the shape of the GraphQL field output type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EvaluateCodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

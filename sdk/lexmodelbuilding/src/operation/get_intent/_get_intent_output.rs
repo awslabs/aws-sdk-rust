@@ -11,21 +11,21 @@ pub struct GetIntentOutput {
     pub slots: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
     /// <p>An array of sample utterances configured for the intent.</p>
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>.</p>
     pub confirmation_prompt: ::std::option::Option<crate::types::Prompt>,
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub rejection_statement: ::std::option::Option<crate::types::Statement>,
     /// <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
     pub follow_up_prompt: ::std::option::Option<crate::types::FollowUpPrompt>,
     /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> element fulfills the intent, Amazon Lex conveys this statement to the user.</p>
     pub conclusion_statement: ::std::option::Option<crate::types::Statement>,
-    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>.</p>
     pub dialog_code_hook: ::std::option::Option<crate::types::CodeHook>,
-    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
+    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
     pub fulfillment_activity: ::std::option::Option<crate::types::FulfillmentActivity>,
     /// <p>A unique identifier for a built-in intent.</p>
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
-    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
+    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same.</p>
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -62,11 +62,11 @@ impl GetIntentOutput {
     pub fn sample_utterances(&self) -> &[::std::string::String] {
         self.sample_utterances.as_deref().unwrap_or_default()
     }
-    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>.</p>
     pub fn confirmation_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
         self.confirmation_prompt.as_ref()
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn rejection_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
         self.rejection_statement.as_ref()
     }
@@ -78,11 +78,11 @@ impl GetIntentOutput {
     pub fn conclusion_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
         self.conclusion_statement.as_ref()
     }
-    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>.</p>
     pub fn dialog_code_hook(&self) -> ::std::option::Option<&crate::types::CodeHook> {
         self.dialog_code_hook.as_ref()
     }
-    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
+    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
     pub fn fulfillment_activity(&self) -> ::std::option::Option<&crate::types::FulfillmentActivity> {
         self.fulfillment_activity.as_ref()
     }
@@ -90,7 +90,7 @@ impl GetIntentOutput {
     pub fn parent_intent_signature(&self) -> ::std::option::Option<&str> {
         self.parent_intent_signature.as_deref()
     }
-    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
+    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same.</p>
     pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
@@ -228,31 +228,31 @@ impl GetIntentOutputBuilder {
     pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sample_utterances
     }
-    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>.</p>
     pub fn confirmation_prompt(mut self, input: crate::types::Prompt) -> Self {
         self.confirmation_prompt = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>.</p>
     pub fn set_confirmation_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
         self.confirmation_prompt = input;
         self
     }
-    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>.</p>
     pub fn get_confirmation_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
         &self.confirmation_prompt
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn rejection_statement(mut self, input: crate::types::Statement) -> Self {
         self.rejection_statement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn set_rejection_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.rejection_statement = input;
         self
     }
-    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn get_rejection_statement(&self) -> &::std::option::Option<crate::types::Statement> {
         &self.rejection_statement
     }
@@ -284,31 +284,31 @@ impl GetIntentOutputBuilder {
     pub fn get_conclusion_statement(&self) -> &::std::option::Option<crate::types::Statement> {
         &self.conclusion_statement
     }
-    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>.</p>
     pub fn dialog_code_hook(mut self, input: crate::types::CodeHook) -> Self {
         self.dialog_code_hook = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>.</p>
     pub fn set_dialog_code_hook(mut self, input: ::std::option::Option<crate::types::CodeHook>) -> Self {
         self.dialog_code_hook = input;
         self
     }
-    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
+    /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>.</p>
     pub fn get_dialog_code_hook(&self) -> &::std::option::Option<crate::types::CodeHook> {
         &self.dialog_code_hook
     }
-    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
+    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
     pub fn fulfillment_activity(mut self, input: crate::types::FulfillmentActivity) -> Self {
         self.fulfillment_activity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
+    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
     pub fn set_fulfillment_activity(mut self, input: ::std::option::Option<crate::types::FulfillmentActivity>) -> Self {
         self.fulfillment_activity = input;
         self
     }
-    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
+    /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
     pub fn get_fulfillment_activity(&self) -> &::std::option::Option<crate::types::FulfillmentActivity> {
         &self.fulfillment_activity
     }
@@ -326,17 +326,17 @@ impl GetIntentOutputBuilder {
     pub fn get_parent_intent_signature(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_intent_signature
     }
-    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
+    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
+    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
-    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
+    /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }

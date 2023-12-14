@@ -13,7 +13,7 @@ pub struct OptionStatus {
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
     /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.</li>
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
@@ -37,7 +37,7 @@ impl OptionStatus {
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
     /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.</li>
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
@@ -114,7 +114,7 @@ impl OptionStatusBuilder {
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
     /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.</li>
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
@@ -126,7 +126,7 @@ impl OptionStatusBuilder {
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
     /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.</li>
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
@@ -137,7 +137,7 @@ impl OptionStatusBuilder {
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
     /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated.</li>
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>

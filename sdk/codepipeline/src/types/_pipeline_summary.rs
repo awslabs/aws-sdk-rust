@@ -10,13 +10,13 @@ pub struct PipelineSummary {
     pub version: ::std::option::Option<i32>,
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
-    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// <li><p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
+    /// <li><p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
     /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
@@ -36,13 +36,13 @@ impl PipelineSummary {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
-    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// <li><p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
+    /// <li><p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
     /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
@@ -105,13 +105,13 @@ impl PipelineSummaryBuilder {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
-    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// <li><p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
+    /// <li><p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
     /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn pipeline_type(mut self, input: crate::types::PipelineType) -> Self {
@@ -120,13 +120,13 @@ impl PipelineSummaryBuilder {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
-    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// <li><p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
+    /// <li><p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
     /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
@@ -135,13 +135,13 @@ impl PipelineSummaryBuilder {
     }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
-    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
-    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// <li><p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p></li>
+    /// <li><p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p></li>
     /// </ul> <important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
     /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p> <note>
     /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
     /// </note>
     pub fn get_pipeline_type(&self) -> &::std::option::Option<crate::types::PipelineType> {

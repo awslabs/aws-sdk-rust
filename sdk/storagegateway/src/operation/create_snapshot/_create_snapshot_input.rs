@@ -2,8 +2,8 @@
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
-/// <li> <p> <code>CreateSnapshotInput$SnapshotDescription</code> </p> </li>
-/// <li> <p> <code>CreateSnapshotInput$VolumeARN</code> </p> </li>
+/// <li><p><code>CreateSnapshotInput$SnapshotDescription</code></p></li>
+/// <li><p><code>CreateSnapshotInput$VolumeARN</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

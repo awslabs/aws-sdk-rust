@@ -5,7 +5,7 @@
 pub struct GetMaintenanceWindowExecutionTaskInvocationInput {
     /// <p>The ID of the maintenance window execution for which the task is a part.</p>
     pub window_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The invocation ID to retrieve.</p>
     pub invocation_id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInput {
     pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
         self.window_execution_id.as_deref()
     }
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -57,18 +57,18 @@ impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.window_execution_id
     }
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
-    /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }

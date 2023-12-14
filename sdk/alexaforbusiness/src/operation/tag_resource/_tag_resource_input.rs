@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -35,18 +35,18 @@ pub struct TagResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInputBuilder {
-    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    /// <p>The ARN of the resource to which to add metadata tags. Required.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -54,19 +54,19 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

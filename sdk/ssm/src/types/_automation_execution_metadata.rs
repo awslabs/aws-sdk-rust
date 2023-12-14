@@ -47,7 +47,7 @@ pub struct AutomationExecutionMetadata {
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub target: ::std::option::Option<::std::string::String>,
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub automation_type: ::std::option::Option<crate::types::AutomationType>,
     /// <p>The details for the CloudWatch alarm applied to your automation.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
@@ -157,7 +157,7 @@ impl AutomationExecutionMetadata {
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn automation_type(&self) -> ::std::option::Option<&crate::types::AutomationType> {
         self.automation_type.as_ref()
     }
@@ -564,17 +564,17 @@ impl AutomationExecutionMetadataBuilder {
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn automation_type(mut self, input: crate::types::AutomationType) -> Self {
         self.automation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_automation_type(mut self, input: ::std::option::Option<crate::types::AutomationType>) -> Self {
         self.automation_type = input;
         self
     }
-    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_automation_type(&self) -> &::std::option::Option<crate::types::AutomationType> {
         &self.automation_type
     }

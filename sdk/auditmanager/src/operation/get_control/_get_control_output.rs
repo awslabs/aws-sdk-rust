@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetControlOutput {
-    /// <p> The details of the control that the <code>GetControl</code> API returned. </p>
+    /// <p>The details of the control that the <code>GetControl</code> API returned.</p>
     pub control: ::std::option::Option<crate::types::Control>,
     _request_id: Option<String>,
 }
 impl GetControlOutput {
-    /// <p> The details of the control that the <code>GetControl</code> API returned. </p>
+    /// <p>The details of the control that the <code>GetControl</code> API returned.</p>
     pub fn control(&self) -> ::std::option::Option<&crate::types::Control> {
         self.control.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetControlOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetControlOutputBuilder {
-    /// <p> The details of the control that the <code>GetControl</code> API returned. </p>
+    /// <p>The details of the control that the <code>GetControl</code> API returned.</p>
     pub fn control(mut self, input: crate::types::Control) -> Self {
         self.control = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The details of the control that the <code>GetControl</code> API returned. </p>
+    /// <p>The details of the control that the <code>GetControl</code> API returned.</p>
     pub fn set_control(mut self, input: ::std::option::Option<crate::types::Control>) -> Self {
         self.control = input;
         self
     }
-    /// <p> The details of the control that the <code>GetControl</code> API returned. </p>
+    /// <p>The details of the control that the <code>GetControl</code> API returned.</p>
     pub fn get_control(&self) -> &::std::option::Option<crate::types::Control> {
         &self.control
     }

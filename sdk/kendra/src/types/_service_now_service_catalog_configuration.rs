@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowServiceCatalogConfiguration {
-    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
+    /// <p><code>TRUE</code> to index attachments to service catalog items.</p>
     pub crawl_attachments: bool,
     /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
@@ -20,7 +20,7 @@ pub struct ServiceNowServiceCatalogConfiguration {
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl ServiceNowServiceCatalogConfiguration {
-    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
+    /// <p><code>TRUE</code> to index attachments to service catalog items.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
@@ -73,17 +73,17 @@ pub struct ServiceNowServiceCatalogConfigurationBuilder {
     pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl ServiceNowServiceCatalogConfigurationBuilder {
-    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
+    /// <p><code>TRUE</code> to index attachments to service catalog items.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
         self.crawl_attachments = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
+    /// <p><code>TRUE</code> to index attachments to service catalog items.</p>
     pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
     }
-    /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
+    /// <p><code>TRUE</code> to index attachments to service catalog items.</p>
     pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
         &self.crawl_attachments
     }

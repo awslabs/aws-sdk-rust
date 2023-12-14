@@ -11,7 +11,7 @@ pub struct ListHealthEventsInput {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The number of health event objects that you want to return with this call. </p>
+    /// <p>The number of health event objects that you want to return with this call.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The status of a health event.</p>
     pub event_status: ::std::option::Option<crate::types::HealthEventStatus>,
@@ -33,7 +33,7 @@ impl ListHealthEventsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of health event objects that you want to return with this call. </p>
+    /// <p>The number of health event objects that you want to return with this call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -118,17 +118,17 @@ impl ListHealthEventsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The number of health event objects that you want to return with this call. </p>
+    /// <p>The number of health event objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of health event objects that you want to return with this call. </p>
+    /// <p>The number of health event objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The number of health event objects that you want to return with this call. </p>
+    /// <p>The number of health event objects that you want to return with this call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -256,7 +256,7 @@ pub enum RegisterUsageError {
     InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>Public Key version is invalid.</p>
     InvalidPublicKeyVersionException(crate::types::error::InvalidPublicKeyVersionException),
-    /// <p> <code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
+    /// <p><code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
     InvalidRegionException(crate::types::error::InvalidRegionException),
     /// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
     PlatformNotSupportedException(crate::types::error::PlatformNotSupportedException),

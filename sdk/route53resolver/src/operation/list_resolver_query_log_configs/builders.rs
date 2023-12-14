@@ -114,34 +114,34 @@ impl ListResolverQueryLogConfigsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginator {
         crate::operation::list_resolver_query_log_configs::paginator::ListResolverQueryLogConfigsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
+    /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
+    /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
+    /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
     /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
-    /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
-    /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
-    /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
@@ -169,91 +169,91 @@ impl ListResolverQueryLogConfigsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>The element that you want Resolver to sort query logging configurations by. </p> <note>
+    /// <p>The element that you want Resolver to sort query logging configurations by.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
     /// </note>
     /// <p>Valid values include the following elements:</p>
     /// <ul>
-    /// <li> <p> <code>Arn</code>: The ARN of the query logging configuration</p> </li>
-    /// <li> <p> <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p> </li>
-    /// <li> <p> <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p> </li>
-    /// <li> <p> <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p> </li>
-    /// <li> <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
-    /// <li> <p> <code>Id</code>: The ID of the configuration</p> </li>
-    /// <li> <p> <code>Name</code>: The name of the configuration</p> </li>
-    /// <li> <p> <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p> </li>
-    /// <li> <p> <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p> </li>
-    /// <li> <p> <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
+    /// <li><p><code>Arn</code>: The ARN of the query logging configuration</p></li>
+    /// <li><p><code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration</p></li>
+    /// <li><p><code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p></li>
+    /// <li><p><code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p></li>
+    /// <li><p><code>DestinationArn</code>: The location that logs are sent to</p></li>
+    /// <li><p><code>Id</code>: The ID of the configuration</p></li>
+    /// <li><p><code>Name</code>: The name of the configuration</p></li>
+    /// <li><p><code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p></li>
+    /// <li><p><code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p></li>
+    /// <li><p><code>Status</code>: The current status of the configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
-    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
+    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// </ul></li>
+    /// </ul></li>
     /// </ul>
     pub fn sort_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sort_by(input.into());
         self
     }
-    /// <p>The element that you want Resolver to sort query logging configurations by. </p> <note>
+    /// <p>The element that you want Resolver to sort query logging configurations by.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
     /// </note>
     /// <p>Valid values include the following elements:</p>
     /// <ul>
-    /// <li> <p> <code>Arn</code>: The ARN of the query logging configuration</p> </li>
-    /// <li> <p> <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p> </li>
-    /// <li> <p> <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p> </li>
-    /// <li> <p> <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p> </li>
-    /// <li> <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
-    /// <li> <p> <code>Id</code>: The ID of the configuration</p> </li>
-    /// <li> <p> <code>Name</code>: The name of the configuration</p> </li>
-    /// <li> <p> <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p> </li>
-    /// <li> <p> <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p> </li>
-    /// <li> <p> <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
+    /// <li><p><code>Arn</code>: The ARN of the query logging configuration</p></li>
+    /// <li><p><code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration</p></li>
+    /// <li><p><code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p></li>
+    /// <li><p><code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p></li>
+    /// <li><p><code>DestinationArn</code>: The location that logs are sent to</p></li>
+    /// <li><p><code>Id</code>: The ID of the configuration</p></li>
+    /// <li><p><code>Name</code>: The name of the configuration</p></li>
+    /// <li><p><code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p></li>
+    /// <li><p><code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p></li>
+    /// <li><p><code>Status</code>: The current status of the configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
-    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
+    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// </ul></li>
+    /// </ul></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p>The element that you want Resolver to sort query logging configurations by. </p> <note>
+    /// <p>The element that you want Resolver to sort query logging configurations by.</p> <note>
     /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter, you must use the same value for <code>SortBy</code>, if any, as in the previous request.</p>
     /// </note>
     /// <p>Valid values include the following elements:</p>
     /// <ul>
-    /// <li> <p> <code>Arn</code>: The ARN of the query logging configuration</p> </li>
-    /// <li> <p> <code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration </p> </li>
-    /// <li> <p> <code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p> </li>
-    /// <li> <p> <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p> </li>
-    /// <li> <p> <code>DestinationArn</code>: The location that logs are sent to</p> </li>
-    /// <li> <p> <code>Id</code>: The ID of the configuration</p> </li>
-    /// <li> <p> <code>Name</code>: The name of the configuration</p> </li>
-    /// <li> <p> <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p> </li>
-    /// <li> <p> <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p> </li>
-    /// <li> <p> <code>Status</code>: The current status of the configuration. Valid values include the following:</p>
+    /// <li><p><code>Arn</code>: The ARN of the query logging configuration</p></li>
+    /// <li><p><code>AssociationCount</code>: The number of VPCs that are associated with the specified configuration</p></li>
+    /// <li><p><code>CreationTime</code>: The date and time that Resolver returned when the configuration was created</p></li>
+    /// <li><p><code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code> when the configuration was created</p></li>
+    /// <li><p><code>DestinationArn</code>: The location that logs are sent to</p></li>
+    /// <li><p><code>Id</code>: The ID of the configuration</p></li>
+    /// <li><p><code>Name</code>: The name of the configuration</p></li>
+    /// <li><p><code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p></li>
+    /// <li><p><code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p></li>
+    /// <li><p><code>Status</code>: The current status of the configuration. Valid values include the following:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging configuration.</p> </li>
-    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
+    /// <li><p><code>CREATING</code>: Resolver is creating the query logging configuration.</p></li>
+    /// <li><p><code>CREATED</code>: The query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging configuration.</p></li>
+    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging configuration. Here are two common causes:</p>
     /// <ul>
-    /// <li> <p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-    /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
+    /// <li><p>The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li><p>Permissions don't allow sending logs to the destination.</p></li>
+    /// </ul></li>
+    /// </ul></li>
     /// </ul>
     pub fn get_sort_by(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sort_by()

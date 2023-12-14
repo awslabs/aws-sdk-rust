@@ -22,8 +22,8 @@ impl ResetNotificationSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `ResetNotificationSettings`.
 ///
-/// <p>Resets the <i>custom notification setting</i> to IAM Roles Anywhere default setting. </p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:ResetNotificationSettings</code>. </p>
+/// <p>Resets the <i>custom notification setting</i> to IAM Roles Anywhere default setting.</p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:ResetNotificationSettings</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetNotificationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl ResetNotificationSettingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_notification_setting_keys`](Self::set_notification_setting_keys).
     ///
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
     pub fn notification_setting_keys(mut self, input: crate::types::NotificationSettingKey) -> Self {
         self.inner = self.inner.notification_setting_keys(input);
         self
     }
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
     pub fn set_notification_setting_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>>) -> Self {
         self.inner = self.inner.set_notification_setting_keys(input);
         self
     }
-    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel.</p>
     pub fn get_notification_setting_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>> {
         self.inner.get_notification_setting_keys()
     }

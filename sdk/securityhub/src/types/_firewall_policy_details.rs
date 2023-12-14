@@ -9,10 +9,10 @@ pub struct FirewallPolicyDetails {
     /// <p>The custom action definitions that are available to use in the firewall policy's <code>StatelessDefaultActions</code> setting.</p>
     pub stateless_custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyStatelessCustomActionsDetails>>,
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub stateless_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub stateless_fragment_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The stateless rule groups that are used in the firewall policy.</p>
     pub stateless_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails>>,
@@ -31,14 +31,14 @@ impl FirewallPolicyDetails {
         self.stateless_custom_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_default_actions.is_none()`.
     pub fn stateless_default_actions(&self) -> &[::std::string::String] {
         self.stateless_default_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_fragment_default_actions.is_none()`.
     pub fn stateless_fragment_default_actions(&self) -> &[::std::string::String] {
@@ -123,7 +123,7 @@ impl FirewallPolicyDetailsBuilder {
     /// To override the contents of this collection use [`set_stateless_default_actions`](Self::set_stateless_default_actions).
     ///
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub fn stateless_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateless_default_actions.unwrap_or_default();
         v.push(input.into());
@@ -131,13 +131,13 @@ impl FirewallPolicyDetailsBuilder {
         self
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub fn set_stateless_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateless_default_actions = input;
         self
     }
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub fn get_stateless_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateless_default_actions
     }
@@ -146,7 +146,7 @@ impl FirewallPolicyDetailsBuilder {
     /// To override the contents of this collection use [`set_stateless_fragment_default_actions`](Self::set_stateless_fragment_default_actions).
     ///
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub fn stateless_fragment_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateless_fragment_default_actions.unwrap_or_default();
         v.push(input.into());
@@ -154,13 +154,13 @@ impl FirewallPolicyDetailsBuilder {
         self
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub fn set_stateless_fragment_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateless_fragment_default_actions = input;
         self
     }
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.</p>
-    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>. </p>
+    /// <p>You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, <code>aws:forward_to_sfe</code>), and can optionally include a custom action from <code>StatelessCustomActions</code>.</p>
     pub fn get_stateless_fragment_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateless_fragment_default_actions
     }

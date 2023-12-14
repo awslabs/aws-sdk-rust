@@ -5,7 +5,7 @@
 pub struct CreateIndexOutput {
     /// <p>The identifier for the Amazon Q index.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q index.</p>
     pub index_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl CreateIndexOutput {
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q index.</p>
     pub fn index_arn(&self) -> ::std::option::Option<&str> {
         self.index_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl CreateIndexOutputBuilder {
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q index.</p>
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q index.</p>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of an Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Q index.</p>
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_arn
     }

@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsOutput {
-    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
+    /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p> Detailed information about the recommendation report. </p>
+    /// <p>Detailed information about the recommendation report.</p>
     pub recommendation_report_details: ::std::option::Option<crate::types::RecommendationReportDetails>,
     _request_id: Option<String>,
 }
 impl GetRecommendationReportDetailsOutput {
-    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
+    /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p> Detailed information about the recommendation report. </p>
+    /// <p>Detailed information about the recommendation report.</p>
     pub fn recommendation_report_details(&self) -> ::std::option::Option<&crate::types::RecommendationReportDetails> {
         self.recommendation_report_details.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct GetRecommendationReportDetailsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetRecommendationReportDetailsOutputBuilder {
-    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
+    /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
+    /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
+    /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p> Detailed information about the recommendation report. </p>
+    /// <p>Detailed information about the recommendation report.</p>
     pub fn recommendation_report_details(mut self, input: crate::types::RecommendationReportDetails) -> Self {
         self.recommendation_report_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Detailed information about the recommendation report. </p>
+    /// <p>Detailed information about the recommendation report.</p>
     pub fn set_recommendation_report_details(mut self, input: ::std::option::Option<crate::types::RecommendationReportDetails>) -> Self {
         self.recommendation_report_details = input;
         self
     }
-    /// <p> Detailed information about the recommendation report. </p>
+    /// <p>Detailed information about the recommendation report.</p>
     pub fn get_recommendation_report_details(&self) -> &::std::option::Option<crate::types::RecommendationReportDetails> {
         &self.recommendation_report_details
     }

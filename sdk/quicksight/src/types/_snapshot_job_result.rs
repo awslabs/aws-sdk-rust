@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotJobResult {
-    /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
 }
 impl SnapshotJobResult {
-    /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anonymous_users.is_none()`.
     pub fn anonymous_users(&self) -> &[crate::types::AnonymousUserSnapshotJobResult] {
@@ -33,19 +33,19 @@ impl SnapshotJobResultBuilder {
     ///
     /// To override the contents of this collection use [`set_anonymous_users`](Self::set_anonymous_users).
     ///
-    /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub fn anonymous_users(mut self, input: crate::types::AnonymousUserSnapshotJobResult) -> Self {
         let mut v = self.anonymous_users.unwrap_or_default();
         v.push(input);
         self.anonymous_users = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub fn set_anonymous_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>) -> Self {
         self.anonymous_users = input;
         self
     }
-    /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    /// <p>A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>> {
         &self.anonymous_users
     }

@@ -23,20 +23,20 @@ pub struct SampledHttpRequest {
     /// <rule group name>
     /// #
     /// <rule name></rule>
-    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
     pub rule_name_within_rule_group: ::std::option::Option<::std::string::String>,
     /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
     pub request_headers_inserted: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
     /// <p>The response code that was sent for the request.</p>
     pub response_code_sent: ::std::option::Option<i32>,
-    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.</p>
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     /// <p>The <code>CAPTCHA</code> response for the request.</p>
     pub captcha_response: ::std::option::Option<crate::types::CaptchaResponse>,
     /// <p>The <code>Challenge</code> response for the request.</p>
     pub challenge_response: ::std::option::Option<crate::types::ChallengeResponse>,
-    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
+    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value.</p>
     pub overridden_action: ::std::option::Option<::std::string::String>,
 }
 impl SampledHttpRequest {
@@ -67,7 +67,7 @@ impl SampledHttpRequest {
     /// <rule group name>
     /// #
     /// <rule name></rule>
-    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
     pub fn rule_name_within_rule_group(&self) -> ::std::option::Option<&str> {
         self.rule_name_within_rule_group.as_deref()
     }
@@ -81,8 +81,8 @@ impl SampledHttpRequest {
     pub fn response_code_sent(&self) -> ::std::option::Option<i32> {
         self.response_code_sent
     }
-    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
     pub fn labels(&self) -> &[crate::types::Label] {
@@ -96,7 +96,7 @@ impl SampledHttpRequest {
     pub fn challenge_response(&self) -> ::std::option::Option<&crate::types::ChallengeResponse> {
         self.challenge_response.as_ref()
     }
-    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
+    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value.</p>
     pub fn overridden_action(&self) -> ::std::option::Option<&str> {
         self.overridden_action.as_deref()
     }
@@ -194,7 +194,7 @@ impl SampledHttpRequestBuilder {
     /// <rule group name>
     /// #
     /// <rule name></rule>
-    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
     pub fn rule_name_within_rule_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name_within_rule_group = ::std::option::Option::Some(input.into());
         self
@@ -210,7 +210,7 @@ impl SampledHttpRequestBuilder {
     /// <rule group name>
     /// #
     /// <rule name></rule>
-    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
     pub fn set_rule_name_within_rule_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name_within_rule_group = input;
         self
@@ -226,7 +226,7 @@ impl SampledHttpRequestBuilder {
     /// <rule group name>
     /// #
     /// <rule name></rule>
-    /// </rule></code>. If the rule is not in a rule group, this field is absent. </p>
+    /// </rule></code>. If the rule is not in a rule group, this field is absent.</p>
     pub fn get_rule_name_within_rule_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_name_within_rule_group
     }
@@ -268,22 +268,22 @@ impl SampledHttpRequestBuilder {
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
-    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.</p>
     pub fn labels(mut self, input: crate::types::Label) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input);
         self.labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.</p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
-    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+    /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.</p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Label>> {
         &self.labels
     }
@@ -315,17 +315,17 @@ impl SampledHttpRequestBuilder {
     pub fn get_challenge_response(&self) -> &::std::option::Option<crate::types::ChallengeResponse> {
         &self.challenge_response
     }
-    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
+    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value.</p>
     pub fn overridden_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.overridden_action = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
+    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value.</p>
     pub fn set_overridden_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.overridden_action = input;
         self
     }
-    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value. </p>
+    /// <p>Used only for rule group rules that have a rule action override in place in the web ACL. This is the action that the rule group rule is configured for, and not the action that was applied to the request. The action that WAF applied is the <code>Action</code> value.</p>
     pub fn get_overridden_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.overridden_action
     }

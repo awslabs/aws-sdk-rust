@@ -256,11 +256,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpoin
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeEndpointAsyncError {
-    /// <p> An internal failure occurred. </p>
+    /// <p>An internal failure occurred.</p>
     InternalFailure(crate::types::error::InternalFailure),
-    /// <p> Inspect your request and try again. </p>
+    /// <p>Inspect your request and try again.</p>
     ValidationError(crate::types::error::ValidationError),
-    /// <p> The service is unavailable. Try your call again. </p>
+    /// <p>The service is unavailable. Try your call again.</p>
     ServiceUnavailable(crate::types::error::ServiceUnavailable),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

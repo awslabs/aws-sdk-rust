@@ -11,9 +11,9 @@ pub struct DeleteApplicationOutput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application’s environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current state of the application. </p>
+    /// <p>The current state of the application.</p>
     pub state: ::std::option::Option<crate::types::ApplicationState>,
-    /// <p>A timestamp that indicates when the environment was last updated. </p>
+    /// <p>A timestamp that indicates when the environment was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -34,11 +34,11 @@ impl DeleteApplicationOutput {
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The current state of the application. </p>
+    /// <p>The current state of the application.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ApplicationState> {
         self.state.as_ref()
     }
-    /// <p>A timestamp that indicates when the environment was last updated. </p>
+    /// <p>A timestamp that indicates when the environment was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
@@ -124,31 +124,31 @@ impl DeleteApplicationOutputBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>The current state of the application. </p>
+    /// <p>The current state of the application.</p>
     pub fn state(mut self, input: crate::types::ApplicationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the application. </p>
+    /// <p>The current state of the application.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of the application. </p>
+    /// <p>The current state of the application.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
         &self.state
     }
-    /// <p>A timestamp that indicates when the environment was last updated. </p>
+    /// <p>A timestamp that indicates when the environment was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that indicates when the environment was last updated. </p>
+    /// <p>A timestamp that indicates when the environment was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>A timestamp that indicates when the environment was last updated. </p>
+    /// <p>A timestamp that indicates when the environment was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }

@@ -8,7 +8,7 @@ pub struct SuggestInput {
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
     pub suggester: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub size: ::std::option::Option<i64>,
 }
 impl SuggestInput {
@@ -20,7 +20,7 @@ impl SuggestInput {
     pub fn suggester(&self) -> ::std::option::Option<&str> {
         self.suggester.as_deref()
     }
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
@@ -71,17 +71,17 @@ impl SuggestInputBuilder {
     pub fn get_suggester(&self) -> &::std::option::Option<::std::string::String> {
         &self.suggester
     }
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
         &self.size
     }

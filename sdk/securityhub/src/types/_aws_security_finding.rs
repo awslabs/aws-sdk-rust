@@ -23,7 +23,7 @@ pub struct AwsSecurityFinding {
     /// <p>The Region from which the finding was generated.</p>
     /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
     pub region: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     pub generator_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
@@ -65,7 +65,7 @@ pub struct AwsSecurityFinding {
     /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     pub product_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of malware related to a finding.</p>
     pub malware: ::std::option::Option<::std::vec::Vec<crate::types::Malware>>,
@@ -75,7 +75,7 @@ pub struct AwsSecurityFinding {
     pub network_path: ::std::option::Option<::std::vec::Vec<crate::types::NetworkPathComponent>>,
     /// <p>The details of process-related information about a finding.</p>
     pub process: ::std::option::Option<crate::types::ProcessDetails>,
-    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat. </p>
+    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat.</p>
     pub threats: ::std::option::Option<::std::vec::Vec<crate::types::Threat>>,
     /// <p>Threat intelligence details related to a finding.</p>
     pub threat_intel_indicators: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelIndicator>>,
@@ -83,9 +83,9 @@ pub struct AwsSecurityFinding {
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>This data type is exclusive to findings that are generated as the result of a check run against a specific rule in a supported security standard, such as CIS Amazon Web Services Foundations. Contains security standard-related finding details.</p>
     pub compliance: ::std::option::Option<crate::types::Compliance>,
-    /// <p>Indicates the veracity of a finding. </p>
+    /// <p>Indicates the veracity of a finding.</p>
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
-    /// <p>The workflow state of a finding. </p>
+    /// <p>The workflow state of a finding.</p>
     pub workflow_state: ::std::option::Option<crate::types::WorkflowState>,
     /// <p>Provides information about the status of the investigation into a finding.</p>
     pub workflow: ::std::option::Option<crate::types::Workflow>,
@@ -105,12 +105,12 @@ pub struct AwsSecurityFinding {
     pub finding_provider_fields: ::std::option::Option<crate::types::FindingProviderFields>,
     /// <p>Indicates whether the finding is a sample finding.</p>
     pub sample: ::std::option::Option<bool>,
-    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.</p>
     pub generator_details: ::std::option::Option<crate::types::GeneratorDetails>,
     /// <p>An ISO8601-formatted timestamp that indicates when Security Hub received a finding and begins to process it.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub processed_at: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    /// <p>The name of the Amazon Web Services account from which a finding was generated.</p>
     pub aws_account_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsSecurityFinding {
@@ -143,7 +143,7 @@ impl AwsSecurityFinding {
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     pub fn generator_id(&self) -> ::std::option::Option<&str> {
         self.generator_id.as_deref()
     }
@@ -217,7 +217,7 @@ impl AwsSecurityFinding {
     pub fn product_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.product_fields.as_ref()
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn user_defined_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_defined_fields.as_ref()
     }
@@ -241,7 +241,7 @@ impl AwsSecurityFinding {
     pub fn process(&self) -> ::std::option::Option<&crate::types::ProcessDetails> {
         self.process.as_ref()
     }
-    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat. </p>
+    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threats.is_none()`.
     pub fn threats(&self) -> &[crate::types::Threat] {
@@ -263,11 +263,11 @@ impl AwsSecurityFinding {
     pub fn compliance(&self) -> ::std::option::Option<&crate::types::Compliance> {
         self.compliance.as_ref()
     }
-    /// <p>Indicates the veracity of a finding. </p>
+    /// <p>Indicates the veracity of a finding.</p>
     pub fn verification_state(&self) -> ::std::option::Option<&crate::types::VerificationState> {
         self.verification_state.as_ref()
     }
-    /// <p>The workflow state of a finding. </p>
+    /// <p>The workflow state of a finding.</p>
     pub fn workflow_state(&self) -> ::std::option::Option<&crate::types::WorkflowState> {
         self.workflow_state.as_ref()
     }
@@ -311,7 +311,7 @@ impl AwsSecurityFinding {
     pub fn sample(&self) -> ::std::option::Option<bool> {
         self.sample
     }
-    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.</p>
     pub fn generator_details(&self) -> ::std::option::Option<&crate::types::GeneratorDetails> {
         self.generator_details.as_ref()
     }
@@ -320,7 +320,7 @@ impl AwsSecurityFinding {
     pub fn processed_at(&self) -> ::std::option::Option<&str> {
         self.processed_at.as_deref()
     }
-    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    /// <p>The name of the Amazon Web Services account from which a finding was generated.</p>
     pub fn aws_account_name(&self) -> ::std::option::Option<&str> {
         self.aws_account_name.as_deref()
     }
@@ -484,18 +484,18 @@ impl AwsSecurityFindingBuilder {
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     /// This field is required.
     pub fn generator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generator_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     pub fn set_generator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generator_id = input;
         self
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     pub fn get_generator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.generator_id
     }
@@ -759,7 +759,7 @@ impl AwsSecurityFindingBuilder {
     ///
     /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
     ///
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn user_defined_fields(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -770,7 +770,7 @@ impl AwsSecurityFindingBuilder {
         self.user_defined_fields = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn set_user_defined_fields(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -778,7 +778,7 @@ impl AwsSecurityFindingBuilder {
         self.user_defined_fields = input;
         self
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. </p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_defined_fields
     }
@@ -854,19 +854,19 @@ impl AwsSecurityFindingBuilder {
     ///
     /// To override the contents of this collection use [`set_threats`](Self::set_threats).
     ///
-    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat. </p>
+    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat.</p>
     pub fn threats(mut self, input: crate::types::Threat) -> Self {
         let mut v = self.threats.unwrap_or_default();
         v.push(input);
         self.threats = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat. </p>
+    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat.</p>
     pub fn set_threats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Threat>>) -> Self {
         self.threats = input;
         self
     }
-    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat. </p>
+    /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat.</p>
     pub fn get_threats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Threat>> {
         &self.threats
     }
@@ -924,31 +924,31 @@ impl AwsSecurityFindingBuilder {
     pub fn get_compliance(&self) -> &::std::option::Option<crate::types::Compliance> {
         &self.compliance
     }
-    /// <p>Indicates the veracity of a finding. </p>
+    /// <p>Indicates the veracity of a finding.</p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
         self.verification_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the veracity of a finding. </p>
+    /// <p>Indicates the veracity of a finding.</p>
     pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
-    /// <p>Indicates the veracity of a finding. </p>
+    /// <p>Indicates the veracity of a finding.</p>
     pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
-    /// <p>The workflow state of a finding. </p>
+    /// <p>The workflow state of a finding.</p>
     pub fn workflow_state(mut self, input: crate::types::WorkflowState) -> Self {
         self.workflow_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The workflow state of a finding. </p>
+    /// <p>The workflow state of a finding.</p>
     pub fn set_workflow_state(mut self, input: ::std::option::Option<crate::types::WorkflowState>) -> Self {
         self.workflow_state = input;
         self
     }
-    /// <p>The workflow state of a finding. </p>
+    /// <p>The workflow state of a finding.</p>
     pub fn get_workflow_state(&self) -> &::std::option::Option<crate::types::WorkflowState> {
         &self.workflow_state
     }
@@ -1090,17 +1090,17 @@ impl AwsSecurityFindingBuilder {
     pub fn get_sample(&self) -> &::std::option::Option<bool> {
         &self.sample
     }
-    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.</p>
     pub fn generator_details(mut self, input: crate::types::GeneratorDetails) -> Self {
         self.generator_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.</p>
     pub fn set_generator_details(mut self, input: ::std::option::Option<crate::types::GeneratorDetails>) -> Self {
         self.generator_details = input;
         self
     }
-    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.</p>
     pub fn get_generator_details(&self) -> &::std::option::Option<crate::types::GeneratorDetails> {
         &self.generator_details
     }
@@ -1121,17 +1121,17 @@ impl AwsSecurityFindingBuilder {
     pub fn get_processed_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.processed_at
     }
-    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    /// <p>The name of the Amazon Web Services account from which a finding was generated.</p>
     pub fn aws_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    /// <p>The name of the Amazon Web Services account from which a finding was generated.</p>
     pub fn set_aws_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_name = input;
         self
     }
-    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    /// <p>The name of the Amazon Web Services account from which a finding was generated.</p>
     pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_name
     }

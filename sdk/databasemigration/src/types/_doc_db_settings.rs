@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DocDbSettings {
-    /// <p>The user name you use to access the DocumentDB source endpoint. </p>
+    /// <p>The user name you use to access the DocumentDB source endpoint.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p> The password for the user account you use to access the DocumentDB source endpoint. </p>
+    /// <p>The password for the user account you use to access the DocumentDB source endpoint.</p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the server on the DocumentDB source endpoint. </p>
+    /// <p>The name of the server on the DocumentDB source endpoint.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
-    /// <p> The port value for the DocumentDB source endpoint. </p>
+    /// <p>The port value for the DocumentDB source endpoint.</p>
     pub port: ::std::option::Option<i32>,
-    /// <p> The database name on the DocumentDB source endpoint. </p>
+    /// <p>The database name on the DocumentDB source endpoint.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p> Specifies either document or table mode. </p>
+    /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub nesting_level: ::std::option::Option<crate::types::NestingLevelValue>,
-    /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
-    /// <p>Default value is <code>"false"</code>. </p>
+    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Default value is <code>"false"</code>.</p>
     pub extract_doc_id: ::std::option::Option<bool>,
-    /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+    /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
     pub docs_to_investigate: ::std::option::Option<i32>,
     /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
@@ -36,43 +36,43 @@ pub struct DocDbSettings {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
-    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub replicate_shard_collections: ::std::option::Option<bool>,
 }
 impl DocDbSettings {
-    /// <p>The user name you use to access the DocumentDB source endpoint. </p>
+    /// <p>The user name you use to access the DocumentDB source endpoint.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p> The password for the user account you use to access the DocumentDB source endpoint. </p>
+    /// <p>The password for the user account you use to access the DocumentDB source endpoint.</p>
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p> The name of the server on the DocumentDB source endpoint. </p>
+    /// <p>The name of the server on the DocumentDB source endpoint.</p>
     pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
-    /// <p> The port value for the DocumentDB source endpoint. </p>
+    /// <p>The port value for the DocumentDB source endpoint.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
-    /// <p> The database name on the DocumentDB source endpoint. </p>
+    /// <p>The database name on the DocumentDB source endpoint.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p> Specifies either document or table mode. </p>
+    /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub fn nesting_level(&self) -> ::std::option::Option<&crate::types::NestingLevelValue> {
         self.nesting_level.as_ref()
     }
-    /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
-    /// <p>Default value is <code>"false"</code>. </p>
+    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Default value is <code>"false"</code>.</p>
     pub fn extract_doc_id(&self) -> ::std::option::Option<bool> {
         self.extract_doc_id
     }
-    /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+    /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
     pub fn docs_to_investigate(&self) -> ::std::option::Option<i32> {
         self.docs_to_investigate
@@ -98,8 +98,8 @@ impl DocDbSettings {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
-    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn replicate_shard_collections(&self) -> ::std::option::Option<bool> {
         self.replicate_shard_collections
@@ -150,123 +150,123 @@ pub struct DocDbSettingsBuilder {
     pub(crate) replicate_shard_collections: ::std::option::Option<bool>,
 }
 impl DocDbSettingsBuilder {
-    /// <p>The user name you use to access the DocumentDB source endpoint. </p>
+    /// <p>The user name you use to access the DocumentDB source endpoint.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name you use to access the DocumentDB source endpoint. </p>
+    /// <p>The user name you use to access the DocumentDB source endpoint.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The user name you use to access the DocumentDB source endpoint. </p>
+    /// <p>The user name you use to access the DocumentDB source endpoint.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p> The password for the user account you use to access the DocumentDB source endpoint. </p>
+    /// <p>The password for the user account you use to access the DocumentDB source endpoint.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The password for the user account you use to access the DocumentDB source endpoint. </p>
+    /// <p>The password for the user account you use to access the DocumentDB source endpoint.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
-    /// <p> The password for the user account you use to access the DocumentDB source endpoint. </p>
+    /// <p>The password for the user account you use to access the DocumentDB source endpoint.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
-    /// <p> The name of the server on the DocumentDB source endpoint. </p>
+    /// <p>The name of the server on the DocumentDB source endpoint.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the server on the DocumentDB source endpoint. </p>
+    /// <p>The name of the server on the DocumentDB source endpoint.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
-    /// <p> The name of the server on the DocumentDB source endpoint. </p>
+    /// <p>The name of the server on the DocumentDB source endpoint.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_name
     }
-    /// <p> The port value for the DocumentDB source endpoint. </p>
+    /// <p>The port value for the DocumentDB source endpoint.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The port value for the DocumentDB source endpoint. </p>
+    /// <p>The port value for the DocumentDB source endpoint.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
-    /// <p> The port value for the DocumentDB source endpoint. </p>
+    /// <p>The port value for the DocumentDB source endpoint.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
-    /// <p> The database name on the DocumentDB source endpoint. </p>
+    /// <p>The database name on the DocumentDB source endpoint.</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The database name on the DocumentDB source endpoint. </p>
+    /// <p>The database name on the DocumentDB source endpoint.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p> The database name on the DocumentDB source endpoint. </p>
+    /// <p>The database name on the DocumentDB source endpoint.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p> Specifies either document or table mode. </p>
+    /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub fn nesting_level(mut self, input: crate::types::NestingLevelValue) -> Self {
         self.nesting_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies either document or table mode. </p>
+    /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub fn set_nesting_level(mut self, input: ::std::option::Option<crate::types::NestingLevelValue>) -> Self {
         self.nesting_level = input;
         self
     }
-    /// <p> Specifies either document or table mode. </p>
+    /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub fn get_nesting_level(&self) -> &::std::option::Option<crate::types::NestingLevelValue> {
         &self.nesting_level
     }
-    /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
-    /// <p>Default value is <code>"false"</code>. </p>
+    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Default value is <code>"false"</code>.</p>
     pub fn extract_doc_id(mut self, input: bool) -> Self {
         self.extract_doc_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
-    /// <p>Default value is <code>"false"</code>. </p>
+    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Default value is <code>"false"</code>.</p>
     pub fn set_extract_doc_id(mut self, input: ::std::option::Option<bool>) -> Self {
         self.extract_doc_id = input;
         self
     }
-    /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
-    /// <p>Default value is <code>"false"</code>. </p>
+    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Default value is <code>"false"</code>.</p>
     pub fn get_extract_doc_id(&self) -> &::std::option::Option<bool> {
         &self.extract_doc_id
     }
-    /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+    /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
     pub fn docs_to_investigate(mut self, input: i32) -> Self {
         self.docs_to_investigate = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+    /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
     pub fn set_docs_to_investigate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.docs_to_investigate = input;
         self
     }
-    /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+    /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
     pub fn get_docs_to_investigate(&self) -> &::std::option::Option<i32> {
         &self.docs_to_investigate
@@ -336,8 +336,8 @@ impl DocDbSettingsBuilder {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
-    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn replicate_shard_collections(mut self, input: bool) -> Self {
         self.replicate_shard_collections = ::std::option::Option::Some(input);
@@ -346,8 +346,8 @@ impl DocDbSettingsBuilder {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
-    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn set_replicate_shard_collections(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replicate_shard_collections = input;
@@ -356,8 +356,8 @@ impl DocDbSettingsBuilder {
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
     /// <ul>
-    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
-    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// <li><p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p></li>
+    /// <li><p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn get_replicate_shard_collections(&self) -> &::std::option::Option<bool> {
         &self.replicate_shard_collections

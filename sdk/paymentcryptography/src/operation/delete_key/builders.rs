@@ -25,12 +25,12 @@ impl DeleteKeyInputBuilder {
 /// <p>Deletes the key material and metadata associated with Amazon Web Services Payment Cryptography key.</p>
 /// <p>Key deletion is irreversible. After a key is deleted, you can't perform cryptographic operations using the key. For example, you can't decrypt data that was encrypted by a deleted Amazon Web Services Payment Cryptography key, and the data may become unrecoverable. Because key deletion is destructive, Amazon Web Services Payment Cryptography has a safety mechanism to prevent accidental deletion of a key. When you call this operation, Amazon Web Services Payment Cryptography disables the specified key but doesn't delete it until after a waiting period set using <code>DeleteKeyInDays</code>. The default waiting period is 7 days. During the waiting period, the <code>KeyState</code> is <code>DELETE_PENDING</code>. After the key is deleted, the <code>KeyState</code> is <code>DELETE_COMPLETE</code>.</p>
 /// <p>You should delete a key only when you are sure that you don't need to use it anymore and no other parties are utilizing this key. If you aren't sure, consider deactivating it instead by calling <code>StopKeyUsage</code>.</p>
-/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>RestoreKey</code> </p> </li>
-/// <li> <p> <code>StartKeyUsage</code> </p> </li>
-/// <li> <p> <code>StopKeyUsage</code> </p> </li>
+/// <li><p><code>RestoreKey</code></p></li>
+/// <li><p><code>StartKeyUsage</code></p></li>
+/// <li><p><code>StopKeyUsage</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKeyFluentBuilder {

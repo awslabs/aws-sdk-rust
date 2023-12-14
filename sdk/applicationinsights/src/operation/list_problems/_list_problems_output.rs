@@ -3,28 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProblemsOutput {
-    /// <p>The list of problems. </p>
+    /// <p>The list of problems.</p>
     pub problem_list: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the resource group. </p>
+    /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProblemsOutput {
-    /// <p>The list of problems. </p>
+    /// <p>The list of problems.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.problem_list.is_none()`.
     pub fn problem_list(&self) -> &[crate::types::Problem] {
         self.problem_list.as_deref().unwrap_or_default()
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The name of the resource group. </p>
+    /// <p>The name of the resource group.</p>
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
@@ -60,47 +60,47 @@ impl ListProblemsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_problem_list`](Self::set_problem_list).
     ///
-    /// <p>The list of problems. </p>
+    /// <p>The list of problems.</p>
     pub fn problem_list(mut self, input: crate::types::Problem) -> Self {
         let mut v = self.problem_list.unwrap_or_default();
         v.push(input);
         self.problem_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of problems. </p>
+    /// <p>The list of problems.</p>
     pub fn set_problem_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>) -> Self {
         self.problem_list = input;
         self
     }
-    /// <p>The list of problems. </p>
+    /// <p>The list of problems.</p>
     pub fn get_problem_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Problem>> {
         &self.problem_list
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> The name of the resource group. </p>
+    /// <p>The name of the resource group.</p>
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the resource group. </p>
+    /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
-    /// <p> The name of the resource group. </p>
+    /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }

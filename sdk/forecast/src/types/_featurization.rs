@@ -5,13 +5,13 @@
 /// </note>
 /// <p>Provides featurization (transformation) information for a dataset field. This object is part of the <code>FeaturizationConfig</code> object.</p>
 /// <p>For example:</p>
-/// <p> <code>{</code> </p>
-/// <p> <code>"AttributeName": "demand",</code> </p>
-/// <p> <code>FeaturizationPipeline [ {</code> </p>
-/// <p> <code>"FeaturizationMethodName": "filling",</code> </p>
-/// <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p>
-/// <p> <code>} ]</code> </p>
-/// <p> <code>}</code> </p>
+/// <p><code>{</code></p>
+/// <p><code>"AttributeName": "demand",</code></p>
+/// <p><code>FeaturizationPipeline [ {</code></p>
+/// <p><code>"FeaturizationMethodName": "filling",</code></p>
+/// <p><code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code></p>
+/// <p><code>} ]</code></p>
+/// <p><code>}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Featurization {

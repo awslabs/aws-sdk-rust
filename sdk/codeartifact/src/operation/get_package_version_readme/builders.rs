@@ -22,8 +22,8 @@ impl GetPackageVersionReadmeInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPackageVersionReadme`.
 ///
-/// <p> Gets the readme file or descriptive text for a package version. </p>
-/// <p> The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText. </p>
+/// <p>Gets the readme file or descriptive text for a package version.</p>
+/// <p>The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPackageVersionReadmeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,66 +109,66 @@ impl GetPackageVersionReadmeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version with the requested readme file.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version with the requested readme file.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version with the requested readme file.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_owner()
     }
-    /// <p> The repository that contains the package with the requested readme file. </p>
+    /// <p>The repository that contains the package with the requested readme file.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
-    /// <p> The repository that contains the package with the requested readme file. </p>
+    /// <p>The repository that contains the package with the requested readme file.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
-    /// <p> The repository that contains the package with the requested readme file. </p>
+    /// <p>The repository that contains the package with the requested readme file.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository()
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+    /// <p>A format that specifies the type of the package version with the requested readme file.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
         self
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+    /// <p>A format that specifies the type of the package version with the requested readme file.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
-    /// <p> A format that specifies the type of the package version with the requested readme file. </p>
+    /// <p>A format that specifies the type of the package version with the requested readme file.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         self.inner.get_format()
     }
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -176,8 +176,8 @@ impl GetPackageVersionReadmeFluentBuilder {
     }
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -185,37 +185,37 @@ impl GetPackageVersionReadmeFluentBuilder {
     }
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
-    /// <p> The name of the package version that contains the requested readme file. </p>
+    /// <p>The name of the package version that contains the requested readme file.</p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package(input.into());
         self
     }
-    /// <p> The name of the package version that contains the requested readme file. </p>
+    /// <p>The name of the package version that contains the requested readme file.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package(input);
         self
     }
-    /// <p> The name of the package version that contains the requested readme file. </p>
+    /// <p>The name of the package version that contains the requested readme file.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package()
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package_version()
     }

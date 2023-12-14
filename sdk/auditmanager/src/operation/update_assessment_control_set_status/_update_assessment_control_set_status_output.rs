@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlSetStatusOutput {
-    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// <p>The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned.</p>
     pub control_set: ::std::option::Option<crate::types::AssessmentControlSet>,
     _request_id: Option<String>,
 }
 impl UpdateAssessmentControlSetStatusOutput {
-    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// <p>The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned.</p>
     pub fn control_set(&self) -> ::std::option::Option<&crate::types::AssessmentControlSet> {
         self.control_set.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAssessmentControlSetStatusOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAssessmentControlSetStatusOutputBuilder {
-    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// <p>The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned.</p>
     pub fn control_set(mut self, input: crate::types::AssessmentControlSet) -> Self {
         self.control_set = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// <p>The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned.</p>
     pub fn set_control_set(mut self, input: ::std::option::Option<crate::types::AssessmentControlSet>) -> Self {
         self.control_set = input;
         self
     }
-    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// <p>The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned.</p>
     pub fn get_control_set(&self) -> &::std::option::Option<crate::types::AssessmentControlSet> {
         &self.control_set
     }

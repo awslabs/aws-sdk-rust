@@ -17,7 +17,7 @@ pub struct ListAuditFindingsInput {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
+    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub list_suppressed_findings: ::std::option::Option<bool>,
 }
 impl ListAuditFindingsInput {
@@ -49,7 +49,7 @@ impl ListAuditFindingsInput {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
+    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub fn list_suppressed_findings(&self) -> ::std::option::Option<bool> {
         self.list_suppressed_findings
     }
@@ -173,17 +173,17 @@ impl ListAuditFindingsInputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
+    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub fn list_suppressed_findings(mut self, input: bool) -> Self {
         self.list_suppressed_findings = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
+    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub fn set_list_suppressed_findings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.list_suppressed_findings = input;
         self
     }
-    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
+    /// <p>Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.</p>
     pub fn get_list_suppressed_findings(&self) -> &::std::option::Option<bool> {
         &self.list_suppressed_findings
     }

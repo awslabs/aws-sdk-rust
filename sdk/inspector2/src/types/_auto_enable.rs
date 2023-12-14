@@ -8,9 +8,9 @@ pub struct AutoEnable {
     pub ec2: bool,
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub ecr: bool,
-    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub lambda: ::std::option::Option<bool>,
-    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub lambda_code: ::std::option::Option<bool>,
 }
 impl AutoEnable {
@@ -22,11 +22,11 @@ impl AutoEnable {
     pub fn ecr(&self) -> bool {
         self.ecr
     }
-    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn lambda(&self) -> ::std::option::Option<bool> {
         self.lambda
     }
-    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn lambda_code(&self) -> ::std::option::Option<bool> {
         self.lambda_code
     }
@@ -78,31 +78,31 @@ impl AutoEnableBuilder {
     pub fn get_ecr(&self) -> &::std::option::Option<bool> {
         &self.ecr
     }
-    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn lambda(mut self, input: bool) -> Self {
         self.lambda = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn set_lambda(mut self, input: ::std::option::Option<bool>) -> Self {
         self.lambda = input;
         self
     }
-    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<bool> {
         &self.lambda
     }
-    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn lambda_code(mut self, input: bool) -> Self {
         self.lambda_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn set_lambda_code(mut self, input: ::std::option::Option<bool>) -> Self {
         self.lambda_code = input;
         self
     }
-    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
+    /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn get_lambda_code(&self) -> &::std::option::Option<bool> {
         &self.lambda_code
     }

@@ -127,21 +127,21 @@ impl UpdateParameterGroupFluentBuilder {
     /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
     ///
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
-    /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+    /// <p><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
     pub fn parameter_name_values(mut self, input: crate::types::ParameterNameValue) -> Self {
         self.inner = self.inner.parameter_name_values(input);
         self
     }
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
-    /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+    /// <p><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
     pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>) -> Self {
         self.inner = self.inner.set_parameter_name_values(input);
         self
     }
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
-    /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+    /// <p><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
     pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
         self.inner.get_parameter_name_values()

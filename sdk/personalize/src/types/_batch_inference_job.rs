@@ -30,10 +30,10 @@ pub struct BatchInferenceJob {
     pub theme_generation_config: ::std::option::Option<crate::types::ThemeGenerationConfig>,
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>IN PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the batch inference job was created.</p>
@@ -92,10 +92,10 @@ impl BatchInferenceJob {
     }
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>IN PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -307,10 +307,10 @@ impl BatchInferenceJobBuilder {
     }
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>IN PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -318,10 +318,10 @@ impl BatchInferenceJobBuilder {
     }
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>IN PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -329,10 +329,10 @@ impl BatchInferenceJobBuilder {
     }
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>IN PROGRESS</p> </li>
-    /// <li> <p>ACTIVE</p> </li>
-    /// <li> <p>CREATE FAILED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>IN PROGRESS</p></li>
+    /// <li><p>ACTIVE</p></li>
+    /// <li><p>CREATE FAILED</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

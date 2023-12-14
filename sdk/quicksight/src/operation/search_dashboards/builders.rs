@@ -22,7 +22,7 @@ impl SearchDashboardsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchDashboards`.
 ///
-/// <p>Searches for dashboards that belong to a user. </p> <note>
+/// <p>Searches for dashboards that belong to a user.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,17 +116,17 @@ impl SearchDashboardsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_dashboards::paginator::SearchDashboardsPaginator {
         crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
+    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
+    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
+    /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
@@ -134,17 +134,17 @@ impl SearchDashboardsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code></p>
     pub fn filters(mut self, input: crate::types::DashboardSearchFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> </p>
+    /// <p>The filters to apply to the search. Currently, you can search only by user name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSearchFilter>> {
         self.inner.get_filters()
     }

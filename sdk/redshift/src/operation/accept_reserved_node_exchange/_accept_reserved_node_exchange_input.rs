@@ -5,7 +5,7 @@
 pub struct AcceptReservedNodeExchangeInput {
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
     pub reserved_node_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptReservedNodeExchangeInput {
@@ -13,7 +13,7 @@ impl AcceptReservedNodeExchangeInput {
     pub fn reserved_node_id(&self) -> ::std::option::Option<&str> {
         self.reserved_node_id.as_deref()
     }
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     pub fn target_reserved_node_offering_id(&self) -> ::std::option::Option<&str> {
         self.target_reserved_node_offering_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl AcceptReservedNodeExchangeInputBuilder {
     pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_node_id
     }
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     /// This field is required.
     pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_reserved_node_offering_id = input;
         self
     }
-    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code></p>
     pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_reserved_node_offering_id
     }

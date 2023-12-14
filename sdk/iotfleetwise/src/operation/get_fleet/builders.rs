@@ -22,7 +22,7 @@ impl GetFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFleet`.
 ///
-/// <p> Retrieves information about a fleet. </p>
+/// <p>Retrieves information about a fleet.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl GetFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the fleet to retrieve information about. </p>
+    /// <p>The ID of the fleet to retrieve information about.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p> The ID of the fleet to retrieve information about. </p>
+    /// <p>The ID of the fleet to retrieve information about.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p> The ID of the fleet to retrieve information about. </p>
+    /// <p>The ID of the fleet to retrieve information about.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }

@@ -22,7 +22,7 @@ impl DeleteBillingGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBillingGroup`.
 ///
-/// <p> Deletes a billing group. </p>
+/// <p>Deletes a billing group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBillingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

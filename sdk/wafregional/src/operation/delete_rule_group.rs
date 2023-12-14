@@ -249,27 +249,27 @@ pub enum DeleteRuleGroupError {
     WafInternalErrorException(crate::types::error::WafInternalErrorException),
     /// <p>The operation failed because there was nothing to do. For example:</p>
     /// <ul>
-    /// <li> <p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p> </li>
-    /// <li> <p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p> </li>
-    /// <li> <p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p> </li>
-    /// <li> <p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p> </li>
-    /// <li> <p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p> </li>
+    /// <li><p>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in the specified <code>WebACL</code>.</p></li>
+    /// <li><p>You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified <code>IPSet</code>.</p></li>
+    /// <li><p>You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.</p></li>
+    /// <li><p>You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</p></li>
+    /// <li><p>You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     WafInvalidOperationException(crate::types::error::WafInvalidOperationException),
     /// <p>The operation failed because you tried to delete an object that isn't empty. For example:</p>
     /// <ul>
-    /// <li> <p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p> </li>
-    /// <li> <p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p> </li>
-    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p> </li>
-    /// <li> <p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p> </li>
+    /// <li><p>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</p></li>
+    /// <li><p>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</p></li>
+    /// <li><p>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</p></li>
+    /// <li><p>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</p></li>
     /// </ul>
     WafNonEmptyEntityException(crate::types::error::WafNonEmptyEntityException),
     /// <p>The operation failed because the referenced object doesn't exist.</p>
     WafNonexistentItemException(crate::types::error::WafNonexistentItemException),
     /// <p>The operation failed because you tried to delete an object that is still in use. For example:</p>
     /// <ul>
-    /// <li> <p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p> </li>
-    /// <li> <p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p> </li>
+    /// <li><p>You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.</p></li>
+    /// <li><p>You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.</p></li>
     /// </ul>
     WafReferencedItemException(crate::types::error::WafReferencedItemException),
     /// <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>

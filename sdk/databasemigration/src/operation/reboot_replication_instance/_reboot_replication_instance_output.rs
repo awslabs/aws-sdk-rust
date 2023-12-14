@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootReplicationInstanceOutput {
-    /// <p>The replication instance that is being rebooted. </p>
+    /// <p>The replication instance that is being rebooted.</p>
     pub replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,
 }
 impl RebootReplicationInstanceOutput {
-    /// <p>The replication instance that is being rebooted. </p>
+    /// <p>The replication instance that is being rebooted.</p>
     pub fn replication_instance(&self) -> ::std::option::Option<&crate::types::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct RebootReplicationInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl RebootReplicationInstanceOutputBuilder {
-    /// <p>The replication instance that is being rebooted. </p>
+    /// <p>The replication instance that is being rebooted.</p>
     pub fn replication_instance(mut self, input: crate::types::ReplicationInstance) -> Self {
         self.replication_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The replication instance that is being rebooted. </p>
+    /// <p>The replication instance that is being rebooted.</p>
     pub fn set_replication_instance(mut self, input: ::std::option::Option<crate::types::ReplicationInstance>) -> Self {
         self.replication_instance = input;
         self
     }
-    /// <p>The replication instance that is being rebooted. </p>
+    /// <p>The replication instance that is being rebooted.</p>
     pub fn get_replication_instance(&self) -> &::std::option::Option<crate::types::ReplicationInstance> {
         &self.replication_instance
     }

@@ -16,11 +16,11 @@ pub struct DatastoreSummary {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub last_message_arrival_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The file format of the data in the data store.</p>
     pub file_format_type: ::std::option::Option<crate::types::FileFormatType>,
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
 impl DatastoreSummary {
@@ -46,7 +46,7 @@ impl DatastoreSummary {
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn last_message_arrival_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
@@ -54,7 +54,7 @@ impl DatastoreSummary {
     pub fn file_format_type(&self) -> ::std::option::Option<&crate::types::FileFormatType> {
         self.file_format_type.as_ref()
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn datastore_partitions(&self) -> ::std::option::Option<&crate::types::DatastorePartitions> {
         self.datastore_partitions.as_ref()
     }
@@ -152,21 +152,21 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn last_message_arrival_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_message_arrival_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn set_last_message_arrival_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_message_arrival_time = input;
         self
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
-    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn get_last_message_arrival_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_message_arrival_time
     }
@@ -184,17 +184,17 @@ impl DatastoreSummaryBuilder {
     pub fn get_file_format_type(&self) -> &::std::option::Option<crate::types::FileFormatType> {
         &self.file_format_type
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn datastore_partitions(mut self, input: crate::types::DatastorePartitions) -> Self {
         self.datastore_partitions = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn set_datastore_partitions(mut self, input: ::std::option::Option<crate::types::DatastorePartitions>) -> Self {
         self.datastore_partitions = input;
         self
     }
-    /// <p> Contains information about the partition dimensions in a data store. </p>
+    /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn get_datastore_partitions(&self) -> &::std::option::Option<crate::types::DatastorePartitions> {
         &self.datastore_partitions
     }

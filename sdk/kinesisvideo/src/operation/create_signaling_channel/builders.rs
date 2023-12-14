@@ -22,8 +22,8 @@ impl CreateSignalingChannelInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSignalingChannel`.
 ///
-/// <p>Creates a signaling channel. </p>
-/// <p> <code>CreateSignalingChannel</code> is an asynchronous operation.</p>
+/// <p>Creates a signaling channel.</p>
+/// <p><code>CreateSignalingChannel</code> is an asynchronous operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSignalingChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,31 +123,31 @@ impl CreateSignalingChannelFluentBuilder {
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_name()
     }
-    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
     pub fn channel_type(mut self, input: crate::types::ChannelType) -> Self {
         self.inner = self.inner.channel_type(input);
         self
     }
-    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
     pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.inner = self.inner.set_channel_type(input);
         self
     }
-    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
     pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
         self.inner.get_channel_type()
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.inner = self.inner.single_master_configuration(input);
         self
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.inner = self.inner.set_single_master_configuration(input);
         self
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         self.inner.get_single_master_configuration()
     }

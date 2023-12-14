@@ -24,9 +24,9 @@ impl UpdateFacetInputBuilder {
 ///
 /// <p>Does the following:</p>
 /// <ol>
-/// <li> <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
-/// <li> <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
-/// <li> <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
+/// <li><p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
+/// <li><p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
+/// <li><p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFacetFluentBuilder {
@@ -145,17 +145,17 @@ impl UpdateFacetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
     ///
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub fn attribute_updates(mut self, input: crate::types::FacetAttributeUpdate) -> Self {
         self.inner = self.inner.attribute_updates(input);
         self
     }
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>> {
         self.inner.get_attribute_updates()
     }

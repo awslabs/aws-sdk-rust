@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
-    /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    /// <p>The ID of the local gateway route table virtual interface group association.</p>
     pub local_gateway_route_table_virtual_interface_group_association_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
-    /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    /// <p>The ID of the local gateway route table virtual interface group association.</p>
     pub fn local_gateway_route_table_virtual_interface_group_association_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_route_table_virtual_interface_group_association_id.as_deref()
     }
@@ -33,7 +33,7 @@ pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuil
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
-    /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    /// <p>The ID of the local gateway route table virtual interface group association.</p>
     /// This field is required.
     pub fn local_gateway_route_table_virtual_interface_group_association_id(
         mut self,
@@ -42,7 +42,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         self.local_gateway_route_table_virtual_interface_group_association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    /// <p>The ID of the local gateway route table virtual interface group association.</p>
     pub fn set_local_gateway_route_table_virtual_interface_group_association_id(
         mut self,
         input: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         self.local_gateway_route_table_virtual_interface_group_association_id = input;
         self
     }
-    /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    /// <p>The ID of the local gateway route table virtual interface group association.</p>
     pub fn get_local_gateway_route_table_virtual_interface_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_virtual_interface_group_association_id
     }

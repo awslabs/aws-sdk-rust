@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHitOutput {
-    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    /// <p>Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation.</p>
     pub hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,
 }
 impl CreateHitOutput {
-    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    /// <p>Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation.</p>
     pub fn hit(&self) -> ::std::option::Option<&crate::types::Hit> {
         self.hit.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateHitOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateHitOutputBuilder {
-    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    /// <p>Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation.</p>
     pub fn hit(mut self, input: crate::types::Hit) -> Self {
         self.hit = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    /// <p>Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation.</p>
     pub fn set_hit(mut self, input: ::std::option::Option<crate::types::Hit>) -> Self {
         self.hit = input;
         self
     }
-    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    /// <p>Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation.</p>
     pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
         &self.hit
     }

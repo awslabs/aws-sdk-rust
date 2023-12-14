@@ -7,7 +7,7 @@ pub struct GroupResourcesOutput {
     pub succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub pending: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>,
     _request_id: Option<String>,
 }
@@ -24,7 +24,7 @@ impl GroupResourcesOutput {
     pub fn failed(&self) -> &[crate::types::FailedResource] {
         self.failed.as_deref().unwrap_or_default()
     }
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending.is_none()`.
     pub fn pending(&self) -> &[crate::types::PendingResource] {
@@ -97,19 +97,19 @@ impl GroupResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pending`](Self::set_pending).
     ///
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub fn pending(mut self, input: crate::types::PendingResource) -> Self {
         let mut v = self.pending.unwrap_or_default();
         v.push(input);
         self.pending = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub fn set_pending(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>) -> Self {
         self.pending = input;
         self
     }
-    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub fn get_pending(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingResource>> {
         &self.pending
     }

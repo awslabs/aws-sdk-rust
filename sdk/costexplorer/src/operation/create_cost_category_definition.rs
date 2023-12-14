@@ -259,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCostCat
 pub enum CreateCostCategoryDefinitionError {
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
+    /// <p>You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

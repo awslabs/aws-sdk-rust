@@ -24,7 +24,7 @@ impl CreateDataSourceInputBuilder {
 ///
 /// <p>Creates a data source connector that you want to use with an Amazon Kendra index.</p>
 /// <p>You specify a name, data source connector type and description for your data source. You also specify configuration information for the data source connector.</p>
-/// <p> <code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was successfully created. Otherwise, an exception is raised.</p>
+/// <p><code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was successfully created. Otherwise, an exception is raised.</p>
 /// <p>For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting started with Python SDK</a>. For an example of creating an index and data source using the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting started with Java SDK</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSourceFluentBuilder {

@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::set_name):<br>required: **true**<br><p>The name of the schedule to be described.</p><br>
     /// - On success, responds with [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput) with field(s):
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_schedule::DescribeScheduleOutput::create_date): <p>The date and time that the schedule was created.</p>
-    ///   - [`created_by(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::created_by): <p>The identifier (user name) of the user who created the schedule. </p>
+    ///   - [`created_by(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::created_by): <p>The identifier (user name) of the user who created the schedule.</p>
     ///   - [`job_names(Option<Vec::<String>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::job_names): <p>The name or names of one or more jobs to be run by using the schedule.</p>
     ///   - [`last_modified_by(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the schedule.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_schedule::DescribeScheduleOutput::last_modified_date): <p>The date and time that the schedule was last modified.</p>

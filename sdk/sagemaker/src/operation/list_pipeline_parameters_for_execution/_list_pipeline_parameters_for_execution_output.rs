@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelineParametersForExecutionOutput {
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub pipeline_parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPipelineParametersForExecutionOutput {
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_parameters.is_none()`.
     pub fn pipeline_parameters(&self) -> &[crate::types::Parameter] {
@@ -46,19 +46,19 @@ impl ListPipelineParametersForExecutionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pipeline_parameters`](Self::set_pipeline_parameters).
     ///
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub fn pipeline_parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.pipeline_parameters.unwrap_or_default();
         v.push(input);
         self.pipeline_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub fn set_pipeline_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.pipeline_parameters = input;
         self
     }
-    /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
+    /// <p>Contains a list of pipeline parameters. This list can be empty.</p>
     pub fn get_pipeline_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.pipeline_parameters
     }

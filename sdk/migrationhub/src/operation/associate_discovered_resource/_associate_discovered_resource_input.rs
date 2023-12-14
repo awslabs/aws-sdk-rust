@@ -5,7 +5,7 @@
 pub struct AssociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
     pub migration_task_name: ::std::option::Option<::std::string::String>,
     /// <p>Object representing a Resource.</p>
     pub discovered_resource: ::std::option::Option<crate::types::DiscoveredResource>,
@@ -17,7 +17,7 @@ impl AssociateDiscoveredResourceInput {
     pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
         self.progress_update_stream.as_deref()
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
     pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
         self.migration_task_name.as_deref()
     }
@@ -62,18 +62,18 @@ impl AssociateDiscoveredResourceInputBuilder {
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
         &self.progress_update_stream
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
     /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
-    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_task_name
     }

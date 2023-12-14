@@ -17,16 +17,16 @@ pub struct LoadBalancerTlsCertificate {
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
-    /// <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p> </li>
-    /// <li> <p> <b> <code>StaticIp</code> </b> - A static IP address</p> </li>
-    /// <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p> </li>
-    /// <li> <p> <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
-    /// <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li>
-    /// <li> <p> <b> <code>PeeredVpc</code> </b> - A peered VPC</p> </li>
-    /// <li> <p> <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>Disk</code> </b> - A Lightsail block storage disk</p> </li>
-    /// <li> <p> <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li>
+    /// <li><p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
+    /// <li><p><b> <code>StaticIp</code> </b> - A static IP address</p></li>
+    /// <li><p><b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p></li>
+    /// <li><p><b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p></li>
+    /// <li><p><b> <code>Domain</code> </b> - A DNS zone</p></li>
+    /// <li><p><b> <code>PeeredVpc</code> </b> - A peered VPC</p></li>
+    /// <li><p><b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p></li>
+    /// <li><p><b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p></li>
+    /// <li><p><b> <code>Disk</code> </b> - A Lightsail block storage disk</p></li>
+    /// <li><p><b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
@@ -44,13 +44,13 @@ pub struct LoadBalancerTlsCertificate {
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+    /// <li><p><b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p></li>
+    /// <li><p><b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
     /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
-    /// </note> </li>
-    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
-    /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
-    /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
+    /// </note></li>
+    /// <li><p><b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p></li>
+    /// <li><p><b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p></li>
+    /// <li><p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
     pub failure_reason: ::std::option::Option<crate::types::LoadBalancerTlsCertificateFailureReason>,
     /// <p>The time when the SSL/TLS certificate was issued.</p>
@@ -101,16 +101,16 @@ impl LoadBalancerTlsCertificate {
     }
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
-    /// <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p> </li>
-    /// <li> <p> <b> <code>StaticIp</code> </b> - A static IP address</p> </li>
-    /// <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p> </li>
-    /// <li> <p> <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
-    /// <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li>
-    /// <li> <p> <b> <code>PeeredVpc</code> </b> - A peered VPC</p> </li>
-    /// <li> <p> <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>Disk</code> </b> - A Lightsail block storage disk</p> </li>
-    /// <li> <p> <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li>
+    /// <li><p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
+    /// <li><p><b> <code>StaticIp</code> </b> - A static IP address</p></li>
+    /// <li><p><b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p></li>
+    /// <li><p><b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p></li>
+    /// <li><p><b> <code>Domain</code> </b> - A DNS zone</p></li>
+    /// <li><p><b> <code>PeeredVpc</code> </b> - A peered VPC</p></li>
+    /// <li><p><b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p></li>
+    /// <li><p><b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p></li>
+    /// <li><p><b> <code>Disk</code> </b> - A Lightsail block storage disk</p></li>
+    /// <li><p><b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p></li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
@@ -146,13 +146,13 @@ impl LoadBalancerTlsCertificate {
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+    /// <li><p><b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p></li>
+    /// <li><p><b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
     /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
-    /// </note> </li>
-    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
-    /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
-    /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
+    /// </note></li>
+    /// <li><p><b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p></li>
+    /// <li><p><b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p></li>
+    /// <li><p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
     pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateFailureReason> {
         self.failure_reason.as_ref()
@@ -318,16 +318,16 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
-    /// <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p> </li>
-    /// <li> <p> <b> <code>StaticIp</code> </b> - A static IP address</p> </li>
-    /// <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p> </li>
-    /// <li> <p> <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
-    /// <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li>
-    /// <li> <p> <b> <code>PeeredVpc</code> </b> - A peered VPC</p> </li>
-    /// <li> <p> <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>Disk</code> </b> - A Lightsail block storage disk</p> </li>
-    /// <li> <p> <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li>
+    /// <li><p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
+    /// <li><p><b> <code>StaticIp</code> </b> - A static IP address</p></li>
+    /// <li><p><b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p></li>
+    /// <li><p><b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p></li>
+    /// <li><p><b> <code>Domain</code> </b> - A DNS zone</p></li>
+    /// <li><p><b> <code>PeeredVpc</code> </b> - A peered VPC</p></li>
+    /// <li><p><b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p></li>
+    /// <li><p><b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p></li>
+    /// <li><p><b> <code>Disk</code> </b> - A Lightsail block storage disk</p></li>
+    /// <li><p><b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p></li>
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -335,16 +335,16 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
-    /// <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p> </li>
-    /// <li> <p> <b> <code>StaticIp</code> </b> - A static IP address</p> </li>
-    /// <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p> </li>
-    /// <li> <p> <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
-    /// <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li>
-    /// <li> <p> <b> <code>PeeredVpc</code> </b> - A peered VPC</p> </li>
-    /// <li> <p> <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>Disk</code> </b> - A Lightsail block storage disk</p> </li>
-    /// <li> <p> <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li>
+    /// <li><p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
+    /// <li><p><b> <code>StaticIp</code> </b> - A static IP address</p></li>
+    /// <li><p><b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p></li>
+    /// <li><p><b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p></li>
+    /// <li><p><b> <code>Domain</code> </b> - A DNS zone</p></li>
+    /// <li><p><b> <code>PeeredVpc</code> </b> - A peered VPC</p></li>
+    /// <li><p><b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p></li>
+    /// <li><p><b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p></li>
+    /// <li><p><b> <code>Disk</code> </b> - A Lightsail block storage disk</p></li>
+    /// <li><p><b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
@@ -352,16 +352,16 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
-    /// <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p> </li>
-    /// <li> <p> <b> <code>StaticIp</code> </b> - A static IP address</p> </li>
-    /// <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p> </li>
-    /// <li> <p> <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
-    /// <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li>
-    /// <li> <p> <b> <code>PeeredVpc</code> </b> - A peered VPC</p> </li>
-    /// <li> <p> <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p> </li>
-    /// <li> <p> <b> <code>Disk</code> </b> - A Lightsail block storage disk</p> </li>
-    /// <li> <p> <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li>
+    /// <li><p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
+    /// <li><p><b> <code>StaticIp</code> </b> - A static IP address</p></li>
+    /// <li><p><b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance</p></li>
+    /// <li><p><b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p></li>
+    /// <li><p><b> <code>Domain</code> </b> - A DNS zone</p></li>
+    /// <li><p><b> <code>PeeredVpc</code> </b> - A peered VPC</p></li>
+    /// <li><p><b> <code>LoadBalancer</code> </b> - A Lightsail load balancer</p></li>
+    /// <li><p><b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load balancer</p></li>
+    /// <li><p><b> <code>Disk</code> </b> - A Lightsail block storage disk</p></li>
+    /// <li><p><b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
@@ -470,13 +470,13 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+    /// <li><p><b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p></li>
+    /// <li><p><b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
     /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
-    /// </note> </li>
-    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
-    /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
-    /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
+    /// </note></li>
+    /// <li><p><b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p></li>
+    /// <li><p><b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p></li>
+    /// <li><p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
     pub fn failure_reason(mut self, input: crate::types::LoadBalancerTlsCertificateFailureReason) -> Self {
         self.failure_reason = ::std::option::Option::Some(input);
@@ -485,13 +485,13 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+    /// <li><p><b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p></li>
+    /// <li><p><b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
     /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
-    /// </note> </li>
-    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
-    /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
-    /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
+    /// </note></li>
+    /// <li><p><b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p></li>
+    /// <li><p><b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p></li>
+    /// <li><p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateFailureReason>) -> Self {
         self.failure_reason = input;
@@ -500,13 +500,13 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p> </li>
-    /// <li> <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
+    /// <li><p><b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available for Lightsail certificates.</p></li>
+    /// <li><p><b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the Alexa top 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.</p> <note>
     /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
-    /// </note> </li>
-    /// <li> <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p> </li>
-    /// <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li>
-    /// <li> <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request. </p> </li>
+    /// </note></li>
+    /// <li><p><b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe that the result is a false positive, notify the organization that is reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.</p> <p>If you see this error and your domain is not included in the VirusTotal list, visit the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.</p></li>
+    /// <li><p><b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all domain names in the request are for valid top-level domains. For example, you cannot request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level domain.</p></li>
+    /// <li><p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
     pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateFailureReason> {
         &self.failure_reason

@@ -11,9 +11,9 @@ pub struct ListIntentPathsInput {
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
-    /// <li> <p>/BookCar</p> </li>
-    /// <li> <p>/BookCar/BookHotel</p> </li>
-    /// <li> <p>/BookHotel/BookCar</p> </li>
+    /// <li><p>/BookCar</p></li>
+    /// <li><p>/BookCar/BookHotel</p></li>
+    /// <li><p>/BookHotel/BookCar</p></li>
     /// </ul>
     pub intent_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
@@ -34,9 +34,9 @@ impl ListIntentPathsInput {
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
-    /// <li> <p>/BookCar</p> </li>
-    /// <li> <p>/BookCar/BookHotel</p> </li>
-    /// <li> <p>/BookHotel/BookCar</p> </li>
+    /// <li><p>/BookCar</p></li>
+    /// <li><p>/BookCar/BookHotel</p></li>
+    /// <li><p>/BookHotel/BookCar</p></li>
     /// </ul>
     pub fn intent_path(&self) -> ::std::option::Option<&str> {
         self.intent_path.as_deref()
@@ -113,9 +113,9 @@ impl ListIntentPathsInputBuilder {
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
-    /// <li> <p>/BookCar</p> </li>
-    /// <li> <p>/BookCar/BookHotel</p> </li>
-    /// <li> <p>/BookHotel/BookCar</p> </li>
+    /// <li><p>/BookCar</p></li>
+    /// <li><p>/BookCar/BookHotel</p></li>
+    /// <li><p>/BookHotel/BookCar</p></li>
     /// </ul>
     /// This field is required.
     pub fn intent_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,9 +124,9 @@ impl ListIntentPathsInputBuilder {
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
-    /// <li> <p>/BookCar</p> </li>
-    /// <li> <p>/BookCar/BookHotel</p> </li>
-    /// <li> <p>/BookHotel/BookCar</p> </li>
+    /// <li><p>/BookCar</p></li>
+    /// <li><p>/BookCar/BookHotel</p></li>
+    /// <li><p>/BookHotel/BookCar</p></li>
     /// </ul>
     pub fn set_intent_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_path = input;
@@ -134,9 +134,9 @@ impl ListIntentPathsInputBuilder {
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
-    /// <li> <p>/BookCar</p> </li>
-    /// <li> <p>/BookCar/BookHotel</p> </li>
-    /// <li> <p>/BookHotel/BookCar</p> </li>
+    /// <li><p>/BookCar</p></li>
+    /// <li><p>/BookCar/BookHotel</p></li>
+    /// <li><p>/BookHotel/BookCar</p></li>
     /// </ul>
     pub fn get_intent_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.intent_path

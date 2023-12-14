@@ -7,7 +7,7 @@ pub struct BatchDeleteRumMetricDefinitionsInput {
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
     pub destination: ::std::option::Option<crate::types::MetricDestination>,
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
@@ -22,7 +22,7 @@ impl BatchDeleteRumMetricDefinitionsInput {
     pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
         self.destination.as_ref()
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn destination_arn(&self) -> ::std::option::Option<&str> {
         self.destination_arn.as_deref()
@@ -81,19 +81,19 @@ impl BatchDeleteRumMetricDefinitionsInputBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
         &self.destination
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
-    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_arn

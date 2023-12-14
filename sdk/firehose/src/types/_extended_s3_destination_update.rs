@@ -14,7 +14,7 @@ pub struct ExtendedS3DestinationUpdate {
     pub error_output_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The buffering option.</p>
     pub buffering_hints: ::std::option::Option<crate::types::BufferingHints>,
-    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
+    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     pub compression_format: ::std::option::Option<crate::types::CompressionFormat>,
     /// <p>The encryption configuration. If no value is specified, the default is no encryption.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
@@ -22,13 +22,13 @@ pub struct ExtendedS3DestinationUpdate {
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The data processing configuration.</p>
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.</p>
     pub s3_backup_mode: ::std::option::Option<crate::types::S3BackupMode>,
     /// <p>The Amazon S3 destination for backup.</p>
     pub s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.</p>
     pub data_format_conversion_configuration: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub dynamic_partitioning_configuration: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
 }
 impl ExtendedS3DestinationUpdate {
@@ -52,7 +52,7 @@ impl ExtendedS3DestinationUpdate {
     pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::BufferingHints> {
         self.buffering_hints.as_ref()
     }
-    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
+    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     pub fn compression_format(&self) -> ::std::option::Option<&crate::types::CompressionFormat> {
         self.compression_format.as_ref()
     }
@@ -68,7 +68,7 @@ impl ExtendedS3DestinationUpdate {
     pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
-    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.</p>
     pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::S3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
@@ -80,7 +80,7 @@ impl ExtendedS3DestinationUpdate {
     pub fn data_format_conversion_configuration(&self) -> ::std::option::Option<&crate::types::DataFormatConversionConfiguration> {
         self.data_format_conversion_configuration.as_ref()
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub fn dynamic_partitioning_configuration(&self) -> ::std::option::Option<&crate::types::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
     }
@@ -181,17 +181,17 @@ impl ExtendedS3DestinationUpdateBuilder {
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::BufferingHints> {
         &self.buffering_hints
     }
-    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
+    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     pub fn compression_format(mut self, input: crate::types::CompressionFormat) -> Self {
         self.compression_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
+    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     pub fn set_compression_format(mut self, input: ::std::option::Option<crate::types::CompressionFormat>) -> Self {
         self.compression_format = input;
         self
     }
-    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>. </p>
+    /// <p>The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
     pub fn get_compression_format(&self) -> &::std::option::Option<crate::types::CompressionFormat> {
         &self.compression_format
     }
@@ -237,17 +237,17 @@ impl ExtendedS3DestinationUpdateBuilder {
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
-    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.</p>
     pub fn s3_backup_mode(mut self, input: crate::types::S3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::S3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
-    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.</p>
     pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::S3BackupMode> {
         &self.s3_backup_mode
     }
@@ -279,17 +279,17 @@ impl ExtendedS3DestinationUpdateBuilder {
     pub fn get_data_format_conversion_configuration(&self) -> &::std::option::Option<crate::types::DataFormatConversionConfiguration> {
         &self.data_format_conversion_configuration
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub fn dynamic_partitioning_configuration(mut self, input: crate::types::DynamicPartitioningConfiguration) -> Self {
         self.dynamic_partitioning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub fn set_dynamic_partitioning_configuration(mut self, input: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>) -> Self {
         self.dynamic_partitioning_configuration = input;
         self
     }
-    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
+    /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub fn get_dynamic_partitioning_configuration(&self) -> &::std::option::Option<crate::types::DynamicPartitioningConfiguration> {
         &self.dynamic_partitioning_configuration
     }

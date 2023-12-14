@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutput {
-    /// <p>Information about the application. </p>
+    /// <p>Information about the application.</p>
     pub application_info: ::std::option::Option<crate::types::ApplicationInfo>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutput {
-    /// <p>Information about the application. </p>
+    /// <p>Information about the application.</p>
     pub fn application_info(&self) -> ::std::option::Option<&crate::types::ApplicationInfo> {
         self.application_info.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutputBuilder {
-    /// <p>Information about the application. </p>
+    /// <p>Information about the application.</p>
     pub fn application_info(mut self, input: crate::types::ApplicationInfo) -> Self {
         self.application_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the application. </p>
+    /// <p>Information about the application.</p>
     pub fn set_application_info(mut self, input: ::std::option::Option<crate::types::ApplicationInfo>) -> Self {
         self.application_info = input;
         self
     }
-    /// <p>Information about the application. </p>
+    /// <p>Information about the application.</p>
     pub fn get_application_info(&self) -> &::std::option::Option<crate::types::ApplicationInfo> {
         &self.application_info
     }

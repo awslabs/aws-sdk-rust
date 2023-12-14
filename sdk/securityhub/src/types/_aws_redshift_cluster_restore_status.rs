@@ -20,7 +20,7 @@ pub struct AwsRedshiftClusterRestoreStatus {
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
     pub snapshot_size_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>The status of the restore action.</p>
-    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code> </p>
+    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code></p>
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterRestoreStatus {
@@ -50,7 +50,7 @@ impl AwsRedshiftClusterRestoreStatus {
         self.snapshot_size_in_mega_bytes
     }
     /// <p>The status of the restore action.</p>
-    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code> </p>
+    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code></p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -160,19 +160,19 @@ impl AwsRedshiftClusterRestoreStatusBuilder {
         &self.snapshot_size_in_mega_bytes
     }
     /// <p>The status of the restore action.</p>
-    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code> </p>
+    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code></p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the restore action.</p>
-    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code> </p>
+    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the restore action.</p>
-    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code> </p>
+    /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code></p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

@@ -37,7 +37,7 @@ pub struct RegisterImageInput {
     /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
     pub sriov_net_support: ::std::option::Option<::std::string::String>,
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code> </p>
+    /// <p>Default: <code>paravirtual</code></p>
     pub virtualization_type: ::std::option::Option<::std::string::String>,
     /// <p>The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the AMI supports both UEFI and Legacy BIOS.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
@@ -115,7 +115,7 @@ impl RegisterImageInput {
         self.sriov_net_support.as_deref()
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code> </p>
+    /// <p>Default: <code>paravirtual</code></p>
     pub fn virtualization_type(&self) -> ::std::option::Option<&str> {
         self.virtualization_type.as_deref()
     }
@@ -377,19 +377,19 @@ impl RegisterImageInputBuilder {
         &self.sriov_net_support
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code> </p>
+    /// <p>Default: <code>paravirtual</code></p>
     pub fn virtualization_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtualization_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code> </p>
+    /// <p>Default: <code>paravirtual</code></p>
     pub fn set_virtualization_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtualization_type = input;
         self
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
-    /// <p>Default: <code>paravirtual</code> </p>
+    /// <p>Default: <code>paravirtual</code></p>
     pub fn get_virtualization_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtualization_type
     }

@@ -8,8 +8,8 @@ pub struct CaptionSource {
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption language must match in order to be included in the output. Specify this as one of:</p>
     /// <ul>
-    /// <li> <p>2-character ISO 639-1 code</p> </li>
-    /// <li> <p>3-character ISO 639-2 code</p> </li>
+    /// <li><p>2-character ISO 639-1 code</p></li>
+    /// <li><p>3-character ISO 639-2 code</p></li>
     /// </ul>
     /// <p>For more information on ISO language codes and language names, see the List of ISO 639-1 codes.</p>
     pub language: ::std::option::Option<::std::string::String>,
@@ -28,8 +28,8 @@ impl CaptionSource {
     }
     /// <p>A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption language must match in order to be included in the output. Specify this as one of:</p>
     /// <ul>
-    /// <li> <p>2-character ISO 639-1 code</p> </li>
-    /// <li> <p>3-character ISO 639-2 code</p> </li>
+    /// <li><p>2-character ISO 639-1 code</p></li>
+    /// <li><p>3-character ISO 639-2 code</p></li>
     /// </ul>
     /// <p>For more information on ISO language codes and language names, see the List of ISO 639-1 codes.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {
@@ -83,8 +83,8 @@ impl CaptionSourceBuilder {
     }
     /// <p>A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption language must match in order to be included in the output. Specify this as one of:</p>
     /// <ul>
-    /// <li> <p>2-character ISO 639-1 code</p> </li>
-    /// <li> <p>3-character ISO 639-2 code</p> </li>
+    /// <li><p>2-character ISO 639-1 code</p></li>
+    /// <li><p>3-character ISO 639-2 code</p></li>
     /// </ul>
     /// <p>For more information on ISO language codes and language names, see the List of ISO 639-1 codes.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,8 +93,8 @@ impl CaptionSourceBuilder {
     }
     /// <p>A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption language must match in order to be included in the output. Specify this as one of:</p>
     /// <ul>
-    /// <li> <p>2-character ISO 639-1 code</p> </li>
-    /// <li> <p>3-character ISO 639-2 code</p> </li>
+    /// <li><p>2-character ISO 639-1 code</p></li>
+    /// <li><p>3-character ISO 639-2 code</p></li>
     /// </ul>
     /// <p>For more information on ISO language codes and language names, see the List of ISO 639-1 codes.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -103,8 +103,8 @@ impl CaptionSourceBuilder {
     }
     /// <p>A string that specifies the language of the caption. If you specified multiple inputs with captions, the caption language must match in order to be included in the output. Specify this as one of:</p>
     /// <ul>
-    /// <li> <p>2-character ISO 639-1 code</p> </li>
-    /// <li> <p>3-character ISO 639-2 code</p> </li>
+    /// <li><p>2-character ISO 639-1 code</p></li>
+    /// <li><p>3-character ISO 639-2 code</p></li>
     /// </ul>
     /// <p>For more information on ISO language codes and language names, see the List of ISO 639-1 codes.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {

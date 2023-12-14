@@ -5,13 +5,13 @@
 pub struct DescribeBudgetPerformanceHistoryInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
     pub time_period: ::std::option::Option<crate::types::TimePeriod>,
-    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBudgetPerformanceHistoryInput {
@@ -19,7 +19,7 @@ impl DescribeBudgetPerformanceHistoryInput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
@@ -27,11 +27,11 @@ impl DescribeBudgetPerformanceHistoryInput {
     pub fn time_period(&self) -> ::std::option::Option<&crate::types::TimePeriod> {
         self.time_period.as_ref()
     }
-    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -69,18 +69,18 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
@@ -98,31 +98,31 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::TimePeriod> {
         &self.time_period
     }
-    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

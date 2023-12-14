@@ -6,7 +6,7 @@
 pub struct Attribute {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
     pub fully_qualified_name: ::std::string::String,
-    /// <p>The specified data type of the attribute. </p>
+    /// <p>The specified data type of the attribute.</p>
     pub data_type: crate::types::NodeDataType,
     /// <p>A brief description of the attribute.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl Attribute {
         use std::ops::Deref;
         self.fully_qualified_name.deref()
     }
-    /// <p>The specified data type of the attribute. </p>
+    /// <p>The specified data type of the attribute.</p>
     pub fn data_type(&self) -> &crate::types::NodeDataType {
         &self.data_type
     }
@@ -117,18 +117,18 @@ impl AttributeBuilder {
     pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.fully_qualified_name
     }
-    /// <p>The specified data type of the attribute. </p>
+    /// <p>The specified data type of the attribute.</p>
     /// This field is required.
     pub fn data_type(mut self, input: crate::types::NodeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The specified data type of the attribute. </p>
+    /// <p>The specified data type of the attribute.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::NodeDataType>) -> Self {
         self.data_type = input;
         self
     }
-    /// <p>The specified data type of the attribute. </p>
+    /// <p>The specified data type of the attribute.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::NodeDataType> {
         &self.data_type
     }

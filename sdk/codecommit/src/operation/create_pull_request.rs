@@ -293,7 +293,7 @@ pub enum CreatePullRequestError {
     ReferenceDoesNotExistException(crate::types::error::ReferenceDoesNotExistException),
     /// <p>A reference name is required, but none was provided.</p>
     ReferenceNameRequiredException(crate::types::error::ReferenceNameRequiredException),
-    /// <p>The specified reference is not a supported type. </p>
+    /// <p>The specified reference is not a supported type.</p>
     ReferenceTypeNotSupportedException(crate::types::error::ReferenceTypeNotSupportedException),
     /// <p>The specified repository does not exist.</p>
     RepositoryDoesNotExistException(crate::types::error::RepositoryDoesNotExistException),

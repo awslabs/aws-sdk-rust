@@ -108,17 +108,17 @@ impl UpdateLifecyclePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
         self.inner.get_type()
     }

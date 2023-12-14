@@ -22,7 +22,7 @@ impl ListRoutesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRoutes`.
 ///
-/// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces routes within an application. </p>
+/// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces routes within an application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl ListRoutesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_routes::paginator::ListRoutesPaginator {
         crate::operation::list_routes::paginator::ListRoutesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_identifier()
     }
-    /// <p>The ID of the application. </p>
+    /// <p>The ID of the application.</p>
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_identifier(input.into());
         self
     }
-    /// <p>The ID of the application. </p>
+    /// <p>The ID of the application.</p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
-    /// <p>The ID of the application. </p>
+    /// <p>The ID of the application.</p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_identifier()
     }

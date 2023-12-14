@@ -22,7 +22,7 @@ impl DeleteCampaignInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCampaign`.
 ///
-/// <p> Deletes a data collection campaign. Deleting a campaign suspends all data collection and removes it from any vehicles. </p>
+/// <p>Deletes a data collection campaign. Deleting a campaign suspends all data collection and removes it from any vehicles.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCampaignFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteCampaignFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the campaign to delete. </p>
+    /// <p>The name of the campaign to delete.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The name of the campaign to delete. </p>
+    /// <p>The name of the campaign to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The name of the campaign to delete. </p>
+    /// <p>The name of the campaign to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

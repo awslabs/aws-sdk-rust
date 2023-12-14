@@ -6,7 +6,7 @@
 pub struct CustomProperty {
     /// <p>The fully qualified name of the custom property. For example, the fully qualified name of a custom property might be <code>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</code>.</p>
     pub fully_qualified_name: ::std::string::String,
-    /// <p>The data type for the custom property. </p>
+    /// <p>The data type for the custom property.</p>
     pub data_type: crate::types::NodeDataType,
     /// <p>Indicates whether the property is binary data.</p>
     pub data_encoding: ::std::option::Option<crate::types::NodeDataEncoding>,
@@ -16,7 +16,7 @@ pub struct CustomProperty {
     pub deprecation_message: ::std::option::Option<::std::string::String>,
     /// <p>A comment in addition to the description.</p>
     pub comment: ::std::option::Option<::std::string::String>,
-    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>. </p>
+    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub struct_fully_qualified_name: ::std::option::Option<::std::string::String>,
 }
 impl CustomProperty {
@@ -25,7 +25,7 @@ impl CustomProperty {
         use std::ops::Deref;
         self.fully_qualified_name.deref()
     }
-    /// <p>The data type for the custom property. </p>
+    /// <p>The data type for the custom property.</p>
     pub fn data_type(&self) -> &crate::types::NodeDataType {
         &self.data_type
     }
@@ -45,7 +45,7 @@ impl CustomProperty {
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>. </p>
+    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub fn struct_fully_qualified_name(&self) -> ::std::option::Option<&str> {
         self.struct_fully_qualified_name.as_deref()
     }
@@ -85,18 +85,18 @@ impl CustomPropertyBuilder {
     pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.fully_qualified_name
     }
-    /// <p>The data type for the custom property. </p>
+    /// <p>The data type for the custom property.</p>
     /// This field is required.
     pub fn data_type(mut self, input: crate::types::NodeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data type for the custom property. </p>
+    /// <p>The data type for the custom property.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::NodeDataType>) -> Self {
         self.data_type = input;
         self
     }
-    /// <p>The data type for the custom property. </p>
+    /// <p>The data type for the custom property.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::NodeDataType> {
         &self.data_type
     }
@@ -156,17 +156,17 @@ impl CustomPropertyBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
-    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>. </p>
+    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub fn struct_fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.struct_fully_qualified_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>. </p>
+    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub fn set_struct_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.struct_fully_qualified_name = input;
         self
     }
-    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>. </p>
+    /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub fn get_struct_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.struct_fully_qualified_name
     }

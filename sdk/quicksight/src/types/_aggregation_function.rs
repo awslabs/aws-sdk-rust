@@ -9,16 +9,16 @@ pub struct AggregationFunction {
     pub numerical_aggregation_function: ::std::option::Option<crate::types::NumericalAggregationFunction>,
     /// <p>Aggregation for categorical values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
     /// </ul>
     pub categorical_aggregation_function: ::std::option::Option<crate::types::CategoricalAggregationFunction>,
     /// <p>Aggregation for date values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
-    /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
-    /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
+    /// <li><p><code>MIN</code>: Select the smallest date value.</p></li>
+    /// <li><p><code>MAX</code>: Select the largest date value.</p></li>
     /// </ul>
     pub date_aggregation_function: ::std::option::Option<crate::types::DateAggregationFunction>,
     /// <p>Aggregation for attributes.</p>
@@ -31,18 +31,18 @@ impl AggregationFunction {
     }
     /// <p>Aggregation for categorical values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
     /// </ul>
     pub fn categorical_aggregation_function(&self) -> ::std::option::Option<&crate::types::CategoricalAggregationFunction> {
         self.categorical_aggregation_function.as_ref()
     }
     /// <p>Aggregation for date values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
-    /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
-    /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
+    /// <li><p><code>MIN</code>: Select the smallest date value.</p></li>
+    /// <li><p><code>MAX</code>: Select the largest date value.</p></li>
     /// </ul>
     pub fn date_aggregation_function(&self) -> ::std::option::Option<&crate::types::DateAggregationFunction> {
         self.date_aggregation_function.as_ref()
@@ -85,8 +85,8 @@ impl AggregationFunctionBuilder {
     }
     /// <p>Aggregation for categorical values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
     /// </ul>
     pub fn categorical_aggregation_function(mut self, input: crate::types::CategoricalAggregationFunction) -> Self {
         self.categorical_aggregation_function = ::std::option::Option::Some(input);
@@ -94,8 +94,8 @@ impl AggregationFunctionBuilder {
     }
     /// <p>Aggregation for categorical values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
     /// </ul>
     pub fn set_categorical_aggregation_function(mut self, input: ::std::option::Option<crate::types::CategoricalAggregationFunction>) -> Self {
         self.categorical_aggregation_function = input;
@@ -103,18 +103,18 @@ impl AggregationFunctionBuilder {
     }
     /// <p>Aggregation for categorical values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
     /// </ul>
     pub fn get_categorical_aggregation_function(&self) -> &::std::option::Option<crate::types::CategoricalAggregationFunction> {
         &self.categorical_aggregation_function
     }
     /// <p>Aggregation for date values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
-    /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
-    /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
+    /// <li><p><code>MIN</code>: Select the smallest date value.</p></li>
+    /// <li><p><code>MAX</code>: Select the largest date value.</p></li>
     /// </ul>
     pub fn date_aggregation_function(mut self, input: crate::types::DateAggregationFunction) -> Self {
         self.date_aggregation_function = ::std::option::Option::Some(input);
@@ -122,10 +122,10 @@ impl AggregationFunctionBuilder {
     }
     /// <p>Aggregation for date values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
-    /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
-    /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
+    /// <li><p><code>MIN</code>: Select the smallest date value.</p></li>
+    /// <li><p><code>MAX</code>: Select the largest date value.</p></li>
     /// </ul>
     pub fn set_date_aggregation_function(mut self, input: ::std::option::Option<crate::types::DateAggregationFunction>) -> Self {
         self.date_aggregation_function = input;
@@ -133,10 +133,10 @@ impl AggregationFunctionBuilder {
     }
     /// <p>Aggregation for date values.</p>
     /// <ul>
-    /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
-    /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
-    /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
-    /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
+    /// <li><p><code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p></li>
+    /// <li><p><code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p></li>
+    /// <li><p><code>MIN</code>: Select the smallest date value.</p></li>
+    /// <li><p><code>MAX</code>: Select the largest date value.</p></li>
     /// </ul>
     pub fn get_date_aggregation_function(&self) -> &::std::option::Option<crate::types::DateAggregationFunction> {
         &self.date_aggregation_function

@@ -7,7 +7,7 @@ pub struct ListPagesByContactInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPagesByContactInput {
@@ -19,7 +19,7 @@ impl ListPagesByContactInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -69,17 +69,17 @@ impl ListPagesByContactInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of engagements to contact channels to list per page of results. </p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

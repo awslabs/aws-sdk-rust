@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::update_trust_anchor::builders::UpdateTrustAnchorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_trust_anchor::builders::UpdateTrustAnchorFluentBuilder::set_name):<br>required: **false**<br><p>The name of the trust anchor.</p><br>
     ///   - [`source(Source)`](crate::operation::update_trust_anchor::builders::UpdateTrustAnchorFluentBuilder::source) / [`set_source(Option<Source>)`](crate::operation::update_trust_anchor::builders::UpdateTrustAnchorFluentBuilder::set_source):<br>required: **false**<br><p>The trust anchor type and its related certificate data.</p><br>
     /// - On success, responds with [`UpdateTrustAnchorOutput`](crate::operation::update_trust_anchor::UpdateTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::update_trust_anchor::UpdateTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
+    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::update_trust_anchor::UpdateTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<UpdateTrustAnchorError>`](crate::operation::update_trust_anchor::UpdateTrustAnchorError)
     pub fn update_trust_anchor(&self) -> crate::operation::update_trust_anchor::builders::UpdateTrustAnchorFluentBuilder {
         crate::operation::update_trust_anchor::builders::UpdateTrustAnchorFluentBuilder::new(self.handle.clone())

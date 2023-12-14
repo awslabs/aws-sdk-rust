@@ -142,8 +142,8 @@ impl GetContainerLogFluentBuilder {
     /// <p>The start of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -153,8 +153,8 @@ impl GetContainerLogFluentBuilder {
     /// <p>The start of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
@@ -164,8 +164,8 @@ impl GetContainerLogFluentBuilder {
     /// <p>The start of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +174,8 @@ impl GetContainerLogFluentBuilder {
     /// <p>The end of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -185,8 +185,8 @@ impl GetContainerLogFluentBuilder {
     /// <p>The end of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
@@ -196,8 +196,8 @@ impl GetContainerLogFluentBuilder {
     /// <p>The end of the time interval for which to get log data.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p></li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -206,11 +206,11 @@ impl GetContainerLogFluentBuilder {
     /// <p>The pattern to use to filter the returned log events to a specific term.</p>
     /// <p>The following are a few examples of filter patterns that you can specify:</p>
     /// <ul>
-    /// <li> <p>To return all log events, specify a filter pattern of <code>""</code>.</p> </li>
-    /// <li> <p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p> </li>
-    /// <li> <p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p> </li>
-    /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
-    /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
+    /// <li><p>To return all log events, specify a filter pattern of <code>""</code>.</p></li>
+    /// <li><p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p></li>
+    /// <li><p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p></li>
+    /// <li><p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p></li>
+    /// <li><p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p></li>
     /// </ul>
     pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_pattern(input.into());
@@ -219,11 +219,11 @@ impl GetContainerLogFluentBuilder {
     /// <p>The pattern to use to filter the returned log events to a specific term.</p>
     /// <p>The following are a few examples of filter patterns that you can specify:</p>
     /// <ul>
-    /// <li> <p>To return all log events, specify a filter pattern of <code>""</code>.</p> </li>
-    /// <li> <p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p> </li>
-    /// <li> <p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p> </li>
-    /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
-    /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
+    /// <li><p>To return all log events, specify a filter pattern of <code>""</code>.</p></li>
+    /// <li><p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p></li>
+    /// <li><p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p></li>
+    /// <li><p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p></li>
+    /// <li><p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p></li>
     /// </ul>
     pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_pattern(input);
@@ -232,11 +232,11 @@ impl GetContainerLogFluentBuilder {
     /// <p>The pattern to use to filter the returned log events to a specific term.</p>
     /// <p>The following are a few examples of filter patterns that you can specify:</p>
     /// <ul>
-    /// <li> <p>To return all log events, specify a filter pattern of <code>""</code>.</p> </li>
-    /// <li> <p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p> </li>
-    /// <li> <p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p> </li>
-    /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
-    /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
+    /// <li><p>To return all log events, specify a filter pattern of <code>""</code>.</p></li>
+    /// <li><p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p></li>
+    /// <li><p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p></li>
+    /// <li><p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p></li>
+    /// <li><p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p></li>
     /// </ul>
     pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_filter_pattern()

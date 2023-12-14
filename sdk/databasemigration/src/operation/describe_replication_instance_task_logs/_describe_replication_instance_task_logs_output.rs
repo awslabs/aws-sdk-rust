@@ -5,9 +5,9 @@
 pub struct DescribeReplicationInstanceTaskLogsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes).</p>
     pub replication_instance_task_logs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstanceTaskLog>>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,13 +16,13 @@ impl DescribeReplicationInstanceTaskLogsOutput {
     pub fn replication_instance_arn(&self) -> ::std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
-    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_instance_task_logs.is_none()`.
     pub fn replication_instance_task_logs(&self) -> &[crate::types::ReplicationInstanceTaskLog] {
         self.replication_instance_task_logs.as_deref().unwrap_or_default()
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -67,14 +67,14 @@ impl DescribeReplicationInstanceTaskLogsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_replication_instance_task_logs`](Self::set_replication_instance_task_logs).
     ///
-    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes).</p>
     pub fn replication_instance_task_logs(mut self, input: crate::types::ReplicationInstanceTaskLog) -> Self {
         let mut v = self.replication_instance_task_logs.unwrap_or_default();
         v.push(input);
         self.replication_instance_task_logs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes).</p>
     pub fn set_replication_instance_task_logs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstanceTaskLog>>,
@@ -82,21 +82,21 @@ impl DescribeReplicationInstanceTaskLogsOutputBuilder {
         self.replication_instance_task_logs = input;
         self
     }
-    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes).</p>
     pub fn get_replication_instance_task_logs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstanceTaskLog>> {
         &self.replication_instance_task_logs
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }

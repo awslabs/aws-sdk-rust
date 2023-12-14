@@ -142,8 +142,8 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -152,8 +152,8 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
@@ -162,8 +162,8 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
@@ -171,8 +171,8 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -181,8 +181,8 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
@@ -191,8 +191,8 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()

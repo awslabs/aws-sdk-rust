@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`ml_model_id(impl Into<String>)`](crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::ml_model_id) / [`set_ml_model_id(Option<String>)`](crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::set_ml_model_id):<br>required: **true**<br><p>The ID assigned to the <code>MLModel</code> during creation.</p><br>
     /// - On success, responds with [`CreateRealtimeEndpointOutput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code> </p>
+    ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code></p>
     /// - On failure, responds with [`SdkError<CreateRealtimeEndpointError>`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError)
     pub fn create_realtime_endpoint(&self) -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder {
         crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointFluentBuilder::new(self.handle.clone())

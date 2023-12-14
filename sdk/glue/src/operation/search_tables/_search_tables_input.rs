@@ -17,10 +17,10 @@ pub struct SearchTablesInput {
     pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
     /// <p>The maximum number of tables to return in a single response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
     /// <ul>
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
+    /// <li><p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
+    /// <li><p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
     /// </ul>
     pub resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
 }
@@ -55,10 +55,10 @@ impl SearchTablesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
     /// <ul>
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
+    /// <li><p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
+    /// <li><p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
     /// </ul>
     pub fn resource_share_type(&self) -> ::std::option::Option<&crate::types::ResourceShareType> {
         self.resource_share_type.as_ref()
@@ -186,28 +186,28 @@ impl SearchTablesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
     /// <ul>
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
+    /// <li><p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
+    /// <li><p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
     /// </ul>
     pub fn resource_share_type(mut self, input: crate::types::ResourceShareType) -> Self {
         self.resource_share_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
     /// <ul>
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
+    /// <li><p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
+    /// <li><p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
     /// </ul>
     pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.resource_share_type = input;
         self
     }
-    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
+    /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>.</p>
     /// <ul>
-    /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
-    /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
+    /// <li><p>If set to <code>FOREIGN</code>, will search the tables shared with your account.</p></li>
+    /// <li><p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account.</p></li>
     /// </ul>
     pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         &self.resource_share_type

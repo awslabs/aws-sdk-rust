@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectKeyPhrasesOutput {
-    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
     _request_id: Option<String>,
 }
 impl DetectKeyPhrasesOutput {
-    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_phrases.is_none()`.
     pub fn key_phrases(&self) -> &[crate::types::KeyPhrase] {
@@ -47,19 +47,19 @@ impl DetectKeyPhrasesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_key_phrases`](Self::set_key_phrases).
     ///
-    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn key_phrases(mut self, input: crate::types::KeyPhrase) -> Self {
         let mut v = self.key_phrases.unwrap_or_default();
         v.push(input);
         self.key_phrases = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn set_key_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>) -> Self {
         self.key_phrases = input;
         self
     }
-    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn get_key_phrases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
         &self.key_phrases
     }

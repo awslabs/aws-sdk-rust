@@ -122,17 +122,17 @@ impl CreateUserProfileFluentBuilder {
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_arn()
     }
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }

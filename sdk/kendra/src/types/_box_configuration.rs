@@ -8,21 +8,21 @@ pub struct BoxConfiguration {
     pub enterprise_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p> </li>
-    /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
-    /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
+    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub secret_arn: ::std::string::String,
-    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
+    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub use_change_log: bool,
-    /// <p> <code>TRUE</code> to index comments.</p>
+    /// <p><code>TRUE</code> to index comments.</p>
     pub crawl_comments: bool,
-    /// <p> <code>TRUE</code> to index the contents of tasks.</p>
+    /// <p><code>TRUE</code> to index the contents of tasks.</p>
     pub crawl_tasks: bool,
-    /// <p> <code>TRUE</code> to index web links.</p>
+    /// <p><code>TRUE</code> to index web links.</p>
     pub crawl_web_links: bool,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
     pub file_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
@@ -47,30 +47,30 @@ impl BoxConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p> </li>
-    /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
-    /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
+    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn secret_arn(&self) -> &str {
         use std::ops::Deref;
         self.secret_arn.deref()
     }
-    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
+    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn use_change_log(&self) -> bool {
         self.use_change_log
     }
-    /// <p> <code>TRUE</code> to index comments.</p>
+    /// <p><code>TRUE</code> to index comments.</p>
     pub fn crawl_comments(&self) -> bool {
         self.crawl_comments
     }
-    /// <p> <code>TRUE</code> to index the contents of tasks.</p>
+    /// <p><code>TRUE</code> to index the contents of tasks.</p>
     pub fn crawl_tasks(&self) -> bool {
         self.crawl_tasks
     }
-    /// <p> <code>TRUE</code> to index web links.</p>
+    /// <p><code>TRUE</code> to index web links.</p>
     pub fn crawl_web_links(&self) -> bool {
         self.crawl_web_links
     }
@@ -158,11 +158,11 @@ impl BoxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p> </li>
-    /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
-    /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
+    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     /// This field is required.
@@ -172,11 +172,11 @@ impl BoxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p> </li>
-    /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
-    /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
+    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -185,69 +185,69 @@ impl BoxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li> <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p> </li>
-    /// <li> <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p> </li>
-    /// <li> <p>privateKey—A set of characters that make up an encryption key.</p> </li>
-    /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
+    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
-    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
+    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
+    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
     }
-    /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
+    /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
         &self.use_change_log
     }
-    /// <p> <code>TRUE</code> to index comments.</p>
+    /// <p><code>TRUE</code> to index comments.</p>
     pub fn crawl_comments(mut self, input: bool) -> Self {
         self.crawl_comments = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index comments.</p>
+    /// <p><code>TRUE</code> to index comments.</p>
     pub fn set_crawl_comments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_comments = input;
         self
     }
-    /// <p> <code>TRUE</code> to index comments.</p>
+    /// <p><code>TRUE</code> to index comments.</p>
     pub fn get_crawl_comments(&self) -> &::std::option::Option<bool> {
         &self.crawl_comments
     }
-    /// <p> <code>TRUE</code> to index the contents of tasks.</p>
+    /// <p><code>TRUE</code> to index the contents of tasks.</p>
     pub fn crawl_tasks(mut self, input: bool) -> Self {
         self.crawl_tasks = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index the contents of tasks.</p>
+    /// <p><code>TRUE</code> to index the contents of tasks.</p>
     pub fn set_crawl_tasks(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_tasks = input;
         self
     }
-    /// <p> <code>TRUE</code> to index the contents of tasks.</p>
+    /// <p><code>TRUE</code> to index the contents of tasks.</p>
     pub fn get_crawl_tasks(&self) -> &::std::option::Option<bool> {
         &self.crawl_tasks
     }
-    /// <p> <code>TRUE</code> to index web links.</p>
+    /// <p><code>TRUE</code> to index web links.</p>
     pub fn crawl_web_links(mut self, input: bool) -> Self {
         self.crawl_web_links = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index web links.</p>
+    /// <p><code>TRUE</code> to index web links.</p>
     pub fn set_crawl_web_links(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_web_links = input;
         self
     }
-    /// <p> <code>TRUE</code> to index web links.</p>
+    /// <p><code>TRUE</code> to index web links.</p>
     pub fn get_crawl_web_links(&self) -> &::std::option::Option<bool> {
         &self.crawl_web_links
     }

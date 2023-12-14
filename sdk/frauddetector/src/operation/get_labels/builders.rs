@@ -22,7 +22,7 @@ impl GetLabelsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetLabels`.
 ///
-/// <p>Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 10 and 50. To get the next page results, provide the pagination token from the <code>GetGetLabelsResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
+/// <p>Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 10 and 50. To get the next page results, provide the pagination token from the <code>GetGetLabelsResponse</code> as part of your request. A null pagination token fetches the records from the beginning.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLabelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl CreatePricingRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePricingRule`.
 ///
-/// <p> Creates a pricing rule can be associated to a pricing plan, or a set of pricing plans. </p>
+/// <p>Creates a pricing rule can be associated to a pricing plan, or a set of pricing plans.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePricingRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl CreatePricingRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    /// <p>The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
+    /// <p>The pricing rule name. The names must be unique to each pricing rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
+    /// <p>The pricing rule name. The names must be unique to each pricing rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
+    /// <p>The pricing rule name. The names must be unique to each pricing rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> The pricing rule description. </p>
+    /// <p>The pricing rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> The pricing rule description. </p>
+    /// <p>The pricing rule description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The pricing rule description. </p>
+    /// <p>The pricing rule description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
+    /// <p>The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.</p>
     pub fn scope(mut self, input: crate::types::PricingRuleScope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
+    /// <p>The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::PricingRuleScope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
+    /// <p>The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::PricingRuleScope> {
         self.inner.get_scope()
     }
-    /// <p> The type of pricing rule. </p>
+    /// <p>The type of pricing rule.</p>
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p> The type of pricing rule. </p>
+    /// <p>The type of pricing rule.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PricingRuleType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p> The type of pricing rule. </p>
+    /// <p>The type of pricing rule.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PricingRuleType> {
         self.inner.get_type()
     }
-    /// <p> A percentage modifier that's applied on the public pricing rates. </p>
+    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
         self.inner = self.inner.modifier_percentage(input);
         self
     }
-    /// <p> A percentage modifier that's applied on the public pricing rates. </p>
+    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
     pub fn set_modifier_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_modifier_percentage(input);
         self
     }
-    /// <p> A percentage modifier that's applied on the public pricing rates. </p>
+    /// <p>A percentage modifier that's applied on the public pricing rates.</p>
     pub fn get_modifier_percentage(&self) -> &::std::option::Option<f64> {
         self.inner.get_modifier_percentage()
     }
-    /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service(input.into());
         self
     }
-    /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service(input);
         self
     }
-    /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service()
     }
@@ -210,79 +210,79 @@ impl CreatePricingRuleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
+    /// <p>A map that contains tag keys and tag values that are attached to a pricing rule.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
+    /// <p>A map that contains tag keys and tag values that are attached to a pricing rule.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
+    /// <p>A map that contains tag keys and tag values that are attached to a pricing rule.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    /// <p>The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace.</p>
     pub fn billing_entity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_entity(input.into());
         self
     }
-    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    /// <p>The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace.</p>
     pub fn set_billing_entity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_entity(input);
         self
     }
-    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    /// <p>The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace.</p>
     pub fn get_billing_entity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_billing_entity()
     }
-    /// <p> The set of tiering configurations for the pricing rule. </p>
+    /// <p>The set of tiering configurations for the pricing rule.</p>
     pub fn tiering(mut self, input: crate::types::CreateTieringInput) -> Self {
         self.inner = self.inner.tiering(input);
         self
     }
-    /// <p> The set of tiering configurations for the pricing rule. </p>
+    /// <p>The set of tiering configurations for the pricing rule.</p>
     pub fn set_tiering(mut self, input: ::std::option::Option<crate::types::CreateTieringInput>) -> Self {
         self.inner = self.inner.set_tiering(input);
         self
     }
-    /// <p> The set of tiering configurations for the pricing rule. </p>
+    /// <p>The set of tiering configurations for the pricing rule.</p>
     pub fn get_tiering(&self) -> &::std::option::Option<crate::types::CreateTieringInput> {
         self.inner.get_tiering()
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
-    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    /// <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.</p>
     pub fn usage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_type(input.into());
         self
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
-    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    /// <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.</p>
     pub fn set_usage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_type(input);
         self
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
-    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    /// <p>Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.</p>
     pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_usage_type()
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
-    /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+    /// <p>Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation(input.into());
         self
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
-    /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+    /// <p>Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
-    /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+    /// <p>Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation()
     }

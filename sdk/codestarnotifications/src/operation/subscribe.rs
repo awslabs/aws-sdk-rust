@@ -238,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SubscribeEndp
 pub enum SubscribeError {
     /// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
     ConfigurationException(crate::types::error::ConfigurationException),
-    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
+    /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::types::error::ValidationException),

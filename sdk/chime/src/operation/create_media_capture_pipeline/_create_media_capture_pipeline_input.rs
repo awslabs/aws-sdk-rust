@@ -7,7 +7,7 @@ pub struct CreateMediaCapturePipelineInput {
     pub source_type: ::std::option::Option<crate::types::MediaPipelineSourceType>,
     /// <p>ARN of the source from which the media artifacts are captured.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     pub sink_type: ::std::option::Option<crate::types::MediaPipelineSinkType>,
     /// <p>The ARN of the sink type.</p>
     pub sink_arn: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl CreateMediaCapturePipelineInput {
     pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     pub fn sink_type(&self) -> ::std::option::Option<&crate::types::MediaPipelineSinkType> {
         self.sink_type.as_ref()
     }
@@ -103,18 +103,18 @@ impl CreateMediaCapturePipelineInputBuilder {
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }
-    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     /// This field is required.
     pub fn sink_type(mut self, input: crate::types::MediaPipelineSinkType) -> Self {
         self.sink_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     pub fn set_sink_type(mut self, input: ::std::option::Option<crate::types::MediaPipelineSinkType>) -> Self {
         self.sink_type = input;
         self
     }
-    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     pub fn get_sink_type(&self) -> &::std::option::Option<crate::types::MediaPipelineSinkType> {
         &self.sink_type
     }

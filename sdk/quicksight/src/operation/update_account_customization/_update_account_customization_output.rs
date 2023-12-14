@@ -9,7 +9,7 @@ pub struct UpdateAccountCustomizationOutput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace associated with the customization that you're updating.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region.</p>
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl UpdateAccountCustomizationOutput {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region.</p>
     pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
@@ -110,17 +110,17 @@ impl UpdateAccountCustomizationOutputBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region.</p>
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
         self.account_customization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region.</p>
     pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.account_customization = input;
         self
     }
-    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region.</p>
     pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         &self.account_customization
     }

@@ -22,7 +22,7 @@ impl ListEnvironmentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEnvironments`.
 ///
-/// <p>Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller account. </p>
+/// <p>Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

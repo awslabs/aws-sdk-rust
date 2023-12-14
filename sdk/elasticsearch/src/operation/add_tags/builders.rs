@@ -99,17 +99,17 @@ impl AddTagsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
@@ -117,17 +117,17 @@ impl AddTagsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tag_list(input);
         self
     }
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
     }
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tag_list()
     }

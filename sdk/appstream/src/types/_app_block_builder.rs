@@ -13,7 +13,7 @@ pub struct AppBlockBuilder {
     /// <p>The description of the app block builder.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub platform: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
     /// <p>The instance type of the app block builder.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl AppBlockBuilder {
         self.description.as_deref()
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderPlatformType> {
         self.platform.as_ref()
     }
@@ -183,20 +183,20 @@ impl AppBlockBuilderBuilder {
         &self.description
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     /// This field is required.
     pub fn platform(mut self, input: crate::types::AppBlockBuilderPlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>) -> Self {
         self.platform = input;
         self
     }
     /// <p>The platform of the app block builder.</p>
-    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppBlockBuilderPlatformType> {
         &self.platform
     }

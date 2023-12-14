@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelOutput {
-    /// <p> The ID of the added notification channel. </p>
+    /// <p>The ID of the added notification channel.</p>
     pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AddNotificationChannelOutput {
-    /// <p> The ID of the added notification channel. </p>
+    /// <p>The ID of the added notification channel.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -34,18 +34,18 @@ pub struct AddNotificationChannelOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddNotificationChannelOutputBuilder {
-    /// <p> The ID of the added notification channel. </p>
+    /// <p>The ID of the added notification channel.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the added notification channel. </p>
+    /// <p>The ID of the added notification channel.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> The ID of the added notification channel. </p>
+    /// <p>The ID of the added notification channel.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

@@ -109,19 +109,19 @@ impl UpdateSecurityHubConfigurationFluentBuilder {
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub fn auto_enable_controls(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_enable_controls(input);
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub fn set_auto_enable_controls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_enable_controls(input);
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
     pub fn get_auto_enable_controls(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_enable_controls()
     }

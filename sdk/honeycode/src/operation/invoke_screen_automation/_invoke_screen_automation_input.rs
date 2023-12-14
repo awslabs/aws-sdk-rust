@@ -11,12 +11,12 @@ pub struct InvokeScreenAutomationInput {
     pub screen_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the automation action to be performed.</p>
     pub screen_automation_id: ::std::option::Option<::std::string::String>,
-    /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
+    /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
-    /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+    /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub row_id: ::std::option::Option<::std::string::String>,
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
-    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
+    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl InvokeScreenAutomationInput {
@@ -36,16 +36,16 @@ impl InvokeScreenAutomationInput {
     pub fn screen_automation_id(&self) -> ::std::option::Option<&str> {
         self.screen_automation_id.as_deref()
     }
-    /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
+    /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         self.variables.as_ref()
     }
-    /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+    /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub fn row_id(&self) -> ::std::option::Option<&str> {
         self.row_id.as_deref()
     }
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
-    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
+    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -147,14 +147,14 @@ impl InvokeScreenAutomationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
+    /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VariableValue) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.variables = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
+    /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
     pub fn set_variables(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
@@ -162,38 +162,38 @@ impl InvokeScreenAutomationInputBuilder {
         self.variables = input;
         self
     }
-    /// <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
+    /// <p>Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         &self.variables
     }
-    /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+    /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub fn row_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.row_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+    /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub fn set_row_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.row_id = input;
         self
     }
-    /// <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
+    /// <p>The row ID for the automation if the automation is defined inside a block with source or list.</p>
     pub fn get_row_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.row_id
     }
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
-    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
+    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
-    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
+    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>
-    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    /// <p>The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again.</p>
+    /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

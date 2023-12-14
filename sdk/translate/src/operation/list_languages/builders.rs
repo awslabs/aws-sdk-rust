@@ -114,31 +114,31 @@ impl ListLanguagesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_languages::paginator::ListLanguagesPaginator {
         crate::operation::list_languages::paginator::ListLanguagesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub fn display_language_code(mut self, input: crate::types::DisplayLanguageCode) -> Self {
         self.inner = self.inner.display_language_code(input);
         self
     }
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub fn set_display_language_code(mut self, input: ::std::option::Option<crate::types::DisplayLanguageCode>) -> Self {
         self.inner = self.inner.set_display_language_code(input);
         self
     }
-    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
+    /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default.</p>
     pub fn get_display_language_code(&self) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
         self.inner.get_display_language_code()
     }
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Include the NextToken value to fetch the next group of supported languages. </p>
+    /// <p>Include the NextToken value to fetch the next group of supported languages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

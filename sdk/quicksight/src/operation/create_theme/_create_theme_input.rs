@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThemeInput {
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the theme.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub base_theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub configuration: ::std::option::Option<crate::types::ThemeConfiguration>,
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateThemeInput {
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -33,7 +33,7 @@ impl CreateThemeInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn base_theme_id(&self) -> ::std::option::Option<&str> {
         self.base_theme_id.as_deref()
     }
@@ -45,7 +45,7 @@ impl CreateThemeInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::ThemeConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
     pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
@@ -79,18 +79,18 @@ pub struct CreateThemeInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateThemeInputBuilder {
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
@@ -124,18 +124,18 @@ impl CreateThemeInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     /// This field is required.
     pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_theme_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn set_base_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_theme_id = input;
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_theme_id
     }
@@ -172,19 +172,19 @@ impl CreateThemeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
         v.push(input);
         self.permissions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }

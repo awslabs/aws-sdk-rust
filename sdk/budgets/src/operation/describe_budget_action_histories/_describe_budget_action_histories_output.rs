@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesOutput {
-    /// <p> The historical record of the budget action resource. </p>
+    /// <p>The historical record of the budget action resource.</p>
     pub action_histories: ::std::vec::Vec<crate::types::ActionHistory>,
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetActionHistoriesOutput {
-    /// <p> The historical record of the budget action resource. </p>
+    /// <p>The historical record of the budget action resource.</p>
     pub fn action_histories(&self) -> &[crate::types::ActionHistory] {
         use std::ops::Deref;
         self.action_histories.deref()
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_action_histories`](Self::set_action_histories).
     ///
-    /// <p> The historical record of the budget action resource. </p>
+    /// <p>The historical record of the budget action resource.</p>
     pub fn action_histories(mut self, input: crate::types::ActionHistory) -> Self {
         let mut v = self.action_histories.unwrap_or_default();
         v.push(input);
         self.action_histories = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The historical record of the budget action resource. </p>
+    /// <p>The historical record of the budget action resource.</p>
     pub fn set_action_histories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>) -> Self {
         self.action_histories = input;
         self
     }
-    /// <p> The historical record of the budget action resource. </p>
+    /// <p>The historical record of the budget action resource.</p>
     pub fn get_action_histories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>> {
         &self.action_histories
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A generic string.</p>
+    /// <p>A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

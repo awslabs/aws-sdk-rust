@@ -24,10 +24,10 @@ impl ListUsersInputBuilder {
 ///
 /// <p>Lists users and their basic details in a user pool.</p> <note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
-/// <p class="title"> <b>Learn more</b> </p>
+/// <p class="title"><b>Learn more</b></p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -177,27 +177,27 @@ impl ListUsersFluentBuilder {
     }
     /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
     /// <ul>
-    /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
-    /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-    /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
+    /// <li><p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
+    /// <li><p><i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".</p></li>
+    /// <li><p><i>AttributeValue</i>: The attribute value that must be matched for each user.</p></li>
     /// </ul>
     /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
     /// <p>You can only search for the following standard attributes:</p>
     /// <ul>
-    /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
-    /// <li> <p> <code>email</code> </p> </li>
-    /// <li> <p> <code>phone_number</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>given_name</code> </p> </li>
-    /// <li> <p> <code>family_name</code> </p> </li>
-    /// <li> <p> <code>preferred_username</code> </p> </li>
-    /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
-    /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
-    /// <li> <p> <code>sub</code> </p> </li>
+    /// <li><p><code>username</code> (case-sensitive)</p></li>
+    /// <li><p><code>email</code></p></li>
+    /// <li><p><code>phone_number</code></p></li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>given_name</code></p></li>
+    /// <li><p><code>family_name</code></p></li>
+    /// <li><p><code>preferred_username</code></p></li>
+    /// <li><p><code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p></li>
+    /// <li><p><code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code></p></li>
+    /// <li><p><code>sub</code></p></li>
     /// </ul>
     /// <p>Custom attributes aren't searchable.</p> <note>
-    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
-    /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
+    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result.</p>
+    /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -206,27 +206,27 @@ impl ListUsersFluentBuilder {
     }
     /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
     /// <ul>
-    /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
-    /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-    /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
+    /// <li><p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
+    /// <li><p><i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".</p></li>
+    /// <li><p><i>AttributeValue</i>: The attribute value that must be matched for each user.</p></li>
     /// </ul>
     /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
     /// <p>You can only search for the following standard attributes:</p>
     /// <ul>
-    /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
-    /// <li> <p> <code>email</code> </p> </li>
-    /// <li> <p> <code>phone_number</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>given_name</code> </p> </li>
-    /// <li> <p> <code>family_name</code> </p> </li>
-    /// <li> <p> <code>preferred_username</code> </p> </li>
-    /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
-    /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
-    /// <li> <p> <code>sub</code> </p> </li>
+    /// <li><p><code>username</code> (case-sensitive)</p></li>
+    /// <li><p><code>email</code></p></li>
+    /// <li><p><code>phone_number</code></p></li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>given_name</code></p></li>
+    /// <li><p><code>family_name</code></p></li>
+    /// <li><p><code>preferred_username</code></p></li>
+    /// <li><p><code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p></li>
+    /// <li><p><code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code></p></li>
+    /// <li><p><code>sub</code></p></li>
     /// </ul>
     /// <p>Custom attributes aren't searchable.</p> <note>
-    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
-    /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
+    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result.</p>
+    /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -235,27 +235,27 @@ impl ListUsersFluentBuilder {
     }
     /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
     /// <ul>
-    /// <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>
-    /// <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-    /// <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>
+    /// <li><p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
+    /// <li><p><i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".</p></li>
+    /// <li><p><i>AttributeValue</i>: The attribute value that must be matched for each user.</p></li>
     /// </ul>
     /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>
     /// <p>You can only search for the following standard attributes:</p>
     /// <ul>
-    /// <li> <p> <code>username</code> (case-sensitive)</p> </li>
-    /// <li> <p> <code>email</code> </p> </li>
-    /// <li> <p> <code>phone_number</code> </p> </li>
-    /// <li> <p> <code>name</code> </p> </li>
-    /// <li> <p> <code>given_name</code> </p> </li>
-    /// <li> <p> <code>family_name</code> </p> </li>
-    /// <li> <p> <code>preferred_username</code> </p> </li>
-    /// <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>
-    /// <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>
-    /// <li> <p> <code>sub</code> </p> </li>
+    /// <li><p><code>username</code> (case-sensitive)</p></li>
+    /// <li><p><code>email</code></p></li>
+    /// <li><p><code>phone_number</code></p></li>
+    /// <li><p><code>name</code></p></li>
+    /// <li><p><code>given_name</code></p></li>
+    /// <li><p><code>family_name</code></p></li>
+    /// <li><p><code>preferred_username</code></p></li>
+    /// <li><p><code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p></li>
+    /// <li><p><code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code></p></li>
+    /// <li><p><code>sub</code></p></li>
     /// </ul>
     /// <p>Custom attributes aren't searchable.</p> <note>
-    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result. </p>
-    /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>. </p>
+    /// <p>You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the <code>--query</code> parameter of the <code>list-users</code> action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result.</p>
+    /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::string::String> {

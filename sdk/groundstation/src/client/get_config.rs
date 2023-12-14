@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`config_type(ConfigCapabilityType)`](crate::operation::get_config::builders::GetConfigFluentBuilder::config_type) / [`set_config_type(Option<ConfigCapabilityType>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_config_type):<br>required: **true**<br><p>Type of a <code>Config</code>.</p><br>
     /// - On success, responds with [`GetConfigOutput`](crate::operation::get_config::GetConfigOutput) with field(s):
     ///   - [`config_id(String)`](crate::operation::get_config::GetConfigOutput::config_id): <p>UUID of a <code>Config</code>.</p>
-    ///   - [`config_arn(String)`](crate::operation::get_config::GetConfigOutput::config_arn): <p>ARN of a <code>Config</code> </p>
+    ///   - [`config_arn(String)`](crate::operation::get_config::GetConfigOutput::config_arn): <p>ARN of a <code>Config</code></p>
     ///   - [`name(String)`](crate::operation::get_config::GetConfigOutput::name): <p>Name of a <code>Config</code>.</p>
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::operation::get_config::GetConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
     ///   - [`config_data(Option<ConfigTypeData>)`](crate::operation::get_config::GetConfigOutput::config_data): <p>Data elements in a <code>Config</code>.</p>

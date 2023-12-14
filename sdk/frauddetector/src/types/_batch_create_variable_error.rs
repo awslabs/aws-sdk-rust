@@ -6,7 +6,7 @@
 pub struct BatchCreateVariableError {
     /// <p>The name.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The error code. </p>
+    /// <p>The error code.</p>
     pub code: i32,
     /// <p>The error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl BatchCreateVariableError {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The error code. </p>
+    /// <p>The error code.</p>
     pub fn code(&self) -> i32 {
         self.code
     }
@@ -55,17 +55,17 @@ impl BatchCreateVariableErrorBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The error code. </p>
+    /// <p>The error code.</p>
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The error code. </p>
+    /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
-    /// <p>The error code. </p>
+    /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<i32> {
         &self.code
     }

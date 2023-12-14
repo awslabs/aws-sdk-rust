@@ -6,7 +6,7 @@
 pub struct Recommendation {
     /// <p>The unique identifier for the recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code> </p>
+    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub recommendation_description: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {
@@ -14,7 +14,7 @@ impl Recommendation {
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code> </p>
+    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub fn recommendation_description(&self) -> ::std::option::Option<&str> {
         self.recommendation_description.as_deref()
     }
@@ -56,17 +56,17 @@ impl RecommendationBuilder {
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_id
     }
-    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code> </p>
+    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub fn recommendation_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code> </p>
+    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub fn set_recommendation_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_description = input;
         self
     }
-    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code> </p>
+    /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub fn get_recommendation_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_description
     }

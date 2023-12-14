@@ -128,37 +128,37 @@ impl ListTrackerConsumersFluentBuilder {
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tracker_name()
     }
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

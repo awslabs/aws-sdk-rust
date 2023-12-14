@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::set_max_results):<br>required: **false**<br><p> Maximum number of records to list in a single response. </p><br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::set_next_token):<br>required: **false**<br><p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of records to list in a single response.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bundles::builders::ListBundlesFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles.</p><br>
     /// - On success, responds with [`ListBundlesOutput`](crate::operation::list_bundles::ListBundlesOutput) with field(s):
-    ///   - [`bundle_list(Option<Vec::<BundleDetails>>)`](crate::operation::list_bundles::ListBundlesOutput::bundle_list): <p> A list of bundles. </p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_bundles::ListBundlesOutput::next_token): <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
+    ///   - [`bundle_list(Option<Vec::<BundleDetails>>)`](crate::operation::list_bundles::ListBundlesOutput::bundle_list): <p>A list of bundles.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_bundles::ListBundlesOutput::next_token): <p>Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.</p>
     /// - On failure, responds with [`SdkError<ListBundlesError>`](crate::operation::list_bundles::ListBundlesError)
     pub fn list_bundles(&self) -> crate::operation::list_bundles::builders::ListBundlesFluentBuilder {
         crate::operation::list_bundles::builders::ListBundlesFluentBuilder::new(self.handle.clone())

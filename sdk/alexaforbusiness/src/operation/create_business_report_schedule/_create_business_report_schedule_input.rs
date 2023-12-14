@@ -5,7 +5,7 @@
 pub struct CreateBusinessReportScheduleInput {
     /// <p>The name identifier of the schedule.</p>
     pub schedule_name: ::std::option::Option<::std::string::String>,
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateBusinessReportScheduleInput {
     pub format: ::std::option::Option<crate::types::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
     pub content_range: ::std::option::Option<crate::types::BusinessReportContentRange>,
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub recurrence: ::std::option::Option<crate::types::BusinessReportRecurrence>,
     /// <p>The client request token.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn schedule_name(&self) -> ::std::option::Option<&str> {
         self.schedule_name.as_deref()
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -41,7 +41,7 @@ impl CreateBusinessReportScheduleInput {
     pub fn content_range(&self) -> ::std::option::Option<&crate::types::BusinessReportContentRange> {
         self.content_range.as_ref()
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub fn recurrence(&self) -> ::std::option::Option<&crate::types::BusinessReportRecurrence> {
         self.recurrence.as_ref()
     }
@@ -91,17 +91,17 @@ impl CreateBusinessReportScheduleInputBuilder {
     pub fn get_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_name
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
-    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_name
     }
@@ -149,17 +149,17 @@ impl CreateBusinessReportScheduleInputBuilder {
     pub fn get_content_range(&self) -> &::std::option::Option<crate::types::BusinessReportContentRange> {
         &self.content_range
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub fn recurrence(mut self, input: crate::types::BusinessReportRecurrence) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::BusinessReportRecurrence>) -> Self {
         self.recurrence = input;
         self
     }
-    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called.</p>
     pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::BusinessReportRecurrence> {
         &self.recurrence
     }

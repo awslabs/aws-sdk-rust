@@ -246,17 +246,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DetectEntitie
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DetectEntitiesError {
-    /// <p> An internal server error occurred. Retry your request. </p>
+    /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
+    /// <p>The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::types::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    /// <p>The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
+    /// <p>The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
+    /// <p>The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request.</p>
     TextSizeLimitExceededException(crate::types::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

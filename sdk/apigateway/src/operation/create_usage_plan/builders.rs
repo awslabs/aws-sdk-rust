@@ -22,7 +22,7 @@ impl CreateUsagePlanInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateUsagePlan`.
 ///
-/// <p>Creates a usage plan with the throttle and quota limits, as well as the associated API stages, specified in the payload. </p>
+/// <p>Creates a usage plan with the throttle and quota limits, as well as the associated API stages, specified in the payload.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUsagePlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

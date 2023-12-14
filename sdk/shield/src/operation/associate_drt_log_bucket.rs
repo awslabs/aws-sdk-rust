@@ -248,13 +248,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateDRTL
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AssociateDRTLogBucketError {
-    /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
+    /// <p>In order to grant the necessary access to the Shield Response Team (SRT) the user submitting the request must have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an Amazon Web Services Service</a>.</p>
     AccessDeniedForDependencyException(crate::types::error::AccessDeniedForDependencyException),
     /// <p>Exception that indicates that a problem occurred with the service infrastructure. You can retry the request.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),
-    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::types::error::LimitsExceededException),
@@ -262,7 +262,7 @@ pub enum AssociateDRTLogBucketError {
     NoAssociatedRoleException(crate::types::error::NoAssociatedRoleException),
     /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::types::error::OptimisticLockException),
-    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>
+    /// <p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

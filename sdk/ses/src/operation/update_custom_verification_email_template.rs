@@ -258,7 +258,7 @@ pub enum UpdateCustomVerificationEmailTemplateError {
     CustomVerificationEmailInvalidContentException(crate::types::error::CustomVerificationEmailInvalidContentException),
     /// <p>Indicates that a custom verification email template with the name you specified does not exist.</p>
     CustomVerificationEmailTemplateDoesNotExistException(crate::types::error::CustomVerificationEmailTemplateDoesNotExistException),
-    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email. </p>
+    /// <p>Indicates that the sender address specified for a custom verification email is not verified, and is therefore not eligible to send the custom verification email.</p>
     FromEmailAddressNotVerifiedException(crate::types::error::FromEmailAddressNotVerifiedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

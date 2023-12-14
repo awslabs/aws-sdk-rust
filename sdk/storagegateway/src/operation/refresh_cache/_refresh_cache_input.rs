@@ -9,7 +9,7 @@ pub struct RefreshCacheInput {
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
     pub folder_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub recursive: ::std::option::Option<bool>,
 }
 impl RefreshCacheInput {
@@ -24,7 +24,7 @@ impl RefreshCacheInput {
         self.folder_list.as_deref().unwrap_or_default()
     }
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn recursive(&self) -> ::std::option::Option<bool> {
         self.recursive
     }
@@ -81,19 +81,19 @@ impl RefreshCacheInputBuilder {
         &self.folder_list
     }
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.recursive = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
     }
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_recursive(&self) -> &::std::option::Option<bool> {
         &self.recursive
     }

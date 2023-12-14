@@ -5,31 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpnConnectionOptionsSpecification {
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub enable_acceleration: ::std::option::Option<bool>,
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub static_routes_only: ::std::option::Option<bool>,
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    /// <p>Default: <code>ipv4</code> </p>
+    /// <p>Default: <code>ipv4</code></p>
     pub tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
     /// <p>The tunnel options for the VPN connection.</p>
     pub tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::VpnTunnelOptionsSpecification>>,
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub local_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub remote_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub local_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub outside_ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>The transit gateway attachment ID to use for the VPN tunnel.</p>
     /// <p>Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
@@ -37,17 +37,17 @@ pub struct VpnConnectionOptionsSpecification {
 }
 impl VpnConnectionOptionsSpecification {
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn enable_acceleration(&self) -> ::std::option::Option<bool> {
         self.enable_acceleration
     }
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn static_routes_only(&self) -> ::std::option::Option<bool> {
         self.static_routes_only
     }
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    /// <p>Default: <code>ipv4</code> </p>
+    /// <p>Default: <code>ipv4</code></p>
     pub fn tunnel_inside_ip_version(&self) -> ::std::option::Option<&crate::types::TunnelInsideIpVersion> {
         self.tunnel_inside_ip_version.as_ref()
     }
@@ -58,28 +58,28 @@ impl VpnConnectionOptionsSpecification {
         self.tunnel_options.as_deref().unwrap_or_default()
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn local_ipv4_network_cidr(&self) -> ::std::option::Option<&str> {
         self.local_ipv4_network_cidr.as_deref()
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn remote_ipv4_network_cidr(&self) -> ::std::option::Option<&str> {
         self.remote_ipv4_network_cidr.as_deref()
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn local_ipv6_network_cidr(&self) -> ::std::option::Option<&str> {
         self.local_ipv6_network_cidr.as_deref()
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn remote_ipv6_network_cidr(&self) -> ::std::option::Option<&str> {
         self.remote_ipv6_network_cidr.as_deref()
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn outside_ip_address_type(&self) -> ::std::option::Option<&str> {
         self.outside_ip_address_type.as_deref()
     }
@@ -113,53 +113,53 @@ pub struct VpnConnectionOptionsSpecificationBuilder {
 }
 impl VpnConnectionOptionsSpecificationBuilder {
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn enable_acceleration(mut self, input: bool) -> Self {
         self.enable_acceleration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_enable_acceleration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_acceleration = input;
         self
     }
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_enable_acceleration(&self) -> &::std::option::Option<bool> {
         &self.enable_acceleration
     }
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn static_routes_only(mut self, input: bool) -> Self {
         self.static_routes_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_static_routes_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.static_routes_only = input;
         self
     }
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_static_routes_only(&self) -> &::std::option::Option<bool> {
         &self.static_routes_only
     }
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    /// <p>Default: <code>ipv4</code> </p>
+    /// <p>Default: <code>ipv4</code></p>
     pub fn tunnel_inside_ip_version(mut self, input: crate::types::TunnelInsideIpVersion) -> Self {
         self.tunnel_inside_ip_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    /// <p>Default: <code>ipv4</code> </p>
+    /// <p>Default: <code>ipv4</code></p>
     pub fn set_tunnel_inside_ip_version(mut self, input: ::std::option::Option<crate::types::TunnelInsideIpVersion>) -> Self {
         self.tunnel_inside_ip_version = input;
         self
     }
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
-    /// <p>Default: <code>ipv4</code> </p>
+    /// <p>Default: <code>ipv4</code></p>
     pub fn get_tunnel_inside_ip_version(&self) -> &::std::option::Option<crate::types::TunnelInsideIpVersion> {
         &self.tunnel_inside_ip_version
     }
@@ -184,90 +184,90 @@ impl VpnConnectionOptionsSpecificationBuilder {
         &self.tunnel_options
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn local_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_ipv4_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn set_local_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_ipv4_network_cidr = input;
         self
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn get_local_ipv4_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_ipv4_network_cidr
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn remote_ipv4_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_ipv4_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn set_remote_ipv4_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_ipv4_network_cidr = input;
         self
     }
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>0.0.0.0/0</code> </p>
+    /// <p>Default: <code>0.0.0.0/0</code></p>
     pub fn get_remote_ipv4_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_ipv4_network_cidr
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn local_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_ipv6_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn set_local_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_ipv6_network_cidr = input;
         self
     }
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn get_local_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_ipv6_network_cidr
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn remote_ipv6_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_ipv6_network_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn set_remote_ipv6_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_ipv6_network_cidr = input;
         self
     }
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
-    /// <p>Default: <code>::/0</code> </p>
+    /// <p>Default: <code>::/0</code></p>
     pub fn get_remote_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_ipv6_network_cidr
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn outside_ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outside_ip_address_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn set_outside_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outside_ip_address_type = input;
         self
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn get_outside_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.outside_ip_address_type
     }

@@ -22,7 +22,7 @@ impl UpdateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>Updates application properties. </p>
+/// <p>Updates application properties.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

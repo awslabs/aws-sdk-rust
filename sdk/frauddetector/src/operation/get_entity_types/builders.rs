@@ -22,7 +22,7 @@ impl GetEntityTypesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEntityTypes`.
 ///
-/// <p>Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
+/// <p>Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEntityTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -141,17 +141,17 @@ impl ReloadReplicationTablesFluentBuilder {
     pub fn get_tables_to_reload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableToReload>> {
         self.inner.get_tables_to_reload()
     }
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication.</p>
     pub fn reload_option(mut self, input: crate::types::ReloadOptionValue) -> Self {
         self.inner = self.inner.reload_option(input);
         self
     }
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication.</p>
     pub fn set_reload_option(mut self, input: ::std::option::Option<crate::types::ReloadOptionValue>) -> Self {
         self.inner = self.inner.set_reload_option(input);
         self
     }
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication. </p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the replication.</p>
     pub fn get_reload_option(&self) -> &::std::option::Option<crate::types::ReloadOptionValue> {
         self.inner.get_reload_option()
     }

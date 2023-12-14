@@ -258,12 +258,12 @@ pub enum CreateSlackChannelConfigurationError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
     /// <ul>
-    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// <li><p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p></li>
+    /// <li><p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p></li>
+    /// <li><p>Delete a Slack channel configuration for a live chat channel.</p></li>
+    /// <li><p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p></li>
+    /// <li><p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p></li>
+    /// <li><p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p></li>
     /// </ul>
     ConflictException(crate::types::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>

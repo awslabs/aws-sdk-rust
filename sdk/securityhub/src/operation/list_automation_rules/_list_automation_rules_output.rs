@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAutomationRulesOutput {
-    /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
+    /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
     pub automation_rules_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
-    /// <p> A pagination token for the response. </p>
+    /// <p>A pagination token for the response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAutomationRulesOutput {
-    /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
+    /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automation_rules_metadata.is_none()`.
     pub fn automation_rules_metadata(&self) -> &[crate::types::AutomationRulesMetadata] {
         self.automation_rules_metadata.as_deref().unwrap_or_default()
     }
-    /// <p> A pagination token for the response. </p>
+    /// <p>A pagination token for the response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListAutomationRulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_automation_rules_metadata`](Self::set_automation_rules_metadata).
     ///
-    /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
+    /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
     pub fn automation_rules_metadata(mut self, input: crate::types::AutomationRulesMetadata) -> Self {
         let mut v = self.automation_rules_metadata.unwrap_or_default();
         v.push(input);
         self.automation_rules_metadata = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
+    /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
     pub fn set_automation_rules_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>) -> Self {
         self.automation_rules_metadata = input;
         self
     }
-    /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
+    /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
     pub fn get_automation_rules_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>> {
         &self.automation_rules_metadata
     }
-    /// <p> A pagination token for the response. </p>
+    /// <p>A pagination token for the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A pagination token for the response. </p>
+    /// <p>A pagination token for the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A pagination token for the response. </p>
+    /// <p>A pagination token for the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
-    /// <p>The destination bucket owner's account ID. </p>
+    /// <p>The destination bucket owner's account ID.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access point for the destination bucket where you want S3 on Outposts to store the replication results.</p>
     pub bucket: ::std::string::String,
-    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
+    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub replication_time: ::std::option::Option<crate::types::ReplicationTime>,
@@ -20,15 +20,15 @@ pub struct Destination {
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    /// <p> A container that specifies replication metrics-related settings. </p>
+    /// <p>A container that specifies replication metrics-related settings.</p>
     pub metrics: ::std::option::Option<crate::types::Metrics>,
-    /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
+    /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p> <note>
+    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub storage_class: ::std::option::Option<crate::types::ReplicationStorageClass>,
 }
 impl Destination {
-    /// <p>The destination bucket owner's account ID. </p>
+    /// <p>The destination bucket owner's account ID.</p>
     pub fn account(&self) -> ::std::option::Option<&str> {
         self.account.as_deref()
     }
@@ -37,7 +37,7 @@ impl Destination {
         use std::ops::Deref;
         self.bucket.deref()
     }
-    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
+    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn replication_time(&self) -> ::std::option::Option<&crate::types::ReplicationTime> {
@@ -55,12 +55,12 @@ impl Destination {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
-    /// <p> A container that specifies replication metrics-related settings. </p>
+    /// <p>A container that specifies replication metrics-related settings.</p>
     pub fn metrics(&self) -> ::std::option::Option<&crate::types::Metrics> {
         self.metrics.as_ref()
     }
-    /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
+    /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p> <note>
+    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::ReplicationStorageClass> {
         self.storage_class.as_ref()
@@ -86,17 +86,17 @@ pub struct DestinationBuilder {
     pub(crate) storage_class: ::std::option::Option<crate::types::ReplicationStorageClass>,
 }
 impl DestinationBuilder {
-    /// <p>The destination bucket owner's account ID. </p>
+    /// <p>The destination bucket owner's account ID.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The destination bucket owner's account ID. </p>
+    /// <p>The destination bucket owner's account ID.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
     }
-    /// <p>The destination bucket owner's account ID. </p>
+    /// <p>The destination bucket owner's account ID.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.account
     }
@@ -115,21 +115,21 @@ impl DestinationBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
+    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn replication_time(mut self, input: crate::types::ReplicationTime) -> Self {
         self.replication_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
+    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn set_replication_time(mut self, input: ::std::option::Option<crate::types::ReplicationTime>) -> Self {
         self.replication_time = input;
         self
     }
-    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p> <note>
+    /// <p>A container that specifies S3 Replication Time Control (S3 RTC) settings, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn get_replication_time(&self) -> &::std::option::Option<crate::types::ReplicationTime> {
@@ -175,36 +175,36 @@ impl DestinationBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
-    /// <p> A container that specifies replication metrics-related settings. </p>
+    /// <p>A container that specifies replication metrics-related settings.</p>
     pub fn metrics(mut self, input: crate::types::Metrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A container that specifies replication metrics-related settings. </p>
+    /// <p>A container that specifies replication metrics-related settings.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::Metrics>) -> Self {
         self.metrics = input;
         self
     }
-    /// <p> A container that specifies replication metrics-related settings. </p>
+    /// <p>A container that specifies replication metrics-related settings.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::Metrics> {
         &self.metrics
     }
-    /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
+    /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p> <note>
+    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn storage_class(mut self, input: crate::types::ReplicationStorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
+    /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p> <note>
+    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::ReplicationStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
-    /// <p> The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas. </p> <note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts. </p>
+    /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p> <note>
+    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::ReplicationStorageClass> {
         &self.storage_class

@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataOutput {
-    /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub start_time: ::aws_smithy_types::DateTime,
-    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub end_time: ::aws_smithy_types::DateTime,
-    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
+    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <li><p><code>P1D</code> — 1 day</p></li>
+    /// <li><p><code>PT1H</code> — 1 hour</p></li>
+    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub resolution: crate::types::AggregationPeriod,
-    /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
+    /// <p>List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart.</p>
     pub end_times: ::std::vec::Vec<crate::types::TimestampStructure>,
     /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
     pub unprocessed_end_times: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::TimestampStructure>>,
@@ -24,24 +24,24 @@ pub struct BatchGetFrameMetricDataOutput {
     _request_id: Option<String>,
 }
 impl BatchGetFrameMetricDataOutput {
-    /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.start_time
     }
-    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.end_time
     }
-    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
+    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <li><p><code>P1D</code> — 1 day</p></li>
+    /// <li><p><code>PT1H</code> — 1 hour</p></li>
+    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn resolution(&self) -> &crate::types::AggregationPeriod {
         &self.resolution
     }
-    /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
+    /// <p>List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart.</p>
     pub fn end_times(&self) -> &[crate::types::TimestampStructure] {
         use std::ops::Deref;
         self.end_times.deref()
@@ -82,62 +82,62 @@ pub struct BatchGetFrameMetricDataOutputBuilder {
     _request_id: Option<String>,
 }
 impl BatchGetFrameMetricDataOutputBuilder {
-    /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
+    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <li><p><code>P1D</code> — 1 day</p></li>
+    /// <li><p><code>PT1H</code> — 1 hour</p></li>
+    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     /// This field is required.
     pub fn resolution(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.resolution = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
+    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <li><p><code>P1D</code> — 1 day</p></li>
+    /// <li><p><code>PT1H</code> — 1 hour</p></li>
+    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.resolution = input;
         self
     }
-    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>
+    /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
-    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
-    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
+    /// <li><p><code>P1D</code> — 1 day</p></li>
+    /// <li><p><code>PT1H</code> — 1 hour</p></li>
+    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn get_resolution(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         &self.resolution
@@ -146,19 +146,19 @@ impl BatchGetFrameMetricDataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_end_times`](Self::set_end_times).
     ///
-    /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
+    /// <p>List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart.</p>
     pub fn end_times(mut self, input: crate::types::TimestampStructure) -> Self {
         let mut v = self.end_times.unwrap_or_default();
         v.push(input);
         self.end_times = ::std::option::Option::Some(v);
         self
     }
-    /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
+    /// <p>List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart.</p>
     pub fn set_end_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>>) -> Self {
         self.end_times = input;
         self
     }
-    /// <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
+    /// <p>List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart.</p>
     pub fn get_end_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampStructure>> {
         &self.end_times
     }

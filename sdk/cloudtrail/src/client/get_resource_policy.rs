@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p><br>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.</p><br>
     /// - On success, responds with [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_arn): <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based policy. </p>
-    ///   - [`resource_policy(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_policy): <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
+    ///   - [`resource_arn(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based policy.</p>
+    ///   - [`resource_policy(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_policy): <p>A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel.</p>
     /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::operation::get_resource_policy::GetResourcePolicyError)
     pub fn get_resource_policy(&self) -> crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::new(self.handle.clone())

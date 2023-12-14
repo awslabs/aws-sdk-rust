@@ -8,7 +8,7 @@ pub struct Ec2SecurityGroup {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the EC2 Security Group.</p>
     pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the EC2 security group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -22,7 +22,7 @@ impl Ec2SecurityGroup {
     pub fn ec2_security_group_name(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_name.as_deref()
     }
-    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_owner_id.as_deref()
     }
@@ -78,17 +78,17 @@ impl Ec2SecurityGroupBuilder {
     pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_security_group_name
     }
-    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
+    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ec2_security_group_owner_id
     }

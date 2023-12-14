@@ -23,7 +23,7 @@ impl PredictInputBuilder {
 /// Fluent builder constructing a request to `Predict`.
 ///
 /// <p>Generates a prediction for the observation using the specified <code>ML Model</code>.</p>
-/// <p> <b>Note:</b> Not all response parameters will be populated. Whether a response parameter is populated depends on the type of model requested.</p>
+/// <p><b>Note:</b> Not all response parameters will be populated. Whether a response parameter is populated depends on the type of model requested.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PredictFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl UpdateUserHierarchyGroupNameInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateUserHierarchyGroupName`.
 ///
-/// <p>Updates the name of the user hierarchy group. </p>
+/// <p>Updates the name of the user hierarchy group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserHierarchyGroupNameFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

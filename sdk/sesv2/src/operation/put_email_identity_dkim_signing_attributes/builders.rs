@@ -24,12 +24,12 @@ impl PutEmailIdentityDkimSigningAttributesInputBuilder {
 ///
 /// <p>Used to configure or change the DKIM authentication settings for an email domain identity. You can use this operation to do any of the following:</p>
 /// <ul>
-/// <li> <p>Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).</p> </li>
-/// <li> <p>Update the key length that should be used for Easy DKIM.</p> </li>
-/// <li> <p>Change from using no DKIM authentication to using Easy DKIM.</p> </li>
-/// <li> <p>Change from using no DKIM authentication to using BYODKIM.</p> </li>
-/// <li> <p>Change from using Easy DKIM to using BYODKIM.</p> </li>
-/// <li> <p>Change from using BYODKIM to using Easy DKIM.</p> </li>
+/// <li><p>Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).</p></li>
+/// <li><p>Update the key length that should be used for Easy DKIM.</p></li>
+/// <li><p>Change from using no DKIM authentication to using Easy DKIM.</p></li>
+/// <li><p>Change from using no DKIM authentication to using BYODKIM.</p></li>
+/// <li><p>Change from using Easy DKIM to using BYODKIM.</p></li>
+/// <li><p>Change from using BYODKIM to using Easy DKIM.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimSigningAttributesFluentBuilder {
@@ -136,8 +136,8 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     }
     /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
     /// <ul>
-    /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
-    /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
+    /// <li><p><code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
+    /// <li><p><code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
     /// </ul>
     pub fn signing_attributes_origin(mut self, input: crate::types::DkimSigningAttributesOrigin) -> Self {
         self.inner = self.inner.signing_attributes_origin(input);
@@ -145,8 +145,8 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     }
     /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
     /// <ul>
-    /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
-    /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
+    /// <li><p><code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
+    /// <li><p><code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
     /// </ul>
     pub fn set_signing_attributes_origin(mut self, input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>) -> Self {
         self.inner = self.inner.set_signing_attributes_origin(input);
@@ -154,8 +154,8 @@ impl PutEmailIdentityDkimSigningAttributesFluentBuilder {
     }
     /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
     /// <ul>
-    /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
-    /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
+    /// <li><p><code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p></li>
+    /// <li><p><code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
     /// </ul>
     pub fn get_signing_attributes_origin(&self) -> &::std::option::Option<crate::types::DkimSigningAttributesOrigin> {
         self.inner.get_signing_attributes_origin()

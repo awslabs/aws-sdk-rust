@@ -201,11 +201,11 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// <li><p><code>Dimensions</code></p></li>
+    /// <li><p><code>MetricName</code></p></li>
+    /// <li><p><code>Namespace</code></p></li>
+    /// <li><p><code>Stat</code></p></li>
+    /// <li><p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn single_metric_anomaly_detector(mut self, input: crate::types::SingleMetricAnomalyDetector) -> Self {
@@ -215,11 +215,11 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// <li><p><code>Dimensions</code></p></li>
+    /// <li><p><code>MetricName</code></p></li>
+    /// <li><p><code>Namespace</code></p></li>
+    /// <li><p><code>Stat</code></p></li>
+    /// <li><p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn set_single_metric_anomaly_detector(mut self, input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>) -> Self {
@@ -229,11 +229,11 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// <li><p><code>Dimensions</code></p></li>
+    /// <li><p><code>MetricName</code></p></li>
+    /// <li><p><code>Namespace</code></p></li>
+    /// <li><p><code>Stat</code></p></li>
+    /// <li><p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn get_single_metric_anomaly_detector(&self) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
@@ -242,11 +242,11 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>The metric math anomaly detector to be created.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// <li><p><code>Dimensions</code></p></li>
+    /// <li><p><code>MetricName</code></p></li>
+    /// <li><p><code>Namespace</code></p></li>
+    /// <li><p><code>Stat</code></p></li>
+    /// <li><p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
     pub fn metric_math_anomaly_detector(mut self, input: crate::types::MetricMathAnomalyDetector) -> Self {
@@ -256,11 +256,11 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>The metric math anomaly detector to be created.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// <li><p><code>Dimensions</code></p></li>
+    /// <li><p><code>MetricName</code></p></li>
+    /// <li><p><code>Namespace</code></p></li>
+    /// <li><p><code>Stat</code></p></li>
+    /// <li><p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
     pub fn set_metric_math_anomaly_detector(mut self, input: ::std::option::Option<crate::types::MetricMathAnomalyDetector>) -> Self {
@@ -270,11 +270,11 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>The metric math anomaly detector to be created.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
+    /// <li><p><code>Dimensions</code></p></li>
+    /// <li><p><code>MetricName</code></p></li>
+    /// <li><p><code>Namespace</code></p></li>
+    /// <li><p><code>Stat</code></p></li>
+    /// <li><p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
     pub fn get_metric_math_anomaly_detector(&self) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {

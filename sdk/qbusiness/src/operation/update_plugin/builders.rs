@@ -150,17 +150,17 @@ impl UpdatePluginFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The status of the plugin. </p>
+    /// <p>The status of the plugin.</p>
     pub fn state(mut self, input: crate::types::PluginState) -> Self {
         self.inner = self.inner.state(input);
         self
     }
-    /// <p>The status of the plugin. </p>
+    /// <p>The status of the plugin.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PluginState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
-    /// <p>The status of the plugin. </p>
+    /// <p>The status of the plugin.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PluginState> {
         self.inner.get_state()
     }

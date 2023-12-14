@@ -11,7 +11,7 @@ pub struct ScheduleKeyDeletionOutput {
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub key_state: ::std::option::Option<crate::types::KeyState>,
-    /// <p>The waiting period before the KMS key is deleted. </p>
+    /// <p>The waiting period before the KMS key is deleted.</p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub pending_window_in_days: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -31,7 +31,7 @@ impl ScheduleKeyDeletionOutput {
     pub fn key_state(&self) -> ::std::option::Option<&crate::types::KeyState> {
         self.key_state.as_ref()
     }
-    /// <p>The waiting period before the KMS key is deleted. </p>
+    /// <p>The waiting period before the KMS key is deleted.</p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub fn pending_window_in_days(&self) -> ::std::option::Option<i32> {
         self.pending_window_in_days
@@ -108,19 +108,19 @@ impl ScheduleKeyDeletionOutputBuilder {
     pub fn get_key_state(&self) -> &::std::option::Option<crate::types::KeyState> {
         &self.key_state
     }
-    /// <p>The waiting period before the KMS key is deleted. </p>
+    /// <p>The waiting period before the KMS key is deleted.</p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub fn pending_window_in_days(mut self, input: i32) -> Self {
         self.pending_window_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The waiting period before the KMS key is deleted. </p>
+    /// <p>The waiting period before the KMS key is deleted.</p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub fn set_pending_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending_window_in_days = input;
         self
     }
-    /// <p>The waiting period before the KMS key is deleted. </p>
+    /// <p>The waiting period before the KMS key is deleted.</p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub fn get_pending_window_in_days(&self) -> &::std::option::Option<i32> {
         &self.pending_window_in_days

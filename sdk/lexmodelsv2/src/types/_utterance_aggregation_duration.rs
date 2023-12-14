@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceAggregationDuration {
-    /// <p>The desired time window for aggregating utterances. </p>
+    /// <p>The desired time window for aggregating utterances.</p>
     pub relative_aggregation_duration: ::std::option::Option<crate::types::RelativeAggregationDuration>,
 }
 impl UtteranceAggregationDuration {
-    /// <p>The desired time window for aggregating utterances. </p>
+    /// <p>The desired time window for aggregating utterances.</p>
     pub fn relative_aggregation_duration(&self) -> ::std::option::Option<&crate::types::RelativeAggregationDuration> {
         self.relative_aggregation_duration.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct UtteranceAggregationDurationBuilder {
     pub(crate) relative_aggregation_duration: ::std::option::Option<crate::types::RelativeAggregationDuration>,
 }
 impl UtteranceAggregationDurationBuilder {
-    /// <p>The desired time window for aggregating utterances. </p>
+    /// <p>The desired time window for aggregating utterances.</p>
     /// This field is required.
     pub fn relative_aggregation_duration(mut self, input: crate::types::RelativeAggregationDuration) -> Self {
         self.relative_aggregation_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired time window for aggregating utterances. </p>
+    /// <p>The desired time window for aggregating utterances.</p>
     pub fn set_relative_aggregation_duration(mut self, input: ::std::option::Option<crate::types::RelativeAggregationDuration>) -> Self {
         self.relative_aggregation_duration = input;
         self
     }
-    /// <p>The desired time window for aggregating utterances. </p>
+    /// <p>The desired time window for aggregating utterances.</p>
     pub fn get_relative_aggregation_duration(&self) -> &::std::option::Option<crate::types::RelativeAggregationDuration> {
         &self.relative_aggregation_duration
     }

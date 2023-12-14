@@ -264,7 +264,7 @@ pub enum ListUtteranceAnalyticsDataError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
-    /// <p>You have reached a quota for your bot. </p>
+    /// <p>You have reached a quota for your bot.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

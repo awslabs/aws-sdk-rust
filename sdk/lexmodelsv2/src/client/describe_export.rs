@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeExportOutput`](crate::operation::describe_export::DescribeExportOutput) with field(s):
     ///   - [`export_id(Option<String>)`](crate::operation::describe_export::DescribeExportOutput::export_id): <p>The unique identifier of the described export.</p>
     ///   - [`resource_specification(Option<ExportResourceSpecification>)`](crate::operation::describe_export::DescribeExportOutput::resource_specification): <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
-    ///   - [`file_format(Option<ImportExportFileFormat>)`](crate::operation::describe_export::DescribeExportOutput::file_format): <p>The file format used in the files that describe the resource. </p>
+    ///   - [`file_format(Option<ImportExportFileFormat>)`](crate::operation::describe_export::DescribeExportOutput::file_format): <p>The file format used in the files that describe the resource.</p>
     ///   - [`export_status(Option<ExportStatus>)`](crate::operation::describe_export::DescribeExportOutput::export_status): <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     ///   - [`failure_reasons(Option<Vec::<String>>)`](crate::operation::describe_export::DescribeExportOutput::failure_reasons): <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
     ///   - [`download_url(Option<String>)`](crate::operation::describe_export::DescribeExportOutput::download_url): <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>

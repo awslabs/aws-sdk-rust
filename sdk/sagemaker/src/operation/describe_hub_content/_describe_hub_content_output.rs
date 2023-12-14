@@ -15,7 +15,7 @@ pub struct DescribeHubContentOutput {
     pub document_schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the hub that contains the content.</p>
     pub hub_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content.</p>
     pub hub_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the hub content.</p>
     pub hub_content_display_name: ::std::option::Option<::std::string::String>,
@@ -62,7 +62,7 @@ impl DescribeHubContentOutput {
     pub fn hub_name(&self) -> ::std::option::Option<&str> {
         self.hub_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content.</p>
     pub fn hub_arn(&self) -> ::std::option::Option<&str> {
         self.hub_arn.as_deref()
     }
@@ -232,18 +232,18 @@ impl DescribeHubContentOutputBuilder {
     pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content.</p>
     /// This field is required.
     pub fn hub_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content.</p>
     pub fn set_hub_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hub that contains the content.</p>
     pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_arn
     }

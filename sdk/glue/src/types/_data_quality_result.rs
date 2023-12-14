@@ -24,11 +24,11 @@ pub struct DataQualityResult {
     pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
     pub ruleset_evaluation_run_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule.</p>
     pub rule_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleResult>>,
-    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer. </p>
+    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer.</p>
     pub analyzer_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityAnalyzerResult>>,
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers. </p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
     pub observations: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>>,
 }
 impl DataQualityResult {
@@ -72,19 +72,19 @@ impl DataQualityResult {
     pub fn ruleset_evaluation_run_id(&self) -> ::std::option::Option<&str> {
         self.ruleset_evaluation_run_id.as_deref()
     }
-    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_results.is_none()`.
     pub fn rule_results(&self) -> &[crate::types::DataQualityRuleResult] {
         self.rule_results.as_deref().unwrap_or_default()
     }
-    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer. </p>
+    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analyzer_results.is_none()`.
     pub fn analyzer_results(&self) -> &[crate::types::DataQualityAnalyzerResult] {
         self.analyzer_results.as_deref().unwrap_or_default()
     }
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers. </p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.observations.is_none()`.
     pub fn observations(&self) -> &[crate::types::DataQualityObservation] {
@@ -261,19 +261,19 @@ impl DataQualityResultBuilder {
     ///
     /// To override the contents of this collection use [`set_rule_results`](Self::set_rule_results).
     ///
-    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule.</p>
     pub fn rule_results(mut self, input: crate::types::DataQualityRuleResult) -> Self {
         let mut v = self.rule_results.unwrap_or_default();
         v.push(input);
         self.rule_results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule.</p>
     pub fn set_rule_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleResult>>) -> Self {
         self.rule_results = input;
         self
     }
-    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
+    /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule.</p>
     pub fn get_rule_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleResult>> {
         &self.rule_results
     }
@@ -281,19 +281,19 @@ impl DataQualityResultBuilder {
     ///
     /// To override the contents of this collection use [`set_analyzer_results`](Self::set_analyzer_results).
     ///
-    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer. </p>
+    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer.</p>
     pub fn analyzer_results(mut self, input: crate::types::DataQualityAnalyzerResult) -> Self {
         let mut v = self.analyzer_results.unwrap_or_default();
         v.push(input);
         self.analyzer_results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer. </p>
+    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer.</p>
     pub fn set_analyzer_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityAnalyzerResult>>) -> Self {
         self.analyzer_results = input;
         self
     }
-    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer. </p>
+    /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer.</p>
     pub fn get_analyzer_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityAnalyzerResult>> {
         &self.analyzer_results
     }
@@ -301,19 +301,19 @@ impl DataQualityResultBuilder {
     ///
     /// To override the contents of this collection use [`set_observations`](Self::set_observations).
     ///
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers. </p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
     pub fn observations(mut self, input: crate::types::DataQualityObservation) -> Self {
         let mut v = self.observations.unwrap_or_default();
         v.push(input);
         self.observations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers. </p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
     pub fn set_observations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>>) -> Self {
         self.observations = input;
         self
     }
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers. </p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
     pub fn get_observations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>> {
         &self.observations
     }

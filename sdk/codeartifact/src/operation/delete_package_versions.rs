@@ -305,17 +305,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeletePackage
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeletePackageVersionsError {
-    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
+    /// <p>The operation did not succeed because of an unauthorized access attempt.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p> The operation did not succeed because prerequisites are not met. </p>
+    /// <p>The operation did not succeed because prerequisites are not met.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p> The operation did not succeed because of an error that occurred inside CodeArtifact. </p>
+    /// <p>The operation did not succeed because of an error that occurred inside CodeArtifact.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
+    /// <p>The operation did not succeed because the resource requested is not found in the service.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
+    /// <p>The operation did not succeed because too many requests are sent to the service.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
+    /// <p>The operation did not succeed because a parameter in the request was sent with an invalid value.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

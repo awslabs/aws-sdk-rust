@@ -7,7 +7,7 @@ pub struct StartTechnicalCueDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub min_segment_confidence: ::std::option::Option<f32>,
-    /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
+    /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub black_frame: ::std::option::Option<crate::types::BlackFrame>,
 }
 impl StartTechnicalCueDetectionFilter {
@@ -16,7 +16,7 @@ impl StartTechnicalCueDetectionFilter {
     pub fn min_segment_confidence(&self) -> ::std::option::Option<f32> {
         self.min_segment_confidence
     }
-    /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
+    /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub fn black_frame(&self) -> ::std::option::Option<&crate::types::BlackFrame> {
         self.black_frame.as_ref()
     }
@@ -53,17 +53,17 @@ impl StartTechnicalCueDetectionFilterBuilder {
     pub fn get_min_segment_confidence(&self) -> &::std::option::Option<f32> {
         &self.min_segment_confidence
     }
-    /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
+    /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub fn black_frame(mut self, input: crate::types::BlackFrame) -> Self {
         self.black_frame = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
+    /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub fn set_black_frame(mut self, input: ::std::option::Option<crate::types::BlackFrame>) -> Self {
         self.black_frame = input;
         self
     }
-    /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for. </p>
+    /// <p>A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.</p>
     pub fn get_black_frame(&self) -> &::std::option::Option<crate::types::BlackFrame> {
         &self.black_frame
     }

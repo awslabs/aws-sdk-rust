@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProject`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_id(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_id):<br>required: **true**<br><p> Unique project identifier. </p><br>
-    ///   - [`sync_from_resources(bool)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::sync_from_resources) / [`set_sync_from_resources(Option<bool>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_sync_from_resources):<br>required: **false**<br><p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p><br>
+    ///   - [`project_id(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_id):<br>required: **true**<br><p>Unique project identifier.</p><br>
+    ///   - [`sync_from_resources(bool)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::sync_from_resources) / [`set_sync_from_resources(Option<bool>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_sync_from_resources):<br>required: **false**<br><p>If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.</p><br>
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
-    ///   - [`details(Option<ProjectDetails>)`](crate::operation::describe_project::DescribeProjectOutput::details): <p> Detailed information about an AWS Mobile Hub project. </p>
+    ///   - [`details(Option<ProjectDetails>)`](crate::operation::describe_project::DescribeProjectOutput::details): <p>Detailed information about an AWS Mobile Hub project.</p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)
     pub fn describe_project(&self) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
         crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(self.handle.clone())

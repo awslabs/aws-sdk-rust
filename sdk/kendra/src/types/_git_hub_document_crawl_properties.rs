@@ -4,47 +4,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GitHubDocumentCrawlProperties {
-    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    /// <p><code>TRUE</code> to index all files with a repository.</p>
     pub crawl_repository_documents: bool,
-    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    /// <p><code>TRUE</code> to index all issues within a repository.</p>
     pub crawl_issue: bool,
-    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    /// <p><code>TRUE</code> to index all comments on issues.</p>
     pub crawl_issue_comment: bool,
-    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for issues.</p>
     pub crawl_issue_comment_attachment: bool,
-    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    /// <p><code>TRUE</code> to index all pull requests within a repository.</p>
     pub crawl_pull_request: bool,
-    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    /// <p><code>TRUE</code> to index all comments on pull requests.</p>
     pub crawl_pull_request_comment: bool,
-    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for pull requests.</p>
     pub crawl_pull_request_comment_attachment: bool,
 }
 impl GitHubDocumentCrawlProperties {
-    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    /// <p><code>TRUE</code> to index all files with a repository.</p>
     pub fn crawl_repository_documents(&self) -> bool {
         self.crawl_repository_documents
     }
-    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    /// <p><code>TRUE</code> to index all issues within a repository.</p>
     pub fn crawl_issue(&self) -> bool {
         self.crawl_issue
     }
-    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    /// <p><code>TRUE</code> to index all comments on issues.</p>
     pub fn crawl_issue_comment(&self) -> bool {
         self.crawl_issue_comment
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for issues.</p>
     pub fn crawl_issue_comment_attachment(&self) -> bool {
         self.crawl_issue_comment_attachment
     }
-    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    /// <p><code>TRUE</code> to index all pull requests within a repository.</p>
     pub fn crawl_pull_request(&self) -> bool {
         self.crawl_pull_request
     }
-    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    /// <p><code>TRUE</code> to index all comments on pull requests.</p>
     pub fn crawl_pull_request_comment(&self) -> bool {
         self.crawl_pull_request_comment
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for pull requests.</p>
     pub fn crawl_pull_request_comment_attachment(&self) -> bool {
         self.crawl_pull_request_comment_attachment
     }
@@ -69,101 +69,101 @@ pub struct GitHubDocumentCrawlPropertiesBuilder {
     pub(crate) crawl_pull_request_comment_attachment: ::std::option::Option<bool>,
 }
 impl GitHubDocumentCrawlPropertiesBuilder {
-    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    /// <p><code>TRUE</code> to index all files with a repository.</p>
     pub fn crawl_repository_documents(mut self, input: bool) -> Self {
         self.crawl_repository_documents = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    /// <p><code>TRUE</code> to index all files with a repository.</p>
     pub fn set_crawl_repository_documents(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_repository_documents = input;
         self
     }
-    /// <p> <code>TRUE</code> to index all files with a repository.</p>
+    /// <p><code>TRUE</code> to index all files with a repository.</p>
     pub fn get_crawl_repository_documents(&self) -> &::std::option::Option<bool> {
         &self.crawl_repository_documents
     }
-    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    /// <p><code>TRUE</code> to index all issues within a repository.</p>
     pub fn crawl_issue(mut self, input: bool) -> Self {
         self.crawl_issue = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    /// <p><code>TRUE</code> to index all issues within a repository.</p>
     pub fn set_crawl_issue(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_issue = input;
         self
     }
-    /// <p> <code>TRUE</code> to index all issues within a repository.</p>
+    /// <p><code>TRUE</code> to index all issues within a repository.</p>
     pub fn get_crawl_issue(&self) -> &::std::option::Option<bool> {
         &self.crawl_issue
     }
-    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    /// <p><code>TRUE</code> to index all comments on issues.</p>
     pub fn crawl_issue_comment(mut self, input: bool) -> Self {
         self.crawl_issue_comment = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    /// <p><code>TRUE</code> to index all comments on issues.</p>
     pub fn set_crawl_issue_comment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_issue_comment = input;
         self
     }
-    /// <p> <code>TRUE</code> to index all comments on issues.</p>
+    /// <p><code>TRUE</code> to index all comments on issues.</p>
     pub fn get_crawl_issue_comment(&self) -> &::std::option::Option<bool> {
         &self.crawl_issue_comment
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for issues.</p>
     pub fn crawl_issue_comment_attachment(mut self, input: bool) -> Self {
         self.crawl_issue_comment_attachment = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for issues.</p>
     pub fn set_crawl_issue_comment_attachment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_issue_comment_attachment = input;
         self
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for issues.</p>
     pub fn get_crawl_issue_comment_attachment(&self) -> &::std::option::Option<bool> {
         &self.crawl_issue_comment_attachment
     }
-    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    /// <p><code>TRUE</code> to index all pull requests within a repository.</p>
     pub fn crawl_pull_request(mut self, input: bool) -> Self {
         self.crawl_pull_request = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    /// <p><code>TRUE</code> to index all pull requests within a repository.</p>
     pub fn set_crawl_pull_request(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_pull_request = input;
         self
     }
-    /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
+    /// <p><code>TRUE</code> to index all pull requests within a repository.</p>
     pub fn get_crawl_pull_request(&self) -> &::std::option::Option<bool> {
         &self.crawl_pull_request
     }
-    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    /// <p><code>TRUE</code> to index all comments on pull requests.</p>
     pub fn crawl_pull_request_comment(mut self, input: bool) -> Self {
         self.crawl_pull_request_comment = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    /// <p><code>TRUE</code> to index all comments on pull requests.</p>
     pub fn set_crawl_pull_request_comment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_pull_request_comment = input;
         self
     }
-    /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
+    /// <p><code>TRUE</code> to index all comments on pull requests.</p>
     pub fn get_crawl_pull_request_comment(&self) -> &::std::option::Option<bool> {
         &self.crawl_pull_request_comment
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for pull requests.</p>
     pub fn crawl_pull_request_comment_attachment(mut self, input: bool) -> Self {
         self.crawl_pull_request_comment_attachment = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for pull requests.</p>
     pub fn set_crawl_pull_request_comment_attachment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_pull_request_comment_attachment = input;
         self
     }
-    /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
+    /// <p><code>TRUE</code> to include all comment attachments for pull requests.</p>
     pub fn get_crawl_pull_request_comment_attachment(&self) -> &::std::option::Option<bool> {
         &self.crawl_pull_request_comment_attachment
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBatchDeleteConfigurationTaskInput {
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub configuration_type: ::std::option::Option<crate::types::DeletionConfigurationItemType>,
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartBatchDeleteConfigurationTaskInput {
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::DeletionConfigurationItemType> {
         self.configuration_type.as_ref()
     }
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
     pub fn configuration_ids(&self) -> &[::std::string::String] {
@@ -35,18 +35,18 @@ pub struct StartBatchDeleteConfigurationTaskInputBuilder {
     pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartBatchDeleteConfigurationTaskInputBuilder {
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     /// This field is required.
     pub fn configuration_type(mut self, input: crate::types::DeletionConfigurationItemType) -> Self {
         self.configuration_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::DeletionConfigurationItemType>) -> Self {
         self.configuration_type = input;
         self
     }
-    /// <p> The type of configuration item to delete. Supported types are: SERVER. </p>
+    /// <p>The type of configuration item to delete. Supported types are: SERVER.</p>
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::DeletionConfigurationItemType> {
         &self.configuration_type
     }
@@ -54,19 +54,19 @@ impl StartBatchDeleteConfigurationTaskInputBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
     ///
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
         v.push(input.into());
         self.configuration_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configuration_ids = input;
         self
     }
-    /// <p> The list of configuration IDs that will be deleted by the task. </p>
+    /// <p>The list of configuration IDs that will be deleted by the task.</p>
     pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.configuration_ids
     }

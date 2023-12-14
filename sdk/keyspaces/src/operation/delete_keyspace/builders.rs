@@ -22,7 +22,7 @@ impl DeleteKeyspaceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKeyspace`.
 ///
-/// <p>The <code>DeleteKeyspace</code> operation deletes a keyspace and all of its tables. </p>
+/// <p>The <code>DeleteKeyspace</code> operation deletes a keyspace and all of its tables.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKeyspaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -8,8 +8,8 @@ pub struct S3Config {
     pub bucket_arn: ::std::string::String,
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
-    /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
-    /// <li> <p>JSON - Store data in a standard text-based JSON file format.</p> </li>
+    /// <li><p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p></li>
+    /// <li><p>JSON - Store data in a standard text-based JSON file format.</p></li>
     /// </ul>
     pub data_format: ::std::option::Option<crate::types::DataFormat>,
     /// <p>By default, stored data is compressed as a .gzip file. Compressed files have a reduced file size, which can optimize the cost of data storage.</p>
@@ -26,8 +26,8 @@ impl S3Config {
     }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
-    /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
-    /// <li> <p>JSON - Store data in a standard text-based JSON file format.</p> </li>
+    /// <li><p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p></li>
+    /// <li><p>JSON - Store data in a standard text-based JSON file format.</p></li>
     /// </ul>
     pub fn data_format(&self) -> ::std::option::Option<&crate::types::DataFormat> {
         self.data_format.as_ref()
@@ -76,8 +76,8 @@ impl S3ConfigBuilder {
     }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
-    /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
-    /// <li> <p>JSON - Store data in a standard text-based JSON file format.</p> </li>
+    /// <li><p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p></li>
+    /// <li><p>JSON - Store data in a standard text-based JSON file format.</p></li>
     /// </ul>
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
         self.data_format = ::std::option::Option::Some(input);
@@ -85,8 +85,8 @@ impl S3ConfigBuilder {
     }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
-    /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
-    /// <li> <p>JSON - Store data in a standard text-based JSON file format.</p> </li>
+    /// <li><p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p></li>
+    /// <li><p>JSON - Store data in a standard text-based JSON file format.</p></li>
     /// </ul>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
@@ -94,8 +94,8 @@ impl S3ConfigBuilder {
     }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
-    /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
-    /// <li> <p>JSON - Store data in a standard text-based JSON file format.</p> </li>
+    /// <li><p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p></li>
+    /// <li><p>JSON - Store data in a standard text-based JSON file format.</p></li>
     /// </ul>
     pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
         &self.data_format

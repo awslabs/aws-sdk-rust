@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetsOutput {
-    /// <p>The list of notification rule targets. </p>
+    /// <p>The list of notification rule targets.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTargetsOutput {
-    /// <p>The list of notification rule targets. </p>
+    /// <p>The list of notification rule targets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::TargetSummary] {
@@ -46,19 +46,19 @@ impl ListTargetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The list of notification rule targets. </p>
+    /// <p>The list of notification rule targets.</p>
     pub fn targets(mut self, input: crate::types::TargetSummary) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of notification rule targets. </p>
+    /// <p>The list of notification rule targets.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>The list of notification rule targets. </p>
+    /// <p>The list of notification rule targets.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
         &self.targets
     }

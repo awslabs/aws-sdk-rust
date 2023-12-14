@@ -5,7 +5,7 @@
 pub struct CreatePracticeRunConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you configured the practice run for.</p>
     pub arn: ::std::string::String,
-    /// <p>The name of the resource that you configured the practice run for. </p>
+    /// <p>The name of the resource that you configured the practice run for.</p>
     pub name: ::std::string::String,
     /// <p>The status for zonal autoshift for a resource. When you specify the autoshift status as <code>ENABLED</code>, Amazon Web Services shifts traffic away from shifts away application resource traffic from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
     /// <p>When you enable zonal autoshift, you must also configure practice runs for the resource.</p>
@@ -20,7 +20,7 @@ impl CreatePracticeRunConfigurationOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The name of the resource that you configured the practice run for. </p>
+    /// <p>The name of the resource that you configured the practice run for.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -73,18 +73,18 @@ impl CreatePracticeRunConfigurationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the resource that you configured the practice run for. </p>
+    /// <p>The name of the resource that you configured the practice run for.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource that you configured the practice run for. </p>
+    /// <p>The name of the resource that you configured the practice run for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the resource that you configured the practice run for. </p>
+    /// <p>The name of the resource that you configured the practice run for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

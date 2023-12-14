@@ -137,19 +137,19 @@ impl DeleteResourcePolicyStatementFluentBuilder {
         self.inner.get_statement_id()
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_revision_id(input.into());
         self
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
     }
     /// <p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
-    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+    /// <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement.</p>
     pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_expected_revision_id()
     }

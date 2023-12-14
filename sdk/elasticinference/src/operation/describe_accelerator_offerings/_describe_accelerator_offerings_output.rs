@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOfferingsOutput {
-    /// <p> The list of accelerator type offerings for a specific location. </p>
+    /// <p>The list of accelerator type offerings for a specific location.</p>
     pub accelerator_type_offerings: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeAcceleratorOfferingsOutput {
-    /// <p> The list of accelerator type offerings for a specific location. </p>
+    /// <p>The list of accelerator type offerings for a specific location.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_type_offerings.is_none()`.
     pub fn accelerator_type_offerings(&self) -> &[crate::types::AcceleratorTypeOffering] {
@@ -39,19 +39,19 @@ impl DescribeAcceleratorOfferingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_accelerator_type_offerings`](Self::set_accelerator_type_offerings).
     ///
-    /// <p> The list of accelerator type offerings for a specific location. </p>
+    /// <p>The list of accelerator type offerings for a specific location.</p>
     pub fn accelerator_type_offerings(mut self, input: crate::types::AcceleratorTypeOffering) -> Self {
         let mut v = self.accelerator_type_offerings.unwrap_or_default();
         v.push(input);
         self.accelerator_type_offerings = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of accelerator type offerings for a specific location. </p>
+    /// <p>The list of accelerator type offerings for a specific location.</p>
     pub fn set_accelerator_type_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>>) -> Self {
         self.accelerator_type_offerings = input;
         self
     }
-    /// <p> The list of accelerator type offerings for a specific location. </p>
+    /// <p>The list of accelerator type offerings for a specific location.</p>
     pub fn get_accelerator_type_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorTypeOffering>> {
         &self.accelerator_type_offerings
     }

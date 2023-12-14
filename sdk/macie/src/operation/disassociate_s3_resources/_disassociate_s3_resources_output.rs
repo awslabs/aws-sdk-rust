@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateS3ResourcesOutput {
-    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
     pub failed_s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>,
     _request_id: Option<String>,
 }
 impl DisassociateS3ResourcesOutput {
-    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_s3_resources.is_none()`.
     pub fn failed_s3_resources(&self) -> &[crate::types::FailedS3Resource] {
@@ -39,19 +39,19 @@ impl DisassociateS3ResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_s3_resources`](Self::set_failed_s3_resources).
     ///
-    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
     pub fn failed_s3_resources(mut self, input: crate::types::FailedS3Resource) -> Self {
         let mut v = self.failed_s3_resources.unwrap_or_default();
         v.push(input);
         self.failed_s3_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
     pub fn set_failed_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>>) -> Self {
         self.failed_s3_resources = input;
         self
     }
-    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
+    /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item.</p>
     pub fn get_failed_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedS3Resource>> {
         &self.failed_s3_resources
     }

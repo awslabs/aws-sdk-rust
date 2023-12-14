@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateConnectionAliasOutput {
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub connection_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateConnectionAliasOutput {
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn connection_identifier(&self) -> ::std::option::Option<&str> {
         self.connection_identifier.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct AssociateConnectionAliasOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssociateConnectionAliasOutputBuilder {
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn connection_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn set_connection_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_identifier = input;
         self
     }
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn get_connection_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_identifier
     }

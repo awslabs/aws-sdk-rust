@@ -24,11 +24,11 @@ impl GetParametersForImportInputBuilder {
 ///
 /// <p>Gets the import token and the wrapping key certificate in PEM format (base64 encoded) to initiate a TR-34 WrappedKeyBlock.</p>
 /// <p>The wrapping key certificate wraps the key under import. The import token and wrapping key certificate must be in place and operational before calling <code>ImportKey</code>. The import token expires in 7 days. You can use the same import token to import multiple keys into your service account.</p>
-/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>GetParametersForExport</code> </p> </li>
-/// <li> <p> <code>ImportKey</code> </p> </li>
+/// <li><p><code>GetParametersForExport</code></p></li>
+/// <li><p><code>ImportKey</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetParametersForImportFluentBuilder {

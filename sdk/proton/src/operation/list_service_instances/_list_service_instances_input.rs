@@ -13,10 +13,10 @@ pub struct ListServiceInstancesInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>,
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub sort_by: ::std::option::Option<crate::types::ListServiceInstancesSortBy>,
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListServiceInstancesInput {
@@ -40,12 +40,12 @@ impl ListServiceInstancesInput {
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListServiceInstancesSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -133,38 +133,38 @@ impl ListServiceInstancesInputBuilder {
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub fn sort_by(mut self, input: crate::types::ListServiceInstancesSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListServiceInstancesSortBy>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
-    /// <p>Default: <code>serviceName</code> </p>
+    /// <p>Default: <code>serviceName</code></p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListServiceInstancesSortBy> {
         &self.sort_by
     }
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
     /// <p>Result list sort order.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }

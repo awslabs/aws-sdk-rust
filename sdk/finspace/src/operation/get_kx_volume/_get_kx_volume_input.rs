@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKxVolumeInput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the volume.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKxVolumeInput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetKxVolumeInputBuilder {
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKxVolumeInputBuilder {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }

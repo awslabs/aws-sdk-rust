@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateActivationInput {
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
@@ -21,8 +21,8 @@ pub struct CreateActivationInput {
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
@@ -32,7 +32,7 @@ pub struct CreateActivationInput {
     pub registration_metadata: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationMetadataItem>>,
 }
 impl CreateActivationInput {
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -60,8 +60,8 @@ impl CreateActivationInput {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
@@ -98,21 +98,21 @@ pub struct CreateActivationInputBuilder {
     pub(crate) registration_metadata: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationMetadataItem>>,
 }
 impl CreateActivationInputBuilder {
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +193,8 @@ impl CreateActivationInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
@@ -207,8 +207,8 @@ impl CreateActivationInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>
@@ -219,8 +219,8 @@ impl CreateActivationInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <important>
     /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
     /// </important>

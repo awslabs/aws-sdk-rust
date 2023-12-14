@@ -5,11 +5,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedVariablesImportanceMetrics {
-    /// <p> List of variables' metrics. </p>
+    /// <p>List of variables' metrics.</p>
     pub log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
 }
 impl AggregatedVariablesImportanceMetrics {
-    /// <p> List of variables' metrics. </p>
+    /// <p>List of variables' metrics.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_odds_metrics.is_none()`.
     pub fn log_odds_metrics(&self) -> &[crate::types::AggregatedLogOddsMetric] {
@@ -34,19 +34,19 @@ impl AggregatedVariablesImportanceMetricsBuilder {
     ///
     /// To override the contents of this collection use [`set_log_odds_metrics`](Self::set_log_odds_metrics).
     ///
-    /// <p> List of variables' metrics. </p>
+    /// <p>List of variables' metrics.</p>
     pub fn log_odds_metrics(mut self, input: crate::types::AggregatedLogOddsMetric) -> Self {
         let mut v = self.log_odds_metrics.unwrap_or_default();
         v.push(input);
         self.log_odds_metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p> List of variables' metrics. </p>
+    /// <p>List of variables' metrics.</p>
     pub fn set_log_odds_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>>) -> Self {
         self.log_odds_metrics = input;
         self
     }
-    /// <p> List of variables' metrics. </p>
+    /// <p>List of variables' metrics.</p>
     pub fn get_log_odds_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedLogOddsMetric>> {
         &self.log_odds_metrics
     }

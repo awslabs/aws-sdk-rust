@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectVersionDescription {
-    /// <p>The Amazon Resource Name (ARN) of the project version. </p>
+    /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix datetime for the date and time that training started.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -28,11 +28,11 @@ pub struct ProjectVersionDescription {
     pub evaluation_result: ::std::option::Option<crate::types::EvaluationResult>,
     /// <p>The location of the summary manifest. The summary manifest provides aggregate data validation results for the training and test datasets.</p>
     pub manifest_summary: ::std::option::Option<crate::types::GroundTruthManifest>,
-    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
+    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of inference units Amazon Rekognition uses to auto-scale the model. Applies only to Custom Labels projects. For more information, see <code>StartProjectVersion</code>.</p>
     pub max_inference_units: ::std::option::Option<i32>,
-    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
     pub source_project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>A user-provided description of the project version.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ pub struct ProjectVersionDescription {
     pub feature_config: ::std::option::Option<crate::types::CustomizationFeatureConfig>,
 }
 impl ProjectVersionDescription {
-    /// <p>The Amazon Resource Name (ARN) of the project version. </p>
+    /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
         self.project_version_arn.as_deref()
     }
@@ -92,7 +92,7 @@ impl ProjectVersionDescription {
     pub fn manifest_summary(&self) -> ::std::option::Option<&crate::types::GroundTruthManifest> {
         self.manifest_summary.as_ref()
     }
-    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
+    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -100,7 +100,7 @@ impl ProjectVersionDescription {
     pub fn max_inference_units(&self) -> ::std::option::Option<i32> {
         self.max_inference_units
     }
-    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
     pub fn source_project_version_arn(&self) -> ::std::option::Option<&str> {
         self.source_project_version_arn.as_deref()
     }
@@ -153,17 +153,17 @@ pub struct ProjectVersionDescriptionBuilder {
     pub(crate) feature_config: ::std::option::Option<crate::types::CustomizationFeatureConfig>,
 }
 impl ProjectVersionDescriptionBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the project version. </p>
+    /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the project version. </p>
+    /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the project version. </p>
+    /// <p>The Amazon Resource Name (ARN) of the project version.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_version_arn
     }
@@ -321,17 +321,17 @@ impl ProjectVersionDescriptionBuilder {
     pub fn get_manifest_summary(&self) -> &::std::option::Option<crate::types::GroundTruthManifest> {
         &self.manifest_summary
     }
-    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
+    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
+    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
+    /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
@@ -349,17 +349,17 @@ impl ProjectVersionDescriptionBuilder {
     pub fn get_max_inference_units(&self) -> &::std::option::Option<i32> {
         &self.max_inference_units
     }
-    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
     pub fn source_project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
     pub fn set_source_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_project_version_arn = input;
         self
     }
-    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version. </p>
+    /// <p>If the model version was copied from a different project, <code>SourceProjectVersionArn</code> contains the ARN of the source model version.</p>
     pub fn get_source_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_project_version_arn
     }

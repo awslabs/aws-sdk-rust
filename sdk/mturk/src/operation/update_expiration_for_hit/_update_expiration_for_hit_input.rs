@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExpirationForHitInput {
-    /// <p> The HIT to update. </p>
+    /// <p>The HIT to update.</p>
     pub hit_id: ::std::option::Option<::std::string::String>,
-    /// <p> The date and time at which you want the HIT to expire </p>
+    /// <p>The date and time at which you want the HIT to expire</p>
     pub expire_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UpdateExpirationForHitInput {
-    /// <p> The HIT to update. </p>
+    /// <p>The HIT to update.</p>
     pub fn hit_id(&self) -> ::std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p> The date and time at which you want the HIT to expire </p>
+    /// <p>The date and time at which you want the HIT to expire</p>
     pub fn expire_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expire_at.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct UpdateExpirationForHitInputBuilder {
     pub(crate) expire_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UpdateExpirationForHitInputBuilder {
-    /// <p> The HIT to update. </p>
+    /// <p>The HIT to update.</p>
     /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The HIT to update. </p>
+    /// <p>The HIT to update.</p>
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hit_id = input;
         self
     }
-    /// <p> The HIT to update. </p>
+    /// <p>The HIT to update.</p>
     pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hit_id
     }
-    /// <p> The date and time at which you want the HIT to expire </p>
+    /// <p>The date and time at which you want the HIT to expire</p>
     /// This field is required.
     pub fn expire_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expire_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The date and time at which you want the HIT to expire </p>
+    /// <p>The date and time at which you want the HIT to expire</p>
     pub fn set_expire_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expire_at = input;
         self
     }
-    /// <p> The date and time at which you want the HIT to expire </p>
+    /// <p>The date and time at which you want the HIT to expire</p>
     pub fn get_expire_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expire_at
     }

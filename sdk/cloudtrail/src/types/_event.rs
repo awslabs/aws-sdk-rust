@@ -8,7 +8,7 @@ pub struct Event {
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event returned.</p>
     pub event_name: ::std::option::Option<::std::string::String>,
-    /// <p>Information about whether the event is a write event or a read event. </p>
+    /// <p>Information about whether the event is a write event or a read event.</p>
     pub read_only: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ impl Event {
     pub fn event_name(&self) -> ::std::option::Option<&str> {
         self.event_name.as_deref()
     }
-    /// <p>Information about whether the event is a write event or a read event. </p>
+    /// <p>Information about whether the event is a write event or a read event.</p>
     pub fn read_only(&self) -> ::std::option::Option<&str> {
         self.read_only.as_deref()
     }
@@ -113,17 +113,17 @@ impl EventBuilder {
     pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_name
     }
-    /// <p>Information about whether the event is a write event or a read event. </p>
+    /// <p>Information about whether the event is a write event or a read event.</p>
     pub fn read_only(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.read_only = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Information about whether the event is a write event or a read event. </p>
+    /// <p>Information about whether the event is a write event or a read event.</p>
     pub fn set_read_only(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.read_only = input;
         self
     }
-    /// <p>Information about whether the event is a write event or a read event. </p>
+    /// <p>Information about whether the event is a write event or a read event.</p>
     pub fn get_read_only(&self) -> &::std::option::Option<::std::string::String> {
         &self.read_only
     }

@@ -24,22 +24,22 @@ pub struct As2ConnectorConfig {
     pub mdn_signing_algorithm: ::std::option::Option<crate::types::MdnSigningAlg>,
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub mdn_response: ::std::option::Option<crate::types::MdnResponse>,
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
     /// <p>If the connector should use Basic authentication, the secret needs to be in the following format:</p>
-    /// <p> <code>{ "Username": "user-name", "Password": "user-password" }</code> </p>
+    /// <p><code>{ "Username": "user-name", "Password": "user-password" }</code></p>
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p> </li>
-    /// <li> <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p> </li>
+    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
-    /// <p> <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code> </p>
+    /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub basic_auth_secret_id: ::std::option::Option<::std::string::String>,
 }
 impl As2ConnectorConfig {
@@ -77,8 +77,8 @@ impl As2ConnectorConfig {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn mdn_response(&self) -> ::std::option::Option<&crate::types::MdnResponse> {
         self.mdn_response.as_ref()
@@ -86,15 +86,15 @@ impl As2ConnectorConfig {
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
     /// <p>If the connector should use Basic authentication, the secret needs to be in the following format:</p>
-    /// <p> <code>{ "Username": "user-name", "Password": "user-password" }</code> </p>
+    /// <p><code>{ "Username": "user-name", "Password": "user-password" }</code></p>
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p> </li>
-    /// <li> <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p> </li>
+    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
-    /// <p> <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code> </p>
+    /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub fn basic_auth_secret_id(&self) -> ::std::option::Option<&str> {
         self.basic_auth_secret_id.as_deref()
     }
@@ -233,8 +233,8 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn mdn_response(mut self, input: crate::types::MdnResponse) -> Self {
         self.mdn_response = ::std::option::Option::Some(input);
@@ -242,8 +242,8 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn set_mdn_response(mut self, input: ::std::option::Option<crate::types::MdnResponse>) -> Self {
         self.mdn_response = input;
@@ -251,8 +251,8 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn get_mdn_response(&self) -> &::std::option::Option<crate::types::MdnResponse> {
         &self.mdn_response
@@ -260,15 +260,15 @@ impl As2ConnectorConfigBuilder {
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
     /// <p>If the connector should use Basic authentication, the secret needs to be in the following format:</p>
-    /// <p> <code>{ "Username": "user-name", "Password": "user-password" }</code> </p>
+    /// <p><code>{ "Username": "user-name", "Password": "user-password" }</code></p>
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p> </li>
-    /// <li> <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p> </li>
+    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
-    /// <p> <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code> </p>
+    /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub fn basic_auth_secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.basic_auth_secret_id = ::std::option::Option::Some(input.into());
         self
@@ -276,15 +276,15 @@ impl As2ConnectorConfigBuilder {
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
     /// <p>If the connector should use Basic authentication, the secret needs to be in the following format:</p>
-    /// <p> <code>{ "Username": "user-name", "Password": "user-password" }</code> </p>
+    /// <p><code>{ "Username": "user-name", "Password": "user-password" }</code></p>
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p> </li>
-    /// <li> <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p> </li>
+    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
-    /// <p> <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code> </p>
+    /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub fn set_basic_auth_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.basic_auth_secret_id = input;
         self
@@ -292,15 +292,15 @@ impl As2ConnectorConfigBuilder {
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
     /// <p>If the connector should use Basic authentication, the secret needs to be in the following format:</p>
-    /// <p> <code>{ "Username": "user-name", "Password": "user-password" }</code> </p>
+    /// <p><code>{ "Username": "user-name", "Password": "user-password" }</code></p>
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p> </li>
-    /// <li> <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p> </li>
+    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
-    /// <p> <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code> </p>
+    /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub fn get_basic_auth_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.basic_auth_secret_id
     }

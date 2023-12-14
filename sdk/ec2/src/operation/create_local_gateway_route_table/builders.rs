@@ -22,7 +22,7 @@ impl CreateLocalGatewayRouteTableInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocalGatewayRouteTable`.
 ///
-/// <p> Creates a local gateway route table. </p>
+/// <p>Creates a local gateway route table.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the local gateway. </p>
+    /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_id(input.into());
         self
     }
-    /// <p> The ID of the local gateway. </p>
+    /// <p>The ID of the local gateway.</p>
     pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_id(input);
         self
     }
-    /// <p> The ID of the local gateway. </p>
+    /// <p>The ID of the local gateway.</p>
     pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_local_gateway_id()
     }
-    /// <p> The mode of the local gateway route table. </p>
+    /// <p>The mode of the local gateway route table.</p>
     pub fn mode(mut self, input: crate::types::LocalGatewayRouteTableMode) -> Self {
         self.inner = self.inner.mode(input);
         self
     }
-    /// <p> The mode of the local gateway route table. </p>
+    /// <p>The mode of the local gateway route table.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
-    /// <p> The mode of the local gateway route table. </p>
+    /// <p>The mode of the local gateway route table.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::LocalGatewayRouteTableMode> {
         self.inner.get_mode()
     }
@@ -140,17 +140,17 @@ impl CreateLocalGatewayRouteTableFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p> The tags assigned to the local gateway route table. </p>
+    /// <p>The tags assigned to the local gateway route table.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         self.inner = self.inner.tag_specifications(input);
         self
     }
-    /// <p> The tags assigned to the local gateway route table. </p>
+    /// <p>The tags assigned to the local gateway route table.</p>
     pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
-    /// <p> The tags assigned to the local gateway route table. </p>
+    /// <p>The tags assigned to the local gateway route table.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }

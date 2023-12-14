@@ -22,7 +22,7 @@ impl CreateRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRule`.
 ///
-/// <p>Creates a rule for use with the specified detector. </p>
+/// <p>Creates a rule for use with the specified detector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

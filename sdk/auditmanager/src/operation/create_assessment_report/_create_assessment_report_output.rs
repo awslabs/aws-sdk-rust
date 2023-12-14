@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentReportOutput {
-    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    /// <p>The new assessment report that the <code>CreateAssessmentReport</code> API returned.</p>
     pub assessment_report: ::std::option::Option<crate::types::AssessmentReport>,
     _request_id: Option<String>,
 }
 impl CreateAssessmentReportOutput {
-    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    /// <p>The new assessment report that the <code>CreateAssessmentReport</code> API returned.</p>
     pub fn assessment_report(&self) -> ::std::option::Option<&crate::types::AssessmentReport> {
         self.assessment_report.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateAssessmentReportOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAssessmentReportOutputBuilder {
-    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    /// <p>The new assessment report that the <code>CreateAssessmentReport</code> API returned.</p>
     pub fn assessment_report(mut self, input: crate::types::AssessmentReport) -> Self {
         self.assessment_report = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    /// <p>The new assessment report that the <code>CreateAssessmentReport</code> API returned.</p>
     pub fn set_assessment_report(mut self, input: ::std::option::Option<crate::types::AssessmentReport>) -> Self {
         self.assessment_report = input;
         self
     }
-    /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    /// <p>The new assessment report that the <code>CreateAssessmentReport</code> API returned.</p>
     pub fn get_assessment_report(&self) -> &::std::option::Option<crate::types::AssessmentReport> {
         &self.assessment_report
     }

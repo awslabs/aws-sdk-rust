@@ -8,7 +8,7 @@ pub struct ContentSourceConfiguration {
     pub data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
     pub faq_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
+    /// <p><code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub direct_put_content: bool,
 }
 impl ContentSourceConfiguration {
@@ -24,7 +24,7 @@ impl ContentSourceConfiguration {
     pub fn faq_ids(&self) -> &[::std::string::String] {
         self.faq_ids.as_deref().unwrap_or_default()
     }
-    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
+    /// <p><code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn direct_put_content(&self) -> bool {
         self.direct_put_content
     }
@@ -85,17 +85,17 @@ impl ContentSourceConfigurationBuilder {
     pub fn get_faq_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.faq_ids
     }
-    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
+    /// <p><code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn direct_put_content(mut self, input: bool) -> Self {
         self.direct_put_content = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
+    /// <p><code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn set_direct_put_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.direct_put_content = input;
         self
     }
-    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
+    /// <p><code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn get_direct_put_content(&self) -> &::std::option::Option<bool> {
         &self.direct_put_content
     }

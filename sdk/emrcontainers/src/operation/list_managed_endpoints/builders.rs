@@ -142,17 +142,17 @@ impl ListManagedEndpointsFluentBuilder {
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_created_before()
     }
-    /// <p> The date and time after which the endpoints are created.</p>
+    /// <p>The date and time after which the endpoints are created.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
         self
     }
-    /// <p> The date and time after which the endpoints are created.</p>
+    /// <p>The date and time after which the endpoints are created.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
-    /// <p> The date and time after which the endpoints are created.</p>
+    /// <p>The date and time after which the endpoints are created.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_created_after()
     }
@@ -206,17 +206,17 @@ impl ListManagedEndpointsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> The token for the next set of managed endpoints to return. </p>
+    /// <p>The token for the next set of managed endpoints to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The token for the next set of managed endpoints to return. </p>
+    /// <p>The token for the next set of managed endpoints to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The token for the next set of managed endpoints to return. </p>
+    /// <p>The token for the next set of managed endpoints to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
-    /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    /// <p>List of <code>ApplicationSummary</code> objects.</p>
     pub application_summaries: ::std::vec::Vec<crate::types::ApplicationSummary>,
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub has_more_applications: bool,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
-    /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    /// <p>List of <code>ApplicationSummary</code> objects.</p>
     pub fn application_summaries(&self) -> &[crate::types::ApplicationSummary] {
         use std::ops::Deref;
         self.application_summaries.deref()
@@ -46,19 +46,19 @@ impl ListApplicationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_summaries`](Self::set_application_summaries).
     ///
-    /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    /// <p>List of <code>ApplicationSummary</code> objects.</p>
     pub fn application_summaries(mut self, input: crate::types::ApplicationSummary) -> Self {
         let mut v = self.application_summaries.unwrap_or_default();
         v.push(input);
         self.application_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    /// <p>List of <code>ApplicationSummary</code> objects.</p>
     pub fn set_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>) -> Self {
         self.application_summaries = input;
         self
     }
-    /// <p>List of <code>ApplicationSummary</code> objects. </p>
+    /// <p>List of <code>ApplicationSummary</code> objects.</p>
     pub fn get_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
         &self.application_summaries
     }

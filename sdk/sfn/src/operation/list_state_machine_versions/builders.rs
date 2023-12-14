@@ -25,10 +25,10 @@ impl ListStateMachineVersionsInputBuilder {
 /// <p>Lists <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> for the specified state machine Amazon Resource Name (ARN).</p>
 /// <p>The results are sorted in descending order of the version creation time.</p>
 /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>PublishStateMachineVersion</code> </p> </li>
-/// <li> <p> <code>DeleteStateMachineVersion</code> </p> </li>
+/// <li><p><code>PublishStateMachineVersion</code></p></li>
+/// <li><p><code>DeleteStateMachineVersion</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStateMachineVersionsFluentBuilder {

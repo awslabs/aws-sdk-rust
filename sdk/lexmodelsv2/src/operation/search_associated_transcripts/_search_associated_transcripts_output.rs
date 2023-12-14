@@ -7,9 +7,9 @@ pub struct SearchAssociatedTranscriptsOutput {
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub locale_id: ::std::option::Option<::std::string::String>,
-    /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>A index that indicates whether there are more results to return in a response to the SearchAssociatedTranscripts operation. If the nextIndex field is present, you send the contents as the nextIndex parameter of a SearchAssociatedTranscriptsRequest operation to get the next page of results.</p>
     pub next_index: ::std::option::Option<i32>,
@@ -28,11 +28,11 @@ impl SearchAssociatedTranscriptsOutput {
     pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn locale_id(&self) -> ::std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn bot_recommendation_id(&self) -> ::std::option::Option<&str> {
         self.bot_recommendation_id.as_deref()
     }
@@ -105,31 +105,31 @@ impl SearchAssociatedTranscriptsOutputBuilder {
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_version
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
     }
-    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
-    /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
-    /// <p> The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_recommendation_id
     }

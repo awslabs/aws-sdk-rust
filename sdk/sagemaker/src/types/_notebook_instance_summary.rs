@@ -10,7 +10,7 @@ pub struct NotebookInstanceSummary {
     pub notebook_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the notebook instance.</p>
     pub notebook_instance_status: ::std::option::Option<crate::types::NotebookInstanceStatus>,
-    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The type of ML compute instance that the notebook instance is running on.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -39,7 +39,7 @@ impl NotebookInstanceSummary {
     pub fn notebook_instance_status(&self) -> ::std::option::Option<&crate::types::NotebookInstanceStatus> {
         self.notebook_instance_status.as_ref()
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -138,17 +138,17 @@ impl NotebookInstanceSummaryBuilder {
     pub fn get_notebook_instance_status(&self) -> &::std::option::Option<crate::types::NotebookInstanceStatus> {
         &self.notebook_instance_status
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance. </p>
+    /// <p>The URL that you use to connect to the Jupyter notebook running in your notebook instance.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

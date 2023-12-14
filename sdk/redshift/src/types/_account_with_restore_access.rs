@@ -6,7 +6,7 @@
 pub struct AccountWithRestoreAccess {
     /// <p>The identifier of an Amazon Web Services account authorized to restore a snapshot.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>.</p>
     pub account_alias: ::std::option::Option<::std::string::String>,
 }
 impl AccountWithRestoreAccess {
@@ -14,7 +14,7 @@ impl AccountWithRestoreAccess {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>.</p>
     pub fn account_alias(&self) -> ::std::option::Option<&str> {
         self.account_alias.as_deref()
     }
@@ -48,17 +48,17 @@ impl AccountWithRestoreAccessBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>.</p>
     pub fn account_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>.</p>
     pub fn set_account_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_alias = input;
         self
     }
-    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>.</p>
     pub fn get_account_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_alias
     }

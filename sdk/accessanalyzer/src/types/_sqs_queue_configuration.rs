@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsQueueConfiguration {
-    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    /// <p>The proposed resource policy for the Amazon SQS queue.</p>
     pub queue_policy: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueConfiguration {
-    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    /// <p>The proposed resource policy for the Amazon SQS queue.</p>
     pub fn queue_policy(&self) -> ::std::option::Option<&str> {
         self.queue_policy.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct SqsQueueConfigurationBuilder {
     pub(crate) queue_policy: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueConfigurationBuilder {
-    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    /// <p>The proposed resource policy for the Amazon SQS queue.</p>
     pub fn queue_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    /// <p>The proposed resource policy for the Amazon SQS queue.</p>
     pub fn set_queue_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_policy = input;
         self
     }
-    /// <p> The proposed resource policy for the Amazon SQS queue. </p>
+    /// <p>The proposed resource policy for the Amazon SQS queue.</p>
     pub fn get_queue_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_policy
     }

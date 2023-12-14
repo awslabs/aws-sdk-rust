@@ -21,9 +21,9 @@ pub struct DataLakeSettings {
     /// <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
+    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.</p>
     pub trusted_resource_owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation.</p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
@@ -71,13 +71,13 @@ impl DataLakeSettings {
         self.parameters.as_ref()
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
+    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trusted_resource_owners.is_none()`.
     pub fn trusted_resource_owners(&self) -> &[::std::string::String] {
         self.trusted_resource_owners.as_deref().unwrap_or_default()
     }
-    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation.</p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
@@ -250,7 +250,7 @@ impl DataLakeSettingsBuilder {
     /// To override the contents of this collection use [`set_trusted_resource_owners`](Self::set_trusted_resource_owners).
     ///
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
+    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.</p>
     pub fn trusted_resource_owners(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trusted_resource_owners.unwrap_or_default();
         v.push(input.into());
@@ -258,17 +258,17 @@ impl DataLakeSettingsBuilder {
         self
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
+    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.</p>
     pub fn set_trusted_resource_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trusted_resource_owners = input;
         self
     }
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
-    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
+    /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.</p>
     pub fn get_trusted_resource_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trusted_resource_owners
     }
-    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation.</p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
@@ -276,7 +276,7 @@ impl DataLakeSettingsBuilder {
         self.allow_external_data_filtering = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation.</p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>
@@ -284,7 +284,7 @@ impl DataLakeSettingsBuilder {
         self.allow_external_data_filtering = input;
         self
     }
-    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
+    /// <p>Whether to allow Amazon EMR clusters to access data managed by Lake Formation.</p>
     /// <p>If true, you allow Amazon EMR clusters to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>If false or null, no Amazon EMR clusters will be able to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional) Allow external data filtering</a>.</p>

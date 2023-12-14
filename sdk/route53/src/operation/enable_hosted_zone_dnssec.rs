@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableHostedZ
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum EnableHostedZoneDNSSECError {
-    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request.</p>
     ConcurrentModification(crate::types::error::ConcurrentModification),
     /// <p>The hosted zone doesn't have any DNSSEC resources.</p>
     DnssecNotFound(crate::types::error::DnssecNotFound),

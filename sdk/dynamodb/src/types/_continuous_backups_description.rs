@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousBackupsDescription {
-    /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
+    /// <p><code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     pub continuous_backups_status: crate::types::ContinuousBackupsStatus,
     /// <p>The description of the point in time recovery settings applied to the table.</p>
     pub point_in_time_recovery_description: ::std::option::Option<crate::types::PointInTimeRecoveryDescription>,
 }
 impl ContinuousBackupsDescription {
-    /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
+    /// <p><code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     pub fn continuous_backups_status(&self) -> &crate::types::ContinuousBackupsStatus {
         &self.continuous_backups_status
     }
@@ -34,18 +34,18 @@ pub struct ContinuousBackupsDescriptionBuilder {
     pub(crate) point_in_time_recovery_description: ::std::option::Option<crate::types::PointInTimeRecoveryDescription>,
 }
 impl ContinuousBackupsDescriptionBuilder {
-    /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
+    /// <p><code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     /// This field is required.
     pub fn continuous_backups_status(mut self, input: crate::types::ContinuousBackupsStatus) -> Self {
         self.continuous_backups_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
+    /// <p><code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     pub fn set_continuous_backups_status(mut self, input: ::std::option::Option<crate::types::ContinuousBackupsStatus>) -> Self {
         self.continuous_backups_status = input;
         self
     }
-    /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
+    /// <p><code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     pub fn get_continuous_backups_status(&self) -> &::std::option::Option<crate::types::ContinuousBackupsStatus> {
         &self.continuous_backups_status
     }

@@ -25,10 +25,10 @@ impl ListCrawlsInputBuilder {
 /// <p>Returns all the crawls of a specified crawler. Returns only the crawls that have occurred since the launch date of the crawler history feature, and only retains up to 12 months of crawls. Older crawls will not be returned.</p>
 /// <p>You may use this API to:</p>
 /// <ul>
-/// <li> <p>Retrive all the crawls of a specified crawler.</p> </li>
-/// <li> <p>Retrieve all the crawls of a specified crawler within a limited count.</p> </li>
-/// <li> <p>Retrieve all the crawls of a specified crawler in a specific time range.</p> </li>
-/// <li> <p>Retrieve all the crawls of a specified crawler with a particular state, crawl ID, or DPU hour value.</p> </li>
+/// <li><p>Retrive all the crawls of a specified crawler.</p></li>
+/// <li><p>Retrieve all the crawls of a specified crawler within a limited count.</p></li>
+/// <li><p>Retrieve all the crawls of a specified crawler in a specific time range.</p></li>
+/// <li><p>Retrieve all the crawls of a specified crawler with a particular state, crawl ID, or DPU hour value.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCrawlsFluentBuilder {

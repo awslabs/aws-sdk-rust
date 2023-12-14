@@ -6,7 +6,7 @@
 pub struct QueryLoggingConfig {
     /// <p>The ID for a configuration for DNS query logging.</p>
     pub id: ::std::string::String,
-    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
     pub hosted_zone_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
     pub cloud_watch_logs_log_group_arn: ::std::string::String,
@@ -17,7 +17,7 @@ impl QueryLoggingConfig {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
     pub fn hosted_zone_id(&self) -> &str {
         use std::ops::Deref;
         self.hosted_zone_id.deref()
@@ -59,18 +59,18 @@ impl QueryLoggingConfigBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
     /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
-    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hosted_zone_id
     }

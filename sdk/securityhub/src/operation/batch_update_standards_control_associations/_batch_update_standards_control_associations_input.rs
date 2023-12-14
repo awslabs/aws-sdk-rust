@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateStandardsControlAssociationsInput {
-    /// <p> Updates the enablement status of a security control in a specified standard. </p>
+    /// <p>Updates the enablement status of a security control in a specified standard.</p>
     pub standards_control_association_updates: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>>,
 }
 impl BatchUpdateStandardsControlAssociationsInput {
-    /// <p> Updates the enablement status of a security control in a specified standard. </p>
+    /// <p>Updates the enablement status of a security control in a specified standard.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_updates.is_none()`.
     pub fn standards_control_association_updates(&self) -> &[crate::types::StandardsControlAssociationUpdate] {
@@ -32,14 +32,14 @@ impl BatchUpdateStandardsControlAssociationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_standards_control_association_updates`](Self::set_standards_control_association_updates).
     ///
-    /// <p> Updates the enablement status of a security control in a specified standard. </p>
+    /// <p>Updates the enablement status of a security control in a specified standard.</p>
     pub fn standards_control_association_updates(mut self, input: crate::types::StandardsControlAssociationUpdate) -> Self {
         let mut v = self.standards_control_association_updates.unwrap_or_default();
         v.push(input);
         self.standards_control_association_updates = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Updates the enablement status of a security control in a specified standard. </p>
+    /// <p>Updates the enablement status of a security control in a specified standard.</p>
     pub fn set_standards_control_association_updates(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>>,
@@ -47,7 +47,7 @@ impl BatchUpdateStandardsControlAssociationsInputBuilder {
         self.standards_control_association_updates = input;
         self
     }
-    /// <p> Updates the enablement status of a security control in a specified standard. </p>
+    /// <p>Updates the enablement status of a security control in a specified standard.</p>
     pub fn get_standards_control_association_updates(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>> {

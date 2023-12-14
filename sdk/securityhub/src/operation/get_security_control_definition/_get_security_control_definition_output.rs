@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecurityControlDefinitionOutput {
-    /// <p> Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps. </p>
+    /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     pub security_control_definition: ::std::option::Option<crate::types::SecurityControlDefinition>,
     _request_id: Option<String>,
 }
 impl GetSecurityControlDefinitionOutput {
-    /// <p> Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps. </p>
+    /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     pub fn security_control_definition(&self) -> ::std::option::Option<&crate::types::SecurityControlDefinition> {
         self.security_control_definition.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetSecurityControlDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSecurityControlDefinitionOutputBuilder {
-    /// <p> Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps. </p>
+    /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     /// This field is required.
     pub fn security_control_definition(mut self, input: crate::types::SecurityControlDefinition) -> Self {
         self.security_control_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps. </p>
+    /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     pub fn set_security_control_definition(mut self, input: ::std::option::Option<crate::types::SecurityControlDefinition>) -> Self {
         self.security_control_definition = input;
         self
     }
-    /// <p> Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps. </p>
+    /// <p>Provides metadata for a security control, including its unique standard-agnostic identifier, title, description, severity, availability in Amazon Web Services Regions, and a link to remediation steps.</p>
     pub fn get_security_control_definition(&self) -> &::std::option::Option<crate::types::SecurityControlDefinition> {
         &self.security_control_definition
     }

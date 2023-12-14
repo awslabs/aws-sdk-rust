@@ -9,23 +9,23 @@ pub struct CreateProjectInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the build input source code for the build project.</p>
     pub source: ::std::option::Option<crate::types::ProjectSource>,
-    /// <p>An array of <code>ProjectSource</code> objects. </p>
+    /// <p>An array of <code>ProjectSource</code> objects.</p>
     pub secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
-    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
+    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
-    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
     pub source_version: ::std::option::Option<::std::string::String>,
-    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
     pub secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     /// <p>Information about the build output artifacts for the build project.</p>
     pub artifacts: ::std::option::Option<crate::types::ProjectArtifacts>,
-    /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
     pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
     pub cache: ::std::option::Option<crate::types::ProjectCache>,
@@ -35,13 +35,13 @@ pub struct CreateProjectInput {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
-    /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub queued_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>). </p>
+    /// <alias-name></alias-name></code>).</p>
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
@@ -50,9 +50,9 @@ pub struct CreateProjectInput {
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub badge_enabled: ::std::option::Option<bool>,
-    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub logs_config: ::std::option::Option<crate::types::LogsConfig>,
-    /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
     pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
     pub build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
@@ -73,25 +73,25 @@ impl CreateProjectInput {
     pub fn source(&self) -> ::std::option::Option<&crate::types::ProjectSource> {
         self.source.as_ref()
     }
-    /// <p>An array of <code>ProjectSource</code> objects. </p>
+    /// <p>An array of <code>ProjectSource</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources.is_none()`.
     pub fn secondary_sources(&self) -> &[crate::types::ProjectSource] {
         self.secondary_sources.as_deref().unwrap_or_default()
     }
-    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
+    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
-    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn source_version(&self) -> ::std::option::Option<&str> {
         self.source_version.as_deref()
     }
-    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_source_versions.is_none()`.
     pub fn secondary_source_versions(&self) -> &[crate::types::ProjectSourceVersion] {
@@ -101,7 +101,7 @@ impl CreateProjectInput {
     pub fn artifacts(&self) -> ::std::option::Option<&crate::types::ProjectArtifacts> {
         self.artifacts.as_ref()
     }
-    /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
     pub fn secondary_artifacts(&self) -> &[crate::types::ProjectArtifacts] {
@@ -123,15 +123,15 @@ impl CreateProjectInput {
     pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_in_minutes
     }
-    /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub fn queued_timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.queued_timeout_in_minutes
     }
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>). </p>
+    /// <alias-name></alias-name></code>).</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
@@ -150,11 +150,11 @@ impl CreateProjectInput {
     pub fn badge_enabled(&self) -> ::std::option::Option<bool> {
         self.badge_enabled
     }
-    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub fn logs_config(&self) -> ::std::option::Option<&crate::types::LogsConfig> {
         self.logs_config.as_ref()
     }
-    /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
     pub fn file_system_locations(&self) -> &[crate::types::ProjectFileSystemLocation] {
@@ -252,57 +252,57 @@ impl CreateProjectInputBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
     ///
-    /// <p>An array of <code>ProjectSource</code> objects. </p>
+    /// <p>An array of <code>ProjectSource</code> objects.</p>
     pub fn secondary_sources(mut self, input: crate::types::ProjectSource) -> Self {
         let mut v = self.secondary_sources.unwrap_or_default();
         v.push(input);
         self.secondary_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>ProjectSource</code> objects. </p>
+    /// <p>An array of <code>ProjectSource</code> objects.</p>
     pub fn set_secondary_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>) -> Self {
         self.secondary_sources = input;
         self
     }
-    /// <p>An array of <code>ProjectSource</code> objects. </p>
+    /// <p>An array of <code>ProjectSource</code> objects.</p>
     pub fn get_secondary_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
         &self.secondary_sources
     }
-    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
+    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
-    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
+    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
-    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_version = input;
         self
     }
-    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
+    /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
+    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
-    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_version
     }
@@ -310,19 +310,19 @@ impl CreateProjectInputBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
     ///
-    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
     pub fn secondary_source_versions(mut self, input: crate::types::ProjectSourceVersion) -> Self {
         let mut v = self.secondary_source_versions.unwrap_or_default();
         v.push(input);
         self.secondary_source_versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
     pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
         self.secondary_source_versions = input;
         self
     }
-    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
     pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
         &self.secondary_source_versions
     }
@@ -345,19 +345,19 @@ impl CreateProjectInputBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
     ///
-    /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
     pub fn secondary_artifacts(mut self, input: crate::types::ProjectArtifacts) -> Self {
         let mut v = self.secondary_artifacts.unwrap_or_default();
         v.push(input);
         self.secondary_artifacts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
     pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>) -> Self {
         self.secondary_artifacts = input;
         self
     }
-    /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
     pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
         &self.secondary_artifacts
     }
@@ -419,43 +419,43 @@ impl CreateProjectInputBuilder {
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.timeout_in_minutes
     }
-    /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub fn queued_timeout_in_minutes(mut self, input: i32) -> Self {
         self.queued_timeout_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub fn set_queued_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.queued_timeout_in_minutes = input;
         self
     }
-    /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub fn get_queued_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.queued_timeout_in_minutes
     }
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>). </p>
+    /// <alias-name></alias-name></code>).</p>
     pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>). </p>
+    /// <alias-name></alias-name></code>).</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>). </p>
+    /// <alias-name></alias-name></code>).</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key
     }
@@ -510,17 +510,17 @@ impl CreateProjectInputBuilder {
     pub fn get_badge_enabled(&self) -> &::std::option::Option<bool> {
         &self.badge_enabled
     }
-    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub fn logs_config(mut self, input: crate::types::LogsConfig) -> Self {
         self.logs_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub fn set_logs_config(mut self, input: ::std::option::Option<crate::types::LogsConfig>) -> Self {
         self.logs_config = input;
         self
     }
-    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub fn get_logs_config(&self) -> &::std::option::Option<crate::types::LogsConfig> {
         &self.logs_config
     }
@@ -528,19 +528,19 @@ impl CreateProjectInputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
     ///
-    /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
     pub fn file_system_locations(mut self, input: crate::types::ProjectFileSystemLocation) -> Self {
         let mut v = self.file_system_locations.unwrap_or_default();
         v.push(input);
         self.file_system_locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
     pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>) -> Self {
         self.file_system_locations = input;
         self
     }
-    /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
     pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
         &self.file_system_locations
     }

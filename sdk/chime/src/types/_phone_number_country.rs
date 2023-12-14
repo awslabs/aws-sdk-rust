@@ -6,7 +6,7 @@
 pub struct PhoneNumberCountry {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
     pub country_code: ::std::option::Option<::std::string::String>,
-    /// <p>The supported phone number types. </p>
+    /// <p>The supported phone number types.</p>
     pub supported_phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
 }
 impl PhoneNumberCountry {
@@ -14,7 +14,7 @@ impl PhoneNumberCountry {
     pub fn country_code(&self) -> ::std::option::Option<&str> {
         self.country_code.as_deref()
     }
-    /// <p>The supported phone number types. </p>
+    /// <p>The supported phone number types.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_phone_number_types.is_none()`.
     pub fn supported_phone_number_types(&self) -> &[crate::types::PhoneNumberType] {
@@ -54,19 +54,19 @@ impl PhoneNumberCountryBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_phone_number_types`](Self::set_supported_phone_number_types).
     ///
-    /// <p>The supported phone number types. </p>
+    /// <p>The supported phone number types.</p>
     pub fn supported_phone_number_types(mut self, input: crate::types::PhoneNumberType) -> Self {
         let mut v = self.supported_phone_number_types.unwrap_or_default();
         v.push(input);
         self.supported_phone_number_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The supported phone number types. </p>
+    /// <p>The supported phone number types.</p>
     pub fn set_supported_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
         self.supported_phone_number_types = input;
         self
     }
-    /// <p>The supported phone number types. </p>
+    /// <p>The supported phone number types.</p>
     pub fn get_supported_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
         &self.supported_phone_number_types
     }

@@ -12,17 +12,17 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_service::GetServiceOutput::arn): <p>The Amazon Resource Name (ARN) of the service.</p>
     ///   - [`owner_account_id(Option<String>)`](crate::operation::get_service::GetServiceOutput::owner_account_id): <p>The Amazon Web Services account ID of the service owner.</p>
     ///   - [`created_by_account_id(Option<String>)`](crate::operation::get_service::GetServiceOutput::created_by_account_id): <p>The Amazon Web Services account ID of the service creator.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_service::GetServiceOutput::description): <p>The description of the service. </p>
+    ///   - [`description(Option<String>)`](crate::operation::get_service::GetServiceOutput::description): <p>The description of the service.</p>
     ///   - [`environment_id(Option<String>)`](crate::operation::get_service::GetServiceOutput::environment_id): <p>The unique identifier of the environment.</p>
     ///   - [`application_id(Option<String>)`](crate::operation::get_service::GetServiceOutput::application_id): <p>The ID of the application.</p>
-    ///   - [`vpc_id(Option<String>)`](crate::operation::get_service::GetServiceOutput::vpc_id): <p>The ID of the virtual private cloud (VPC). </p>
+    ///   - [`vpc_id(Option<String>)`](crate::operation::get_service::GetServiceOutput::vpc_id): <p>The ID of the virtual private cloud (VPC).</p>
     ///   - [`endpoint_type(Option<ServiceEndpointType>)`](crate::operation::get_service::GetServiceOutput::endpoint_type): <p>The endpoint type of the service.</p>
-    ///   - [`url_endpoint(Option<UrlEndpointConfig>)`](crate::operation::get_service::GetServiceOutput::url_endpoint): <p>The configuration for the URL endpoint type.</p>  <p>The <b>Url</b> isthe URL of the endpoint type.</p>  <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
-    ///   - [`lambda_endpoint(Option<LambdaEndpointConfig>)`](crate::operation::get_service::GetServiceOutput::lambda_endpoint): <p>The configuration for the Lambda endpoint type.</p>  <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
-    ///   - [`state(Option<ServiceState>)`](crate::operation::get_service::GetServiceOutput::state): <p>The current state of the service. </p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_service::GetServiceOutput::tags): <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    ///   - [`error(Option<ErrorResponse>)`](crate::operation::get_service::GetServiceOutput::error): <p>Any error associated with the service resource. </p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_service::GetServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated. </p>
+    ///   - [`url_endpoint(Option<UrlEndpointConfig>)`](crate::operation::get_service::GetServiceOutput::url_endpoint): <p>The configuration for the URL endpoint type.</p> <p>The <b>Url</b> isthe URL of the endpoint type.</p> <p>The <b>HealthUrl</b> is the health check URL of the endpoint type.</p>
+    ///   - [`lambda_endpoint(Option<LambdaEndpointConfig>)`](crate::operation::get_service::GetServiceOutput::lambda_endpoint): <p>The configuration for the Lambda endpoint type.</p> <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service.</p>
+    ///   - [`state(Option<ServiceState>)`](crate::operation::get_service::GetServiceOutput::state): <p>The current state of the service.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_service::GetServiceOutput::tags): <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    ///   - [`error(Option<ErrorResponse>)`](crate::operation::get_service::GetServiceOutput::error): <p>Any error associated with the service resource.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::get_service::GetServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_service::GetServiceOutput::created_time): <p>The timestamp of when the service is created.</p>
     /// - On failure, responds with [`SdkError<GetServiceError>`](crate::operation::get_service::GetServiceError)
     pub fn get_service(&self) -> crate::operation::get_service::builders::GetServiceFluentBuilder {

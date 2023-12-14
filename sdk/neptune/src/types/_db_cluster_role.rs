@@ -8,12 +8,12 @@ pub struct DbClusterRole {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p> </li>
-    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p> </li>
-    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p> </li>
+    /// <li><p><code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p></li>
+    /// <li><p><code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p></li>
+    /// <li><p><code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterRole {
@@ -23,14 +23,14 @@ impl DbClusterRole {
     }
     /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p> </li>
-    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p> </li>
-    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p> </li>
+    /// <li><p><code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p></li>
+    /// <li><p><code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p></li>
+    /// <li><p><code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
@@ -67,9 +67,9 @@ impl DbClusterRoleBuilder {
     }
     /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p> </li>
-    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p> </li>
-    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p> </li>
+    /// <li><p><code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p></li>
+    /// <li><p><code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p></li>
+    /// <li><p><code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -77,9 +77,9 @@ impl DbClusterRoleBuilder {
     }
     /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p> </li>
-    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p> </li>
-    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p> </li>
+    /// <li><p><code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p></li>
+    /// <li><p><code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p></li>
+    /// <li><p><code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -87,24 +87,24 @@ impl DbClusterRoleBuilder {
     }
     /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p> </li>
-    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p> </li>
-    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p> </li>
+    /// <li><p><code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon services on your behalf.</p></li>
+    /// <li><p><code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p></li>
+    /// <li><p><code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon services on your behalf.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
-    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>. </p>
+    /// <p>The name of the feature associated with the Amazon Identity and Access Management (IAM) role. For the list of supported feature names, see <code>DescribeDBEngineVersions</code>.</p>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_name
     }

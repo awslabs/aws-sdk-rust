@@ -6,7 +6,7 @@
 pub struct MskSourceConfiguration {
     /// <p>The ARN of the Amazon MSK cluster.</p>
     pub msk_cluster_arn: ::std::string::String,
-    /// <p>The topic name within the Amazon MSK cluster. </p>
+    /// <p>The topic name within the Amazon MSK cluster.</p>
     pub topic_name: ::std::string::String,
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
@@ -17,7 +17,7 @@ impl MskSourceConfiguration {
         use std::ops::Deref;
         self.msk_cluster_arn.deref()
     }
-    /// <p>The topic name within the Amazon MSK cluster. </p>
+    /// <p>The topic name within the Amazon MSK cluster.</p>
     pub fn topic_name(&self) -> &str {
         use std::ops::Deref;
         self.topic_name.deref()
@@ -58,18 +58,18 @@ impl MskSourceConfigurationBuilder {
     pub fn get_msk_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.msk_cluster_arn
     }
-    /// <p>The topic name within the Amazon MSK cluster. </p>
+    /// <p>The topic name within the Amazon MSK cluster.</p>
     /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The topic name within the Amazon MSK cluster. </p>
+    /// <p>The topic name within the Amazon MSK cluster.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_name = input;
         self
     }
-    /// <p>The topic name within the Amazon MSK cluster. </p>
+    /// <p>The topic name within the Amazon MSK cluster.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.topic_name
     }

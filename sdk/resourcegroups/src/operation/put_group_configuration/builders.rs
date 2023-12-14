@@ -23,10 +23,10 @@ impl PutGroupConfigurationInputBuilder {
 /// Fluent builder constructing a request to `PutGroupConfiguration`.
 ///
 /// <p>Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to complete. You can use <code>GetGroupConfiguration</code> to check the status of the update.</p>
-/// <p> <b>Minimum permissions</b> </p>
+/// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li> <p> <code>resource-groups:PutGroupConfiguration</code> </p> </li>
+/// <li><p><code>resource-groups:PutGroupConfiguration</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutGroupConfigurationFluentBuilder {

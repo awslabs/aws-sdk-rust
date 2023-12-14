@@ -8,7 +8,7 @@ pub struct CreateDomainInput {
     /// <p>The mode of authentication that members use to access the domain.</p>
     pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
-    /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
     /// <p>The VPC subnets that the domain uses for communication.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,8 +19,8 @@ pub struct CreateDomainInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
+    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
@@ -45,7 +45,7 @@ impl CreateDomainInput {
         self.auth_mode.as_ref()
     }
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
-    /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub fn default_user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
         self.default_user_settings.as_ref()
     }
@@ -68,8 +68,8 @@ impl CreateDomainInput {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
+    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
@@ -152,20 +152,20 @@ impl CreateDomainInputBuilder {
         &self.auth_mode
     }
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
-    /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     /// This field is required.
     pub fn default_user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.default_user_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
-    /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub fn set_default_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.default_user_settings = input;
         self
     }
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
-    /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
         &self.default_user_settings
     }
@@ -229,8 +229,8 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
+    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn app_network_access_type(mut self, input: crate::types::AppNetworkAccessType) -> Self {
         self.app_network_access_type = ::std::option::Option::Some(input);
@@ -238,8 +238,8 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
+    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
         self.app_network_access_type = input;
@@ -247,8 +247,8 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
+    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         &self.app_network_access_type

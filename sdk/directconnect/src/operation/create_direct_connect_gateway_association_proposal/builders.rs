@@ -23,7 +23,7 @@ impl CreateDirectConnectGatewayAssociationProposalInputBuilder {
 /// Fluent builder constructing a request to `CreateDirectConnectGatewayAssociationProposal`.
 ///
 /// <p>Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified Direct Connect gateway.</p>
-/// <p>You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any Amazon Web Services account. </p>
+/// <p>You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

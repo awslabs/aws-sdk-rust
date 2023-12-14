@@ -13,7 +13,7 @@ pub struct CreateTokenOutput {
     /// <p>For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>The <code>idToken</code> is not implemented or supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
-    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token.</p>
     pub id_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl CreateTokenOutput {
         self.refresh_token.as_deref()
     }
     /// <p>The <code>idToken</code> is not implemented or supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
-    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token.</p>
     pub fn id_token(&self) -> ::std::option::Option<&str> {
         self.id_token.as_deref()
     }
@@ -137,19 +137,19 @@ impl CreateTokenOutputBuilder {
         &self.refresh_token
     }
     /// <p>The <code>idToken</code> is not implemented or supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
-    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token.</p>
     pub fn id_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>idToken</code> is not implemented or supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
-    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token.</p>
     pub fn set_id_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id_token = input;
         self
     }
     /// <p>The <code>idToken</code> is not implemented or supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
-    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token. </p>
+    /// <p>A JSON Web Token (JWT) that identifies who is associated with the issued access token.</p>
     pub fn get_id_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.id_token
     }

@@ -17,7 +17,7 @@ pub struct ImageDetail {
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub image_size_in_bytes: ::std::option::Option<i64>,
-    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
     pub image_pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the scan.</p>
     pub image_scan_status: ::std::option::Option<crate::types::ImageScanStatus>,
@@ -58,7 +58,7 @@ impl ImageDetail {
     pub fn image_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.image_size_in_bytes
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
     pub fn image_pushed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
@@ -194,17 +194,17 @@ impl ImageDetailBuilder {
     pub fn get_image_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.image_size_in_bytes
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
     pub fn image_pushed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.image_pushed_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
     pub fn set_image_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.image_pushed_at = input;
         self
     }
-    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository.</p>
     pub fn get_image_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.image_pushed_at
     }

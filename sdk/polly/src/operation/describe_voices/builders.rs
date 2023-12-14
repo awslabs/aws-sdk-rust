@@ -22,10 +22,10 @@ impl DescribeVoicesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeVoices`.
 ///
-/// <p>Returns the list of voices that are available for use when requesting speech synthesis. Each voice speaks a specified language, is either male or female, and is identified by an ID, which is the ASCII version of the voice name. </p>
+/// <p>Returns the list of voices that are available for use when requesting speech synthesis. Each voice speaks a specified language, is either male or female, and is identified by an ID, which is the ASCII version of the voice name.</p>
 /// <p>When synthesizing speech ( <code>SynthesizeSpeech</code> ), you provide the voice ID for the voice you want from the list of voices returned by <code>DescribeVoices</code>.</p>
 /// <p>For example, you want your news reader application to read news in a specific language, but giving a user the option to choose the voice. Using the <code>DescribeVoices</code> operation you can provide the user with a list of available voices to select from.</p>
-/// <p> You can optionally specify a language code to filter the available voices. For example, if you specify <code>en-US</code>, the operation returns a list of all available US English voices. </p>
+/// <p>You can optionally specify a language code to filter the available voices. For example, if you specify <code>en-US</code>, the operation returns a list of all available US English voices.</p>
 /// <p>This operation requires permissions to perform the <code>polly:DescribeVoices</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVoicesFluentBuilder {
@@ -112,31 +112,31 @@ impl DescribeVoicesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn engine(mut self, input: crate::types::Engine) -> Self {
         self.inner = self.inner.engine(input);
         self
     }
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<crate::types::Engine>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    /// <p>Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly when processing input text for speech synthesis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
         self.inner.get_engine()
     }
-    /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
+    /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
         self
     }
-    /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
+    /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
-    /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
+    /// <p>The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         self.inner.get_language_code()
     }

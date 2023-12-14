@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeBlueG
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeBlueGreenDeploymentsError {
-    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    /// <p><code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
     BlueGreenDeploymentNotFoundFault(crate::types::error::BlueGreenDeploymentNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

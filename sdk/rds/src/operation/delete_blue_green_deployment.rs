@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteBlueGre
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteBlueGreenDeploymentError {
-    /// <p> <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
+    /// <p><code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
     BlueGreenDeploymentNotFoundFault(crate::types::error::BlueGreenDeploymentNotFoundFault),
     /// <p>The blue/green deployment can't be switched over or deleted because there is an invalid configuration in the green environment.</p>
     InvalidBlueGreenDeploymentStateFault(crate::types::error::InvalidBlueGreenDeploymentStateFault),

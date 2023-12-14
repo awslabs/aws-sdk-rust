@@ -8,7 +8,7 @@ pub struct ValidationException {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The error code associated with the validation failure.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
-    /// <p> An explanation of why validation failed.</p>
+    /// <p>An explanation of why validation failed.</p>
     pub error_code_reason: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -17,7 +17,7 @@ impl ValidationException {
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
-    /// <p> An explanation of why validation failed.</p>
+    /// <p>An explanation of why validation failed.</p>
     pub fn error_code_reason(&self) -> ::std::option::Option<&str> {
         self.error_code_reason.as_deref()
     }
@@ -96,17 +96,17 @@ impl ValidationExceptionBuilder {
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
         &self.error_code
     }
-    /// <p> An explanation of why validation failed.</p>
+    /// <p>An explanation of why validation failed.</p>
     pub fn error_code_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An explanation of why validation failed.</p>
+    /// <p>An explanation of why validation failed.</p>
     pub fn set_error_code_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code_reason = input;
         self
     }
-    /// <p> An explanation of why validation failed.</p>
+    /// <p>An explanation of why validation failed.</p>
     pub fn get_error_code_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code_reason
     }

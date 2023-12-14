@@ -259,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListApplicati
 pub enum ListApplicationSnapshotsError {
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

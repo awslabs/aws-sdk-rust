@@ -108,20 +108,20 @@ impl CreateOutpostResolverFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
-    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
-    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p><code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_request_id()
     }
@@ -153,17 +153,17 @@ impl CreateOutpostResolverFluentBuilder {
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_instance_count()
     }
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_instance_type(input.into());
         self
     }
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_instance_type(input);
         self
     }
-    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    /// <p>The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_instance_type()
     }
@@ -185,17 +185,17 @@ impl CreateOutpostResolverFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    /// <p>A string that helps identify the Route&nbsp;53 Resolvers on Outpost.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

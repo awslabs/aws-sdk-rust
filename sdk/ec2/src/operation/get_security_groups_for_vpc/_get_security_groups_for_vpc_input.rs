@@ -11,11 +11,11 @@ pub struct GetSecurityGroupsForVpcInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filters. If using multiple filters, the results include security groups which match all filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code>: The security group ID.</p> </li>
-    /// <li> <p> <code>description</code>: The security group's description.</p> </li>
-    /// <li> <p> <code>group-name</code>: The security group name.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The security group owner ID.</p> </li>
-    /// <li> <p> <code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p> </li>
+    /// <li><p><code>group-id</code>: The security group ID.</p></li>
+    /// <li><p><code>description</code>: The security group's description.</p></li>
+    /// <li><p><code>group-name</code>: The security group name.</p></li>
+    /// <li><p><code>owner-id</code>: The security group owner ID.</p></li>
+    /// <li><p><code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,11 +36,11 @@ impl GetSecurityGroupsForVpcInput {
     }
     /// <p>The filters. If using multiple filters, the results include security groups which match all filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code>: The security group ID.</p> </li>
-    /// <li> <p> <code>description</code>: The security group's description.</p> </li>
-    /// <li> <p> <code>group-name</code>: The security group name.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The security group owner ID.</p> </li>
-    /// <li> <p> <code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p> </li>
+    /// <li><p><code>group-id</code>: The security group ID.</p></li>
+    /// <li><p><code>description</code>: The security group's description.</p></li>
+    /// <li><p><code>group-name</code>: The security group name.</p></li>
+    /// <li><p><code>owner-id</code>: The security group owner ID.</p></li>
+    /// <li><p><code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -119,11 +119,11 @@ impl GetSecurityGroupsForVpcInputBuilder {
     ///
     /// <p>The filters. If using multiple filters, the results include security groups which match all filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code>: The security group ID.</p> </li>
-    /// <li> <p> <code>description</code>: The security group's description.</p> </li>
-    /// <li> <p> <code>group-name</code>: The security group name.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The security group owner ID.</p> </li>
-    /// <li> <p> <code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p> </li>
+    /// <li><p><code>group-id</code>: The security group ID.</p></li>
+    /// <li><p><code>description</code>: The security group's description.</p></li>
+    /// <li><p><code>group-name</code>: The security group name.</p></li>
+    /// <li><p><code>owner-id</code>: The security group owner ID.</p></li>
+    /// <li><p><code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -133,11 +133,11 @@ impl GetSecurityGroupsForVpcInputBuilder {
     }
     /// <p>The filters. If using multiple filters, the results include security groups which match all filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code>: The security group ID.</p> </li>
-    /// <li> <p> <code>description</code>: The security group's description.</p> </li>
-    /// <li> <p> <code>group-name</code>: The security group name.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The security group owner ID.</p> </li>
-    /// <li> <p> <code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p> </li>
+    /// <li><p><code>group-id</code>: The security group ID.</p></li>
+    /// <li><p><code>description</code>: The security group's description.</p></li>
+    /// <li><p><code>group-name</code>: The security group name.</p></li>
+    /// <li><p><code>owner-id</code>: The security group owner ID.</p></li>
+    /// <li><p><code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -145,11 +145,11 @@ impl GetSecurityGroupsForVpcInputBuilder {
     }
     /// <p>The filters. If using multiple filters, the results include security groups which match all filters.</p>
     /// <ul>
-    /// <li> <p> <code>group-id</code>: The security group ID.</p> </li>
-    /// <li> <p> <code>description</code>: The security group's description.</p> </li>
-    /// <li> <p> <code>group-name</code>: The security group name.</p> </li>
-    /// <li> <p> <code>owner-id</code>: The security group owner ID.</p> </li>
-    /// <li> <p> <code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p> </li>
+    /// <li><p><code>group-id</code>: The security group ID.</p></li>
+    /// <li><p><code>description</code>: The security group's description.</p></li>
+    /// <li><p><code>group-name</code>: The security group name.</p></li>
+    /// <li><p><code>owner-id</code>: The security group owner ID.</p></li>
+    /// <li><p><code>primary-vpc-id</code>: The VPC ID in which the security group was created.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

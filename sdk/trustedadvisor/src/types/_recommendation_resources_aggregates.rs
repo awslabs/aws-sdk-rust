@@ -6,7 +6,7 @@
 pub struct RecommendationResourcesAggregates {
     /// <p>The number of AWS resources that were flagged to be OK according to the Trusted Advisor check</p>
     pub ok_count: i64,
-    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check </p>
+    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
     pub warning_count: i64,
     /// <p>The number of AWS resources that were flagged to have errors according to the Trusted Advisor check</p>
     pub error_count: i64,
@@ -16,7 +16,7 @@ impl RecommendationResourcesAggregates {
     pub fn ok_count(&self) -> i64 {
         self.ok_count
     }
-    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check </p>
+    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
     pub fn warning_count(&self) -> i64 {
         self.warning_count
     }
@@ -56,18 +56,18 @@ impl RecommendationResourcesAggregatesBuilder {
     pub fn get_ok_count(&self) -> &::std::option::Option<i64> {
         &self.ok_count
     }
-    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check </p>
+    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
     /// This field is required.
     pub fn warning_count(mut self, input: i64) -> Self {
         self.warning_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check </p>
+    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
     pub fn set_warning_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.warning_count = input;
         self
     }
-    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check </p>
+    /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
     pub fn get_warning_count(&self) -> &::std::option::Option<i64> {
         &self.warning_count
     }

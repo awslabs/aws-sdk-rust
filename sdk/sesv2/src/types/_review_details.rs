@@ -6,10 +6,10 @@
 pub struct ReviewDetails {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p> </li>
-    /// <li> <p> <code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p> </li>
-    /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
-    /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
+    /// <li><p><code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p></li>
+    /// <li><p><code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p></li>
+    /// <li><p><code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p></li>
+    /// <li><p><code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ReviewStatus>,
     /// <p>The associated support center case ID (if any).</p>
@@ -18,10 +18,10 @@ pub struct ReviewDetails {
 impl ReviewDetails {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p> </li>
-    /// <li> <p> <code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p> </li>
-    /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
-    /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
+    /// <li><p><code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p></li>
+    /// <li><p><code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p></li>
+    /// <li><p><code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p></li>
+    /// <li><p><code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
         self.status.as_ref()
@@ -48,10 +48,10 @@ pub struct ReviewDetailsBuilder {
 impl ReviewDetailsBuilder {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p> </li>
-    /// <li> <p> <code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p> </li>
-    /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
-    /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
+    /// <li><p><code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p></li>
+    /// <li><p><code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p></li>
+    /// <li><p><code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p></li>
+    /// <li><p><code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ReviewStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -59,10 +59,10 @@ impl ReviewDetailsBuilder {
     }
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p> </li>
-    /// <li> <p> <code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p> </li>
-    /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
-    /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
+    /// <li><p><code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p></li>
+    /// <li><p><code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p></li>
+    /// <li><p><code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p></li>
+    /// <li><p><code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewStatus>) -> Self {
         self.status = input;
@@ -70,10 +70,10 @@ impl ReviewDetailsBuilder {
     }
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p> </li>
-    /// <li> <p> <code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p> </li>
-    /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
-    /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
+    /// <li><p><code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p></li>
+    /// <li><p><code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p></li>
+    /// <li><p><code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p></li>
+    /// <li><p><code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
         &self.status

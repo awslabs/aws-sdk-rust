@@ -251,7 +251,7 @@ pub enum BatchCreateVehicleError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request couldn't be completed because the server temporarily failed.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>A service quota was exceeded. </p>
+    /// <p>A service quota was exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request couldn't be completed due to throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

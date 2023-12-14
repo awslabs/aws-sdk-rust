@@ -14,11 +14,11 @@ pub struct AwsDynamoDbTableReplica {
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATING</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>DELETING</code></p></li>
+    /// <li><p><code>UPDATING</code></p></li>
     /// </ul>
     pub replica_status: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the replica status.</p>
@@ -45,11 +45,11 @@ impl AwsDynamoDbTableReplica {
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATING</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>DELETING</code></p></li>
+    /// <li><p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn replica_status(&self) -> ::std::option::Option<&str> {
         self.replica_status.as_deref()
@@ -148,11 +148,11 @@ impl AwsDynamoDbTableReplicaBuilder {
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATING</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>DELETING</code></p></li>
+    /// <li><p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn replica_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_status = ::std::option::Option::Some(input.into());
@@ -160,11 +160,11 @@ impl AwsDynamoDbTableReplicaBuilder {
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATING</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>DELETING</code></p></li>
+    /// <li><p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn set_replica_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replica_status = input;
@@ -172,11 +172,11 @@ impl AwsDynamoDbTableReplicaBuilder {
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>CREATING</code></p></li>
+    /// <li><p><code>CREATION_FAILED</code></p></li>
+    /// <li><p><code>DELETING</code></p></li>
+    /// <li><p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn get_replica_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.replica_status

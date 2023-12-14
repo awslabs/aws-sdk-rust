@@ -7,9 +7,9 @@
 pub struct AutoExportPolicy {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
-    /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
-    /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
+    /// <li><p><code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p></li>
+    /// <li><p><code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p></li>
+    /// <li><p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
@@ -17,9 +17,9 @@ pub struct AutoExportPolicy {
 impl AutoExportPolicy {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
-    /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
-    /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
+    /// <li><p><code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p></li>
+    /// <li><p><code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p></li>
+    /// <li><p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     ///
@@ -48,9 +48,9 @@ impl AutoExportPolicyBuilder {
     ///
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
-    /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
-    /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
+    /// <li><p><code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p></li>
+    /// <li><p><code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p></li>
+    /// <li><p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     pub fn events(mut self, input: crate::types::EventType) -> Self {
@@ -61,9 +61,9 @@ impl AutoExportPolicyBuilder {
     }
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
-    /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
-    /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
+    /// <li><p><code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p></li>
+    /// <li><p><code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p></li>
+    /// <li><p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
@@ -72,9 +72,9 @@ impl AutoExportPolicyBuilder {
     }
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
-    /// <li> <p> <code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p> </li>
-    /// <li> <p> <code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p> </li>
-    /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
+    /// <li><p><code>NEW</code> - New files and directories are automatically exported to the data repository as they are added to the file system.</p></li>
+    /// <li><p><code>CHANGED</code> - Changes to files and directories on the file system are automatically exported to the data repository.</p></li>
+    /// <li><p><code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p></li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {

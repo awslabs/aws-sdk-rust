@@ -26,8 +26,8 @@ impl UpdateAssetModelCompositeModelInputBuilder {
 /// <p>If you remove a property from a composite asset model, IoT SiteWise deletes all previous data for that property. You can’t change the type or data type of an existing property.</p>
 /// <p>To replace an existing composite asset model property with a new one with the same <code>name</code>, do the following:</p>
 /// <ol>
-/// <li> <p>Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing property removed.</p> </li>
-/// <li> <p>Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes the new property. The new asset property will have the same <code>name</code> as the previous one and IoT SiteWise will generate a new unique <code>id</code>.</p> </li>
+/// <li><p>Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing property removed.</p></li>
+/// <li><p>Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes the new property. The new asset property will have the same <code>name</code> as the previous one and IoT SiteWise will generate a new unique <code>id</code>.</p></li>
 /// </ol>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

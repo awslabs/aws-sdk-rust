@@ -18,9 +18,9 @@ pub struct TimeRangeFilter {
     pub range_maximum_value: ::std::option::Option<crate::types::TimeRangeFilterValue>,
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub null_option: crate::types::FilterNullOption,
     /// <p>The exclude period of the time range filter.</p>
@@ -56,9 +56,9 @@ impl TimeRangeFilter {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn null_option(&self) -> &crate::types::FilterNullOption {
         &self.null_option
@@ -182,9 +182,9 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     /// This field is required.
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
@@ -193,9 +193,9 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
         self.null_option = input;
@@ -203,9 +203,9 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
         &self.null_option

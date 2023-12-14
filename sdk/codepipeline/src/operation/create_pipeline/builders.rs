@@ -110,17 +110,17 @@ impl CreatePipelineFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
         self.inner = self.inner.pipeline(input);
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.inner = self.inner.set_pipeline(input);
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
         self.inner.get_pipeline()
     }

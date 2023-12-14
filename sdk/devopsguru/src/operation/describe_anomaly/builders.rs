@@ -22,7 +22,7 @@ impl DescribeAnomalyInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAnomaly`.
 ///
-/// <p> Returns details about an anomaly that you specify using its ID. </p>
+/// <p>Returns details about an anomaly that you specify using its ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAnomalyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeAnomalyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the anomaly. </p>
+    /// <p>The ID of the anomaly.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p> The ID of the anomaly. </p>
+    /// <p>The ID of the anomaly.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p> The ID of the anomaly. </p>
+    /// <p>The ID of the anomaly.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

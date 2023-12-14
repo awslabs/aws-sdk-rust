@@ -10,9 +10,9 @@ pub struct TrainingJobSummary {
     pub training_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the training job was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
+    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>).</p>
     pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> Timestamp when the training job was last modified. </p>
+    /// <p>Timestamp when the training job was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the training job.</p>
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
@@ -32,11 +32,11 @@ impl TrainingJobSummary {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
+    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>).</p>
     pub fn training_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
-    /// <p> Timestamp when the training job was last modified. </p>
+    /// <p>Timestamp when the training job was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
@@ -114,31 +114,31 @@ impl TrainingJobSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
+    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>).</p>
     pub fn training_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.training_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
+    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>).</p>
     pub fn set_training_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.training_end_time = input;
         self
     }
-    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>). </p>
+    /// <p>A timestamp that shows when the training job ended. This field is set only if the training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>, or <code>Stopped</code>).</p>
     pub fn get_training_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.training_end_time
     }
-    /// <p> Timestamp when the training job was last modified. </p>
+    /// <p>Timestamp when the training job was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Timestamp when the training job was last modified. </p>
+    /// <p>Timestamp when the training job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p> Timestamp when the training job was last modified. </p>
+    /// <p>Timestamp when the training job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }

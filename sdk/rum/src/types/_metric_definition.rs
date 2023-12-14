@@ -10,12 +10,12 @@ pub struct MetricDefinition {
     pub name: ::std::string::String,
     /// <p>The field within the event object that the metric value is sourced from.</p>
     pub value_key: ::std::option::Option<::std::string::String>,
-    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
+    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub unit_label: ::std::option::Option<::std::string::String>,
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch The value of this field is used only if the metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>, the value of <code>DimensionKeys</code> is ignored.</p>
     pub dimension_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
-    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
+    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl MetricDefinition {
     pub fn value_key(&self) -> ::std::option::Option<&str> {
         self.value_key.as_deref()
     }
-    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
+    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub fn unit_label(&self) -> ::std::option::Option<&str> {
         self.unit_label.as_deref()
     }
@@ -44,7 +44,7 @@ impl MetricDefinition {
         self.dimension_keys.as_ref()
     }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
-    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
+    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn event_pattern(&self) -> ::std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -117,17 +117,17 @@ impl MetricDefinitionBuilder {
     pub fn get_value_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.value_key
     }
-    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
+    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub fn unit_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
+    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub fn set_unit_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_label = input;
         self
     }
-    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in. </p>
+    /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub fn get_unit_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit_label
     }
@@ -159,19 +159,19 @@ impl MetricDefinitionBuilder {
         &self.dimension_keys
     }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
-    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
+    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
-    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
+    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_pattern = input;
         self
     }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
-    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
+    /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_pattern
     }

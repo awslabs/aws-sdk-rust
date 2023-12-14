@@ -28,9 +28,9 @@ pub struct ImageSummary {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
@@ -87,9 +87,9 @@ impl ImageSummary {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::BuildType> {
         self.build_type.as_ref()
@@ -297,9 +297,9 @@ impl ImageSummaryBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn build_type(mut self, input: crate::types::BuildType) -> Self {
         self.build_type = ::std::option::Option::Some(input);
@@ -307,9 +307,9 @@ impl ImageSummaryBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::BuildType>) -> Self {
         self.build_type = input;
@@ -317,9 +317,9 @@ impl ImageSummaryBuilder {
     }
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
+    /// <li><p><b>USER_INITIATED</b> – A manual pipeline build request.</p></li>
+    /// <li><p><b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p></li>
+    /// <li><p><b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p></li>
     /// </ul>
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::BuildType> {
         &self.build_type

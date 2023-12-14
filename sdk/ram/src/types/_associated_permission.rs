@@ -14,17 +14,17 @@ pub struct AssociatedPermission {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
+    /// <li><p><code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p></li>
+    /// <li><p><code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p></li>
+    /// <li><p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+    /// <li><p><b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p></li>
+    /// <li><p><b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p></li>
+    /// <li><p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
@@ -51,19 +51,19 @@ impl AssociatedPermission {
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
+    /// <li><p><code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p></li>
+    /// <li><p><code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p></li>
+    /// <li><p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+    /// <li><p><b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p></li>
+    /// <li><p><b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p></li>
+    /// <li><p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub fn feature_set(&self) -> ::std::option::Option<&crate::types::PermissionFeatureSet> {
         self.feature_set.as_ref()
@@ -156,10 +156,10 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
+    /// <li><p><code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p></li>
+    /// <li><p><code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p></li>
+    /// <li><p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -167,10 +167,10 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
+    /// <li><p><code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p></li>
+    /// <li><p><code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p></li>
+    /// <li><p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -178,19 +178,19 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
+    /// <li><p><code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p></li>
+    /// <li><p><code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p></li>
+    /// <li><p><code>DELETING</code> – This permission or version is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+    /// <li><p><b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p></li>
+    /// <li><p><b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p></li>
+    /// <li><p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub fn feature_set(mut self, input: crate::types::PermissionFeatureSet) -> Self {
         self.feature_set = ::std::option::Option::Some(input);
@@ -198,9 +198,9 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+    /// <li><p><b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p></li>
+    /// <li><p><b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p></li>
+    /// <li><p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
         self.feature_set = input;
@@ -208,9 +208,9 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+    /// <li><p><b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p></li>
+    /// <li><p><b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p></li>
+    /// <li><p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::PermissionFeatureSet> {
         &self.feature_set

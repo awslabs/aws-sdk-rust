@@ -23,7 +23,7 @@ impl CreateImpersonationRoleInputBuilder {
 /// Fluent builder constructing a request to `CreateImpersonationRole`.
 ///
 /// <p>Creates an impersonation role for the given WorkMail organization.</p>
-/// <p> <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries also complete successfully without performing any further actions.</p>
+/// <p><i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries also complete successfully without performing any further actions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImpersonationRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

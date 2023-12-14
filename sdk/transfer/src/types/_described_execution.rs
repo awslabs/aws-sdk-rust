@@ -16,7 +16,7 @@ pub struct DescribedExecution {
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: ::std::option::Option<crate::types::PosixProfile>,
-    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
     pub results: ::std::option::Option<crate::types::ExecutionResults>,
@@ -46,7 +46,7 @@ impl DescribedExecution {
     pub fn posix_profile(&self) -> ::std::option::Option<&crate::types::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
@@ -160,17 +160,17 @@ impl DescribedExecutionBuilder {
     pub fn get_posix_profile(&self) -> &::std::option::Option<crate::types::PosixProfile> {
         &self.posix_profile
     }
-    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.status
     }

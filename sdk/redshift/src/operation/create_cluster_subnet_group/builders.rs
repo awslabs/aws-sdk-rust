@@ -23,7 +23,7 @@ impl CreateClusterSubnetGroupInputBuilder {
 /// Fluent builder constructing a request to `CreateClusterSubnetGroup`.
 ///
 /// <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p>
-/// <p> For information about subnet groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p>For information about subnet groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterSubnetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,11 +112,11 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must not be "Default".</p> </li>
-    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Must not be "Default".</p></li>
+    /// <li><p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplesubnetgroup</code> </p>
+    /// <p>Example: <code>examplesubnetgroup</code></p>
     pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_subnet_group_name(input.into());
         self
@@ -124,11 +124,11 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must not be "Default".</p> </li>
-    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Must not be "Default".</p></li>
+    /// <li><p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplesubnetgroup</code> </p>
+    /// <p>Example: <code>examplesubnetgroup</code></p>
     pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
@@ -136,11 +136,11 @@ impl CreateClusterSubnetGroupFluentBuilder {
     /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must not be "Default".</p> </li>
-    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Must not be "Default".</p></li>
+    /// <li><p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplesubnetgroup</code> </p>
+    /// <p>Example: <code>examplesubnetgroup</code></p>
     pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_subnet_group_name()
     }

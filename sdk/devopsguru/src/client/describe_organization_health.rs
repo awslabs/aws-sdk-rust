@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`open_reactive_insights(i32)`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput::open_reactive_insights): <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     ///   - [`open_proactive_insights(i32)`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput::open_proactive_insights): <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     ///   - [`metrics_analyzed(i32)`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput::metrics_analyzed): <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
-    ///   - [`resource_hours(i64)`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput::resource_hours): <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
+    ///   - [`resource_hours(i64)`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput::resource_hours): <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationHealthError>`](crate::operation::describe_organization_health::DescribeOrganizationHealthError)
     pub fn describe_organization_health(&self) -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthFluentBuilder {
         crate::operation::describe_organization_health::builders::DescribeOrganizationHealthFluentBuilder::new(self.handle.clone())

@@ -215,17 +215,17 @@ impl ModifyEventSubscriptionFluentBuilder {
     pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_severity()
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
+    /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }

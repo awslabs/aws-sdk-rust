@@ -3,59 +3,59 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageVersionInput {
-    /// <p> The name of the domain that contains the repository that contains the package version. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the repository that contains the package version. </p>
+    /// <p>The name of the repository that contains the package version.</p>
     pub repository: ::std::option::Option<::std::string::String>,
-    /// <p> A format that specifies the type of the requested package version. </p>
+    /// <p>A format that specifies the type of the requested package version.</p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the requested package version. </p>
+    /// <p>The name of the requested package version.</p>
     pub package: ::std::option::Option<::std::string::String>,
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub package_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribePackageVersionInput {
-    /// <p> The name of the domain that contains the repository that contains the package version. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> The name of the repository that contains the package version. </p>
+    /// <p>The name of the repository that contains the package version.</p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> A format that specifies the type of the requested package version. </p>
+    /// <p>A format that specifies the type of the requested package version.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p> The name of the requested package version. </p>
+    /// <p>The name of the requested package version.</p>
     pub fn package(&self) -> ::std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn package_version(&self) -> ::std::option::Option<&str> {
         self.package_version.as_deref()
     }
@@ -80,71 +80,71 @@ pub struct DescribePackageVersionInputBuilder {
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribePackageVersionInputBuilder {
-    /// <p> The name of the domain that contains the repository that contains the package version. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version.</p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the package version. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p> The name of the domain that contains the repository that contains the package version. </p>
+    /// <p>The name of the domain that contains the repository that contains the package version.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p> The name of the repository that contains the package version. </p>
+    /// <p>The name of the repository that contains the package version.</p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the repository that contains the package version. </p>
+    /// <p>The name of the repository that contains the package version.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p> The name of the repository that contains the package version. </p>
+    /// <p>The name of the repository that contains the package version.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
-    /// <p> A format that specifies the type of the requested package version. </p>
+    /// <p>A format that specifies the type of the requested package version.</p>
     /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A format that specifies the type of the requested package version. </p>
+    /// <p>A format that specifies the type of the requested package version.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
     }
-    /// <p> A format that specifies the type of the requested package version. </p>
+    /// <p>A format that specifies the type of the requested package version.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         &self.format
     }
     /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -152,10 +152,10 @@ impl DescribePackageVersionInputBuilder {
     }
     /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -163,41 +163,41 @@ impl DescribePackageVersionInputBuilder {
     }
     /// <p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p> The name of the requested package version. </p>
+    /// <p>The name of the requested package version.</p>
     /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the requested package version. </p>
+    /// <p>The name of the requested package version.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
     }
-    /// <p> The name of the requested package version. </p>
+    /// <p>The name of the requested package version.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         &self.package
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
-    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_version
     }

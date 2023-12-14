@@ -5,22 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteSummary {
     /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// <li><p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner.</p></li>
+    /// <li><p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner.</p></li>
     /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner:</p>
     /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// <li><p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner.</p></li>
+    /// <li><p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner.</p></li>
     /// </ul>
     pub route_b_box: ::std::vec::Vec<f64>,
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
+    /// <li><p><code>Esri</code></p></li>
+    /// <li><p><code>Grab</code></p></li>
+    /// <li><p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
@@ -35,15 +35,15 @@ pub struct CalculateRouteSummary {
 }
 impl CalculateRouteSummary {
     /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// <li><p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner.</p></li>
+    /// <li><p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner.</p></li>
     /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner:</p>
     /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// <li><p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner.</p></li>
+    /// <li><p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner.</p></li>
     /// </ul>
     pub fn route_b_box(&self) -> &[f64] {
         use std::ops::Deref;
@@ -51,9 +51,9 @@ impl CalculateRouteSummary {
     }
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
+    /// <li><p><code>Esri</code></p></li>
+    /// <li><p><code>Grab</code></p></li>
+    /// <li><p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
@@ -109,15 +109,15 @@ impl CalculateRouteSummaryBuilder {
     /// To override the contents of this collection use [`set_route_b_box`](Self::set_route_b_box).
     ///
     /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// <li><p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner.</p></li>
+    /// <li><p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner.</p></li>
     /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner:</p>
     /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// <li><p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner.</p></li>
+    /// <li><p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner.</p></li>
     /// </ul>
     pub fn route_b_box(mut self, input: f64) -> Self {
         let mut v = self.route_b_box.unwrap_or_default();
@@ -126,39 +126,39 @@ impl CalculateRouteSummaryBuilder {
         self
     }
     /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// <li><p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner.</p></li>
+    /// <li><p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner.</p></li>
     /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner:</p>
     /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// <li><p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner.</p></li>
+    /// <li><p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner.</p></li>
     /// </ul>
     pub fn set_route_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.route_b_box = input;
         self
     }
     /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
-    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+    /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
     /// <ul>
-    /// <li> <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner. </p> </li>
-    /// <li> <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner. </p> </li>
+    /// <li><p>The first <code>bbox</code> position is the X coordinate or longitude of the lower southwest corner.</p></li>
+    /// <li><p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower southwest corner.</p></li>
     /// </ul>
-    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+    /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner:</p>
     /// <ul>
-    /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
-    /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
+    /// <li><p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner.</p></li>
+    /// <li><p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner.</p></li>
     /// </ul>
     pub fn get_route_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.route_b_box
     }
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
+    /// <li><p><code>Esri</code></p></li>
+    /// <li><p><code>Grab</code></p></li>
+    /// <li><p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
@@ -168,9 +168,9 @@ impl CalculateRouteSummaryBuilder {
     }
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
+    /// <li><p><code>Esri</code></p></li>
+    /// <li><p><code>Grab</code></p></li>
+    /// <li><p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -179,9 +179,9 @@ impl CalculateRouteSummaryBuilder {
     }
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li> <p> <code>Esri</code> </p> </li>
-    /// <li> <p> <code>Grab</code> </p> </li>
-    /// <li> <p> <code>Here</code> </p> </li>
+    /// <li><p><code>Esri</code></p></li>
+    /// <li><p><code>Grab</code></p></li>
+    /// <li><p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {

@@ -24,8 +24,8 @@ impl GetSessionEmbedUrlInputBuilder {
 ///
 /// <p>Generates a session URL and authorization code that you can use to embed the Amazon Amazon QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who access an embedded Amazon QuickSight console need belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding Analytics</a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedding Analytics</a></p></li>
+/// <li><p><a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSessionEmbedUrlFluentBuilder {
@@ -128,12 +128,12 @@ impl GetSessionEmbedUrlFluentBuilder {
     }
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li> <p> <code>/start</code> </p> </li>
-    /// <li> <p> <code>/start/analyses</code> </p> </li>
-    /// <li> <p> <code>/start/dashboards</code> </p> </li>
-    /// <li> <p> <code>/start/favorites</code> </p> </li>
-    /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
-    /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
+    /// <li><p><code>/start</code></p></li>
+    /// <li><p><code>/start/analyses</code></p></li>
+    /// <li><p><code>/start/dashboards</code></p></li>
+    /// <li><p><code>/start/favorites</code></p></li>
+    /// <li><p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p></li>
+    /// <li><p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p></li>
     /// </ul>
     pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entry_point(input.into());
@@ -141,12 +141,12 @@ impl GetSessionEmbedUrlFluentBuilder {
     }
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li> <p> <code>/start</code> </p> </li>
-    /// <li> <p> <code>/start/analyses</code> </p> </li>
-    /// <li> <p> <code>/start/dashboards</code> </p> </li>
-    /// <li> <p> <code>/start/favorites</code> </p> </li>
-    /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
-    /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
+    /// <li><p><code>/start</code></p></li>
+    /// <li><p><code>/start/analyses</code></p></li>
+    /// <li><p><code>/start/dashboards</code></p></li>
+    /// <li><p><code>/start/favorites</code></p></li>
+    /// <li><p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p></li>
+    /// <li><p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p></li>
     /// </ul>
     pub fn set_entry_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entry_point(input);
@@ -154,12 +154,12 @@ impl GetSessionEmbedUrlFluentBuilder {
     }
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
-    /// <li> <p> <code>/start</code> </p> </li>
-    /// <li> <p> <code>/start/analyses</code> </p> </li>
-    /// <li> <p> <code>/start/dashboards</code> </p> </li>
-    /// <li> <p> <code>/start/favorites</code> </p> </li>
-    /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
-    /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
+    /// <li><p><code>/start</code></p></li>
+    /// <li><p><code>/start/analyses</code></p></li>
+    /// <li><p><code>/start/dashboards</code></p></li>
+    /// <li><p><code>/start/favorites</code></p></li>
+    /// <li><p><code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p></li>
+    /// <li><p><code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p></li>
     /// </ul>
     pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entry_point()
@@ -180,9 +180,9 @@ impl GetSessionEmbedUrlFluentBuilder {
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
-    /// <li> <p>Active Directory (AD) users or group members</p> </li>
-    /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
+    /// <li><p>Active Directory (AD) users or group members</p></li>
+    /// <li><p>Invited nonfederated users</p></li>
+    /// <li><p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p></li>
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,9 +191,9 @@ impl GetSessionEmbedUrlFluentBuilder {
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
-    /// <li> <p>Active Directory (AD) users or group members</p> </li>
-    /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
+    /// <li><p>Active Directory (AD) users or group members</p></li>
+    /// <li><p>Invited nonfederated users</p></li>
+    /// <li><p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p></li>
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -202,9 +202,9 @@ impl GetSessionEmbedUrlFluentBuilder {
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
-    /// <li> <p>Active Directory (AD) users or group members</p> </li>
-    /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
+    /// <li><p>Active Directory (AD) users or group members</p></li>
+    /// <li><p>Invited nonfederated users</p></li>
+    /// <li><p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p></li>
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {

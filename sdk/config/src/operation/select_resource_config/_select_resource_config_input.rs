@@ -5,9 +5,9 @@
 pub struct SelectResourceConfigInput {
     /// <p>The SQL query <code>SELECT</code> command.</p>
     pub expression: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of query results returned on each page. </p>
+    /// <p>The maximum number of query results returned on each page.</p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SelectResourceConfigInput {
@@ -15,11 +15,11 @@ impl SelectResourceConfigInput {
     pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
-    /// <p>The maximum number of query results returned on each page. </p>
+    /// <p>The maximum number of query results returned on each page.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -55,31 +55,31 @@ impl SelectResourceConfigInputBuilder {
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.expression
     }
-    /// <p>The maximum number of query results returned on each page. </p>
+    /// <p>The maximum number of query results returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of query results returned on each page. </p>
+    /// <p>The maximum number of query results returned on each page.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The maximum number of query results returned on each page. </p>
+    /// <p>The maximum number of query results returned on each page.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

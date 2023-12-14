@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverRuleConfig {
-    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
+    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
     pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
@@ -12,7 +12,7 @@ pub struct ResolverRuleConfig {
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRuleConfig {
-    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
+    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -43,17 +43,17 @@ pub struct ResolverRuleConfigBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRuleConfigBuilder {
-    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
+    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
+    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
+    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -20,13 +20,13 @@ pub struct Component {
     pub component_type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The status of the component.</p>
     /// <ul>
-    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
-    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
-    /// <li> <p>STOPPED - the component is not running.</p> </li>
-    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
-    /// <li> <p>RUNNING - the component is running.</p> </li>
-    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
-    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// <li><p>ACTIVATED - this status has been deprecated.</p></li>
+    /// <li><p>STARTING - the component is in the process of being started.</p></li>
+    /// <li><p>STOPPED - the component is not running.</p></li>
+    /// <li><p>STOPPING - the component is in the process of being stopped.</p></li>
+    /// <li><p>RUNNING - the component is running.</p></li>
+    /// <li><p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p></li>
+    /// <li><p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ComponentStatus>,
     /// <p>The hostname of the component.</p>
@@ -89,13 +89,13 @@ impl Component {
     }
     /// <p>The status of the component.</p>
     /// <ul>
-    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
-    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
-    /// <li> <p>STOPPED - the component is not running.</p> </li>
-    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
-    /// <li> <p>RUNNING - the component is running.</p> </li>
-    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
-    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// <li><p>ACTIVATED - this status has been deprecated.</p></li>
+    /// <li><p>STARTING - the component is in the process of being started.</p></li>
+    /// <li><p>STOPPED - the component is not running.</p></li>
+    /// <li><p>STOPPING - the component is in the process of being stopped.</p></li>
+    /// <li><p>RUNNING - the component is running.</p></li>
+    /// <li><p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p></li>
+    /// <li><p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComponentStatus> {
         self.status.as_ref()
@@ -294,13 +294,13 @@ impl ComponentBuilder {
     }
     /// <p>The status of the component.</p>
     /// <ul>
-    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
-    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
-    /// <li> <p>STOPPED - the component is not running.</p> </li>
-    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
-    /// <li> <p>RUNNING - the component is running.</p> </li>
-    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
-    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// <li><p>ACTIVATED - this status has been deprecated.</p></li>
+    /// <li><p>STARTING - the component is in the process of being started.</p></li>
+    /// <li><p>STOPPED - the component is not running.</p></li>
+    /// <li><p>STOPPING - the component is in the process of being stopped.</p></li>
+    /// <li><p>RUNNING - the component is running.</p></li>
+    /// <li><p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p></li>
+    /// <li><p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ComponentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -308,13 +308,13 @@ impl ComponentBuilder {
     }
     /// <p>The status of the component.</p>
     /// <ul>
-    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
-    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
-    /// <li> <p>STOPPED - the component is not running.</p> </li>
-    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
-    /// <li> <p>RUNNING - the component is running.</p> </li>
-    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
-    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// <li><p>ACTIVATED - this status has been deprecated.</p></li>
+    /// <li><p>STARTING - the component is in the process of being started.</p></li>
+    /// <li><p>STOPPED - the component is not running.</p></li>
+    /// <li><p>STOPPING - the component is in the process of being stopped.</p></li>
+    /// <li><p>RUNNING - the component is running.</p></li>
+    /// <li><p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p></li>
+    /// <li><p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComponentStatus>) -> Self {
         self.status = input;
@@ -322,13 +322,13 @@ impl ComponentBuilder {
     }
     /// <p>The status of the component.</p>
     /// <ul>
-    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
-    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
-    /// <li> <p>STOPPED - the component is not running.</p> </li>
-    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
-    /// <li> <p>RUNNING - the component is running.</p> </li>
-    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
-    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// <li><p>ACTIVATED - this status has been deprecated.</p></li>
+    /// <li><p>STARTING - the component is in the process of being started.</p></li>
+    /// <li><p>STOPPED - the component is not running.</p></li>
+    /// <li><p>STOPPING - the component is in the process of being stopped.</p></li>
+    /// <li><p>RUNNING - the component is running.</p></li>
+    /// <li><p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p></li>
+    /// <li><p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComponentStatus> {
         &self.status

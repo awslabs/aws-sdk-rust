@@ -6,18 +6,18 @@
 pub struct KxDatabaseCacheConfiguration {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub cache_type: ::std::string::String,
     /// <p>Specifies the portions of database that will be loaded into the cache for access.</p>
     pub db_paths: ::std::vec::Vec<::std::string::String>,
-    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
 }
 impl KxDatabaseCacheConfiguration {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub fn cache_type(&self) -> &str {
         use std::ops::Deref;
@@ -28,7 +28,7 @@ impl KxDatabaseCacheConfiguration {
         use std::ops::Deref;
         self.db_paths.deref()
     }
-    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
     pub fn dataview_name(&self) -> ::std::option::Option<&str> {
         self.dataview_name.as_deref()
     }
@@ -51,7 +51,7 @@ pub struct KxDatabaseCacheConfigurationBuilder {
 impl KxDatabaseCacheConfigurationBuilder {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     /// This field is required.
     pub fn cache_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,7 +60,7 @@ impl KxDatabaseCacheConfigurationBuilder {
     }
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub fn set_cache_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_type = input;
@@ -68,7 +68,7 @@ impl KxDatabaseCacheConfigurationBuilder {
     }
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub fn get_cache_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_type
@@ -93,17 +93,17 @@ impl KxDatabaseCacheConfigurationBuilder {
     pub fn get_db_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.db_paths
     }
-    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
     pub fn dataview_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataview_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataview_name = input;
         self
     }
-    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    /// <p>The name of the dataview to be used for caching historical data on disk.</p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataview_name
     }

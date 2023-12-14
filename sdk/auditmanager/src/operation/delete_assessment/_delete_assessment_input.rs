@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssessmentInput {
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentInput {
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentInputBuilder {
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }

@@ -11,8 +11,8 @@ pub struct CreateClusterInput {
     pub source_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
-    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
+    /// <li><p>All subnets must be in the same virtual private cloud (VPC).</p></li>
+    /// <li><p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
@@ -33,8 +33,8 @@ impl CreateClusterInput {
     }
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
-    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
+    /// <li><p>All subnets must be in the same virtual private cloud (VPC).</p></li>
+    /// <li><p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
@@ -115,8 +115,8 @@ impl CreateClusterInputBuilder {
     ///
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
-    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
+    /// <li><p>All subnets must be in the same virtual private cloud (VPC).</p></li>
+    /// <li><p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
@@ -126,8 +126,8 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
-    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
+    /// <li><p>All subnets must be in the same virtual private cloud (VPC).</p></li>
+    /// <li><p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
@@ -135,8 +135,8 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
-    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
+    /// <li><p>All subnets must be in the same virtual private cloud (VPC).</p></li>
+    /// <li><p>You can specify only one subnet per Availability Zone.</p></li>
     /// </ul>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids

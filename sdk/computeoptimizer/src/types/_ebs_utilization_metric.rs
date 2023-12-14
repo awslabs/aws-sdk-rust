@@ -8,10 +8,10 @@ pub struct EbsUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
-    /// <li> <p> <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
+    /// <li><p><code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
+    /// <li><p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::EbsMetricName>,
     /// <p>The statistic of the utilization metric.</p>
@@ -25,10 +25,10 @@ impl EbsUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
-    /// <li> <p> <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
+    /// <li><p><code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
+    /// <li><p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::EbsMetricName> {
         self.name.as_ref()
@@ -63,10 +63,10 @@ impl EbsUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
-    /// <li> <p> <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
+    /// <li><p><code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
+    /// <li><p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::EbsMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -75,10 +75,10 @@ impl EbsUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
-    /// <li> <p> <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
+    /// <li><p><code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
+    /// <li><p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EbsMetricName>) -> Self {
         self.name = input;
@@ -87,10 +87,10 @@ impl EbsUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p> </li>
-    /// <li> <p> <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
-    /// <li> <p> <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
+    /// <li><p><code>VolumeReadOpsPerSecond</code> - The completed read operations per second from the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeWriteOpsPerSecond</code> - The completed write operations per second to the volume in a specified period of time.</p> <p>Unit: Count</p></li>
+    /// <li><p><code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
+    /// <li><p><code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::EbsMetricName> {
         &self.name

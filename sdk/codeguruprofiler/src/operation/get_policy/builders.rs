@@ -22,7 +22,7 @@ impl GetPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPolicy`.
 ///
-/// <p> Returns the JSON-formatted resource-based policy on a profiling group. </p>
+/// <p>Returns the JSON-formatted resource-based policy on a profiling group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

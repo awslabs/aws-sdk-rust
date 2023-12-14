@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerDetails {
-    /// <p>The runtime of the container. </p>
+    /// <p>The runtime of the container.</p>
     pub container_runtime: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container related to a finding.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -15,13 +15,13 @@ pub struct ContainerDetails {
     /// <p>Indicates when the container started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub launched_at: ::std::option::Option<::std::string::String>,
-    /// <p>Provides information about the mounting of a volume in a container. </p>
+    /// <p>Provides information about the mounting of a volume in a container.</p>
     pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
-    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
+    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub privileged: ::std::option::Option<bool>,
 }
 impl ContainerDetails {
-    /// <p>The runtime of the container. </p>
+    /// <p>The runtime of the container.</p>
     pub fn container_runtime(&self) -> ::std::option::Option<&str> {
         self.container_runtime.as_deref()
     }
@@ -42,13 +42,13 @@ impl ContainerDetails {
     pub fn launched_at(&self) -> ::std::option::Option<&str> {
         self.launched_at.as_deref()
     }
-    /// <p>Provides information about the mounting of a volume in a container. </p>
+    /// <p>Provides information about the mounting of a volume in a container.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_mounts.is_none()`.
     pub fn volume_mounts(&self) -> &[crate::types::VolumeMount] {
         self.volume_mounts.as_deref().unwrap_or_default()
     }
-    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
+    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
     }
@@ -73,17 +73,17 @@ pub struct ContainerDetailsBuilder {
     pub(crate) privileged: ::std::option::Option<bool>,
 }
 impl ContainerDetailsBuilder {
-    /// <p>The runtime of the container. </p>
+    /// <p>The runtime of the container.</p>
     pub fn container_runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_runtime = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The runtime of the container. </p>
+    /// <p>The runtime of the container.</p>
     pub fn set_container_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_runtime = input;
         self
     }
-    /// <p>The runtime of the container. </p>
+    /// <p>The runtime of the container.</p>
     pub fn get_container_runtime(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_runtime
     }
@@ -150,33 +150,33 @@ impl ContainerDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_volume_mounts`](Self::set_volume_mounts).
     ///
-    /// <p>Provides information about the mounting of a volume in a container. </p>
+    /// <p>Provides information about the mounting of a volume in a container.</p>
     pub fn volume_mounts(mut self, input: crate::types::VolumeMount) -> Self {
         let mut v = self.volume_mounts.unwrap_or_default();
         v.push(input);
         self.volume_mounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides information about the mounting of a volume in a container. </p>
+    /// <p>Provides information about the mounting of a volume in a container.</p>
     pub fn set_volume_mounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>) -> Self {
         self.volume_mounts = input;
         self
     }
-    /// <p>Provides information about the mounting of a volume in a container. </p>
+    /// <p>Provides information about the mounting of a volume in a container.</p>
     pub fn get_volume_mounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>> {
         &self.volume_mounts
     }
-    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
+    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn privileged(mut self, input: bool) -> Self {
         self.privileged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
+    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged = input;
         self
     }
-    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
+    /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn get_privileged(&self) -> &::std::option::Option<bool> {
         &self.privileged
     }

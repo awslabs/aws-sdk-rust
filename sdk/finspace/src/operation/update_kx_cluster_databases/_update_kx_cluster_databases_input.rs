@@ -9,9 +9,9 @@ pub struct UpdateKxClusterDatabasesInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p> The structure of databases mounted on the cluster.</p>
+    /// <p>The structure of databases mounted on the cluster.</p>
     pub databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
-    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::KxDeploymentConfiguration>,
 }
 impl UpdateKxClusterDatabasesInput {
@@ -27,13 +27,13 @@ impl UpdateKxClusterDatabasesInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p> The structure of databases mounted on the cluster.</p>
+    /// <p>The structure of databases mounted on the cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.databases.is_none()`.
     pub fn databases(&self) -> &[crate::types::KxDatabaseConfiguration] {
         self.databases.as_deref().unwrap_or_default()
     }
-    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::KxDeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
@@ -104,33 +104,33 @@ impl UpdateKxClusterDatabasesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_databases`](Self::set_databases).
     ///
-    /// <p> The structure of databases mounted on the cluster.</p>
+    /// <p>The structure of databases mounted on the cluster.</p>
     pub fn databases(mut self, input: crate::types::KxDatabaseConfiguration) -> Self {
         let mut v = self.databases.unwrap_or_default();
         v.push(input);
         self.databases = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The structure of databases mounted on the cluster.</p>
+    /// <p>The structure of databases mounted on the cluster.</p>
     pub fn set_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>) -> Self {
         self.databases = input;
         self
     }
-    /// <p> The structure of databases mounted on the cluster.</p>
+    /// <p>The structure of databases mounted on the cluster.</p>
     pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
         &self.databases
     }
-    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub fn deployment_configuration(mut self, input: crate::types::KxDeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxDeploymentConfiguration>) -> Self {
         self.deployment_configuration = input;
         self
     }
-    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    /// <p>The configuration that allows you to choose how you want to update the databases on a cluster.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxDeploymentConfiguration> {
         &self.deployment_configuration
     }

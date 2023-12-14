@@ -4,7 +4,7 @@
 /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
 /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
 /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>. </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HookConfiguration {

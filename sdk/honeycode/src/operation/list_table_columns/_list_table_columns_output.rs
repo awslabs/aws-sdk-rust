@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTableColumnsOutput {
-    /// <p> The list of columns in the table. </p>
+    /// <p>The list of columns in the table.</p>
     pub table_columns: ::std::vec::Vec<crate::types::TableColumn>,
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub workbook_cursor: i64,
     _request_id: Option<String>,
 }
 impl ListTableColumnsOutput {
-    /// <p> The list of columns in the table. </p>
+    /// <p>The list of columns in the table.</p>
     pub fn table_columns(&self) -> &[crate::types::TableColumn] {
         use std::ops::Deref;
         self.table_columns.deref()
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn workbook_cursor(&self) -> i64 {
         self.workbook_cursor
     }
@@ -52,47 +52,47 @@ impl ListTableColumnsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_table_columns`](Self::set_table_columns).
     ///
-    /// <p> The list of columns in the table. </p>
+    /// <p>The list of columns in the table.</p>
     pub fn table_columns(mut self, input: crate::types::TableColumn) -> Self {
         let mut v = self.table_columns.unwrap_or_default();
         v.push(input);
         self.table_columns = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of columns in the table. </p>
+    /// <p>The list of columns in the table.</p>
     pub fn set_table_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>>) -> Self {
         self.table_columns = input;
         self
     }
-    /// <p> The list of columns in the table. </p>
+    /// <p>The list of columns in the table.</p>
     pub fn get_table_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableColumn>> {
         &self.table_columns
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    /// <p>Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn set_workbook_cursor(mut self, input: ::std::option::Option<i64>) -> Self {
         self.workbook_cursor = input;
         self
     }
-    /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    /// <p>Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential.</p>
     pub fn get_workbook_cursor(&self) -> &::std::option::Option<i64> {
         &self.workbook_cursor
     }

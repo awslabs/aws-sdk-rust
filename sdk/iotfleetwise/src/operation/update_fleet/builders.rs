@@ -22,7 +22,7 @@ impl UpdateFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFleet`.
 ///
-/// <p> Updates the description of an existing fleet. </p> <note>
+/// <p>Updates the description of an existing fleet.</p> <note>
 /// <p>If the fleet is successfully updated, Amazon Web Services IoT FleetWise sends back an HTTP 200 response with an empty HTTP body.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,31 +110,31 @@ impl UpdateFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p> The ID of the fleet to update. </p>
+    /// <p>The ID of the fleet to update.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> An updated description of the fleet. </p>
+    /// <p>An updated description of the fleet.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

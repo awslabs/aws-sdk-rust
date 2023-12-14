@@ -6,7 +6,7 @@ pub struct RebootDbClusterInput {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -14,7 +14,7 @@ impl RebootDbClusterInput {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
@@ -37,7 +37,7 @@ impl RebootDbClusterInputBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -47,7 +47,7 @@ impl RebootDbClusterInputBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
@@ -56,7 +56,7 @@ impl RebootDbClusterInputBuilder {
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier

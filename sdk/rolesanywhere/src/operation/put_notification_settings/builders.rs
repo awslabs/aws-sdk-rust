@@ -24,7 +24,7 @@ impl PutNotificationSettingsInputBuilder {
 ///
 /// <p>Attaches a list of <i>notification settings</i> to a trust anchor.</p>
 /// <p>A notification setting includes information such as event name, threshold, status of the notification setting, and the channel to notify.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:PutNotificationSettings</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:PutNotificationSettings</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutNotificationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeError {
-    /// <p>The type of code error. </p>
+    /// <p>The type of code error.</p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     pub error_type: ::std::option::Option<::std::string::String>,
     /// <p>A user presentable error.</p>
@@ -14,7 +14,7 @@ pub struct CodeError {
     pub location: ::std::option::Option<crate::types::CodeErrorLocation>,
 }
 impl CodeError {
-    /// <p>The type of code error. </p>
+    /// <p>The type of code error.</p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     pub fn error_type(&self) -> ::std::option::Option<&str> {
         self.error_type.as_deref()
@@ -45,19 +45,19 @@ pub struct CodeErrorBuilder {
     pub(crate) location: ::std::option::Option<crate::types::CodeErrorLocation>,
 }
 impl CodeErrorBuilder {
-    /// <p>The type of code error. </p>
+    /// <p>The type of code error.</p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     pub fn error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of code error. </p>
+    /// <p>The type of code error.</p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_type = input;
         self
     }
-    /// <p>The type of code error. </p>
+    /// <p>The type of code error.</p>
     /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
     pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_type

@@ -29,61 +29,61 @@ impl DescribePatchPropertiesInputBuilder {
 /// AMAZON_LINUX
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code></p>
 /// </dd>
 /// <dt>
 /// AMAZON_LINUX_2
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code></p>
 /// </dd>
 /// <dt>
 /// CENTOS
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code></p>
 /// </dd>
 /// <dt>
 /// DEBIAN
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code></p>
 /// </dd>
 /// <dt>
 /// MACOS
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code></p>
 /// </dd>
 /// <dt>
 /// ORACLE_LINUX
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code></p>
 /// </dd>
 /// <dt>
 /// REDHAT_ENTERPRISE_LINUX
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code></p>
 /// </dd>
 /// <dt>
 /// SUSE
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code></p>
 /// </dd>
 /// <dt>
 /// UBUNTU
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code></p>
 /// </dd>
 /// <dt>
 /// WINDOWS
 /// </dt>
 /// <dd>
-/// <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code></p>
 /// </dd>
 /// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -191,17 +191,17 @@ impl DescribePatchPropertiesFluentBuilder {
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         self.inner.get_operating_system()
     }
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     pub fn property(mut self, input: crate::types::PatchProperty) -> Self {
         self.inner = self.inner.property(input);
         self
     }
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     pub fn set_property(mut self, input: ::std::option::Option<crate::types::PatchProperty>) -> Self {
         self.inner = self.inner.set_property(input);
         self
     }
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     pub fn get_property(&self) -> &::std::option::Option<crate::types::PatchProperty> {
         self.inner.get_property()
     }

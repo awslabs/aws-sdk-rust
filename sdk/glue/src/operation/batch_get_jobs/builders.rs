@@ -22,7 +22,7 @@ impl BatchGetJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetJobs`.
 ///
-/// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags. </p>
+/// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

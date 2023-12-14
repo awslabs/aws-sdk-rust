@@ -22,7 +22,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDirectConnectGatewayAssociationProposals`.
 ///
-/// <p>Describes one or more association proposals for connection between a virtual private gateway or transit gateway and a Direct Connect gateway. </p>
+/// <p>Describes one or more association proposals for connection between a virtual private gateway or transit gateway and a Direct Connect gateway.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

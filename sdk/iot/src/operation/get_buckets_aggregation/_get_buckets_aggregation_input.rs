@@ -11,7 +11,7 @@ pub struct GetBucketsAggregationInput {
     pub aggregation_field: ::std::option::Option<::std::string::String>,
     /// <p>The version of the query.</p>
     pub query_version: ::std::option::Option<::std::string::String>,
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     pub buckets_aggregation_type: ::std::option::Option<crate::types::BucketsAggregationType>,
 }
 impl GetBucketsAggregationInput {
@@ -31,7 +31,7 @@ impl GetBucketsAggregationInput {
     pub fn query_version(&self) -> ::std::option::Option<&str> {
         self.query_version.as_deref()
     }
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     pub fn buckets_aggregation_type(&self) -> ::std::option::Option<&crate::types::BucketsAggregationType> {
         self.buckets_aggregation_type.as_ref()
     }
@@ -112,18 +112,18 @@ impl GetBucketsAggregationInputBuilder {
     pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_version
     }
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     /// This field is required.
     pub fn buckets_aggregation_type(mut self, input: crate::types::BucketsAggregationType) -> Self {
         self.buckets_aggregation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     pub fn set_buckets_aggregation_type(mut self, input: ::std::option::Option<crate::types::BucketsAggregationType>) -> Self {
         self.buckets_aggregation_type = input;
         self
     }
-    /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// <p>The basic control of the response shape and the bucket aggregation type to perform.</p>
     pub fn get_buckets_aggregation_type(&self) -> &::std::option::Option<crate::types::BucketsAggregationType> {
         &self.buckets_aggregation_type
     }

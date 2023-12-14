@@ -22,7 +22,7 @@ impl ListMonitoredResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMonitoredResources`.
 ///
-/// <p> Returns the list of all log groups that are being monitored and tagged by DevOps Guru. </p>
+/// <p>Returns the list of all log groups that are being monitored and tagged by DevOps Guru.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListMonitoredResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator {
         crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::new(self.handle, self.inner)
     }
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub fn filters(mut self, input: crate::types::ListMonitoredResourcesFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    /// <p>Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
         self.inner.get_filters()
     }

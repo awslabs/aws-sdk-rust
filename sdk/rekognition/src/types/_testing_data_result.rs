@@ -6,7 +6,7 @@
 pub struct TestingDataResult {
     /// <p>The testing dataset that was supplied for training.</p>
     pub input: ::std::option::Option<crate::types::TestingData>,
-    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
+    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues.</p>
     pub output: ::std::option::Option<crate::types::TestingData>,
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
     pub validation: ::std::option::Option<crate::types::ValidationData>,
@@ -16,7 +16,7 @@ impl TestingDataResult {
     pub fn input(&self) -> ::std::option::Option<&crate::types::TestingData> {
         self.input.as_ref()
     }
-    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
+    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues.</p>
     pub fn output(&self) -> ::std::option::Option<&crate::types::TestingData> {
         self.output.as_ref()
     }
@@ -55,17 +55,17 @@ impl TestingDataResultBuilder {
     pub fn get_input(&self) -> &::std::option::Option<crate::types::TestingData> {
         &self.input
     }
-    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
+    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues.</p>
     pub fn output(mut self, input: crate::types::TestingData) -> Self {
         self.output = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
+    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::TestingData>) -> Self {
         self.output = input;
         self
     }
-    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
+    /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::TestingData> {
         &self.output
     }

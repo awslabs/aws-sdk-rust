@@ -33,9 +33,9 @@ pub struct GetEnvironmentOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The desired capacity of the high availability configuration for the runtime environment.</p>
     pub high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
-    /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    /// <p>Whether applications running in this runtime environment are publicly accessible.</p>
     pub publicly_accessible: bool,
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances.</p>
     pub actual_capacity: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
@@ -120,11 +120,11 @@ impl GetEnvironmentOutput {
     pub fn high_availability_config(&self) -> ::std::option::Option<&crate::types::HighAvailabilityConfig> {
         self.high_availability_config.as_ref()
     }
-    /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    /// <p>Whether applications running in this runtime environment are publicly accessible.</p>
     pub fn publicly_accessible(&self) -> bool {
         self.publicly_accessible
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances.</p>
     pub fn actual_capacity(&self) -> ::std::option::Option<i32> {
         self.actual_capacity
     }
@@ -433,31 +433,31 @@ impl GetEnvironmentOutputBuilder {
     pub fn get_high_availability_config(&self) -> &::std::option::Option<crate::types::HighAvailabilityConfig> {
         &self.high_availability_config
     }
-    /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    /// <p>Whether applications running in this runtime environment are publicly accessible.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    /// <p>Whether applications running in this runtime environment are publicly accessible.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
-    /// <p>Whether applications running in this runtime environment are publicly accessible. </p>
+    /// <p>Whether applications running in this runtime environment are publicly accessible.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances.</p>
     pub fn actual_capacity(mut self, input: i32) -> Self {
         self.actual_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances.</p>
     pub fn set_actual_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.actual_capacity = input;
         self
     }
-    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
+    /// <p>The number of instances included in the runtime environment. A standalone runtime environment has a maximum of one instance. Currently, a high availability runtime environment has a maximum of two instances.</p>
     pub fn get_actual_capacity(&self) -> &::std::option::Option<i32> {
         &self.actual_capacity
     }

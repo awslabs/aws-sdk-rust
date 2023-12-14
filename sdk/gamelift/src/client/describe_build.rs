@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBuild`](crate::operation::describe_build::builders::DescribeBuildFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`build_id(impl Into<String>)`](crate::operation::describe_build::builders::DescribeBuildFluentBuilder::build_id) / [`set_build_id(Option<String>)`](crate::operation::describe_build::builders::DescribeBuildFluentBuilder::set_build_id):<br>required: **true**<br><p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p><br>
+    ///   - [`build_id(impl Into<String>)`](crate::operation::describe_build::builders::DescribeBuildFluentBuilder::build_id) / [`set_build_id(Option<String>)`](crate::operation::describe_build::builders::DescribeBuildFluentBuilder::set_build_id):<br>required: **true**<br><p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p><br>
     /// - On success, responds with [`DescribeBuildOutput`](crate::operation::describe_build::DescribeBuildOutput) with field(s):
     ///   - [`build_value(Option<Build>)`](crate::operation::describe_build::DescribeBuildOutput::build_value): <p>Set of properties describing the requested build.</p>
     /// - On failure, responds with [`SdkError<DescribeBuildError>`](crate::operation::describe_build::DescribeBuildError)

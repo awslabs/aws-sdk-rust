@@ -22,7 +22,7 @@ impl BatchPutMetricsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchPutMetrics`.
 ///
-/// <p>Used to ingest training metrics into SageMaker. These metrics can be visualized in SageMaker Studio and retrieved with the <code>GetMetrics</code> API. </p>
+/// <p>Used to ingest training metrics into SageMaker. These metrics can be visualized in SageMaker Studio and retrieved with the <code>GetMetrics</code> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

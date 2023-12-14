@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingPolicyDescription {
-    /// <p>The status of an automatic scaling policy. </p>
+    /// <p>The status of an automatic scaling policy.</p>
     pub status: ::std::option::Option<crate::types::AutoScalingPolicyStatus>,
     /// <p>The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
     pub constraints: ::std::option::Option<crate::types::ScalingConstraints>,
@@ -12,7 +12,7 @@ pub struct AutoScalingPolicyDescription {
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>>,
 }
 impl AutoScalingPolicyDescription {
-    /// <p>The status of an automatic scaling policy. </p>
+    /// <p>The status of an automatic scaling policy.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AutoScalingPolicyStatus> {
         self.status.as_ref()
     }
@@ -43,17 +43,17 @@ pub struct AutoScalingPolicyDescriptionBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>>,
 }
 impl AutoScalingPolicyDescriptionBuilder {
-    /// <p>The status of an automatic scaling policy. </p>
+    /// <p>The status of an automatic scaling policy.</p>
     pub fn status(mut self, input: crate::types::AutoScalingPolicyStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of an automatic scaling policy. </p>
+    /// <p>The status of an automatic scaling policy.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicyStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of an automatic scaling policy. </p>
+    /// <p>The status of an automatic scaling policy.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoScalingPolicyStatus> {
         &self.status
     }

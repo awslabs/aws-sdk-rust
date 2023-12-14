@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRepositoryPermissionsPolicyInput {
-    /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
     pub repository: ::std::option::Option<::std::string::String>,
-    /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub policy_revision: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRepositoryPermissionsPolicyInput {
-    /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(&self) -> ::std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
-    /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
     pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub fn policy_revision(&self) -> ::std::option::Option<&str> {
         self.policy_revision.as_deref()
     }
@@ -47,61 +47,61 @@ pub struct DeleteRepositoryPermissionsPolicyInputBuilder {
     pub(crate) policy_revision: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRepositoryPermissionsPolicyInputBuilder {
-    /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    /// <p>The name of the domain that contains the repository associated with the resource policy to be deleted.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
     }
-    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
-    /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
     /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
-    /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    /// <p>The name of the repository that is associated with the resource policy to be deleted</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository
     }
-    /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub fn policy_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_revision = input;
         self
     }
-    /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    /// <p>The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.</p>
     pub fn get_policy_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_revision
     }

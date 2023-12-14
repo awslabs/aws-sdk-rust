@@ -13,10 +13,10 @@ pub struct DescribeEnvironmentsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
     pub environment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether to include deleted environments:</p>
-    /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
-    /// <p> <code>false</code>: Do not include deleted environments.</p>
+    /// <p><code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
+    /// <p><code>false</code>: Do not include deleted environments.</p>
     pub include_deleted: ::std::option::Option<bool>,
-    /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    /// <p>If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed.</p>
     pub included_deleted_back_to: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.</p>
@@ -47,12 +47,12 @@ impl DescribeEnvironmentsInput {
         self.environment_names.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to include deleted environments:</p>
-    /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
-    /// <p> <code>false</code>: Do not include deleted environments.</p>
+    /// <p><code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
+    /// <p><code>false</code>: Do not include deleted environments.</p>
     pub fn include_deleted(&self) -> ::std::option::Option<bool> {
         self.include_deleted
     }
-    /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    /// <p>If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed.</p>
     pub fn included_deleted_back_to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.included_deleted_back_to.as_ref()
     }
@@ -157,36 +157,36 @@ impl DescribeEnvironmentsInputBuilder {
         &self.environment_names
     }
     /// <p>Indicates whether to include deleted environments:</p>
-    /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
-    /// <p> <code>false</code>: Do not include deleted environments.</p>
+    /// <p><code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
+    /// <p><code>false</code>: Do not include deleted environments.</p>
     pub fn include_deleted(mut self, input: bool) -> Self {
         self.include_deleted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to include deleted environments:</p>
-    /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
-    /// <p> <code>false</code>: Do not include deleted environments.</p>
+    /// <p><code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
+    /// <p><code>false</code>: Do not include deleted environments.</p>
     pub fn set_include_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deleted = input;
         self
     }
     /// <p>Indicates whether to include deleted environments:</p>
-    /// <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
-    /// <p> <code>false</code>: Do not include deleted environments.</p>
+    /// <p><code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>
+    /// <p><code>false</code>: Do not include deleted environments.</p>
     pub fn get_include_deleted(&self) -> &::std::option::Option<bool> {
         &self.include_deleted
     }
-    /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    /// <p>If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed.</p>
     pub fn included_deleted_back_to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.included_deleted_back_to = ::std::option::Option::Some(input);
         self
     }
-    /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    /// <p>If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed.</p>
     pub fn set_included_deleted_back_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.included_deleted_back_to = input;
         self
     }
-    /// <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    /// <p>If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed.</p>
     pub fn get_included_deleted_back_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.included_deleted_back_to
     }

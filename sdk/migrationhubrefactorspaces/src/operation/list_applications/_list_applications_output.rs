@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
-    /// <p>The list of <code>ApplicationSummary</code> objects. </p>
+    /// <p>The list of <code>ApplicationSummary</code> objects.</p>
     pub application_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
-    /// <p>The list of <code>ApplicationSummary</code> objects. </p>
+    /// <p>The list of <code>ApplicationSummary</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_summary_list.is_none()`.
     pub fn application_summary_list(&self) -> &[crate::types::ApplicationSummary] {
@@ -46,19 +46,19 @@ impl ListApplicationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_summary_list`](Self::set_application_summary_list).
     ///
-    /// <p>The list of <code>ApplicationSummary</code> objects. </p>
+    /// <p>The list of <code>ApplicationSummary</code> objects.</p>
     pub fn application_summary_list(mut self, input: crate::types::ApplicationSummary) -> Self {
         let mut v = self.application_summary_list.unwrap_or_default();
         v.push(input);
         self.application_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of <code>ApplicationSummary</code> objects. </p>
+    /// <p>The list of <code>ApplicationSummary</code> objects.</p>
     pub fn set_application_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>) -> Self {
         self.application_summary_list = input;
         self
     }
-    /// <p>The list of <code>ApplicationSummary</code> objects. </p>
+    /// <p>The list of <code>ApplicationSummary</code> objects.</p>
     pub fn get_application_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
         &self.application_summary_list
     }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressUpdateStreamSummary {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub progress_update_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl ProgressUpdateStreamSummary {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn progress_update_stream_name(&self) -> ::std::option::Option<&str> {
         self.progress_update_stream_name.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct ProgressUpdateStreamSummaryBuilder {
     pub(crate) progress_update_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl ProgressUpdateStreamSummaryBuilder {
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn progress_update_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn set_progress_update_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream_name = input;
         self
     }
-    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn get_progress_update_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.progress_update_stream_name
     }

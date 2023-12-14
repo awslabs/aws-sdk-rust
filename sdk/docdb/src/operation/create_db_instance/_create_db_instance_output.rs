@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbInstanceOutput {
-    /// <p>Detailed information about an instance. </p>
+    /// <p>Detailed information about an instance.</p>
     pub db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
 }
 impl CreateDbInstanceOutput {
-    /// <p>Detailed information about an instance. </p>
+    /// <p>Detailed information about an instance.</p>
     pub fn db_instance(&self) -> ::std::option::Option<&crate::types::DbInstance> {
         self.db_instance.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateDbInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateDbInstanceOutputBuilder {
-    /// <p>Detailed information about an instance. </p>
+    /// <p>Detailed information about an instance.</p>
     pub fn db_instance(mut self, input: crate::types::DbInstance) -> Self {
         self.db_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Detailed information about an instance. </p>
+    /// <p>Detailed information about an instance.</p>
     pub fn set_db_instance(mut self, input: ::std::option::Option<crate::types::DbInstance>) -> Self {
         self.db_instance = input;
         self
     }
-    /// <p>Detailed information about an instance. </p>
+    /// <p>Detailed information about an instance.</p>
     pub fn get_db_instance(&self) -> &::std::option::Option<crate::types::DbInstance> {
         &self.db_instance
     }

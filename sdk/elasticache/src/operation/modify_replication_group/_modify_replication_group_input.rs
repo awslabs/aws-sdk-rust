@@ -13,7 +13,7 @@ pub struct ModifyReplicationGroupInput {
     /// <p>The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set for Redis (cluster mode enabled) replication groups.</p>
     pub snapshotting_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub automatic_failover_enabled: ::std::option::Option<bool>,
     /// <p>A flag to indicate MultiAZ is enabled.</p>
     pub multi_az_enabled: ::std::option::Option<bool>,
@@ -30,58 +30,58 @@ pub struct ModifyReplicationGroupInput {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
-    /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
+    /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub notification_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group to apply to all of the clusters in this replication group. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
     pub notification_topic_status: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
-    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
+    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    /// <p><b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
-    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>Example: <code>05:00-09:00</code></p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>A valid cache node type that you want to scale this replication group to.</p>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li> <p>Must be only printable ASCII characters</p> </li>
-    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
-    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
+    /// <li><p>Must be only printable ASCII characters</p></li>
+    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
-    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub auth_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li> <p>Rotate</p> </li>
-    /// <li> <p>Set</p> </li>
+    /// <li><p>Rotate</p></li>
+    /// <li><p>Set</p></li>
     /// </ul>
-    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub auth_token_update_strategy: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
     /// <p>The ID of the user group you are associating with the replication group.</p>
     pub user_group_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -97,7 +97,7 @@ pub struct ModifyReplicationGroupInput {
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
@@ -120,7 +120,7 @@ impl ModifyReplicationGroupInput {
         self.snapshotting_cluster_id.as_deref()
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn automatic_failover_enabled(&self) -> ::std::option::Option<bool> {
         self.automatic_failover_enabled
     }
@@ -151,20 +151,20 @@ impl ModifyReplicationGroupInput {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
-    /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
+    /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub fn notification_topic_arn(&self) -> ::std::option::Option<&str> {
         self.notification_topic_arn.as_deref()
@@ -174,33 +174,33 @@ impl ModifyReplicationGroupInput {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
     pub fn notification_topic_status(&self) -> ::std::option::Option<&str> {
         self.notification_topic_status.as_deref()
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
-    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
+    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    /// <p><b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
-    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>Example: <code>05:00-09:00</code></p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
     pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
         self.snapshot_window.as_deref()
@@ -211,20 +211,20 @@ impl ModifyReplicationGroupInput {
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li> <p>Must be only printable ASCII characters</p> </li>
-    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
-    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
+    /// <li><p>Must be only printable ASCII characters</p></li>
+    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
-    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn auth_token(&self) -> ::std::option::Option<&str> {
         self.auth_token.as_deref()
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li> <p>Rotate</p> </li>
-    /// <li> <p>Set</p> </li>
+    /// <li><p>Rotate</p></li>
+    /// <li><p>Set</p></li>
     /// </ul>
-    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn auth_token_update_strategy(&self) -> ::std::option::Option<&crate::types::AuthTokenUpdateStrategyType> {
         self.auth_token_update_strategy.as_ref()
     }
@@ -260,7 +260,7 @@ impl ModifyReplicationGroupInput {
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     pub fn transit_encryption_mode(&self) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
     }
@@ -369,19 +369,19 @@ impl ModifyReplicationGroupInputBuilder {
         &self.snapshotting_cluster_id
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn automatic_failover_enabled(mut self, input: bool) -> Self {
         self.automatic_failover_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn set_automatic_failover_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_failover_enabled = input;
         self
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn get_automatic_failover_enabled(&self) -> &::std::option::Option<bool> {
         &self.automatic_failover_enabled
     }
@@ -468,15 +468,15 @@ impl ModifyReplicationGroupInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
@@ -484,15 +484,15 @@ impl ModifyReplicationGroupInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
@@ -500,34 +500,34 @@ impl ModifyReplicationGroupInputBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
+    /// <li><p><code>sun</code></p></li>
+    /// <li><p><code>mon</code></p></li>
+    /// <li><p><code>tue</code></p></li>
+    /// <li><p><code>wed</code></p></li>
+    /// <li><p><code>thu</code></p></li>
+    /// <li><p><code>fri</code></p></li>
+    /// <li><p><code>sat</code></p></li>
     /// </ul>
-    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
-    /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
+    /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub fn notification_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
-    /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
+    /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_topic_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
-    /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
+    /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_topic_arn
@@ -547,109 +547,109 @@ impl ModifyReplicationGroupInputBuilder {
         &self.cache_parameter_group_name
     }
     /// <p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
     pub fn notification_topic_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_topic_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
     pub fn set_notification_topic_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_topic_status = input;
         self
     }
     /// <p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <code>active</code>.</p>
-    /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>inactive</code></p>
     pub fn get_notification_topic_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_topic_status
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
-    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
+    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
-    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
+    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
-    /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
+    /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }
     /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    /// <p><b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    /// <p><b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
     /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    /// <p><b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_limit
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
-    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>Example: <code>05:00-09:00</code></p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
     pub fn snapshot_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
-    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>Example: <code>05:00-09:00</code></p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_window = input;
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
-    /// <p>Example: <code>05:00-09:00</code> </p>
+    /// <p>Example: <code>05:00-09:00</code></p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
     pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_window
@@ -670,62 +670,62 @@ impl ModifyReplicationGroupInputBuilder {
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li> <p>Must be only printable ASCII characters</p> </li>
-    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
-    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
+    /// <li><p>Must be only printable ASCII characters</p></li>
+    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
-    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li> <p>Must be only printable ASCII characters</p> </li>
-    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
-    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
+    /// <li><p>Must be only printable ASCII characters</p></li>
+    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
-    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_token = input;
         self
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li> <p>Must be only printable ASCII characters</p> </li>
-    /// <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>
-    /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
+    /// <li><p>Must be only printable ASCII characters</p></li>
+    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
-    /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_token
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li> <p>Rotate</p> </li>
-    /// <li> <p>Set</p> </li>
+    /// <li><p>Rotate</p></li>
+    /// <li><p>Set</p></li>
     /// </ul>
-    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn auth_token_update_strategy(mut self, input: crate::types::AuthTokenUpdateStrategyType) -> Self {
         self.auth_token_update_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li> <p>Rotate</p> </li>
-    /// <li> <p>Set</p> </li>
+    /// <li><p>Rotate</p></li>
+    /// <li><p>Set</p></li>
     /// </ul>
-    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn set_auth_token_update_strategy(mut self, input: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>) -> Self {
         self.auth_token_update_strategy = input;
         self
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li> <p>Rotate</p> </li>
-    /// <li> <p>Set</p> </li>
+    /// <li><p>Rotate</p></li>
+    /// <li><p>Set</p></li>
     /// </ul>
-    /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
+    /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn get_auth_token_update_strategy(&self) -> &::std::option::Option<crate::types::AuthTokenUpdateStrategyType> {
         &self.auth_token_update_strategy
     }
@@ -836,21 +836,21 @@ impl ModifyReplicationGroupInputBuilder {
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     pub fn transit_encryption_mode(mut self, input: crate::types::TransitEncryptionMode) -> Self {
         self.transit_encryption_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     pub fn set_transit_encryption_mode(mut self, input: ::std::option::Option<crate::types::TransitEncryptionMode>) -> Self {
         self.transit_encryption_mode = input;
         self
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     pub fn get_transit_encryption_mode(&self) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
         &self.transit_encryption_mode
     }

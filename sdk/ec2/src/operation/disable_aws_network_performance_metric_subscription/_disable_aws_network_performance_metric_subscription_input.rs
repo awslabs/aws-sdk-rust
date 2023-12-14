@@ -9,7 +9,7 @@ pub struct DisableAwsNetworkPerformanceMetricSubscriptionInput {
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The metric used for the disabled subscription.</p>
     pub metric: ::std::option::Option<crate::types::MetricType>,
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub statistic: ::std::option::Option<crate::types::StatisticType>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -27,7 +27,7 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionInput {
     pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.metric.as_ref()
     }
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::StatisticType> {
         self.statistic.as_ref()
     }
@@ -98,17 +98,17 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
         &self.metric
     }
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
         self.statistic = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::StatisticType>) -> Self {
         self.statistic = input;
         self
     }
-    /// <p>The statistic used for the disabled subscription. </p>
+    /// <p>The statistic used for the disabled subscription.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
         &self.statistic
     }

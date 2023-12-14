@@ -22,7 +22,7 @@ impl DeleteKxDataviewInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKxDataview`.
 ///
-/// <p> Deletes the specified dataview. Before deleting a dataview, make sure that it is not in use by any cluster. </p>
+/// <p>Deletes the specified dataview. Before deleting a dataview, make sure that it is not in use by any cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKxDataviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteKxDataviewFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview. </p>
+    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview. </p>
+    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview. </p>
+    /// <p>A unique identifier for the kdb environment, from where you want to delete the dataview.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }

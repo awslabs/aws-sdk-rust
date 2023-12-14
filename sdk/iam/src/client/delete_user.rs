@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUser`](crate::operation::delete_user::builders::DeleteUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_name(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_name):<br>required: **true**<br><p>The name of the user to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p><br>
+    ///   - [`user_name(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_name):<br>required: **true**<br><p>The name of the user to delete.</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p><br>
     /// - On success, responds with [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput)
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::operation::delete_user::DeleteUserError)
     pub fn delete_user(&self) -> crate::operation::delete_user::builders::DeleteUserFluentBuilder {

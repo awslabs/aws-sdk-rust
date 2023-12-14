@@ -20,14 +20,14 @@ pub struct UserImportJobType {
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Created</code> - The job was created but not started.</p> </li>
-    /// <li> <p> <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p> </li>
-    /// <li> <p> <code>InProgress</code> - The job has started, and users are being imported.</p> </li>
-    /// <li> <p> <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p> </li>
-    /// <li> <p> <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p> </li>
-    /// <li> <p> <code>Succeeded</code> - The job has completed successfully.</p> </li>
-    /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
-    /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
+    /// <li><p><code>Created</code> - The job was created but not started.</p></li>
+    /// <li><p><code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p></li>
+    /// <li><p><code>InProgress</code> - The job has started, and users are being imported.</p></li>
+    /// <li><p><code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p></li>
+    /// <li><p><code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p></li>
+    /// <li><p><code>Succeeded</code> - The job has completed successfully.</p></li>
+    /// <li><p><code>Failed</code> - The job has stopped due to an error.</p></li>
+    /// <li><p><code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::UserImportJobStatusType>,
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
@@ -72,14 +72,14 @@ impl UserImportJobType {
     }
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Created</code> - The job was created but not started.</p> </li>
-    /// <li> <p> <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p> </li>
-    /// <li> <p> <code>InProgress</code> - The job has started, and users are being imported.</p> </li>
-    /// <li> <p> <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p> </li>
-    /// <li> <p> <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p> </li>
-    /// <li> <p> <code>Succeeded</code> - The job has completed successfully.</p> </li>
-    /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
-    /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
+    /// <li><p><code>Created</code> - The job was created but not started.</p></li>
+    /// <li><p><code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p></li>
+    /// <li><p><code>InProgress</code> - The job has started, and users are being imported.</p></li>
+    /// <li><p><code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p></li>
+    /// <li><p><code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p></li>
+    /// <li><p><code>Succeeded</code> - The job has completed successfully.</p></li>
+    /// <li><p><code>Failed</code> - The job has stopped due to an error.</p></li>
+    /// <li><p><code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::UserImportJobStatusType> {
         self.status.as_ref()
@@ -231,14 +231,14 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Created</code> - The job was created but not started.</p> </li>
-    /// <li> <p> <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p> </li>
-    /// <li> <p> <code>InProgress</code> - The job has started, and users are being imported.</p> </li>
-    /// <li> <p> <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p> </li>
-    /// <li> <p> <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p> </li>
-    /// <li> <p> <code>Succeeded</code> - The job has completed successfully.</p> </li>
-    /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
-    /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
+    /// <li><p><code>Created</code> - The job was created but not started.</p></li>
+    /// <li><p><code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p></li>
+    /// <li><p><code>InProgress</code> - The job has started, and users are being imported.</p></li>
+    /// <li><p><code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p></li>
+    /// <li><p><code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p></li>
+    /// <li><p><code>Succeeded</code> - The job has completed successfully.</p></li>
+    /// <li><p><code>Failed</code> - The job has stopped due to an error.</p></li>
+    /// <li><p><code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::UserImportJobStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -246,14 +246,14 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Created</code> - The job was created but not started.</p> </li>
-    /// <li> <p> <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p> </li>
-    /// <li> <p> <code>InProgress</code> - The job has started, and users are being imported.</p> </li>
-    /// <li> <p> <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p> </li>
-    /// <li> <p> <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p> </li>
-    /// <li> <p> <code>Succeeded</code> - The job has completed successfully.</p> </li>
-    /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
-    /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
+    /// <li><p><code>Created</code> - The job was created but not started.</p></li>
+    /// <li><p><code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p></li>
+    /// <li><p><code>InProgress</code> - The job has started, and users are being imported.</p></li>
+    /// <li><p><code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p></li>
+    /// <li><p><code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p></li>
+    /// <li><p><code>Succeeded</code> - The job has completed successfully.</p></li>
+    /// <li><p><code>Failed</code> - The job has stopped due to an error.</p></li>
+    /// <li><p><code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserImportJobStatusType>) -> Self {
         self.status = input;
@@ -261,14 +261,14 @@ impl UserImportJobTypeBuilder {
     }
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
-    /// <li> <p> <code>Created</code> - The job was created but not started.</p> </li>
-    /// <li> <p> <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p> </li>
-    /// <li> <p> <code>InProgress</code> - The job has started, and users are being imported.</p> </li>
-    /// <li> <p> <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p> </li>
-    /// <li> <p> <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p> </li>
-    /// <li> <p> <code>Succeeded</code> - The job has completed successfully.</p> </li>
-    /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
-    /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
+    /// <li><p><code>Created</code> - The job was created but not started.</p></li>
+    /// <li><p><code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p></li>
+    /// <li><p><code>InProgress</code> - The job has started, and users are being imported.</p></li>
+    /// <li><p><code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p></li>
+    /// <li><p><code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p></li>
+    /// <li><p><code>Succeeded</code> - The job has completed successfully.</p></li>
+    /// <li><p><code>Failed</code> - The job has stopped due to an error.</p></li>
+    /// <li><p><code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UserImportJobStatusType> {
         &self.status

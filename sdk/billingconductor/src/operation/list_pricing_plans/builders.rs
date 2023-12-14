@@ -22,7 +22,7 @@ impl ListPricingPlansInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPricingPlans`.
 ///
-/// <p>A paginated call to get pricing plans for the given billing period. If you don't provide a billing period, the current billing period is used. </p>
+/// <p>A paginated call to get pricing plans for the given billing period. If you don't provide a billing period, the current billing period is used.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPricingPlansFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListPricingPlansFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_pricing_plans::paginator::ListPricingPlansPaginator {
         crate::operation::list_pricing_plans::paginator::ListPricingPlansPaginator::new(self.handle, self.inner)
     }
-    /// <p>The preferred billing period to get pricing plan. </p>
+    /// <p>The preferred billing period to get pricing plan.</p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
-    /// <p>The preferred billing period to get pricing plan. </p>
+    /// <p>The preferred billing period to get pricing plan.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
-    /// <p>The preferred billing period to get pricing plan. </p>
+    /// <p>The preferred billing period to get pricing plan.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_billing_period()
     }
@@ -156,17 +156,17 @@ impl ListPricingPlansFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token that's used on subsequent call to get pricing plans. </p>
+    /// <p>The pagination token that's used on subsequent call to get pricing plans.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

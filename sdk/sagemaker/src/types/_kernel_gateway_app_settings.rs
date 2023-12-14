@@ -10,7 +10,7 @@ pub struct KernelGatewayAppSettings {
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
     pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
     pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -28,7 +28,7 @@ impl KernelGatewayAppSettings {
     pub fn custom_images(&self) -> &[crate::types::CustomImage] {
         self.custom_images.as_deref().unwrap_or_default()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
     ///
@@ -97,7 +97,7 @@ impl KernelGatewayAppSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_lifecycle_config_arns`](Self::set_lifecycle_config_arns).
     ///
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
     pub fn lifecycle_config_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,14 +106,14 @@ impl KernelGatewayAppSettingsBuilder {
         self.lifecycle_config_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
     pub fn set_lifecycle_config_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lifecycle_config_arns = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
     pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

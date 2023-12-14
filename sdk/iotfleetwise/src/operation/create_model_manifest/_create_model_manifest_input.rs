@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelManifestInput {
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     pub nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the vehicle model.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelManifestInput {
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
     pub fn nodes(&self) -> &[::std::string::String] {
         self.nodes.as_deref().unwrap_or_default()
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
         self.signal_catalog_arn.as_deref()
     }
@@ -58,32 +58,32 @@ pub struct CreateModelManifestInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelManifestInputBuilder {
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the vehicle model to create.</p>
+    /// <p>The name of the vehicle model to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> A brief description of the vehicle model. </p>
+    /// <p>A brief description of the vehicle model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -91,34 +91,34 @@ impl CreateModelManifestInputBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
     ///
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     pub fn nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodes.unwrap_or_default();
         v.push(input.into());
         self.nodes = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nodes = input;
         self
     }
-    /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    /// <p>A list of nodes, which are a general abstraction of signals.</p>
     pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.nodes
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     /// This field is required.
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.signal_catalog_arn
     }

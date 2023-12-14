@@ -10,18 +10,18 @@ pub struct RepositoryCatalogDataInput {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>ARM</code> </p> </li>
-    /// <li> <p> <code>ARM 64</code> </p> </li>
-    /// <li> <p> <code>x86</code> </p> </li>
-    /// <li> <p> <code>x86-64</code> </p> </li>
+    /// <li><p><code>ARM</code></p></li>
+    /// <li><p><code>ARM 64</code></p></li>
+    /// <li><p><code>x86</code></p></li>
+    /// <li><p><code>x86-64</code></p></li>
     /// </ul>
     pub architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems appear as badges on the repository and are used as search filters.</p> <note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>Linux</code> </p> </li>
-    /// <li> <p> <code>Windows</code> </p> </li>
+    /// <li><p><code>Linux</code></p></li>
+    /// <li><p><code>Windows</code></p></li>
     /// </ul>
     pub operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The base64-encoded repository logo payload.</p> <note>
@@ -42,10 +42,10 @@ impl RepositoryCatalogDataInput {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>ARM</code> </p> </li>
-    /// <li> <p> <code>ARM 64</code> </p> </li>
-    /// <li> <p> <code>x86</code> </p> </li>
-    /// <li> <p> <code>x86-64</code> </p> </li>
+    /// <li><p><code>ARM</code></p></li>
+    /// <li><p><code>ARM 64</code></p></li>
+    /// <li><p><code>x86</code></p></li>
+    /// <li><p><code>x86-64</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
@@ -56,8 +56,8 @@ impl RepositoryCatalogDataInput {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>Linux</code> </p> </li>
-    /// <li> <p> <code>Windows</code> </p> </li>
+    /// <li><p><code>Linux</code></p></li>
+    /// <li><p><code>Windows</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_systems.is_none()`.
@@ -120,10 +120,10 @@ impl RepositoryCatalogDataInputBuilder {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>ARM</code> </p> </li>
-    /// <li> <p> <code>ARM 64</code> </p> </li>
-    /// <li> <p> <code>x86</code> </p> </li>
-    /// <li> <p> <code>x86-64</code> </p> </li>
+    /// <li><p><code>ARM</code></p></li>
+    /// <li><p><code>ARM 64</code></p></li>
+    /// <li><p><code>x86</code></p></li>
+    /// <li><p><code>x86-64</code></p></li>
     /// </ul>
     pub fn architectures(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.architectures.unwrap_or_default();
@@ -135,10 +135,10 @@ impl RepositoryCatalogDataInputBuilder {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>ARM</code> </p> </li>
-    /// <li> <p> <code>ARM 64</code> </p> </li>
-    /// <li> <p> <code>x86</code> </p> </li>
-    /// <li> <p> <code>x86-64</code> </p> </li>
+    /// <li><p><code>ARM</code></p></li>
+    /// <li><p><code>ARM 64</code></p></li>
+    /// <li><p><code>x86</code></p></li>
+    /// <li><p><code>x86-64</code></p></li>
     /// </ul>
     pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.architectures = input;
@@ -148,10 +148,10 @@ impl RepositoryCatalogDataInputBuilder {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>ARM</code> </p> </li>
-    /// <li> <p> <code>ARM 64</code> </p> </li>
-    /// <li> <p> <code>x86</code> </p> </li>
-    /// <li> <p> <code>x86-64</code> </p> </li>
+    /// <li><p><code>ARM</code></p></li>
+    /// <li><p><code>ARM 64</code></p></li>
+    /// <li><p><code>x86</code></p></li>
+    /// <li><p><code>x86-64</code></p></li>
     /// </ul>
     pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.architectures
@@ -164,8 +164,8 @@ impl RepositoryCatalogDataInputBuilder {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>Linux</code> </p> </li>
-    /// <li> <p> <code>Windows</code> </p> </li>
+    /// <li><p><code>Linux</code></p></li>
+    /// <li><p><code>Windows</code></p></li>
     /// </ul>
     pub fn operating_systems(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operating_systems.unwrap_or_default();
@@ -177,8 +177,8 @@ impl RepositoryCatalogDataInputBuilder {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>Linux</code> </p> </li>
-    /// <li> <p> <code>Windows</code> </p> </li>
+    /// <li><p><code>Linux</code></p></li>
+    /// <li><p><code>Windows</code></p></li>
     /// </ul>
     pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operating_systems = input;
@@ -188,8 +188,8 @@ impl RepositoryCatalogDataInputBuilder {
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
     /// <ul>
-    /// <li> <p> <code>Linux</code> </p> </li>
-    /// <li> <p> <code>Windows</code> </p> </li>
+    /// <li><p><code>Linux</code></p></li>
+    /// <li><p><code>Windows</code></p></li>
     /// </ul>
     pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operating_systems

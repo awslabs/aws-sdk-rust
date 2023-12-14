@@ -6,11 +6,11 @@ pub struct ModifyDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
@@ -19,13 +19,13 @@ impl ModifyDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
     ///
@@ -52,7 +52,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,7 +62,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -71,7 +71,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
@@ -81,7 +81,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
@@ -91,7 +91,7 @@ impl ModifyDbParameterGroupInputBuilder {
         self
     }
     /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
@@ -99,7 +99,7 @@ impl ModifyDbParameterGroupInputBuilder {
         self
     }
     /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {

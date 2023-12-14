@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterCrossAccountAccessRoleInput {
-    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterCrossAccountAccessRoleInput {
-    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct RegisterCrossAccountAccessRoleInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterCrossAccountAccessRoleInputBuilder {
-    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

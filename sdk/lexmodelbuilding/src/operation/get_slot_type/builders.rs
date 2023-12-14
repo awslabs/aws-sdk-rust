@@ -109,31 +109,31 @@ impl GetSlotTypeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The version of the slot type. </p>
+    /// <p>The version of the slot type.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
         self
     }
-    /// <p>The version of the slot type. </p>
+    /// <p>The version of the slot type.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
     }
-    /// <p>The version of the slot type. </p>
+    /// <p>The version of the slot type.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version()
     }

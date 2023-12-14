@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateApplicationComponentConfigInput {
-    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub application_component_id: ::std::option::Option<::std::string::String>,
-    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
     pub inclusion_status: ::std::option::Option<crate::types::InclusionStatus>,
-    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
     pub strategy_option: ::std::option::Option<crate::types::StrategyOption>,
-    /// <p> The list of source code configurations to update for the application component. </p>
+    /// <p>The list of source code configurations to update for the application component.</p>
     pub source_code_list: ::std::option::Option<::std::vec::Vec<crate::types::SourceCode>>,
-    /// <p> Database credentials. </p>
+    /// <p>Database credentials.</p>
     pub secrets_manager_key: ::std::option::Option<::std::string::String>,
     /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
     pub configure_only: ::std::option::Option<bool>,
@@ -19,25 +19,25 @@ pub struct UpdateApplicationComponentConfigInput {
     pub app_type: ::std::option::Option<crate::types::AppType>,
 }
 impl UpdateApplicationComponentConfigInput {
-    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn application_component_id(&self) -> ::std::option::Option<&str> {
         self.application_component_id.as_deref()
     }
-    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
     pub fn inclusion_status(&self) -> ::std::option::Option<&crate::types::InclusionStatus> {
         self.inclusion_status.as_ref()
     }
-    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
     pub fn strategy_option(&self) -> ::std::option::Option<&crate::types::StrategyOption> {
         self.strategy_option.as_ref()
     }
-    /// <p> The list of source code configurations to update for the application component. </p>
+    /// <p>The list of source code configurations to update for the application component.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_code_list.is_none()`.
     pub fn source_code_list(&self) -> &[crate::types::SourceCode] {
         self.source_code_list.as_deref().unwrap_or_default()
     }
-    /// <p> Database credentials. </p>
+    /// <p>Database credentials.</p>
     pub fn secrets_manager_key(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_key.as_deref()
     }
@@ -83,46 +83,46 @@ pub struct UpdateApplicationComponentConfigInputBuilder {
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
 }
 impl UpdateApplicationComponentConfigInputBuilder {
-    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     /// This field is required.
     pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_component_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn set_application_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_component_id = input;
         self
     }
-    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn get_application_component_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_component_id
     }
-    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
     pub fn inclusion_status(mut self, input: crate::types::InclusionStatus) -> Self {
         self.inclusion_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
     pub fn set_inclusion_status(mut self, input: ::std::option::Option<crate::types::InclusionStatus>) -> Self {
         self.inclusion_status = input;
         self
     }
-    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    /// <p>Indicates whether the application component has been included for server recommendation or not.</p>
     pub fn get_inclusion_status(&self) -> &::std::option::Option<crate::types::InclusionStatus> {
         &self.inclusion_status
     }
-    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
     pub fn strategy_option(mut self, input: crate::types::StrategyOption) -> Self {
         self.strategy_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
     pub fn set_strategy_option(mut self, input: ::std::option::Option<crate::types::StrategyOption>) -> Self {
         self.strategy_option = input;
         self
     }
-    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    /// <p>The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response.</p>
     pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
         &self.strategy_option
     }
@@ -130,33 +130,33 @@ impl UpdateApplicationComponentConfigInputBuilder {
     ///
     /// To override the contents of this collection use [`set_source_code_list`](Self::set_source_code_list).
     ///
-    /// <p> The list of source code configurations to update for the application component. </p>
+    /// <p>The list of source code configurations to update for the application component.</p>
     pub fn source_code_list(mut self, input: crate::types::SourceCode) -> Self {
         let mut v = self.source_code_list.unwrap_or_default();
         v.push(input);
         self.source_code_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of source code configurations to update for the application component. </p>
+    /// <p>The list of source code configurations to update for the application component.</p>
     pub fn set_source_code_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceCode>>) -> Self {
         self.source_code_list = input;
         self
     }
-    /// <p> The list of source code configurations to update for the application component. </p>
+    /// <p>The list of source code configurations to update for the application component.</p>
     pub fn get_source_code_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCode>> {
         &self.source_code_list
     }
-    /// <p> Database credentials. </p>
+    /// <p>Database credentials.</p>
     pub fn secrets_manager_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Database credentials. </p>
+    /// <p>Database credentials.</p>
     pub fn set_secrets_manager_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_key = input;
         self
     }
-    /// <p> Database credentials. </p>
+    /// <p>Database credentials.</p>
     pub fn get_secrets_manager_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_key
     }

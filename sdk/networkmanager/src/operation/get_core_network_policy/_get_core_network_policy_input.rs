@@ -7,7 +7,7 @@ pub struct GetCoreNetworkPolicyInput {
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network policy version.</p>
     pub policy_version_id: ::std::option::Option<i32>,
-    /// <p>The alias of a core network policy </p>
+    /// <p>The alias of a core network policy</p>
     pub alias: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
 }
 impl GetCoreNetworkPolicyInput {
@@ -19,7 +19,7 @@ impl GetCoreNetworkPolicyInput {
     pub fn policy_version_id(&self) -> ::std::option::Option<i32> {
         self.policy_version_id
     }
-    /// <p>The alias of a core network policy </p>
+    /// <p>The alias of a core network policy</p>
     pub fn alias(&self) -> ::std::option::Option<&crate::types::CoreNetworkPolicyAlias> {
         self.alias.as_ref()
     }
@@ -69,17 +69,17 @@ impl GetCoreNetworkPolicyInputBuilder {
     pub fn get_policy_version_id(&self) -> &::std::option::Option<i32> {
         &self.policy_version_id
     }
-    /// <p>The alias of a core network policy </p>
+    /// <p>The alias of a core network policy</p>
     pub fn alias(mut self, input: crate::types::CoreNetworkPolicyAlias) -> Self {
         self.alias = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The alias of a core network policy </p>
+    /// <p>The alias of a core network policy</p>
     pub fn set_alias(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>) -> Self {
         self.alias = input;
         self
     }
-    /// <p>The alias of a core network policy </p>
+    /// <p>The alias of a core network policy</p>
     pub fn get_alias(&self) -> &::std::option::Option<crate::types::CoreNetworkPolicyAlias> {
         &self.alias
     }

@@ -22,7 +22,7 @@ impl ExportProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `ExportProject`.
 ///
-/// <p> Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account. </p>
+/// <p>Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ExportProjectFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_id(input.into());
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_id(input);
         self
     }
-    /// <p> Unique project identifier. </p>
+    /// <p>Unique project identifier.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_id()
     }

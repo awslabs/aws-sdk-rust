@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
-    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
-    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
-    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
-    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
-    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
-    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// <li><p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
+    /// <li><p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p></li>
+    /// <li><p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p></li>
+    /// <li><p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
+    /// <li><p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p></li>
+    /// <li><p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
     pub key: ::std::string::String,
     /// <p>The filter values.</p>
@@ -20,14 +20,14 @@ pub struct InstanceInformationStringFilter {
 }
 impl InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
-    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
-    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
-    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
-    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
-    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
-    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// <li><p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
+    /// <li><p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p></li>
+    /// <li><p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p></li>
+    /// <li><p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
+    /// <li><p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p></li>
+    /// <li><p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
     pub fn key(&self) -> &str {
         use std::ops::Deref;
@@ -55,14 +55,14 @@ pub struct InstanceInformationStringFilterBuilder {
 }
 impl InstanceInformationStringFilterBuilder {
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
-    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
-    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
-    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
-    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
-    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
-    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// <li><p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
+    /// <li><p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p></li>
+    /// <li><p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p></li>
+    /// <li><p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
+    /// <li><p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p></li>
+    /// <li><p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -70,28 +70,28 @@ impl InstanceInformationStringFilterBuilder {
         self
     }
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
-    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
-    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
-    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
-    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
-    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
-    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// <li><p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
+    /// <li><p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p></li>
+    /// <li><p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p></li>
+    /// <li><p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
+    /// <li><p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p></li>
+    /// <li><p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The filter key name to describe your managed nodes.</p>
-    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code> </p>
+    /// <p>Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes | "tag-key" | "tag:<code>{keyname}</code></p>
     /// <ul>
-    /// <li> <p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p> </li>
-    /// <li> <p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p> </li>
-    /// <li> <p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p> </li>
-    /// <li> <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p> </li>
-    /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
-    /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
+    /// <li><p>Valid values for the <code>AssociationStatus</code> filter key: Success | Pending | Failed</p></li>
+    /// <li><p>Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost | Inactive (deprecated)</p></li>
+    /// <li><p>Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS</p></li>
+    /// <li><p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
+    /// <li><p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p></li>
+    /// <li><p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

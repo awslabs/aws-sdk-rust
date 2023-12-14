@@ -13,14 +13,14 @@ pub struct ConformancePackStatusDetail {
     /// <p>Indicates deployment status of conformance pack.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li> <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p> </li>
-    /// <li> <p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p> </li>
-    /// <li> <p>CREATE_FAILED when a conformance pack creation failed in your account.</p> </li>
-    /// <li> <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p> </li>
-    /// <li> <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p> </li>
+    /// <li><p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p></li>
+    /// <li><p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p></li>
+    /// <li><p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
+    /// <li><p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
+    /// <li><p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
     /// </ul>
     pub conformance_pack_state: crate::types::ConformancePackState,
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
     pub stack_arn: ::std::string::String,
     /// <p>The reason of conformance pack creation failure.</p>
     pub conformance_pack_status_reason: ::std::option::Option<::std::string::String>,
@@ -48,16 +48,16 @@ impl ConformancePackStatusDetail {
     /// <p>Indicates deployment status of conformance pack.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li> <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p> </li>
-    /// <li> <p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p> </li>
-    /// <li> <p>CREATE_FAILED when a conformance pack creation failed in your account.</p> </li>
-    /// <li> <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p> </li>
-    /// <li> <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p> </li>
+    /// <li><p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p></li>
+    /// <li><p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p></li>
+    /// <li><p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
+    /// <li><p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
+    /// <li><p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
     /// </ul>
     pub fn conformance_pack_state(&self) -> &crate::types::ConformancePackState {
         &self.conformance_pack_state
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
     pub fn stack_arn(&self) -> &str {
         use std::ops::Deref;
         self.stack_arn.deref()
@@ -144,11 +144,11 @@ impl ConformancePackStatusDetailBuilder {
     /// <p>Indicates deployment status of conformance pack.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li> <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p> </li>
-    /// <li> <p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p> </li>
-    /// <li> <p>CREATE_FAILED when a conformance pack creation failed in your account.</p> </li>
-    /// <li> <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p> </li>
-    /// <li> <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p> </li>
+    /// <li><p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p></li>
+    /// <li><p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p></li>
+    /// <li><p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
+    /// <li><p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
+    /// <li><p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
     /// </ul>
     /// This field is required.
     pub fn conformance_pack_state(mut self, input: crate::types::ConformancePackState) -> Self {
@@ -158,11 +158,11 @@ impl ConformancePackStatusDetailBuilder {
     /// <p>Indicates deployment status of conformance pack.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li> <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p> </li>
-    /// <li> <p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p> </li>
-    /// <li> <p>CREATE_FAILED when a conformance pack creation failed in your account.</p> </li>
-    /// <li> <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p> </li>
-    /// <li> <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p> </li>
+    /// <li><p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p></li>
+    /// <li><p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p></li>
+    /// <li><p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
+    /// <li><p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
+    /// <li><p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
     /// </ul>
     pub fn set_conformance_pack_state(mut self, input: ::std::option::Option<crate::types::ConformancePackState>) -> Self {
         self.conformance_pack_state = input;
@@ -171,27 +171,27 @@ impl ConformancePackStatusDetailBuilder {
     /// <p>Indicates deployment status of conformance pack.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
-    /// <li> <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p> </li>
-    /// <li> <p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p> </li>
-    /// <li> <p>CREATE_FAILED when a conformance pack creation failed in your account.</p> </li>
-    /// <li> <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p> </li>
-    /// <li> <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p> </li>
+    /// <li><p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p></li>
+    /// <li><p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p></li>
+    /// <li><p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
+    /// <li><p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
+    /// <li><p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
     /// </ul>
     pub fn get_conformance_pack_state(&self) -> &::std::option::Option<crate::types::ConformancePackState> {
         &self.conformance_pack_state
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
     /// This field is required.
     pub fn stack_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
     pub fn set_stack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
     pub fn get_stack_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_arn
     }

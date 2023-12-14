@@ -69,23 +69,23 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails>>,
     /// <p>The secrets to pass to the container.</p>
     pub secrets: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>>,
-    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
+    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container.</p>
     pub start_timeout: ::std::option::Option<i32>,
     /// <p>The number of seconds to wait before the container is stopped if it doesn't shut down normally on its own.</p>
     pub stop_timeout: ::std::option::Option<i32>,
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
     pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>>,
-    /// <p>A list of ulimits to set in the container. </p>
+    /// <p>A list of ulimits to set in the container.</p>
     pub ulimits: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>>,
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li> <p> <code> <i>user</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>group</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>group</i> </code> </p> </li>
+    /// <li><p><code> <i>user</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Data volumes to mount from another container.</p>
@@ -254,7 +254,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub fn secrets(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails] {
         self.secrets.as_deref().unwrap_or_default()
     }
-    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
+    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container.</p>
     pub fn start_timeout(&self) -> ::std::option::Option<i32> {
         self.start_timeout
     }
@@ -268,7 +268,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
     pub fn system_controls(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails] {
         self.system_controls.as_deref().unwrap_or_default()
     }
-    /// <p>A list of ulimits to set in the container. </p>
+    /// <p>A list of ulimits to set in the container.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ulimits.is_none()`.
     pub fn ulimits(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails] {
@@ -277,12 +277,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li> <p> <code> <i>user</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>group</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>group</i> </code> </p> </li>
+    /// <li><p><code> <i>user</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
@@ -948,17 +948,17 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     pub fn get_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>> {
         &self.secrets
     }
-    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
+    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container.</p>
     pub fn start_timeout(mut self, input: i32) -> Self {
         self.start_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
+    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container.</p>
     pub fn set_start_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_timeout = input;
         self
     }
-    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
+    /// <p>The number of seconds to wait before giving up on resolving dependencies for a container.</p>
     pub fn get_start_timeout(&self) -> &::std::option::Option<i32> {
         &self.start_timeout
     }
@@ -1005,14 +1005,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_ulimits`](Self::set_ulimits).
     ///
-    /// <p>A list of ulimits to set in the container. </p>
+    /// <p>A list of ulimits to set in the container.</p>
     pub fn ulimits(mut self, input: crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails) -> Self {
         let mut v = self.ulimits.unwrap_or_default();
         v.push(input);
         self.ulimits = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ulimits to set in the container. </p>
+    /// <p>A list of ulimits to set in the container.</p>
     pub fn set_ulimits(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>>,
@@ -1020,19 +1020,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
         self.ulimits = input;
         self
     }
-    /// <p>A list of ulimits to set in the container. </p>
+    /// <p>A list of ulimits to set in the container.</p>
     pub fn get_ulimits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails>> {
         &self.ulimits
     }
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li> <p> <code> <i>user</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>group</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>group</i> </code> </p> </li>
+    /// <li><p><code> <i>user</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
@@ -1041,12 +1041,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li> <p> <code> <i>user</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>group</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>group</i> </code> </p> </li>
+    /// <li><p><code> <i>user</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
@@ -1055,12 +1055,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li> <p> <code> <i>user</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>group</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>user</i> </code>:<code> <i>gid</i> </code> </p> </li>
-    /// <li> <p> <code> <i>uid</i> </code>:<code> <i>group</i> </code> </p> </li>
+    /// <li><p><code> <i>user</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user

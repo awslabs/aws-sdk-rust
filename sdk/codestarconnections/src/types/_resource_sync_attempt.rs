@@ -12,10 +12,10 @@ pub struct ResourceSyncAttempt {
     pub started_at: ::aws_smithy_types::DateTime,
     /// <p>The status for a resource sync attempt. The follow are valid statuses:</p>
     /// <ul>
-    /// <li> <p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>SYNCING - Syncing has started and work is being done to reconcile state.</p> </li>
-    /// <li> <p>SYNCED - Syncing has completed successfully.</p> </li>
-    /// <li> <p>SYNC_FAILED - A resource sync attempt has failed.</p> </li>
+    /// <li><p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>SYNCING - Syncing has started and work is being done to reconcile state.</p></li>
+    /// <li><p>SYNCED - Syncing has completed successfully.</p></li>
+    /// <li><p>SYNC_FAILED - A resource sync attempt has failed.</p></li>
     /// </ul>
     pub status: crate::types::ResourceSyncStatus,
     /// <p>The desired state of the resource as defined in the resource's <code>config-file</code> in the linked repository. Git sync attempts to update the resource to this state.</p>
@@ -39,10 +39,10 @@ impl ResourceSyncAttempt {
     }
     /// <p>The status for a resource sync attempt. The follow are valid statuses:</p>
     /// <ul>
-    /// <li> <p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>SYNCING - Syncing has started and work is being done to reconcile state.</p> </li>
-    /// <li> <p>SYNCED - Syncing has completed successfully.</p> </li>
-    /// <li> <p>SYNC_FAILED - A resource sync attempt has failed.</p> </li>
+    /// <li><p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>SYNCING - Syncing has started and work is being done to reconcile state.</p></li>
+    /// <li><p>SYNCED - Syncing has completed successfully.</p></li>
+    /// <li><p>SYNC_FAILED - A resource sync attempt has failed.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::ResourceSyncStatus {
         &self.status
@@ -128,10 +128,10 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>The status for a resource sync attempt. The follow are valid statuses:</p>
     /// <ul>
-    /// <li> <p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>SYNCING - Syncing has started and work is being done to reconcile state.</p> </li>
-    /// <li> <p>SYNCED - Syncing has completed successfully.</p> </li>
-    /// <li> <p>SYNC_FAILED - A resource sync attempt has failed.</p> </li>
+    /// <li><p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>SYNCING - Syncing has started and work is being done to reconcile state.</p></li>
+    /// <li><p>SYNCED - Syncing has completed successfully.</p></li>
+    /// <li><p>SYNC_FAILED - A resource sync attempt has failed.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ResourceSyncStatus) -> Self {
@@ -140,10 +140,10 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>The status for a resource sync attempt. The follow are valid statuses:</p>
     /// <ul>
-    /// <li> <p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>SYNCING - Syncing has started and work is being done to reconcile state.</p> </li>
-    /// <li> <p>SYNCED - Syncing has completed successfully.</p> </li>
-    /// <li> <p>SYNC_FAILED - A resource sync attempt has failed.</p> </li>
+    /// <li><p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>SYNCING - Syncing has started and work is being done to reconcile state.</p></li>
+    /// <li><p>SYNCED - Syncing has completed successfully.</p></li>
+    /// <li><p>SYNC_FAILED - A resource sync attempt has failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceSyncStatus>) -> Self {
         self.status = input;
@@ -151,10 +151,10 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>The status for a resource sync attempt. The follow are valid statuses:</p>
     /// <ul>
-    /// <li> <p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>SYNCING - Syncing has started and work is being done to reconcile state.</p> </li>
-    /// <li> <p>SYNCED - Syncing has completed successfully.</p> </li>
-    /// <li> <p>SYNC_FAILED - A resource sync attempt has failed.</p> </li>
+    /// <li><p>SYNC-INITIATED - A resource sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>SYNCING - Syncing has started and work is being done to reconcile state.</p></li>
+    /// <li><p>SYNCED - Syncing has completed successfully.</p></li>
+    /// <li><p>SYNC_FAILED - A resource sync attempt has failed.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceSyncStatus> {
         &self.status

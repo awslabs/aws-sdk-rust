@@ -24,8 +24,8 @@ impl InviteAccountToOrganizationInputBuilder {
 ///
 /// <p>Sends an invitation to another account to join your organization as a member account. Organizations sends email on your behalf to the email address that is associated with the other account's owner. The invitation is implemented as a <code>Handshake</code> whose details are in the response.</p> <important>
 /// <ul>
-/// <li> <p>You can invite Amazon Web Services accounts only from the same seller as the management account. For example, if your organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-India.html">Consolidated billing in India</a>.</p> </li>
-/// <li> <p>If you receive an exception that indicates that you exceeded your account limits for the organization or that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists after an hour, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p> </li>
+/// <li><p>You can invite Amazon Web Services accounts only from the same seller as the management account. For example, if your organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-India.html">Consolidated billing in India</a>.</p></li>
+/// <li><p>If you receive an exception that indicates that you exceeded your account limits for the organization or that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists after an hour, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p></li>
 /// </ul>
 /// </important>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
@@ -116,31 +116,31 @@ impl InviteAccountToOrganizationFluentBuilder {
         self
     }
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     pub fn target(mut self, input: crate::types::HandshakeParty) -> Self {
         self.inner = self.inner.target(input);
         self
     }
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::HandshakeParty>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
     /// <p>The identifier (ID) of the Amazon Web Services account that you want to invite to join your organization. This is a JSON object that contains the following elements:</p>
-    /// <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code> </p>
+    /// <p><code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code></p>
     /// <p>If you use the CLI, you can submit this as a single string, similar to the following example:</p>
-    /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
+    /// <p><code>--target Id=123456789012,Type=ACCOUNT</code></p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
-    /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+    /// <p><code>--target Id=diego@example.com,Type=EMAIL</code></p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::HandshakeParty> {
         self.inner.get_target()
     }

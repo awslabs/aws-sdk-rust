@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobRunsInput {
-    /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    /// <p>The ID of the virtual cluster for which to list the job run.</p>
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time before which the job runs were submitted.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -19,7 +19,7 @@ pub struct ListJobRunsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListJobRunsInput {
-    /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    /// <p>The ID of the virtual cluster for which to list the job run.</p>
     pub fn virtual_cluster_id(&self) -> ::std::option::Option<&str> {
         self.virtual_cluster_id.as_deref()
     }
@@ -70,18 +70,18 @@ pub struct ListJobRunsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListJobRunsInputBuilder {
-    /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    /// <p>The ID of the virtual cluster for which to list the job run.</p>
     /// This field is required.
     pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    /// <p>The ID of the virtual cluster for which to list the job run.</p>
     pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }
-    /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    /// <p>The ID of the virtual cluster for which to list the job run.</p>
     pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_cluster_id
     }

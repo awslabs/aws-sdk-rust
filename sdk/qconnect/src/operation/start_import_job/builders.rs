@@ -24,7 +24,7 @@ impl StartImportJobInputBuilder {
 ///
 /// <p>Start an asynchronous job to import Amazon Q resources from an uploaded source file. Before calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a> to upload an asset that contains the resource data.</p>
 /// <ul>
-/// <li> <p>For importing Amazon Q quick responses, you need to upload a csv file including the quick responses. For information about how to format the csv file for importing quick responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import quick responses</a>.</p> </li>
+/// <li><p>For importing Amazon Q quick responses, you need to upload a csv file including the quick responses. For information about how to format the csv file for importing quick responses, see <a href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import quick responses</a>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartImportJobFluentBuilder {
@@ -113,7 +113,7 @@ impl StartImportJobFluentBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li> <p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p> </li>
+    /// <li><p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
@@ -121,7 +121,7 @@ impl StartImportJobFluentBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li> <p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p> </li>
+    /// <li><p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
@@ -129,14 +129,14 @@ impl StartImportJobFluentBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li> <p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p> </li>
+    /// <li><p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li> <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p> </li>
+    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub fn import_job_type(mut self, input: crate::types::ImportJobType) -> Self {
         self.inner = self.inner.import_job_type(input);
@@ -144,7 +144,7 @@ impl StartImportJobFluentBuilder {
     }
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li> <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p> </li>
+    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub fn set_import_job_type(mut self, input: ::std::option::Option<crate::types::ImportJobType>) -> Self {
         self.inner = self.inner.set_import_job_type(input);
@@ -152,7 +152,7 @@ impl StartImportJobFluentBuilder {
     }
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li> <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p> </li>
+    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub fn get_import_job_type(&self) -> &::std::option::Option<crate::types::ImportJobType> {
         self.inner.get_import_job_type()

@@ -5,11 +5,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
-    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    /// <p>The ARN of the IAM role for accessing the S3 bucket.</p>
     pub bucket_access_role_arn: ::std::string::String,
 }
 impl S3Config {
-    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    /// <p>The ARN of the IAM role for accessing the S3 bucket.</p>
     pub fn bucket_access_role_arn(&self) -> &str {
         use std::ops::Deref;
         self.bucket_access_role_arn.deref()
@@ -29,18 +29,18 @@ pub struct S3ConfigBuilder {
     pub(crate) bucket_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigBuilder {
-    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    /// <p>The ARN of the IAM role for accessing the S3 bucket.</p>
     /// This field is required.
     pub fn bucket_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    /// <p>The ARN of the IAM role for accessing the S3 bucket.</p>
     pub fn set_bucket_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_access_role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
+    /// <p>The ARN of the IAM role for accessing the S3 bucket.</p>
     pub fn get_bucket_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_access_role_arn
     }

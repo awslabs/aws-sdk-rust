@@ -22,7 +22,7 @@ impl ListTagsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN). </p>
+/// <p>Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

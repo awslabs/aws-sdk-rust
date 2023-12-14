@@ -5,7 +5,7 @@
 pub struct DescribeImagePermissionsOutput {
     /// <p>The name of the private image.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The permissions for a private image that you own. </p>
+    /// <p>The permissions for a private image that you own.</p>
     pub shared_image_permissions_list: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl DescribeImagePermissionsOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The permissions for a private image that you own. </p>
+    /// <p>The permissions for a private image that you own.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_image_permissions_list.is_none()`.
     pub fn shared_image_permissions_list(&self) -> &[crate::types::SharedImagePermissions] {
@@ -67,19 +67,19 @@ impl DescribeImagePermissionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_shared_image_permissions_list`](Self::set_shared_image_permissions_list).
     ///
-    /// <p>The permissions for a private image that you own. </p>
+    /// <p>The permissions for a private image that you own.</p>
     pub fn shared_image_permissions_list(mut self, input: crate::types::SharedImagePermissions) -> Self {
         let mut v = self.shared_image_permissions_list.unwrap_or_default();
         v.push(input);
         self.shared_image_permissions_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The permissions for a private image that you own. </p>
+    /// <p>The permissions for a private image that you own.</p>
     pub fn set_shared_image_permissions_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>) -> Self {
         self.shared_image_permissions_list = input;
         self
     }
-    /// <p>The permissions for a private image that you own. </p>
+    /// <p>The permissions for a private image that you own.</p>
     pub fn get_shared_image_permissions_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>> {
         &self.shared_image_permissions_list
     }

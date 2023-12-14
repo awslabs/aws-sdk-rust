@@ -22,7 +22,7 @@ impl GetListElementsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetListElements`.
 ///
-/// <p> Gets all the elements in the specified list. </p>
+/// <p>Gets all the elements in the specified list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetListElementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl GetListElementsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_list_elements::paginator::GetListElementsPaginator {
         crate::operation::get_list_elements::paginator::GetListElementsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The name of the list. </p>
+    /// <p>The name of the list.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The name of the list. </p>
+    /// <p>The name of the list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The name of the list. </p>
+    /// <p>The name of the list.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> The next token for the subsequent request. </p>
+    /// <p>The next token for the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The next token for the subsequent request. </p>
+    /// <p>The next token for the subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The next token for the subsequent request. </p>
+    /// <p>The next token for the subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of objects to return for the request. </p>
+    /// <p>The maximum number of objects to return for the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of objects to return for the request. </p>
+    /// <p>The maximum number of objects to return for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of objects to return for the request. </p>
+    /// <p>The maximum number of objects to return for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

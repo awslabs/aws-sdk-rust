@@ -9,7 +9,7 @@ pub struct StartDocumentTextDetectionInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub job_tag: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub notification_channel: ::std::option::Option<crate::types::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
@@ -29,7 +29,7 @@ impl StartDocumentTextDetectionInput {
     pub fn job_tag(&self) -> ::std::option::Option<&str> {
         self.job_tag.as_deref()
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
@@ -104,17 +104,17 @@ impl StartDocumentTextDetectionInputBuilder {
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_tag
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.notification_channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
-    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.notification_channel
     }

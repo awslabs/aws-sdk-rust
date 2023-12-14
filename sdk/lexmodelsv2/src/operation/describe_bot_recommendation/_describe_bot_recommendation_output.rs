@@ -9,7 +9,7 @@ pub struct DescribeBotRecommendationOutput {
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale of the bot recommendation to describe.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
     /// <p>The identifier of the bot recommendation being described.</p>
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl DescribeBotRecommendationOutput {
     pub fn locale_id(&self) -> ::std::option::Option<&str> {
         self.locale_id.as_deref()
     }
-    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn bot_recommendation_status(&self) -> ::std::option::Option<&crate::types::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
@@ -147,17 +147,17 @@ impl DescribeBotRecommendationOutputBuilder {
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
-    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn bot_recommendation_status(mut self, input: crate::types::BotRecommendationStatus) -> Self {
         self.bot_recommendation_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn set_bot_recommendation_status(mut self, input: ::std::option::Option<crate::types::BotRecommendationStatus>) -> Self {
         self.bot_recommendation_status = input;
         self
     }
-    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn get_bot_recommendation_status(&self) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
         &self.bot_recommendation_status
     }

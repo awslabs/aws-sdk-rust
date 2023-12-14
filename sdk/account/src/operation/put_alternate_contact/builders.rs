@@ -139,17 +139,17 @@ impl PutAlternateContactFluentBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_title()
     }
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
-    /// <p>Specifies an email address for the alternate contact. </p>
+    /// <p>Specifies an email address for the alternate contact.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_address()
     }

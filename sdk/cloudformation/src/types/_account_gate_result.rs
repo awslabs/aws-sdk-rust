@@ -8,14 +8,14 @@
 pub struct AccountGateResult {
     /// <p>The status of the account gate function.</p>
     /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p> </li>
-    /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
+    /// <li><p><code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p></li>
+    /// <li><p><code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p></li>
+    /// <li><p><code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
     /// <ul>
-    /// <li> <p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
-    /// </ul> </li>
+    /// <li><p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p></li>
+    /// </ul></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::AccountGateStatus>,
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
@@ -24,14 +24,14 @@ pub struct AccountGateResult {
 impl AccountGateResult {
     /// <p>The status of the account gate function.</p>
     /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p> </li>
-    /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
+    /// <li><p><code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p></li>
+    /// <li><p><code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p></li>
+    /// <li><p><code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
     /// <ul>
-    /// <li> <p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
-    /// </ul> </li>
+    /// <li><p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p></li>
+    /// </ul></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AccountGateStatus> {
         self.status.as_ref()
@@ -58,14 +58,14 @@ pub struct AccountGateResultBuilder {
 impl AccountGateResultBuilder {
     /// <p>The status of the account gate function.</p>
     /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p> </li>
-    /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
+    /// <li><p><code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p></li>
+    /// <li><p><code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p></li>
+    /// <li><p><code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
     /// <ul>
-    /// <li> <p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
-    /// </ul> </li>
+    /// <li><p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p></li>
+    /// </ul></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AccountGateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -73,14 +73,14 @@ impl AccountGateResultBuilder {
     }
     /// <p>The status of the account gate function.</p>
     /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p> </li>
-    /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
+    /// <li><p><code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p></li>
+    /// <li><p><code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p></li>
+    /// <li><p><code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
     /// <ul>
-    /// <li> <p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
-    /// </ul> </li>
+    /// <li><p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p></li>
+    /// </ul></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccountGateStatus>) -> Self {
         self.status = input;
@@ -88,14 +88,14 @@ impl AccountGateResultBuilder {
     }
     /// <p>The status of the account gate function.</p>
     /// <ul>
-    /// <li> <p> <code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p> </li>
-    /// <li> <p> <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
+    /// <li><p><code>SUCCEEDED</code>: The account gate function has determined that the account and Region passes any requirements for a stack set operation to occur. CloudFormation proceeds with the stack operation in that account and Region.</p></li>
+    /// <li><p><code>FAILED</code>: The account gate function has determined that the account and Region doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels the stack set operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p></li>
+    /// <li><p><code>SKIPPED</code>: CloudFormation has skipped calling the account gate function for this account and Region, for one of the following reasons:</p>
     /// <ul>
-    /// <li> <p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p> </li>
-    /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
-    /// </ul> </li>
+    /// <li><p>An account gate function hasn't been specified for the account and Region. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration account lacks permissions to invoke the function. CloudFormation proceeds with the stack set operation in this account and Region.</p></li>
+    /// <li><p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p></li>
+    /// </ul></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccountGateStatus> {
         &self.status

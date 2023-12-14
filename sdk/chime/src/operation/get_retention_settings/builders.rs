@@ -22,7 +22,7 @@ impl GetRetentionSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRetentionSettings`.
 ///
-/// <p> Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>. </p>
+/// <p>Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRetentionSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

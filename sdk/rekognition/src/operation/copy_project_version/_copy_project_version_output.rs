@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyProjectVersionOutput {
-    /// <p>The ARN of the copied model version in the destination project. </p>
+    /// <p>The ARN of the copied model version in the destination project.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopyProjectVersionOutput {
-    /// <p>The ARN of the copied model version in the destination project. </p>
+    /// <p>The ARN of the copied model version in the destination project.</p>
     pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
         self.project_version_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CopyProjectVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CopyProjectVersionOutputBuilder {
-    /// <p>The ARN of the copied model version in the destination project. </p>
+    /// <p>The ARN of the copied model version in the destination project.</p>
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the copied model version in the destination project. </p>
+    /// <p>The ARN of the copied model version in the destination project.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }
-    /// <p>The ARN of the copied model version in the destination project. </p>
+    /// <p>The ARN of the copied model version in the destination project.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_version_arn
     }

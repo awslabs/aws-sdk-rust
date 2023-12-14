@@ -13,7 +13,7 @@ pub struct Key {
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
     pub key_check_value_algorithm: crate::types::KeyCheckValueAlgorithm,
-    /// <p>Specifies whether the key is enabled. </p>
+    /// <p>Specifies whether the key is enabled.</p>
     pub enabled: bool,
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub exportable: bool,
@@ -52,7 +52,7 @@ impl Key {
     pub fn key_check_value_algorithm(&self) -> &crate::types::KeyCheckValueAlgorithm {
         &self.key_check_value_algorithm
     }
-    /// <p>Specifies whether the key is enabled. </p>
+    /// <p>Specifies whether the key is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -178,18 +178,18 @@ impl KeyBuilder {
     pub fn get_key_check_value_algorithm(&self) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
         &self.key_check_value_algorithm
     }
-    /// <p>Specifies whether the key is enabled. </p>
+    /// <p>Specifies whether the key is enabled.</p>
     /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the key is enabled. </p>
+    /// <p>Specifies whether the key is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Specifies whether the key is enabled. </p>
+    /// <p>Specifies whether the key is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

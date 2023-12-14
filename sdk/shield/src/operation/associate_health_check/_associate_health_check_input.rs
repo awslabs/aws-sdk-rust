@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateHealthCheckInput {
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
     pub protection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
     pub health_check_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateHealthCheckInput {
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
     pub fn protection_id(&self) -> ::std::option::Option<&str> {
         self.protection_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct AssociateHealthCheckInputBuilder {
     pub(crate) health_check_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateHealthCheckInputBuilder {
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
     /// This field is required.
     pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
     pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protection_id = input;
         self
     }
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to.</p>
     pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.protection_id
     }

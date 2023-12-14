@@ -7,10 +7,10 @@ pub struct QueryForecastInput {
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
     pub start_date: ::std::option::Option<::std::string::String>,
-    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
     pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p> <code>{"item_id" : "client_21"}</code> </p>
+    /// <p><code>{"item_id" : "client_21"}</code></p>
     /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
     pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
@@ -25,12 +25,12 @@ impl QueryForecastInput {
     pub fn start_date(&self) -> ::std::option::Option<&str> {
         self.start_date.as_deref()
     }
-    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
     pub fn end_date(&self) -> ::std::option::Option<&str> {
         self.end_date.as_deref()
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p> <code>{"item_id" : "client_21"}</code> </p>
+    /// <p><code>{"item_id" : "client_21"}</code></p>
     /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
     pub fn filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filters.as_ref()
@@ -87,17 +87,17 @@ impl QueryForecastInputBuilder {
     pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_date
     }
-    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
     }
-    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_date
     }
@@ -106,7 +106,7 @@ impl QueryForecastInputBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p> <code>{"item_id" : "client_21"}</code> </p>
+    /// <p><code>{"item_id" : "client_21"}</code></p>
     /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
     pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
@@ -115,14 +115,14 @@ impl QueryForecastInputBuilder {
         self
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p> <code>{"item_id" : "client_21"}</code> </p>
+    /// <p><code>{"item_id" : "client_21"}</code></p>
     /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
-    /// <p> <code>{"item_id" : "client_21"}</code> </p>
+    /// <p><code>{"item_id" : "client_21"}</code></p>
     /// <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filters

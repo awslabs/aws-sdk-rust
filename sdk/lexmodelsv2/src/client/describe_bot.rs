@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBotOutput`](crate::operation::describe_bot::DescribeBotOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::bot_id): <p>The unique identifier of the bot.</p>
     ///   - [`bot_name(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::bot_name): <p>The name of the bot.</p>
-    ///   - [`description(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::description): <p>The description of the bot. </p>
+    ///   - [`description(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::description): <p>The description of the bot.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_bot::DescribeBotOutput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
     ///   - [`data_privacy(Option<DataPrivacy>)`](crate::operation::describe_bot::DescribeBotOutput::data_privacy): <p>Settings for managing data privacy of the bot and its conversations with users.</p>
     ///   - [`idle_session_ttl_in_seconds(Option<i32>)`](crate::operation::describe_bot::DescribeBotOutput::idle_session_ttl_in_seconds): <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>

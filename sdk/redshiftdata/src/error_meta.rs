@@ -11,11 +11,11 @@ pub enum Error {
     DatabaseConnectionException(crate::types::error::DatabaseConnectionException),
     /// <p>The SQL statement encountered an environmental error while running.</p>
     ExecuteStatementException(crate::types::error::ExecuteStatementException),
-    /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
+    /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The Amazon Redshift Data API operation failed due to a missing resource. </p>
+    /// <p>The Amazon Redshift Data API operation failed due to a missing resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
+    /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

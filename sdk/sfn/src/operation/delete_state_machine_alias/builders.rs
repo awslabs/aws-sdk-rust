@@ -24,12 +24,12 @@ impl DeleteStateMachineAliasInputBuilder {
 ///
 /// <p>Deletes a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.</p>
 /// <p>After you delete a state machine alias, you can't use it to start executions. When you delete a state machine alias, Step Functions doesn't delete the state machine versions that alias references.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>CreateStateMachineAlias</code> </p> </li>
-/// <li> <p> <code>DescribeStateMachineAlias</code> </p> </li>
-/// <li> <p> <code>ListStateMachineAliases</code> </p> </li>
-/// <li> <p> <code>UpdateStateMachineAlias</code> </p> </li>
+/// <li><p><code>CreateStateMachineAlias</code></p></li>
+/// <li><p><code>DescribeStateMachineAlias</code></p></li>
+/// <li><p><code>ListStateMachineAliases</code></p></li>
+/// <li><p><code>UpdateStateMachineAlias</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStateMachineAliasFluentBuilder {

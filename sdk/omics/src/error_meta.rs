@@ -9,7 +9,7 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>An unexpected error occurred. Try the request again.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The operation is not supported by Amazon Omics, or the API does not exist. </p>
+    /// <p>The operation is not supported by Amazon Omics, or the API does not exist.</p>
     NotSupportedOperationException(crate::types::error::NotSupportedOperationException),
     /// <p>The ranges specified in the request are not valid.</p>
     RangeNotSatisfiableException(crate::types::error::RangeNotSatisfiableException),

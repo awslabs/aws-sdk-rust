@@ -22,7 +22,7 @@ impl ListReadSetUploadPartsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListReadSetUploadParts`.
 ///
-/// <p> This operation will list all parts in a requested multipart upload for a sequence store. </p>
+/// <p>This operation will list all parts in a requested multipart upload for a sequence store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,87 +114,87 @@ impl ListReadSetUploadPartsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_read_set_upload_parts::paginator::ListReadSetUploadPartsPaginator {
         crate::operation::list_read_set_upload_parts::paginator::ListReadSetUploadPartsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
-    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
-    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sequence_store_id()
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
         self
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_upload_id()
     }
-    /// <p> The source file for the upload part. </p>
+    /// <p>The source file for the upload part.</p>
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.inner = self.inner.part_source(input);
         self
     }
-    /// <p> The source file for the upload part. </p>
+    /// <p>The source file for the upload part.</p>
     pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.inner = self.inner.set_part_source(input);
         self
     }
-    /// <p> The source file for the upload part. </p>
+    /// <p>The source file for the upload part.</p>
     pub fn get_part_source(&self) -> &::std::option::Option<crate::types::ReadSetPartSource> {
         self.inner.get_part_source()
     }
-    /// <p> The maximum number of read set upload parts returned in a page. </p>
+    /// <p>The maximum number of read set upload parts returned in a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of read set upload parts returned in a page. </p>
+    /// <p>The maximum number of read set upload parts returned in a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of read set upload parts returned in a page. </p>
+    /// <p>The maximum number of read set upload parts returned in a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Attributes used to filter for a specific subset of read set part uploads. </p>
+    /// <p>Attributes used to filter for a specific subset of read set part uploads.</p>
     pub fn filter(mut self, input: crate::types::ReadSetUploadPartListFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p> Attributes used to filter for a specific subset of read set part uploads. </p>
+    /// <p>Attributes used to filter for a specific subset of read set part uploads.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReadSetUploadPartListFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p> Attributes used to filter for a specific subset of read set part uploads. </p>
+    /// <p>Attributes used to filter for a specific subset of read set part uploads.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReadSetUploadPartListFilter> {
         self.inner.get_filter()
     }

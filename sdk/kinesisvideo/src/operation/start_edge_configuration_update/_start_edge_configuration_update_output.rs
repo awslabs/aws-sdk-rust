@@ -11,7 +11,7 @@ pub struct StartEdgeConfigurationUpdateOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    /// <p>The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
     pub sync_status: ::std::option::Option<crate::types::SyncStatus>,
     /// <p>A description of the generated failure status.</p>
     pub failed_status_details: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl StartEdgeConfigurationUpdateOutput {
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    /// <p>The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
     pub fn sync_status(&self) -> ::std::option::Option<&crate::types::SyncStatus> {
         self.sync_status.as_ref()
     }
@@ -131,17 +131,17 @@ impl StartEdgeConfigurationUpdateOutputBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
-    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    /// <p>The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
     pub fn sync_status(mut self, input: crate::types::SyncStatus) -> Self {
         self.sync_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    /// <p>The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
     pub fn set_sync_status(mut self, input: ::std::option::Option<crate::types::SyncStatus>) -> Self {
         self.sync_status = input;
         self
     }
-    /// <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
+    /// <p>The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
     pub fn get_sync_status(&self) -> &::std::option::Option<crate::types::SyncStatus> {
         &self.sync_status
     }

@@ -9,7 +9,7 @@ pub struct Metrics {
     pub rmse: ::std::option::Option<f64>,
     /// <p>An array of weighted quantile losses. Quantiles divide a probability distribution into regions of equal probability. The distribution in this case is the loss function.</p>
     pub weighted_quantile_losses: ::std::option::Option<::std::vec::Vec<crate::types::WeightedQuantileLoss>>,
-    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
+    /// <p>Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE).</p>
     pub error_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>>,
     /// <p>The average value of all weighted quantile losses.</p>
     pub average_weighted_quantile_loss: ::std::option::Option<f64>,
@@ -26,7 +26,7 @@ impl Metrics {
     pub fn weighted_quantile_losses(&self) -> &[crate::types::WeightedQuantileLoss] {
         self.weighted_quantile_losses.as_deref().unwrap_or_default()
     }
-    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
+    /// <p>Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_metrics.is_none()`.
     pub fn error_metrics(&self) -> &[crate::types::ErrorMetric] {
@@ -95,19 +95,19 @@ impl MetricsBuilder {
     ///
     /// To override the contents of this collection use [`set_error_metrics`](Self::set_error_metrics).
     ///
-    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
+    /// <p>Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE).</p>
     pub fn error_metrics(mut self, input: crate::types::ErrorMetric) -> Self {
         let mut v = self.error_metrics.unwrap_or_default();
         v.push(input);
         self.error_metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
+    /// <p>Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE).</p>
     pub fn set_error_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>>) -> Self {
         self.error_metrics = input;
         self
     }
-    /// <p> Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE). </p>
+    /// <p>Provides detailed error metrics for each forecast type. Metrics include root-mean square-error (RMSE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and weighted average percentage error (WAPE).</p>
     pub fn get_error_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorMetric>> {
         &self.error_metrics
     }

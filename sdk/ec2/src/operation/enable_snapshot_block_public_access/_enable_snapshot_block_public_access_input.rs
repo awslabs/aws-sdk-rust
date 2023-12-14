@@ -5,10 +5,10 @@
 pub struct EnableSnapshotBlockPublicAccessInput {
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
+    /// <li><p><code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
     /// <p>If you enable block public access for snapshots in <code>block-all-sharing</code> mode, it does not change the permissions for snapshots that are already publicly shared. Instead, it prevents these snapshots from be publicly visible and publicly accessible. Therefore, the attributes for these snapshots still indicate that they are publicly shared, even though they are not publicly available.</p>
-    /// </note> </li>
-    /// <li> <p> <code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p> </li>
+    /// </note></li>
+    /// <li><p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -17,10 +17,10 @@ pub struct EnableSnapshotBlockPublicAccessInput {
 impl EnableSnapshotBlockPublicAccessInput {
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
+    /// <li><p><code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
     /// <p>If you enable block public access for snapshots in <code>block-all-sharing</code> mode, it does not change the permissions for snapshots that are already publicly shared. Instead, it prevents these snapshots from be publicly visible and publicly accessible. Therefore, the attributes for these snapshots still indicate that they are publicly shared, even though they are not publicly available.</p>
-    /// </note> </li>
-    /// <li> <p> <code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p> </li>
+    /// </note></li>
+    /// <li><p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotBlockPublicAccessState> {
         self.state.as_ref()
@@ -47,10 +47,10 @@ pub struct EnableSnapshotBlockPublicAccessInputBuilder {
 impl EnableSnapshotBlockPublicAccessInputBuilder {
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
+    /// <li><p><code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
     /// <p>If you enable block public access for snapshots in <code>block-all-sharing</code> mode, it does not change the permissions for snapshots that are already publicly shared. Instead, it prevents these snapshots from be publicly visible and publicly accessible. Therefore, the attributes for these snapshots still indicate that they are publicly shared, even though they are not publicly available.</p>
-    /// </note> </li>
-    /// <li> <p> <code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p> </li>
+    /// </note></li>
+    /// <li><p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
     /// This field is required.
     pub fn state(mut self, input: crate::types::SnapshotBlockPublicAccessState) -> Self {
@@ -59,10 +59,10 @@ impl EnableSnapshotBlockPublicAccessInputBuilder {
     }
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
+    /// <li><p><code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
     /// <p>If you enable block public access for snapshots in <code>block-all-sharing</code> mode, it does not change the permissions for snapshots that are already publicly shared. Instead, it prevents these snapshots from be publicly visible and publicly accessible. Therefore, the attributes for these snapshots still indicate that they are publicly shared, even though they are not publicly available.</p>
-    /// </note> </li>
-    /// <li> <p> <code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p> </li>
+    /// </note></li>
+    /// <li><p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>) -> Self {
         self.state = input;
@@ -70,10 +70,10 @@ impl EnableSnapshotBlockPublicAccessInputBuilder {
     }
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
+    /// <li><p><code>block-all-sharing</code> - Prevents all public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. Additionally, snapshots that are already publicly shared are treated as private and they are no longer publicly available.</p> <note>
     /// <p>If you enable block public access for snapshots in <code>block-all-sharing</code> mode, it does not change the permissions for snapshots that are already publicly shared. Instead, it prevents these snapshots from be publicly visible and publicly accessible. Therefore, the attributes for these snapshots still indicate that they are publicly shared, even though they are not publicly available.</p>
-    /// </note> </li>
-    /// <li> <p> <code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p> </li>
+    /// </note></li>
+    /// <li><p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotBlockPublicAccessState> {
         &self.state

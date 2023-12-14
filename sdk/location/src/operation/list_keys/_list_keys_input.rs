@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeysInput {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
     pub filter: ::std::option::Option<crate::types::ApiKeyFilter>,
 }
 impl ListKeysInput {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -44,37 +44,37 @@ pub struct ListKeysInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ApiKeyFilter>,
 }
 impl ListKeysInputBuilder {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>An optional limit for the number of resources returned in a single call.</p>
+    /// <p>Default value: <code>100</code></p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

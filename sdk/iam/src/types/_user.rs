@@ -3,9 +3,9 @@
 /// <p>Contains information about an IAM user entity.</p>
 /// <p>This data type is used as a response element in the following operations:</p>
 /// <ul>
-/// <li> <p> <code>CreateUser</code> </p> </li>
-/// <li> <p> <code>GetUser</code> </p> </li>
-/// <li> <p> <code>ListUsers</code> </p> </li>
+/// <li><p><code>CreateUser</code></p></li>
+/// <li><p><code>GetUser</code></p></li>
+/// <li><p><code>ListUsers</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -17,17 +17,17 @@ pub struct User {
     pub user_name: ::std::string::String,
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub user_id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub arn: ::std::string::String,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
     pub create_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li> <p>The user never had a password.</p> </li>
-    /// <li> <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p> </li>
+    /// <li><p>The user never had a password.</p></li>
+    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations. </p>
+    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
     pub password_last_used: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
     pub permissions_boundary: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
@@ -51,7 +51,7 @@ impl User {
         use std::ops::Deref;
         self.user_id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -62,11 +62,11 @@ impl User {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li> <p>The user never had a password.</p> </li>
-    /// <li> <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p> </li>
+    /// <li><p>The user never had a password.</p></li>
+    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations. </p>
+    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
     pub fn password_last_used(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.password_last_used.as_ref()
     }
@@ -150,18 +150,18 @@ impl UserBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -182,33 +182,33 @@ impl UserBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li> <p>The user never had a password.</p> </li>
-    /// <li> <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p> </li>
+    /// <li><p>The user never had a password.</p></li>
+    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations. </p>
+    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
     pub fn password_last_used(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.password_last_used = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li> <p>The user never had a password.</p> </li>
-    /// <li> <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p> </li>
+    /// <li><p>The user never had a password.</p></li>
+    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations. </p>
+    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
     pub fn set_password_last_used(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.password_last_used = input;
         self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is returned in this field. If the field is null (no value), then it indicates that they never signed in with a password. This can be because:</p>
     /// <ul>
-    /// <li> <p>The user never had a password.</p> </li>
-    /// <li> <p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p> </li>
+    /// <li><p>The user never had a password.</p></li>
+    /// <li><p>A password exists but has not been used since IAM started tracking this information on October 20, 2014.</p></li>
     /// </ul>
     /// <p>A null value does not mean that the user <i>never</i> had a password. Also, if the user does not currently have a password but had one in the past, then this field contains the date and time the most recent password was used.</p>
-    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations. </p>
+    /// <p>This value is returned only in the <code>GetUser</code> and <code>ListUsers</code> operations.</p>
     pub fn get_password_last_used(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.password_last_used
     }

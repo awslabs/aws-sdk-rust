@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeThemePermissionsOutput`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput) with field(s):
     ///   - [`theme_id(Option<String>)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::theme_id): <p>The ID for the theme.</p>
     ///   - [`theme_arn(Option<String>)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::theme_arn): <p>The Amazon Resource Name (ARN) of the theme.</p>
-    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::permissions): <p>A list of resource permissions set on the theme. </p>
+    ///   - [`permissions(Option<Vec::<ResourcePermission>>)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::permissions): <p>A list of resource permissions set on the theme.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeThemePermissionsError>`](crate::operation::describe_theme_permissions::DescribeThemePermissionsError)

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImplicitDeny {
-    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource.</p>
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
 }
 impl ImplicitDeny {
-    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
     pub fn policies(&self) -> &[crate::types::Policy] {
@@ -33,19 +33,19 @@ impl ImplicitDenyBuilder {
     ///
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
-    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource.</p>
     pub fn policies(mut self, input: crate::types::Policy) -> Self {
         let mut v = self.policies.unwrap_or_default();
         v.push(input);
         self.policies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource.</p>
     pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
         self.policies = input;
         self
     }
-    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource. </p>
+    /// <p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource.</p>
     pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
         &self.policies
     }

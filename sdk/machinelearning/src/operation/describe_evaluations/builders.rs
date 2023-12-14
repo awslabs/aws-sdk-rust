@@ -116,13 +116,13 @@ impl DescribeEvaluationsFluentBuilder {
     }
     /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
     /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+    /// <li><p><code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p></li>
+    /// <li><p><code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p></li>
+    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p></li>
+    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p></li>
+    /// <li><p><code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p></li>
+    /// <li><p><code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p></li>
+    /// <li><p><code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p></li>
     /// </ul>
     pub fn filter_variable(mut self, input: crate::types::EvaluationFilterVariable) -> Self {
         self.inner = self.inner.filter_variable(input);
@@ -130,13 +130,13 @@ impl DescribeEvaluationsFluentBuilder {
     }
     /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
     /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+    /// <li><p><code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p></li>
+    /// <li><p><code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p></li>
+    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p></li>
+    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p></li>
+    /// <li><p><code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p></li>
+    /// <li><p><code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p></li>
+    /// <li><p><code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p></li>
     /// </ul>
     pub fn set_filter_variable(mut self, input: ::std::option::Option<crate::types::EvaluationFilterVariable>) -> Self {
         self.inner = self.inner.set_filter_variable(input);
@@ -144,13 +144,13 @@ impl DescribeEvaluationsFluentBuilder {
     }
     /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
     /// <ul>
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>
-    /// <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>
-    /// <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>
+    /// <li><p><code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p></li>
+    /// <li><p><code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p></li>
+    /// <li><p><code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p></li>
+    /// <li><p><code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p></li>
+    /// <li><p><code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p></li>
+    /// <li><p><code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p></li>
+    /// <li><p><code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p></li>
     /// </ul>
     pub fn get_filter_variable(&self) -> &::std::option::Option<crate::types::EvaluationFilterVariable> {
         self.inner.get_filter_variable()
@@ -197,17 +197,17 @@ impl DescribeEvaluationsFluentBuilder {
     pub fn get_lt(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lt()
     }
-    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.</p>
     pub fn ge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ge(input.into());
         self
     }
-    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.</p>
     pub fn set_ge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ge(input);
         self
     }
-    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.</p>
     pub fn get_ge(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ge()
     }
@@ -240,41 +240,41 @@ impl DescribeEvaluationsFluentBuilder {
         self.inner.get_ne()
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <li><p>2014-09</p></li>
+    /// <li><p>2014-09-09</p></li>
+    /// <li><p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
         self
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <li><p>2014-09</p></li>
+    /// <li><p>2014-09-09</p></li>
+    /// <li><p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
     }
     /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
-    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>:</p>
     /// <ul>
-    /// <li> <p>2014-09</p> </li>
-    /// <li> <p>2014-09-09</p> </li>
-    /// <li> <p>2014-09-09-Holiday</p> </li>
+    /// <li><p>2014-09</p></li>
+    /// <li><p>2014-09-09</p></li>
+    /// <li><p>2014-09-09-Holiday</p></li>
     /// </ul>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prefix()
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
     /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -283,8 +283,8 @@ impl DescribeEvaluationsFluentBuilder {
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
     /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
@@ -293,8 +293,8 @@ impl DescribeEvaluationsFluentBuilder {
     }
     /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
     /// <ul>
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// <li><p><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p></li>
+    /// <li><p><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p></li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -314,17 +314,17 @@ impl DescribeEvaluationsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
+    /// <p>The maximum number of <code>Evaluation</code> to include in the result.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
+    /// <p>The maximum number of <code>Evaluation</code> to include in the result.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
+    /// <p>The maximum number of <code>Evaluation</code> to include in the result.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }

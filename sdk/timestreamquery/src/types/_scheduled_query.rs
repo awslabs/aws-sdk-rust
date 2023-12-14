@@ -10,7 +10,7 @@ pub struct ScheduledQuery {
     pub name: ::std::string::String,
     /// <p>The creation time of the scheduled query.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>State of scheduled query. </p>
+    /// <p>State of scheduled query.</p>
     pub state: crate::types::ScheduledQueryState,
     /// <p>The last time the scheduled query was run.</p>
     pub previous_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -38,7 +38,7 @@ impl ScheduledQuery {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>State of scheduled query. </p>
+    /// <p>State of scheduled query.</p>
     pub fn state(&self) -> &crate::types::ScheduledQueryState {
         &self.state
     }
@@ -129,18 +129,18 @@ impl ScheduledQueryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>State of scheduled query. </p>
+    /// <p>State of scheduled query.</p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>State of scheduled query. </p>
+    /// <p>State of scheduled query.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>State of scheduled query. </p>
+    /// <p>State of scheduled query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }

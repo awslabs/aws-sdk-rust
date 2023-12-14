@@ -110,17 +110,17 @@ impl ListOpenCypherQueriesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn include_waiting(mut self, input: bool) -> Self {
         self.inner = self.inner.include_waiting(input);
         self
     }
-    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn set_include_waiting(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_waiting(input);
         self
     }
-    /// <p> When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
+    /// <p>When set to <code>TRUE</code> and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.</p>
     pub fn get_include_waiting(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_waiting()
     }

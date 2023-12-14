@@ -14,9 +14,9 @@ pub struct OriginAccessControlSummary {
     pub signing_protocol: crate::types::OriginAccessControlSigningProtocols,
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
-    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
-    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// <li><p><code>never</code> – CloudFront doesn't sign any origin requests.</p></li>
+    /// <li><p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
+    /// <li><p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
     /// </ul>
     pub signing_behavior: crate::types::OriginAccessControlSigningBehaviors,
     /// <p>The type of origin that this origin access control is for.</p>
@@ -44,9 +44,9 @@ impl OriginAccessControlSummary {
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
-    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
-    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// <li><p><code>never</code> – CloudFront doesn't sign any origin requests.</p></li>
+    /// <li><p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
+    /// <li><p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
     /// </ul>
     pub fn signing_behavior(&self) -> &crate::types::OriginAccessControlSigningBehaviors {
         &self.signing_behavior
@@ -137,9 +137,9 @@ impl OriginAccessControlSummaryBuilder {
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
-    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
-    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// <li><p><code>never</code> – CloudFront doesn't sign any origin requests.</p></li>
+    /// <li><p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
+    /// <li><p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
     /// </ul>
     /// This field is required.
     pub fn signing_behavior(mut self, input: crate::types::OriginAccessControlSigningBehaviors) -> Self {
@@ -148,9 +148,9 @@ impl OriginAccessControlSummaryBuilder {
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
-    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
-    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// <li><p><code>never</code> – CloudFront doesn't sign any origin requests.</p></li>
+    /// <li><p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
+    /// <li><p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
     /// </ul>
     pub fn set_signing_behavior(mut self, input: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>) -> Self {
         self.signing_behavior = input;
@@ -158,9 +158,9 @@ impl OriginAccessControlSummaryBuilder {
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
-    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
-    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// <li><p><code>never</code> – CloudFront doesn't sign any origin requests.</p></li>
+    /// <li><p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
+    /// <li><p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
     /// </ul>
     pub fn get_signing_behavior(&self) -> &::std::option::Option<crate::types::OriginAccessControlSigningBehaviors> {
         &self.signing_behavior

@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateTestGri
 pub enum CreateTestGridProjectError {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::types::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

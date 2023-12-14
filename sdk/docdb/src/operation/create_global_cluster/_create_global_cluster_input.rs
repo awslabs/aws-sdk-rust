@@ -12,11 +12,11 @@ pub struct CreateGlobalClusterInput {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine version of the global cluster.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>The storage encryption setting for the new global cluster. </p>
+    /// <p>The storage encryption setting for the new global cluster.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
 }
 impl CreateGlobalClusterInput {
@@ -36,7 +36,7 @@ impl CreateGlobalClusterInput {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
@@ -44,7 +44,7 @@ impl CreateGlobalClusterInput {
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The storage encryption setting for the new global cluster. </p>
+    /// <p>The storage encryption setting for the new global cluster.</p>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
@@ -126,17 +126,17 @@ impl CreateGlobalClusterInputBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }
-    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
+    /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
@@ -154,17 +154,17 @@ impl CreateGlobalClusterInputBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>The storage encryption setting for the new global cluster. </p>
+    /// <p>The storage encryption setting for the new global cluster.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage encryption setting for the new global cluster. </p>
+    /// <p>The storage encryption setting for the new global cluster.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
     }
-    /// <p>The storage encryption setting for the new global cluster. </p>
+    /// <p>The storage encryption setting for the new global cluster.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }

@@ -5,7 +5,7 @@
 pub struct ListMediaCapturePipelinesOutput {
     /// <p>The media pipeline objects in the list.</p>
     pub media_capture_pipelines: ::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipelineSummary>>,
-    /// <p>The token used to retrieve the next page of results. </p>
+    /// <p>The token used to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListMediaCapturePipelinesOutput {
     pub fn media_capture_pipelines(&self) -> &[crate::types::MediaCapturePipelineSummary] {
         self.media_capture_pipelines.as_deref().unwrap_or_default()
     }
-    /// <p>The token used to retrieve the next page of results. </p>
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListMediaCapturePipelinesOutputBuilder {
     pub fn get_media_capture_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaCapturePipelineSummary>> {
         &self.media_capture_pipelines
     }
-    /// <p>The token used to retrieve the next page of results. </p>
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token used to retrieve the next page of results. </p>
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token used to retrieve the next page of results. </p>
+    /// <p>The token used to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

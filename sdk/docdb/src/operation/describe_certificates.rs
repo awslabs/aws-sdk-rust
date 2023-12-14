@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeCerti
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeCertificatesError {
-    /// <p> <code>CertificateIdentifier</code> doesn't refer to an existing certificate. </p>
+    /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

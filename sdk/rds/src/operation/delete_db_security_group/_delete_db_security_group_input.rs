@@ -9,10 +9,10 @@ pub struct DeleteDbSecurityGroupInput {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// <li> <p>Must not be "Default"</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li><p>Must not be "Default"</p></li>
     /// </ul>
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -22,10 +22,10 @@ impl DeleteDbSecurityGroupInput {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// <li> <p>Must not be "Default"</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li><p>Must not be "Default"</p></li>
     /// </ul>
     pub fn db_security_group_name(&self) -> ::std::option::Option<&str> {
         self.db_security_group_name.as_deref()
@@ -50,10 +50,10 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// <li> <p>Must not be "Default"</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li><p>Must not be "Default"</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,10 +65,10 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// <li> <p>Must not be "Default"</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li><p>Must not be "Default"</p></li>
     /// </ul>
     pub fn set_db_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_security_group_name = input;
@@ -79,10 +79,10 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// <li> <p>Must not be "Default"</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li><p>Must not be "Default"</p></li>
     /// </ul>
     pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_security_group_name

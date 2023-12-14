@@ -7,18 +7,18 @@
 pub struct VariantProperty {
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
+    /// <li><p><code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DataCaptureConfig</code>: (Not currently supported.)</p></li>
     /// </ul>
     pub variant_property_type: ::std::option::Option<crate::types::VariantPropertyType>,
 }
 impl VariantProperty {
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
+    /// <li><p><code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DataCaptureConfig</code>: (Not currently supported.)</p></li>
     /// </ul>
     pub fn variant_property_type(&self) -> ::std::option::Option<&crate::types::VariantPropertyType> {
         self.variant_property_type.as_ref()
@@ -40,9 +40,9 @@ pub struct VariantPropertyBuilder {
 impl VariantPropertyBuilder {
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
+    /// <li><p><code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DataCaptureConfig</code>: (Not currently supported.)</p></li>
     /// </ul>
     /// This field is required.
     pub fn variant_property_type(mut self, input: crate::types::VariantPropertyType) -> Self {
@@ -51,9 +51,9 @@ impl VariantPropertyBuilder {
     }
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
+    /// <li><p><code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DataCaptureConfig</code>: (Not currently supported.)</p></li>
     /// </ul>
     pub fn set_variant_property_type(mut self, input: ::std::option::Option<crate::types::VariantPropertyType>) -> Self {
         self.variant_property_type = input;
@@ -61,9 +61,9 @@ impl VariantPropertyBuilder {
     }
     /// <p>The type of variant property. The supported values are:</p>
     /// <ul>
-    /// <li> <p> <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
-    /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
+    /// <li><p><code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p></li>
+    /// <li><p><code>DataCaptureConfig</code>: (Not currently supported.)</p></li>
     /// </ul>
     pub fn get_variant_property_type(&self) -> &::std::option::Option<crate::types::VariantPropertyType> {
         &self.variant_property_type

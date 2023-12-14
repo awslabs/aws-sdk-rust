@@ -8,11 +8,11 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
-    /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
-    /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
-    /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
-    /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+    /// <li><p><code>256 (.25 vCPU)</code></p></li>
+    /// <li><p><code>512 (.5 vCPU)</code></p></li>
+    /// <li><p><code>1024 (1 vCPU)</code></p></li>
+    /// <li><p><code>2048 (2 vCPU)</code></p></li>
+    /// <li><p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
@@ -23,20 +23,20 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
-    /// <li> <p> <code>task</code> </p> </li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
+    /// <li><p><code>task</code></p></li>
     /// </ul>
     pub ipc_mode: ::std::option::Option<::std::string::String>,
-    /// <p>The amount (in MiB) of memory used by the task. </p>
+    /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsvpc</code> </p> </li>
-    /// <li> <p> <code>bridge</code> </p> </li>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
+    /// <li><p><code>awsvpc</code></p></li>
+    /// <li><p><code>bridge</code></p></li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
     /// </ul>
     pub network_mode: ::std::option::Option<::std::string::String>,
     /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
@@ -51,7 +51,7 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub task_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data volume definitions for the task.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
-    /// <p> The status of the task definition. </p>
+    /// <p>The status of the task definition.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionDetails {
@@ -63,11 +63,11 @@ impl AwsEcsTaskDefinitionDetails {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
-    /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
-    /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
-    /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
-    /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+    /// <li><p><code>256 (.25 vCPU)</code></p></li>
+    /// <li><p><code>512 (.5 vCPU)</code></p></li>
+    /// <li><p><code>1024 (1 vCPU)</code></p></li>
+    /// <li><p><code>2048 (2 vCPU)</code></p></li>
+    /// <li><p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
@@ -88,24 +88,24 @@ impl AwsEcsTaskDefinitionDetails {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
-    /// <li> <p> <code>task</code> </p> </li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
+    /// <li><p><code>task</code></p></li>
     /// </ul>
     pub fn ipc_mode(&self) -> ::std::option::Option<&str> {
         self.ipc_mode.as_deref()
     }
-    /// <p>The amount (in MiB) of memory used by the task. </p>
+    /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     pub fn memory(&self) -> ::std::option::Option<&str> {
         self.memory.as_deref()
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsvpc</code> </p> </li>
-    /// <li> <p> <code>bridge</code> </p> </li>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
+    /// <li><p><code>awsvpc</code></p></li>
+    /// <li><p><code>bridge</code></p></li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
     /// </ul>
     pub fn network_mode(&self) -> ::std::option::Option<&str> {
         self.network_mode.as_deref()
@@ -140,7 +140,7 @@ impl AwsEcsTaskDefinitionDetails {
     pub fn volumes(&self) -> &[crate::types::AwsEcsTaskDefinitionVolumesDetails] {
         self.volumes.as_deref().unwrap_or_default()
     }
-    /// <p> The status of the task definition. </p>
+    /// <p>The status of the task definition.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -200,11 +200,11 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
-    /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
-    /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
-    /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
-    /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+    /// <li><p><code>256 (.25 vCPU)</code></p></li>
+    /// <li><p><code>512 (.5 vCPU)</code></p></li>
+    /// <li><p><code>1024 (1 vCPU)</code></p></li>
+    /// <li><p><code>2048 (2 vCPU)</code></p></li>
+    /// <li><p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu = ::std::option::Option::Some(input.into());
@@ -212,11 +212,11 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
-    /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
-    /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
-    /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
-    /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+    /// <li><p><code>256 (.25 vCPU)</code></p></li>
+    /// <li><p><code>512 (.5 vCPU)</code></p></li>
+    /// <li><p><code>1024 (1 vCPU)</code></p></li>
+    /// <li><p><code>2048 (2 vCPU)</code></p></li>
+    /// <li><p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
@@ -224,11 +224,11 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>256 (.25 vCPU)</code> </p> </li>
-    /// <li> <p> <code>512 (.5 vCPU)</code> </p> </li>
-    /// <li> <p> <code>1024 (1 vCPU)</code> </p> </li>
-    /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
-    /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
+    /// <li><p><code>256 (.25 vCPU)</code></p></li>
+    /// <li><p><code>512 (.5 vCPU)</code></p></li>
+    /// <li><p><code>1024 (1 vCPU)</code></p></li>
+    /// <li><p><code>2048 (2 vCPU)</code></p></li>
+    /// <li><p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpu
@@ -288,9 +288,9 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
-    /// <li> <p> <code>task</code> </p> </li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
+    /// <li><p><code>task</code></p></li>
     /// </ul>
     pub fn ipc_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipc_mode = ::std::option::Option::Some(input.into());
@@ -298,9 +298,9 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
-    /// <li> <p> <code>task</code> </p> </li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
+    /// <li><p><code>task</code></p></li>
     /// </ul>
     pub fn set_ipc_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipc_mode = input;
@@ -308,36 +308,36 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
-    /// <li> <p> <code>task</code> </p> </li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
+    /// <li><p><code>task</code></p></li>
     /// </ul>
     pub fn get_ipc_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipc_mode
     }
-    /// <p>The amount (in MiB) of memory used by the task. </p>
+    /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The amount (in MiB) of memory used by the task. </p>
+    /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
         self
     }
-    /// <p>The amount (in MiB) of memory used by the task. </p>
+    /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
     pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsvpc</code> </p> </li>
-    /// <li> <p> <code>bridge</code> </p> </li>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
+    /// <li><p><code>awsvpc</code></p></li>
+    /// <li><p><code>bridge</code></p></li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
     /// </ul>
     pub fn network_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_mode = ::std::option::Option::Some(input.into());
@@ -345,10 +345,10 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsvpc</code> </p> </li>
-    /// <li> <p> <code>bridge</code> </p> </li>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
+    /// <li><p><code>awsvpc</code></p></li>
+    /// <li><p><code>bridge</code></p></li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
     /// </ul>
     pub fn set_network_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_mode = input;
@@ -356,10 +356,10 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsvpc</code> </p> </li>
-    /// <li> <p> <code>bridge</code> </p> </li>
-    /// <li> <p> <code>host</code> </p> </li>
-    /// <li> <p> <code>none</code> </p> </li>
+    /// <li><p><code>awsvpc</code></p></li>
+    /// <li><p><code>bridge</code></p></li>
+    /// <li><p><code>host</code></p></li>
+    /// <li><p><code>none</code></p></li>
     /// </ul>
     pub fn get_network_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_mode
@@ -471,17 +471,17 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>> {
         &self.volumes
     }
-    /// <p> The status of the task definition. </p>
+    /// <p>The status of the task definition.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The status of the task definition. </p>
+    /// <p>The status of the task definition.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of the task definition. </p>
+    /// <p>The status of the task definition.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

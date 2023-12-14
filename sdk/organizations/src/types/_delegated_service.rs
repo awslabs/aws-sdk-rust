@@ -6,7 +6,7 @@
 pub struct DelegatedService {
     /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     pub service_principal: ::std::option::Option<::std::string::String>,
-    /// <p>The date that the account became a delegated administrator for this service. </p>
+    /// <p>The date that the account became a delegated administrator for this service.</p>
     pub delegation_enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DelegatedService {
@@ -14,7 +14,7 @@ impl DelegatedService {
     pub fn service_principal(&self) -> ::std::option::Option<&str> {
         self.service_principal.as_deref()
     }
-    /// <p>The date that the account became a delegated administrator for this service. </p>
+    /// <p>The date that the account became a delegated administrator for this service.</p>
     pub fn delegation_enabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.delegation_enabled_date.as_ref()
     }
@@ -48,17 +48,17 @@ impl DelegatedServiceBuilder {
     pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_principal
     }
-    /// <p>The date that the account became a delegated administrator for this service. </p>
+    /// <p>The date that the account became a delegated administrator for this service.</p>
     pub fn delegation_enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.delegation_enabled_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date that the account became a delegated administrator for this service. </p>
+    /// <p>The date that the account became a delegated administrator for this service.</p>
     pub fn set_delegation_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.delegation_enabled_date = input;
         self
     }
-    /// <p>The date that the account became a delegated administrator for this service. </p>
+    /// <p>The date that the account became a delegated administrator for this service.</p>
     pub fn get_delegation_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.delegation_enabled_date
     }

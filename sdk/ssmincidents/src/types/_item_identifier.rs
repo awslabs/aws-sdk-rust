@@ -6,7 +6,7 @@
 pub struct ItemIdentifier {
     /// <p>Details about the related item.</p>
     pub value: ::std::option::Option<crate::types::ItemValue>,
-    /// <p>The type of related item. </p>
+    /// <p>The type of related item.</p>
     pub r#type: crate::types::ItemType,
 }
 impl ItemIdentifier {
@@ -14,7 +14,7 @@ impl ItemIdentifier {
     pub fn value(&self) -> ::std::option::Option<&crate::types::ItemValue> {
         self.value.as_ref()
     }
-    /// <p>The type of related item. </p>
+    /// <p>The type of related item.</p>
     pub fn r#type(&self) -> &crate::types::ItemType {
         &self.r#type
     }
@@ -49,18 +49,18 @@ impl ItemIdentifierBuilder {
     pub fn get_value(&self) -> &::std::option::Option<crate::types::ItemValue> {
         &self.value
     }
-    /// <p>The type of related item. </p>
+    /// <p>The type of related item.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of related item. </p>
+    /// <p>The type of related item.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ItemType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of related item. </p>
+    /// <p>The type of related item.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ItemType> {
         &self.r#type
     }

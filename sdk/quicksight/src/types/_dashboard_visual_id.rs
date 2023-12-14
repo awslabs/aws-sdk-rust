@@ -2,9 +2,9 @@
 
 /// <p>A structure that contains the following elements:</p>
 /// <ul>
-/// <li> <p>The <code>DashboardId</code> of the dashboard that has the visual that you want to embed.</p> </li>
-/// <li> <p>The <code>SheetId</code> of the sheet that has the visual that you want to embed.</p> </li>
-/// <li> <p>The <code>VisualId</code> of the visual that you want to embed.</p> </li>
+/// <li><p>The <code>DashboardId</code> of the dashboard that has the visual that you want to embed.</p></li>
+/// <li><p>The <code>SheetId</code> of the sheet that has the visual that you want to embed.</p></li>
+/// <li><p>The <code>VisualId</code> of the visual that you want to embed.</p></li>
 /// </ul>
 /// <p>The <code>DashboardId</code>, <code>SheetId</code>, and <code>VisualId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.</p>
 #[non_exhaustive]

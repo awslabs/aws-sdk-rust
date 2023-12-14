@@ -23,7 +23,7 @@ impl DescribeRecordInputBuilder {
 /// Fluent builder constructing a request to `DescribeRecord`.
 ///
 /// <p>Gets information about the specified request operation.</p>
-/// <p>Use this operation after calling a request operation (for example, <code>ProvisionProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>UpdateProvisionedProduct</code>). </p> <note>
+/// <p>Use this operation after calling a request operation (for example, <code>ProvisionProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>UpdateProvisionedProduct</code>).</p> <note>
 /// <p>If a provisioned product was transferred to a new owner using <code>UpdateProvisionedProductProperties</code>, the new owner will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to use <code>ListRecordHistory</code> to see the product's history from when he was the owner.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,8 +113,8 @@ impl DescribeRecordFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
@@ -122,8 +122,8 @@ impl DescribeRecordFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -131,8 +131,8 @@ impl DescribeRecordFluentBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <li><p><code>jp</code> - Japanese</p></li>
+    /// <li><p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept_language()

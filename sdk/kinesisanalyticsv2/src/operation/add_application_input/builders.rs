@@ -22,9 +22,9 @@ impl AddApplicationInputInputBuilder {
 }
 /// Fluent builder constructing a request to `AddApplicationInput`.
 ///
-/// <p> Adds a streaming source to your SQL-based Kinesis Data Analytics application. </p>
+/// <p>Adds a streaming source to your SQL-based Kinesis Data Analytics application.</p>
 /// <p>You can add a streaming source when you create an application, or you can use this operation to add a streaming source after you create an application. For more information, see <code>CreateApplication</code>.</p>
-/// <p>Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the <code>DescribeApplication</code> operation to find the current application version. </p>
+/// <p>Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddApplicationInputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

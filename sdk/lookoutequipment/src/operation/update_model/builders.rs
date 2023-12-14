@@ -122,17 +122,17 @@ impl UpdateModelFluentBuilder {
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn labels_input_configuration(mut self, input: crate::types::LabelsInputConfiguration) -> Self {
         self.inner = self.inner.labels_input_configuration(input);
         self
     }
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
         self.inner = self.inner.set_labels_input_configuration(input);
         self
     }
-    /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
+    /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
         self.inner.get_labels_input_configuration()
     }

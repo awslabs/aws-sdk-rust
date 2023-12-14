@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceRecord {
-    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.</p>
     pub face: ::std::option::Option<crate::types::Face>,
     /// <p>Structure containing attributes of the face that the algorithm detected.</p>
     pub face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl FaceRecord {
-    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.</p>
     pub fn face(&self) -> ::std::option::Option<&crate::types::Face> {
         self.face.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct FaceRecordBuilder {
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl FaceRecordBuilder {
-    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.</p>
     pub fn face(mut self, input: crate::types::Face) -> Self {
         self.face = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.</p>
     pub fn set_face(mut self, input: ::std::option::Option<crate::types::Face>) -> Self {
         self.face = input;
         self
     }
-    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.</p>
     pub fn get_face(&self) -> &::std::option::Option<crate::types::Face> {
         &self.face
     }

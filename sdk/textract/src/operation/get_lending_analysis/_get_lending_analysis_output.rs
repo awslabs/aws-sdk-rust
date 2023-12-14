@@ -5,17 +5,17 @@
 pub struct GetLendingAnalysisOutput {
     /// <p>Information about the input document.</p>
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
-    /// <p> The current status of the lending analysis job.</p>
+    /// <p>The current status of the lending analysis job.</p>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
+    /// <p>Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::LendingResult>>,
-    /// <p> A list of warnings that occurred during the lending analysis operation. </p>
+    /// <p>A list of warnings that occurred during the lending analysis operation.</p>
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
+    /// <p>Returns if the lending analysis job could not be completed. Contains explanation for what error occurred.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p> The current model version of the Analyze Lending API.</p>
+    /// <p>The current model version of the Analyze Lending API.</p>
     pub analyze_lending_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -24,7 +24,7 @@ impl GetLendingAnalysisOutput {
     pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
-    /// <p> The current status of the lending analysis job.</p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
@@ -32,23 +32,23 @@ impl GetLendingAnalysisOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
+    /// <p>Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
     pub fn results(&self) -> &[crate::types::LendingResult] {
         self.results.as_deref().unwrap_or_default()
     }
-    /// <p> A list of warnings that occurred during the lending analysis operation. </p>
+    /// <p>A list of warnings that occurred during the lending analysis operation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
     pub fn warnings(&self) -> &[crate::types::Warning] {
         self.warnings.as_deref().unwrap_or_default()
     }
-    /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
+    /// <p>Returns if the lending analysis job could not be completed. Contains explanation for what error occurred.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p> The current model version of the Analyze Lending API.</p>
+    /// <p>The current model version of the Analyze Lending API.</p>
     pub fn analyze_lending_model_version(&self) -> ::std::option::Option<&str> {
         self.analyze_lending_model_version.as_deref()
     }
@@ -93,17 +93,17 @@ impl GetLendingAnalysisOutputBuilder {
     pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
         &self.document_metadata
     }
-    /// <p> The current status of the lending analysis job.</p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The current status of the lending analysis job.</p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
     }
-    /// <p> The current status of the lending analysis job.</p>
+    /// <p>The current status of the lending analysis job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
@@ -125,19 +125,19 @@ impl GetLendingAnalysisOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
     ///
-    /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
+    /// <p>Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
     pub fn results(mut self, input: crate::types::LendingResult) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
         self.results = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
+    /// <p>Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
     pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LendingResult>>) -> Self {
         self.results = input;
         self
     }
-    /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
+    /// <p>Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
     pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingResult>> {
         &self.results
     }
@@ -145,47 +145,47 @@ impl GetLendingAnalysisOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
     ///
-    /// <p> A list of warnings that occurred during the lending analysis operation. </p>
+    /// <p>A list of warnings that occurred during the lending analysis operation.</p>
     pub fn warnings(mut self, input: crate::types::Warning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
         v.push(input);
         self.warnings = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of warnings that occurred during the lending analysis operation. </p>
+    /// <p>A list of warnings that occurred during the lending analysis operation.</p>
     pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>) -> Self {
         self.warnings = input;
         self
     }
-    /// <p> A list of warnings that occurred during the lending analysis operation. </p>
+    /// <p>A list of warnings that occurred during the lending analysis operation.</p>
     pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Warning>> {
         &self.warnings
     }
-    /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
+    /// <p>Returns if the lending analysis job could not be completed. Contains explanation for what error occurred.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
+    /// <p>Returns if the lending analysis job could not be completed. Contains explanation for what error occurred.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
+    /// <p>Returns if the lending analysis job could not be completed. Contains explanation for what error occurred.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p> The current model version of the Analyze Lending API.</p>
+    /// <p>The current model version of the Analyze Lending API.</p>
     pub fn analyze_lending_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyze_lending_model_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The current model version of the Analyze Lending API.</p>
+    /// <p>The current model version of the Analyze Lending API.</p>
     pub fn set_analyze_lending_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyze_lending_model_version = input;
         self
     }
-    /// <p> The current model version of the Analyze Lending API.</p>
+    /// <p>The current model version of the Analyze Lending API.</p>
     pub fn get_analyze_lending_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyze_lending_model_version
     }

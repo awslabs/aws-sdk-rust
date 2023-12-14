@@ -132,24 +132,24 @@ impl PublishFluentBuilder {
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default value: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default value: <code>false</code></p>
     pub fn retain(mut self, input: bool) -> Self {
         self.inner = self.inner.retain(input);
         self
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default value: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default value: <code>false</code></p>
     pub fn set_retain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain(input);
         self
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    /// <p>Default value: <code>false</code> </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code></p>
+    /// <p>Default value: <code>false</code></p>
     pub fn get_retain(&self) -> &::std::option::Option<bool> {
         self.inner.get_retain()
     }
@@ -172,21 +172,21 @@ impl PublishFluentBuilder {
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn user_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_properties(input.into());
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn set_user_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_properties(input);
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
-    /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+    /// <p><code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code></p>
     pub fn get_user_properties(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_properties()
     }

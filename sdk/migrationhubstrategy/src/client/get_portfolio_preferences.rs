@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesFluentBuilder::send) it.
     /// - On success, responds with [`GetPortfolioPreferencesOutput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput) with field(s):
-    ///   - [`prioritize_business_goals(Option<PrioritizeBusinessGoals>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::prioritize_business_goals): <p> The rank of business goals based on priority. </p>
-    ///   - [`application_preferences(Option<ApplicationPreferences>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::application_preferences): <p> The transformation preferences for non-database applications. </p>
-    ///   - [`database_preferences(Option<DatabasePreferences>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::database_preferences): <p> The transformation preferences for database applications. </p>
+    ///   - [`prioritize_business_goals(Option<PrioritizeBusinessGoals>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::prioritize_business_goals): <p>The rank of business goals based on priority.</p>
+    ///   - [`application_preferences(Option<ApplicationPreferences>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::application_preferences): <p>The transformation preferences for non-database applications.</p>
+    ///   - [`database_preferences(Option<DatabasePreferences>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::database_preferences): <p>The transformation preferences for database applications.</p>
     ///   - [`application_mode(Option<ApplicationMode>)`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput::application_mode): <p>The classification for application component types.</p>
     /// - On failure, responds with [`SdkError<GetPortfolioPreferencesError>`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesError)
     pub fn get_portfolio_preferences(&self) -> crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesFluentBuilder {

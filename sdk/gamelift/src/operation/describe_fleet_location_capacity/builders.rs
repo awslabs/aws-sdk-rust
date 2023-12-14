@@ -23,11 +23,11 @@ impl DescribeFleetLocationCapacityInputBuilder {
 /// Fluent builder constructing a request to `DescribeFleetLocationCapacity`.
 ///
 /// <p>Retrieves the resource capacity settings for a fleet location. The data returned includes the current capacity (number of EC2 instances) and some scaling settings for the requested fleet location. Use this operation to retrieve capacity information for a fleet's remote location or home Region (you can also retrieve home Region capacity by calling <code>DescribeFleetCapacity</code>).</p>
-/// <p>To retrieve capacity data, identify a fleet and location. </p>
-/// <p>If successful, a <code>FleetCapacity</code> object is returned for the requested fleet location. </p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a> </p>
+/// <p>To retrieve capacity data, identify a fleet and location.</p>
+/// <p>If successful, a <code>FleetCapacity</code> object is returned for the requested fleet location.</p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift metrics for fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -114,7 +114,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
@@ -123,7 +123,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
@@ -132,7 +132,7 @@ impl SwitchoverGlobalClusterFluentBuilder {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
+    /// <li><p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()

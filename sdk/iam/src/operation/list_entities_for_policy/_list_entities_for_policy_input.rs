@@ -14,7 +14,7 @@ pub struct ListEntitiesForPolicyInput {
     pub path_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
     pub policy_usage_filter: ::std::option::Option<crate::types::PolicyUsageType>,
     /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
     pub marker: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl ListEntitiesForPolicyInput {
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
     pub fn policy_usage_filter(&self) -> ::std::option::Option<&crate::types::PolicyUsageType> {
         self.policy_usage_filter.as_ref()
     }
@@ -127,21 +127,21 @@ impl ListEntitiesForPolicyInputBuilder {
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
     pub fn policy_usage_filter(mut self, input: crate::types::PolicyUsageType) -> Self {
         self.policy_usage_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
     pub fn set_policy_usage_filter(mut self, input: ::std::option::Option<crate::types::PolicyUsageType>) -> Self {
         self.policy_usage_filter = input;
         self
     }
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
-    /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    /// <p>This parameter is optional. If it is not included, all policies are returned.</p>
     pub fn get_policy_usage_filter(&self) -> &::std::option::Option<crate::types::PolicyUsageType> {
         &self.policy_usage_filter
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIceServerConfigInput {
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct GetIceServerConfigInput {
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl GetIceServerConfigInput {
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct GetIceServerConfigInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
 }
 impl GetIceServerConfigInputBuilder {
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
     /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
     }
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_arn
     }

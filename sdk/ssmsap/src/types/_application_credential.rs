@@ -6,9 +6,9 @@
 pub struct ApplicationCredential {
     /// <p>The name of the SAP HANA database.</p>
     pub database_name: ::std::string::String,
-    /// <p>The type of the application credentials. </p>
+    /// <p>The type of the application credentials.</p>
     pub credential_type: crate::types::CredentialType,
-    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
+    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     pub secret_id: ::std::string::String,
 }
 impl ApplicationCredential {
@@ -17,11 +17,11 @@ impl ApplicationCredential {
         use std::ops::Deref;
         self.database_name.deref()
     }
-    /// <p>The type of the application credentials. </p>
+    /// <p>The type of the application credentials.</p>
     pub fn credential_type(&self) -> &crate::types::CredentialType {
         &self.credential_type
     }
-    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
+    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     pub fn secret_id(&self) -> &str {
         use std::ops::Deref;
         self.secret_id.deref()
@@ -67,33 +67,33 @@ impl ApplicationCredentialBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>The type of the application credentials. </p>
+    /// <p>The type of the application credentials.</p>
     /// This field is required.
     pub fn credential_type(mut self, input: crate::types::CredentialType) -> Self {
         self.credential_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the application credentials. </p>
+    /// <p>The type of the application credentials.</p>
     pub fn set_credential_type(mut self, input: ::std::option::Option<crate::types::CredentialType>) -> Self {
         self.credential_type = input;
         self
     }
-    /// <p>The type of the application credentials. </p>
+    /// <p>The type of the application credentials.</p>
     pub fn get_credential_type(&self) -> &::std::option::Option<crate::types::CredentialType> {
         &self.credential_type
     }
-    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
+    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
+    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
     }
-    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
+    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_id
     }

@@ -134,11 +134,11 @@ impl DescribeVpcEndpointConnectionsFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li>
-    /// <li> <p> <code>service-id</code> - The ID of the service.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the endpoint.</p> </li>
+    /// <li><p><code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li><p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
+    /// <li><p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>vpc-endpoint-id</code> - The ID of the endpoint.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -146,11 +146,11 @@ impl DescribeVpcEndpointConnectionsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li>
-    /// <li> <p> <code>service-id</code> - The ID of the service.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the endpoint.</p> </li>
+    /// <li><p><code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li><p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
+    /// <li><p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>vpc-endpoint-id</code> - The ID of the endpoint.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -158,11 +158,11 @@ impl DescribeVpcEndpointConnectionsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li> <p> <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p> </li>
-    /// <li> <p> <code>service-id</code> - The ID of the service.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p> </li>
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the endpoint.</p> </li>
+    /// <li><p><code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
+    /// <li><p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li><p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
+    /// <li><p><code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code> | <code>failed</code>).</p></li>
+    /// <li><p><code>vpc-endpoint-id</code> - The ID of the endpoint.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

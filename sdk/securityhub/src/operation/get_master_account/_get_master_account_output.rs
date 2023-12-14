@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMasterAccountOutput {
-    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
+    /// <p>A list of details about the Security Hub administrator account for the current member account.</p>
     pub master: ::std::option::Option<crate::types::Invitation>,
     _request_id: Option<String>,
 }
 impl GetMasterAccountOutput {
-    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
+    /// <p>A list of details about the Security Hub administrator account for the current member account.</p>
     pub fn master(&self) -> ::std::option::Option<&crate::types::Invitation> {
         self.master.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetMasterAccountOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetMasterAccountOutputBuilder {
-    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
+    /// <p>A list of details about the Security Hub administrator account for the current member account.</p>
     pub fn master(mut self, input: crate::types::Invitation) -> Self {
         self.master = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
+    /// <p>A list of details about the Security Hub administrator account for the current member account.</p>
     pub fn set_master(mut self, input: ::std::option::Option<crate::types::Invitation>) -> Self {
         self.master = input;
         self
     }
-    /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
+    /// <p>A list of details about the Security Hub administrator account for the current member account.</p>
     pub fn get_master(&self) -> &::std::option::Option<crate::types::Invitation> {
         &self.master
     }

@@ -11,9 +11,9 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
+    /// <li><p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <li><p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <li><p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
@@ -24,11 +24,11 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
+    /// <li><p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <li><p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <li><p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <li><p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <li><p><code>standard</code>: 1 - 1024 GiB</p></li>
     /// </ul>
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -49,9 +49,9 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
+    /// <li><p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <li><p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <li><p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
@@ -68,11 +68,11 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
+    /// <li><p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <li><p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <li><p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <li><p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <li><p><code>standard</code>: 1 - 1024 GiB</p></li>
     /// </ul>
     pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
@@ -139,9 +139,9 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
+    /// <li><p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <li><p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <li><p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
@@ -152,9 +152,9 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
+    /// <li><p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <li><p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <li><p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
@@ -165,9 +165,9 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
+    /// <li><p><code>gp3</code>: 3,000 - 16,000 IOPS</p></li>
+    /// <li><p><code>io1</code>: 100 - 64,000 IOPS</p></li>
+    /// <li><p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
@@ -204,11 +204,11 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
+    /// <li><p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <li><p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <li><p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <li><p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <li><p><code>standard</code>: 1 - 1024 GiB</p></li>
     /// </ul>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
@@ -216,11 +216,11 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
+    /// <li><p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <li><p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <li><p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <li><p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <li><p><code>standard</code>: 1 - 1024 GiB</p></li>
     /// </ul>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
@@ -228,11 +228,11 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
-    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
+    /// <li><p><code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p></li>
+    /// <li><p><code>io1</code>: 4 - 16,384 GiB</p></li>
+    /// <li><p><code>io2</code>: 4 - 65,536 GiB</p></li>
+    /// <li><p><code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p></li>
+    /// <li><p><code>standard</code>: 1 - 1024 GiB</p></li>
     /// </ul>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
         &self.volume_size

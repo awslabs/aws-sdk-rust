@@ -24,19 +24,19 @@ impl MergeProfilesInputBuilder {
 ///
 /// <p>Runs an AWS Lambda job that does the following:</p>
 /// <ol>
-/// <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li>
-/// <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li>
-/// <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li>
-/// <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li>
-/// <li> <p>Standard fields are merged as follows:</p>
+/// <li><p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p></li>
+/// <li><p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p></li>
+/// <li><p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p></li>
+/// <li><p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p></li>
+/// <li><p>Standard fields are merged as follows:</p>
 /// <ol>
-/// <li> <p>Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li>
-/// <li> <p>When there are conflicting fields:</p>
+/// <li><p>Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.</p></li>
+/// <li><p>When there are conflicting fields:</p>
 /// <ol>
-/// <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li>
-/// <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li>
-/// </ol> </li>
-/// </ol> </li>
+/// <li><p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken.</p></li>
+/// <li><p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p></li>
+/// </ol></li>
+/// </ol></li>
 /// </ol>
 /// <p>You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -170,17 +170,17 @@ impl MergeProfilesFluentBuilder {
     pub fn get_profile_ids_to_be_merged(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_profile_ids_to_be_merged()
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
     pub fn field_source_profile_ids(mut self, input: crate::types::FieldSourceProfileIds) -> Self {
         self.inner = self.inner.field_source_profile_ids(input);
         self
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
     pub fn set_field_source_profile_ids(mut self, input: ::std::option::Option<crate::types::FieldSourceProfileIds>) -> Self {
         self.inner = self.inner.set_field_source_profile_ids(input);
         self
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.</p>
     pub fn get_field_source_profile_ids(&self) -> &::std::option::Option<crate::types::FieldSourceProfileIds> {
         self.inner.get_field_source_profile_ids()
     }

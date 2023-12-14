@@ -6,7 +6,7 @@
 pub struct SetTimerAction {
     /// <p>The name of the timer.</p>
     pub timer_name: ::std::string::String,
-    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds.</p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
@@ -16,7 +16,7 @@ pub struct SetTimerAction {
     /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
-    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
     pub duration_expression: ::std::option::Option<::std::string::String>,
 }
 impl SetTimerAction {
@@ -25,7 +25,7 @@ impl SetTimerAction {
         use std::ops::Deref;
         self.timer_name.deref()
     }
-    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds.</p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
@@ -37,7 +37,7 @@ impl SetTimerAction {
     /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
-    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
     pub fn duration_expression(&self) -> ::std::option::Option<&str> {
         self.duration_expression.as_deref()
     }
@@ -73,7 +73,7 @@ impl SetTimerActionBuilder {
     pub fn get_timer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.timer_name
     }
-    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds.</p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
@@ -81,7 +81,7 @@ impl SetTimerActionBuilder {
         self.seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds.</p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
@@ -89,7 +89,7 @@ impl SetTimerActionBuilder {
         self.seconds = input;
         self
     }
-    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+    /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds.</p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
@@ -101,7 +101,7 @@ impl SetTimerActionBuilder {
     /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
-    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
     pub fn duration_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration_expression = ::std::option::Option::Some(input.into());
         self
@@ -111,7 +111,7 @@ impl SetTimerActionBuilder {
     /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
-    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
     pub fn set_duration_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration_expression = input;
         self
@@ -121,7 +121,7 @@ impl SetTimerActionBuilder {
     /// <input-name>
     /// .
     /// <path-to-datum></path-to-datum>
-    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
+    /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number.</p>
     pub fn get_duration_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.duration_expression
     }

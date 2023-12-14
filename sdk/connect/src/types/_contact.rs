@@ -20,7 +20,7 @@ pub struct Contact {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>How the contact reached your contact center.</p>
     pub channel: ::std::option::Option<crate::types::Channel>,
-    /// <p>If this contact was queued, this contains information about the queue. </p>
+    /// <p>If this contact was queued, this contains information about the queue.</p>
     pub queue_info: ::std::option::Option<crate::types::QueueInfo>,
     /// <p>Information about the agent who accepted the contact.</p>
     pub agent_info: ::std::option::Option<crate::types::AgentInfo>,
@@ -30,7 +30,7 @@ pub struct Contact {
     pub disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when contact was last updated.</p>
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
+    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
@@ -70,7 +70,7 @@ impl Contact {
     pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
-    /// <p>If this contact was queued, this contains information about the queue. </p>
+    /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn queue_info(&self) -> ::std::option::Option<&crate::types::QueueInfo> {
         self.queue_info.as_ref()
     }
@@ -90,7 +90,7 @@ impl Contact {
     pub fn last_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
-    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
+    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn scheduled_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
     }
@@ -244,17 +244,17 @@ impl ContactBuilder {
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }
-    /// <p>If this contact was queued, this contains information about the queue. </p>
+    /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn queue_info(mut self, input: crate::types::QueueInfo) -> Self {
         self.queue_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If this contact was queued, this contains information about the queue. </p>
+    /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::QueueInfo>) -> Self {
         self.queue_info = input;
         self
     }
-    /// <p>If this contact was queued, this contains information about the queue. </p>
+    /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::QueueInfo> {
         &self.queue_info
     }
@@ -314,17 +314,17 @@ impl ContactBuilder {
     pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_timestamp
     }
-    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
+    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn scheduled_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.scheduled_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
+    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn set_scheduled_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_timestamp = input;
         self
     }
-    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
+    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn get_scheduled_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.scheduled_timestamp
     }

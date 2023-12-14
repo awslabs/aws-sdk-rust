@@ -22,7 +22,7 @@ impl ListResourceCatalogsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListResourceCatalogs`.
 ///
-/// <p> Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+/// <p>Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number of <code>ResourceCatalog</code>s viewable is 1000.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceCatalogsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,101 +114,101 @@ impl ListResourceCatalogsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_resource_catalogs::paginator::ListResourceCatalogsPaginator {
         crate::operation::list_resource_catalogs::paginator::ListResourceCatalogsPaginator::new(self.handle, self.inner)
     }
-    /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
+    /// <p>A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name.</p>
     pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
-    /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
+    /// <p>A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
-    /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
+    /// <p>A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_contains()
     }
-    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
+    /// <p>Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
-    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
+    /// <p>Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
-    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
+    /// <p>Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_after()
     }
-    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
+    /// <p>Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
-    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
+    /// <p>Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
-    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
+    /// <p>Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_creation_time_before()
     }
-    /// <p> The order in which the resource catalogs are listed. </p>
+    /// <p>The order in which the resource catalogs are listed.</p>
     pub fn sort_order(mut self, input: crate::types::ResourceCatalogSortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p> The order in which the resource catalogs are listed. </p>
+    /// <p>The order in which the resource catalogs are listed.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ResourceCatalogSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p> The order in which the resource catalogs are listed. </p>
+    /// <p>The order in which the resource catalogs are listed.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ResourceCatalogSortOrder> {
         self.inner.get_sort_order()
     }
-    /// <p> The value on which the resource catalog list is sorted. </p>
+    /// <p>The value on which the resource catalog list is sorted.</p>
     pub fn sort_by(mut self, input: crate::types::ResourceCatalogSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p> The value on which the resource catalog list is sorted. </p>
+    /// <p>The value on which the resource catalog list is sorted.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ResourceCatalogSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p> The value on which the resource catalog list is sorted. </p>
+    /// <p>The value on which the resource catalog list is sorted.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ResourceCatalogSortBy> {
         self.inner.get_sort_by()
     }
-    /// <p> The maximum number of results returned by <code>ListResourceCatalogs</code>. </p>
+    /// <p>The maximum number of results returned by <code>ListResourceCatalogs</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of results returned by <code>ListResourceCatalogs</code>. </p>
+    /// <p>The maximum number of results returned by <code>ListResourceCatalogs</code>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of results returned by <code>ListResourceCatalogs</code>. </p>
+    /// <p>The maximum number of results returned by <code>ListResourceCatalogs</code>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
+    /// <p>A token to resume pagination of <code>ListResourceCatalogs</code> results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
+    /// <p>A token to resume pagination of <code>ListResourceCatalogs</code> results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
+    /// <p>A token to resume pagination of <code>ListResourceCatalogs</code> results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

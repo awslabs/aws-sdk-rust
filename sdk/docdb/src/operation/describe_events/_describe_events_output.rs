@@ -6,7 +6,7 @@
 pub struct DescribeEventsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>Detailed information about one or more events. </p>
+    /// <p>Detailed information about one or more events.</p>
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl DescribeEventsOutput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Detailed information about one or more events. </p>
+    /// <p>Detailed information about one or more events.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
     pub fn events(&self) -> &[crate::types::Event] {
@@ -61,19 +61,19 @@ impl DescribeEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
-    /// <p>Detailed information about one or more events. </p>
+    /// <p>Detailed information about one or more events.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
         self.events = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Detailed information about one or more events. </p>
+    /// <p>Detailed information about one or more events.</p>
     pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }
-    /// <p>Detailed information about one or more events. </p>
+    /// <p>Detailed information about one or more events.</p>
     pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
         &self.events
     }

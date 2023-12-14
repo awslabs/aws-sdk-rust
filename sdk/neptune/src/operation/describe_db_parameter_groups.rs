@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeDBPar
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeDBParameterGroupsError {
-    /// <p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
+    /// <p><i>DBParameterGroupName</i> does not refer to an existing DB parameter group.</p>
     DbParameterGroupNotFoundFault(crate::types::error::DbParameterGroupNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

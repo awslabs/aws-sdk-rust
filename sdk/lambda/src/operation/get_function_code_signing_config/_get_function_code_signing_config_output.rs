@@ -6,11 +6,11 @@ pub struct GetFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: ::std::string::String,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li><p><b>Function name</b> - <code>MyFunction</code>.</p></li>
+    /// <li><p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: ::std::string::String,
@@ -23,11 +23,11 @@ impl GetFunctionCodeSigningConfigOutput {
         self.code_signing_config_arn.deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li><p><b>Function name</b> - <code>MyFunction</code>.</p></li>
+    /// <li><p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> &str {
@@ -72,11 +72,11 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
         &self.code_signing_config_arn
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li><p><b>Function name</b> - <code>MyFunction</code>.</p></li>
+    /// <li><p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     /// This field is required.
@@ -85,11 +85,11 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li><p><b>Function name</b> - <code>MyFunction</code>.</p></li>
+    /// <li><p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -97,11 +97,11 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
         self
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
+    /// <p class="title"><b>Name formats</b></p>
     /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// <li><p><b>Function name</b> - <code>MyFunction</code>.</p></li>
+    /// <li><p><b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p></li>
+    /// <li><p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {

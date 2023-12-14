@@ -253,15 +253,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeLabel
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeLabelGroupError {
-    /// <p>The request could not be completed because you do not have access to the resource. </p>
+    /// <p>The request could not be completed because you do not have access to the resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
+    /// <p>Processing of the request has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
+    /// <p>The resource requested could not be found. Verify the resource ID and retry your request.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web Services service that's being utilized. </p>
+    /// <p>The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web Services service that's being utilized.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

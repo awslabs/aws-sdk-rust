@@ -22,8 +22,8 @@ impl UpdateLaunchInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLaunch`.
 ///
-/// <p>Updates a launch of a given feature. </p>
-/// <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
+/// <p>Updates a launch of a given feature.</p>
+/// <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLaunchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

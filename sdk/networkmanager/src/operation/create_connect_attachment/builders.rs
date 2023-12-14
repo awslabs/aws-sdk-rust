@@ -22,7 +22,7 @@ impl CreateConnectAttachmentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateConnectAttachment`.
 ///
-/// <p>Creates a core network Connect attachment from a specified core network attachment. </p>
+/// <p>Creates a core network Connect attachment from a specified core network attachment.</p>
 /// <p>A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the underlying transport mechanism.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectAttachmentFluentBuilder {
@@ -109,17 +109,17 @@ impl CreateConnectAttachmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of a core network where you want to create the attachment. </p>
+    /// <p>The ID of a core network where you want to create the attachment.</p>
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
-    /// <p>The ID of a core network where you want to create the attachment. </p>
+    /// <p>The ID of a core network where you want to create the attachment.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
-    /// <p>The ID of a core network where you want to create the attachment. </p>
+    /// <p>The ID of a core network where you want to create the attachment.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_core_network_id()
     }

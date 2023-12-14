@@ -22,7 +22,7 @@ impl CreateSignalCatalogInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSignalCatalog`.
 ///
-/// <p> Creates a collection of standardized signals that can be reused to create vehicle models.</p>
+/// <p>Creates a collection of standardized signals that can be reused to create vehicle models.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSignalCatalogFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateSignalCatalogFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the signal catalog to create. </p>
+    /// <p>The name of the signal catalog to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The name of the signal catalog to create. </p>
+    /// <p>The name of the signal catalog to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The name of the signal catalog to create. </p>
+    /// <p>The name of the signal catalog to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -140,17 +140,17 @@ impl CreateSignalCatalogFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
     ///
-    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     pub fn nodes(mut self, input: crate::types::Node) -> Self {
         self.inner = self.inner.nodes(input);
         self
     }
-    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>) -> Self {
         self.inner = self.inner.set_nodes(input);
         self
     }
-    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    /// <p>A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
     pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
         self.inner.get_nodes()
     }

@@ -22,9 +22,9 @@ impl DescribeServersInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeServers`.
 ///
-/// <p> Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not query other services. </p>
-/// <p> This operation is synchronous. </p>
-/// <p> A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
+/// <p>Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not query other services.</p>
+/// <p>This operation is synchronous.</p>
+/// <p>A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeServersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -130,31 +130,31 @@ impl DescribeServersFluentBuilder {
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
+    /// <p>This is not currently implemented for <code>DescribeServers</code> requests.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -22,7 +22,7 @@ impl DeleteServiceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteService`.
 ///
-/// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces service. </p>
+/// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

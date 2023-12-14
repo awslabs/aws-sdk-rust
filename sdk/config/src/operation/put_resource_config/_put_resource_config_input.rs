@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct PutResourceConfigInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutResourceConfigInput {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
@@ -73,7 +73,7 @@ pub struct PutResourceConfigInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutResourceConfigInputBuilder {
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     /// This field is required.
@@ -81,14 +81,14 @@ impl PutResourceConfigInputBuilder {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
+    /// <p>The type of the resource. The custom resource type must be registered with CloudFormation.</p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {

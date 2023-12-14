@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCodeReview`](crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`code_review_arn(impl Into<String>)`](crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder::code_review_arn) / [`set_code_review_arn(Option<String>)`](crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder::set_code_review_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p><br>
+    ///   - [`code_review_arn(impl Into<String>)`](crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder::code_review_arn) / [`set_code_review_arn(Option<String>)`](crate::operation::describe_code_review::builders::DescribeCodeReviewFluentBuilder::set_code_review_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p><br>
     /// - On success, responds with [`DescribeCodeReviewOutput`](crate::operation::describe_code_review::DescribeCodeReviewOutput) with field(s):
     ///   - [`code_review(Option<CodeReview>)`](crate::operation::describe_code_review::DescribeCodeReviewOutput::code_review): <p>Information about the code review.</p>
     /// - On failure, responds with [`SdkError<DescribeCodeReviewError>`](crate::operation::describe_code_review::DescribeCodeReviewError)

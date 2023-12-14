@@ -22,7 +22,7 @@ impl DeleteWhatIfForecastInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWhatIfForecast`.
 ///
-/// <p>Deletes a what-if forecast created using the <code>CreateWhatIfForecast</code> operation. You can delete only what-if forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfForecast</code> operation. </p>
+/// <p>Deletes a what-if forecast created using the <code>CreateWhatIfForecast</code> operation. You can delete only what-if forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfForecast</code> operation.</p>
 /// <p>You can't delete a what-if forecast while it is being exported. After a what-if forecast is deleted, you can no longer query the what-if analysis.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWhatIfForecastFluentBuilder {

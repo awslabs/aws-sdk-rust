@@ -7,7 +7,7 @@ pub struct ListCompilationJobsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of model compilation jobs to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -33,7 +33,7 @@ impl ListCompilationJobsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
@@ -117,17 +117,17 @@ impl ListCompilationJobsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
-    /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
+    /// <p>A filter that returns the model compilation jobs that were created after a specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_after
     }

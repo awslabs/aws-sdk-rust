@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotificationChannelOutput {
-    /// <p>The SNS topic that records Firewall Manager activity. </p>
+    /// <p>The SNS topic that records Firewall Manager activity.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
     pub sns_role_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetNotificationChannelOutput {
-    /// <p>The SNS topic that records Firewall Manager activity. </p>
+    /// <p>The SNS topic that records Firewall Manager activity.</p>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct GetNotificationChannelOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetNotificationChannelOutputBuilder {
-    /// <p>The SNS topic that records Firewall Manager activity. </p>
+    /// <p>The SNS topic that records Firewall Manager activity.</p>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The SNS topic that records Firewall Manager activity. </p>
+    /// <p>The SNS topic that records Firewall Manager activity.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
-    /// <p>The SNS topic that records Firewall Manager activity. </p>
+    /// <p>The SNS topic that records Firewall Manager activity.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_arn
     }

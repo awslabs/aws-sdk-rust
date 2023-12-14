@@ -22,7 +22,7 @@ impl DeleteBotAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBotAlias`.
 ///
-/// <p>Deletes an alias for the specified bot. </p>
+/// <p>Deletes an alias for the specified bot.</p>
 /// <p>You can't delete an alias that is used in the association between a bot and a messaging channel. If an alias is used in a channel association, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception that includes a reference to the channel association that refers to the bot. You can remove the reference to the alias by deleting the channel association. If you get the same exception again, delete the referring association until the <code>DeleteBotAlias</code> operation is successful.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBotAliasFluentBuilder {
@@ -109,17 +109,17 @@ impl DeleteBotAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the alias to delete. The name is case sensitive. </p>
+    /// <p>The name of the alias to delete. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

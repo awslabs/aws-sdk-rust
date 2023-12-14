@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbSubnetGroupOutput {
-    /// <p>Detailed information about a subnet group. </p>
+    /// <p>Detailed information about a subnet group.</p>
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     _request_id: Option<String>,
 }
 impl CreateDbSubnetGroupOutput {
-    /// <p>Detailed information about a subnet group. </p>
+    /// <p>Detailed information about a subnet group.</p>
     pub fn db_subnet_group(&self) -> ::std::option::Option<&crate::types::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateDbSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateDbSubnetGroupOutputBuilder {
-    /// <p>Detailed information about a subnet group. </p>
+    /// <p>Detailed information about a subnet group.</p>
     pub fn db_subnet_group(mut self, input: crate::types::DbSubnetGroup) -> Self {
         self.db_subnet_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Detailed information about a subnet group. </p>
+    /// <p>Detailed information about a subnet group.</p>
     pub fn set_db_subnet_group(mut self, input: ::std::option::Option<crate::types::DbSubnetGroup>) -> Self {
         self.db_subnet_group = input;
         self
     }
-    /// <p>Detailed information about a subnet group. </p>
+    /// <p>Detailed information about a subnet group.</p>
     pub fn get_db_subnet_group(&self) -> &::std::option::Option<crate::types::DbSubnetGroup> {
         &self.db_subnet_group
     }

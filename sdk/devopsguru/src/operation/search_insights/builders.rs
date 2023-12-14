@@ -22,8 +22,8 @@ impl SearchInsightsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchInsights`.
 ///
-/// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
-/// <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>
+/// <p>Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
+/// <p>Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,31 +115,31 @@ impl SearchInsightsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_insights::paginator::SearchInsightsPaginator {
         crate::operation::search_insights::paginator::SearchInsightsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
         self.inner = self.inner.start_time_range(input);
         self
     }
-    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.inner = self.inner.set_start_time_range(input);
         self
     }
-    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
     pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
         self.inner.get_start_time_range()
     }
-    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
     pub fn filters(mut self, input: crate::types::SearchInsightsFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchInsightsFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchInsightsFilters> {
         self.inner.get_filters()
     }
@@ -171,17 +171,17 @@ impl SearchInsightsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub fn r#type(mut self, input: crate::types::InsightType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
         self.inner.get_type()
     }

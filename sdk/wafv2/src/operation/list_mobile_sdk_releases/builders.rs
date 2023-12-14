@@ -22,7 +22,7 @@ impl ListMobileSdkReleasesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMobileSdkReleases`.
 ///
-/// <p>Retrieves a list of the available releases for the mobile SDK and the specified device platform. </p>
+/// <p>Retrieves a list of the available releases for the mobile SDK and the specified device platform.</p>
 /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMobileSdkReleasesFluentBuilder {

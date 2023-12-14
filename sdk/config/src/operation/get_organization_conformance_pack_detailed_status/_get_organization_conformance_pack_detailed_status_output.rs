@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationConformancePackDetailedStatusOutput {
-    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects.</p>
     pub organization_conformance_pack_detailed_statuses:
         ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePackDetailedStatus>>,
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOrganizationConformancePackDetailedStatusOutput {
-    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_conformance_pack_detailed_statuses.is_none()`.
     pub fn organization_conformance_pack_detailed_statuses(&self) -> &[crate::types::OrganizationConformancePackDetailedStatus] {
         self.organization_conformance_pack_detailed_statuses.as_deref().unwrap_or_default()
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50,14 +50,14 @@ impl GetOrganizationConformancePackDetailedStatusOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_organization_conformance_pack_detailed_statuses`](Self::set_organization_conformance_pack_detailed_statuses).
     ///
-    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects.</p>
     pub fn organization_conformance_pack_detailed_statuses(mut self, input: crate::types::OrganizationConformancePackDetailedStatus) -> Self {
         let mut v = self.organization_conformance_pack_detailed_statuses.unwrap_or_default();
         v.push(input);
         self.organization_conformance_pack_detailed_statuses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects.</p>
     pub fn set_organization_conformance_pack_detailed_statuses(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePackDetailedStatus>>,
@@ -65,23 +65,23 @@ impl GetOrganizationConformancePackDetailedStatusOutputBuilder {
         self.organization_conformance_pack_detailed_statuses = input;
         self
     }
-    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects.</p>
     pub fn get_organization_conformance_pack_detailed_statuses(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationConformancePackDetailedStatus>> {
         &self.organization_conformance_pack_detailed_statuses
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

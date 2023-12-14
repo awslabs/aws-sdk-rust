@@ -23,7 +23,7 @@ pub enum Error {
     InvalidTagException(crate::types::error::InvalidTagException),
     /// <p>An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource. </p>
+    /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource.</p>
     LockoutPreventedException(crate::types::error::LockoutPreventedException),
     /// <p>The certificate signing request is invalid.</p>
     MalformedCsrException(crate::types::error::MalformedCsrException),

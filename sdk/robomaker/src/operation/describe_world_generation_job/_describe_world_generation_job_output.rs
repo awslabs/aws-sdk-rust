@@ -17,19 +17,19 @@ pub struct DescribeWorldGenerationJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generation job is running. </p>
+    /// <p>The world generation job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job completed. </p>
+    /// <p>The world generation job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -65,13 +65,13 @@ pub struct DescribeWorldGenerationJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -120,19 +120,19 @@ impl DescribeWorldGenerationJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generation job is running. </p>
+    /// <p>The world generation job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job completed. </p>
+    /// <p>The world generation job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -172,13 +172,13 @@ impl DescribeWorldGenerationJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -281,19 +281,19 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generation job is running. </p>
+    /// <p>The world generation job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job completed. </p>
+    /// <p>The world generation job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -330,19 +330,19 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generation job is running. </p>
+    /// <p>The world generation job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job completed. </p>
+    /// <p>The world generation job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -379,19 +379,19 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generation job is running. </p>
+    /// <p>The world generation job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job completed. </p>
+    /// <p>The world generation job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generation job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generation job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -441,13 +441,13 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -478,13 +478,13 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -515,13 +515,13 @@ impl DescribeWorldGenerationJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled

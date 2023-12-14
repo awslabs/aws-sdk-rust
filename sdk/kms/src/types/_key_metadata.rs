@@ -55,9 +55,9 @@ pub struct KeyMetadata {
     /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
     /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <ul>
-    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+    /// <li><p><code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p></li>
+    /// <li><p><code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p></li>
+    /// <li><p><code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p></li>
     /// </ul>
     pub multi_region_configuration: ::std::option::Option<crate::types::MultiRegionConfiguration>,
     /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
@@ -166,9 +166,9 @@ impl KeyMetadata {
     /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
     /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <ul>
-    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+    /// <li><p><code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p></li>
+    /// <li><p><code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p></li>
+    /// <li><p><code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p></li>
     /// </ul>
     pub fn multi_region_configuration(&self) -> ::std::option::Option<&crate::types::MultiRegionConfiguration> {
         self.multi_region_configuration.as_ref()
@@ -545,9 +545,9 @@ impl KeyMetadataBuilder {
     /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
     /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <ul>
-    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+    /// <li><p><code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p></li>
+    /// <li><p><code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p></li>
+    /// <li><p><code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p></li>
     /// </ul>
     pub fn multi_region_configuration(mut self, input: crate::types::MultiRegionConfiguration) -> Self {
         self.multi_region_configuration = ::std::option::Option::Some(input);
@@ -556,9 +556,9 @@ impl KeyMetadataBuilder {
     /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
     /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <ul>
-    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+    /// <li><p><code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p></li>
+    /// <li><p><code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p></li>
+    /// <li><p><code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p></li>
     /// </ul>
     pub fn set_multi_region_configuration(mut self, input: ::std::option::Option<crate::types::MultiRegionConfiguration>) -> Self {
         self.multi_region_configuration = input;
@@ -567,9 +567,9 @@ impl KeyMetadataBuilder {
     /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
     /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <ul>
-    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
-    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
-    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
+    /// <li><p><code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p></li>
+    /// <li><p><code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p></li>
+    /// <li><p><code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p></li>
     /// </ul>
     pub fn get_multi_region_configuration(&self) -> &::std::option::Option<crate::types::MultiRegionConfiguration> {
         &self.multi_region_configuration

@@ -100,7 +100,6 @@ impl Intercept for ConnectionPoisoningInterceptor {
 type LoaderFn = dyn Fn() -> Option<ConnectionMetadata> + Send + Sync;
 
 /// State for a middleware that will monitor and manage connections.
-#[allow(missing_debug_implementations)]
 #[derive(Clone, Default)]
 pub struct CaptureSmithyConnection {
     loader: Arc<Mutex<Option<Box<LoaderFn>>>>,
@@ -154,7 +153,14 @@ mod test {
         let retriever = CaptureSmithyConnection::new();
         let retriever_clone = retriever.clone();
         assert!(retriever.get().is_none());
-        retriever.set_connection_retriever(|| Some(ConnectionMetadata::new(true, None, || {})));
+        retriever.set_connection_retriever(|| {
+            Some(
+                ConnectionMetadata::builder()
+                    .proxied(true)
+                    .poison_fn(|| {})
+                    .build(),
+            )
+        });
 
         assert!(retriever.get().is_some());
         assert!(retriever_clone.get().is_some());

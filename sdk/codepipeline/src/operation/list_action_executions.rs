@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListActionExe
 pub enum ListActionExecutionsError {
     /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
-    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
+    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline.</p>
     PipelineExecutionNotFoundException(crate::types::error::PipelineExecutionNotFoundException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::types::error::PipelineNotFoundException),

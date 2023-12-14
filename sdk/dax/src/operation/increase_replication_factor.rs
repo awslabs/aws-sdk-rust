@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for IncreaseRepli
 pub enum IncreaseReplicationFactorError {
     /// <p>The requested cluster ID does not refer to an existing DAX cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
-    /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster). </p>
+    /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster).</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
     /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),

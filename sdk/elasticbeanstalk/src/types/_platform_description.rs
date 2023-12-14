@@ -41,13 +41,13 @@ pub struct PlatformDescription {
     /// <p>The additions supported by the platform version.</p>
     pub supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub platform_lifecycle_state: ::std::option::Option<::std::string::String>,
     /// <p>The platform branch to which the platform version belongs.</p>
     pub platform_branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
+    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
     pub platform_branch_lifecycle_state: ::std::option::Option<::std::string::String>,
 }
 impl PlatformDescription {
@@ -134,7 +134,7 @@ impl PlatformDescription {
         self.supported_addon_list.as_deref().unwrap_or_default()
     }
     /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub fn platform_lifecycle_state(&self) -> ::std::option::Option<&str> {
         self.platform_lifecycle_state.as_deref()
@@ -144,7 +144,7 @@ impl PlatformDescription {
         self.platform_branch_name.as_deref()
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
+    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
     pub fn platform_branch_lifecycle_state(&self) -> ::std::option::Option<&str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
@@ -466,21 +466,21 @@ impl PlatformDescriptionBuilder {
         &self.supported_addon_list
     }
     /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub fn platform_lifecycle_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_lifecycle_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub fn set_platform_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_lifecycle_state = input;
         self
     }
     /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code></p>
     /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub fn get_platform_lifecycle_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_lifecycle_state
@@ -500,19 +500,19 @@ impl PlatformDescriptionBuilder {
         &self.platform_branch_name
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
+    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
     pub fn platform_branch_lifecycle_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_branch_lifecycle_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
+    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
     pub fn set_platform_branch_lifecycle_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_branch_lifecycle_state = input;
         self
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
+    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code></p>
     pub fn get_platform_branch_lifecycle_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_branch_lifecycle_state
     }

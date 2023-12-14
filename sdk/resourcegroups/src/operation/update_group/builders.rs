@@ -23,10 +23,10 @@ impl UpdateGroupInputBuilder {
 /// Fluent builder constructing a request to `UpdateGroup`.
 ///
 /// <p>Updates the description for an existing group. You cannot update the name of a resource group.</p>
-/// <p> <b>Minimum permissions</b> </p>
+/// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li> <p> <code>resource-groups:UpdateGroup</code> </p> </li>
+/// <li><p><code>resource-groups:UpdateGroup</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGroupFluentBuilder {

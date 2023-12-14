@@ -6,7 +6,7 @@
 pub struct DoubleOptions {
     /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
     pub default_value: ::std::option::Option<f64>,
-    /// <p>The name of the source field to map to the field. </p>
+    /// <p>The name of the source field to map to the field.</p>
     pub source_field: ::std::option::Option<::std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
     pub facet_enabled: ::std::option::Option<bool>,
@@ -22,7 +22,7 @@ impl DoubleOptions {
     pub fn default_value(&self) -> ::std::option::Option<f64> {
         self.default_value
     }
-    /// <p>The name of the source field to map to the field. </p>
+    /// <p>The name of the source field to map to the field.</p>
     pub fn source_field(&self) -> ::std::option::Option<&str> {
         self.source_field.as_deref()
     }
@@ -76,17 +76,17 @@ impl DoubleOptionsBuilder {
     pub fn get_default_value(&self) -> &::std::option::Option<f64> {
         &self.default_value
     }
-    /// <p>The name of the source field to map to the field. </p>
+    /// <p>The name of the source field to map to the field.</p>
     pub fn source_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_field = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the source field to map to the field. </p>
+    /// <p>The name of the source field to map to the field.</p>
     pub fn set_source_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_field = input;
         self
     }
-    /// <p>The name of the source field to map to the field. </p>
+    /// <p>The name of the source field to map to the field.</p>
     pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_field
     }

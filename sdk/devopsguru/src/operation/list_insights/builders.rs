@@ -22,7 +22,7 @@ impl ListInsightsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInsights`.
 ///
-/// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>, or <code>ANY</code>). </p>
+/// <p>Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>, or <code>ANY</code>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListInsightsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_insights::paginator::ListInsightsPaginator {
         crate::operation::list_insights::paginator::ListInsightsPaginator::new(self.handle, self.inner)
     }
-    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
         self.inner = self.inner.status_filter(input);
         self
     }
-    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
-    /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+    /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         self.inner.get_status_filter()
     }

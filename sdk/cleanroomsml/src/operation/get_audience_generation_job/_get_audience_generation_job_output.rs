@@ -19,13 +19,13 @@ pub struct GetAudienceGenerationJobOutput {
     pub status_details: ::std::option::Option<crate::types::StatusDetails>,
     /// <p>The Amazon Resource Name (ARN) of the configured audience model used for this audience generation job.</p>
     pub configured_audience_model_arn: ::std::string::String,
-    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job. </p>
+    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
     pub seed_audience: ::std::option::Option<crate::types::AudienceGenerationJobDataSource>,
     /// <p>Configure whether the seed users are included in the output audience. By default, Clean Rooms ML removes seed users from the output audience. If you specify <code>TRUE</code>, the seed users will appear first in the output. Clean Rooms ML does not explicitly reveal whether a user was in the seed, but the recipient of the audience will know that the first <code>minimumSeedSize</code> count of users are from the seed.</p>
     pub include_seed_in_output: ::std::option::Option<bool>,
     /// <p>The identifier of the collaboration that this audience generation job is associated with.</p>
     pub collaboration_id: ::std::option::Option<::std::string::String>,
-    /// <p>The relevance scores for different audience sizes. </p>
+    /// <p>The relevance scores for different audience sizes.</p>
     pub metrics: ::std::option::Option<crate::types::AudienceQualityMetrics>,
     /// <p>The AWS account that started this audience generation job.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
@@ -69,7 +69,7 @@ impl GetAudienceGenerationJobOutput {
         use std::ops::Deref;
         self.configured_audience_model_arn.deref()
     }
-    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job. </p>
+    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
     pub fn seed_audience(&self) -> ::std::option::Option<&crate::types::AudienceGenerationJobDataSource> {
         self.seed_audience.as_ref()
     }
@@ -81,7 +81,7 @@ impl GetAudienceGenerationJobOutput {
     pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
         self.collaboration_id.as_deref()
     }
-    /// <p>The relevance scores for different audience sizes. </p>
+    /// <p>The relevance scores for different audience sizes.</p>
     pub fn metrics(&self) -> ::std::option::Option<&crate::types::AudienceQualityMetrics> {
         self.metrics.as_ref()
     }
@@ -245,17 +245,17 @@ impl GetAudienceGenerationJobOutputBuilder {
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_audience_model_arn
     }
-    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job. </p>
+    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
     pub fn seed_audience(mut self, input: crate::types::AudienceGenerationJobDataSource) -> Self {
         self.seed_audience = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job. </p>
+    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
     pub fn set_seed_audience(mut self, input: ::std::option::Option<crate::types::AudienceGenerationJobDataSource>) -> Self {
         self.seed_audience = input;
         self
     }
-    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job. </p>
+    /// <p>The seed audience that was used for this audience generation job. This field will be null if the account calling the API is the account that started this audience generation job.</p>
     pub fn get_seed_audience(&self) -> &::std::option::Option<crate::types::AudienceGenerationJobDataSource> {
         &self.seed_audience
     }
@@ -287,17 +287,17 @@ impl GetAudienceGenerationJobOutputBuilder {
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_id
     }
-    /// <p>The relevance scores for different audience sizes. </p>
+    /// <p>The relevance scores for different audience sizes.</p>
     pub fn metrics(mut self, input: crate::types::AudienceQualityMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The relevance scores for different audience sizes. </p>
+    /// <p>The relevance scores for different audience sizes.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::AudienceQualityMetrics>) -> Self {
         self.metrics = input;
         self
     }
-    /// <p>The relevance scores for different audience sizes. </p>
+    /// <p>The relevance scores for different audience sizes.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::AudienceQualityMetrics> {
         &self.metrics
     }

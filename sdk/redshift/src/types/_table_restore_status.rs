@@ -7,7 +7,7 @@ pub struct TableRestoreStatus {
     /// <p>The unique identifier for the table restore request.</p>
     pub table_restore_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that describes the current state of the table restore request.</p>
-    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
+    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
     pub status: ::std::option::Option<crate::types::TableRestoreStatusType>,
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl TableRestoreStatus {
         self.table_restore_request_id.as_deref()
     }
     /// <p>A value that describes the current state of the table restore request.</p>
-    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
+    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TableRestoreStatusType> {
         self.status.as_ref()
     }
@@ -135,19 +135,19 @@ impl TableRestoreStatusBuilder {
         &self.table_restore_request_id
     }
     /// <p>A value that describes the current state of the table restore request.</p>
-    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
+    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
     pub fn status(mut self, input: crate::types::TableRestoreStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that describes the current state of the table restore request.</p>
-    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
+    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TableRestoreStatusType>) -> Self {
         self.status = input;
         self
     }
     /// <p>A value that describes the current state of the table restore request.</p>
-    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
+    /// <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TableRestoreStatusType> {
         &self.status
     }

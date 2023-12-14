@@ -2,10 +2,10 @@
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
-/// <li> <p> <code>UpdateChapCredentialsInput$InitiatorName</code> </p> </li>
-/// <li> <p> <code>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</code> </p> </li>
-/// <li> <p> <code>UpdateChapCredentialsInput$SecretToAuthenticateTarget</code> </p> </li>
-/// <li> <p> <code>UpdateChapCredentialsInput$TargetARN</code> </p> </li>
+/// <li><p><code>UpdateChapCredentialsInput$InitiatorName</code></p></li>
+/// <li><p><code>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</code></p></li>
+/// <li><p><code>UpdateChapCredentialsInput$SecretToAuthenticateTarget</code></p></li>
+/// <li><p><code>UpdateChapCredentialsInput$TargetARN</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]

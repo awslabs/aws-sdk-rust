@@ -9,12 +9,12 @@ pub struct LockSnapshotInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The mode in which to lock the snapshot. Specify one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
+    /// <li><p><code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The lock duration expires.</p> </li>
-    /// <li> <p>The snapshot is unlocked by a user with the appropriate permissions.</p> </li>
-    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p> </li>
-    /// <li> <p> <code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p> </li>
+    /// <li><p>The lock duration expires.</p></li>
+    /// <li><p>The snapshot is unlocked by a user with the appropriate permissions.</p></li>
+    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p></li>
+    /// <li><p><code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p></li>
     /// </ul>
     pub lock_mode: ::std::option::Option<crate::types::LockMode>,
     /// <p>The cooling-off period during which you can unlock the snapshot or modify the lock settings after locking the snapshot in compliance mode, in hours. After the cooling-off period expires, you can't unlock or delete the snapshot, decrease the lock duration, or change the lock mode. You can increase the lock duration after the cooling-off period expires.</p>
@@ -42,12 +42,12 @@ impl LockSnapshotInput {
     }
     /// <p>The mode in which to lock the snapshot. Specify one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
+    /// <li><p><code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The lock duration expires.</p> </li>
-    /// <li> <p>The snapshot is unlocked by a user with the appropriate permissions.</p> </li>
-    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p> </li>
-    /// <li> <p> <code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p> </li>
+    /// <li><p>The lock duration expires.</p></li>
+    /// <li><p>The snapshot is unlocked by a user with the appropriate permissions.</p></li>
+    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p></li>
+    /// <li><p><code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p></li>
     /// </ul>
     pub fn lock_mode(&self) -> ::std::option::Option<&crate::types::LockMode> {
         self.lock_mode.as_ref()
@@ -122,12 +122,12 @@ impl LockSnapshotInputBuilder {
     }
     /// <p>The mode in which to lock the snapshot. Specify one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
+    /// <li><p><code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The lock duration expires.</p> </li>
-    /// <li> <p>The snapshot is unlocked by a user with the appropriate permissions.</p> </li>
-    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p> </li>
-    /// <li> <p> <code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p> </li>
+    /// <li><p>The lock duration expires.</p></li>
+    /// <li><p>The snapshot is unlocked by a user with the appropriate permissions.</p></li>
+    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p></li>
+    /// <li><p><code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn lock_mode(mut self, input: crate::types::LockMode) -> Self {
@@ -136,12 +136,12 @@ impl LockSnapshotInputBuilder {
     }
     /// <p>The mode in which to lock the snapshot. Specify one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
+    /// <li><p><code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The lock duration expires.</p> </li>
-    /// <li> <p>The snapshot is unlocked by a user with the appropriate permissions.</p> </li>
-    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p> </li>
-    /// <li> <p> <code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p> </li>
+    /// <li><p>The lock duration expires.</p></li>
+    /// <li><p>The snapshot is unlocked by a user with the appropriate permissions.</p></li>
+    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p></li>
+    /// <li><p><code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p></li>
     /// </ul>
     pub fn set_lock_mode(mut self, input: ::std::option::Option<crate::types::LockMode>) -> Self {
         self.lock_mode = input;
@@ -149,12 +149,12 @@ impl LockSnapshotInputBuilder {
     }
     /// <p>The mode in which to lock the snapshot. Specify one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
+    /// <li><p><code>governance</code> - Locks the snapshot in governance mode. Snapshots locked in governance mode can't be deleted until one of the following conditions are met:</p>
     /// <ul>
-    /// <li> <p>The lock duration expires.</p> </li>
-    /// <li> <p>The snapshot is unlocked by a user with the appropriate permissions.</p> </li>
-    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p> </li>
-    /// <li> <p> <code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p> </li>
+    /// <li><p>The lock duration expires.</p></li>
+    /// <li><p>The snapshot is unlocked by a user with the appropriate permissions.</p></li>
+    /// </ul> <p>Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease the lock duration, and change the lock mode to <code>compliance</code> at any time.</p> <p>If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.</p></li>
+    /// <li><p><code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p> <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p></li>
     /// </ul>
     pub fn get_lock_mode(&self) -> &::std::option::Option<crate::types::LockMode> {
         &self.lock_mode

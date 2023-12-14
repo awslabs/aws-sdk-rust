@@ -254,7 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for MergePullRequ
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum MergePullRequestBySquashError {
-    /// <p>The commit message is too long. Provide a shorter string. </p>
+    /// <p>The commit message is too long. Provide a shorter string.</p>
     CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>The merge cannot be completed because the target branch has been modified. Another user might have modified the target branch while the merge was in progress. Wait a few minutes, and then try again.</p>
     ConcurrentReferenceUpdateException(crate::types::error::ConcurrentReferenceUpdateException),
@@ -282,13 +282,13 @@ pub enum MergePullRequestBySquashError {
     InvalidConflictResolutionStrategyException(crate::types::error::InvalidConflictResolutionStrategyException),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::types::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>.</p>
     InvalidFileModeException(crate::types::error::InvalidFileModeException),
     /// <p>The specified path is not valid.</p>
     InvalidPathException(crate::types::error::InvalidPathException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),
-    /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing. </p>
+    /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing.</p>
     InvalidReplacementContentException(crate::types::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::types::error::InvalidReplacementTypeException),
@@ -306,7 +306,7 @@ pub enum MergePullRequestBySquashError {
     MaximumItemsToCompareExceededException(crate::types::error::MaximumItemsToCompareExceededException),
     /// <p>More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict resolution entry.</p>
     MultipleConflictResolutionEntriesException(crate::types::error::MultipleConflictResolutionEntriesException),
-    /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
+    /// <p>The user name is not valid because it has exceeded the character limit for author names.</p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The folderPath for a location cannot be null.</p>
     PathRequiredException(crate::types::error::PathRequiredException),

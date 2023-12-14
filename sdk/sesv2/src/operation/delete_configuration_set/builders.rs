@@ -23,7 +23,7 @@ impl DeleteConfigurationSetInputBuilder {
 /// Fluent builder constructing a request to `DeleteConfigurationSet`.
 ///
 /// <p>Delete an existing configuration set.</p>
-/// <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
+/// <p><i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -6,16 +6,16 @@
 pub struct ProductionVariantRoutingConfig {
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
-    /// <li> <p> <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p> </li>
-    /// <li> <p> <code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p> </li>
+    /// <li><p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
+    /// <li><p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
     /// </ul>
     pub routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
 }
 impl ProductionVariantRoutingConfig {
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
-    /// <li> <p> <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p> </li>
-    /// <li> <p> <code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p> </li>
+    /// <li><p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
+    /// <li><p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
     /// </ul>
     pub fn routing_strategy(&self) -> ::std::option::Option<&crate::types::RoutingStrategy> {
         self.routing_strategy.as_ref()
@@ -37,8 +37,8 @@ pub struct ProductionVariantRoutingConfigBuilder {
 impl ProductionVariantRoutingConfigBuilder {
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
-    /// <li> <p> <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p> </li>
-    /// <li> <p> <code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p> </li>
+    /// <li><p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
+    /// <li><p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
@@ -47,8 +47,8 @@ impl ProductionVariantRoutingConfigBuilder {
     }
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
-    /// <li> <p> <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p> </li>
-    /// <li> <p> <code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p> </li>
+    /// <li><p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
+    /// <li><p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
     /// </ul>
     pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
         self.routing_strategy = input;
@@ -56,8 +56,8 @@ impl ProductionVariantRoutingConfigBuilder {
     }
     /// <p>Sets how the endpoint routes incoming traffic:</p>
     /// <ul>
-    /// <li> <p> <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p> </li>
-    /// <li> <p> <code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p> </li>
+    /// <li><p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
+    /// <li><p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
     /// </ul>
     pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
         &self.routing_strategy

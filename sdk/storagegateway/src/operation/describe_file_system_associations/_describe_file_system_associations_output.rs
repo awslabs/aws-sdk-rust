@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAssociationsOutput {
-    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
     pub file_system_association_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeFileSystemAssociationsOutput {
-    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_association_info_list.is_none()`.
     pub fn file_system_association_info_list(&self) -> &[crate::types::FileSystemAssociationInfo] {
@@ -39,14 +39,14 @@ impl DescribeFileSystemAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_association_info_list`](Self::set_file_system_association_info_list).
     ///
-    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
     pub fn file_system_association_info_list(mut self, input: crate::types::FileSystemAssociationInfo) -> Self {
         let mut v = self.file_system_association_info_list.unwrap_or_default();
         v.push(input);
         self.file_system_association_info_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
     pub fn set_file_system_association_info_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>>,
@@ -54,7 +54,7 @@ impl DescribeFileSystemAssociationsOutputBuilder {
         self.file_system_association_info_list = input;
         self
     }
-    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
     pub fn get_file_system_association_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>> {
         &self.file_system_association_info_list
     }

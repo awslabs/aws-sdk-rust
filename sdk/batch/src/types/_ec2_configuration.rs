@@ -18,19 +18,19 @@ pub struct Ec2Configuration {
     /// ECS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL1
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -44,13 +44,13 @@ pub struct Ec2Configuration {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -76,19 +76,19 @@ impl Ec2Configuration {
     /// ECS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL1
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -102,13 +102,13 @@ impl Ec2Configuration {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -155,19 +155,19 @@ impl Ec2ConfigurationBuilder {
     /// ECS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL1
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -181,13 +181,13 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -209,19 +209,19 @@ impl Ec2ConfigurationBuilder {
     /// ECS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL1
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -235,13 +235,13 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -262,19 +262,19 @@ impl Ec2ConfigurationBuilder {
     /// ECS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// <dt>
     /// ECS_AL1
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
+    /// <p><a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon Linux</a>. Amazon Linux has reached the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
     /// </dd>
     /// </dl>
     /// </dd>
@@ -288,13 +288,13 @@ impl Ec2ConfigurationBuilder {
     /// EKS_AL2
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2</a>: Default for all non-GPU instance families.</p>
     /// </dd>
     /// <dt>
     /// EKS_AL2_NVIDIA
     /// </dt>
     /// <dd>
-    /// <p> <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
+    /// <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based instance types.</p>
     /// </dd>
     /// </dl>
     /// </dd>

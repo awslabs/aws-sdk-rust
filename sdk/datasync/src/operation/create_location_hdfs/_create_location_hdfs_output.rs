@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationHdfsOutput {
-    /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    /// <p>The ARN of the source HDFS cluster location that's created.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLocationHdfsOutput {
-    /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    /// <p>The ARN of the source HDFS cluster location that's created.</p>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CreateLocationHdfsOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateLocationHdfsOutputBuilder {
-    /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    /// <p>The ARN of the source HDFS cluster location that's created.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    /// <p>The ARN of the source HDFS cluster location that's created.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
-    /// <p>The ARN of the source HDFS cluster location that's created. </p>
+    /// <p>The ARN of the source HDFS cluster location that's created.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }

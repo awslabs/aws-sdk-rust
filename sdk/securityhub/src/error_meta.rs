@@ -15,7 +15,7 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
-    /// <p> The request was rejected because it conflicts with the resource's availability. For example, you tried to update a security control that's currently in the <code>UPDATING</code> state. </p>
+    /// <p>The request was rejected because it conflicts with the resource's availability. For example, you tried to update a security control that's currently in the <code>UPDATING</code> state.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

@@ -5,7 +5,7 @@
 pub struct GetProviderServiceOutput {
     /// <p>The name of the provider. This name is typically the company name.</p>
     pub provider_name: ::std::string::String,
-    /// <p>The name of the product that the provider service provides. </p>
+    /// <p>The name of the product that the provider service provides.</p>
     pub provider_service_name: ::std::string::String,
     /// <p>The display name of the provider service.</p>
     pub provider_service_display_name: ::std::string::String,
@@ -17,7 +17,7 @@ pub struct GetProviderServiceOutput {
     pub provider_configuration_definition: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The required configuration fields to use with the provider service.</p>
     pub provider_endpoint_configuration: ::std::option::Option<crate::types::ProviderEndpointConfiguration>,
-    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
+    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data.</p>
     pub anonymized_output: bool,
     /// <p>The definition of the provider entity output.</p>
     pub provider_entity_output_definition: ::aws_smithy_types::Document,
@@ -31,7 +31,7 @@ impl GetProviderServiceOutput {
         use std::ops::Deref;
         self.provider_name.deref()
     }
-    /// <p>The name of the product that the provider service provides. </p>
+    /// <p>The name of the product that the provider service provides.</p>
     pub fn provider_service_name(&self) -> &str {
         use std::ops::Deref;
         self.provider_service_name.deref()
@@ -58,7 +58,7 @@ impl GetProviderServiceOutput {
     pub fn provider_endpoint_configuration(&self) -> ::std::option::Option<&crate::types::ProviderEndpointConfiguration> {
         self.provider_endpoint_configuration.as_ref()
     }
-    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
+    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data.</p>
     pub fn anonymized_output(&self) -> bool {
         self.anonymized_output
     }
@@ -117,18 +117,18 @@ impl GetProviderServiceOutputBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }
-    /// <p>The name of the product that the provider service provides. </p>
+    /// <p>The name of the product that the provider service provides.</p>
     /// This field is required.
     pub fn provider_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_service_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the product that the provider service provides. </p>
+    /// <p>The name of the product that the provider service provides.</p>
     pub fn set_provider_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_service_name = input;
         self
     }
-    /// <p>The name of the product that the provider service provides. </p>
+    /// <p>The name of the product that the provider service provides.</p>
     pub fn get_provider_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_service_name
     }
@@ -206,18 +206,18 @@ impl GetProviderServiceOutputBuilder {
     pub fn get_provider_endpoint_configuration(&self) -> &::std::option::Option<crate::types::ProviderEndpointConfiguration> {
         &self.provider_endpoint_configuration
     }
-    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
+    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data.</p>
     /// This field is required.
     pub fn anonymized_output(mut self, input: bool) -> Self {
         self.anonymized_output = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
+    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data.</p>
     pub fn set_anonymized_output(mut self, input: ::std::option::Option<bool>) -> Self {
         self.anonymized_output = input;
         self
     }
-    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data. </p>
+    /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data.</p>
     pub fn get_anonymized_output(&self) -> &::std::option::Option<bool> {
         &self.anonymized_output
     }

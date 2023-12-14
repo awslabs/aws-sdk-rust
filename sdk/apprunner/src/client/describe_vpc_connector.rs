@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVpcConnector`](crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_connector_arn(impl Into<String>)`](crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder::vpc_connector_arn) / [`set_vpc_connector_arn(Option<String>)`](crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder::set_vpc_connector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>  <p>The ARN must be a full VPC connector ARN.</p><br>
+    ///   - [`vpc_connector_arn(impl Into<String>)`](crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder::vpc_connector_arn) / [`set_vpc_connector_arn(Option<String>)`](crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorFluentBuilder::set_vpc_connector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p> <p>The ARN must be a full VPC connector ARN.</p><br>
     /// - On success, responds with [`DescribeVpcConnectorOutput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput) with field(s):
     ///   - [`vpc_connector(Option<VpcConnector>)`](crate::operation::describe_vpc_connector::DescribeVpcConnectorOutput::vpc_connector): <p>A description of the App Runner VPC connector that you specified in this request.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcConnectorError>`](crate::operation::describe_vpc_connector::DescribeVpcConnectorError)

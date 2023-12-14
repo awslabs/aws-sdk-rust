@@ -199,8 +199,8 @@ impl BatchExecuteStatementFluentBuilder {
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
-    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// <li><p>Specify one or more empty parameter sets.</p></li>
+    /// <li><p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
@@ -211,8 +211,8 @@ impl BatchExecuteStatementFluentBuilder {
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
-    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// <li><p>Specify one or more empty parameter sets.</p></li>
+    /// <li><p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
@@ -223,8 +223,8 @@ impl BatchExecuteStatementFluentBuilder {
     /// <p>The parameter set for the batch operation.</p>
     /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
     /// <ul>
-    /// <li> <p>Specify one or more empty parameter sets.</p> </li>
-    /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+    /// <li><p>Specify one or more empty parameter sets.</p></li>
+    /// <li><p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p></li>
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>

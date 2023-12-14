@@ -188,19 +188,19 @@ impl ListThingsFluentBuilder {
         self.inner.get_thing_type_name()
     }
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
-    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided.</p>
     pub fn use_prefix_attribute_value(mut self, input: bool) -> Self {
         self.inner = self.inner.use_prefix_attribute_value(input);
         self
     }
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
-    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided.</p>
     pub fn set_use_prefix_attribute_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_prefix_attribute_value(input);
         self
     }
     /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
-    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided.</p>
     pub fn get_use_prefix_attribute_value(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_prefix_attribute_value()
     }

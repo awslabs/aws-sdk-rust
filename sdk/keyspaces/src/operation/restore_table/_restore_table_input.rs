@@ -15,29 +15,29 @@ pub struct RestoreTableInput {
     pub restore_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
-    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub capacity_specification_override: ::std::option::Option<crate::types::CapacitySpecification>,
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
-    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// <li><p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
+    /// <li><p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub encryption_specification_override: ::std::option::Option<crate::types::EncryptionSpecification>,
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>status=ENABLED</code> </p> </li>
-    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// <li><p><code>status=ENABLED</code></p></li>
+    /// <li><p><code>status=DISABLED</code></p></li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub point_in_time_recovery_override: ::std::option::Option<crate::types::PointInTimeRecovery>,
-    /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+    /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub tags_override: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -64,8 +64,8 @@ impl RestoreTableInput {
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
-    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -74,8 +74,8 @@ impl RestoreTableInput {
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
-    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// <li><p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
+    /// <li><p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -84,15 +84,15 @@ impl RestoreTableInput {
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>status=ENABLED</code> </p> </li>
-    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// <li><p><code>status=ENABLED</code></p></li>
+    /// <li><p><code>status=DISABLED</code></p></li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn point_in_time_recovery_override(&self) -> ::std::option::Option<&crate::types::PointInTimeRecovery> {
         self.point_in_time_recovery_override.as_ref()
     }
-    /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+    /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_override.is_none()`.
@@ -198,8 +198,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
-    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -209,8 +209,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
-    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -220,8 +220,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>throughputMode:PAY_PER_REQUEST</code> </p> </li>
-    /// <li> <p> <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> </li>
+    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li><p><code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p></li>
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -230,8 +230,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
-    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// <li><p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
+    /// <li><p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -241,8 +241,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
-    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// <li><p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
+    /// <li><p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -252,8 +252,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
-    /// <li> <p> <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> </li>
-    /// <li> <p> <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> </li>
+    /// <li><p><code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.</p></li>
+    /// <li><p><code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p></li>
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -262,8 +262,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>status=ENABLED</code> </p> </li>
-    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// <li><p><code>status=ENABLED</code></p></li>
+    /// <li><p><code>status=DISABLED</code></p></li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -273,8 +273,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>status=ENABLED</code> </p> </li>
-    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// <li><p><code>status=ENABLED</code></p></li>
+    /// <li><p><code>status=DISABLED</code></p></li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -284,8 +284,8 @@ impl RestoreTableInputBuilder {
     }
     /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
     /// <ul>
-    /// <li> <p> <code>status=ENABLED</code> </p> </li>
-    /// <li> <p> <code>status=DISABLED</code> </p> </li>
+    /// <li><p><code>status=ENABLED</code></p></li>
+    /// <li><p><code>status=DISABLED</code></p></li>
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -296,7 +296,7 @@ impl RestoreTableInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags_override`](Self::set_tags_override).
     ///
-    /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+    /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags_override(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_override.unwrap_or_default();
@@ -304,13 +304,13 @@ impl RestoreTableInputBuilder {
         self.tags_override = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+    /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_tags_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags_override = input;
         self
     }
-    /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+    /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn get_tags_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags_override

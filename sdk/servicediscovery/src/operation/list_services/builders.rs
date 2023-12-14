@@ -155,19 +155,19 @@ impl ListServicesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn filters(mut self, input: crate::types::ServiceFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>
+    /// <p>A complex type that contains specifications for the namespaces that you want to list services for.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceFilter>> {
         self.inner.get_filters()

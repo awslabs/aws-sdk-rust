@@ -22,7 +22,7 @@ impl UpdateSignalingChannelInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSignalingChannel`.
 ///
-/// <p>Updates the existing signaling channel. This is an asynchronous operation and takes time to complete. </p>
+/// <p>Updates the existing signaling channel. This is an asynchronous operation and takes time to complete.</p>
 /// <p>If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced), it only applies to new messages sent via this channel after it's been updated. Existing messages are still expired as per the previous <code>MessageTtlSeconds</code> value.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSignalingChannelFluentBuilder {
@@ -137,17 +137,17 @@ impl UpdateSignalingChannelFluentBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_current_version()
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
     pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.inner = self.inner.single_master_configuration(input);
         self
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
     pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.inner = self.inner.set_single_master_configuration(input);
         self
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
     pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         self.inner.get_single_master_configuration()
     }

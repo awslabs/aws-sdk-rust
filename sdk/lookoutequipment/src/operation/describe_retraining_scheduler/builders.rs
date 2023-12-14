@@ -22,7 +22,7 @@ impl DescribeRetrainingSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeRetrainingScheduler`.
 ///
-/// <p>Provides a description of the retraining scheduler, including information such as the model name and retraining parameters. </p>
+/// <p>Provides a description of the retraining scheduler, including information such as the model name and retraining parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRetrainingSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeRetrainingSchedulerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the model that the retraining scheduler is attached to. </p>
+    /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name of the model that the retraining scheduler is attached to. </p>
+    /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name of the model that the retraining scheduler is attached to. </p>
+    /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }

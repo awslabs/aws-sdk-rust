@@ -5,26 +5,26 @@
 pub struct DescribeCreateCaseOptionsOutput {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li> <p> available </p> </li>
-    /// <li> <p> best_effort </p> </li>
-    /// <li> <p> unavailable </p> </li>
+    /// <li><p>available</p></li>
+    /// <li><p>best_effort</p></li>
+    /// <li><p>unavailable</p></li>
     /// </ul>
     pub language_availability: ::std::option::Option<::std::string::String>,
-    /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
+    /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
     pub communication_types: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
     _request_id: Option<String>,
 }
 impl DescribeCreateCaseOptionsOutput {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li> <p> available </p> </li>
-    /// <li> <p> best_effort </p> </li>
-    /// <li> <p> unavailable </p> </li>
+    /// <li><p>available</p></li>
+    /// <li><p>best_effort</p></li>
+    /// <li><p>unavailable</p></li>
     /// </ul>
     pub fn language_availability(&self) -> ::std::option::Option<&str> {
         self.language_availability.as_deref()
     }
-    /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
+    /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.communication_types.is_none()`.
     pub fn communication_types(&self) -> &[crate::types::CommunicationTypeOptions] {
@@ -54,9 +54,9 @@ pub struct DescribeCreateCaseOptionsOutputBuilder {
 impl DescribeCreateCaseOptionsOutputBuilder {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li> <p> available </p> </li>
-    /// <li> <p> best_effort </p> </li>
-    /// <li> <p> unavailable </p> </li>
+    /// <li><p>available</p></li>
+    /// <li><p>best_effort</p></li>
+    /// <li><p>unavailable</p></li>
     /// </ul>
     pub fn language_availability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_availability = ::std::option::Option::Some(input.into());
@@ -64,9 +64,9 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     }
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li> <p> available </p> </li>
-    /// <li> <p> best_effort </p> </li>
-    /// <li> <p> unavailable </p> </li>
+    /// <li><p>available</p></li>
+    /// <li><p>best_effort</p></li>
+    /// <li><p>unavailable</p></li>
     /// </ul>
     pub fn set_language_availability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_availability = input;
@@ -74,9 +74,9 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     }
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
-    /// <li> <p> available </p> </li>
-    /// <li> <p> best_effort </p> </li>
-    /// <li> <p> unavailable </p> </li>
+    /// <li><p>available</p></li>
+    /// <li><p>best_effort</p></li>
+    /// <li><p>unavailable</p></li>
     /// </ul>
     pub fn get_language_availability(&self) -> &::std::option::Option<::std::string::String> {
         &self.language_availability
@@ -85,19 +85,19 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_communication_types`](Self::set_communication_types).
     ///
-    /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
+    /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
     pub fn communication_types(mut self, input: crate::types::CommunicationTypeOptions) -> Self {
         let mut v = self.communication_types.unwrap_or_default();
         v.push(input);
         self.communication_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
+    /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
     pub fn set_communication_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>) -> Self {
         self.communication_types = input;
         self
     }
-    /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
+    /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
     pub fn get_communication_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>> {
         &self.communication_types
     }

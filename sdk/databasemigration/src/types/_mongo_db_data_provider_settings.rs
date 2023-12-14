@@ -16,7 +16,7 @@ pub struct MongoDbDataProviderSettings {
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the database connection. Valid values are PASSWORD or NO.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthTypeValue>,
-    /// <p> The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>. </p>
+    /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
     pub auth_source: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method for connecting to the data provider. Valid values are DEFAULT, MONGODB_CR, or SCRAM_SHA_1.</p>
@@ -47,7 +47,7 @@ impl MongoDbDataProviderSettings {
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthTypeValue> {
         self.auth_type.as_ref()
     }
-    /// <p> The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>. </p>
+    /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
     pub fn auth_source(&self) -> ::std::option::Option<&str> {
         self.auth_source.as_deref()
@@ -162,19 +162,19 @@ impl MongoDbDataProviderSettingsBuilder {
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthTypeValue> {
         &self.auth_type
     }
-    /// <p> The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>. </p>
+    /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
     pub fn auth_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>. </p>
+    /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
     pub fn set_auth_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_source = input;
         self
     }
-    /// <p> The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>. </p>
+    /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
     pub fn get_auth_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_source

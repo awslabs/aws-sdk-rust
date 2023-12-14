@@ -22,7 +22,7 @@ impl GetAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAssessment`.
 ///
-/// <p> Retrieves the status of an on-going assessment. </p>
+/// <p>Retrieves the status of an on-going assessment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetAssessmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
+    /// <p>The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

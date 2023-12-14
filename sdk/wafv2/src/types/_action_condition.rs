@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionCondition {
-    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
-    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
+    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request.</p>
+    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count.</p>
     pub action: crate::types::ActionValue,
 }
 impl ActionCondition {
-    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
-    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
+    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request.</p>
+    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count.</p>
     pub fn action(&self) -> &crate::types::ActionValue {
         &self.action
     }
@@ -29,21 +29,21 @@ pub struct ActionConditionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::ActionValue>,
 }
 impl ActionConditionBuilder {
-    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
-    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
+    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request.</p>
+    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count.</p>
     /// This field is required.
     pub fn action(mut self, input: crate::types::ActionValue) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
-    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
+    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request.</p>
+    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionValue>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
-    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
+    /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request.</p>
+    /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionValue> {
         &self.action
     }

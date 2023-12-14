@@ -263,11 +263,11 @@ pub enum CreateDeploymentError {
     DescriptionTooLongException(crate::types::error::DescriptionTooLongException),
     /// <p>The format of the alarm configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li> <p>The alarm list is null.</p> </li>
-    /// <li> <p>The alarm object is null.</p> </li>
-    /// <li> <p>The alarm name is empty or null or exceeds the limit of 255 characters.</p> </li>
-    /// <li> <p>Two alarms with the same name have been specified.</p> </li>
-    /// <li> <p>The alarm configuration is enabled, but the alarm list is empty.</p> </li>
+    /// <li><p>The alarm list is null.</p></li>
+    /// <li><p>The alarm object is null.</p></li>
+    /// <li><p>The alarm name is empty or null or exceeds the limit of 255 characters.</p></li>
+    /// <li><p>Two alarms with the same name have been specified.</p></li>
+    /// <li><p>The alarm configuration is enabled, but the alarm list is empty.</p></li>
     /// </ul>
     InvalidAlarmConfigException(crate::types::error::InvalidAlarmConfigException),
     /// <p>The application name was specified in an invalid format.</p>
@@ -294,13 +294,13 @@ pub enum CreateDeploymentError {
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The target instance configuration is invalid. Possible causes include:</p>
     /// <ul>
-    /// <li> <p>Configuration data for target instances was entered for an in-place deployment.</p> </li>
-    /// <li> <p>The limit of 10 tags for a tag type was exceeded.</p> </li>
-    /// <li> <p>The combined length of the tag names exceeded the limit. </p> </li>
-    /// <li> <p>A specified tag is not currently applied to any instances.</p> </li>
+    /// <li><p>Configuration data for target instances was entered for an in-place deployment.</p></li>
+    /// <li><p>The limit of 10 tags for a tag type was exceeded.</p></li>
+    /// <li><p>The combined length of the tag names exceeded the limit.</p></li>
+    /// <li><p>A specified tag is not currently applied to any instances.</p></li>
     /// </ul>
     InvalidTargetInstancesException(crate::types::error::InvalidTargetInstancesException),
-    /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
+    /// <p>The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
     /// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidUpdateOutdatedInstancesOnlyValueException(crate::types::error::InvalidUpdateOutdatedInstancesOnlyValueException),

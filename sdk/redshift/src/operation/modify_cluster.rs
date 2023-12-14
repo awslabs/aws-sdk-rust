@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyCluster
 pub enum ModifyClusterError {
     /// <p>The account already has a cluster with the given identifier.</p>
     ClusterAlreadyExistsFault(crate::types::error::ClusterAlreadyExistsFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::types::error::ClusterParameterGroupNotFoundFault),
@@ -261,9 +261,9 @@ pub enum ModifyClusterError {
     HsmConfigurationNotFoundFault(crate::types::error::HsmConfigurationNotFoundFault),
     /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
-    /// <p>The state of the cluster security group is not <code>available</code>. </p>
+    /// <p>The state of the cluster security group is not <code>available</code>.</p>
     InvalidClusterSecurityGroupStateFault(crate::types::error::InvalidClusterSecurityGroupStateFault),
-    /// <p>The specified cluster is not in the <code>available</code> state. </p>
+    /// <p>The specified cluster is not in the <code>available</code> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The provided cluster track name is not valid.</p>
     InvalidClusterTrackFault(crate::types::error::InvalidClusterTrackFault),
@@ -278,9 +278,9 @@ pub enum ModifyClusterError {
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
     NumberOfNodesPerClusterLimitExceededFault(crate::types::error::NumberOfNodesPerClusterLimitExceededFault),
-    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
-    /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type. </p>
+    /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type.</p>
     TableLimitExceededFault(crate::types::error::TableLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),

@@ -22,7 +22,7 @@ impl ImportSignalCatalogInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportSignalCatalog`.
 ///
-/// <p> Creates a signal catalog using your existing VSS formatted content from your local device. </p>
+/// <p>Creates a signal catalog using your existing VSS formatted content from your local device.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportSignalCatalogFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl ImportSignalCatalogFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> A brief description of the signal catalog. </p>
+    /// <p>A brief description of the signal catalog.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> A brief description of the signal catalog. </p>
+    /// <p>A brief description of the signal catalog.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> A brief description of the signal catalog. </p>
+    /// <p>A brief description of the signal catalog.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

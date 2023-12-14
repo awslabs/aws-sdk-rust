@@ -108,17 +108,17 @@ impl DeleteEnvironmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_identifier()
     }

@@ -8,10 +8,10 @@ pub struct CreateAutoScalingGroupInput {
     /// <p>You cannot use a colon (:) in the name.</p>
     /// </note>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the launch configuration to use to launch instances. </p>
+    /// <p>The name of the launch configuration to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
     pub launch_configuration_name: ::std::option::Option<::std::string::String>,
-    /// <p>Information used to specify the launch template and version to use to launch instances. </p>
+    /// <p>Information used to specify the launch template and version to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>
     /// <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
@@ -28,7 +28,7 @@ pub struct CreateAutoScalingGroupInput {
     pub max_size: ::std::option::Option<i32>,
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its creation and the capacity it attempts to maintain. It can scale beyond this capacity if you configure auto scaling. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.</p>
     pub desired_capacity: ::std::option::Option<i32>,
-    /// <p> <i>Only needed if you use simple scaling policies.</i> </p>
+    /// <p><i>Only needed if you use simple scaling policies.</i></p>
     /// <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Default: <code>300</code> seconds</p>
     pub default_cooldown: ::std::option::Option<i32>,
@@ -46,13 +46,13 @@ pub struct CreateAutoScalingGroupInput {
     /// <p>Default: <code>0</code> seconds</p>
     pub health_check_grace_period: ::std::option::Option<i32>,
     /// <p>The name of the placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>
+    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group.</p>
     /// </note>
     pub placement_group: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in those Availability Zones.</p>
     pub vpc_zone_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
+    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code></p>
     pub termination_policies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub new_instances_protected_from_scale_in: ::std::option::Option<bool>,
@@ -70,13 +70,13 @@ pub struct CreateAutoScalingGroupInput {
     pub context: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code></p>
     pub desired_capacity_type: ::std::option::Option<::std::string::String>,
-    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state.</p>
     /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
     /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
-    /// <p>Default: None </p>
+    /// <p>Default: None</p>
     pub default_instance_warmup: ::std::option::Option<i32>,
     /// <p>The list of traffic sources to attach to this Auto Scaling group. You can use any of the following as traffic sources for an Auto Scaling group: Classic Load Balancer, Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.</p>
     pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
@@ -89,12 +89,12 @@ impl CreateAutoScalingGroupInput {
     pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
-    /// <p>The name of the launch configuration to use to launch instances. </p>
+    /// <p>The name of the launch configuration to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
     pub fn launch_configuration_name(&self) -> ::std::option::Option<&str> {
         self.launch_configuration_name.as_deref()
     }
-    /// <p>Information used to specify the launch template and version to use to launch instances. </p>
+    /// <p>Information used to specify the launch template and version to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>
     /// <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
@@ -123,7 +123,7 @@ impl CreateAutoScalingGroupInput {
     pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
         self.desired_capacity
     }
-    /// <p> <i>Only needed if you use simple scaling policies.</i> </p>
+    /// <p><i>Only needed if you use simple scaling policies.</i></p>
     /// <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Default: <code>300</code> seconds</p>
     pub fn default_cooldown(&self) -> ::std::option::Option<i32> {
@@ -159,7 +159,7 @@ impl CreateAutoScalingGroupInput {
         self.health_check_grace_period
     }
     /// <p>The name of the placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>
+    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group.</p>
     /// </note>
     pub fn placement_group(&self) -> ::std::option::Option<&str> {
         self.placement_group.as_deref()
@@ -169,7 +169,7 @@ impl CreateAutoScalingGroupInput {
         self.vpc_zone_identifier.as_deref()
     }
     /// <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
+    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.termination_policies.is_none()`.
     pub fn termination_policies(&self) -> &[::std::string::String] {
@@ -209,15 +209,15 @@ impl CreateAutoScalingGroupInput {
     }
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code></p>
     pub fn desired_capacity_type(&self) -> ::std::option::Option<&str> {
         self.desired_capacity_type.as_deref()
     }
-    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state.</p>
     /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
     /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
-    /// <p>Default: None </p>
+    /// <p>Default: None</p>
     pub fn default_instance_warmup(&self) -> ::std::option::Option<i32> {
         self.default_instance_warmup
     }
@@ -292,24 +292,24 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_group_name
     }
-    /// <p>The name of the launch configuration to use to launch instances. </p>
+    /// <p>The name of the launch configuration to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
     pub fn launch_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the launch configuration to use to launch instances. </p>
+    /// <p>The name of the launch configuration to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
     pub fn set_launch_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_configuration_name = input;
         self
     }
-    /// <p>The name of the launch configuration to use to launch instances. </p>
+    /// <p>The name of the launch configuration to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
     pub fn get_launch_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_configuration_name
     }
-    /// <p>Information used to specify the launch template and version to use to launch instances. </p>
+    /// <p>Information used to specify the launch template and version to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>
     /// <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
@@ -317,7 +317,7 @@ impl CreateAutoScalingGroupInputBuilder {
         self.launch_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information used to specify the launch template and version to use to launch instances. </p>
+    /// <p>Information used to specify the launch template and version to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>
     /// <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
@@ -325,7 +325,7 @@ impl CreateAutoScalingGroupInputBuilder {
         self.launch_template = input;
         self
     }
-    /// <p>Information used to specify the launch template and version to use to launch instances. </p>
+    /// <p>Information used to specify the launch template and version to use to launch instances.</p>
     /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>
     /// <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
@@ -410,21 +410,21 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
         &self.desired_capacity
     }
-    /// <p> <i>Only needed if you use simple scaling policies.</i> </p>
+    /// <p><i>Only needed if you use simple scaling policies.</i></p>
     /// <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Default: <code>300</code> seconds</p>
     pub fn default_cooldown(mut self, input: i32) -> Self {
         self.default_cooldown = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <i>Only needed if you use simple scaling policies.</i> </p>
+    /// <p><i>Only needed if you use simple scaling policies.</i></p>
     /// <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Default: <code>300</code> seconds</p>
     pub fn set_default_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_cooldown = input;
         self
     }
-    /// <p> <i>Only needed if you use simple scaling policies.</i> </p>
+    /// <p><i>Only needed if you use simple scaling policies.</i></p>
     /// <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Default: <code>300</code> seconds</p>
     pub fn get_default_cooldown(&self) -> &::std::option::Option<i32> {
@@ -528,21 +528,21 @@ impl CreateAutoScalingGroupInputBuilder {
         &self.health_check_grace_period
     }
     /// <p>The name of the placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>
+    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group.</p>
     /// </note>
     pub fn placement_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>
+    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group.</p>
     /// </note>
     pub fn set_placement_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_group = input;
         self
     }
     /// <p>The name of the placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
-    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>
+    /// <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group.</p>
     /// </note>
     pub fn get_placement_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.placement_group
@@ -566,7 +566,7 @@ impl CreateAutoScalingGroupInputBuilder {
     /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
     ///
     /// <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
+    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code></p>
     pub fn termination_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.termination_policies.unwrap_or_default();
         v.push(input.into());
@@ -574,13 +574,13 @@ impl CreateAutoScalingGroupInputBuilder {
         self
     }
     /// <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
+    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code></p>
     pub fn set_termination_policies(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.termination_policies = input;
         self
     }
     /// <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
+    /// <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code></p>
     pub fn get_termination_policies(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.termination_policies
     }
@@ -699,47 +699,47 @@ impl CreateAutoScalingGroupInputBuilder {
     }
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code></p>
     pub fn desired_capacity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_capacity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code></p>
     pub fn set_desired_capacity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_capacity_type = input;
         self
     }
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
-    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
+    /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code></p>
     pub fn get_desired_capacity_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_capacity_type
     }
-    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state.</p>
     /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
     /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
-    /// <p>Default: None </p>
+    /// <p>Default: None</p>
     pub fn default_instance_warmup(mut self, input: i32) -> Self {
         self.default_instance_warmup = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state.</p>
     /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
     /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
-    /// <p>Default: None </p>
+    /// <p>Default: None</p>
     pub fn set_default_instance_warmup(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_instance_warmup = input;
         self
     }
-    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>
+    /// <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state.</p>
     /// <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>
     /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
-    /// <p>Default: None </p>
+    /// <p>Default: None</p>
     pub fn get_default_instance_warmup(&self) -> &::std::option::Option<i32> {
         &self.default_instance_warmup
     }

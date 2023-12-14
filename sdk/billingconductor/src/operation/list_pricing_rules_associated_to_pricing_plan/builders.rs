@@ -22,7 +22,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPricingRulesAssociatedToPricingPlan`.
 ///
-/// <p> Lists the pricing rules that are associated with a pricing plan. </p>
+/// <p>Lists the pricing rules that are associated with a pricing plan.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,31 +123,31 @@ impl ListPricingRulesAssociatedToPricingPlanFluentBuilder {
             self.inner,
         )
     }
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
-    /// <p> The billing period for which the pricing rule associations are to be listed. </p>
+    /// <p>The billing period for which the pricing rule associations are to be listed.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_billing_period()
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn pricing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_plan_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn set_pricing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pricing_plan_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
     pub fn get_pricing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pricing_plan_arn()
     }
@@ -165,17 +165,17 @@ impl ListPricingRulesAssociatedToPricingPlanFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> The optional pagination token returned by a previous call. </p>
+    /// <p>The optional pagination token returned by a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

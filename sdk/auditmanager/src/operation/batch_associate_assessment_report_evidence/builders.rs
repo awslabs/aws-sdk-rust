@@ -22,7 +22,7 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchAssociateAssessmentReportEvidence`.
 ///
-/// <p> Associates a list of evidence to an assessment report in an Audit Manager assessment. </p>
+/// <p>Associates a list of evidence to an assessment report in an Audit Manager assessment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateAssessmentReportEvidenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,31 +112,31 @@ impl BatchAssociateAssessmentReportEvidenceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
-    /// <p> The identifier for the assessment. </p>
+    /// <p>The identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_id()
     }
-    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_folder_id(input.into());
         self
     }
-    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evidence_folder_id(input);
         self
     }
-    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evidence_folder_id()
     }
@@ -144,17 +144,17 @@ impl BatchAssociateAssessmentReportEvidenceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_evidence_ids`](Self::set_evidence_ids).
     ///
-    /// <p> The list of evidence identifiers. </p>
+    /// <p>The list of evidence identifiers.</p>
     pub fn evidence_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evidence_ids(input.into());
         self
     }
-    /// <p> The list of evidence identifiers. </p>
+    /// <p>The list of evidence identifiers.</p>
     pub fn set_evidence_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_evidence_ids(input);
         self
     }
-    /// <p> The list of evidence identifiers. </p>
+    /// <p>The list of evidence identifiers.</p>
     pub fn get_evidence_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_evidence_ids()
     }

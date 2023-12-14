@@ -22,7 +22,7 @@ impl DeleteModelInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteModel`.
 ///
-/// <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in SageMaker when you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model. </p>
+/// <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in SageMaker when you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

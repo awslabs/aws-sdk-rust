@@ -5,7 +5,7 @@
 pub struct SearchAnalysesOutput {
     /// <p>Metadata describing the analyses that you searched for.</p>
     pub analysis_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>>,
-    /// <p>A pagination token that can be used in a subsequent request. </p>
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -20,7 +20,7 @@ impl SearchAnalysesOutput {
     pub fn analysis_summary_list(&self) -> &[crate::types::AnalysisSummary] {
         self.analysis_summary_list.as_deref().unwrap_or_default()
     }
-    /// <p>A pagination token that can be used in a subsequent request. </p>
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -76,17 +76,17 @@ impl SearchAnalysesOutputBuilder {
     pub fn get_analysis_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
         &self.analysis_summary_list
     }
-    /// <p>A pagination token that can be used in a subsequent request. </p>
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token that can be used in a subsequent request. </p>
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination token that can be used in a subsequent request. </p>
+    /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComplianceItemsOutput {
-    /// <p>A list of compliance information for the specified resource ID. </p>
+    /// <p>A list of compliance information for the specified resource ID.</p>
     pub compliance_items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListComplianceItemsOutput {
-    /// <p>A list of compliance information for the specified resource ID. </p>
+    /// <p>A list of compliance information for the specified resource ID.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_items.is_none()`.
     pub fn compliance_items(&self) -> &[crate::types::ComplianceItem] {
@@ -46,19 +46,19 @@ impl ListComplianceItemsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_compliance_items`](Self::set_compliance_items).
     ///
-    /// <p>A list of compliance information for the specified resource ID. </p>
+    /// <p>A list of compliance information for the specified resource ID.</p>
     pub fn compliance_items(mut self, input: crate::types::ComplianceItem) -> Self {
         let mut v = self.compliance_items.unwrap_or_default();
         v.push(input);
         self.compliance_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of compliance information for the specified resource ID. </p>
+    /// <p>A list of compliance information for the specified resource ID.</p>
     pub fn set_compliance_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>>) -> Self {
         self.compliance_items = input;
         self
     }
-    /// <p>A list of compliance information for the specified resource ID. </p>
+    /// <p>A list of compliance information for the specified resource ID.</p>
     pub fn get_compliance_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceItem>> {
         &self.compliance_items
     }

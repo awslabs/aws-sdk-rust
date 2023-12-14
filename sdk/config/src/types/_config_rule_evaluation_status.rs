@@ -29,8 +29,8 @@ pub struct ConfigRuleEvaluationStatus {
     pub last_error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
-    /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-    /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
+    /// <li><p><code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p></li>
+    /// <li><p><code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p></li>
     /// </ul>
     pub first_evaluation_started: bool,
     /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
@@ -87,8 +87,8 @@ impl ConfigRuleEvaluationStatus {
     }
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
-    /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-    /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
+    /// <li><p><code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p></li>
+    /// <li><p><code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p></li>
     /// </ul>
     pub fn first_evaluation_started(&self) -> bool {
         self.first_evaluation_started
@@ -290,8 +290,8 @@ impl ConfigRuleEvaluationStatusBuilder {
     }
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
-    /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-    /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
+    /// <li><p><code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p></li>
+    /// <li><p><code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p></li>
     /// </ul>
     pub fn first_evaluation_started(mut self, input: bool) -> Self {
         self.first_evaluation_started = ::std::option::Option::Some(input);
@@ -299,8 +299,8 @@ impl ConfigRuleEvaluationStatusBuilder {
     }
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
-    /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-    /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
+    /// <li><p><code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p></li>
+    /// <li><p><code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p></li>
     /// </ul>
     pub fn set_first_evaluation_started(mut self, input: ::std::option::Option<bool>) -> Self {
         self.first_evaluation_started = input;
@@ -308,8 +308,8 @@ impl ConfigRuleEvaluationStatusBuilder {
     }
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
-    /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
-    /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
+    /// <li><p><code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p></li>
+    /// <li><p><code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p></li>
     /// </ul>
     pub fn get_first_evaluation_started(&self) -> &::std::option::Option<bool> {
         &self.first_evaluation_started

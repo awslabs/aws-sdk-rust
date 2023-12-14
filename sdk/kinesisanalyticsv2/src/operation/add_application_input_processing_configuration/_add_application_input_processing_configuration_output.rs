@@ -5,7 +5,7 @@
 pub struct AddApplicationInputProcessingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Provides the current application version. </p>
+    /// <p>Provides the current application version.</p>
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
     pub input_id: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl AddApplicationInputProcessingConfigurationOutput {
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>Provides the current application version. </p>
+    /// <p>Provides the current application version.</p>
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
@@ -69,17 +69,17 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
-    /// <p>Provides the current application version. </p>
+    /// <p>Provides the current application version.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the current application version. </p>
+    /// <p>Provides the current application version.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
     }
-    /// <p>Provides the current application version. </p>
+    /// <p>Provides the current application version.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }

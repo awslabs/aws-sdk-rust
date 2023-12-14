@@ -15,25 +15,25 @@ pub struct NetworkResource {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li> <p> <code>dxcon</code> </p> </li>
-    /// <li> <p> <code>dx-gateway</code> </p> </li>
-    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// <li><p><code>dxcon</code></p></li>
+    /// <li><p><code>dx-gateway</code></p></li>
+    /// <li><p><code>dx-vif</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li> <p> <code>connection</code> </p> </li>
-    /// <li> <p> <code>device</code> </p> </li>
-    /// <li> <p> <code>link</code> </p> </li>
-    /// <li> <p> <code>site</code> </p> </li>
+    /// <li><p><code>connection</code></p></li>
+    /// <li><p><code>device</code></p></li>
+    /// <li><p><code>link</code></p></li>
+    /// <li><p><code>site</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li> <p> <code>customer-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
-    /// <li> <p> <code>vpn-connection</code> </p> </li>
+    /// <li><p><code>customer-gateway</code></p></li>
+    /// <li><p><code>transit-gateway</code></p></li>
+    /// <li><p><code>transit-gateway-attachment</code></p></li>
+    /// <li><p><code>transit-gateway-connect-peer</code></p></li>
+    /// <li><p><code>transit-gateway-route-table</code></p></li>
+    /// <li><p><code>vpn-connection</code></p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
@@ -69,25 +69,25 @@ impl NetworkResource {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li> <p> <code>dxcon</code> </p> </li>
-    /// <li> <p> <code>dx-gateway</code> </p> </li>
-    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// <li><p><code>dxcon</code></p></li>
+    /// <li><p><code>dx-gateway</code></p></li>
+    /// <li><p><code>dx-vif</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li> <p> <code>connection</code> </p> </li>
-    /// <li> <p> <code>device</code> </p> </li>
-    /// <li> <p> <code>link</code> </p> </li>
-    /// <li> <p> <code>site</code> </p> </li>
+    /// <li><p><code>connection</code></p></li>
+    /// <li><p><code>device</code></p></li>
+    /// <li><p><code>link</code></p></li>
+    /// <li><p><code>site</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li> <p> <code>customer-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
-    /// <li> <p> <code>vpn-connection</code> </p> </li>
+    /// <li><p><code>customer-gateway</code></p></li>
+    /// <li><p><code>transit-gateway</code></p></li>
+    /// <li><p><code>transit-gateway-attachment</code></p></li>
+    /// <li><p><code>transit-gateway-connect-peer</code></p></li>
+    /// <li><p><code>transit-gateway-route-table</code></p></li>
+    /// <li><p><code>vpn-connection</code></p></li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -202,25 +202,25 @@ impl NetworkResourceBuilder {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li> <p> <code>dxcon</code> </p> </li>
-    /// <li> <p> <code>dx-gateway</code> </p> </li>
-    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// <li><p><code>dxcon</code></p></li>
+    /// <li><p><code>dx-gateway</code></p></li>
+    /// <li><p><code>dx-vif</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li> <p> <code>connection</code> </p> </li>
-    /// <li> <p> <code>device</code> </p> </li>
-    /// <li> <p> <code>link</code> </p> </li>
-    /// <li> <p> <code>site</code> </p> </li>
+    /// <li><p><code>connection</code></p></li>
+    /// <li><p><code>device</code></p></li>
+    /// <li><p><code>link</code></p></li>
+    /// <li><p><code>site</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li> <p> <code>customer-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
-    /// <li> <p> <code>vpn-connection</code> </p> </li>
+    /// <li><p><code>customer-gateway</code></p></li>
+    /// <li><p><code>transit-gateway</code></p></li>
+    /// <li><p><code>transit-gateway-attachment</code></p></li>
+    /// <li><p><code>transit-gateway-connect-peer</code></p></li>
+    /// <li><p><code>transit-gateway-route-table</code></p></li>
+    /// <li><p><code>vpn-connection</code></p></li>
     /// </ul>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
@@ -229,25 +229,25 @@ impl NetworkResourceBuilder {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li> <p> <code>dxcon</code> </p> </li>
-    /// <li> <p> <code>dx-gateway</code> </p> </li>
-    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// <li><p><code>dxcon</code></p></li>
+    /// <li><p><code>dx-gateway</code></p></li>
+    /// <li><p><code>dx-vif</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li> <p> <code>connection</code> </p> </li>
-    /// <li> <p> <code>device</code> </p> </li>
-    /// <li> <p> <code>link</code> </p> </li>
-    /// <li> <p> <code>site</code> </p> </li>
+    /// <li><p><code>connection</code></p></li>
+    /// <li><p><code>device</code></p></li>
+    /// <li><p><code>link</code></p></li>
+    /// <li><p><code>site</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li> <p> <code>customer-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
-    /// <li> <p> <code>vpn-connection</code> </p> </li>
+    /// <li><p><code>customer-gateway</code></p></li>
+    /// <li><p><code>transit-gateway</code></p></li>
+    /// <li><p><code>transit-gateway-attachment</code></p></li>
+    /// <li><p><code>transit-gateway-connect-peer</code></p></li>
+    /// <li><p><code>transit-gateway-route-table</code></p></li>
+    /// <li><p><code>vpn-connection</code></p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
@@ -256,25 +256,25 @@ impl NetworkResourceBuilder {
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
-    /// <li> <p> <code>dxcon</code> </p> </li>
-    /// <li> <p> <code>dx-gateway</code> </p> </li>
-    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// <li><p><code>dxcon</code></p></li>
+    /// <li><p><code>dx-gateway</code></p></li>
+    /// <li><p><code>dx-vif</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Network Manager:</p>
     /// <ul>
-    /// <li> <p> <code>connection</code> </p> </li>
-    /// <li> <p> <code>device</code> </p> </li>
-    /// <li> <p> <code>link</code> </p> </li>
-    /// <li> <p> <code>site</code> </p> </li>
+    /// <li><p><code>connection</code></p></li>
+    /// <li><p><code>device</code></p></li>
+    /// <li><p><code>link</code></p></li>
+    /// <li><p><code>site</code></p></li>
     /// </ul>
     /// <p>The following are the supported resource types for Amazon VPC:</p>
     /// <ul>
-    /// <li> <p> <code>customer-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
-    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
-    /// <li> <p> <code>vpn-connection</code> </p> </li>
+    /// <li><p><code>customer-gateway</code></p></li>
+    /// <li><p><code>transit-gateway</code></p></li>
+    /// <li><p><code>transit-gateway-attachment</code></p></li>
+    /// <li><p><code>transit-gateway-connect-peer</code></p></li>
+    /// <li><p><code>transit-gateway-route-table</code></p></li>
+    /// <li><p><code>vpn-connection</code></p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type

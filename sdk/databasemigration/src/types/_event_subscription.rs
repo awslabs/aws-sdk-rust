@@ -17,7 +17,7 @@ pub struct EventSubscription {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time the DMS event notification subscription was created.</p>
     pub subscription_creation_time: ::std::option::Option<::std::string::String>,
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of source Ids for the event subscription.</p>
@@ -51,7 +51,7 @@ impl EventSubscription {
     pub fn subscription_creation_time(&self) -> ::std::option::Option<&str> {
         self.subscription_creation_time.as_deref()
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
@@ -174,19 +174,19 @@ impl EventSubscriptionBuilder {
     pub fn get_subscription_creation_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_creation_time
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_type

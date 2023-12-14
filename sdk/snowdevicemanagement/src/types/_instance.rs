@@ -6,7 +6,7 @@
 pub struct Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group.</p>
     pub ami_launch_index: ::std::option::Option<i32>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct Instance {
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     /// <p>The CPU options for the instance.</p>
     pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub root_device_name: ::std::option::Option<::std::string::String>,
 }
 impl Instance {
@@ -36,7 +36,7 @@ impl Instance {
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group.</p>
     pub fn ami_launch_index(&self) -> ::std::option::Option<i32> {
         self.ami_launch_index
     }
@@ -84,7 +84,7 @@ impl Instance {
     pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::CpuOptions> {
         self.cpu_options.as_ref()
     }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn root_device_name(&self) -> ::std::option::Option<&str> {
         self.root_device_name.as_deref()
     }
@@ -129,17 +129,17 @@ impl InstanceBuilder {
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
-    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group.</p>
     pub fn ami_launch_index(mut self, input: i32) -> Self {
         self.ami_launch_index = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group.</p>
     pub fn set_ami_launch_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ami_launch_index = input;
         self
     }
-    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
+    /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group.</p>
     pub fn get_ami_launch_index(&self) -> &::std::option::Option<i32> {
         &self.ami_launch_index
     }
@@ -295,17 +295,17 @@ impl InstanceBuilder {
     pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::CpuOptions> {
         &self.cpu_options
     }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn root_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_device_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn set_root_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_device_name = input;
         self
     }
-    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn get_root_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.root_device_name
     }

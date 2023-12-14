@@ -6,7 +6,7 @@
 pub struct CreateReplicationSubnetGroupInput {
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description for the subnet group.</p>
     pub replication_subnet_group_description: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateReplicationSubnetGroupInput {
 impl CreateReplicationSubnetGroupInput {
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn replication_subnet_group_identifier(&self) -> ::std::option::Option<&str> {
         self.replication_subnet_group_identifier.as_deref()
     }
@@ -58,7 +58,7 @@ pub struct CreateReplicationSubnetGroupInputBuilder {
 impl CreateReplicationSubnetGroupInputBuilder {
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     /// This field is required.
     pub fn replication_subnet_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_subnet_group_identifier = ::std::option::Option::Some(input.into());
@@ -66,14 +66,14 @@ impl CreateReplicationSubnetGroupInputBuilder {
     }
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn set_replication_subnet_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_subnet_group_identifier = input;
         self
     }
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn get_replication_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_subnet_group_identifier
     }

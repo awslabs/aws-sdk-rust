@@ -10,9 +10,9 @@ pub struct ComboChartConfiguration {
     pub sort_configuration: ::std::option::Option<crate::types::ComboChartSortConfiguration>,
     /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
     /// <ul>
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
+    /// <li><p><code>CLUSTERED</code>: For clustered bar combo charts.</p></li>
+    /// <li><p><code>STACKED</code>: For stacked bar combo charts.</p></li>
+    /// <li><p><code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p></li>
     /// </ul>
     pub bars_arrangement: ::std::option::Option<crate::types::BarsArrangement>,
     /// <p>The category axis of a combo chart.</p>
@@ -55,9 +55,9 @@ impl ComboChartConfiguration {
     }
     /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
     /// <ul>
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
+    /// <li><p><code>CLUSTERED</code>: For clustered bar combo charts.</p></li>
+    /// <li><p><code>STACKED</code>: For stacked bar combo charts.</p></li>
+    /// <li><p><code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p></li>
     /// </ul>
     pub fn bars_arrangement(&self) -> ::std::option::Option<&crate::types::BarsArrangement> {
         self.bars_arrangement.as_ref()
@@ -178,9 +178,9 @@ impl ComboChartConfigurationBuilder {
     }
     /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
     /// <ul>
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
+    /// <li><p><code>CLUSTERED</code>: For clustered bar combo charts.</p></li>
+    /// <li><p><code>STACKED</code>: For stacked bar combo charts.</p></li>
+    /// <li><p><code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p></li>
     /// </ul>
     pub fn bars_arrangement(mut self, input: crate::types::BarsArrangement) -> Self {
         self.bars_arrangement = ::std::option::Option::Some(input);
@@ -188,9 +188,9 @@ impl ComboChartConfigurationBuilder {
     }
     /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
     /// <ul>
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
+    /// <li><p><code>CLUSTERED</code>: For clustered bar combo charts.</p></li>
+    /// <li><p><code>STACKED</code>: For stacked bar combo charts.</p></li>
+    /// <li><p><code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p></li>
     /// </ul>
     pub fn set_bars_arrangement(mut self, input: ::std::option::Option<crate::types::BarsArrangement>) -> Self {
         self.bars_arrangement = input;
@@ -198,9 +198,9 @@ impl ComboChartConfigurationBuilder {
     }
     /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
     /// <ul>
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
+    /// <li><p><code>CLUSTERED</code>: For clustered bar combo charts.</p></li>
+    /// <li><p><code>STACKED</code>: For stacked bar combo charts.</p></li>
+    /// <li><p><code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p></li>
     /// </ul>
     pub fn get_bars_arrangement(&self) -> &::std::option::Option<crate::types::BarsArrangement> {
         &self.bars_arrangement

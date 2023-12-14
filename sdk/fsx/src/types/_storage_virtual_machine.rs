@@ -14,12 +14,12 @@ pub struct StorageVirtualMachine {
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
-    /// <li> <p> <code>CREATED</code> - The SVM is fully available for use.</p> </li>
-    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new SVM.</p> </li>
-    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
+    /// <li><p><code>CREATED</code> - The SVM is fully available for use.</p></li>
+    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new SVM.</p></li>
+    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p></li>
+    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the SVM.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p></li>
+    /// <li><p><code>PENDING</code> - Amazon FSx has not started creating the SVM.</p></li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::StorageVirtualMachineLifecycle>,
     /// <p>The name of the SVM, if provisioned.</p>
@@ -58,12 +58,12 @@ impl StorageVirtualMachine {
     }
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
-    /// <li> <p> <code>CREATED</code> - The SVM is fully available for use.</p> </li>
-    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new SVM.</p> </li>
-    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
+    /// <li><p><code>CREATED</code> - The SVM is fully available for use.</p></li>
+    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new SVM.</p></li>
+    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p></li>
+    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the SVM.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p></li>
+    /// <li><p><code>PENDING</code> - Amazon FSx has not started creating the SVM.</p></li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineLifecycle> {
         self.lifecycle.as_ref()
@@ -187,12 +187,12 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
-    /// <li> <p> <code>CREATED</code> - The SVM is fully available for use.</p> </li>
-    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new SVM.</p> </li>
-    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
+    /// <li><p><code>CREATED</code> - The SVM is fully available for use.</p></li>
+    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new SVM.</p></li>
+    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p></li>
+    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the SVM.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p></li>
+    /// <li><p><code>PENDING</code> - Amazon FSx has not started creating the SVM.</p></li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::StorageVirtualMachineLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -200,12 +200,12 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
-    /// <li> <p> <code>CREATED</code> - The SVM is fully available for use.</p> </li>
-    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new SVM.</p> </li>
-    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
+    /// <li><p><code>CREATED</code> - The SVM is fully available for use.</p></li>
+    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new SVM.</p></li>
+    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p></li>
+    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the SVM.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p></li>
+    /// <li><p><code>PENDING</code> - Amazon FSx has not started creating the SVM.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineLifecycle>) -> Self {
         self.lifecycle = input;
@@ -213,12 +213,12 @@ impl StorageVirtualMachineBuilder {
     }
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
-    /// <li> <p> <code>CREATED</code> - The SVM is fully available for use.</p> </li>
-    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new SVM.</p> </li>
-    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p> </li>
-    /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
+    /// <li><p><code>CREATED</code> - The SVM is fully available for use.</p></li>
+    /// <li><p><code>CREATING</code> - Amazon FSx is creating the new SVM.</p></li>
+    /// <li><p><code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p></li>
+    /// <li><p><code>FAILED</code> - Amazon FSx was unable to create the SVM.</p></li>
+    /// <li><p><code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p></li>
+    /// <li><p><code>PENDING</code> - Amazon FSx has not started creating the SVM.</p></li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineLifecycle> {
         &self.lifecycle

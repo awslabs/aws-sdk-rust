@@ -9,8 +9,8 @@ pub struct CreateRecipeJobInput {
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
@@ -25,7 +25,7 @@ pub struct CreateRecipeJobInput {
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>>,
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
@@ -49,8 +49,8 @@ impl CreateRecipeJobInput {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -83,7 +83,7 @@ impl CreateRecipeJobInput {
     pub fn data_catalog_outputs(&self) -> &[crate::types::DataCatalogOutput] {
         self.data_catalog_outputs.as_deref().unwrap_or_default()
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_outputs.is_none()`.
     pub fn database_outputs(&self) -> &[crate::types::DatabaseOutput] {
@@ -168,8 +168,8 @@ impl CreateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input);
@@ -177,8 +177,8 @@ impl CreateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
@@ -186,8 +186,8 @@ impl CreateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         &self.encryption_mode
@@ -293,19 +293,19 @@ impl CreateRecipeJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
     ///
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
     pub fn database_outputs(mut self, input: crate::types::DatabaseOutput) -> Self {
         let mut v = self.database_outputs.unwrap_or_default();
         v.push(input);
         self.database_outputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
     pub fn set_database_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
         self.database_outputs = input;
         self
     }
-    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to.</p>
     pub fn get_database_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>> {
         &self.database_outputs
     }

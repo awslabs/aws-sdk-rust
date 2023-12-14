@@ -19,7 +19,7 @@ pub enum Error {
     FilterPolicyLimitExceededException(crate::types::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
-    /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification. </p>
+    /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.</p>
     InvalidBatchEntryIdException(crate::types::error::InvalidBatchEntryIdException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
@@ -39,7 +39,7 @@ pub enum Error {
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::types::error::KmsOptInRequired),
-    /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i> </p>
+    /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i></p>
     KmsThrottlingException(crate::types::error::KmsThrottlingException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::types::error::NotFoundException),

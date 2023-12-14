@@ -8,7 +8,7 @@ pub struct AssociateCustomDomainInput {
     /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub enable_www_subdomain: ::std::option::Option<bool>,
 }
 impl AssociateCustomDomainInput {
@@ -21,7 +21,7 @@ impl AssociateCustomDomainInput {
         self.domain_name.as_deref()
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn enable_www_subdomain(&self) -> ::std::option::Option<bool> {
         self.enable_www_subdomain
     }
@@ -73,19 +73,19 @@ impl AssociateCustomDomainInputBuilder {
         &self.domain_name
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn enable_www_subdomain(mut self, input: bool) -> Self {
         self.enable_www_subdomain = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn set_enable_www_subdomain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_www_subdomain = input;
         self
     }
     /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn get_enable_www_subdomain(&self) -> &::std::option::Option<bool> {
         &self.enable_www_subdomain
     }

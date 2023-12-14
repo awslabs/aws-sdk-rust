@@ -25,17 +25,17 @@ impl DescribeInstancesInputBuilder {
 /// <p>Retrieves information about the EC2 instances in an Amazon GameLift managed fleet, including instance ID, connection data, and status. You can use this operation with a multi-location fleet to get location-specific instance information. As an alternative, use the operations <code>ListCompute</code> and <code>DescribeCompute</code> to retrieve information for compute resources, including EC2 and Anywhere fleets.</p>
 /// <p>You can call this operation in the following ways:</p>
 /// <ul>
-/// <li> <p>To get information on all instances in a fleet's home Region, specify the fleet ID.</p> </li>
-/// <li> <p>To get information on all instances in a fleet's remote location, specify the fleet ID and location name.</p> </li>
-/// <li> <p>To get information on a specific instance in a fleet, specify the fleet ID and instance ID.</p> </li>
+/// <li><p>To get information on all instances in a fleet's home Region, specify the fleet ID.</p></li>
+/// <li><p>To get information on all instances in a fleet's remote location, specify the fleet ID and location name.</p></li>
+/// <li><p>To get information on a specific instance in a fleet, specify the fleet ID and instance ID.</p></li>
 /// </ul>
-/// <p>Use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, this operation returns <code>Instance</code> objects for each requested instance, listed in no particular order. If you call this operation for an Anywhere fleet, you receive an InvalidRequestException.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a> </p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely connect to fleet instances</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug fleet issues</a></p>
+/// <p><b>Related actions</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -183,17 +183,17 @@ impl DescribeInstancesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
-    /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
-    /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>The name of a location to retrieve instance information for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }

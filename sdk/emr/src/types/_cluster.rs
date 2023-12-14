@@ -19,7 +19,7 @@ pub struct Cluster {
     pub instance_collection_type: ::std::option::Option<crate::types::InstanceCollectionType>,
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
     pub log_uri: ::std::option::Option<::std::string::String>,
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub log_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The AMI version requested for this cluster.</p>
     pub requested_ami_version: ::std::option::Option<::std::string::String>,
@@ -62,7 +62,7 @@ pub struct Cluster {
     pub kerberos_attributes: ::std::option::Option<crate::types::KerberosAttributes>,
     /// <p>The Amazon Resource Name of the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of steps that can be executed concurrently.</p>
     pub step_concurrency_level: ::std::option::Option<i32>,
@@ -103,7 +103,7 @@ impl Cluster {
     pub fn log_uri(&self) -> ::std::option::Option<&str> {
         self.log_uri.as_deref()
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub fn log_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.log_encryption_kms_key_id.as_deref()
     }
@@ -194,7 +194,7 @@ impl Cluster {
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -360,17 +360,17 @@ impl ClusterBuilder {
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_uri
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub fn log_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub fn set_log_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_encryption_kms_key_id = input;
         self
     }
-    /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
+    /// <p>The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub fn get_log_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_encryption_kms_key_id
     }
@@ -675,17 +675,17 @@ impl ClusterBuilder {
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
-    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }

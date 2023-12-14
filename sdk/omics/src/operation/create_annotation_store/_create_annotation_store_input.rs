@@ -11,7 +11,7 @@ pub struct CreateAnnotationStoreInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the store.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
@@ -37,7 +37,7 @@ impl CreateAnnotationStoreInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
@@ -137,17 +137,17 @@ impl CreateAnnotationStoreInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }

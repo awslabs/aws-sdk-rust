@@ -5,16 +5,16 @@
 pub struct PutPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The policy to attach to the specified rule group. </p>
+    /// <p>The policy to attach to the specified rule group.</p>
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// <li><p>The policy must be composed using IAM Policy version 2012-10-17.</p></li>
+    /// <li><p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p></li>
+    /// <li><p><code>Effect</code> must specify <code>Allow</code>.</p></li>
+    /// <li><p><code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p></li>
+    /// <li><p>The policy must not include a <code>Resource</code> parameter.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutPermissionPolicyInput {
@@ -22,16 +22,16 @@ impl PutPermissionPolicyInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The policy to attach to the specified rule group. </p>
+    /// <p>The policy to attach to the specified rule group.</p>
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// <li><p>The policy must be composed using IAM Policy version 2012-10-17.</p></li>
+    /// <li><p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p></li>
+    /// <li><p><code>Effect</code> must specify <code>Allow</code>.</p></li>
+    /// <li><p><code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p></li>
+    /// <li><p>The policy must not include a <code>Resource</code> parameter.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -66,45 +66,45 @@ impl PutPermissionPolicyInputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The policy to attach to the specified rule group. </p>
+    /// <p>The policy to attach to the specified rule group.</p>
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// <li><p>The policy must be composed using IAM Policy version 2012-10-17.</p></li>
+    /// <li><p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p></li>
+    /// <li><p><code>Effect</code> must specify <code>Allow</code>.</p></li>
+    /// <li><p><code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p></li>
+    /// <li><p>The policy must not include a <code>Resource</code> parameter.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The policy to attach to the specified rule group. </p>
+    /// <p>The policy to attach to the specified rule group.</p>
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// <li><p>The policy must be composed using IAM Policy version 2012-10-17.</p></li>
+    /// <li><p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p></li>
+    /// <li><p><code>Effect</code> must specify <code>Allow</code>.</p></li>
+    /// <li><p><code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p></li>
+    /// <li><p>The policy must not include a <code>Resource</code> parameter.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The policy to attach to the specified rule group. </p>
+    /// <p>The policy to attach to the specified rule group.</p>
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li> <p>The policy must be composed using IAM Policy version 2012-10-17.</p> </li>
-    /// <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>
-    /// <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>
-    /// <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>
-    /// <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>
+    /// <li><p>The policy must be composed using IAM Policy version 2012-10-17.</p></li>
+    /// <li><p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p></li>
+    /// <li><p><code>Effect</code> must specify <code>Allow</code>.</p></li>
+    /// <li><p><code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p></li>
+    /// <li><p>The policy must not include a <code>Resource</code> parameter.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

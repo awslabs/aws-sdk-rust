@@ -118,10 +118,10 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
     /// </ul>
-    /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
-    /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
+    /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p>
+    /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
     pub fn source_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_snapshot_identifier(input.into());
         self
@@ -133,10 +133,10 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
     /// </ul>
-    /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
-    /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
+    /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p>
+    /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
     pub fn set_source_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_snapshot_identifier(input);
         self
@@ -148,22 +148,22 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
+    /// <li><p>Must specify a valid system snapshot in the "available" state.</p></li>
     /// </ul>
-    /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
-    /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
+    /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code></p>
+    /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code></p>
     pub fn get_source_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_snapshot_identifier()
     }
     /// <p>The identifier for the copy of the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-db-snapshot</code> </p>
+    /// <p>Example: <code>my-db-snapshot</code></p>
     pub fn target_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_snapshot_identifier(input.into());
         self
@@ -171,12 +171,12 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>The identifier for the copy of the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-db-snapshot</code> </p>
+    /// <p>Example: <code>my-db-snapshot</code></p>
     pub fn set_target_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_snapshot_identifier(input);
         self
@@ -184,12 +184,12 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>The identifier for the copy of the snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Can't be null, empty, or blank</p> </li>
-    /// <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Can't be null, empty, or blank</p></li>
+    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    /// <p>Example: <code>my-db-snapshot</code> </p>
+    /// <p>Example: <code>my-db-snapshot</code></p>
     pub fn get_target_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_snapshot_identifier()
     }
@@ -223,17 +223,17 @@ impl CopyDBSnapshotFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
@@ -256,9 +256,9 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p></li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
@@ -272,9 +272,9 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p></li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
@@ -288,9 +288,9 @@ impl CopyDBSnapshotFluentBuilder {
     /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
-    /// <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>
+    /// <li><p><code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p></li>
+    /// <li><p><code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p></li>
+    /// <li><p><code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p></li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>

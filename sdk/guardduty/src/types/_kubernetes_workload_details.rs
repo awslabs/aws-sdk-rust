@@ -22,7 +22,7 @@ pub struct KubernetesWorkloadDetails {
     pub service_account_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
     pub host_ipc: ::std::option::Option<bool>,
-    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub host_pid: ::std::option::Option<bool>,
 }
 impl KubernetesWorkloadDetails {
@@ -66,7 +66,7 @@ impl KubernetesWorkloadDetails {
     pub fn host_ipc(&self) -> ::std::option::Option<bool> {
         self.host_ipc
     }
-    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub fn host_pid(&self) -> ::std::option::Option<bool> {
         self.host_pid
     }
@@ -232,17 +232,17 @@ impl KubernetesWorkloadDetailsBuilder {
     pub fn get_host_ipc(&self) -> &::std::option::Option<bool> {
         &self.host_ipc
     }
-    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub fn host_pid(mut self, input: bool) -> Self {
         self.host_pid = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub fn set_host_pid(mut self, input: ::std::option::Option<bool>) -> Self {
         self.host_pid = input;
         self
     }
-    /// <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+    /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub fn get_host_pid(&self) -> &::std::option::Option<bool> {
         &self.host_pid
     }

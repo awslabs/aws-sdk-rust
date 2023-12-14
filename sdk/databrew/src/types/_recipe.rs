@@ -30,9 +30,9 @@ pub struct Recipe {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
     /// <ul>
-    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    /// <li><p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p></li>
+    /// <li><p><code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p></li>
+    /// <li><p><code>LATEST_PUBLISHED</code> - the most recent published version.</p></li>
     /// </ul>
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
@@ -90,9 +90,9 @@ impl Recipe {
     }
     /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
     /// <ul>
-    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    /// <li><p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p></li>
+    /// <li><p><code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p></li>
+    /// <li><p><code>LATEST_PUBLISHED</code> - the most recent published version.</p></li>
     /// </ul>
     pub fn recipe_version(&self) -> ::std::option::Option<&str> {
         self.recipe_version.as_deref()
@@ -307,9 +307,9 @@ impl RecipeBuilder {
     }
     /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
     /// <ul>
-    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    /// <li><p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p></li>
+    /// <li><p><code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p></li>
+    /// <li><p><code>LATEST_PUBLISHED</code> - the most recent published version.</p></li>
     /// </ul>
     pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
@@ -317,9 +317,9 @@ impl RecipeBuilder {
     }
     /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
     /// <ul>
-    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    /// <li><p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p></li>
+    /// <li><p><code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p></li>
+    /// <li><p><code>LATEST_PUBLISHED</code> - the most recent published version.</p></li>
     /// </ul>
     pub fn set_recipe_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_version = input;
@@ -327,9 +327,9 @@ impl RecipeBuilder {
     }
     /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
     /// <ul>
-    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    /// <li><p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p></li>
+    /// <li><p><code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p></li>
+    /// <li><p><code>LATEST_PUBLISHED</code> - the most recent published version.</p></li>
     /// </ul>
     pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_version

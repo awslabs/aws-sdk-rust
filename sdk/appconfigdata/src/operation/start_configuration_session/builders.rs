@@ -22,7 +22,7 @@ impl StartConfigurationSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `StartConfigurationSession`.
 ///
-/// <p>Starts a configuration session used to retrieve a deployed configuration. For more information about this API action and to view example CLI commands that show how to use it with the <code>GetLatestConfiguration</code> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving the configuration</a> in the <i>AppConfig User Guide</i>. </p>
+/// <p>Starts a configuration session used to retrieve a deployed configuration. For more information about this API action and to view example CLI commands that show how to use it with the <code>GetLatestConfiguration</code> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving the configuration</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigurationSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopLogging`](crate::operation::stop_logging::builders::StopLoggingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::stop_logging::builders::StopLoggingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_logging::builders::StopLoggingFluentBuilder::set_name):<br>required: **true**<br><p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::stop_logging::builders::StopLoggingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_logging::builders::StopLoggingFluentBuilder::set_name):<br>required: **true**<br><p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p> <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p><br>
     /// - On success, responds with [`StopLoggingOutput`](crate::operation::stop_logging::StopLoggingOutput)
     /// - On failure, responds with [`SdkError<StopLoggingError>`](crate::operation::stop_logging::StopLoggingError)
     pub fn stop_logging(&self) -> crate::operation::stop_logging::builders::StopLoggingFluentBuilder {

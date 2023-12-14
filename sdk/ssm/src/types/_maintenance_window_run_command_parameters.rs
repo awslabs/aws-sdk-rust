@@ -2,9 +2,9 @@
 
 /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
 /// <p>For information about specifying and updating task parameters, see <code>RegisterTaskWithMaintenanceWindow</code> and <code>UpdateMaintenanceWindowTask</code>.</p> <note>
-/// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
-/// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
-/// <p>For <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>. </p>
+/// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+/// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+/// <p>For <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
@@ -18,9 +18,9 @@ pub struct MaintenanceWindowRunCommandParameters {
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
     pub document_hash_type: ::std::option::Option<crate::types::DocumentHashType>,
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
-    /// <p> <code>--document-version "\$DEFAULT"</code> </p>
-    /// <p> <code>--document-version "\$LATEST"</code> </p>
-    /// <p> <code>--document-version "3"</code> </p>
+    /// <p><code>--document-version "\$DEFAULT"</code></p>
+    /// <p><code>--document-version "\$LATEST"</code></p>
+    /// <p><code>--document-version "3"</code></p>
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
@@ -53,9 +53,9 @@ impl MaintenanceWindowRunCommandParameters {
         self.document_hash_type.as_ref()
     }
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
-    /// <p> <code>--document-version "\$DEFAULT"</code> </p>
-    /// <p> <code>--document-version "\$LATEST"</code> </p>
-    /// <p> <code>--document-version "3"</code> </p>
+    /// <p><code>--document-version "\$DEFAULT"</code></p>
+    /// <p><code>--document-version "\$LATEST"</code></p>
+    /// <p><code>--document-version "3"</code></p>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
         self.document_version.as_deref()
     }
@@ -182,25 +182,25 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         &self.document_hash_type
     }
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
-    /// <p> <code>--document-version "\$DEFAULT"</code> </p>
-    /// <p> <code>--document-version "\$LATEST"</code> </p>
-    /// <p> <code>--document-version "3"</code> </p>
+    /// <p><code>--document-version "\$DEFAULT"</code></p>
+    /// <p><code>--document-version "\$LATEST"</code></p>
+    /// <p><code>--document-version "3"</code></p>
     pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
-    /// <p> <code>--document-version "\$DEFAULT"</code> </p>
-    /// <p> <code>--document-version "\$LATEST"</code> </p>
-    /// <p> <code>--document-version "3"</code> </p>
+    /// <p><code>--document-version "\$DEFAULT"</code></p>
+    /// <p><code>--document-version "\$LATEST"</code></p>
+    /// <p><code>--document-version "3"</code></p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
-    /// <p> <code>--document-version "\$DEFAULT"</code> </p>
-    /// <p> <code>--document-version "\$LATEST"</code> </p>
-    /// <p> <code>--document-version "3"</code> </p>
+    /// <p><code>--document-version "\$DEFAULT"</code></p>
+    /// <p><code>--document-version "\$LATEST"</code></p>
+    /// <p><code>--document-version "3"</code></p>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_version
     }

@@ -127,48 +127,48 @@ impl StartRestoreJobFluentBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
-    /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
+    /// <p>You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
     /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
     /// <ul>
-    /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
-    /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
-    /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
-    /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
-    /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
-    /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
+    /// <li><p><code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p></li>
+    /// <li><p><code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p></li>
+    /// <li><p><code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p></li>
+    /// <li><p><code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p></li>
+    /// <li><p><code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p></li>
+    /// <li><p><code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p></li>
+    /// <li><p><code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p></li>
     /// </ul>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(k.into(), v.into());
         self
     }
     /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
-    /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
+    /// <p>You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
     /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
     /// <ul>
-    /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
-    /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
-    /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
-    /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
-    /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
-    /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
+    /// <li><p><code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p></li>
+    /// <li><p><code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p></li>
+    /// <li><p><code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p></li>
+    /// <li><p><code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p></li>
+    /// <li><p><code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p></li>
+    /// <li><p><code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p></li>
+    /// <li><p><code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p></li>
     /// </ul>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
     /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
-    /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
+    /// <p>You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
     /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
     /// <ul>
-    /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
-    /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
-    /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
-    /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
-    /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
-    /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
+    /// <li><p><code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p></li>
+    /// <li><p><code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p></li>
+    /// <li><p><code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p></li>
+    /// <li><p><code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p></li>
+    /// <li><p><code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p></li>
+    /// <li><p><code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p></li>
+    /// <li><p><code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p></li>
     /// </ul>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_metadata()
@@ -203,21 +203,21 @@ impl StartRestoreJobFluentBuilder {
     }
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
@@ -225,21 +225,21 @@ impl StartRestoreJobFluentBuilder {
     }
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -247,21 +247,21 @@ impl StartRestoreJobFluentBuilder {
     }
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
-    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()

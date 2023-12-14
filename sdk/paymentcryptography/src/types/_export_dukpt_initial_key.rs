@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportDukptInitialKey {
-    /// <p>The KSN for IPEK generation using DUKPT. </p>
+    /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
     pub key_serial_number: ::std::string::String,
 }
 impl ExportDukptInitialKey {
-    /// <p>The KSN for IPEK generation using DUKPT. </p>
+    /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
     pub fn key_serial_number(&self) -> &str {
         use std::ops::Deref;
@@ -30,20 +30,20 @@ pub struct ExportDukptInitialKeyBuilder {
     pub(crate) key_serial_number: ::std::option::Option<::std::string::String>,
 }
 impl ExportDukptInitialKeyBuilder {
-    /// <p>The KSN for IPEK generation using DUKPT. </p>
+    /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
     /// This field is required.
     pub fn key_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_serial_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KSN for IPEK generation using DUKPT. </p>
+    /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
     pub fn set_key_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_serial_number = input;
         self
     }
-    /// <p>The KSN for IPEK generation using DUKPT. </p>
+    /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
     pub fn get_key_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_serial_number

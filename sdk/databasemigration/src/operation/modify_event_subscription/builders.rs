@@ -22,7 +22,7 @@ impl ModifyEventSubscriptionInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyEventSubscription`.
 ///
-/// <p>Modifies an existing DMS event notification subscription. </p>
+/// <p>Modifies an existing DMS event notification subscription.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyEventSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,33 +122,33 @@ impl ModifyEventSubscriptionFluentBuilder {
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscription_name()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
     }
-    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
+    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_type(input.into());
         self
     }
-    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
+    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
-    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
+    /// <p>The type of DMS resource that generates the events you want to subscribe to.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_type()
@@ -157,31 +157,31 @@ impl ModifyEventSubscriptionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
-    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
     pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_categories(input.into());
         self
     }
-    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
     pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_categories(input);
         self
     }
-    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    /// <p>A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories.</p>
     pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_categories()
     }
-    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }

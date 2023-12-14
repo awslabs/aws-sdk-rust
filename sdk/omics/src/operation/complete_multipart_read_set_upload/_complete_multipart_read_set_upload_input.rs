@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteMultipartReadSetUploadInput {
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
-    /// <p> The individual uploads or parts of a multipart upload. </p>
+    /// <p>The individual uploads or parts of a multipart upload.</p>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>,
 }
 impl CompleteMultipartReadSetUploadInput {
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
         self.sequence_store_id.as_deref()
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub fn upload_id(&self) -> ::std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p> The individual uploads or parts of a multipart upload. </p>
+    /// <p>The individual uploads or parts of a multipart upload.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
     pub fn parts(&self) -> &[crate::types::CompleteReadSetUploadPartListItem] {
@@ -42,33 +42,33 @@ pub struct CompleteMultipartReadSetUploadInputBuilder {
     pub(crate) parts: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>,
 }
 impl CompleteMultipartReadSetUploadInputBuilder {
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
-    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_store_id
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
     }
-    /// <p> The ID for the multipart upload. </p>
+    /// <p>The ID for the multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
@@ -76,19 +76,19 @@ impl CompleteMultipartReadSetUploadInputBuilder {
     ///
     /// To override the contents of this collection use [`set_parts`](Self::set_parts).
     ///
-    /// <p> The individual uploads or parts of a multipart upload. </p>
+    /// <p>The individual uploads or parts of a multipart upload.</p>
     pub fn parts(mut self, input: crate::types::CompleteReadSetUploadPartListItem) -> Self {
         let mut v = self.parts.unwrap_or_default();
         v.push(input);
         self.parts = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The individual uploads or parts of a multipart upload. </p>
+    /// <p>The individual uploads or parts of a multipart upload.</p>
     pub fn set_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>>) -> Self {
         self.parts = input;
         self
     }
-    /// <p> The individual uploads or parts of a multipart upload. </p>
+    /// <p>The individual uploads or parts of a multipart upload.</p>
     pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompleteReadSetUploadPartListItem>> {
         &self.parts
     }

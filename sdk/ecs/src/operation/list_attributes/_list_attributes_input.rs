@@ -7,7 +7,7 @@ pub struct ListAttributesInput {
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The type of the target to list attributes with.</p>
     pub target_type: ::std::option::Option<crate::types::TargetType>,
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.</p>
     pub attribute_value: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ListAttributesInput {
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
         self.target_type.as_ref()
     }
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
@@ -94,17 +94,17 @@ impl ListAttributesInputBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
         &self.target_type
     }
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
-    /// <p>The name of the attribute to filter the results with. </p>
+    /// <p>The name of the attribute to filter the results with.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_name
     }

@@ -28,7 +28,7 @@ impl EvaluateFeatureInputBuilder {
 /// <p>If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p>
 /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.</p>
 /// <p>If the experiment uses a segment, then only user sessions with <code>evaluationContext</code> values that match the segment rule are used in the experiment.</p>
-/// <p>If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p>
+/// <p>If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment.</p>
 /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EvaluateFeatureFluentBuilder {

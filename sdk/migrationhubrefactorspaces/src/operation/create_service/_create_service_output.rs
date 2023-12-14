@@ -17,21 +17,21 @@ pub struct CreateServiceOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the application that the created service belongs to. </p>
+    /// <p>The ID of the application that the created service belongs to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the VPC. </p>
+    /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint type of the service.</p>
     pub endpoint_type: ::std::option::Option<crate::types::ServiceEndpointType>,
-    /// <p>The configuration for the URL endpoint type. </p>
+    /// <p>The configuration for the URL endpoint type.</p>
     pub url_endpoint: ::std::option::Option<crate::types::UrlEndpointInput>,
     /// <p>The configuration for the Lambda endpoint type.</p>
     pub lambda_endpoint: ::std::option::Option<crate::types::LambdaEndpointInput>,
-    /// <p>The current state of the service. </p>
+    /// <p>The current state of the service.</p>
     pub state: ::std::option::Option<crate::types::ServiceState>,
-    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A timestamp that indicates when the service was last updated. </p>
+    /// <p>A timestamp that indicates when the service was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the service is created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,11 +66,11 @@ impl CreateServiceOutput {
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The ID of the application that the created service belongs to. </p>
+    /// <p>The ID of the application that the created service belongs to.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The ID of the VPC. </p>
+    /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -78,7 +78,7 @@ impl CreateServiceOutput {
     pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::ServiceEndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The configuration for the URL endpoint type. </p>
+    /// <p>The configuration for the URL endpoint type.</p>
     pub fn url_endpoint(&self) -> ::std::option::Option<&crate::types::UrlEndpointInput> {
         self.url_endpoint.as_ref()
     }
@@ -86,15 +86,15 @@ impl CreateServiceOutput {
     pub fn lambda_endpoint(&self) -> ::std::option::Option<&crate::types::LambdaEndpointInput> {
         self.lambda_endpoint.as_ref()
     }
-    /// <p>The current state of the service. </p>
+    /// <p>The current state of the service.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ServiceState> {
         self.state.as_ref()
     }
-    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>A timestamp that indicates when the service was last updated. </p>
+    /// <p>A timestamp that indicates when the service was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
@@ -259,31 +259,31 @@ impl CreateServiceOutputBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>The ID of the application that the created service belongs to. </p>
+    /// <p>The ID of the application that the created service belongs to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the application that the created service belongs to. </p>
+    /// <p>The ID of the application that the created service belongs to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The ID of the application that the created service belongs to. </p>
+    /// <p>The ID of the application that the created service belongs to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The ID of the VPC. </p>
+    /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the VPC. </p>
+    /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>The ID of the VPC. </p>
+    /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
@@ -301,17 +301,17 @@ impl CreateServiceOutputBuilder {
     pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::ServiceEndpointType> {
         &self.endpoint_type
     }
-    /// <p>The configuration for the URL endpoint type. </p>
+    /// <p>The configuration for the URL endpoint type.</p>
     pub fn url_endpoint(mut self, input: crate::types::UrlEndpointInput) -> Self {
         self.url_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the URL endpoint type. </p>
+    /// <p>The configuration for the URL endpoint type.</p>
     pub fn set_url_endpoint(mut self, input: ::std::option::Option<crate::types::UrlEndpointInput>) -> Self {
         self.url_endpoint = input;
         self
     }
-    /// <p>The configuration for the URL endpoint type. </p>
+    /// <p>The configuration for the URL endpoint type.</p>
     pub fn get_url_endpoint(&self) -> &::std::option::Option<crate::types::UrlEndpointInput> {
         &self.url_endpoint
     }
@@ -329,17 +329,17 @@ impl CreateServiceOutputBuilder {
     pub fn get_lambda_endpoint(&self) -> &::std::option::Option<crate::types::LambdaEndpointInput> {
         &self.lambda_endpoint
     }
-    /// <p>The current state of the service. </p>
+    /// <p>The current state of the service.</p>
     pub fn state(mut self, input: crate::types::ServiceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the service. </p>
+    /// <p>The current state of the service.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ServiceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of the service. </p>
+    /// <p>The current state of the service.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ServiceState> {
         &self.state
     }
@@ -347,33 +347,33 @@ impl CreateServiceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    /// <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>A timestamp that indicates when the service was last updated. </p>
+    /// <p>A timestamp that indicates when the service was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that indicates when the service was last updated. </p>
+    /// <p>A timestamp that indicates when the service was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>A timestamp that indicates when the service was last updated. </p>
+    /// <p>A timestamp that indicates when the service was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }

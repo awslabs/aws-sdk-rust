@@ -7,7 +7,7 @@
 pub struct BucketLevel {
     /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
     pub activity_metrics: ::std::option::Option<crate::types::ActivityMetrics>,
-    /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
+    /// <p>A container for the prefix-level metrics for S3 Storage Lens.</p>
     pub prefix_level: ::std::option::Option<crate::types::PrefixLevel>,
     /// <p>A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.</p>
     pub advanced_cost_optimization_metrics: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
@@ -21,7 +21,7 @@ impl BucketLevel {
     pub fn activity_metrics(&self) -> ::std::option::Option<&crate::types::ActivityMetrics> {
         self.activity_metrics.as_ref()
     }
-    /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
+    /// <p>A container for the prefix-level metrics for S3 Storage Lens.</p>
     pub fn prefix_level(&self) -> ::std::option::Option<&crate::types::PrefixLevel> {
         self.prefix_level.as_ref()
     }
@@ -70,17 +70,17 @@ impl BucketLevelBuilder {
     pub fn get_activity_metrics(&self) -> &::std::option::Option<crate::types::ActivityMetrics> {
         &self.activity_metrics
     }
-    /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
+    /// <p>A container for the prefix-level metrics for S3 Storage Lens.</p>
     pub fn prefix_level(mut self, input: crate::types::PrefixLevel) -> Self {
         self.prefix_level = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
+    /// <p>A container for the prefix-level metrics for S3 Storage Lens.</p>
     pub fn set_prefix_level(mut self, input: ::std::option::Option<crate::types::PrefixLevel>) -> Self {
         self.prefix_level = input;
         self
     }
-    /// <p>A container for the prefix-level metrics for S3 Storage Lens. </p>
+    /// <p>A container for the prefix-level metrics for S3 Storage Lens.</p>
     pub fn get_prefix_level(&self) -> &::std::option::Option<crate::types::PrefixLevel> {
         &self.prefix_level
     }

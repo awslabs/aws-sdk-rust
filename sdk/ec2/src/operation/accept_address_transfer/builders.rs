@@ -126,7 +126,7 @@ impl AcceptAddressTransferFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p> <code>tag</code>:<key>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
@@ -137,7 +137,7 @@ impl AcceptAddressTransferFluentBuilder {
         self.inner = self.inner.tag_specifications(input);
         self
     }
-    /// <p> <code>tag</code>:<key>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
@@ -148,7 +148,7 @@ impl AcceptAddressTransferFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
-    /// <p> <code>tag</code>:<key>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify

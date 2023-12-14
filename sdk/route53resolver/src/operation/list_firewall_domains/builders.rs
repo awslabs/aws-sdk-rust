@@ -22,8 +22,8 @@ impl ListFirewallDomainsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFirewallDomains`.
 ///
-/// <p>Retrieves the domains that you have defined for the specified firewall domain list. </p>
-/// <p>A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>. </p>
+/// <p>Retrieves the domains that you have defined for the specified firewall domain list.</p>
+/// <p>A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,34 +115,34 @@ impl ListFirewallDomainsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator {
         crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
-    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    /// <p>The ID of the domain list whose domains you want to retrieve.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_domain_list_id()
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

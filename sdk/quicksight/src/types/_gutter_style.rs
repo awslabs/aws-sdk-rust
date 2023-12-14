@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GutterStyle {
-    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.</p>
     pub show: ::std::option::Option<bool>,
 }
 impl GutterStyle {
-    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.</p>
     pub fn show(&self) -> ::std::option::Option<bool> {
         self.show
     }
@@ -27,17 +27,17 @@ pub struct GutterStyleBuilder {
     pub(crate) show: ::std::option::Option<bool>,
 }
 impl GutterStyleBuilder {
-    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.</p>
     pub fn show(mut self, input: bool) -> Self {
         self.show = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.</p>
     pub fn set_show(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show = input;
         self
     }
-    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
+    /// <p>This Boolean value controls whether to display a gutter space between sheet tiles.</p>
     pub fn get_show(&self) -> &::std::option::Option<bool> {
         &self.show
     }

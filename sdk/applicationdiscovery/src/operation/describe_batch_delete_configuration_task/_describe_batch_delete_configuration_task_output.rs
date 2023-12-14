@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBatchDeleteConfigurationTaskOutput {
-    /// <p> The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed. </p>
+    /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub task: ::std::option::Option<crate::types::BatchDeleteConfigurationTask>,
     _request_id: Option<String>,
 }
 impl DescribeBatchDeleteConfigurationTaskOutput {
-    /// <p> The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed. </p>
+    /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub fn task(&self) -> ::std::option::Option<&crate::types::BatchDeleteConfigurationTask> {
         self.task.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeBatchDeleteConfigurationTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeBatchDeleteConfigurationTaskOutputBuilder {
-    /// <p> The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed. </p>
+    /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub fn task(mut self, input: crate::types::BatchDeleteConfigurationTask) -> Self {
         self.task = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed. </p>
+    /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub fn set_task(mut self, input: ::std::option::Option<crate::types::BatchDeleteConfigurationTask>) -> Self {
         self.task = input;
         self
     }
-    /// <p> The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed. </p>
+    /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub fn get_task(&self) -> &::std::option::Option<crate::types::BatchDeleteConfigurationTask> {
         &self.task
     }

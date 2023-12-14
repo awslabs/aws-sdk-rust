@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Complaint {
-    /// <p> Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list. </p>
+    /// <p>Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list.</p>
     pub complaint_sub_type: ::std::option::Option<::std::string::String>,
-    /// <p> The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP. </p>
+    /// <p>The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP.</p>
     pub complaint_feedback_type: ::std::option::Option<::std::string::String>,
 }
 impl Complaint {
-    /// <p> Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list. </p>
+    /// <p>Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list.</p>
     pub fn complaint_sub_type(&self) -> ::std::option::Option<&str> {
         self.complaint_sub_type.as_deref()
     }
-    /// <p> The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP. </p>
+    /// <p>The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP.</p>
     pub fn complaint_feedback_type(&self) -> ::std::option::Option<&str> {
         self.complaint_feedback_type.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct ComplaintBuilder {
     pub(crate) complaint_feedback_type: ::std::option::Option<::std::string::String>,
 }
 impl ComplaintBuilder {
-    /// <p> Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list. </p>
+    /// <p>Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list.</p>
     pub fn complaint_sub_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.complaint_sub_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list. </p>
+    /// <p>Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list.</p>
     pub fn set_complaint_sub_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.complaint_sub_type = input;
         self
     }
-    /// <p> Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list. </p>
+    /// <p>Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't attempt to send it because it was on the account-level suppression list.</p>
     pub fn get_complaint_sub_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.complaint_sub_type
     }
-    /// <p> The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP. </p>
+    /// <p>The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP.</p>
     pub fn complaint_feedback_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.complaint_feedback_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP. </p>
+    /// <p>The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP.</p>
     pub fn set_complaint_feedback_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.complaint_feedback_type = input;
         self
     }
-    /// <p> The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP. </p>
+    /// <p>The value of the <code>Feedback-Type</code> field from the feedback report received from the ISP.</p>
     pub fn get_complaint_feedback_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.complaint_feedback_type
     }

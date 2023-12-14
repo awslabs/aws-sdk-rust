@@ -18,7 +18,7 @@ pub struct SavingsPlansPurchaseRecommendationDetail {
     pub estimated_sp_cost: ::std::option::Option<::std::string::String>,
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
     pub estimated_on_demand_cost: ::std::option::Option<::std::string::String>,
-    /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own.</p>
     pub estimated_on_demand_cost_with_current_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
     pub estimated_savings_amount: ::std::option::Option<::std::string::String>,
@@ -68,7 +68,7 @@ impl SavingsPlansPurchaseRecommendationDetail {
     pub fn estimated_on_demand_cost(&self) -> ::std::option::Option<&str> {
         self.estimated_on_demand_cost.as_deref()
     }
-    /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own.</p>
     pub fn estimated_on_demand_cost_with_current_commitment(&self) -> ::std::option::Option<&str> {
         self.estimated_on_demand_cost_with_current_commitment.as_deref()
     }
@@ -237,17 +237,17 @@ impl SavingsPlansPurchaseRecommendationDetailBuilder {
     pub fn get_estimated_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_on_demand_cost
     }
-    /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own.</p>
     pub fn estimated_on_demand_cost_with_current_commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.estimated_on_demand_cost_with_current_commitment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own.</p>
     pub fn set_estimated_on_demand_cost_with_current_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.estimated_on_demand_cost_with_current_commitment = input;
         self
     }
-    /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
+    /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own.</p>
     pub fn get_estimated_on_demand_cost_with_current_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.estimated_on_demand_cost_with_current_commitment
     }

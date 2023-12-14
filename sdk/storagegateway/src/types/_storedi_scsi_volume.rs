@@ -23,7 +23,7 @@ pub struct StorediScsiVolume {
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
     pub source_snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub preserved_existing_data: bool,
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
     pub volumei_scsi_attributes: ::std::option::Option<crate::types::VolumeiScsiAttributes>,
@@ -77,7 +77,7 @@ impl StorediScsiVolume {
         self.source_snapshot_id.as_deref()
     }
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn preserved_existing_data(&self) -> bool {
         self.preserved_existing_data
     }
@@ -260,19 +260,19 @@ impl StorediScsiVolumeBuilder {
         &self.source_snapshot_id
     }
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn preserved_existing_data(mut self, input: bool) -> Self {
         self.preserved_existing_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_preserved_existing_data(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserved_existing_data = input;
         self
     }
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
-    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_preserved_existing_data(&self) -> &::std::option::Option<bool> {
         &self.preserved_existing_data
     }

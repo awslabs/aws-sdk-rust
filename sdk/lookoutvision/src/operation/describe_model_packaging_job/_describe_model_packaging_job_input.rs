@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobInput {
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelPackagingJobInput {
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DescribeModelPackagingJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelPackagingJobInputBuilder {
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
     }
-    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// <p>The name of the project that contains the model packaging job that you want to describe.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
-    /// <p>The job name for the model packaging job. </p>
+    /// <p>The job name for the model packaging job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }

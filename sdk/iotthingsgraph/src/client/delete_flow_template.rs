@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFlowTemplate`](crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the workflow to be deleted.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the workflow to be deleted.</p> <p>The ID should be in the following format.</p> <p><code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code></p><br>
     /// - On success, responds with [`DeleteFlowTemplateOutput`](crate::operation::delete_flow_template::DeleteFlowTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteFlowTemplateError>`](crate::operation::delete_flow_template::DeleteFlowTemplateError)
     #[deprecated(note = "since: 2022-08-30")]

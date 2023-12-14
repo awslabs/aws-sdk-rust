@@ -22,7 +22,7 @@ impl UpdateVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateVehicle`.
 ///
-/// <p> Updates a vehicle. </p>
+/// <p>Updates a vehicle.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVehicleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -155,19 +155,19 @@ impl UpdateVehicleFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
-    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }

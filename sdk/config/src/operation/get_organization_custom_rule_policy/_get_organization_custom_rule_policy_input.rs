@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationCustomRulePolicyInput {
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetOrganizationCustomRulePolicyInput {
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn organization_config_rule_name(&self) -> ::std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetOrganizationCustomRulePolicyInputBuilder {
     pub(crate) organization_config_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetOrganizationCustomRulePolicyInputBuilder {
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     /// This field is required.
     pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn set_organization_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_config_rule_name = input;
         self
     }
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn get_organization_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_config_rule_name
     }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxLustreInput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationFsxLustreInput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeLocationFsxLustreInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationFsxLustreInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }

@@ -5,7 +5,7 @@
 pub struct BatchGetResourceConfigOutput {
     /// <p>A list that contains the current configuration of one or more resources.</p>
     pub base_configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>>,
-    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list.</p>
     pub unprocessed_resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl BatchGetResourceConfigOutput {
     pub fn base_configuration_items(&self) -> &[crate::types::BaseConfigurationItem] {
         self.base_configuration_items.as_deref().unwrap_or_default()
     }
-    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_resource_keys.is_none()`.
     pub fn unprocessed_resource_keys(&self) -> &[crate::types::ResourceKey] {
@@ -68,19 +68,19 @@ impl BatchGetResourceConfigOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unprocessed_resource_keys`](Self::set_unprocessed_resource_keys).
     ///
-    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list.</p>
     pub fn unprocessed_resource_keys(mut self, input: crate::types::ResourceKey) -> Self {
         let mut v = self.unprocessed_resource_keys.unwrap_or_default();
         v.push(input);
         self.unprocessed_resource_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list.</p>
     pub fn set_unprocessed_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
         self.unprocessed_resource_keys = input;
         self
     }
-    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    /// <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list.</p>
     pub fn get_unprocessed_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
         &self.unprocessed_resource_keys
     }

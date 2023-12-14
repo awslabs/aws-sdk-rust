@@ -136,17 +136,17 @@ impl UpdateDevEnvironmentFluentBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_name()
     }
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
@@ -182,21 +182,21 @@ impl UpdateDevEnvironmentFluentBuilder {
     pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
         self.inner.get_ides()
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.inner = self.inner.instance_type(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
-    /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>
+    /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p> <note>
     /// <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>
     /// </note>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {

@@ -111,9 +111,9 @@ impl CreateDocumentFluentBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -122,9 +122,9 @@ impl CreateDocumentFluentBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
@@ -133,9 +133,9 @@ impl CreateDocumentFluentBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
@@ -179,9 +179,9 @@ impl CreateDocumentFluentBuilder {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,9 +191,9 @@ impl CreateDocumentFluentBuilder {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -203,9 +203,9 @@ impl CreateDocumentFluentBuilder {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,17 +273,17 @@ impl CreateDocumentFluentBuilder {
     pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
         self.inner.get_document_format()
     }
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_type(input.into());
         self
     }
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_type()
     }
@@ -293,8 +293,8 @@ impl CreateDocumentFluentBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
@@ -304,8 +304,8 @@ impl CreateDocumentFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
@@ -315,8 +315,8 @@ impl CreateDocumentFluentBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>

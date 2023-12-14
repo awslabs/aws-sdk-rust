@@ -23,7 +23,7 @@ impl CreateClusterSecurityGroupInputBuilder {
 /// Fluent builder constructing a request to `CreateClusterSecurityGroup`.
 ///
 /// <p>Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.</p>
-/// <p> For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+/// <p>For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterSecurityGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,11 +112,11 @@ impl CreateClusterSecurityGroupFluentBuilder {
     /// <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must not be "Default".</p> </li>
-    /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Must not be "Default".</p></li>
+    /// <li><p>Must be unique for all security groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplesecuritygroup</code> </p>
+    /// <p>Example: <code>examplesecuritygroup</code></p>
     pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_security_group_name(input.into());
         self
@@ -124,11 +124,11 @@ impl CreateClusterSecurityGroupFluentBuilder {
     /// <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must not be "Default".</p> </li>
-    /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Must not be "Default".</p></li>
+    /// <li><p>Must be unique for all security groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplesecuritygroup</code> </p>
+    /// <p>Example: <code>examplesecuritygroup</code></p>
     pub fn set_cluster_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_security_group_name(input);
         self
@@ -136,11 +136,11 @@ impl CreateClusterSecurityGroupFluentBuilder {
     /// <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>Must not be "Default".</p> </li>
-    /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
+    /// <li><p>Must contain no more than 255 alphanumeric characters or hyphens.</p></li>
+    /// <li><p>Must not be "Default".</p></li>
+    /// <li><p>Must be unique for all security groups that are created by your Amazon Web Services account.</p></li>
     /// </ul>
-    /// <p>Example: <code>examplesecuritygroup</code> </p>
+    /// <p>Example: <code>examplesecuritygroup</code></p>
     pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_security_group_name()
     }

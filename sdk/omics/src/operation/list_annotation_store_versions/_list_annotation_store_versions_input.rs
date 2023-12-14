@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnnotationStoreVersionsInput {
-    /// <p> The name of an annotation store. </p>
+    /// <p>The name of an annotation store.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The maximum number of annotation store versions to return in one page of results. </p>
+    /// <p>The maximum number of annotation store versions to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> A filter to apply to the list of annotation store versions. </p>
+    /// <p>A filter to apply to the list of annotation store versions.</p>
     pub filter: ::std::option::Option<crate::types::ListAnnotationStoreVersionsFilter>,
 }
 impl ListAnnotationStoreVersionsInput {
-    /// <p> The name of an annotation store. </p>
+    /// <p>The name of an annotation store.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The maximum number of annotation store versions to return in one page of results. </p>
+    /// <p>The maximum number of annotation store versions to return in one page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> A filter to apply to the list of annotation store versions. </p>
+    /// <p>A filter to apply to the list of annotation store versions.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::ListAnnotationStoreVersionsFilter> {
         self.filter.as_ref()
     }
@@ -47,60 +47,60 @@ pub struct ListAnnotationStoreVersionsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ListAnnotationStoreVersionsFilter>,
 }
 impl ListAnnotationStoreVersionsInputBuilder {
-    /// <p> The name of an annotation store. </p>
+    /// <p>The name of an annotation store.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of an annotation store. </p>
+    /// <p>The name of an annotation store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of an annotation store. </p>
+    /// <p>The name of an annotation store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> The maximum number of annotation store versions to return in one page of results. </p>
+    /// <p>The maximum number of annotation store versions to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The maximum number of annotation store versions to return in one page of results. </p>
+    /// <p>The maximum number of annotation store versions to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> The maximum number of annotation store versions to return in one page of results. </p>
+    /// <p>The maximum number of annotation store versions to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> A filter to apply to the list of annotation store versions. </p>
+    /// <p>A filter to apply to the list of annotation store versions.</p>
     pub fn filter(mut self, input: crate::types::ListAnnotationStoreVersionsFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A filter to apply to the list of annotation store versions. </p>
+    /// <p>A filter to apply to the list of annotation store versions.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAnnotationStoreVersionsFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p> A filter to apply to the list of annotation store versions. </p>
+    /// <p>A filter to apply to the list of annotation store versions.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAnnotationStoreVersionsFilter> {
         &self.filter
     }

@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateHsmConf
 pub enum CreateHsmConfigurationError {
     /// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationAlreadyExistsFault(crate::types::error::HsmConfigurationAlreadyExistsFault),
-    /// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     HsmConfigurationQuotaExceededFault(crate::types::error::HsmConfigurationQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::types::error::InvalidTagFault),

@@ -9,8 +9,8 @@ pub struct ListBuildBatchesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
@@ -27,8 +27,8 @@ impl ListBuildBatchesInput {
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
@@ -85,8 +85,8 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -94,8 +94,8 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
@@ -103,8 +103,8 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// <li><p><code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p></li>
+    /// <li><p><code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order

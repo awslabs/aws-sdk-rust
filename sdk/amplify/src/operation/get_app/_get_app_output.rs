@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppOutput {
-    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     pub app: ::std::option::Option<crate::types::App>,
     _request_id: Option<String>,
 }
 impl GetAppOutput {
-    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     pub fn app(&self) -> ::std::option::Option<&crate::types::App> {
         self.app.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetAppOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAppOutputBuilder {
-    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     /// This field is required.
     pub fn app(mut self, input: crate::types::App) -> Self {
         self.app = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     pub fn set_app(mut self, input: ::std::option::Option<crate::types::App>) -> Self {
         self.app = input;
         self
     }
-    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// <p>Represents the different branches of a repository for building, deploying, and hosting an Amplify app.</p>
     pub fn get_app(&self) -> &::std::option::Option<crate::types::App> {
         &self.app
     }

@@ -17,12 +17,12 @@ pub struct ProgressEvent {
     pub operation: ::std::option::Option<crate::types::Operation>,
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
-    /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
+    /// <li><p><code>PENDING</code>: The resource operation hasn't yet started.</p></li>
+    /// <li><p><code>IN_PROGRESS</code>: The resource operation is currently in progress.</p></li>
+    /// <li><p><code>SUCCESS</code>: The resource operation has successfully completed.</p></li>
+    /// <li><p><code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p></li>
+    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p></li>
+    /// <li><p><code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p></li>
     /// </ul>
     pub operation_status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>When the resource operation request was initiated.</p>
@@ -59,12 +59,12 @@ impl ProgressEvent {
     }
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
-    /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
+    /// <li><p><code>PENDING</code>: The resource operation hasn't yet started.</p></li>
+    /// <li><p><code>IN_PROGRESS</code>: The resource operation is currently in progress.</p></li>
+    /// <li><p><code>SUCCESS</code>: The resource operation has successfully completed.</p></li>
+    /// <li><p><code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p></li>
+    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p></li>
+    /// <li><p><code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p></li>
     /// </ul>
     pub fn operation_status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.operation_status.as_ref()
@@ -197,12 +197,12 @@ impl ProgressEventBuilder {
     }
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
-    /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
+    /// <li><p><code>PENDING</code>: The resource operation hasn't yet started.</p></li>
+    /// <li><p><code>IN_PROGRESS</code>: The resource operation is currently in progress.</p></li>
+    /// <li><p><code>SUCCESS</code>: The resource operation has successfully completed.</p></li>
+    /// <li><p><code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p></li>
+    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p></li>
+    /// <li><p><code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p></li>
     /// </ul>
     pub fn operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.operation_status = ::std::option::Option::Some(input);
@@ -210,12 +210,12 @@ impl ProgressEventBuilder {
     }
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
-    /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
+    /// <li><p><code>PENDING</code>: The resource operation hasn't yet started.</p></li>
+    /// <li><p><code>IN_PROGRESS</code>: The resource operation is currently in progress.</p></li>
+    /// <li><p><code>SUCCESS</code>: The resource operation has successfully completed.</p></li>
+    /// <li><p><code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p></li>
+    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p></li>
+    /// <li><p><code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p></li>
     /// </ul>
     pub fn set_operation_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.operation_status = input;
@@ -223,12 +223,12 @@ impl ProgressEventBuilder {
     }
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
-    /// <li> <p> <code>PENDING</code>: The resource operation hasn't yet started.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p> </li>
-    /// <li> <p> <code>SUCCESS</code>: The resource operation has successfully completed.</p> </li>
-    /// <li> <p> <code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p> </li>
-    /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
-    /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
+    /// <li><p><code>PENDING</code>: The resource operation hasn't yet started.</p></li>
+    /// <li><p><code>IN_PROGRESS</code>: The resource operation is currently in progress.</p></li>
+    /// <li><p><code>SUCCESS</code>: The resource operation has successfully completed.</p></li>
+    /// <li><p><code>FAILED</code>: The resource operation has failed. Refer to the error code and status message for more information.</p></li>
+    /// <li><p><code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p></li>
+    /// <li><p><code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p></li>
     /// </ul>
     pub fn get_operation_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
         &self.operation_status

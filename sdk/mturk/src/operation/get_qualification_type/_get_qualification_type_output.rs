@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQualificationTypeOutput {
-    /// <p> The returned Qualification Type</p>
+    /// <p>The returned Qualification Type</p>
     pub qualification_type: ::std::option::Option<crate::types::QualificationType>,
     _request_id: Option<String>,
 }
 impl GetQualificationTypeOutput {
-    /// <p> The returned Qualification Type</p>
+    /// <p>The returned Qualification Type</p>
     pub fn qualification_type(&self) -> ::std::option::Option<&crate::types::QualificationType> {
         self.qualification_type.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetQualificationTypeOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetQualificationTypeOutputBuilder {
-    /// <p> The returned Qualification Type</p>
+    /// <p>The returned Qualification Type</p>
     pub fn qualification_type(mut self, input: crate::types::QualificationType) -> Self {
         self.qualification_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The returned Qualification Type</p>
+    /// <p>The returned Qualification Type</p>
     pub fn set_qualification_type(mut self, input: ::std::option::Option<crate::types::QualificationType>) -> Self {
         self.qualification_type = input;
         self
     }
-    /// <p> The returned Qualification Type</p>
+    /// <p>The returned Qualification Type</p>
     pub fn get_qualification_type(&self) -> &::std::option::Option<crate::types::QualificationType> {
         &self.qualification_type
     }

@@ -136,59 +136,59 @@ impl CreateElasticsearchDomainFluentBuilder {
     pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_elasticsearch_version()
     }
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub fn elasticsearch_cluster_config(mut self, input: crate::types::ElasticsearchClusterConfig) -> Self {
         self.inner = self.inner.elasticsearch_cluster_config(input);
         self
     }
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub fn set_elasticsearch_cluster_config(mut self, input: ::std::option::Option<crate::types::ElasticsearchClusterConfig>) -> Self {
         self.inner = self.inner.set_elasticsearch_cluster_config(input);
         self
     }
-    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</p>
     pub fn get_elasticsearch_cluster_config(&self) -> &::std::option::Option<crate::types::ElasticsearchClusterConfig> {
         self.inner.get_elasticsearch_cluster_config()
     }
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptions) -> Self {
         self.inner = self.inner.ebs_options(input);
         self
     }
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub fn set_ebs_options(mut self, input: ::std::option::Option<crate::types::EbsOptions>) -> Self {
         self.inner = self.inner.set_ebs_options(input);
         self
     }
-    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    /// <p>Options to enable, disable and specify the type and size of EBS storage volumes.</p>
     pub fn get_ebs_options(&self) -> &::std::option::Option<crate::types::EbsOptions> {
         self.inner.get_ebs_options()
     }
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn access_policies(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_policies(input.into());
         self
     }
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_policies(input);
         self
     }
-    /// <p> IAM access policy as a JSON-formatted string.</p>
+    /// <p>IAM access policy as a JSON-formatted string.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_policies()
     }
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
         self.inner = self.inner.snapshot_options(input);
         self
     }
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub fn set_snapshot_options(mut self, input: ::std::option::Option<crate::types::SnapshotOptions>) -> Self {
         self.inner = self.inner.set_snapshot_options(input);
         self
     }
-    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</p>
     pub fn get_snapshot_options(&self) -> &::std::option::Option<crate::types::SnapshotOptions> {
         self.inner.get_snapshot_options()
     }
@@ -252,7 +252,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
     ///
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn advanced_options(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -261,7 +261,7 @@ impl CreateElasticsearchDomainFluentBuilder {
         self.inner = self.inner.advanced_options(k.into(), v.into());
         self
     }
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn set_advanced_options(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -269,7 +269,7 @@ impl CreateElasticsearchDomainFluentBuilder {
         self.inner = self.inner.set_advanced_options(input);
         self
     }
-    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_advanced_options()
     }

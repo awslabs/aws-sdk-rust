@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsInput {
-    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> Specifies the maximum number of datasets to list. </p>
+    /// <p>Specifies the maximum number of datasets to list.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The beginning of the name of the datasets to be listed. </p>
+    /// <p>The beginning of the name of the datasets to be listed.</p>
     pub dataset_name_begins_with: ::std::option::Option<::std::string::String>,
 }
 impl ListDatasetsInput {
-    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> Specifies the maximum number of datasets to list. </p>
+    /// <p>Specifies the maximum number of datasets to list.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The beginning of the name of the datasets to be listed. </p>
+    /// <p>The beginning of the name of the datasets to be listed.</p>
     pub fn dataset_name_begins_with(&self) -> ::std::option::Option<&str> {
         self.dataset_name_begins_with.as_deref()
     }
@@ -40,45 +40,45 @@ pub struct ListDatasetsInputBuilder {
     pub(crate) dataset_name_begins_with: ::std::option::Option<::std::string::String>,
 }
 impl ListDatasetsInputBuilder {
-    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> Specifies the maximum number of datasets to list. </p>
+    /// <p>Specifies the maximum number of datasets to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies the maximum number of datasets to list. </p>
+    /// <p>Specifies the maximum number of datasets to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p> Specifies the maximum number of datasets to list. </p>
+    /// <p>Specifies the maximum number of datasets to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The beginning of the name of the datasets to be listed. </p>
+    /// <p>The beginning of the name of the datasets to be listed.</p>
     pub fn dataset_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The beginning of the name of the datasets to be listed. </p>
+    /// <p>The beginning of the name of the datasets to be listed.</p>
     pub fn set_dataset_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name_begins_with = input;
         self
     }
-    /// <p>The beginning of the name of the datasets to be listed. </p>
+    /// <p>The beginning of the name of the datasets to be listed.</p>
     pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_name_begins_with
     }

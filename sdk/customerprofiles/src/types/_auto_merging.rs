@@ -8,9 +8,9 @@ pub struct AutoMerging {
     pub enabled: bool,
     /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
     pub consolidation: ::std::option::Option<crate::types::Consolidation>,
-    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used?</p>
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
-    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles.</p>
     pub min_allowed_confidence_score_for_merging: ::std::option::Option<f64>,
 }
 impl AutoMerging {
@@ -22,11 +22,11 @@ impl AutoMerging {
     pub fn consolidation(&self) -> ::std::option::Option<&crate::types::Consolidation> {
         self.consolidation.as_ref()
     }
-    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used?</p>
     pub fn conflict_resolution(&self) -> ::std::option::Option<&crate::types::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
-    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles.</p>
     pub fn min_allowed_confidence_score_for_merging(&self) -> ::std::option::Option<f64> {
         self.min_allowed_confidence_score_for_merging
     }
@@ -77,31 +77,31 @@ impl AutoMergingBuilder {
     pub fn get_consolidation(&self) -> &::std::option::Option<crate::types::Consolidation> {
         &self.consolidation
     }
-    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used?</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
         self.conflict_resolution = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used?</p>
     pub fn set_conflict_resolution(mut self, input: ::std::option::Option<crate::types::ConflictResolution>) -> Self {
         self.conflict_resolution = input;
         self
     }
-    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used?</p>
     pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         &self.conflict_resolution
     }
-    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles.</p>
     pub fn min_allowed_confidence_score_for_merging(mut self, input: f64) -> Self {
         self.min_allowed_confidence_score_for_merging = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles.</p>
     pub fn set_min_allowed_confidence_score_for_merging(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_allowed_confidence_score_for_merging = input;
         self
     }
-    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles.</p>
     pub fn get_min_allowed_confidence_score_for_merging(&self) -> &::std::option::Option<f64> {
         &self.min_allowed_confidence_score_for_merging
     }

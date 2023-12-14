@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
-    /// <p>A name for the Amazon Q application. </p>
+    /// <p>A name for the Amazon Q application.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A description for the Amazon Q application. </p>
+    /// <p>A description for the Amazon Q application.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
@@ -19,15 +19,15 @@ pub struct CreateApplicationInput {
     pub attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
 impl CreateApplicationInput {
-    /// <p>A name for the Amazon Q application. </p>
+    /// <p>A name for the Amazon Q application.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A description for the Amazon Q application. </p>
+    /// <p>A description for the Amazon Q application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -70,47 +70,47 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
 impl CreateApplicationInputBuilder {
-    /// <p>A name for the Amazon Q application. </p>
+    /// <p>A name for the Amazon Q application.</p>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the Amazon Q application. </p>
+    /// <p>A name for the Amazon Q application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>A name for the Amazon Q application. </p>
+    /// <p>A name for the Amazon Q application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p> The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>A description for the Amazon Q application. </p>
+    /// <p>A description for the Amazon Q application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the Amazon Q application. </p>
+    /// <p>A description for the Amazon Q application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for the Amazon Q application. </p>
+    /// <p>A description for the Amazon Q application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

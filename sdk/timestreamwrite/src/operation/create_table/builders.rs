@@ -22,7 +22,7 @@ impl CreateTableInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTable`.
 ///
-/// <p>Adds a new table to an existing database in your account. In an Amazon Web Services account, table names must be at least unique within each Region if they are in the same database. You might have identical table names in the same Region if the tables are in separate databases. While creating the table, you must specify the table name, database name, and the retention properties. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code sample</a> for details. </p>
+/// <p>Adds a new table to an existing database in your account. In an Amazon Web Services account, table names must be at least unique within each Region if they are in the same database. You might have identical table names in the same Region if the tables are in separate databases. While creating the table, you must specify the table name, database name, and the retention properties. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code sample</a> for details.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -154,17 +154,17 @@ impl CreateTableFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A list of key-value pairs to label the table. </p>
+    /// <p>A list of key-value pairs to label the table.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p> A list of key-value pairs to label the table. </p>
+    /// <p>A list of key-value pairs to label the table.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> A list of key-value pairs to label the table. </p>
+    /// <p>A list of key-value pairs to label the table.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
@@ -182,17 +182,17 @@ impl CreateTableFluentBuilder {
     pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
         self.inner.get_magnetic_store_write_properties()
     }
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.inner = self.inner.schema(input);
         self
     }
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
-    /// <p> The schema of the table. </p>
+    /// <p>The schema of the table.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
         self.inner.get_schema()
     }

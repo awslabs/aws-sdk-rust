@@ -144,27 +144,27 @@ impl GetDevicePositionHistoryFluentBuilder {
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_id()
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code> </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code></p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
+    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn start_time_inclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time_inclusive(input);
@@ -173,7 +173,7 @@ impl GetDevicePositionHistoryFluentBuilder {
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
+    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn set_start_time_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time_inclusive(input);
@@ -182,7 +182,7 @@ impl GetDevicePositionHistoryFluentBuilder {
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
+    /// <li><p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p></li>
     /// </ul>
     pub fn get_start_time_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time_inclusive()
@@ -190,7 +190,7 @@ impl GetDevicePositionHistoryFluentBuilder {
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
+    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn end_time_exclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time_exclusive(input);
@@ -199,7 +199,7 @@ impl GetDevicePositionHistoryFluentBuilder {
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
+    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn set_end_time_exclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time_exclusive(input);
@@ -208,25 +208,25 @@ impl GetDevicePositionHistoryFluentBuilder {
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
+    /// <li><p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p></li>
     /// </ul>
     pub fn get_end_time_exclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time_exclusive()
     }
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>Default value: <code>100</code></p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>Default value: <code>100</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
-    /// <p>Default value: <code>100</code> </p>
+    /// <p>Default value: <code>100</code></p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

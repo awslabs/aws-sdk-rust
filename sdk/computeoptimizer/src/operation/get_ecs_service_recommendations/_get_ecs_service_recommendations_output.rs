@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationsOutput {
-    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
+    /// <p>The token to advance to the next page of Amazon ECS service recommendations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
+    /// <p>An array of objects that describe the Amazon ECS service recommendations.</p>
     pub ecs_service_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,
-    /// <p> An array of objects that describe errors of the request. </p>
+    /// <p>An array of objects that describe errors of the request.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationsOutput {
-    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
+    /// <p>The token to advance to the next page of Amazon ECS service recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
+    /// <p>An array of objects that describe the Amazon ECS service recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_service_recommendations.is_none()`.
     pub fn ecs_service_recommendations(&self) -> &[crate::types::EcsServiceRecommendation] {
         self.ecs_service_recommendations.as_deref().unwrap_or_default()
     }
-    /// <p> An array of objects that describe errors of the request. </p>
+    /// <p>An array of objects that describe errors of the request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::GetRecommendationError] {
@@ -51,17 +51,17 @@ pub struct GetEcsServiceRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetEcsServiceRecommendationsOutputBuilder {
-    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
+    /// <p>The token to advance to the next page of Amazon ECS service recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
+    /// <p>The token to advance to the next page of Amazon ECS service recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
+    /// <p>The token to advance to the next page of Amazon ECS service recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -69,19 +69,19 @@ impl GetEcsServiceRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_service_recommendations`](Self::set_ecs_service_recommendations).
     ///
-    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
+    /// <p>An array of objects that describe the Amazon ECS service recommendations.</p>
     pub fn ecs_service_recommendations(mut self, input: crate::types::EcsServiceRecommendation) -> Self {
         let mut v = self.ecs_service_recommendations.unwrap_or_default();
         v.push(input);
         self.ecs_service_recommendations = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
+    /// <p>An array of objects that describe the Amazon ECS service recommendations.</p>
     pub fn set_ecs_service_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>) -> Self {
         self.ecs_service_recommendations = input;
         self
     }
-    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
+    /// <p>An array of objects that describe the Amazon ECS service recommendations.</p>
     pub fn get_ecs_service_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>> {
         &self.ecs_service_recommendations
     }
@@ -89,19 +89,19 @@ impl GetEcsServiceRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p> An array of objects that describe errors of the request. </p>
+    /// <p>An array of objects that describe errors of the request.</p>
     pub fn errors(mut self, input: crate::types::GetRecommendationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of objects that describe errors of the request. </p>
+    /// <p>An array of objects that describe errors of the request.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p> An array of objects that describe errors of the request. </p>
+    /// <p>An array of objects that describe errors of the request.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
         &self.errors
     }

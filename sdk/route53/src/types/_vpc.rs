@@ -7,7 +7,7 @@
 pub struct Vpc {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
     pub vpc_region: ::std::option::Option<crate::types::VpcRegion>,
-    /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
+    /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl Vpc {
@@ -15,7 +15,7 @@ impl Vpc {
     pub fn vpc_region(&self) -> ::std::option::Option<&crate::types::VpcRegion> {
         self.vpc_region.as_ref()
     }
-    /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
+    /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -49,17 +49,17 @@ impl VpcBuilder {
     pub fn get_vpc_region(&self) -> &::std::option::Option<crate::types::VpcRegion> {
         &self.vpc_region
     }
-    /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
+    /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
+    /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
+    /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }

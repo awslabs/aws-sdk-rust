@@ -22,12 +22,12 @@ impl CreateExperimentTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateExperimentTemplate`.
 ///
-/// <p>Creates an experiment template. </p>
+/// <p>Creates an experiment template.</p>
 /// <p>An experiment template includes the following components:</p>
 /// <ul>
-/// <li> <p> <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment, or one or more resources that match criteria that you specify, for example, resources that have specific tags.</p> </li>
-/// <li> <p> <b>Actions</b>: The actions to carry out on the target. You can specify multiple actions, the duration of each action, and when to start each action during an experiment.</p> </li>
-/// <li> <p> <b>Stop conditions</b>: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.</p> </li>
+/// <li><p><b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment, or one or more resources that match criteria that you specify, for example, resources that have specific tags.</p></li>
+/// <li><p><b>Actions</b>: The actions to carry out on the target. You can specify multiple actions, the duration of each action, and when to start each action during an experiment.</p></li>
+/// <li><p><b>Stop conditions</b>: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

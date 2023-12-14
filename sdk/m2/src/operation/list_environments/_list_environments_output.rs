@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
-    /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
+    /// <p>Returns a list of summary details for all the runtime environments in your account.</p>
     pub environments: ::std::vec::Vec<crate::types::EnvironmentSummary>,
     /// <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentsOutput {
-    /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
+    /// <p>Returns a list of summary details for all the runtime environments in your account.</p>
     pub fn environments(&self) -> &[crate::types::EnvironmentSummary] {
         use std::ops::Deref;
         self.environments.deref()
@@ -45,19 +45,19 @@ impl ListEnvironmentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_environments`](Self::set_environments).
     ///
-    /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
+    /// <p>Returns a list of summary details for all the runtime environments in your account.</p>
     pub fn environments(mut self, input: crate::types::EnvironmentSummary) -> Self {
         let mut v = self.environments.unwrap_or_default();
         v.push(input);
         self.environments = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
+    /// <p>Returns a list of summary details for all the runtime environments in your account.</p>
     pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>) -> Self {
         self.environments = input;
         self
     }
-    /// <p>Returns a list of summary details for all the runtime environments in your account. </p>
+    /// <p>Returns a list of summary details for all the runtime environments in your account.</p>
     pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
         &self.environments
     }

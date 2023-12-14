@@ -236,7 +236,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateUploadU
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateUploadUrlError {
-    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::types::error::InternalServerException),

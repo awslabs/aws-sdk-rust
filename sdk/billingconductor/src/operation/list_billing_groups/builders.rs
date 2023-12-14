@@ -114,59 +114,59 @@ impl ListBillingGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_billing_groups::paginator::ListBillingGroupsPaginator {
         crate::operation::list_billing_groups::paginator::ListBillingGroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The preferred billing period to get billing groups. </p>
+    /// <p>The preferred billing period to get billing groups.</p>
     pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
-    /// <p>The preferred billing period to get billing groups. </p>
+    /// <p>The preferred billing period to get billing groups.</p>
     pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
-    /// <p>The preferred billing period to get billing groups. </p>
+    /// <p>The preferred billing period to get billing groups.</p>
     pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_billing_period()
     }
-    /// <p>The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of billing groups to retrieve. </p>
+    /// <p>The maximum number of billing groups to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
+    /// <p>The pagination token that's used on subsequent calls to get billing groups.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
+    /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information.</p>
     pub fn filters(mut self, input: crate::types::ListBillingGroupsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
+    /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListBillingGroupsFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information. </p>
+    /// <p>A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing plan to retrieve billing group information.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListBillingGroupsFilter> {
         self.inner.get_filters()
     }

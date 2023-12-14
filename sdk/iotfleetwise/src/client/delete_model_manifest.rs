@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteModelManifest`](crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder::set_name):<br>required: **true**<br><p> The name of the model manifest to delete. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_model_manifest::builders::DeleteModelManifestFluentBuilder::set_name):<br>required: **true**<br><p>The name of the model manifest to delete.</p><br>
     /// - On success, responds with [`DeleteModelManifestOutput`](crate::operation::delete_model_manifest::DeleteModelManifestOutput) with field(s):
     ///   - [`name(String)`](crate::operation::delete_model_manifest::DeleteModelManifestOutput::name): <p>The name of the deleted model manifest.</p>
     ///   - [`arn(String)`](crate::operation::delete_model_manifest::DeleteModelManifestOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted model manifest.</p>

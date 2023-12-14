@@ -7,10 +7,10 @@ pub struct GetCoipPoolUsageInput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
+    /// <li><p><code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -27,10 +27,10 @@ impl GetCoipPoolUsageInput {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
+    /// <li><p><code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -89,10 +89,10 @@ impl GetCoipPoolUsageInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
+    /// <li><p><code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -102,10 +102,10 @@ impl GetCoipPoolUsageInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
+    /// <li><p><code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -113,10 +113,10 @@ impl GetCoipPoolUsageInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
-    /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
+    /// <li><p><code>coip-address-usage.allocation-id</code> - The allocation ID of the address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-account-id</code> - The ID of the Amazon Web Services account that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p></li>
+    /// <li><p><code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

@@ -22,7 +22,7 @@ impl UpdateDetectorVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDetectorVersion`.
 ///
-/// <p> Updates a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector version.</p>
+/// <p>Updates a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl UpdateDetectorVersionFluentBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }
-    /// <p>The detector version ID. </p>
+    /// <p>The detector version ID.</p>
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_version_id(input.into());
         self
     }
-    /// <p>The detector version ID. </p>
+    /// <p>The detector version ID.</p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
-    /// <p>The detector version ID. </p>
+    /// <p>The detector version ID.</p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_version_id()
     }
@@ -172,17 +172,17 @@ impl UpdateDetectorVersionFluentBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         self.inner.get_rules()
     }
-    /// <p>The detector version description. </p>
+    /// <p>The detector version description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The detector version description. </p>
+    /// <p>The detector version description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The detector version description. </p>
+    /// <p>The detector version description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

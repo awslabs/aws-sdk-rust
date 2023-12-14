@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RebootDBInsta
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RebootDBInstanceError {
-    /// <p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
+    /// <p><i>DBInstanceIdentifier</i> does not refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The specified DB instance is not in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),

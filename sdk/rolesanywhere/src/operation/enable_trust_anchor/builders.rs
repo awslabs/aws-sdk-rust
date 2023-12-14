@@ -22,8 +22,8 @@ impl EnableTrustAnchorInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableTrustAnchor`.
 ///
-/// <p>Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation. </p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:EnableTrustAnchor</code>. </p>
+/// <p>Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation.</p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:EnableTrustAnchor</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableTrustAnchorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -249,11 +249,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeAccel
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeAcceleratorsError {
-    /// <p> Raised when a malformed input has been provided to the API. </p>
+    /// <p>Raised when a malformed input has been provided to the API.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p> Raised when an unexpected error occurred during request processing. </p>
+    /// <p>Raised when an unexpected error occurred during request processing.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> Raised when the requested resource cannot be found. </p>
+    /// <p>Raised when the requested resource cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

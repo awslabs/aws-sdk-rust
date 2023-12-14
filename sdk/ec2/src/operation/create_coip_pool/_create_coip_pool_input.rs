@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCoipPoolInput {
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
-    /// <p> The tags to assign to the CoIP address pool. </p>
+    /// <p>The tags to assign to the CoIP address pool.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateCoipPoolInput {
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_route_table_id.as_deref()
     }
-    /// <p> The tags to assign to the CoIP address pool. </p>
+    /// <p>The tags to assign to the CoIP address pool.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
@@ -42,18 +42,18 @@ pub struct CreateCoipPoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateCoipPoolInputBuilder {
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     /// This field is required.
     pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
-    /// <p> The ID of the local gateway route table. </p>
+    /// <p>The ID of the local gateway route table.</p>
     pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
@@ -61,19 +61,19 @@ impl CreateCoipPoolInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p> The tags to assign to the CoIP address pool. </p>
+    /// <p>The tags to assign to the CoIP address pool.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
         v.push(input);
         self.tag_specifications = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The tags to assign to the CoIP address pool. </p>
+    /// <p>The tags to assign to the CoIP address pool.</p>
     pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
-    /// <p> The tags to assign to the CoIP address pool. </p>
+    /// <p>The tags to assign to the CoIP address pool.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }

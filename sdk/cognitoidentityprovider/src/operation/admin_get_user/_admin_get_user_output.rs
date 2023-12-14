@@ -16,14 +16,14 @@ pub struct AdminGetUserOutput {
     pub enabled: bool,
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li><p>UNKNOWN - User status isn't known.</p></li>
+    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub user_status: ::std::option::Option<crate::types::UserStatusType>,
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
@@ -57,16 +57,16 @@ impl AdminGetUserOutput {
     }
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li><p>UNKNOWN - User status isn't known.</p></li>
+    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatusType> {
         self.user_status.as_ref()
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
     pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
@@ -206,11 +206,11 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li><p>UNKNOWN - User status isn't known.</p></li>
+    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn user_status(mut self, input: crate::types::UserStatusType) -> Self {
         self.user_status = ::std::option::Option::Some(input);
@@ -218,11 +218,11 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li><p>UNKNOWN - User status isn't known.</p></li>
+    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatusType>) -> Self {
         self.user_status = input;
@@ -230,11 +230,11 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li><p>UNKNOWN - User status isn't known.</p></li>
+    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatusType> {
         &self.user_status
@@ -243,19 +243,19 @@ impl AdminGetUserOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
     ///
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
         v.push(input);
         self.mfa_options = ::std::option::Option::Some(v);
         self
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
         self.mfa_options = input;
         self
     }
-    /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         &self.mfa_options
     }

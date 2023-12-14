@@ -25,10 +25,10 @@ impl DescribeWhatIfAnalysisInputBuilder {
 /// <p>Describes the what-if analysis created using the <code>CreateWhatIfAnalysis</code> operation.</p>
 /// <p>In addition to listing the properties provided in the <code>CreateWhatIfAnalysis</code> request, this operation lists the following properties:</p>
 /// <ul>
-/// <li> <p> <code>CreationTime</code> </p> </li>
-/// <li> <p> <code>LastModificationTime</code> </p> </li>
-/// <li> <p> <code>Message</code> - If an error occurred, information about the error.</p> </li>
-/// <li> <p> <code>Status</code> </p> </li>
+/// <li><p><code>CreationTime</code></p></li>
+/// <li><p><code>LastModificationTime</code></p></li>
+/// <li><p><code>Message</code> - If an error occurred, information about the error.</p></li>
+/// <li><p><code>Status</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWhatIfAnalysisFluentBuilder {

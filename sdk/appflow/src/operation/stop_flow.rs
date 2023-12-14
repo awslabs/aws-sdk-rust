@@ -234,13 +234,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopFlowEndpo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopFlowError {
-    /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
+    /// <p>There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
+    /// <p>An internal service error occurred during the processing of your request. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The resource specified in the request (such as the source or destination connector profile) is not found. </p>
+    /// <p>The resource specified in the request (such as the source or destination connector profile) is not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> The requested operation is not supported for the current flow. </p>
+    /// <p>The requested operation is not supported for the current flow.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -22,7 +22,7 @@ pub struct DomainSummary {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
     pub server_side_encryption_update_details: ::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails>,
-    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.</p>
     pub watchlist_details: ::std::option::Option<crate::types::WatchlistDetails>,
 }
 impl DomainSummary {
@@ -62,7 +62,7 @@ impl DomainSummary {
     pub fn server_side_encryption_update_details(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionUpdateDetails> {
         self.server_side_encryption_update_details.as_ref()
     }
-    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.</p>
     pub fn watchlist_details(&self) -> ::std::option::Option<&crate::types::WatchlistDetails> {
         self.watchlist_details.as_ref()
     }
@@ -235,17 +235,17 @@ impl DomainSummaryBuilder {
     pub fn get_server_side_encryption_update_details(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails> {
         &self.server_side_encryption_update_details
     }
-    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.</p>
     pub fn watchlist_details(mut self, input: crate::types::WatchlistDetails) -> Self {
         self.watchlist_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.</p>
     pub fn set_watchlist_details(mut self, input: ::std::option::Option<crate::types::WatchlistDetails>) -> Self {
         self.watchlist_details = input;
         self
     }
-    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.</p>
     pub fn get_watchlist_details(&self) -> &::std::option::Option<crate::types::WatchlistDetails> {
         &self.watchlist_details
     }

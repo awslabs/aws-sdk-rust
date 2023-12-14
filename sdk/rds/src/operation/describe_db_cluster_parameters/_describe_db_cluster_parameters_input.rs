@@ -7,15 +7,15 @@ pub struct DescribeDbClusterParametersInput {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>This parameter isn't currently supported.</p>
@@ -31,7 +31,7 @@ impl DescribeDbClusterParametersInput {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
@@ -39,9 +39,9 @@ impl DescribeDbClusterParametersInput {
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
@@ -84,7 +84,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,7 +94,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
@@ -103,7 +103,7 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
@@ -111,9 +111,9 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -122,9 +122,9 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
@@ -133,9 +133,9 @@ impl DescribeDbClusterParametersInputBuilder {
     /// <p>A specific source to return parameters for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li> <p> <code>customer</code> </p> </li>
-    /// <li> <p> <code>engine</code> </p> </li>
-    /// <li> <p> <code>service</code> </p> </li>
+    /// <li><p><code>customer</code></p></li>
+    /// <li><p><code>engine</code></p></li>
+    /// <li><p><code>service</code></p></li>
     /// </ul>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source

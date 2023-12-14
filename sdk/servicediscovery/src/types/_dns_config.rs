@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsConfig {
-    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
+    /// <p><i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i></p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub namespace_id: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ pub struct DnsConfig {
     pub dns_records: ::std::vec::Vec<crate::types::DnsRecord>,
 }
 impl DnsConfig {
-    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
+    /// <p><i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i></p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub fn namespace_id(&self) -> ::std::option::Option<&str> {
@@ -94,21 +94,21 @@ pub struct DnsConfigBuilder {
     pub(crate) dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfigBuilder {
-    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
+    /// <p><i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i></p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
+    /// <p><i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i></p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_id = input;
         self
     }
-    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
+    /// <p><i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i></p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {

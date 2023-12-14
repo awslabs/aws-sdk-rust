@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsOutput {
-    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
+    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric.</p>
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>>,
-    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAvailableResourceMetricsOutput {
-    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
+    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
     pub fn metrics(&self) -> &[crate::types::ResponseResourceMetric] {
         self.metrics.as_deref().unwrap_or_default()
     }
-    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListAvailableResourceMetricsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
-    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
+    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric.</p>
     pub fn metrics(mut self, input: crate::types::ResponseResourceMetric) -> Self {
         let mut v = self.metrics.unwrap_or_default();
         v.push(input);
         self.metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
+    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>>) -> Self {
         self.metrics = input;
         self
     }
-    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
+    /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseResourceMetric>> {
         &self.metrics
     }
-    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

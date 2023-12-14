@@ -23,7 +23,7 @@ impl SearchCasesInputBuilder {
 /// Fluent builder constructing a request to `SearchCases`.
 ///
 /// <p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p> <note>
-/// <p>For <code>customer_id</code> you must provide the full customer profile ARN in this format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>. </p>
+/// <p>For <code>customer_id</code> you must provide the full customer profile ARN in this format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchCasesFluentBuilder {
@@ -116,17 +116,17 @@ impl SearchCasesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_cases::paginator::SearchCasesPaginator {
         crate::operation::search_cases::paginator::SearchCasesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The unique identifier of the Cases domain. </p>
+    /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }
@@ -190,17 +190,17 @@ impl SearchCasesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sorts`](Self::set_sorts).
     ///
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
     pub fn sorts(mut self, input: crate::types::Sort) -> Self {
         self.inner = self.inner.sorts(input);
         self
     }
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
     pub fn set_sorts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>) -> Self {
         self.inner = self.inner.set_sorts(input);
         self
     }
-    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results.</p>
     pub fn get_sorts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
         self.inner.get_sorts()
     }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentInput {
-    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationTaskAssessmentInput {
-    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
         self.replication_task_arn.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct StartReplicationTaskAssessmentInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationTaskAssessmentInputBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     /// This field is required.
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_task_arn
     }

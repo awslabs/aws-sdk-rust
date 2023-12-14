@@ -8,8 +8,8 @@ pub struct SectionBasedLayoutPaperCanvasSizeOptions {
     pub paper_size: ::std::option::Option<crate::types::PaperSize>,
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>PORTRAIT</p> </li>
-    /// <li> <p>LANDSCAPE</p> </li>
+    /// <li><p>PORTRAIT</p></li>
+    /// <li><p>LANDSCAPE</p></li>
     /// </ul>
     pub paper_orientation: ::std::option::Option<crate::types::PaperOrientation>,
     /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
@@ -22,8 +22,8 @@ impl SectionBasedLayoutPaperCanvasSizeOptions {
     }
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>PORTRAIT</p> </li>
-    /// <li> <p>LANDSCAPE</p> </li>
+    /// <li><p>PORTRAIT</p></li>
+    /// <li><p>LANDSCAPE</p></li>
     /// </ul>
     pub fn paper_orientation(&self) -> ::std::option::Option<&crate::types::PaperOrientation> {
         self.paper_orientation.as_ref()
@@ -65,8 +65,8 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     }
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>PORTRAIT</p> </li>
-    /// <li> <p>LANDSCAPE</p> </li>
+    /// <li><p>PORTRAIT</p></li>
+    /// <li><p>LANDSCAPE</p></li>
     /// </ul>
     pub fn paper_orientation(mut self, input: crate::types::PaperOrientation) -> Self {
         self.paper_orientation = ::std::option::Option::Some(input);
@@ -74,8 +74,8 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     }
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>PORTRAIT</p> </li>
-    /// <li> <p>LANDSCAPE</p> </li>
+    /// <li><p>PORTRAIT</p></li>
+    /// <li><p>LANDSCAPE</p></li>
     /// </ul>
     pub fn set_paper_orientation(mut self, input: ::std::option::Option<crate::types::PaperOrientation>) -> Self {
         self.paper_orientation = input;
@@ -83,8 +83,8 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     }
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p>PORTRAIT</p> </li>
-    /// <li> <p>LANDSCAPE</p> </li>
+    /// <li><p>PORTRAIT</p></li>
+    /// <li><p>LANDSCAPE</p></li>
     /// </ul>
     pub fn get_paper_orientation(&self) -> &::std::option::Option<crate::types::PaperOrientation> {
         &self.paper_orientation

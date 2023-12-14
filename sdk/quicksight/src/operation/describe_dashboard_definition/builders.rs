@@ -23,7 +23,7 @@ impl DescribeDashboardDefinitionInputBuilder {
 /// Fluent builder constructing a request to `DescribeDashboardDefinition`.
 ///
 /// <p>Provides a detailed description of the definition of a dashboard.</p> <note>
-/// <p>If you do not need to know details about the content of a dashboard, for instance if you are trying to check the status of a recently created or updated dashboard, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html"> <code>DescribeDashboard</code> </a> instead. </p>
+/// <p>If you do not need to know details about the content of a dashboard, for instance if you are trying to check the status of a recently created or updated dashboard, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html"> <code>DescribeDashboard</code> </a> instead.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDashboardDefinitionFluentBuilder {
@@ -138,17 +138,17 @@ impl DescribeDashboardDefinitionFluentBuilder {
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dashboard_id()
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
         self
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
     }
-    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         self.inner.get_version_number()
     }

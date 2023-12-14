@@ -28,10 +28,10 @@ impl GetServiceLastAccessedDetailsInputBuilder {
 /// <p>For each service that the resource could access using permissions policies, the operation returns details about the most recent access attempt. If there was no attempt, the service is listed without details about the most recent attempt to access the service. If the operation fails, the <code>GetServiceLastAccessedDetails</code> operation returns the reason that it failed.</p>
 /// <p>The <code>GetServiceLastAccessedDetails</code> operation returns a list of services. This list includes the number of entities that have attempted to access the service and the date and time of the last attempt. It also returns the ARN of the following entity, depending on the resource ARN that you used to generate the report:</p>
 /// <ul>
-/// <li> <p> <b>User</b> – Returns the user ARN that you used to generate the report</p> </li>
-/// <li> <p> <b>Group</b> – Returns the ARN of the group member (user) that last attempted to access the service</p> </li>
-/// <li> <p> <b>Role</b> – Returns the role ARN that you used to generate the report</p> </li>
-/// <li> <p> <b>Policy</b> – Returns the ARN of the user or role that last used the policy to attempt to access the service</p> </li>
+/// <li><p><b>User</b> – Returns the user ARN that you used to generate the report</p></li>
+/// <li><p><b>Group</b> – Returns the ARN of the group member (user) that last attempted to access the service</p></li>
+/// <li><p><b>Role</b> – Returns the role ARN that you used to generate the report</p></li>
+/// <li><p><b>Policy</b> – Returns the ARN of the user or role that last used the policy to attempt to access the service</p></li>
 /// </ul>
 /// <p>By default, the list is sorted by service namespace.</p>
 /// <p>If you specified <code>ACTION_LEVEL</code> granularity when you generated the report, this operation returns service and action last accessed data. This includes the most recent access attempt for each tracked action within a service. Otherwise, this operation returns only service data.</p>

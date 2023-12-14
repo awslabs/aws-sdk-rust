@@ -5,15 +5,15 @@
 pub struct CreateProfileInput {
     /// <p>The name of the profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
     pub require_instance_properties: ::std::option::Option<bool>,
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub session_policy: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
     pub managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub duration_seconds: ::std::option::Option<i32>,
     /// <p>Specifies whether the profile is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
@@ -25,11 +25,11 @@ impl CreateProfileInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn require_instance_properties(&self) -> ::std::option::Option<bool> {
         self.require_instance_properties
     }
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub fn session_policy(&self) -> ::std::option::Option<&str> {
         self.session_policy.as_deref()
     }
@@ -39,13 +39,13 @@ impl CreateProfileInput {
     pub fn role_arns(&self) -> &[::std::string::String] {
         self.role_arns.as_deref().unwrap_or_default()
     }
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_policy_arns.is_none()`.
     pub fn managed_policy_arns(&self) -> &[::std::string::String] {
         self.managed_policy_arns.as_deref().unwrap_or_default()
     }
-    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
@@ -96,31 +96,31 @@ impl CreateProfileInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn require_instance_properties(mut self, input: bool) -> Self {
         self.require_instance_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn set_require_instance_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_instance_properties = input;
         self
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn get_require_instance_properties(&self) -> &::std::option::Option<bool> {
         &self.require_instance_properties
     }
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub fn session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_policy = input;
         self
     }
-    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_policy
     }
@@ -148,33 +148,33 @@ impl CreateProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_policy_arns`](Self::set_managed_policy_arns).
     ///
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
     pub fn managed_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_policy_arns.unwrap_or_default();
         v.push(input.into());
         self.managed_policy_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
     pub fn set_managed_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.managed_policy_arns = input;
         self
     }
-    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
     pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.managed_policy_arns
     }
-    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
     }
-    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }

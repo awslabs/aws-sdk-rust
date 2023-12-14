@@ -248,7 +248,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPipelineEx
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetPipelineExecutionError {
-    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
+    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline.</p>
     PipelineExecutionNotFoundException(crate::types::error::PipelineExecutionNotFoundException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::types::error::PipelineNotFoundException),

@@ -123,31 +123,31 @@ impl PutEmailIdentityMailFromAttributesFluentBuilder {
     pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_identity()
     }
-    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
+    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
-    /// <li> <p>It can't be used to receive email.</p> </li>
-    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+    /// <li><p>It has to be a subdomain of the verified identity.</p></li>
+    /// <li><p>It can't be used to receive email.</p></li>
+    /// <li><p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p></li>
     /// </ul>
     pub fn mail_from_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mail_from_domain(input.into());
         self
     }
-    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
+    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
-    /// <li> <p>It can't be used to receive email.</p> </li>
-    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+    /// <li><p>It has to be a subdomain of the verified identity.</p></li>
+    /// <li><p>It can't be used to receive email.</p></li>
+    /// <li><p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p></li>
     /// </ul>
     pub fn set_mail_from_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mail_from_domain(input);
         self
     }
-    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
+    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
     /// <ul>
-    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
-    /// <li> <p>It can't be used to receive email.</p> </li>
-    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+    /// <li><p>It has to be a subdomain of the verified identity.</p></li>
+    /// <li><p>It can't be used to receive email.</p></li>
+    /// <li><p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p></li>
     /// </ul>
     pub fn get_mail_from_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_mail_from_domain()

@@ -22,7 +22,7 @@ impl UnshareDirectoryInputBuilder {
 }
 /// Fluent builder constructing a request to `UnshareDirectory`.
 ///
-/// <p>Stops the directory sharing between the directory owner and consumer accounts. </p>
+/// <p>Stops the directory sharing between the directory owner and consumer accounts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnshareDirectoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

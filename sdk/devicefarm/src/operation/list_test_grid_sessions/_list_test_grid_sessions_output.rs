@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestGridSessionsOutput {
-    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>.</p>
     pub test_grid_sessions: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>>,
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTestGridSessionsOutput {
-    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_grid_sessions.is_none()`.
     pub fn test_grid_sessions(&self) -> &[crate::types::TestGridSession] {
@@ -46,19 +46,19 @@ impl ListTestGridSessionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_test_grid_sessions`](Self::set_test_grid_sessions).
     ///
-    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>.</p>
     pub fn test_grid_sessions(mut self, input: crate::types::TestGridSession) -> Self {
         let mut v = self.test_grid_sessions.unwrap_or_default();
         v.push(input);
         self.test_grid_sessions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>.</p>
     pub fn set_test_grid_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>>) -> Self {
         self.test_grid_sessions = input;
         self
     }
-    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>.</p>
     pub fn get_test_grid_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSession>> {
         &self.test_grid_sessions
     }

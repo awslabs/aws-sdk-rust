@@ -6,10 +6,10 @@
 pub struct DonutOptions {
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>WHOLE</code> - A pie chart</p> </li>
-    /// <li> <p> <code>SMALL</code>- A small-sized donut chart</p> </li>
-    /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
-    /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
+    /// <li><p><code>WHOLE</code> - A pie chart</p></li>
+    /// <li><p><code>SMALL</code>- A small-sized donut chart</p></li>
+    /// <li><p><code>MEDIUM</code>- A medium-sized donut chart</p></li>
+    /// <li><p><code>LARGE</code>- A large-sized donut chart</p></li>
     /// </ul>
     pub arc_options: ::std::option::Option<crate::types::ArcOptions>,
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
@@ -18,10 +18,10 @@ pub struct DonutOptions {
 impl DonutOptions {
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>WHOLE</code> - A pie chart</p> </li>
-    /// <li> <p> <code>SMALL</code>- A small-sized donut chart</p> </li>
-    /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
-    /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
+    /// <li><p><code>WHOLE</code> - A pie chart</p></li>
+    /// <li><p><code>SMALL</code>- A small-sized donut chart</p></li>
+    /// <li><p><code>MEDIUM</code>- A medium-sized donut chart</p></li>
+    /// <li><p><code>LARGE</code>- A large-sized donut chart</p></li>
     /// </ul>
     pub fn arc_options(&self) -> ::std::option::Option<&crate::types::ArcOptions> {
         self.arc_options.as_ref()
@@ -48,10 +48,10 @@ pub struct DonutOptionsBuilder {
 impl DonutOptionsBuilder {
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>WHOLE</code> - A pie chart</p> </li>
-    /// <li> <p> <code>SMALL</code>- A small-sized donut chart</p> </li>
-    /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
-    /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
+    /// <li><p><code>WHOLE</code> - A pie chart</p></li>
+    /// <li><p><code>SMALL</code>- A small-sized donut chart</p></li>
+    /// <li><p><code>MEDIUM</code>- A medium-sized donut chart</p></li>
+    /// <li><p><code>LARGE</code>- A large-sized donut chart</p></li>
     /// </ul>
     pub fn arc_options(mut self, input: crate::types::ArcOptions) -> Self {
         self.arc_options = ::std::option::Option::Some(input);
@@ -59,10 +59,10 @@ impl DonutOptionsBuilder {
     }
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>WHOLE</code> - A pie chart</p> </li>
-    /// <li> <p> <code>SMALL</code>- A small-sized donut chart</p> </li>
-    /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
-    /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
+    /// <li><p><code>WHOLE</code> - A pie chart</p></li>
+    /// <li><p><code>SMALL</code>- A small-sized donut chart</p></li>
+    /// <li><p><code>MEDIUM</code>- A medium-sized donut chart</p></li>
+    /// <li><p><code>LARGE</code>- A large-sized donut chart</p></li>
     /// </ul>
     pub fn set_arc_options(mut self, input: ::std::option::Option<crate::types::ArcOptions>) -> Self {
         self.arc_options = input;
@@ -70,10 +70,10 @@ impl DonutOptionsBuilder {
     }
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>WHOLE</code> - A pie chart</p> </li>
-    /// <li> <p> <code>SMALL</code>- A small-sized donut chart</p> </li>
-    /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
-    /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
+    /// <li><p><code>WHOLE</code> - A pie chart</p></li>
+    /// <li><p><code>SMALL</code>- A small-sized donut chart</p></li>
+    /// <li><p><code>MEDIUM</code>- A medium-sized donut chart</p></li>
+    /// <li><p><code>LARGE</code>- A large-sized donut chart</p></li>
     /// </ul>
     pub fn get_arc_options(&self) -> &::std::option::Option<crate::types::ArcOptions> {
         &self.arc_options

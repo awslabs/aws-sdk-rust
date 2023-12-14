@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     /// <p>Specifies the tags applied to the pipeline.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreatePipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn pipeline(&self) -> ::std::option::Option<&crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
@@ -43,17 +43,17 @@ pub struct CreatePipelineOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreatePipelineOutputBuilder {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
         self.pipeline = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.pipeline = input;
         self
     }
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
     pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
         &self.pipeline
     }

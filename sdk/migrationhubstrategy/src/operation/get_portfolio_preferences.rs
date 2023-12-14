@@ -246,13 +246,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPortfolioP
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetPortfolioPreferencesError {
-    /// <p> The user does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this user.</p>
+    /// <p>The user does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this user.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p> The server experienced an internal error. Try again. </p>
+    /// <p>The server experienced an internal error. Try again.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The specified ID in the request is not found. </p>
+    /// <p>The specified ID in the request is not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p> The request was denied due to request throttling. </p>
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

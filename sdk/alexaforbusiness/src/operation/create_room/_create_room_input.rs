@@ -11,7 +11,7 @@ pub struct CreateRoomInput {
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The calendar ARN for the room.</p>
     pub provider_calendar_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the room.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -33,7 +33,7 @@ impl CreateRoomInput {
     pub fn provider_calendar_id(&self) -> ::std::option::Option<&str> {
         self.provider_calendar_id.as_deref()
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -120,17 +120,17 @@ impl CreateRoomInputBuilder {
     pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_calendar_id
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

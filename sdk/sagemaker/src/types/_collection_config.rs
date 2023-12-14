@@ -6,7 +6,7 @@
 pub enum CollectionConfig {
     /// <p>Configuration for your vector collection type.</p>
     /// <ul>
-    /// <li> <p> <code>Dimension</code>: The number of elements in your vector.</p> </li>
+    /// <li><p><code>Dimension</code>: The number of elements in your vector.</p></li>
     /// </ul>
     VectorConfig(crate::types::VectorConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.

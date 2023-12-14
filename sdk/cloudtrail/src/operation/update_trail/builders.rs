@@ -110,42 +110,42 @@ impl UpdateTrailFluentBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li><p>Be between 3 and 128 characters</p></li>
+    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li><p>Be between 3 and 128 characters</p></li>
+    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li><p>Be between 3 and 128 characters</p></li>
+    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -241,7 +241,7 @@ impl UpdateTrailFluentBuilder {
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
-    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail.</p>
     /// </note>
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
@@ -249,7 +249,7 @@ impl UpdateTrailFluentBuilder {
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
-    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail.</p>
     /// </note>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_log_group_arn(input);
@@ -257,7 +257,7 @@ impl UpdateTrailFluentBuilder {
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
-    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail. </p>
+    /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail.</p>
     /// </note>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_logs_log_group_arn()
@@ -280,10 +280,10 @@ impl UpdateTrailFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li> <p>alias/MyAliasName</p> </li>
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
-    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li><p>alias/MyAliasName</p></li>
+    /// <li><p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
+    /// <li><p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
+    /// <li><p>12345678-1234-1234-1234-123456789012</p></li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -293,10 +293,10 @@ impl UpdateTrailFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li> <p>alias/MyAliasName</p> </li>
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
-    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li><p>alias/MyAliasName</p></li>
+    /// <li><p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
+    /// <li><p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
+    /// <li><p>12345678-1234-1234-1234-123456789012</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -306,10 +306,10 @@ impl UpdateTrailFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li> <p>alias/MyAliasName</p> </li>
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
-    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li><p>alias/MyAliasName</p></li>
+    /// <li><p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
+    /// <li><p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
+    /// <li><p>12345678-1234-1234-1234-123456789012</p></li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()

@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessSseSpecificationResponse {
     /// <p>Indicates whether customer managed KMS keys are in use for server side encryption.</p>
-    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
     pub customer_managed_key_enabled: ::std::option::Option<bool>,
     /// <p>The ARN of the KMS key.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessSseSpecificationResponse {
     /// <p>Indicates whether customer managed KMS keys are in use for server side encryption.</p>
-    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
     pub fn customer_managed_key_enabled(&self) -> ::std::option::Option<bool> {
         self.customer_managed_key_enabled
     }
@@ -37,19 +37,19 @@ pub struct VerifiedAccessSseSpecificationResponseBuilder {
 }
 impl VerifiedAccessSseSpecificationResponseBuilder {
     /// <p>Indicates whether customer managed KMS keys are in use for server side encryption.</p>
-    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
     pub fn customer_managed_key_enabled(mut self, input: bool) -> Self {
         self.customer_managed_key_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether customer managed KMS keys are in use for server side encryption.</p>
-    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
     pub fn set_customer_managed_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.customer_managed_key_enabled = input;
         self
     }
     /// <p>Indicates whether customer managed KMS keys are in use for server side encryption.</p>
-    /// <p>Valid values: <code>True</code> | <code>False</code> </p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
     pub fn get_customer_managed_key_enabled(&self) -> &::std::option::Option<bool> {
         &self.customer_managed_key_enabled
     }

@@ -260,7 +260,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateTraffic
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateTrafficPolicyInstanceError {
-    /// <p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request. </p>
+    /// <p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.</p>
     ConflictingTypes(crate::types::error::ConflictingTypes),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::types::error::InvalidInput),

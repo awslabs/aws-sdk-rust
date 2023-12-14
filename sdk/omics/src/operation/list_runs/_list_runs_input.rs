@@ -11,7 +11,7 @@ pub struct ListRunsInput {
     pub starting_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of runs to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub status: ::std::option::Option<crate::types::RunStatus>,
 }
 impl ListRunsInput {
@@ -31,7 +31,7 @@ impl ListRunsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RunStatus> {
         self.status.as_ref()
     }
@@ -110,17 +110,17 @@ impl ListRunsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
         &self.status
     }

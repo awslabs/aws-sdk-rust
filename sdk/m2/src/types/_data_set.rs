@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSet {
-    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
+    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
     pub dataset_name: ::std::string::String,
     /// <p>The type of dataset. The only supported value is VSAM.</p>
     pub dataset_org: ::std::option::Option<crate::types::DatasetOrgAttributes>,
-    /// <p>The relative location of the data set in the database or file system. </p>
+    /// <p>The relative location of the data set in the database or file system.</p>
     pub relative_path: ::std::option::Option<::std::string::String>,
     /// <p>The length of a record.</p>
     pub record_length: ::std::option::Option<crate::types::RecordLength>,
 }
 impl DataSet {
-    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
+    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -29,7 +29,7 @@ impl DataSet {
     pub fn dataset_org(&self) -> ::std::option::Option<&crate::types::DatasetOrgAttributes> {
         self.dataset_org.as_ref()
     }
-    /// <p>The relative location of the data set in the database or file system. </p>
+    /// <p>The relative location of the data set in the database or file system.</p>
     pub fn relative_path(&self) -> ::std::option::Option<&str> {
         self.relative_path.as_deref()
     }
@@ -56,17 +56,17 @@ pub struct DataSetBuilder {
     pub(crate) record_length: ::std::option::Option<crate::types::RecordLength>,
 }
 impl DataSetBuilder {
-    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
+    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
+    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
+    /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
@@ -100,17 +100,17 @@ impl DataSetBuilder {
     pub fn get_dataset_org(&self) -> &::std::option::Option<crate::types::DatasetOrgAttributes> {
         &self.dataset_org
     }
-    /// <p>The relative location of the data set in the database or file system. </p>
+    /// <p>The relative location of the data set in the database or file system.</p>
     pub fn relative_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relative_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The relative location of the data set in the database or file system. </p>
+    /// <p>The relative location of the data set in the database or file system.</p>
     pub fn set_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relative_path = input;
         self
     }
-    /// <p>The relative location of the data set in the database or file system. </p>
+    /// <p>The relative location of the data set in the database or file system.</p>
     pub fn get_relative_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.relative_path
     }

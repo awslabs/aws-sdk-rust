@@ -22,7 +22,7 @@ impl RegisterAccountInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterAccount`.
 ///
-/// <p> Enables Audit Manager for the specified Amazon Web Services account. </p>
+/// <p>Enables Audit Manager for the specified Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl RegisterAccountFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key(input.into());
         self
     }
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key(input);
         self
     }
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key()
     }
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub fn delegated_admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delegated_admin_account(input.into());
         self
     }
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub fn set_delegated_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delegated_admin_account(input);
         self
     }
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub fn get_delegated_admin_account(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delegated_admin_account()
     }

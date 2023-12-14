@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutoTerminationPolicyOutput {
-    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub auto_termination_policy: ::std::option::Option<crate::types::AutoTerminationPolicy>,
     _request_id: Option<String>,
 }
 impl GetAutoTerminationPolicyOutput {
-    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub fn auto_termination_policy(&self) -> ::std::option::Option<&crate::types::AutoTerminationPolicy> {
         self.auto_termination_policy.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetAutoTerminationPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAutoTerminationPolicyOutputBuilder {
-    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub fn auto_termination_policy(mut self, input: crate::types::AutoTerminationPolicy) -> Self {
         self.auto_termination_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub fn set_auto_termination_policy(mut self, input: ::std::option::Option<crate::types::AutoTerminationPolicy>) -> Self {
         self.auto_termination_policy = input;
         self
     }
-    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster.</p>
     pub fn get_auto_termination_policy(&self) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
         &self.auto_termination_policy
     }

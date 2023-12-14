@@ -34,7 +34,7 @@ pub struct FlowLog {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
-    /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
+    /// <p>Valid Values: <code>60</code> | <code>600</code></p>
     pub max_aggregation_interval: ::std::option::Option<i32>,
     /// <p>The destination options.</p>
     pub destination_options: ::std::option::Option<crate::types::DestinationOptionsResponse>,
@@ -100,7 +100,7 @@ impl FlowLog {
     }
     /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
-    /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
+    /// <p>Valid Values: <code>60</code> | <code>600</code></p>
     pub fn max_aggregation_interval(&self) -> ::std::option::Option<i32> {
         self.max_aggregation_interval
     }
@@ -342,21 +342,21 @@ impl FlowLogBuilder {
     }
     /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
-    /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
+    /// <p>Valid Values: <code>60</code> | <code>600</code></p>
     pub fn max_aggregation_interval(mut self, input: i32) -> Self {
         self.max_aggregation_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
-    /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
+    /// <p>Valid Values: <code>60</code> | <code>600</code></p>
     pub fn set_max_aggregation_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_aggregation_interval = input;
         self
     }
     /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
-    /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
+    /// <p>Valid Values: <code>60</code> | <code>600</code></p>
     pub fn get_max_aggregation_interval(&self) -> &::std::option::Option<i32> {
         &self.max_aggregation_interval
     }

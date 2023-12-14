@@ -33,7 +33,7 @@ pub struct AwsOpenSearchServiceDomainDetails {
     /// <p>The domain endpoints. Used if the OpenSearch domain resides in a VPC.</p>
     /// <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The value is the endpoint.</p>
     pub domain_endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Specifies options for fine-grained access control. </p>
+    /// <p>Specifies options for fine-grained access control.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>,
 }
 impl AwsOpenSearchServiceDomainDetails {
@@ -96,7 +96,7 @@ impl AwsOpenSearchServiceDomainDetails {
     pub fn domain_endpoints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.domain_endpoints.as_ref()
     }
-    /// <p>Specifies options for fine-grained access control. </p>
+    /// <p>Specifies options for fine-grained access control.</p>
     pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails> {
         self.advanced_security_options.as_ref()
     }
@@ -358,12 +358,12 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
     pub fn get_domain_endpoints(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.domain_endpoints
     }
-    /// <p>Specifies options for fine-grained access control. </p>
+    /// <p>Specifies options for fine-grained access control.</p>
     pub fn advanced_security_options(mut self, input: crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails) -> Self {
         self.advanced_security_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies options for fine-grained access control. </p>
+    /// <p>Specifies options for fine-grained access control.</p>
     pub fn set_advanced_security_options(
         mut self,
         input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>,
@@ -371,7 +371,7 @@ impl AwsOpenSearchServiceDomainDetailsBuilder {
         self.advanced_security_options = input;
         self
     }
-    /// <p>Specifies options for fine-grained access control. </p>
+    /// <p>Specifies options for fine-grained access control.</p>
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails> {
         &self.advanced_security_options
     }

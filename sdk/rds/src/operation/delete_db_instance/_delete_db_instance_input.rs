@@ -7,7 +7,7 @@ pub struct DeleteDbInstanceInput {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB instance.</p> </li>
+    /// <li><p>Must match the name of an existing DB instance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.</p> <note>
@@ -23,10 +23,10 @@ pub struct DeleteDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Can't be specified when deleting a read replica.</p></li>
     /// </ul>
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.</p>
@@ -36,7 +36,7 @@ impl DeleteDbInstanceInput {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB instance.</p> </li>
+    /// <li><p>Must match the name of an existing DB instance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -56,10 +56,10 @@ impl DeleteDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Can't be specified when deleting a read replica.</p></li>
     /// </ul>
     pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.final_db_snapshot_identifier.as_deref()
@@ -89,7 +89,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB instance.</p> </li>
+    /// <li><p>Must match the name of an existing DB instance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,7 +99,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB instance.</p> </li>
+    /// <li><p>Must match the name of an existing DB instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -108,7 +108,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DB instance.</p> </li>
+    /// <li><p>Must match the name of an existing DB instance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -148,10 +148,10 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Can't be specified when deleting a read replica.</p></li>
     /// </ul>
     pub fn final_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = ::std::option::Option::Some(input.into());
@@ -163,10 +163,10 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Can't be specified when deleting a read replica.</p></li>
     /// </ul>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_db_snapshot_identifier = input;
@@ -178,10 +178,10 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Can't be specified when deleting a read replica.</p></li>
     /// </ul>
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_db_snapshot_identifier

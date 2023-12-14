@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysOutput {
-    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
+    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
     pub managed_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A null value and not currently used.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRateBasedRuleManagedKeysOutput {
-    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
+    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_keys.is_none()`.
     pub fn managed_keys(&self) -> &[::std::string::String] {
@@ -46,19 +46,19 @@ impl GetRateBasedRuleManagedKeysOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_keys`](Self::set_managed_keys).
     ///
-    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
+    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
     pub fn managed_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_keys.unwrap_or_default();
         v.push(input.into());
         self.managed_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
+    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
     pub fn set_managed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.managed_keys = input;
         self
     }
-    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
+    /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>.</p>
     pub fn get_managed_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.managed_keys
     }

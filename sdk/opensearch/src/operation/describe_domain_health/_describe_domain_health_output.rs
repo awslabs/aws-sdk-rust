@@ -6,8 +6,8 @@
 pub struct DescribeDomainHealthOutput {
     /// <p>The current state of the domain.</p>
     /// <ul>
-    /// <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>
-    /// <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>
+    /// <li><p><code>Processing</code> - The domain has updates in progress.</p></li>
+    /// <li><p><code>Active</code> - Requested changes have been processed and deployed to the domain.</p></li>
     /// </ul>
     pub domain_state: ::std::option::Option<crate::types::DomainState>,
     /// <p>The number of Availability Zones configured for the domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.</p>
@@ -26,31 +26,31 @@ pub struct DescribeDomainHealthOutput {
     pub warm_node_count: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the domain has an elected master node.</p>
     /// <ul>
-    /// <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li>
-    /// <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li>
+    /// <li><p><b>Available</b> - The domain has an elected master node.</p></li>
+    /// <li><p><b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p></li>
     /// </ul>
     pub master_node: ::std::option::Option<crate::types::MasterNodeStatus>,
     /// <p>The current health status of your cluster.</p>
     /// <ul>
-    /// <li> <p> <code>Red</code> - At least one primary shard is not allocated to any node.</p> </li>
-    /// <li> <p> <code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p> </li>
-    /// <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li>
-    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li>
+    /// <li><p><code>Red</code> - At least one primary shard is not allocated to any node.</p></li>
+    /// <li><p><code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p></li>
+    /// <li><p><code>Green</code> - All primary shards and their replicas are allocated to nodes.</p></li>
+    /// <li><p><code>NotAvailable</code> - Unable to retrieve cluster health.</p></li>
     /// </ul>
     pub cluster_health: ::std::option::Option<crate::types::DomainHealth>,
     /// <p>The total number of primary and replica shards for the domain.</p>
     pub total_shards: ::std::option::Option<::std::string::String>,
     /// <p>The total number of primary and replica shards not allocated to any of the nodes for the cluster.</p>
     pub total_un_assigned_shards: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
+    /// <p>A list of <code>EnvironmentInfo</code> for the domain.</p>
     pub environment_information: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeDomainHealthOutput {
     /// <p>The current state of the domain.</p>
     /// <ul>
-    /// <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>
-    /// <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>
+    /// <li><p><code>Processing</code> - The domain has updates in progress.</p></li>
+    /// <li><p><code>Active</code> - Requested changes have been processed and deployed to the domain.</p></li>
     /// </ul>
     pub fn domain_state(&self) -> ::std::option::Option<&crate::types::DomainState> {
         self.domain_state.as_ref()
@@ -85,18 +85,18 @@ impl DescribeDomainHealthOutput {
     }
     /// <p>Indicates whether the domain has an elected master node.</p>
     /// <ul>
-    /// <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li>
-    /// <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li>
+    /// <li><p><b>Available</b> - The domain has an elected master node.</p></li>
+    /// <li><p><b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p></li>
     /// </ul>
     pub fn master_node(&self) -> ::std::option::Option<&crate::types::MasterNodeStatus> {
         self.master_node.as_ref()
     }
     /// <p>The current health status of your cluster.</p>
     /// <ul>
-    /// <li> <p> <code>Red</code> - At least one primary shard is not allocated to any node.</p> </li>
-    /// <li> <p> <code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p> </li>
-    /// <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li>
-    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li>
+    /// <li><p><code>Red</code> - At least one primary shard is not allocated to any node.</p></li>
+    /// <li><p><code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p></li>
+    /// <li><p><code>Green</code> - All primary shards and their replicas are allocated to nodes.</p></li>
+    /// <li><p><code>NotAvailable</code> - Unable to retrieve cluster health.</p></li>
     /// </ul>
     pub fn cluster_health(&self) -> ::std::option::Option<&crate::types::DomainHealth> {
         self.cluster_health.as_ref()
@@ -109,7 +109,7 @@ impl DescribeDomainHealthOutput {
     pub fn total_un_assigned_shards(&self) -> ::std::option::Option<&str> {
         self.total_un_assigned_shards.as_deref()
     }
-    /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
+    /// <p>A list of <code>EnvironmentInfo</code> for the domain.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_information.is_none()`.
     pub fn environment_information(&self) -> &[crate::types::EnvironmentInfo] {
@@ -150,8 +150,8 @@ pub struct DescribeDomainHealthOutputBuilder {
 impl DescribeDomainHealthOutputBuilder {
     /// <p>The current state of the domain.</p>
     /// <ul>
-    /// <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>
-    /// <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>
+    /// <li><p><code>Processing</code> - The domain has updates in progress.</p></li>
+    /// <li><p><code>Active</code> - Requested changes have been processed and deployed to the domain.</p></li>
     /// </ul>
     pub fn domain_state(mut self, input: crate::types::DomainState) -> Self {
         self.domain_state = ::std::option::Option::Some(input);
@@ -159,8 +159,8 @@ impl DescribeDomainHealthOutputBuilder {
     }
     /// <p>The current state of the domain.</p>
     /// <ul>
-    /// <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>
-    /// <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>
+    /// <li><p><code>Processing</code> - The domain has updates in progress.</p></li>
+    /// <li><p><code>Active</code> - Requested changes have been processed and deployed to the domain.</p></li>
     /// </ul>
     pub fn set_domain_state(mut self, input: ::std::option::Option<crate::types::DomainState>) -> Self {
         self.domain_state = input;
@@ -168,8 +168,8 @@ impl DescribeDomainHealthOutputBuilder {
     }
     /// <p>The current state of the domain.</p>
     /// <ul>
-    /// <li> <p> <code>Processing</code> - The domain has updates in progress.</p> </li>
-    /// <li> <p> <code>Active</code> - Requested changes have been processed and deployed to the domain.</p> </li>
+    /// <li><p><code>Processing</code> - The domain has updates in progress.</p></li>
+    /// <li><p><code>Active</code> - Requested changes have been processed and deployed to the domain.</p></li>
     /// </ul>
     pub fn get_domain_state(&self) -> &::std::option::Option<crate::types::DomainState> {
         &self.domain_state
@@ -274,8 +274,8 @@ impl DescribeDomainHealthOutputBuilder {
     }
     /// <p>Indicates whether the domain has an elected master node.</p>
     /// <ul>
-    /// <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li>
-    /// <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li>
+    /// <li><p><b>Available</b> - The domain has an elected master node.</p></li>
+    /// <li><p><b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p></li>
     /// </ul>
     pub fn master_node(mut self, input: crate::types::MasterNodeStatus) -> Self {
         self.master_node = ::std::option::Option::Some(input);
@@ -283,8 +283,8 @@ impl DescribeDomainHealthOutputBuilder {
     }
     /// <p>Indicates whether the domain has an elected master node.</p>
     /// <ul>
-    /// <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li>
-    /// <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li>
+    /// <li><p><b>Available</b> - The domain has an elected master node.</p></li>
+    /// <li><p><b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p></li>
     /// </ul>
     pub fn set_master_node(mut self, input: ::std::option::Option<crate::types::MasterNodeStatus>) -> Self {
         self.master_node = input;
@@ -292,18 +292,18 @@ impl DescribeDomainHealthOutputBuilder {
     }
     /// <p>Indicates whether the domain has an elected master node.</p>
     /// <ul>
-    /// <li> <p> <b>Available</b> - The domain has an elected master node.</p> </li>
-    /// <li> <p> <b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p> </li>
+    /// <li><p><b>Available</b> - The domain has an elected master node.</p></li>
+    /// <li><p><b>UnAvailable</b> - The master node hasn't yet been elected, and a quorum to elect a new master node hasn't been reached.</p></li>
     /// </ul>
     pub fn get_master_node(&self) -> &::std::option::Option<crate::types::MasterNodeStatus> {
         &self.master_node
     }
     /// <p>The current health status of your cluster.</p>
     /// <ul>
-    /// <li> <p> <code>Red</code> - At least one primary shard is not allocated to any node.</p> </li>
-    /// <li> <p> <code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p> </li>
-    /// <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li>
-    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li>
+    /// <li><p><code>Red</code> - At least one primary shard is not allocated to any node.</p></li>
+    /// <li><p><code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p></li>
+    /// <li><p><code>Green</code> - All primary shards and their replicas are allocated to nodes.</p></li>
+    /// <li><p><code>NotAvailable</code> - Unable to retrieve cluster health.</p></li>
     /// </ul>
     pub fn cluster_health(mut self, input: crate::types::DomainHealth) -> Self {
         self.cluster_health = ::std::option::Option::Some(input);
@@ -311,10 +311,10 @@ impl DescribeDomainHealthOutputBuilder {
     }
     /// <p>The current health status of your cluster.</p>
     /// <ul>
-    /// <li> <p> <code>Red</code> - At least one primary shard is not allocated to any node.</p> </li>
-    /// <li> <p> <code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p> </li>
-    /// <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li>
-    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li>
+    /// <li><p><code>Red</code> - At least one primary shard is not allocated to any node.</p></li>
+    /// <li><p><code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p></li>
+    /// <li><p><code>Green</code> - All primary shards and their replicas are allocated to nodes.</p></li>
+    /// <li><p><code>NotAvailable</code> - Unable to retrieve cluster health.</p></li>
     /// </ul>
     pub fn set_cluster_health(mut self, input: ::std::option::Option<crate::types::DomainHealth>) -> Self {
         self.cluster_health = input;
@@ -322,10 +322,10 @@ impl DescribeDomainHealthOutputBuilder {
     }
     /// <p>The current health status of your cluster.</p>
     /// <ul>
-    /// <li> <p> <code>Red</code> - At least one primary shard is not allocated to any node.</p> </li>
-    /// <li> <p> <code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p> </li>
-    /// <li> <p> <code>Green</code> - All primary shards and their replicas are allocated to nodes.</p> </li>
-    /// <li> <p> <code>NotAvailable</code> - Unable to retrieve cluster health.</p> </li>
+    /// <li><p><code>Red</code> - At least one primary shard is not allocated to any node.</p></li>
+    /// <li><p><code>Yellow</code> - All primary shards are allocated to nodes, but some replicas aren’t.</p></li>
+    /// <li><p><code>Green</code> - All primary shards and their replicas are allocated to nodes.</p></li>
+    /// <li><p><code>NotAvailable</code> - Unable to retrieve cluster health.</p></li>
     /// </ul>
     pub fn get_cluster_health(&self) -> &::std::option::Option<crate::types::DomainHealth> {
         &self.cluster_health
@@ -362,19 +362,19 @@ impl DescribeDomainHealthOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_information`](Self::set_environment_information).
     ///
-    /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
+    /// <p>A list of <code>EnvironmentInfo</code> for the domain.</p>
     pub fn environment_information(mut self, input: crate::types::EnvironmentInfo) -> Self {
         let mut v = self.environment_information.unwrap_or_default();
         v.push(input);
         self.environment_information = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
+    /// <p>A list of <code>EnvironmentInfo</code> for the domain.</p>
     pub fn set_environment_information(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>>) -> Self {
         self.environment_information = input;
         self
     }
-    /// <p>A list of <code>EnvironmentInfo</code> for the domain. </p>
+    /// <p>A list of <code>EnvironmentInfo</code> for the domain.</p>
     pub fn get_environment_information(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfo>> {
         &self.environment_information
     }

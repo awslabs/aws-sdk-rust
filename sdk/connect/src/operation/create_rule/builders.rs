@@ -23,7 +23,7 @@ impl CreateRuleInputBuilder {
 /// Fluent builder constructing a request to `CreateRule`.
 ///
 /// <p>Creates a rule for the specified Amazon Connect instance.</p>
-/// <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule. </p>
+/// <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

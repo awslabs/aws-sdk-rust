@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationPolicyAssociationInput {
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub target: ::std::option::Option<crate::types::Target>,
 }
 impl GetConfigurationPolicyAssociationInput {
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
         self.target.as_ref()
     }
@@ -26,18 +26,18 @@ pub struct GetConfigurationPolicyAssociationInputBuilder {
     pub(crate) target: ::std::option::Option<crate::types::Target>,
 }
 impl GetConfigurationPolicyAssociationInputBuilder {
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     /// This field is required.
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.target = input;
         self
     }
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         &self.target
     }

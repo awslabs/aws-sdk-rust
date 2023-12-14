@@ -22,7 +22,7 @@ impl DescribeInferenceSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeInferenceScheduler`.
 ///
-/// <p> Specifies information about the inference scheduler being used, including name, model, status, and associated metadata </p>
+/// <p>Specifies information about the inference scheduler being used, including name, model, status, and associated metadata</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeInferenceSchedulerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the inference scheduler being described. </p>
+    /// <p>The name of the inference scheduler being described.</p>
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
-    /// <p>The name of the inference scheduler being described. </p>
+    /// <p>The name of the inference scheduler being described.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
-    /// <p>The name of the inference scheduler being described. </p>
+    /// <p>The name of the inference scheduler being described.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_scheduler_name()
     }

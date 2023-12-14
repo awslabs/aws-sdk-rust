@@ -22,7 +22,7 @@ impl RemoveManagedScalingPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveManagedScalingPolicy`.
 ///
-/// <p> Removes a managed scaling policy from a specified Amazon EMR cluster. </p>
+/// <p>Removes a managed scaling policy from a specified Amazon EMR cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveManagedScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl RemoveManagedScalingPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
         self
     }
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
-    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    /// <p>Specifies the ID of the cluster from which the managed scaling policy will be removed.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_id()
     }

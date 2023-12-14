@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGameServerGroupOutput {
-    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>.</p>
     pub game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
 }
 impl DeleteGameServerGroupOutput {
-    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>.</p>
     pub fn game_server_group(&self) -> ::std::option::Option<&crate::types::GameServerGroup> {
         self.game_server_group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteGameServerGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteGameServerGroupOutputBuilder {
-    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>.</p>
     pub fn game_server_group(mut self, input: crate::types::GameServerGroup) -> Self {
         self.game_server_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>.</p>
     pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }
-    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>.</p>
     pub fn get_game_server_group(&self) -> &::std::option::Option<crate::types::GameServerGroup> {
         &self.game_server_group
     }

@@ -110,17 +110,17 @@ impl DetectEntitiesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for entities.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for entities.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self
     }
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities.</p>
+    /// <p>A UTF-8 text string containing the clinical content being examined for entities.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_text()
     }

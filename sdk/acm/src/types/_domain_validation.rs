@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainValidation {
-    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     pub domain_name: ::std::string::String,
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
     pub validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -12,9 +12,9 @@ pub struct DomainValidation {
     pub validation_domain: ::std::option::Option<::std::string::String>,
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
-    /// <li> <p> <code></code>SUCCESS</p> </li>
-    /// <li> <p> <code></code>FAILED</p> </li>
+    /// <li><p><code>PENDING_VALIDATION</code></p></li>
+    /// <li><p><code></code>SUCCESS</p></li>
+    /// <li><p><code></code>FAILED</p></li>
     /// </ul>
     pub validation_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
@@ -24,7 +24,7 @@ pub struct DomainValidation {
     pub validation_method: ::std::option::Option<crate::types::ValidationMethod>,
 }
 impl DomainValidation {
-    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     pub fn domain_name(&self) -> &str {
         use std::ops::Deref;
         self.domain_name.deref()
@@ -41,9 +41,9 @@ impl DomainValidation {
     }
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
-    /// <li> <p> <code></code>SUCCESS</p> </li>
-    /// <li> <p> <code></code>FAILED</p> </li>
+    /// <li><p><code>PENDING_VALIDATION</code></p></li>
+    /// <li><p><code></code>SUCCESS</p></li>
+    /// <li><p><code></code>FAILED</p></li>
     /// </ul>
     pub fn validation_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
         self.validation_status.as_ref()
@@ -77,18 +77,18 @@ pub struct DomainValidationBuilder {
     pub(crate) validation_method: ::std::option::Option<crate::types::ValidationMethod>,
 }
 impl DomainValidationBuilder {
-    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
-    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
@@ -128,9 +128,9 @@ impl DomainValidationBuilder {
     }
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
-    /// <li> <p> <code></code>SUCCESS</p> </li>
-    /// <li> <p> <code></code>FAILED</p> </li>
+    /// <li><p><code>PENDING_VALIDATION</code></p></li>
+    /// <li><p><code></code>SUCCESS</p></li>
+    /// <li><p><code></code>FAILED</p></li>
     /// </ul>
     pub fn validation_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.validation_status = ::std::option::Option::Some(input);
@@ -138,9 +138,9 @@ impl DomainValidationBuilder {
     }
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
-    /// <li> <p> <code></code>SUCCESS</p> </li>
-    /// <li> <p> <code></code>FAILED</p> </li>
+    /// <li><p><code>PENDING_VALIDATION</code></p></li>
+    /// <li><p><code></code>SUCCESS</p></li>
+    /// <li><p><code></code>FAILED</p></li>
     /// </ul>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.validation_status = input;
@@ -148,9 +148,9 @@ impl DomainValidationBuilder {
     }
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
-    /// <li> <p> <code></code>SUCCESS</p> </li>
-    /// <li> <p> <code></code>FAILED</p> </li>
+    /// <li><p><code>PENDING_VALIDATION</code></p></li>
+    /// <li><p><code></code>SUCCESS</p></li>
+    /// <li><p><code></code>FAILED</p></li>
     /// </ul>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
         &self.validation_status

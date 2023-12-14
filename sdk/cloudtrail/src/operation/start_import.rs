@@ -245,13 +245,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartImportEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartImportError {
-    /// <p> This exception is thrown when you start a new import and a previous import is still in progress. </p>
+    /// <p>This exception is thrown when you start a new import and a previous import is still in progress.</p>
     AccountHasOngoingImportException(crate::types::error::AccountHasOngoingImportException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::types::error::EventDataStoreNotFoundException),
-    /// <p> The specified import was not found. </p>
+    /// <p>The specified import was not found.</p>
     ImportNotFoundException(crate::types::error::ImportNotFoundException),
     /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::types::error::InactiveEventDataStoreException),
@@ -261,7 +261,7 @@ pub enum StartImportError {
     InvalidEventDataStoreCategoryException(crate::types::error::InvalidEventDataStoreCategoryException),
     /// <p>The event data store is not in a status that supports the operation.</p>
     InvalidEventDataStoreStatusException(crate::types::error::InvalidEventDataStoreStatusException),
-    /// <p> This exception is thrown when the provided source S3 bucket is not valid for import. </p>
+    /// <p>This exception is thrown when the provided source S3 bucket is not valid for import.</p>
     InvalidImportSourceException(crate::types::error::InvalidImportSourceException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),

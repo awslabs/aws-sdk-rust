@@ -22,8 +22,8 @@ pub struct Resource {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <li><p><b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p></li>
+    /// <li><p><b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p></li>
     /// </ul>
     pub resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScope>,
 }
@@ -62,8 +62,8 @@ impl Resource {
     }
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <li><p><b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p></li>
+    /// <li><p><b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
@@ -205,8 +205,8 @@ impl ResourceBuilder {
     }
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <li><p><b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p></li>
+    /// <li><p><b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn resource_region_scope(mut self, input: crate::types::ResourceRegionScope) -> Self {
         self.resource_region_scope = ::std::option::Option::Some(input);
@@ -214,8 +214,8 @@ impl ResourceBuilder {
     }
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <li><p><b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p></li>
+    /// <li><p><b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScope>) -> Self {
         self.resource_region_scope = input;
@@ -223,8 +223,8 @@ impl ResourceBuilder {
     }
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
-    /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
-    /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
+    /// <li><p><b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p></li>
+    /// <li><p><b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScope> {
         &self.resource_region_scope

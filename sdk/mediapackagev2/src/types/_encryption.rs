@@ -9,7 +9,7 @@ pub struct Encryption {
     /// <p>The encryption method to use.</p>
     pub encryption_method: ::std::option::Option<crate::types::EncryptionMethod>,
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
-    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
+    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code></p>
     pub key_rotation_interval_seconds: ::std::option::Option<i32>,
     /// <p>The parameters for the SPEKE key provider.</p>
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
@@ -24,7 +24,7 @@ impl Encryption {
         self.encryption_method.as_ref()
     }
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
-    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
+    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code></p>
     pub fn key_rotation_interval_seconds(&self) -> ::std::option::Option<i32> {
         self.key_rotation_interval_seconds
     }
@@ -80,19 +80,19 @@ impl EncryptionBuilder {
         &self.encryption_method
     }
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
-    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
+    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code></p>
     pub fn key_rotation_interval_seconds(mut self, input: i32) -> Self {
         self.key_rotation_interval_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
-    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
+    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code></p>
     pub fn set_key_rotation_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.key_rotation_interval_seconds = input;
         self
     }
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
-    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
+    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code></p>
     pub fn get_key_rotation_interval_seconds(&self) -> &::std::option::Option<i32> {
         &self.key_rotation_interval_seconds
     }

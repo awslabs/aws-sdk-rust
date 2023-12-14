@@ -25,7 +25,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
 /// <p>Retrieves the compiled information from a <code>RequestEnvironmentInfo</code> request.</p>
 /// <p>Related Topics</p>
 /// <ul>
-/// <li> <p> <code>RequestEnvironmentInfo</code> </p> </li>
+/// <li><p><code>RequestEnvironmentInfo</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoFluentBuilder {
@@ -133,22 +133,22 @@ impl RetrieveEnvironmentInfoFluentBuilder {
         self.inner.get_environment_id()
     }
     /// <p>The name of the data's environment.</p>
-    /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
-    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the data's environment.</p>
-    /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
-    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
     /// <p>The name of the data's environment.</p>
-    /// <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>
-    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    /// <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_name()
     }

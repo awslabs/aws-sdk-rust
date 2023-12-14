@@ -5,11 +5,11 @@
 pub struct StartDashboardSnapshotJobInput {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
     pub snapshot_job_id: ::std::option::Option<::std::string::String>,
-    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     pub user_configuration: ::std::option::Option<crate::types::SnapshotUserConfiguration>,
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
     pub snapshot_configuration: ::std::option::Option<crate::types::SnapshotConfiguration>,
@@ -19,7 +19,7 @@ impl StartDashboardSnapshotJobInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
     pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
@@ -27,7 +27,7 @@ impl StartDashboardSnapshotJobInput {
     pub fn snapshot_job_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_job_id.as_deref()
     }
-    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     pub fn user_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotUserConfiguration> {
         self.user_configuration.as_ref()
     }
@@ -69,18 +69,18 @@ impl StartDashboardSnapshotJobInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
     /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_id = input;
         self
     }
-    /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
+    /// <p>The ID of the dashboard that you want to start a snapshot job for.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_id
     }
@@ -99,18 +99,18 @@ impl StartDashboardSnapshotJobInputBuilder {
     pub fn get_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_job_id
     }
-    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     /// This field is required.
     pub fn user_configuration(mut self, input: crate::types::SnapshotUserConfiguration) -> Self {
         self.user_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     pub fn set_user_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotUserConfiguration>) -> Self {
         self.user_configuration = input;
         self
     }
-    /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
     pub fn get_user_configuration(&self) -> &::std::option::Option<crate::types::SnapshotUserConfiguration> {
         &self.user_configuration
     }

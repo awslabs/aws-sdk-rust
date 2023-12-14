@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchModifyCl
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchModifyClusterSnapshotsError {
-    /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100. </p>
+    /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100.</p>
     BatchModifyClusterSnapshotsLimitExceededFault(crate::types::error::BatchModifyClusterSnapshotsLimitExceededFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>

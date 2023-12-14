@@ -22,8 +22,8 @@ impl GetBotInputBuilder {
 }
 /// Fluent builder constructing a request to `GetBot`.
 ///
-/// <p>Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias. </p>
-/// <p> This operation requires permissions for the <code>lex:GetBot</code> action. </p>
+/// <p>Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias.</p>
+/// <p>This operation requires permissions for the <code>lex:GetBot</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl GetBotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the bot. The name is case sensitive. </p>
+    /// <p>The name of the bot. The name is case sensitive.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the bot. The name is case sensitive. </p>
+    /// <p>The name of the bot. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the bot. The name is case sensitive. </p>
+    /// <p>The name of the bot. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

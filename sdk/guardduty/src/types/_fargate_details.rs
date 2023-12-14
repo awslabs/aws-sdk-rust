@@ -8,9 +8,9 @@ pub struct FargateDetails {
     pub issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
-    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
-    /// <li> <p> <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p> </li>
+    /// <li><p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
+    /// <li><p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
+    /// <li><p><code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p></li>
     /// </ul>
     pub management_type: ::std::option::Option<crate::types::ManagementType>,
 }
@@ -23,9 +23,9 @@ impl FargateDetails {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
-    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
-    /// <li> <p> <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p> </li>
+    /// <li><p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
+    /// <li><p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
+    /// <li><p><code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p></li>
     /// </ul>
     pub fn management_type(&self) -> ::std::option::Option<&crate::types::ManagementType> {
         self.management_type.as_ref()
@@ -68,9 +68,9 @@ impl FargateDetailsBuilder {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
-    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
-    /// <li> <p> <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p> </li>
+    /// <li><p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
+    /// <li><p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
+    /// <li><p><code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p></li>
     /// </ul>
     pub fn management_type(mut self, input: crate::types::ManagementType) -> Self {
         self.management_type = ::std::option::Option::Some(input);
@@ -78,9 +78,9 @@ impl FargateDetailsBuilder {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
-    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
-    /// <li> <p> <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p> </li>
+    /// <li><p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
+    /// <li><p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
+    /// <li><p><code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p></li>
     /// </ul>
     pub fn set_management_type(mut self, input: ::std::option::Option<crate::types::ManagementType>) -> Self {
         self.management_type = input;
@@ -88,9 +88,9 @@ impl FargateDetailsBuilder {
     }
     /// <p>Indicates how the GuardDuty security agent is managed for this resource.</p>
     /// <ul>
-    /// <li> <p> <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p> </li>
-    /// <li> <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p> </li>
-    /// <li> <p> <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p> </li>
+    /// <li><p><code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for this resource.</p></li>
+    /// <li><p><code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the GuardDuty security agent updates for this resource.</p></li>
+    /// <li><p><code>DISABLED</code> indicates that the deployment of the GuardDuty security agent is disabled for this resource.</p></li>
     /// </ul>
     pub fn get_management_type(&self) -> &::std::option::Option<crate::types::ManagementType> {
         &self.management_type

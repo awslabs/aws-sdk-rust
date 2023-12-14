@@ -180,17 +180,17 @@ impl ListCommandsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn filters(mut self, input: crate::types::CommandFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>> {
         self.inner.get_filters()
     }

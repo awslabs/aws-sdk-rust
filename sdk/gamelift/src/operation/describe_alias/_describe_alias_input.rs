@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAliasInput {
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAliasInput {
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
     pub fn alias_id(&self) -> ::std::option::Option<&str> {
         self.alias_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAliasInputBuilder {
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
     /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_id = input;
         self
     }
-    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_id
     }

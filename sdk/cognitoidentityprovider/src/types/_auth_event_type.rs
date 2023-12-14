@@ -18,7 +18,7 @@ pub struct AuthEventType {
     pub challenge_responses: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>,
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
     pub event_context_data: ::std::option::Option<crate::types::EventContextDataType>,
-    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
+    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad.</p>
     pub event_feedback: ::std::option::Option<crate::types::EventFeedbackType>,
 }
 impl AuthEventType {
@@ -52,7 +52,7 @@ impl AuthEventType {
     pub fn event_context_data(&self) -> ::std::option::Option<&crate::types::EventContextDataType> {
         self.event_context_data.as_ref()
     }
-    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
+    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad.</p>
     pub fn event_feedback(&self) -> ::std::option::Option<&crate::types::EventFeedbackType> {
         self.event_feedback.as_ref()
     }
@@ -182,17 +182,17 @@ impl AuthEventTypeBuilder {
     pub fn get_event_context_data(&self) -> &::std::option::Option<crate::types::EventContextDataType> {
         &self.event_context_data
     }
-    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
+    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad.</p>
     pub fn event_feedback(mut self, input: crate::types::EventFeedbackType) -> Self {
         self.event_feedback = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
+    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad.</p>
     pub fn set_event_feedback(mut self, input: ::std::option::Option<crate::types::EventFeedbackType>) -> Self {
         self.event_feedback = input;
         self
     }
-    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
+    /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad.</p>
     pub fn get_event_feedback(&self) -> &::std::option::Option<crate::types::EventFeedbackType> {
         &self.event_feedback
     }

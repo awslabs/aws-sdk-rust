@@ -6,8 +6,8 @@
 pub struct MetricGoal {
     /// <p>A structure that contains details about the metric.</p>
     pub metric_definition: ::std::option::Option<crate::types::MetricDefinition>,
-    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
-    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    /// <p><code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p><code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub desired_change: ::std::option::Option<crate::types::ChangeDirectionEnum>,
 }
 impl MetricGoal {
@@ -15,8 +15,8 @@ impl MetricGoal {
     pub fn metric_definition(&self) -> ::std::option::Option<&crate::types::MetricDefinition> {
         self.metric_definition.as_ref()
     }
-    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
-    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    /// <p><code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p><code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(&self) -> ::std::option::Option<&crate::types::ChangeDirectionEnum> {
         self.desired_change.as_ref()
     }
@@ -51,20 +51,20 @@ impl MetricGoalBuilder {
     pub fn get_metric_definition(&self) -> &::std::option::Option<crate::types::MetricDefinition> {
         &self.metric_definition
     }
-    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
-    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    /// <p><code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p><code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(mut self, input: crate::types::ChangeDirectionEnum) -> Self {
         self.desired_change = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
-    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    /// <p><code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p><code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn set_desired_change(mut self, input: ::std::option::Option<crate::types::ChangeDirectionEnum>) -> Self {
         self.desired_change = input;
         self
     }
-    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
-    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    /// <p><code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p><code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn get_desired_change(&self) -> &::std::option::Option<crate::types::ChangeDirectionEnum> {
         &self.desired_change
     }

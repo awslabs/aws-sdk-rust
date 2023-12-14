@@ -7,9 +7,9 @@ pub struct EffectiveRecommendationPreferences {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li> <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p> </li>
-    /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
-    /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
+    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
     /// <p>Describes the activation status of the enhanced infrastructure metrics preference.</p>
@@ -19,27 +19,27 @@ pub struct EffectiveRecommendationPreferences {
     /// <p>Describes the activation status of the inferred workload types preference.</p>
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     pub inferred_workload_types: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
-    /// <p> An object that describes the external metrics recommendation preference. </p>
-    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    /// <p>An object that describes the external metrics recommendation preference.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
-    /// <p> The number of days the utilization metrics of the Amazon Web Services resource are analyzed. </p>
+    /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
-    /// <p> The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations. </p> <note>
+    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p> <note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
-    /// <p> The resource type values that are considered as candidates when generating rightsizing recommendations. </p>
+    /// <p>The resource type values that are considered as candidates when generating rightsizing recommendations.</p>
     pub preferred_resources: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePreferredResource>>,
-    /// <p> Describes the savings estimation mode applied for calculating savings opportunity for a resource. </p>
+    /// <p>Describes the savings estimation mode applied for calculating savings opportunity for a resource.</p>
     pub savings_estimation_mode: ::std::option::Option<crate::types::InstanceSavingsEstimationMode>,
 }
 impl EffectiveRecommendationPreferences {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li> <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p> </li>
-    /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
-    /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
+    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpu_vendor_architectures.is_none()`.
@@ -57,16 +57,16 @@ impl EffectiveRecommendationPreferences {
     pub fn inferred_workload_types(&self) -> ::std::option::Option<&crate::types::InferredWorkloadTypesPreference> {
         self.inferred_workload_types.as_ref()
     }
-    /// <p> An object that describes the external metrics recommendation preference. </p>
-    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    /// <p>An object that describes the external metrics recommendation preference.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
     pub fn external_metrics_preference(&self) -> ::std::option::Option<&crate::types::ExternalMetricsPreference> {
         self.external_metrics_preference.as_ref()
     }
-    /// <p> The number of days the utilization metrics of the Amazon Web Services resource are analyzed. </p>
+    /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
         self.look_back_period.as_ref()
     }
-    /// <p> The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations. </p> <note>
+    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p> <note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     ///
@@ -74,13 +74,13 @@ impl EffectiveRecommendationPreferences {
     pub fn utilization_preferences(&self) -> &[crate::types::UtilizationPreference] {
         self.utilization_preferences.as_deref().unwrap_or_default()
     }
-    /// <p> The resource type values that are considered as candidates when generating rightsizing recommendations. </p>
+    /// <p>The resource type values that are considered as candidates when generating rightsizing recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_resources.is_none()`.
     pub fn preferred_resources(&self) -> &[crate::types::EffectivePreferredResource] {
         self.preferred_resources.as_deref().unwrap_or_default()
     }
-    /// <p> Describes the savings estimation mode applied for calculating savings opportunity for a resource. </p>
+    /// <p>Describes the savings estimation mode applied for calculating savings opportunity for a resource.</p>
     pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::InstanceSavingsEstimationMode> {
         self.savings_estimation_mode.as_ref()
     }
@@ -113,9 +113,9 @@ impl EffectiveRecommendationPreferencesBuilder {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li> <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p> </li>
-    /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
-    /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
+    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub fn cpu_vendor_architectures(mut self, input: crate::types::CpuVendorArchitecture) -> Self {
         let mut v = self.cpu_vendor_architectures.unwrap_or_default();
@@ -126,9 +126,9 @@ impl EffectiveRecommendationPreferencesBuilder {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li> <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p> </li>
-    /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
-    /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
+    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub fn set_cpu_vendor_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>) -> Self {
         self.cpu_vendor_architectures = input;
@@ -137,9 +137,9 @@ impl EffectiveRecommendationPreferencesBuilder {
     /// <p>Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li> <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p> </li>
-    /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
-    /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
+    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub fn get_cpu_vendor_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>> {
         &self.cpu_vendor_architectures
@@ -181,34 +181,34 @@ impl EffectiveRecommendationPreferencesBuilder {
     pub fn get_inferred_workload_types(&self) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
         &self.inferred_workload_types
     }
-    /// <p> An object that describes the external metrics recommendation preference. </p>
-    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    /// <p>An object that describes the external metrics recommendation preference.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
     pub fn external_metrics_preference(mut self, input: crate::types::ExternalMetricsPreference) -> Self {
         self.external_metrics_preference = ::std::option::Option::Some(input);
         self
     }
-    /// <p> An object that describes the external metrics recommendation preference. </p>
-    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    /// <p>An object that describes the external metrics recommendation preference.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
     pub fn set_external_metrics_preference(mut self, input: ::std::option::Option<crate::types::ExternalMetricsPreference>) -> Self {
         self.external_metrics_preference = input;
         self
     }
-    /// <p> An object that describes the external metrics recommendation preference. </p>
-    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    /// <p>An object that describes the external metrics recommendation preference.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
     pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         &self.external_metrics_preference
     }
-    /// <p> The number of days the utilization metrics of the Amazon Web Services resource are analyzed. </p>
+    /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
     pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
         self.look_back_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of days the utilization metrics of the Amazon Web Services resource are analyzed. </p>
+    /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
     pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
         self.look_back_period = input;
         self
     }
-    /// <p> The number of days the utilization metrics of the Amazon Web Services resource are analyzed. </p>
+    /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
     pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
         &self.look_back_period
     }
@@ -216,7 +216,7 @@ impl EffectiveRecommendationPreferencesBuilder {
     ///
     /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
     ///
-    /// <p> The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations. </p> <note>
+    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p> <note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn utilization_preferences(mut self, input: crate::types::UtilizationPreference) -> Self {
@@ -225,14 +225,14 @@ impl EffectiveRecommendationPreferencesBuilder {
         self.utilization_preferences = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations. </p> <note>
+    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p> <note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
         self.utilization_preferences = input;
         self
     }
-    /// <p> The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations. </p> <note>
+    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p> <note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {
@@ -242,33 +242,33 @@ impl EffectiveRecommendationPreferencesBuilder {
     ///
     /// To override the contents of this collection use [`set_preferred_resources`](Self::set_preferred_resources).
     ///
-    /// <p> The resource type values that are considered as candidates when generating rightsizing recommendations. </p>
+    /// <p>The resource type values that are considered as candidates when generating rightsizing recommendations.</p>
     pub fn preferred_resources(mut self, input: crate::types::EffectivePreferredResource) -> Self {
         let mut v = self.preferred_resources.unwrap_or_default();
         v.push(input);
         self.preferred_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The resource type values that are considered as candidates when generating rightsizing recommendations. </p>
+    /// <p>The resource type values that are considered as candidates when generating rightsizing recommendations.</p>
     pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePreferredResource>>) -> Self {
         self.preferred_resources = input;
         self
     }
-    /// <p> The resource type values that are considered as candidates when generating rightsizing recommendations. </p>
+    /// <p>The resource type values that are considered as candidates when generating rightsizing recommendations.</p>
     pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectivePreferredResource>> {
         &self.preferred_resources
     }
-    /// <p> Describes the savings estimation mode applied for calculating savings opportunity for a resource. </p>
+    /// <p>Describes the savings estimation mode applied for calculating savings opportunity for a resource.</p>
     pub fn savings_estimation_mode(mut self, input: crate::types::InstanceSavingsEstimationMode) -> Self {
         self.savings_estimation_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Describes the savings estimation mode applied for calculating savings opportunity for a resource. </p>
+    /// <p>Describes the savings estimation mode applied for calculating savings opportunity for a resource.</p>
     pub fn set_savings_estimation_mode(mut self, input: ::std::option::Option<crate::types::InstanceSavingsEstimationMode>) -> Self {
         self.savings_estimation_mode = input;
         self
     }
-    /// <p> Describes the savings estimation mode applied for calculating savings opportunity for a resource. </p>
+    /// <p>Describes the savings estimation mode applied for calculating savings opportunity for a resource.</p>
     pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::InstanceSavingsEstimationMode> {
         &self.savings_estimation_mode
     }

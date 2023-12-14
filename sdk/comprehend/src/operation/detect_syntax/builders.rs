@@ -22,7 +22,7 @@ impl DetectSyntaxInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectSyntax`.
 ///
-/// <p>Inspects text for syntax and the part of speech of words in the document. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
+/// <p>Inspects text for syntax and the part of speech of words in the document. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectSyntaxFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

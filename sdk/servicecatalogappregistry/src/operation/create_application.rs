@@ -263,9 +263,9 @@ pub enum CreateApplicationError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The service is experiencing internal problems.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The maximum number of resources per account has been reached.</p>
+    /// <p>The maximum number of resources per account has been reached.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p> The maximum number of API requests has been exceeded. </p>
+    /// <p>The maximum number of API requests has been exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has invalid or missing parameters.</p>
     ValidationException(crate::types::error::ValidationException),

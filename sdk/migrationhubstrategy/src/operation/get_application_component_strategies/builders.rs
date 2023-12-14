@@ -22,7 +22,7 @@ impl GetApplicationComponentStrategiesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetApplicationComponentStrategies`.
 ///
-/// <p> Retrieves a list of all the recommended strategies and tools for an application component running on a server. </p>
+/// <p>Retrieves a list of all the recommended strategies and tools for an application component running on a server.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetApplicationComponentStrategiesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_component_id(input.into());
         self
     }
-    /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn set_application_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_component_id(input);
         self
     }
-    /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
+    /// <p>The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn get_application_component_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_component_id()
     }

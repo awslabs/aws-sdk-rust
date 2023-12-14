@@ -9,7 +9,7 @@ pub struct GetIndexOutput {
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Q index.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the Amazon Q index. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub status: ::std::option::Option<crate::types::IndexStatus>,
@@ -42,7 +42,7 @@ impl GetIndexOutput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon Q index. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
     pub fn index_arn(&self) -> ::std::option::Option<&str> {
         self.index_arn.as_deref()
     }
@@ -154,17 +154,17 @@ impl GetIndexOutputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon Q index. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon Q index. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon Q index. </p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_arn
     }

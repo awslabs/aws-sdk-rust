@@ -22,9 +22,9 @@ impl DeleteFirewallInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFirewall`.
 ///
-/// <p>Deletes the specified <code>Firewall</code> and its <code>FirewallStatus</code>. This operation requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>. You can't revert this operation. </p>
+/// <p>Deletes the specified <code>Firewall</code> and its <code>FirewallStatus</code>. This operation requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>. You can't revert this operation.</p>
 /// <p>You can check whether a firewall is in use by reviewing the route tables for the Availability Zones where you have firewall subnet mappings. Retrieve the subnet mappings by calling <code>DescribeFirewall</code>. You define and update the route tables through Amazon VPC. As needed, update the route tables for the zones to remove the firewall endpoints. When the route tables no longer use the firewall endpoints, you can remove the firewall safely.</p>
-/// <p>To delete a firewall, remove the delete protection if you need to using <code>UpdateFirewallDeleteProtection</code>, then delete the firewall by calling <code>DeleteFirewall</code>. </p>
+/// <p>To delete a firewall, remove the delete protection if you need to using <code>UpdateFirewallDeleteProtection</code>, then delete the firewall by calling <code>DeleteFirewall</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,36 +111,36 @@ impl DeleteFirewallFluentBuilder {
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_arn()
     }

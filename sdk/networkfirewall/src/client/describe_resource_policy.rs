@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeResourcePolicy`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p><br>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.</p><br>
     /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput) with field(s):
-    ///   - [`policy(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::policy): <p>The IAM policy for the resource. </p>
+    ///   - [`policy(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::policy): <p>The IAM policy for the resource.</p>
     /// - On failure, responds with [`SdkError<DescribeResourcePolicyError>`](crate::operation::describe_resource_policy::DescribeResourcePolicyError)
     pub fn describe_resource_policy(&self) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::new(self.handle.clone())

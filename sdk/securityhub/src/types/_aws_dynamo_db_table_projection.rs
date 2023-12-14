@@ -8,9 +8,9 @@ pub struct AwsDynamoDbTableProjection {
     pub non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// <li> <p> <code>INCLUDE</code> </p> </li>
-    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// <li><p><code>ALL</code></p></li>
+    /// <li><p><code>INCLUDE</code></p></li>
+    /// <li><p><code>KEYS_ONLY</code></p></li>
     /// </ul>
     pub projection_type: ::std::option::Option<::std::string::String>,
 }
@@ -23,9 +23,9 @@ impl AwsDynamoDbTableProjection {
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// <li> <p> <code>INCLUDE</code> </p> </li>
-    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// <li><p><code>ALL</code></p></li>
+    /// <li><p><code>INCLUDE</code></p></li>
+    /// <li><p><code>KEYS_ONLY</code></p></li>
     /// </ul>
     pub fn projection_type(&self) -> ::std::option::Option<&str> {
         self.projection_type.as_deref()
@@ -68,9 +68,9 @@ impl AwsDynamoDbTableProjectionBuilder {
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// <li> <p> <code>INCLUDE</code> </p> </li>
-    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// <li><p><code>ALL</code></p></li>
+    /// <li><p><code>INCLUDE</code></p></li>
+    /// <li><p><code>KEYS_ONLY</code></p></li>
     /// </ul>
     pub fn projection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.projection_type = ::std::option::Option::Some(input.into());
@@ -78,9 +78,9 @@ impl AwsDynamoDbTableProjectionBuilder {
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// <li> <p> <code>INCLUDE</code> </p> </li>
-    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// <li><p><code>ALL</code></p></li>
+    /// <li><p><code>INCLUDE</code></p></li>
+    /// <li><p><code>KEYS_ONLY</code></p></li>
     /// </ul>
     pub fn set_projection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.projection_type = input;
@@ -88,9 +88,9 @@ impl AwsDynamoDbTableProjectionBuilder {
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code> </p> </li>
-    /// <li> <p> <code>INCLUDE</code> </p> </li>
-    /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
+    /// <li><p><code>ALL</code></p></li>
+    /// <li><p><code>INCLUDE</code></p></li>
+    /// <li><p><code>KEYS_ONLY</code></p></li>
     /// </ul>
     pub fn get_projection_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.projection_type

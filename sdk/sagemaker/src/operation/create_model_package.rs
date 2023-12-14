@@ -258,7 +258,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateModelPa
 pub enum CreateModelPackageError {
     /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p> You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created. </p>
+    /// <p>You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created.</p>
     ResourceLimitExceeded(crate::types::error::ResourceLimitExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -152,9 +152,9 @@ impl UpdateScheduledActionFluentBuilder {
     }
     /// <p>When to schedule the action.</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
-    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// <li><p><code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p></li>
+    /// <li><p><code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p></li>
+    /// <li><p><code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p></li>
     /// </ul>
     pub fn schedule_at(mut self, input: crate::types::ScheduleAt) -> Self {
         self.inner = self.inner.schedule_at(input);
@@ -162,9 +162,9 @@ impl UpdateScheduledActionFluentBuilder {
     }
     /// <p>When to schedule the action.</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
-    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// <li><p><code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p></li>
+    /// <li><p><code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p></li>
+    /// <li><p><code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p></li>
     /// </ul>
     pub fn set_schedule_at(mut self, input: ::std::option::Option<crate::types::ScheduleAt>) -> Self {
         self.inner = self.inner.set_schedule_at(input);
@@ -172,9 +172,9 @@ impl UpdateScheduledActionFluentBuilder {
     }
     /// <p>When to schedule the action.</p>
     /// <ul>
-    /// <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li>
-    /// <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li>
-    /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
+    /// <li><p><code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p></li>
+    /// <li><p><code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p></li>
+    /// <li><p><code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming off-peak window. There's no guarantee that the change will be implemented during the next immediate window. Depending on capacity, it might happen in subsequent days.</p></li>
     /// </ul>
     pub fn get_schedule_at(&self) -> &::std::option::Option<crate::types::ScheduleAt> {
         self.inner.get_schedule_at()

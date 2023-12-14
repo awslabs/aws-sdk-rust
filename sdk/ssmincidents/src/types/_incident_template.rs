@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentTemplate {
-    /// <p>The title of the incident. </p>
+    /// <p>The title of the incident.</p>
     pub title: ::std::string::String,
     /// <p>The impact of the incident on your customers and applications.</p>
-    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical</p> </li>
-    /// <li> <p> <code>2</code> - High</p> </li>
-    /// <li> <p> <code>3</code> - Medium</p> </li>
-    /// <li> <p> <code>4</code> - Low</p> </li>
-    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// <li><p><code>1</code> - Critical</p></li>
+    /// <li><p><code>2</code> - High</p></li>
+    /// <li><p><code>3</code> - Medium</p></li>
+    /// <li><p><code>4</code> - Low</p></li>
+    /// <li><p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub impact: i32,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
@@ -29,19 +29,19 @@ pub struct IncidentTemplate {
     pub incident_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IncidentTemplate {
-    /// <p>The title of the incident. </p>
+    /// <p>The title of the incident.</p>
     pub fn title(&self) -> &str {
         use std::ops::Deref;
         self.title.deref()
     }
     /// <p>The impact of the incident on your customers and applications.</p>
-    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical</p> </li>
-    /// <li> <p> <code>2</code> - High</p> </li>
-    /// <li> <p> <code>3</code> - Medium</p> </li>
-    /// <li> <p> <code>4</code> - Low</p> </li>
-    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// <li><p><code>1</code> - Critical</p></li>
+    /// <li><p><code>2</code> - High</p></li>
+    /// <li><p><code>3</code> - Medium</p></li>
+    /// <li><p><code>4</code> - Low</p></li>
+    /// <li><p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn impact(&self) -> i32 {
         self.impact
@@ -87,29 +87,29 @@ pub struct IncidentTemplateBuilder {
     pub(crate) incident_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IncidentTemplateBuilder {
-    /// <p>The title of the incident. </p>
+    /// <p>The title of the incident.</p>
     /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The title of the incident. </p>
+    /// <p>The title of the incident.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>The title of the incident. </p>
+    /// <p>The title of the incident.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
     /// <p>The impact of the incident on your customers and applications.</p>
-    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical</p> </li>
-    /// <li> <p> <code>2</code> - High</p> </li>
-    /// <li> <p> <code>3</code> - Medium</p> </li>
-    /// <li> <p> <code>4</code> - Low</p> </li>
-    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// <li><p><code>1</code> - Critical</p></li>
+    /// <li><p><code>2</code> - High</p></li>
+    /// <li><p><code>3</code> - Medium</p></li>
+    /// <li><p><code>4</code> - Low</p></li>
+    /// <li><p><code>5</code> - No Impact</p></li>
     /// </ul>
     /// This field is required.
     pub fn impact(mut self, input: i32) -> Self {
@@ -117,26 +117,26 @@ impl IncidentTemplateBuilder {
         self
     }
     /// <p>The impact of the incident on your customers and applications.</p>
-    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical</p> </li>
-    /// <li> <p> <code>2</code> - High</p> </li>
-    /// <li> <p> <code>3</code> - Medium</p> </li>
-    /// <li> <p> <code>4</code> - Low</p> </li>
-    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// <li><p><code>1</code> - Critical</p></li>
+    /// <li><p><code>2</code> - High</p></li>
+    /// <li><p><code>3</code> - Medium</p></li>
+    /// <li><p><code>4</code> - Low</p></li>
+    /// <li><p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
     }
     /// <p>The impact of the incident on your customers and applications.</p>
-    /// <p class="title"> <b>Supported impact codes</b> </p>
+    /// <p class="title"><b>Supported impact codes</b></p>
     /// <ul>
-    /// <li> <p> <code>1</code> - Critical</p> </li>
-    /// <li> <p> <code>2</code> - High</p> </li>
-    /// <li> <p> <code>3</code> - Medium</p> </li>
-    /// <li> <p> <code>4</code> - Low</p> </li>
-    /// <li> <p> <code>5</code> - No Impact</p> </li>
+    /// <li><p><code>1</code> - Critical</p></li>
+    /// <li><p><code>2</code> - High</p></li>
+    /// <li><p><code>3</code> - Medium</p></li>
+    /// <li><p><code>4</code> - Low</p></li>
+    /// <li><p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
         &self.impact

@@ -13,9 +13,9 @@ pub struct S3LogDestination {
     pub bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The format EventBridge uses for the log records.</p>
     /// <ul>
-    /// <li> <p> <code>json</code>: JSON </p> </li>
-    /// <li> <p> <code>plain</code>: Plain text</p> </li>
-    /// <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a> </p> </li>
+    /// <li><p><code>json</code>: JSON</p></li>
+    /// <li><p><code>plain</code>: Plain text</p></li>
+    /// <li><p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
     pub output_format: ::std::option::Option<crate::types::S3OutputFormat>,
 }
@@ -35,9 +35,9 @@ impl S3LogDestination {
     }
     /// <p>The format EventBridge uses for the log records.</p>
     /// <ul>
-    /// <li> <p> <code>json</code>: JSON </p> </li>
-    /// <li> <p> <code>plain</code>: Plain text</p> </li>
-    /// <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a> </p> </li>
+    /// <li><p><code>json</code>: JSON</p></li>
+    /// <li><p><code>plain</code>: Plain text</p></li>
+    /// <li><p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::S3OutputFormat> {
         self.output_format.as_ref()
@@ -107,9 +107,9 @@ impl S3LogDestinationBuilder {
     }
     /// <p>The format EventBridge uses for the log records.</p>
     /// <ul>
-    /// <li> <p> <code>json</code>: JSON </p> </li>
-    /// <li> <p> <code>plain</code>: Plain text</p> </li>
-    /// <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a> </p> </li>
+    /// <li><p><code>json</code>: JSON</p></li>
+    /// <li><p><code>plain</code>: Plain text</p></li>
+    /// <li><p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
     pub fn output_format(mut self, input: crate::types::S3OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
@@ -117,9 +117,9 @@ impl S3LogDestinationBuilder {
     }
     /// <p>The format EventBridge uses for the log records.</p>
     /// <ul>
-    /// <li> <p> <code>json</code>: JSON </p> </li>
-    /// <li> <p> <code>plain</code>: Plain text</p> </li>
-    /// <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a> </p> </li>
+    /// <li><p><code>json</code>: JSON</p></li>
+    /// <li><p><code>plain</code>: Plain text</p></li>
+    /// <li><p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::S3OutputFormat>) -> Self {
         self.output_format = input;
@@ -127,9 +127,9 @@ impl S3LogDestinationBuilder {
     }
     /// <p>The format EventBridge uses for the log records.</p>
     /// <ul>
-    /// <li> <p> <code>json</code>: JSON </p> </li>
-    /// <li> <p> <code>plain</code>: Plain text</p> </li>
-    /// <li> <p> <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a> </p> </li>
+    /// <li><p><code>json</code>: JSON</p></li>
+    /// <li><p><code>plain</code>: Plain text</p></li>
+    /// <li><p><code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file format</a></p></li>
     /// </ul>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::S3OutputFormat> {
         &self.output_format

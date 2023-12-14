@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the event selectors configured for your trail.</p>
     pub event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
@@ -14,7 +14,7 @@ pub struct PutEventSelectorsOutput {
 }
 impl PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn trail_arn(&self) -> ::std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
@@ -54,19 +54,19 @@ pub struct PutEventSelectorsOutputBuilder {
 }
 impl PutEventSelectorsOutputBuilder {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trail_arn = input;
         self
     }
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trail_arn
     }

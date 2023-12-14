@@ -18,7 +18,7 @@ pub struct CreateRestApiInput {
     pub minimum_compression_size: ::std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub api_key_source: ::std::option::Option<crate::types::ApiKeySourceType>,
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
     pub policy: ::std::option::Option<::std::string::String>,
@@ -58,7 +58,7 @@ impl CreateRestApiInput {
     pub fn api_key_source(&self) -> ::std::option::Option<&crate::types::ApiKeySourceType> {
         self.api_key_source.as_ref()
     }
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
     pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
@@ -204,17 +204,17 @@ impl CreateRestApiInputBuilder {
     pub fn get_api_key_source(&self) -> &::std::option::Option<crate::types::ApiKeySourceType> {
         &self.api_key_source
     }
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
     pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         &self.endpoint_configuration
     }

@@ -23,7 +23,7 @@ impl RejectInvitationInputBuilder {
 /// Fluent builder constructing a request to `RejectInvitation`.
 ///
 /// <p>Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by an invited member account that has the <code>INVITED</code> status.</p>
-/// <p> <code>RejectInvitation</code> cannot be called by an organization account in the organization behavior graph. In the organization behavior graph, organization accounts do not receive an invitation.</p>
+/// <p><code>RejectInvitation</code> cannot be called by an organization account in the organization behavior graph. In the organization behavior graph, organization accounts do not receive an invitation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectInvitationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

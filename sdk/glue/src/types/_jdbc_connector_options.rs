@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JdbcConnectorOptions {
     /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p><code>BillingCity='Mountain View'</code></p>
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     pub filter_predicate: ::std::option::Option<::std::string::String>,
     /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
@@ -25,7 +25,7 @@ pub struct JdbcConnectorOptions {
 }
 impl JdbcConnectorOptions {
     /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p><code>BillingCity='Mountain View'</code></p>
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     pub fn filter_predicate(&self) -> ::std::option::Option<&str> {
         self.filter_predicate.as_deref()
@@ -83,21 +83,21 @@ pub struct JdbcConnectorOptionsBuilder {
 }
 impl JdbcConnectorOptionsBuilder {
     /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p><code>BillingCity='Mountain View'</code></p>
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     pub fn filter_predicate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_predicate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p><code>BillingCity='Mountain View'</code></p>
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     pub fn set_filter_predicate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_predicate = input;
         self
     }
     /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p><code>BillingCity='Mountain View'</code></p>
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     pub fn get_filter_predicate(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_predicate

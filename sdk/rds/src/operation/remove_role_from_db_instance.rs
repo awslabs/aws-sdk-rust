@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveRoleFro
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RemoveRoleFromDBInstanceError {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>The specified <code>RoleArn</code> value doesn't match the specified feature for the DB instance.</p>
     DbInstanceRoleNotFoundFault(crate::types::error::DbInstanceRoleNotFoundFault),

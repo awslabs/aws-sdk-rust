@@ -7,7 +7,7 @@ pub struct CreateBatchPredictionInput {
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
     pub batch_prediction_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
     pub batch_prediction_data_source_id: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl CreateBatchPredictionInput {
     pub fn batch_prediction_name(&self) -> ::std::option::Option<&str> {
         self.batch_prediction_name.as_deref()
     }
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
     pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
@@ -85,18 +85,18 @@ impl CreateBatchPredictionInputBuilder {
     pub fn get_batch_prediction_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.batch_prediction_name
     }
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
     /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
     }
-    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ml_model_id
     }

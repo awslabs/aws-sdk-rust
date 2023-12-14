@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationOutput {
-    /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    /// <p>Retrieves <code>TagKey</code> configuration from an account.</p>
     pub configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
     _request_id: Option<String>,
 }
 impl GetConfigurationOutput {
-    /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    /// <p>Retrieves <code>TagKey</code> configuration from an account.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AppRegistryConfiguration> {
         self.configuration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetConfigurationOutputBuilder {
-    /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    /// <p>Retrieves <code>TagKey</code> configuration from an account.</p>
     pub fn configuration(mut self, input: crate::types::AppRegistryConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    /// <p>Retrieves <code>TagKey</code> configuration from an account.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AppRegistryConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
+    /// <p>Retrieves <code>TagKey</code> configuration from an account.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
         &self.configuration
     }

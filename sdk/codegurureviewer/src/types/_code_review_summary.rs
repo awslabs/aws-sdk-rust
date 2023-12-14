@@ -6,7 +6,7 @@
 pub struct CodeReviewSummary {
     /// <p>The name of the code review.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
@@ -17,10 +17,10 @@ pub struct CodeReviewSummary {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::JobState>,
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
@@ -41,7 +41,7 @@ impl CodeReviewSummary {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn code_review_arn(&self) -> ::std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
@@ -60,10 +60,10 @@ impl CodeReviewSummary {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::JobState> {
         self.state.as_ref()
@@ -132,17 +132,17 @@ impl CodeReviewSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn code_review_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_review_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_review_arn
     }
@@ -191,10 +191,10 @@ impl CodeReviewSummaryBuilder {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::JobState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -203,10 +203,10 @@ impl CodeReviewSummaryBuilder {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobState>) -> Self {
         self.state = input;
@@ -215,10 +215,10 @@ impl CodeReviewSummaryBuilder {
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// <li><p><code>Completed</code>: The code review is complete.</p></li>
+    /// <li><p><code>Pending</code>: The code review started and has not completed or failed.</p></li>
+    /// <li><p><code>Failed</code>: The code review failed.</p></li>
+    /// <li><p><code>Deleting</code>: The code review is being deleted.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::JobState> {
         &self.state

@@ -5,15 +5,15 @@
 pub enum Error {
     /// <p>Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda) failed with an internal service error.</p>
     BadGatewayException(crate::types::error::BadGatewayException),
-    /// <p> Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes. </p>
+    /// <p>Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress, or contains unbuilt changes.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
+    /// <p>Two clients are using the same AWS account, Amazon Lex bot, and user ID.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
+    /// <p>One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example,</p>
     /// <ul>
-    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
-    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
-    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
+    /// <li><p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p></li>
+    /// <li><p>If a Lambda function takes longer than 30 seconds to execute.</p></li>
+    /// <li><p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p></li>
     /// </ul>
     DependencyFailedException(crate::types::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -28,7 +28,7 @@ pub enum Error {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The input speech is too long.</p>
     RequestTimeoutException(crate::types::error::RequestTimeoutException),
-    /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
+    /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value.</p>
     UnsupportedMediaTypeException(crate::types::error::UnsupportedMediaTypeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

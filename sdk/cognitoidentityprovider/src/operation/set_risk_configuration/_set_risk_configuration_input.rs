@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetRiskConfigurationInput {
-    /// <p>The user pool ID. </p>
+    /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
     /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
@@ -16,7 +16,7 @@ pub struct SetRiskConfigurationInput {
     pub risk_exception_configuration: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
 }
 impl SetRiskConfigurationInput {
-    /// <p>The user pool ID. </p>
+    /// <p>The user pool ID.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -70,18 +70,18 @@ pub struct SetRiskConfigurationInputBuilder {
     pub(crate) risk_exception_configuration: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
 }
 impl SetRiskConfigurationInputBuilder {
-    /// <p>The user pool ID. </p>
+    /// <p>The user pool ID.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID. </p>
+    /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID. </p>
+    /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

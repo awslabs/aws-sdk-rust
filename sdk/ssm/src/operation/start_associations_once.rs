@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartAssociat
 pub enum StartAssociationsOnceError {
     /// <p>The specified association doesn't exist.</p>
     AssociationDoesNotExist(crate::types::error::AssociationDoesNotExist),
-    /// <p>The association isn't valid or doesn't exist. </p>
+    /// <p>The association isn't valid or doesn't exist.</p>
     InvalidAssociation(crate::types::error::InvalidAssociation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

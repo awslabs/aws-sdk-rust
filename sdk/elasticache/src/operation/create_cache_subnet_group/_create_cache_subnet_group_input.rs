@@ -6,7 +6,7 @@
 pub struct CreateCacheSubnetGroupInput {
     /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
-    /// <p>Example: <code>mysubnetgroup</code> </p>
+    /// <p>Example: <code>mysubnetgroup</code></p>
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the cache subnet group.</p>
     pub cache_subnet_group_description: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateCacheSubnetGroupInput {
 impl CreateCacheSubnetGroupInput {
     /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
-    /// <p>Example: <code>mysubnetgroup</code> </p>
+    /// <p>Example: <code>mysubnetgroup</code></p>
     pub fn cache_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.cache_subnet_group_name.as_deref()
     }
@@ -58,7 +58,7 @@ pub struct CreateCacheSubnetGroupInputBuilder {
 impl CreateCacheSubnetGroupInputBuilder {
     /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
-    /// <p>Example: <code>mysubnetgroup</code> </p>
+    /// <p>Example: <code>mysubnetgroup</code></p>
     /// This field is required.
     pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
@@ -66,14 +66,14 @@ impl CreateCacheSubnetGroupInputBuilder {
     }
     /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
-    /// <p>Example: <code>mysubnetgroup</code> </p>
+    /// <p>Example: <code>mysubnetgroup</code></p>
     pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_subnet_group_name = input;
         self
     }
     /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
-    /// <p>Example: <code>mysubnetgroup</code> </p>
+    /// <p>Example: <code>mysubnetgroup</code></p>
     pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_subnet_group_name
     }

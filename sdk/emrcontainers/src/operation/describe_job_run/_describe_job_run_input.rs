@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobRunInput {
-    /// <p>The ID of the job run request. </p>
+    /// <p>The ID of the job run request.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobRunInput {
-    /// <p>The ID of the job run request. </p>
+    /// <p>The ID of the job run request.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeJobRunInputBuilder {
     pub(crate) virtual_cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobRunInputBuilder {
-    /// <p>The ID of the job run request. </p>
+    /// <p>The ID of the job run request.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the job run request. </p>
+    /// <p>The ID of the job run request.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the job run request. </p>
+    /// <p>The ID of the job run request.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

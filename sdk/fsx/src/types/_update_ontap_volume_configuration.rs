@@ -16,16 +16,16 @@ pub struct UpdateOntapVolumeConfiguration {
     pub tiering_policy: ::std::option::Option<crate::types::TieringPolicy>,
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub snapshot_policy: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_backups: ::std::option::Option<bool>,
-    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
     pub snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
     /// <p>The configured size of the volume, in bytes.</p>
     pub size_in_bytes: ::std::option::Option<i64>,
@@ -53,9 +53,9 @@ impl UpdateOntapVolumeConfiguration {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -66,7 +66,7 @@ impl UpdateOntapVolumeConfiguration {
     pub fn copy_tags_to_backups(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_backups
     }
-    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
     pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::UpdateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
@@ -169,9 +169,9 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -181,9 +181,9 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -193,9 +193,9 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// <li><p><code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p></li>
+    /// <li><p><code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p></li>
+    /// <li><p><code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p></li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
@@ -216,17 +216,17 @@ impl UpdateOntapVolumeConfigurationBuilder {
     pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
         &self.copy_tags_to_backups
     }
-    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
     pub fn snaplock_configuration(mut self, input: crate::types::UpdateSnaplockConfiguration) -> Self {
         self.snaplock_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
     pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>) -> Self {
         self.snaplock_configuration = input;
         self
     }
-    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
+    /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume.</p>
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::UpdateSnaplockConfiguration> {
         &self.snaplock_configuration
     }

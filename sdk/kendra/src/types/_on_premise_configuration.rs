@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnPremiseConfiguration {
-    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     pub host_url: ::std::string::String,
     /// <p>The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub organization_name: ::std::string::String,
@@ -13,7 +13,7 @@ pub struct OnPremiseConfiguration {
     pub ssl_certificate_s3_path: ::std::option::Option<crate::types::S3Path>,
 }
 impl OnPremiseConfiguration {
-    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     pub fn host_url(&self) -> &str {
         use std::ops::Deref;
         self.host_url.deref()
@@ -45,18 +45,18 @@ pub struct OnPremiseConfigurationBuilder {
     pub(crate) ssl_certificate_s3_path: ::std::option::Option<crate::types::S3Path>,
 }
 impl OnPremiseConfigurationBuilder {
-    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     /// This field is required.
     pub fn host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     pub fn set_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_url = input;
         self
     }
-    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
+    /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i></p>
     pub fn get_host_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_url
     }

@@ -8,8 +8,8 @@ pub struct InstanceSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li> <p>The attributes that are associated with the instance. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that are associated with the instance.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -17,7 +17,7 @@ pub struct InstanceSummary {
     /// AWS_ALIAS_DNS_NAME
     /// </dt>
     /// <dd>
-    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer. </p>
+    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer.</p>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID (HTTP namespaces only)
@@ -65,8 +65,8 @@ impl InstanceSummary {
     }
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li> <p>The attributes that are associated with the instance. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that are associated with the instance.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -74,7 +74,7 @@ impl InstanceSummary {
     /// AWS_ALIAS_DNS_NAME
     /// </dt>
     /// <dd>
-    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer. </p>
+    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer.</p>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID (HTTP namespaces only)
@@ -152,8 +152,8 @@ impl InstanceSummaryBuilder {
     ///
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li> <p>The attributes that are associated with the instance. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that are associated with the instance.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -161,7 +161,7 @@ impl InstanceSummaryBuilder {
     /// AWS_ALIAS_DNS_NAME
     /// </dt>
     /// <dd>
-    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer. </p>
+    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer.</p>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID (HTTP namespaces only)
@@ -208,8 +208,8 @@ impl InstanceSummaryBuilder {
     }
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li> <p>The attributes that are associated with the instance. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that are associated with the instance.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -217,7 +217,7 @@ impl InstanceSummaryBuilder {
     /// AWS_ALIAS_DNS_NAME
     /// </dt>
     /// <dd>
-    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer. </p>
+    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer.</p>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID (HTTP namespaces only)
@@ -262,8 +262,8 @@ impl InstanceSummaryBuilder {
     }
     /// <p>A string map that contains the following information:</p>
     /// <ul>
-    /// <li> <p>The attributes that are associated with the instance. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that are associated with the instance.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul>
     /// <p>Supported attribute keys include the following:</p>
     /// <dl>
@@ -271,7 +271,7 @@ impl InstanceSummaryBuilder {
     /// AWS_ALIAS_DNS_NAME
     /// </dt>
     /// <dd>
-    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer. </p>
+    /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the load balancer.</p>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID (HTTP namespaces only)

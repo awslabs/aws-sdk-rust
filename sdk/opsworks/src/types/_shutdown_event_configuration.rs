@@ -6,7 +6,7 @@
 pub struct ShutdownEventConfiguration {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     pub execution_timeout: ::std::option::Option<i32>,
-    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub delay_until_elb_connections_drained: ::std::option::Option<bool>,
 }
 impl ShutdownEventConfiguration {
@@ -14,7 +14,7 @@ impl ShutdownEventConfiguration {
     pub fn execution_timeout(&self) -> ::std::option::Option<i32> {
         self.execution_timeout
     }
-    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub fn delay_until_elb_connections_drained(&self) -> ::std::option::Option<bool> {
         self.delay_until_elb_connections_drained
     }
@@ -48,17 +48,17 @@ impl ShutdownEventConfigurationBuilder {
     pub fn get_execution_timeout(&self) -> &::std::option::Option<i32> {
         &self.execution_timeout
     }
-    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub fn delay_until_elb_connections_drained(mut self, input: bool) -> Self {
         self.delay_until_elb_connections_drained = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub fn set_delay_until_elb_connections_drained(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delay_until_elb_connections_drained = input;
         self
     }
-    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
+    /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub fn get_delay_until_elb_connections_drained(&self) -> &::std::option::Option<bool> {
         &self.delay_until_elb_connections_drained
     }

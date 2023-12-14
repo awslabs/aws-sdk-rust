@@ -39,7 +39,7 @@ pub enum Error {
     MountTargetConflict(crate::types::error::MountTargetConflict),
     /// <p>Returned if there is no mount target with the specified ID found in the caller's Amazon Web Services account.</p>
     MountTargetNotFound(crate::types::error::MountTargetNotFound),
-    /// <p>The calling account has reached the limit for elastic network interfaces for the specific Amazon Web Services Region. Either delete some network interfaces or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces per Region</b> entry in the <b>Network interfaces</b> table). </p>
+    /// <p>The calling account has reached the limit for elastic network interfaces for the specific Amazon Web Services Region. Either delete some network interfaces or request that the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces per Region</b> entry in the <b>Network interfaces</b> table).</p>
     NetworkInterfaceLimitExceeded(crate::types::error::NetworkInterfaceLimitExceeded),
     /// <p>Returned if <code>IpAddress</code> was not specified in the request and there are no free IP addresses in the subnet.</p>
     NoFreeAddressesInSubnet(crate::types::error::NoFreeAddressesInSubnet),

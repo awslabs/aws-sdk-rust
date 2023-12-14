@@ -9,22 +9,22 @@
 pub struct EventDestination {
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub name: ::std::string::String,
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
     pub enabled: bool,
     /// <p>The type of email sending events to publish to the event destination.</p>
     /// <ul>
-    /// <li> <p> <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p> </li>
-    /// <li> <p> <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p> </li>
-    /// <li> <p> <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p> </li>
-    /// <li> <p> <code>complaint</code> - The recipient marked the email as spam.</p> </li>
-    /// <li> <p> <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p> </li>
-    /// <li> <p> <code>open</code> - The recipient received the email and opened it in their email client.</p> </li>
-    /// <li> <p> <code>click</code> - The recipient clicked one or more links in the email.</p> </li>
-    /// <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p> </li>
+    /// <li><p><code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p></li>
+    /// <li><p><code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p></li>
+    /// <li><p><code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p></li>
+    /// <li><p><code>complaint</code> - The recipient marked the email as spam.</p></li>
+    /// <li><p><code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p></li>
+    /// <li><p><code>open</code> - The recipient received the email and opened it in their email client.</p></li>
+    /// <li><p><code>click</code> - The recipient clicked one or more links in the email.</p></li>
+    /// <li><p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
     pub matching_event_types: ::std::vec::Vec<crate::types::EventType>,
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
@@ -37,8 +37,8 @@ pub struct EventDestination {
 impl EventDestination {
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -50,14 +50,14 @@ impl EventDestination {
     }
     /// <p>The type of email sending events to publish to the event destination.</p>
     /// <ul>
-    /// <li> <p> <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p> </li>
-    /// <li> <p> <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p> </li>
-    /// <li> <p> <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p> </li>
-    /// <li> <p> <code>complaint</code> - The recipient marked the email as spam.</p> </li>
-    /// <li> <p> <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p> </li>
-    /// <li> <p> <code>open</code> - The recipient received the email and opened it in their email client.</p> </li>
-    /// <li> <p> <code>click</code> - The recipient clicked one or more links in the email.</p> </li>
-    /// <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p> </li>
+    /// <li><p><code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p></li>
+    /// <li><p><code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p></li>
+    /// <li><p><code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p></li>
+    /// <li><p><code>complaint</code> - The recipient marked the email as spam.</p></li>
+    /// <li><p><code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p></li>
+    /// <li><p><code>open</code> - The recipient received the email and opened it in their email client.</p></li>
+    /// <li><p><code>click</code> - The recipient clicked one or more links in the email.</p></li>
+    /// <li><p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
     pub fn matching_event_types(&self) -> &[crate::types::EventType] {
         use std::ops::Deref;
@@ -97,8 +97,8 @@ pub struct EventDestinationBuilder {
 impl EventDestinationBuilder {
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,8 +107,8 @@ impl EventDestinationBuilder {
     }
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -116,8 +116,8 @@ impl EventDestinationBuilder {
     }
     /// <p>The name of the event destination. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p></li>
+    /// <li><p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
@@ -142,14 +142,14 @@ impl EventDestinationBuilder {
     ///
     /// <p>The type of email sending events to publish to the event destination.</p>
     /// <ul>
-    /// <li> <p> <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p> </li>
-    /// <li> <p> <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p> </li>
-    /// <li> <p> <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p> </li>
-    /// <li> <p> <code>complaint</code> - The recipient marked the email as spam.</p> </li>
-    /// <li> <p> <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p> </li>
-    /// <li> <p> <code>open</code> - The recipient received the email and opened it in their email client.</p> </li>
-    /// <li> <p> <code>click</code> - The recipient clicked one or more links in the email.</p> </li>
-    /// <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p> </li>
+    /// <li><p><code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p></li>
+    /// <li><p><code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p></li>
+    /// <li><p><code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p></li>
+    /// <li><p><code>complaint</code> - The recipient marked the email as spam.</p></li>
+    /// <li><p><code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p></li>
+    /// <li><p><code>open</code> - The recipient received the email and opened it in their email client.</p></li>
+    /// <li><p><code>click</code> - The recipient clicked one or more links in the email.</p></li>
+    /// <li><p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.matching_event_types.unwrap_or_default();
@@ -159,14 +159,14 @@ impl EventDestinationBuilder {
     }
     /// <p>The type of email sending events to publish to the event destination.</p>
     /// <ul>
-    /// <li> <p> <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p> </li>
-    /// <li> <p> <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p> </li>
-    /// <li> <p> <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p> </li>
-    /// <li> <p> <code>complaint</code> - The recipient marked the email as spam.</p> </li>
-    /// <li> <p> <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p> </li>
-    /// <li> <p> <code>open</code> - The recipient received the email and opened it in their email client.</p> </li>
-    /// <li> <p> <code>click</code> - The recipient clicked one or more links in the email.</p> </li>
-    /// <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p> </li>
+    /// <li><p><code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p></li>
+    /// <li><p><code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p></li>
+    /// <li><p><code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p></li>
+    /// <li><p><code>complaint</code> - The recipient marked the email as spam.</p></li>
+    /// <li><p><code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p></li>
+    /// <li><p><code>open</code> - The recipient received the email and opened it in their email client.</p></li>
+    /// <li><p><code>click</code> - The recipient clicked one or more links in the email.</p></li>
+    /// <li><p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
     pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.matching_event_types = input;
@@ -174,14 +174,14 @@ impl EventDestinationBuilder {
     }
     /// <p>The type of email sending events to publish to the event destination.</p>
     /// <ul>
-    /// <li> <p> <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p> </li>
-    /// <li> <p> <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p> </li>
-    /// <li> <p> <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p> </li>
-    /// <li> <p> <code>complaint</code> - The recipient marked the email as spam.</p> </li>
-    /// <li> <p> <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p> </li>
-    /// <li> <p> <code>open</code> - The recipient received the email and opened it in their email client.</p> </li>
-    /// <li> <p> <code>click</code> - The recipient clicked one or more links in the email.</p> </li>
-    /// <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p> </li>
+    /// <li><p><code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.</p></li>
+    /// <li><p><code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.</p></li>
+    /// <li><p><code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard bounce.</p></li>
+    /// <li><p><code>complaint</code> - The recipient marked the email as spam.</p></li>
+    /// <li><p><code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.</p></li>
+    /// <li><p><code>open</code> - The recipient received the email and opened it in their email client.</p></li>
+    /// <li><p><code>click</code> - The recipient clicked one or more links in the email.</p></li>
+    /// <li><p><code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p></li>
     /// </ul>
     pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         &self.matching_event_types

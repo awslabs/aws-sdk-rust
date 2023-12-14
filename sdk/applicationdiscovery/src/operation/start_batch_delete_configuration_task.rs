@@ -267,7 +267,7 @@ pub enum StartBatchDeleteConfigurationTaskError {
     HomeRegionNotSetException(crate::types::error::HomeRegionNotSetException),
     /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p> The limit of 200 configuration IDs per request has been exceeded. </p>
+    /// <p>The limit of 200 configuration IDs per request has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),

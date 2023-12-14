@@ -23,7 +23,7 @@ impl ListTasksInputBuilder {
 /// Fluent builder constructing a request to `ListTasks`.
 ///
 /// <p>Returns a list of tasks. You can filter the results by cluster, task definition family, container instance, launch type, what IAM principal started the task, or by the desired status of the task.</p>
-/// <p>Recently stopped tasks might appear in the returned results. </p>
+/// <p>Recently stopped tasks might appear in the returned results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -128,7 +128,7 @@ impl BatchGetDevicePositionFluentBuilder {
     ///
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
-    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// <li><p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code></p></li>
     /// </ul>
     pub fn device_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_ids(input.into());
@@ -136,7 +136,7 @@ impl BatchGetDevicePositionFluentBuilder {
     }
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
-    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// <li><p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code></p></li>
     /// </ul>
     pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_device_ids(input);
@@ -144,7 +144,7 @@ impl BatchGetDevicePositionFluentBuilder {
     }
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
-    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// <li><p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code></p></li>
     /// </ul>
     pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_device_ids()

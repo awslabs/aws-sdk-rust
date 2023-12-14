@@ -6,7 +6,7 @@
 pub struct LandingZoneDetail {
     /// <p>The landing zone's current deployed version.</p>
     pub version: ::std::string::String,
-    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations. </p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub manifest: ::aws_smithy_types::Document,
     /// <p>The ARN of the landing zone.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl LandingZoneDetail {
         use std::ops::Deref;
         self.version.deref()
     }
-    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations. </p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn manifest(&self) -> &::aws_smithy_types::Document {
         &self.manifest
     }
@@ -78,18 +78,18 @@ impl LandingZoneDetailBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations. </p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     /// This field is required.
     pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.manifest = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations. </p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.manifest = input;
         self
     }
-    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations. </p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.manifest
     }

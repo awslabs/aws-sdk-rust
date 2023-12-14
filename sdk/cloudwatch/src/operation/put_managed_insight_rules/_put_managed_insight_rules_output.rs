@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesOutput {
-    /// <p> An array that lists the rules that could not be enabled. </p>
+    /// <p>An array that lists the rules that could not be enabled.</p>
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
 }
 impl PutManagedInsightRulesOutput {
-    /// <p> An array that lists the rules that could not be enabled. </p>
+    /// <p>An array that lists the rules that could not be enabled.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
     pub fn failures(&self) -> &[crate::types::PartialFailure] {
@@ -39,19 +39,19 @@ impl PutManagedInsightRulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
     ///
-    /// <p> An array that lists the rules that could not be enabled. </p>
+    /// <p>An array that lists the rules that could not be enabled.</p>
     pub fn failures(mut self, input: crate::types::PartialFailure) -> Self {
         let mut v = self.failures.unwrap_or_default();
         v.push(input);
         self.failures = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array that lists the rules that could not be enabled. </p>
+    /// <p>An array that lists the rules that could not be enabled.</p>
     pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>) -> Self {
         self.failures = input;
         self
     }
-    /// <p> An array that lists the rules that could not be enabled. </p>
+    /// <p>An array that lists the rules that could not be enabled.</p>
     pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>> {
         &self.failures
     }

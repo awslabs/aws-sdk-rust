@@ -6,12 +6,12 @@
 pub struct Diagnostics {
     /// <p>The associated error code:</p>
     /// <ul>
-    /// <li> <p>Success: The specified script ran.</p> </li>
-    /// <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li>
-    /// <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li>
-    /// <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li>
-    /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
-    /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
+    /// <li><p>Success: The specified script ran.</p></li>
+    /// <li><p>ScriptMissing: The specified script was not found in the specified location.</p></li>
+    /// <li><p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p></li>
+    /// <li><p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p></li>
+    /// <li><p>ScriptFailed: The specified script failed to run as expected.</p></li>
+    /// <li><p>UnknownError: The specified script did not run for an unknown reason.</p></li>
     /// </ul>
     pub error_code: ::std::option::Option<crate::types::LifecycleErrorCode>,
     /// <p>The name of the script.</p>
@@ -25,12 +25,12 @@ pub struct Diagnostics {
 impl Diagnostics {
     /// <p>The associated error code:</p>
     /// <ul>
-    /// <li> <p>Success: The specified script ran.</p> </li>
-    /// <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li>
-    /// <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li>
-    /// <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li>
-    /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
-    /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
+    /// <li><p>Success: The specified script ran.</p></li>
+    /// <li><p>ScriptMissing: The specified script was not found in the specified location.</p></li>
+    /// <li><p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p></li>
+    /// <li><p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p></li>
+    /// <li><p>ScriptFailed: The specified script failed to run as expected.</p></li>
+    /// <li><p>UnknownError: The specified script did not run for an unknown reason.</p></li>
     /// </ul>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::LifecycleErrorCode> {
         self.error_code.as_ref()
@@ -68,12 +68,12 @@ pub struct DiagnosticsBuilder {
 impl DiagnosticsBuilder {
     /// <p>The associated error code:</p>
     /// <ul>
-    /// <li> <p>Success: The specified script ran.</p> </li>
-    /// <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li>
-    /// <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li>
-    /// <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li>
-    /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
-    /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
+    /// <li><p>Success: The specified script ran.</p></li>
+    /// <li><p>ScriptMissing: The specified script was not found in the specified location.</p></li>
+    /// <li><p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p></li>
+    /// <li><p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p></li>
+    /// <li><p>ScriptFailed: The specified script failed to run as expected.</p></li>
+    /// <li><p>UnknownError: The specified script did not run for an unknown reason.</p></li>
     /// </ul>
     pub fn error_code(mut self, input: crate::types::LifecycleErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -81,12 +81,12 @@ impl DiagnosticsBuilder {
     }
     /// <p>The associated error code:</p>
     /// <ul>
-    /// <li> <p>Success: The specified script ran.</p> </li>
-    /// <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li>
-    /// <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li>
-    /// <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li>
-    /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
-    /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
+    /// <li><p>Success: The specified script ran.</p></li>
+    /// <li><p>ScriptMissing: The specified script was not found in the specified location.</p></li>
+    /// <li><p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p></li>
+    /// <li><p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p></li>
+    /// <li><p>ScriptFailed: The specified script failed to run as expected.</p></li>
+    /// <li><p>UnknownError: The specified script did not run for an unknown reason.</p></li>
     /// </ul>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::LifecycleErrorCode>) -> Self {
         self.error_code = input;
@@ -94,12 +94,12 @@ impl DiagnosticsBuilder {
     }
     /// <p>The associated error code:</p>
     /// <ul>
-    /// <li> <p>Success: The specified script ran.</p> </li>
-    /// <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li>
-    /// <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li>
-    /// <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li>
-    /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
-    /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
+    /// <li><p>Success: The specified script ran.</p></li>
+    /// <li><p>ScriptMissing: The specified script was not found in the specified location.</p></li>
+    /// <li><p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p></li>
+    /// <li><p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p></li>
+    /// <li><p>ScriptFailed: The specified script failed to run as expected.</p></li>
+    /// <li><p>UnknownError: The specified script did not run for an unknown reason.</p></li>
     /// </ul>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::LifecycleErrorCode> {
         &self.error_code

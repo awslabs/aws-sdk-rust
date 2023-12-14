@@ -6,34 +6,34 @@
 pub struct CheckCertificateRevocationStatusActions {
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has a revoked status.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub revoked_status_action: ::std::option::Option<crate::types::RevocationCheckAction>,
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has an unknown status, or a status that cannot be determined for any other reason, including when the service is unable to connect to the OCSP and CRL endpoints for the certificate.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub unknown_status_action: ::std::option::Option<crate::types::RevocationCheckAction>,
 }
 impl CheckCertificateRevocationStatusActions {
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has a revoked status.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn revoked_status_action(&self) -> ::std::option::Option<&crate::types::RevocationCheckAction> {
         self.revoked_status_action.as_ref()
     }
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has an unknown status, or a status that cannot be determined for any other reason, including when the service is unable to connect to the OCSP and CRL endpoints for the certificate.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn unknown_status_action(&self) -> ::std::option::Option<&crate::types::RevocationCheckAction> {
         self.unknown_status_action.as_ref()
@@ -56,9 +56,9 @@ pub struct CheckCertificateRevocationStatusActionsBuilder {
 impl CheckCertificateRevocationStatusActionsBuilder {
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has a revoked status.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn revoked_status_action(mut self, input: crate::types::RevocationCheckAction) -> Self {
         self.revoked_status_action = ::std::option::Option::Some(input);
@@ -66,9 +66,9 @@ impl CheckCertificateRevocationStatusActionsBuilder {
     }
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has a revoked status.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn set_revoked_status_action(mut self, input: ::std::option::Option<crate::types::RevocationCheckAction>) -> Self {
         self.revoked_status_action = input;
@@ -76,18 +76,18 @@ impl CheckCertificateRevocationStatusActionsBuilder {
     }
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has a revoked status.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn get_revoked_status_action(&self) -> &::std::option::Option<crate::types::RevocationCheckAction> {
         &self.revoked_status_action
     }
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has an unknown status, or a status that cannot be determined for any other reason, including when the service is unable to connect to the OCSP and CRL endpoints for the certificate.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn unknown_status_action(mut self, input: crate::types::RevocationCheckAction) -> Self {
         self.unknown_status_action = ::std::option::Option::Some(input);
@@ -95,9 +95,9 @@ impl CheckCertificateRevocationStatusActionsBuilder {
     }
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has an unknown status, or a status that cannot be determined for any other reason, including when the service is unable to connect to the OCSP and CRL endpoints for the certificate.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn set_unknown_status_action(mut self, input: ::std::option::Option<crate::types::RevocationCheckAction>) -> Self {
         self.unknown_status_action = input;
@@ -105,9 +105,9 @@ impl CheckCertificateRevocationStatusActionsBuilder {
     }
     /// <p>Configures how Network Firewall processes traffic when it determines that the certificate presented by the server in the SSL/TLS connection has an unknown status, or a status that cannot be determined for any other reason, including when the service is unable to connect to the OCSP and CRL endpoints for the certificate.</p>
     /// <ul>
-    /// <li> <p> <b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p> </li>
-    /// <li> <p> <b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p> </li>
-    /// <li> <p> <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p> </li>
+    /// <li><p><b>PASS</b> - Allow the connection to continue, and pass subsequent packets to the stateful engine for inspection.</p></li>
+    /// <li><p><b>DROP</b> - Network Firewall closes the connection and drops subsequent packets for that connection.</p></li>
+    /// <li><p><b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The service closes the connection and drops subsequent packets for that connection. <code>REJECT</code> is available only for TCP traffic.</p></li>
     /// </ul>
     pub fn get_unknown_status_action(&self) -> &::std::option::Option<crate::types::RevocationCheckAction> {
         &self.unknown_status_action

@@ -10,7 +10,7 @@ pub struct Highlight {
     pub end_offset: i32,
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
     pub top_answer: bool,
-    /// <p>The highlight type. </p>
+    /// <p>The highlight type.</p>
     pub r#type: ::std::option::Option<crate::types::HighlightType>,
 }
 impl Highlight {
@@ -26,7 +26,7 @@ impl Highlight {
     pub fn top_answer(&self) -> bool {
         self.top_answer
     }
-    /// <p>The highlight type. </p>
+    /// <p>The highlight type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::HighlightType> {
         self.r#type.as_ref()
     }
@@ -92,17 +92,17 @@ impl HighlightBuilder {
     pub fn get_top_answer(&self) -> &::std::option::Option<bool> {
         &self.top_answer
     }
-    /// <p>The highlight type. </p>
+    /// <p>The highlight type.</p>
     pub fn r#type(mut self, input: crate::types::HighlightType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The highlight type. </p>
+    /// <p>The highlight type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HighlightType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The highlight type. </p>
+    /// <p>The highlight type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::HighlightType> {
         &self.r#type
     }

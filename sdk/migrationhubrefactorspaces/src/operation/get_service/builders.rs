@@ -22,7 +22,7 @@ impl GetServiceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetService`.
 ///
-/// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces service. </p>
+/// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

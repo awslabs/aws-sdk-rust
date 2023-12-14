@@ -142,17 +142,17 @@ impl ListDataQualityRulesetsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The filter criteria. </p>
+    /// <p>The filter criteria.</p>
     pub fn filter(mut self, input: crate::types::DataQualityRulesetFilterCriteria) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>The filter criteria. </p>
+    /// <p>The filter criteria.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DataQualityRulesetFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>The filter criteria. </p>
+    /// <p>The filter criteria.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::DataQualityRulesetFilterCriteria> {
         self.inner.get_filter()
     }

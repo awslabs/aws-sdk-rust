@@ -7,7 +7,7 @@ pub struct ListBucketAnalyticsConfigurationsOutput {
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
-    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
+    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of analytics configurations for a bucket.</p>
     pub analytics_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsConfiguration>>,
@@ -23,7 +23,7 @@ impl ListBucketAnalyticsConfigurationsOutput {
     pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
+    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub fn next_continuation_token(&self) -> ::std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
@@ -91,17 +91,17 @@ impl ListBucketAnalyticsConfigurationsOutputBuilder {
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.continuation_token
     }
-    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
+    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub fn next_continuation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_continuation_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
+    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub fn set_next_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_continuation_token = input;
         self
     }
-    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
+    /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub fn get_next_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_continuation_token
     }

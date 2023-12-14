@@ -8,10 +8,10 @@ pub struct AccountTakeoverActionType {
     pub notify: bool,
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
-    /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
-    /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
-    /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
+    /// <li><p><code>BLOCK</code> Choosing this action will block the request.</p></li>
+    /// <li><p><code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p></li>
+    /// <li><p><code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p></li>
+    /// <li><p><code>NO_ACTION</code> Allow the user to sign in.</p></li>
     /// </ul>
     pub event_action: crate::types::AccountTakeoverEventActionType,
 }
@@ -22,10 +22,10 @@ impl AccountTakeoverActionType {
     }
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
-    /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
-    /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
-    /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
+    /// <li><p><code>BLOCK</code> Choosing this action will block the request.</p></li>
+    /// <li><p><code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p></li>
+    /// <li><p><code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p></li>
+    /// <li><p><code>NO_ACTION</code> Allow the user to sign in.</p></li>
     /// </ul>
     pub fn event_action(&self) -> &crate::types::AccountTakeoverEventActionType {
         &self.event_action
@@ -63,10 +63,10 @@ impl AccountTakeoverActionTypeBuilder {
     }
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
-    /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
-    /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
-    /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
+    /// <li><p><code>BLOCK</code> Choosing this action will block the request.</p></li>
+    /// <li><p><code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p></li>
+    /// <li><p><code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p></li>
+    /// <li><p><code>NO_ACTION</code> Allow the user to sign in.</p></li>
     /// </ul>
     /// This field is required.
     pub fn event_action(mut self, input: crate::types::AccountTakeoverEventActionType) -> Self {
@@ -75,10 +75,10 @@ impl AccountTakeoverActionTypeBuilder {
     }
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
-    /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
-    /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
-    /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
+    /// <li><p><code>BLOCK</code> Choosing this action will block the request.</p></li>
+    /// <li><p><code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p></li>
+    /// <li><p><code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p></li>
+    /// <li><p><code>NO_ACTION</code> Allow the user to sign in.</p></li>
     /// </ul>
     pub fn set_event_action(mut self, input: ::std::option::Option<crate::types::AccountTakeoverEventActionType>) -> Self {
         self.event_action = input;
@@ -86,10 +86,10 @@ impl AccountTakeoverActionTypeBuilder {
     }
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>BLOCK</code> Choosing this action will block the request.</p> </li>
-    /// <li> <p> <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p> </li>
-    /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
-    /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
+    /// <li><p><code>BLOCK</code> Choosing this action will block the request.</p></li>
+    /// <li><p><code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it, else allow the request.</p></li>
+    /// <li><p><code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p></li>
+    /// <li><p><code>NO_ACTION</code> Allow the user to sign in.</p></li>
     /// </ul>
     pub fn get_event_action(&self) -> &::std::option::Option<crate::types::AccountTakeoverEventActionType> {
         &self.event_action

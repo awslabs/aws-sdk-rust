@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightsByAssessmentOutput {
-    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    /// <p>The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned.</p>
     pub insights: ::std::option::Option<crate::types::InsightsByAssessment>,
     _request_id: Option<String>,
 }
 impl GetInsightsByAssessmentOutput {
-    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    /// <p>The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned.</p>
     pub fn insights(&self) -> ::std::option::Option<&crate::types::InsightsByAssessment> {
         self.insights.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetInsightsByAssessmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetInsightsByAssessmentOutputBuilder {
-    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    /// <p>The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned.</p>
     pub fn insights(mut self, input: crate::types::InsightsByAssessment) -> Self {
         self.insights = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    /// <p>The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned.</p>
     pub fn set_insights(mut self, input: ::std::option::Option<crate::types::InsightsByAssessment>) -> Self {
         self.insights = input;
         self
     }
-    /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    /// <p>The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned.</p>
     pub fn get_insights(&self) -> &::std::option::Option<crate::types::InsightsByAssessment> {
         &self.insights
     }

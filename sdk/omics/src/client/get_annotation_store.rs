@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`store_format(Option<StoreFormat>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_format): <p>The store's annotation file format.</p>
     ///   - [`status_message(String)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::status_message): <p>A status message.</p>
     ///   - [`store_size_bytes(i64)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
-    ///   - [`num_versions(i32)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::num_versions): <p> An integer indicating how many versions of an annotation store exist. </p>
+    ///   - [`num_versions(i32)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::num_versions): <p>An integer indicating how many versions of an annotation store exist.</p>
     /// - On failure, responds with [`SdkError<GetAnnotationStoreError>`](crate::operation::get_annotation_store::GetAnnotationStoreError)
     pub fn get_annotation_store(&self) -> crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder {
         crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::new(self.handle.clone())

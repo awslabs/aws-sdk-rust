@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFirewallRuleGroupInput {
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     pub firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateFirewallRuleGroupInput {
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     pub fn firewall_rule_group_association_id(&self) -> ::std::option::Option<&str> {
         self.firewall_rule_group_association_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DisassociateFirewallRuleGroupInputBuilder {
     pub(crate) firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateFirewallRuleGroupInputBuilder {
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     /// This field is required.
     pub fn firewall_rule_group_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     pub fn set_firewall_rule_group_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_rule_group_association_id = input;
         self
     }
-    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>.</p>
     pub fn get_firewall_rule_group_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_rule_group_association_id
     }

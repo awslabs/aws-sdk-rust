@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImportInput {
-    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
     pub import_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImportInput {
-    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
     pub fn import_arn(&self) -> ::std::option::Option<&str> {
         self.import_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeImportInputBuilder {
     pub(crate) import_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImportInputBuilder {
-    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
     /// This field is required.
     pub fn import_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
     pub fn set_import_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    /// <p>The Amazon Resource Name (ARN) associated with the table you're importing to.</p>
     pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_arn
     }

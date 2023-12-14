@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceFolderOutput {
-    /// <p> The folder that the evidence is stored in. </p>
+    /// <p>The folder that the evidence is stored in.</p>
     pub evidence_folder: ::std::option::Option<crate::types::AssessmentEvidenceFolder>,
     _request_id: Option<String>,
 }
 impl GetEvidenceFolderOutput {
-    /// <p> The folder that the evidence is stored in. </p>
+    /// <p>The folder that the evidence is stored in.</p>
     pub fn evidence_folder(&self) -> ::std::option::Option<&crate::types::AssessmentEvidenceFolder> {
         self.evidence_folder.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetEvidenceFolderOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetEvidenceFolderOutputBuilder {
-    /// <p> The folder that the evidence is stored in. </p>
+    /// <p>The folder that the evidence is stored in.</p>
     pub fn evidence_folder(mut self, input: crate::types::AssessmentEvidenceFolder) -> Self {
         self.evidence_folder = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The folder that the evidence is stored in. </p>
+    /// <p>The folder that the evidence is stored in.</p>
     pub fn set_evidence_folder(mut self, input: ::std::option::Option<crate::types::AssessmentEvidenceFolder>) -> Self {
         self.evidence_folder = input;
         self
     }
-    /// <p> The folder that the evidence is stored in. </p>
+    /// <p>The folder that the evidence is stored in.</p>
     pub fn get_evidence_folder(&self) -> &::std::option::Option<crate::types::AssessmentEvidenceFolder> {
         &self.evidence_folder
     }

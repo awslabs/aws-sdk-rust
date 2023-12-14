@@ -22,7 +22,7 @@ impl GetMetricPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMetricPolicy`.
 ///
-/// <p>Returns the metric policy for the specified container. </p>
+/// <p>Returns the metric policy for the specified container.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

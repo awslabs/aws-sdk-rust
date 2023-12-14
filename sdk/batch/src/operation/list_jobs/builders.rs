@@ -25,9 +25,9 @@ impl ListJobsInputBuilder {
 /// <p>Returns a list of Batch jobs.</p>
 /// <p>You must specify only one of the following items:</p>
 /// <ul>
-/// <li> <p>A job queue ID to return a list of jobs in that job queue</p> </li>
-/// <li> <p>A multi-node parallel job ID to return a list of nodes for that job</p> </li>
-/// <li> <p>An array job ID to return a list of the children for that job</p> </li>
+/// <li><p>A job queue ID to return a list of jobs in that job queue</p></li>
+/// <li><p>A multi-node parallel job ID to return a list of nodes for that job</p></li>
+/// <li><p>An array job ID to return a list of the children for that job</p></li>
 /// </ul>
 /// <p>You can filter the results by job status with the <code>jobStatus</code> parameter. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

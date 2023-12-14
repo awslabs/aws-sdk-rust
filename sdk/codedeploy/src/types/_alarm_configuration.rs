@@ -8,8 +8,8 @@ pub struct AlarmConfiguration {
     pub enabled: bool,
     /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <li><p><code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
+    /// <li><p><code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
     /// </ul>
     pub ignore_poll_alarm_failure: bool,
     /// <p>A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.</p>
@@ -22,8 +22,8 @@ impl AlarmConfiguration {
     }
     /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <li><p><code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
+    /// <li><p><code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
     /// </ul>
     pub fn ignore_poll_alarm_failure(&self) -> bool {
         self.ignore_poll_alarm_failure
@@ -67,8 +67,8 @@ impl AlarmConfigurationBuilder {
     }
     /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <li><p><code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
+    /// <li><p><code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
     /// </ul>
     pub fn ignore_poll_alarm_failure(mut self, input: bool) -> Self {
         self.ignore_poll_alarm_failure = ::std::option::Option::Some(input);
@@ -76,8 +76,8 @@ impl AlarmConfigurationBuilder {
     }
     /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <li><p><code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
+    /// <li><p><code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
     /// </ul>
     pub fn set_ignore_poll_alarm_failure(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_poll_alarm_failure = input;
@@ -85,8 +85,8 @@ impl AlarmConfigurationBuilder {
     }
     /// <p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
-    /// <li> <p> <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p> </li>
+    /// <li><p><code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
+    /// <li><p><code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.</p></li>
     /// </ul>
     pub fn get_ignore_poll_alarm_failure(&self) -> &::std::option::Option<bool> {
         &self.ignore_poll_alarm_failure

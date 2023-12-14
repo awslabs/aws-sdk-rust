@@ -206,8 +206,8 @@ impl UpdateDeploymentGroupFluentBuilder {
     ///
     /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p>
     /// <ul>
-    /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
-    /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+    /// <li><p>To keep the Auto Scaling groups, enter their names or do not specify this parameter.</p></li>
+    /// <li><p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p></li>
     /// </ul>
     pub fn auto_scaling_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_groups(input.into());
@@ -215,8 +215,8 @@ impl UpdateDeploymentGroupFluentBuilder {
     }
     /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p>
     /// <ul>
-    /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
-    /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+    /// <li><p>To keep the Auto Scaling groups, enter their names or do not specify this parameter.</p></li>
+    /// <li><p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p></li>
     /// </ul>
     pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_scaling_groups(input);
@@ -224,8 +224,8 @@ impl UpdateDeploymentGroupFluentBuilder {
     }
     /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p>
     /// <ul>
-    /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
-    /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+    /// <li><p>To keep the Auto Scaling groups, enter their names or do not specify this parameter.</p></li>
+    /// <li><p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p></li>
     /// </ul>
     pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_auto_scaling_groups()
@@ -370,29 +370,29 @@ impl UpdateDeploymentGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
     ///
-    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. </p>
+    /// </clustername></code>.</p>
     pub fn ecs_services(mut self, input: crate::types::EcsService) -> Self {
         self.inner = self.inner.ecs_services(input);
         self
     }
-    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. </p>
+    /// </clustername></code>.</p>
     pub fn set_ecs_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>) -> Self {
         self.inner = self.inner.set_ecs_services(input);
         self
     }
-    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
     /// <clustername>
     /// :
     /// <servicename></servicename>
-    /// </clustername></code>. </p>
+    /// </clustername></code>.</p>
     pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
         self.inner.get_ecs_services()
     }

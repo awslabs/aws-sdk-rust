@@ -22,7 +22,7 @@ impl GetAttributeGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAttributeGroup`.
 ///
-/// <p> Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name. </p>
+/// <p>Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAttributeGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetAttributeGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_group(input.into());
         self
     }
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_group(input);
         self
     }
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_group()
     }

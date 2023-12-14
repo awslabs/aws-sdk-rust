@@ -157,10 +157,10 @@ impl CreateClientVpnEndpointFluentBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li> <p>Client connection requests</p> </li>
-    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
-    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
-    /// <li> <p>Client connection termination time</p> </li>
+    /// <li><p>Client connection requests</p></li>
+    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li><p>Client connection termination time</p></li>
     /// </ul>
     pub fn connection_log_options(mut self, input: crate::types::ConnectionLogOptions) -> Self {
         self.inner = self.inner.connection_log_options(input);
@@ -169,10 +169,10 @@ impl CreateClientVpnEndpointFluentBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li> <p>Client connection requests</p> </li>
-    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
-    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
-    /// <li> <p>Client connection termination time</p> </li>
+    /// <li><p>Client connection requests</p></li>
+    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li><p>Client connection termination time</p></li>
     /// </ul>
     pub fn set_connection_log_options(mut self, input: ::std::option::Option<crate::types::ConnectionLogOptions>) -> Self {
         self.inner = self.inner.set_connection_log_options(input);
@@ -181,10 +181,10 @@ impl CreateClientVpnEndpointFluentBuilder {
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
     /// <ul>
-    /// <li> <p>Client connection requests</p> </li>
-    /// <li> <p>Client connection results (successful and unsuccessful)</p> </li>
-    /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
-    /// <li> <p>Client connection termination time</p> </li>
+    /// <li><p>Client connection requests</p></li>
+    /// <li><p>Client connection results (successful and unsuccessful)</p></li>
+    /// <li><p>Reasons for unsuccessful client connection requests</p></li>
+    /// <li><p>Client connection termination time</p></li>
     /// </ul>
     pub fn get_connection_log_options(&self) -> &::std::option::Option<crate::types::ConnectionLogOptions> {
         self.inner.get_connection_log_options()
@@ -208,39 +208,39 @@ impl CreateClientVpnEndpointFluentBuilder {
         self.inner.get_dns_servers()
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code> </p>
+    /// <p>Default value: <code>udp</code></p>
     pub fn transport_protocol(mut self, input: crate::types::TransportProtocol) -> Self {
         self.inner = self.inner.transport_protocol(input);
         self
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code> </p>
+    /// <p>Default value: <code>udp</code></p>
     pub fn set_transport_protocol(mut self, input: ::std::option::Option<crate::types::TransportProtocol>) -> Self {
         self.inner = self.inner.set_transport_protocol(input);
         self
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
-    /// <p>Default value: <code>udp</code> </p>
+    /// <p>Default value: <code>udp</code></p>
     pub fn get_transport_protocol(&self) -> &::std::option::Option<crate::types::TransportProtocol> {
         self.inner.get_transport_protocol()
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
-    /// <p>Default Value: <code>443</code> </p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
+    /// <p>Default Value: <code>443</code></p>
     pub fn vpn_port(mut self, input: i32) -> Self {
         self.inner = self.inner.vpn_port(input);
         self
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
-    /// <p>Default Value: <code>443</code> </p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
+    /// <p>Default Value: <code>443</code></p>
     pub fn set_vpn_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_vpn_port(input);
         self
     }
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
-    /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
-    /// <p>Default Value: <code>443</code> </p>
+    /// <p>Valid Values: <code>443</code> | <code>1194</code></p>
+    /// <p>Default Value: <code>443</code></p>
     pub fn get_vpn_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_vpn_port()
     }
@@ -357,19 +357,19 @@ impl CreateClientVpnEndpointFluentBuilder {
         self.inner.get_vpc_id()
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code> </p>
+    /// <p>Default Value: <code>enabled</code></p>
     pub fn self_service_portal(mut self, input: crate::types::SelfServicePortal) -> Self {
         self.inner = self.inner.self_service_portal(input);
         self
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code> </p>
+    /// <p>Default Value: <code>enabled</code></p>
     pub fn set_self_service_portal(mut self, input: ::std::option::Option<crate::types::SelfServicePortal>) -> Self {
         self.inner = self.inner.set_self_service_portal(input);
         self
     }
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
-    /// <p>Default Value: <code>enabled</code> </p>
+    /// <p>Default Value: <code>enabled</code></p>
     pub fn get_self_service_portal(&self) -> &::std::option::Option<crate::types::SelfServicePortal> {
         self.inner.get_self_service_portal()
     }
@@ -388,22 +388,22 @@ impl CreateClientVpnEndpointFluentBuilder {
         self.inner.get_client_connect_options()
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub fn session_timeout_hours(mut self, input: i32) -> Self {
         self.inner = self.inner.session_timeout_hours(input);
         self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub fn set_session_timeout_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_session_timeout_hours(input);
         self
     }
     /// <p>The maximum VPN session duration time in hours.</p>
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
-    /// <p>Default value: <code>24</code> </p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code></p>
+    /// <p>Default value: <code>24</code></p>
     pub fn get_session_timeout_hours(&self) -> &::std::option::Option<i32> {
         self.inner.get_session_timeout_hours()
     }

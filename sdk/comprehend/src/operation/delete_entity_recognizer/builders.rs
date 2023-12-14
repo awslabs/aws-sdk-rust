@@ -24,7 +24,7 @@ impl DeleteEntityRecognizerInputBuilder {
 ///
 /// <p>Deletes an entity recognizer.</p>
 /// <p>Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an active inference job is using the model, a <code>ResourceInUseException</code> will be returned.</p>
-/// <p>This is an asynchronous action that puts the recognizer into a DELETING state, and it is then removed by a background job. Once removed, the recognizer disappears from your account and is no longer available for use. </p>
+/// <p>This is an asynchronous action that puts the recognizer into a DELETING state, and it is then removed by a background job. Once removed, the recognizer disappears from your account and is no longer available for use.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEntityRecognizerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -16,7 +16,7 @@ pub struct HealthCheckPolicy {
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
     pub healthy_threshold: i32,
-    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy.</p>
     pub unhealthy_threshold: i32,
 }
 impl HealthCheckPolicy {
@@ -44,7 +44,7 @@ impl HealthCheckPolicy {
     pub fn healthy_threshold(&self) -> i32 {
         self.healthy_threshold
     }
-    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy.</p>
     pub fn unhealthy_threshold(&self) -> i32 {
         self.unhealthy_threshold
     }
@@ -157,18 +157,18 @@ impl HealthCheckPolicyBuilder {
     pub fn get_healthy_threshold(&self) -> &::std::option::Option<i32> {
         &self.healthy_threshold
     }
-    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy.</p>
     /// This field is required.
     pub fn unhealthy_threshold(mut self, input: i32) -> Self {
         self.unhealthy_threshold = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy.</p>
     pub fn set_unhealthy_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unhealthy_threshold = input;
         self
     }
-    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy.</p>
     pub fn get_unhealthy_threshold(&self) -> &::std::option::Option<i32> {
         &self.unhealthy_threshold
     }

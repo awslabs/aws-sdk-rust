@@ -6,11 +6,11 @@
 pub struct EnvironmentLifecycle {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+    /// <li><p><code>CREATING</code>: The environment is in the process of being created.</p></li>
+    /// <li><p><code>CREATED</code>: The environment was successfully created.</p></li>
+    /// <li><p><code>CREATE_FAILED</code>: The environment failed to be created.</p></li>
+    /// <li><p><code>DELETING</code>: The environment is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETE_FAILED</code>: The environment failed to delete.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
     /// <p>Any informational message about the lifecycle state of the environment.</p>
@@ -21,11 +21,11 @@ pub struct EnvironmentLifecycle {
 impl EnvironmentLifecycle {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+    /// <li><p><code>CREATING</code>: The environment is in the process of being created.</p></li>
+    /// <li><p><code>CREATED</code>: The environment was successfully created.</p></li>
+    /// <li><p><code>CREATE_FAILED</code>: The environment failed to be created.</p></li>
+    /// <li><p><code>DELETING</code>: The environment is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETE_FAILED</code>: The environment failed to delete.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentLifecycleStatus> {
         self.status.as_ref()
@@ -57,11 +57,11 @@ pub struct EnvironmentLifecycleBuilder {
 impl EnvironmentLifecycleBuilder {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+    /// <li><p><code>CREATING</code>: The environment is in the process of being created.</p></li>
+    /// <li><p><code>CREATED</code>: The environment was successfully created.</p></li>
+    /// <li><p><code>CREATE_FAILED</code>: The environment failed to be created.</p></li>
+    /// <li><p><code>DELETING</code>: The environment is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETE_FAILED</code>: The environment failed to delete.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EnvironmentLifecycleStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,11 +69,11 @@ impl EnvironmentLifecycleBuilder {
     }
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+    /// <li><p><code>CREATING</code>: The environment is in the process of being created.</p></li>
+    /// <li><p><code>CREATED</code>: The environment was successfully created.</p></li>
+    /// <li><p><code>CREATE_FAILED</code>: The environment failed to be created.</p></li>
+    /// <li><p><code>DELETING</code>: The environment is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETE_FAILED</code>: The environment failed to delete.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>) -> Self {
         self.status = input;
@@ -81,11 +81,11 @@ impl EnvironmentLifecycleBuilder {
     }
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
+    /// <li><p><code>CREATING</code>: The environment is in the process of being created.</p></li>
+    /// <li><p><code>CREATED</code>: The environment was successfully created.</p></li>
+    /// <li><p><code>CREATE_FAILED</code>: The environment failed to be created.</p></li>
+    /// <li><p><code>DELETING</code>: The environment is in the process of being deleted.</p></li>
+    /// <li><p><code>DELETE_FAILED</code>: The environment failed to delete.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycleStatus> {
         &self.status

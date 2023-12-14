@@ -25,13 +25,13 @@ impl CreateAliasInputBuilder {
 /// <p>Creates an <i>alias</i>, or a friendly name, for an Amazon Web Services Payment Cryptography key. You can use an alias to identify a key in the console and when you call cryptographic operations such as <a href="https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_EncryptData.html">EncryptData</a> or <a href="https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_DecryptData.html">DecryptData</a>.</p>
 /// <p>You can associate the alias with any key in the same Amazon Web Services Region. Each alias is associated with only one key at a time, but a key can have multiple aliases. You can't create an alias without a key. The alias must be unique in the account and Amazon Web Services Region, but you can create another alias with the same name in a different Amazon Web Services Region.</p>
 /// <p>To change the key that's associated with the alias, call <code>UpdateAlias</code>. To delete the alias, call <code>DeleteAlias</code>. These operations don't affect the underlying key. To get the alias that you created, call <code>ListAliases</code>.</p>
-/// <p> <b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>DeleteAlias</code> </p> </li>
-/// <li> <p> <code>GetAlias</code> </p> </li>
-/// <li> <p> <code>ListAliases</code> </p> </li>
-/// <li> <p> <code>UpdateAlias</code> </p> </li>
+/// <li><p><code>DeleteAlias</code></p></li>
+/// <li><p><code>GetAlias</code></p></li>
+/// <li><p><code>ListAliases</code></p></li>
+/// <li><p><code>UpdateAlias</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAliasFluentBuilder {

@@ -142,7 +142,7 @@ impl EnableMFADeviceFluentBuilder {
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serial_number()
     }
-    /// <p>An authentication code emitted by the device. </p>
+    /// <p>An authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
@@ -150,7 +150,7 @@ impl EnableMFADeviceFluentBuilder {
         self.inner = self.inner.authentication_code1(input.into());
         self
     }
-    /// <p>An authentication code emitted by the device. </p>
+    /// <p>An authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>
@@ -158,7 +158,7 @@ impl EnableMFADeviceFluentBuilder {
         self.inner = self.inner.set_authentication_code1(input);
         self
     }
-    /// <p>An authentication code emitted by the device. </p>
+    /// <p>An authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a string of six digits.</p> <important>
     /// <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>
     /// </important>

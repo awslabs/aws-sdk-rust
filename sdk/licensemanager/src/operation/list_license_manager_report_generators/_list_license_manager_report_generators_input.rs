@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLicenseManagerReportGeneratorsInput {
-    /// <p>Filters to scope the results. The following filters are supported: </p>
+    /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+    /// <li><p><code>LicenseConfigurationArn</code></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -14,9 +14,9 @@ pub struct ListLicenseManagerReportGeneratorsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListLicenseManagerReportGeneratorsInput {
-    /// <p>Filters to scope the results. The following filters are supported: </p>
+    /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+    /// <li><p><code>LicenseConfigurationArn</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -52,9 +52,9 @@ impl ListLicenseManagerReportGeneratorsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. The following filters are supported: </p>
+    /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+    /// <li><p><code>LicenseConfigurationArn</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -62,17 +62,17 @@ impl ListLicenseManagerReportGeneratorsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters to scope the results. The following filters are supported: </p>
+    /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+    /// <li><p><code>LicenseConfigurationArn</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters to scope the results. The following filters are supported: </p>
+    /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
+    /// <li><p><code>LicenseConfigurationArn</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

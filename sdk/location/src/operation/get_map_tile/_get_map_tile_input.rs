@@ -9,7 +9,7 @@ pub struct GetMapTileInput {
     pub z: ::std::option::Option<::std::string::String>,
     /// <p>The X axis value for the map tile.</p>
     pub x: ::std::option::Option<::std::string::String>,
-    /// <p>The Y axis value for the map tile. </p>
+    /// <p>The Y axis value for the map tile.</p>
     pub y: ::std::option::Option<::std::string::String>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl GetMapTileInput {
     pub fn x(&self) -> ::std::option::Option<&str> {
         self.x.as_deref()
     }
-    /// <p>The Y axis value for the map tile. </p>
+    /// <p>The Y axis value for the map tile.</p>
     pub fn y(&self) -> ::std::option::Option<&str> {
         self.y.as_deref()
     }
@@ -110,18 +110,18 @@ impl GetMapTileInputBuilder {
     pub fn get_x(&self) -> &::std::option::Option<::std::string::String> {
         &self.x
     }
-    /// <p>The Y axis value for the map tile. </p>
+    /// <p>The Y axis value for the map tile.</p>
     /// This field is required.
     pub fn y(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Y axis value for the map tile. </p>
+    /// <p>The Y axis value for the map tile.</p>
     pub fn set_y(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.y = input;
         self
     }
-    /// <p>The Y axis value for the map tile. </p>
+    /// <p>The Y axis value for the map tile.</p>
     pub fn get_y(&self) -> &::std::option::Option<::std::string::String> {
         &self.y
     }

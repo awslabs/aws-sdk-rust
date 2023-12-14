@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeoutConfig {
-    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
+    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes)</p>
     pub max_lifetime_timeout_minutes: ::std::option::Option<i32>,
 }
 impl TimeoutConfig {
-    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
+    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes)</p>
     pub fn max_lifetime_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.max_lifetime_timeout_minutes
     }
@@ -27,17 +27,17 @@ pub struct TimeoutConfigBuilder {
     pub(crate) max_lifetime_timeout_minutes: ::std::option::Option<i32>,
 }
 impl TimeoutConfigBuilder {
-    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
+    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes)</p>
     pub fn max_lifetime_timeout_minutes(mut self, input: i32) -> Self {
         self.max_lifetime_timeout_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
+    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes)</p>
     pub fn set_max_lifetime_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_lifetime_timeout_minutes = input;
         self
     }
-    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes) </p>
+    /// <p>The maximum amount of time (in minutes) a tunnel can remain open. If not specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are from 1 minute to 12 hours (720 minutes)</p>
     pub fn get_max_lifetime_timeout_minutes(&self) -> &::std::option::Option<i32> {
         &self.max_lifetime_timeout_minutes
     }

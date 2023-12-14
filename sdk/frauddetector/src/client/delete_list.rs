@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteList`](crate::operation::delete_list::builders::DeleteListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_list::builders::DeleteListFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_list::builders::DeleteListFluentBuilder::set_name):<br>required: **true**<br><p> The name of the list to delete. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_list::builders::DeleteListFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_list::builders::DeleteListFluentBuilder::set_name):<br>required: **true**<br><p>The name of the list to delete.</p><br>
     /// - On success, responds with [`DeleteListOutput`](crate::operation::delete_list::DeleteListOutput)
     /// - On failure, responds with [`SdkError<DeleteListError>`](crate::operation::delete_list::DeleteListError)
     pub fn delete_list(&self) -> crate::operation::delete_list::builders::DeleteListFluentBuilder {

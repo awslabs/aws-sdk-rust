@@ -31,15 +31,15 @@ pub struct Endpoint {
     pub server_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the endpoint was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The security group configuration of the endpoint. </p>
+    /// <p>The security group configuration of the endpoint.</p>
     pub security_group: ::std::option::Option<::std::string::String>,
-    /// <p>The subnet IDs of the endpoint. </p>
+    /// <p>The subnet IDs of the endpoint.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> Additional details of the endpoint state. </p>
+    /// <p>Additional details of the endpoint state.</p>
     pub state_details: ::std::option::Option<::std::string::String>,
-    /// <p> The reasons why the endpoint has failed. </p>
+    /// <p>The reasons why the endpoint has failed.</p>
     pub failure_reason: ::std::option::Option<crate::types::FailureReason>,
-    /// <p>The tags of the endpoint. </p>
+    /// <p>The tags of the endpoint.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Endpoint {
@@ -96,25 +96,25 @@ impl Endpoint {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The security group configuration of the endpoint. </p>
+    /// <p>The security group configuration of the endpoint.</p>
     pub fn security_group(&self) -> ::std::option::Option<&str> {
         self.security_group.as_deref()
     }
-    /// <p>The subnet IDs of the endpoint. </p>
+    /// <p>The subnet IDs of the endpoint.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p> Additional details of the endpoint state. </p>
+    /// <p>Additional details of the endpoint state.</p>
     pub fn state_details(&self) -> ::std::option::Option<&str> {
         self.state_details.as_deref()
     }
-    /// <p> The reasons why the endpoint has failed. </p>
+    /// <p>The reasons why the endpoint has failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::FailureReason> {
         self.failure_reason.as_ref()
     }
-    /// <p>The tags of the endpoint. </p>
+    /// <p>The tags of the endpoint.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -335,17 +335,17 @@ impl EndpointBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The security group configuration of the endpoint. </p>
+    /// <p>The security group configuration of the endpoint.</p>
     pub fn security_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The security group configuration of the endpoint. </p>
+    /// <p>The security group configuration of the endpoint.</p>
     pub fn set_security_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group = input;
         self
     }
-    /// <p>The security group configuration of the endpoint. </p>
+    /// <p>The security group configuration of the endpoint.</p>
     pub fn get_security_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_group
     }
@@ -353,47 +353,47 @@ impl EndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>The subnet IDs of the endpoint. </p>
+    /// <p>The subnet IDs of the endpoint.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The subnet IDs of the endpoint. </p>
+    /// <p>The subnet IDs of the endpoint.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>The subnet IDs of the endpoint. </p>
+    /// <p>The subnet IDs of the endpoint.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p> Additional details of the endpoint state. </p>
+    /// <p>Additional details of the endpoint state.</p>
     pub fn state_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_details = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Additional details of the endpoint state. </p>
+    /// <p>Additional details of the endpoint state.</p>
     pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_details = input;
         self
     }
-    /// <p> Additional details of the endpoint state. </p>
+    /// <p>Additional details of the endpoint state.</p>
     pub fn get_state_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_details
     }
-    /// <p> The reasons why the endpoint has failed. </p>
+    /// <p>The reasons why the endpoint has failed.</p>
     pub fn failure_reason(mut self, input: crate::types::FailureReason) -> Self {
         self.failure_reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The reasons why the endpoint has failed. </p>
+    /// <p>The reasons why the endpoint has failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::FailureReason>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p> The reasons why the endpoint has failed. </p>
+    /// <p>The reasons why the endpoint has failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::FailureReason> {
         &self.failure_reason
     }
@@ -401,19 +401,19 @@ impl EndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags of the endpoint. </p>
+    /// <p>The tags of the endpoint.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags of the endpoint. </p>
+    /// <p>The tags of the endpoint.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags of the endpoint. </p>
+    /// <p>The tags of the endpoint.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

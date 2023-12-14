@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServicesInScopeOutput {
-    /// <p> The metadata that's associated with the Amazon Web Service. </p>
+    /// <p>The metadata that's associated with the Amazon Web Service.</p>
     pub service_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>,
     _request_id: Option<String>,
 }
 impl GetServicesInScopeOutput {
-    /// <p> The metadata that's associated with the Amazon Web Service. </p>
+    /// <p>The metadata that's associated with the Amazon Web Service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_metadata.is_none()`.
     pub fn service_metadata(&self) -> &[crate::types::ServiceMetadata] {
@@ -39,19 +39,19 @@ impl GetServicesInScopeOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_service_metadata`](Self::set_service_metadata).
     ///
-    /// <p> The metadata that's associated with the Amazon Web Service. </p>
+    /// <p>The metadata that's associated with the Amazon Web Service.</p>
     pub fn service_metadata(mut self, input: crate::types::ServiceMetadata) -> Self {
         let mut v = self.service_metadata.unwrap_or_default();
         v.push(input);
         self.service_metadata = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The metadata that's associated with the Amazon Web Service. </p>
+    /// <p>The metadata that's associated with the Amazon Web Service.</p>
     pub fn set_service_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>>) -> Self {
         self.service_metadata = input;
         self
     }
-    /// <p> The metadata that's associated with the Amazon Web Service. </p>
+    /// <p>The metadata that's associated with the Amazon Web Service.</p>
     pub fn get_service_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceMetadata>> {
         &self.service_metadata
     }

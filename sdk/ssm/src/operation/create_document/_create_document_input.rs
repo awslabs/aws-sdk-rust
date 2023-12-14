@@ -6,9 +6,9 @@ pub struct CreateDocumentInput {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
@@ -18,9 +18,9 @@ pub struct CreateDocumentInput {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub name: ::std::option::Option<::std::string::String>,
@@ -34,12 +34,12 @@ pub struct CreateDocumentInput {
     pub document_type: ::std::option::Option<crate::types::DocumentType>,
     /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
@@ -49,9 +49,9 @@ impl CreateDocumentInput {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
@@ -71,9 +71,9 @@ impl CreateDocumentInput {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -97,14 +97,14 @@ impl CreateDocumentInput {
     pub fn document_format(&self) -> ::std::option::Option<&crate::types::DocumentFormat> {
         self.document_format.as_ref()
     }
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
@@ -140,9 +140,9 @@ impl CreateDocumentInputBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,9 +152,9 @@ impl CreateDocumentInputBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
@@ -163,9 +163,9 @@ impl CreateDocumentInputBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
@@ -213,9 +213,9 @@ impl CreateDocumentInputBuilder {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     /// This field is required.
@@ -226,9 +226,9 @@ impl CreateDocumentInputBuilder {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -238,9 +238,9 @@ impl CreateDocumentInputBuilder {
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li> <p> <code>aws</code> </p> </li>
-    /// <li> <p> <code>amazon</code> </p> </li>
-    /// <li> <p> <code>amzn</code> </p> </li>
+    /// <li><p><code>aws</code></p></li>
+    /// <li><p><code>amazon</code></p></li>
+    /// <li><p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,17 +308,17 @@ impl CreateDocumentInputBuilder {
     pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
         &self.document_format
     }
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
     }
-    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_type
     }
@@ -328,8 +328,8 @@ impl CreateDocumentInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
@@ -341,8 +341,8 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
@@ -352,8 +352,8 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>

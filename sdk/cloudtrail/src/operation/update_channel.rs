@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateChannel
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateChannelError {
-    /// <p> This exception is thrown when the provided channel already exists. </p>
+    /// <p>This exception is thrown when the provided channel already exists.</p>
     ChannelAlreadyExistsException(crate::types::error::ChannelAlreadyExistsException),
     /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
     ChannelArnInvalidException(crate::types::error::ChannelArnInvalidException),

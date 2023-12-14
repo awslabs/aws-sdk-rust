@@ -9,7 +9,7 @@ pub struct TransformJobDefinition {
     /// <p>The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).</p>
     pub max_payload_in_mb: ::std::option::Option<i32>,
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
-    /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+    /// <p><code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
     pub batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -30,7 +30,7 @@ impl TransformJobDefinition {
         self.max_payload_in_mb
     }
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
-    /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+    /// <p><code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
     pub fn batch_strategy(&self) -> ::std::option::Option<&crate::types::BatchStrategy> {
         self.batch_strategy.as_ref()
     }
@@ -100,19 +100,19 @@ impl TransformJobDefinitionBuilder {
         &self.max_payload_in_mb
     }
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
-    /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+    /// <p><code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
     pub fn batch_strategy(mut self, input: crate::types::BatchStrategy) -> Self {
         self.batch_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
-    /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+    /// <p><code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
     pub fn set_batch_strategy(mut self, input: ::std::option::Option<crate::types::BatchStrategy>) -> Self {
         self.batch_strategy = input;
         self
     }
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
-    /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+    /// <p><code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
     pub fn get_batch_strategy(&self) -> &::std::option::Option<crate::types::BatchStrategy> {
         &self.batch_strategy
     }

@@ -16,14 +16,14 @@ pub struct GetAssetPropertyValueHistoryInput {
     /// <p>The quality by which to filter asset data.</p>
     pub qualities: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>,
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub time_ordering: ::std::option::Option<crate::types::TimeOrdering>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub max_results: ::std::option::Option<i32>,
 }
@@ -55,7 +55,7 @@ impl GetAssetPropertyValueHistoryInput {
         self.qualities.as_deref().unwrap_or_default()
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn time_ordering(&self) -> ::std::option::Option<&crate::types::TimeOrdering> {
         self.time_ordering.as_ref()
     }
@@ -65,8 +65,8 @@ impl GetAssetPropertyValueHistoryInput {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -185,19 +185,19 @@ impl GetAssetPropertyValueHistoryInputBuilder {
         &self.qualities
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn time_ordering(mut self, input: crate::types::TimeOrdering) -> Self {
         self.time_ordering = ::std::option::Option::Some(input);
         self
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn set_time_ordering(mut self, input: ::std::option::Option<crate::types::TimeOrdering>) -> Self {
         self.time_ordering = input;
         self
     }
     /// <p>The chronological sorting order of the requested information.</p>
-    /// <p>Default: <code>ASCENDING</code> </p>
+    /// <p>Default: <code>ASCENDING</code></p>
     pub fn get_time_ordering(&self) -> &::std::option::Option<crate::types::TimeOrdering> {
         &self.time_ordering
     }
@@ -217,8 +217,8 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -226,8 +226,8 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
@@ -235,8 +235,8 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// <li><p>The size of the result set is equal to 4 MB.</p></li>
+    /// <li><p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p></li>
     /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results

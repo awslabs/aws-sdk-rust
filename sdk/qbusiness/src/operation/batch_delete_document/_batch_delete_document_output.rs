@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentOutput {
-    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index. </p>
+    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     pub failed_documents: ::std::option::Option<::std::vec::Vec<crate::types::FailedDocument>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDocumentOutput {
-    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index. </p>
+    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_documents.is_none()`.
     pub fn failed_documents(&self) -> &[crate::types::FailedDocument] {
@@ -39,19 +39,19 @@ impl BatchDeleteDocumentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_documents`](Self::set_failed_documents).
     ///
-    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index. </p>
+    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     pub fn failed_documents(mut self, input: crate::types::FailedDocument) -> Self {
         let mut v = self.failed_documents.unwrap_or_default();
         v.push(input);
         self.failed_documents = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index. </p>
+    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     pub fn set_failed_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedDocument>>) -> Self {
         self.failed_documents = input;
         self
     }
-    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index. </p>
+    /// <p>A list of documents that couldn't be removed from the Amazon Q index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
     pub fn get_failed_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedDocument>> {
         &self.failed_documents
     }

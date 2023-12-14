@@ -21,12 +21,12 @@ pub struct PendingModifiedValues {
     /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
-    /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
+    /// <p>The encryption type for a cluster. Possible values are: KMS and None.</p>
     pub encryption_type: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValues {
@@ -63,7 +63,7 @@ impl PendingModifiedValues {
         self.publicly_accessible
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
@@ -72,7 +72,7 @@ impl PendingModifiedValues {
     pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
         self.maintenance_track_name.as_deref()
     }
-    /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
+    /// <p>The encryption type for a cluster. Possible values are: KMS and None.</p>
     pub fn encryption_type(&self) -> ::std::option::Option<&str> {
         self.encryption_type.as_deref()
     }
@@ -231,21 +231,21 @@ impl PendingModifiedValuesBuilder {
         &self.publicly_accessible
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.enhanced_vpc_routing = ::std::option::Option::Some(input);
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled.</p>
     /// <p>Default: false</p>
     pub fn get_enhanced_vpc_routing(&self) -> &::std::option::Option<bool> {
         &self.enhanced_vpc_routing
@@ -264,17 +264,17 @@ impl PendingModifiedValuesBuilder {
     pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_track_name
     }
-    /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
+    /// <p>The encryption type for a cluster. Possible values are: KMS and None.</p>
     pub fn encryption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
+    /// <p>The encryption type for a cluster. Possible values are: KMS and None.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_type = input;
         self
     }
-    /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
+    /// <p>The encryption type for a cluster. Possible values are: KMS and None.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_type
     }

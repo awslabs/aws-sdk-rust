@@ -7,7 +7,7 @@ pub struct GetPrincipalTagAttributeMapOutput {
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>You can use this operation to get the provider name.</p>
     pub identity_provider_name: ::std::option::Option<::std::string::String>,
-    /// <p>You can use this operation to list </p>
+    /// <p>You can use this operation to list</p>
     pub use_defaults: ::std::option::Option<bool>,
     /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
     pub principal_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -22,7 +22,7 @@ impl GetPrincipalTagAttributeMapOutput {
     pub fn identity_provider_name(&self) -> ::std::option::Option<&str> {
         self.identity_provider_name.as_deref()
     }
-    /// <p>You can use this operation to list </p>
+    /// <p>You can use this operation to list</p>
     pub fn use_defaults(&self) -> ::std::option::Option<bool> {
         self.use_defaults
     }
@@ -82,17 +82,17 @@ impl GetPrincipalTagAttributeMapOutputBuilder {
     pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_name
     }
-    /// <p>You can use this operation to list </p>
+    /// <p>You can use this operation to list</p>
     pub fn use_defaults(mut self, input: bool) -> Self {
         self.use_defaults = ::std::option::Option::Some(input);
         self
     }
-    /// <p>You can use this operation to list </p>
+    /// <p>You can use this operation to list</p>
     pub fn set_use_defaults(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_defaults = input;
         self
     }
-    /// <p>You can use this operation to list </p>
+    /// <p>You can use this operation to list</p>
     pub fn get_use_defaults(&self) -> &::std::option::Option<bool> {
         &self.use_defaults
     }

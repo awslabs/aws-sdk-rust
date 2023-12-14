@@ -24,11 +24,11 @@ impl StopKeyUsageInputBuilder {
 ///
 /// <p>Disables an Amazon Web Services Payment Cryptography key, which makes it inactive within Amazon Web Services Payment Cryptography.</p>
 /// <p>You can use this operation instead of <code>DeleteKey</code> to deactivate a key. You can enable the key in the future by calling <code>StartKeyUsage</code>.</p>
-/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>DeleteKey</code> </p> </li>
-/// <li> <p> <code>StartKeyUsage</code> </p> </li>
+/// <li><p><code>DeleteKey</code></p></li>
+/// <li><p><code>StartKeyUsage</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopKeyUsageFluentBuilder {

@@ -22,7 +22,7 @@ impl RequestSenderIdInputBuilder {
 }
 /// Fluent builder constructing a request to `RequestSenderId`.
 ///
-/// <p>Request a new sender ID that doesn't require registration. </p>
+/// <p>Request a new sender ID that doesn't require registration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestSenderIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

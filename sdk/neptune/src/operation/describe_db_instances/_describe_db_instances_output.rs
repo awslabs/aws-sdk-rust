@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbInstancesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p> A list of <code>DBInstance</code> instances.</p>
+    /// <p>A list of <code>DBInstance</code> instances.</p>
     pub db_instances: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeDbInstancesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p> A list of <code>DBInstance</code> instances.</p>
+    /// <p>A list of <code>DBInstance</code> instances.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instances.is_none()`.
     pub fn db_instances(&self) -> &[crate::types::DbInstance] {
@@ -42,17 +42,17 @@ pub struct DescribeDbInstancesOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDbInstancesOutputBuilder {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
@@ -60,19 +60,19 @@ impl DescribeDbInstancesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_db_instances`](Self::set_db_instances).
     ///
-    /// <p> A list of <code>DBInstance</code> instances.</p>
+    /// <p>A list of <code>DBInstance</code> instances.</p>
     pub fn db_instances(mut self, input: crate::types::DbInstance) -> Self {
         let mut v = self.db_instances.unwrap_or_default();
         v.push(input);
         self.db_instances = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>DBInstance</code> instances.</p>
+    /// <p>A list of <code>DBInstance</code> instances.</p>
     pub fn set_db_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstance>>) -> Self {
         self.db_instances = input;
         self
     }
-    /// <p> A list of <code>DBInstance</code> instances.</p>
+    /// <p>A list of <code>DBInstance</code> instances.</p>
     pub fn get_db_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstance>> {
         &self.db_instances
     }

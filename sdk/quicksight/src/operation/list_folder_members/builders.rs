@@ -22,7 +22,7 @@ impl ListFolderMembersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFolderMembers`.
 ///
-/// <p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder. </p>
+/// <p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFolderMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

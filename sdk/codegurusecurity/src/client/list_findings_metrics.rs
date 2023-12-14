@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`end_date(DateTime)`](crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder::end_date) / [`set_end_date(Option<DateTime>)`](crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder::set_end_date):<br>required: **true**<br><p>The end date of the interval which you want to retrieve metrics from.</p><br>
     /// - On success, responds with [`ListFindingsMetricsOutput`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput) with field(s):
     ///   - [`findings_metrics(Option<Vec::<AccountFindingsMetric>>)`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput::findings_metrics): <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput::next_token): <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput::next_token): <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page.</p>
     /// - On failure, responds with [`SdkError<ListFindingsMetricsError>`](crate::operation::list_findings_metrics::ListFindingsMetricsError)
     pub fn list_findings_metrics(&self) -> crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder {
         crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder::new(self.handle.clone())

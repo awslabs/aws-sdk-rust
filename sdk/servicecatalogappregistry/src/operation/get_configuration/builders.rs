@@ -22,7 +22,7 @@ impl GetConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetConfiguration`.
 ///
-/// <p> Retrieves a <code>TagKey</code> configuration from an account. </p>
+/// <p>Retrieves a <code>TagKey</code> configuration from an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

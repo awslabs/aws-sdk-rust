@@ -7,8 +7,8 @@ pub struct LambdaFunctionUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
-    /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
+    /// <li><p><code>Duration</code> - The amount of time that your function code spends processing an event.</p></li>
+    /// <li><p><code>Memory</code> - The amount of memory used per invocation.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::LambdaFunctionMetricName>,
     /// <p>The statistic of the utilization metric.</p>
@@ -22,8 +22,8 @@ impl LambdaFunctionUtilizationMetric {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
-    /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
+    /// <li><p><code>Duration</code> - The amount of time that your function code spends processing an event.</p></li>
+    /// <li><p><code>Memory</code> - The amount of memory used per invocation.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::LambdaFunctionMetricName> {
         self.name.as_ref()
@@ -58,8 +58,8 @@ impl LambdaFunctionUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
-    /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
+    /// <li><p><code>Duration</code> - The amount of time that your function code spends processing an event.</p></li>
+    /// <li><p><code>Memory</code> - The amount of memory used per invocation.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::LambdaFunctionMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -68,8 +68,8 @@ impl LambdaFunctionUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
-    /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
+    /// <li><p><code>Duration</code> - The amount of time that your function code spends processing an event.</p></li>
+    /// <li><p><code>Memory</code> - The amount of memory used per invocation.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::LambdaFunctionMetricName>) -> Self {
         self.name = input;
@@ -78,8 +78,8 @@ impl LambdaFunctionUtilizationMetricBuilder {
     /// <p>The name of the utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
-    /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
+    /// <li><p><code>Duration</code> - The amount of time that your function code spends processing an event.</p></li>
+    /// <li><p><code>Memory</code> - The amount of memory used per invocation.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::LambdaFunctionMetricName> {
         &self.name

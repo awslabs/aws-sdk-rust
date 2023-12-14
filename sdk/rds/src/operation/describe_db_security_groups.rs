@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeDBSec
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeDBSecurityGroupsError {
-    /// <p> <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
+    /// <p><code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.</p>
     DbSecurityGroupNotFoundFault(crate::types::error::DbSecurityGroupNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

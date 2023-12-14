@@ -6,34 +6,34 @@
 pub struct InvokedBy {
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li>
-    /// <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li>
-    /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all standard messages.</p></li>
+    /// <li><p><code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p></li>
+    /// <li><p><code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no standard messages.</p></li>
     /// </ul>
     pub standard_messages: crate::types::StandardMessages,
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no targeted messages.</p></li>
     /// </ul>
     pub targeted_messages: crate::types::TargetedMessages,
 }
 impl InvokedBy {
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li>
-    /// <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li>
-    /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all standard messages.</p></li>
+    /// <li><p><code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p></li>
+    /// <li><p><code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no standard messages.</p></li>
     /// </ul>
     pub fn standard_messages(&self) -> &crate::types::StandardMessages {
         &self.standard_messages
     }
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no targeted messages.</p></li>
     /// </ul>
     pub fn targeted_messages(&self) -> &crate::types::TargetedMessages {
         &self.targeted_messages
@@ -56,10 +56,10 @@ pub struct InvokedByBuilder {
 impl InvokedByBuilder {
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li>
-    /// <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li>
-    /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all standard messages.</p></li>
+    /// <li><p><code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p></li>
+    /// <li><p><code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no standard messages.</p></li>
     /// </ul>
     /// This field is required.
     pub fn standard_messages(mut self, input: crate::types::StandardMessages) -> Self {
@@ -68,10 +68,10 @@ impl InvokedByBuilder {
     }
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li>
-    /// <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li>
-    /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all standard messages.</p></li>
+    /// <li><p><code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p></li>
+    /// <li><p><code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no standard messages.</p></li>
     /// </ul>
     pub fn set_standard_messages(mut self, input: ::std::option::Option<crate::types::StandardMessages>) -> Self {
         self.standard_messages = input;
@@ -79,18 +79,18 @@ impl InvokedByBuilder {
     }
     /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li>
-    /// <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li>
-    /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all standard messages.</p></li>
+    /// <li><p><code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p></li>
+    /// <li><p><code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no standard messages.</p></li>
     /// </ul>
     pub fn get_standard_messages(&self) -> &::std::option::Option<crate::types::StandardMessages> {
         &self.standard_messages
     }
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no targeted messages.</p></li>
     /// </ul>
     /// This field is required.
     pub fn targeted_messages(mut self, input: crate::types::TargetedMessages) -> Self {
@@ -99,8 +99,8 @@ impl InvokedByBuilder {
     }
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no targeted messages.</p></li>
     /// </ul>
     pub fn set_targeted_messages(mut self, input: ::std::option::Option<crate::types::TargetedMessages>) -> Self {
         self.targeted_messages = input;
@@ -108,8 +108,8 @@ impl InvokedByBuilder {
     }
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
-    /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
-    /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
+    /// <li><p><code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender.</p></li>
+    /// <li><p><code>NONE</code>: The bot processes no targeted messages.</p></li>
     /// </ul>
     pub fn get_targeted_messages(&self) -> &::std::option::Option<crate::types::TargetedMessages> {
         &self.targeted_messages

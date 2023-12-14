@@ -3,37 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostAllocationTagsInput {
-    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The status of cost allocation tag keys that are returned for this request.</p>
     pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
-    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The list of cost allocation tag keys that are returned for this request.</p>
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
     pub r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCostAllocationTagsInput {
-    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The status of cost allocation tag keys that are returned for this request.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CostAllocationTagStatus> {
         self.status.as_ref()
     }
-    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The list of cost allocation tag keys that are returned for this request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
     pub fn tag_keys(&self) -> &[::std::string::String] {
         self.tag_keys.as_deref().unwrap_or_default()
     }
-    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CostAllocationTagType> {
         self.r#type.as_ref()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -56,17 +56,17 @@ pub struct ListCostAllocationTagsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListCostAllocationTagsInputBuilder {
-    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The status of cost allocation tag keys that are returned for this request.</p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The status of cost allocation tag keys that are returned for this request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The status of cost allocation tag keys that are returned for this request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
         &self.status
     }
@@ -74,61 +74,61 @@ impl ListCostAllocationTagsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The list of cost allocation tag keys that are returned for this request.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
         v.push(input.into());
         self.tag_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The list of cost allocation tag keys that are returned for this request.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
-    /// <p>The list of cost allocation tag keys that are returned for this request. </p>
+    /// <p>The list of cost allocation tag keys that are returned for this request.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_keys
     }
-    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CostAllocationTagType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CostAllocationTagType> {
         &self.r#type
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
+    /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

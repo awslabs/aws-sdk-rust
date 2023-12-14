@@ -27,7 +27,7 @@ impl ModifyDbClusterParameterGroupInputBuilder {
 /// <p>If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster, Aurora applies the update immediately. The cluster restart might interrupt your workload. In that case, your application must reopen any connections and retry any transactions that were active when the parameter changes took effect.</p>
 /// </important>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
-/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> </p>
+/// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -132,7 +132,7 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
     /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
     /// </note>
@@ -141,7 +141,7 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
         self
     }
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
     /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
     /// </note>
@@ -150,7 +150,7 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
         self
     }
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code></p> <note>
     /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
     /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
     /// </note>

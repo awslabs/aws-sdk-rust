@@ -22,7 +22,7 @@ impl GetFirewallConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFirewallConfig`.
 ///
-/// <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
+/// <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFirewallConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

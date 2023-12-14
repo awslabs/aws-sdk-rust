@@ -255,7 +255,7 @@ pub enum ListAdaptersError {
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p> Indicates that a request was not valid. Check request for proper formatting. </p>
+    /// <p>Indicates that a request was not valid. Check request for proper formatting.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

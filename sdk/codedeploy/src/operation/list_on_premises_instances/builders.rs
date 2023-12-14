@@ -111,8 +111,8 @@ impl ListOnPremisesInstancesFluentBuilder {
     }
     /// <p>The registration status of the on-premises instances:</p>
     /// <ul>
-    /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
-    /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
+    /// <li><p><code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p></li>
+    /// <li><p><code>Registered</code>: Include registered on-premises instances in the resulting list.</p></li>
     /// </ul>
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.inner = self.inner.registration_status(input);
@@ -120,8 +120,8 @@ impl ListOnPremisesInstancesFluentBuilder {
     }
     /// <p>The registration status of the on-premises instances:</p>
     /// <ul>
-    /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
-    /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
+    /// <li><p><code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p></li>
+    /// <li><p><code>Registered</code>: Include registered on-premises instances in the resulting list.</p></li>
     /// </ul>
     pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.inner = self.inner.set_registration_status(input);
@@ -129,8 +129,8 @@ impl ListOnPremisesInstancesFluentBuilder {
     }
     /// <p>The registration status of the on-premises instances:</p>
     /// <ul>
-    /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
-    /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
+    /// <li><p><code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p></li>
+    /// <li><p><code>Registered</code>: Include registered on-premises instances in the resulting list.</p></li>
     /// </ul>
     pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         self.inner.get_registration_status()

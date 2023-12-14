@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisposePackageVersionsOutput {
-    /// <p> A list of the package versions that were successfully disposed. </p>
+    /// <p>A list of the package versions that were successfully disposed.</p>
     pub successful_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
-    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
+    /// <p>A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are:</p>
     /// <ul>
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// <li><p><code>ALREADY_EXISTS</code></p></li>
+    /// <li><p><code>MISMATCHED_REVISION</code></p></li>
+    /// <li><p><code>MISMATCHED_STATUS</code></p></li>
+    /// <li><p><code>NOT_ALLOWED</code></p></li>
+    /// <li><p><code>NOT_FOUND</code></p></li>
+    /// <li><p><code>SKIPPED</code></p></li>
     /// </ul>
     pub failed_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     _request_id: Option<String>,
 }
 impl DisposePackageVersionsOutput {
-    /// <p> A list of the package versions that were successfully disposed. </p>
+    /// <p>A list of the package versions that were successfully disposed.</p>
     pub fn successful_versions(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>> {
         self.successful_versions.as_ref()
     }
-    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
+    /// <p>A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are:</p>
     /// <ul>
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// <li><p><code>ALREADY_EXISTS</code></p></li>
+    /// <li><p><code>MISMATCHED_REVISION</code></p></li>
+    /// <li><p><code>MISMATCHED_STATUS</code></p></li>
+    /// <li><p><code>NOT_ALLOWED</code></p></li>
+    /// <li><p><code>NOT_FOUND</code></p></li>
+    /// <li><p><code>SKIPPED</code></p></li>
     /// </ul>
     pub fn failed_versions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>> {
         self.failed_versions.as_ref()
@@ -63,14 +63,14 @@ impl DisposePackageVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
     ///
-    /// <p> A list of the package versions that were successfully disposed. </p>
+    /// <p>A list of the package versions that were successfully disposed.</p>
     pub fn successful_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SuccessfulPackageVersionInfo) -> Self {
         let mut hash_map = self.successful_versions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.successful_versions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> A list of the package versions that were successfully disposed. </p>
+    /// <p>A list of the package versions that were successfully disposed.</p>
     pub fn set_successful_versions(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
@@ -78,7 +78,7 @@ impl DisposePackageVersionsOutputBuilder {
         self.successful_versions = input;
         self
     }
-    /// <p> A list of the package versions that were successfully disposed. </p>
+    /// <p>A list of the package versions that were successfully disposed.</p>
     pub fn get_successful_versions(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>> {
@@ -88,14 +88,14 @@ impl DisposePackageVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
     ///
-    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
+    /// <p>A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are:</p>
     /// <ul>
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// <li><p><code>ALREADY_EXISTS</code></p></li>
+    /// <li><p><code>MISMATCHED_REVISION</code></p></li>
+    /// <li><p><code>MISMATCHED_STATUS</code></p></li>
+    /// <li><p><code>NOT_ALLOWED</code></p></li>
+    /// <li><p><code>NOT_FOUND</code></p></li>
+    /// <li><p><code>SKIPPED</code></p></li>
     /// </ul>
     pub fn failed_versions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PackageVersionError) -> Self {
         let mut hash_map = self.failed_versions.unwrap_or_default();
@@ -103,14 +103,14 @@ impl DisposePackageVersionsOutputBuilder {
         self.failed_versions = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
+    /// <p>A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are:</p>
     /// <ul>
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// <li><p><code>ALREADY_EXISTS</code></p></li>
+    /// <li><p><code>MISMATCHED_REVISION</code></p></li>
+    /// <li><p><code>MISMATCHED_STATUS</code></p></li>
+    /// <li><p><code>NOT_ALLOWED</code></p></li>
+    /// <li><p><code>NOT_FOUND</code></p></li>
+    /// <li><p><code>SKIPPED</code></p></li>
     /// </ul>
     pub fn set_failed_versions(
         mut self,
@@ -119,14 +119,14 @@ impl DisposePackageVersionsOutputBuilder {
         self.failed_versions = input;
         self
     }
-    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
+    /// <p>A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are:</p>
     /// <ul>
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// <li><p><code>ALREADY_EXISTS</code></p></li>
+    /// <li><p><code>MISMATCHED_REVISION</code></p></li>
+    /// <li><p><code>MISMATCHED_STATUS</code></p></li>
+    /// <li><p><code>NOT_ALLOWED</code></p></li>
+    /// <li><p><code>NOT_FOUND</code></p></li>
+    /// <li><p><code>SKIPPED</code></p></li>
     /// </ul>
     pub fn get_failed_versions(
         &self,

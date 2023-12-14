@@ -17,7 +17,7 @@ pub struct PutProfileObjectTypeInput {
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: ::std::option::Option<bool>,
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
@@ -55,7 +55,7 @@ impl PutProfileObjectTypeInput {
     pub fn allow_profile_creation(&self) -> ::std::option::Option<bool> {
         self.allow_profile_creation
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn source_last_updated_timestamp_format(&self) -> ::std::option::Option<&str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
@@ -214,17 +214,17 @@ impl PutProfileObjectTypeInputBuilder {
     pub fn get_allow_profile_creation(&self) -> &::std::option::Option<bool> {
         &self.allow_profile_creation
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn source_last_updated_timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_last_updated_timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn set_source_last_updated_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_last_updated_timestamp_format = input;
         self
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_last_updated_timestamp_format
     }

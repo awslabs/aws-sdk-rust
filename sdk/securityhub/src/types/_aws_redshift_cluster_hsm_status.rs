@@ -10,7 +10,7 @@ pub struct AwsRedshiftClusterHsmStatus {
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
     /// <p>Type: String</p>
-    /// <p>Valid values: <code>active</code> | <code>applying</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>applying</code></p>
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterHsmStatus {
@@ -24,7 +24,7 @@ impl AwsRedshiftClusterHsmStatus {
     }
     /// <p>Indicates whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
     /// <p>Type: String</p>
-    /// <p>Valid values: <code>active</code> | <code>applying</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>applying</code></p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -75,21 +75,21 @@ impl AwsRedshiftClusterHsmStatusBuilder {
     }
     /// <p>Indicates whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
     /// <p>Type: String</p>
-    /// <p>Valid values: <code>active</code> | <code>applying</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>applying</code></p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
     /// <p>Type: String</p>
-    /// <p>Valid values: <code>active</code> | <code>applying</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>applying</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Indicates whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
     /// <p>Type: String</p>
-    /// <p>Valid values: <code>active</code> | <code>applying</code> </p>
+    /// <p>Valid values: <code>active</code> | <code>applying</code></p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

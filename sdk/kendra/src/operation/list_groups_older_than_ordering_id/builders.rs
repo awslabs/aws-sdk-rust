@@ -23,7 +23,7 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
 /// Fluent builder constructing a request to `ListGroupsOlderThanOrderingId`.
 ///
 /// <p>Provides a list of groups that are mapped to users before a given ordering or timestamp identifier.</p>
-/// <p> <code>ListGroupsOlderThanOrderingId</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
+/// <p><code>ListGroupsOlderThanOrderingId</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroupsOlderThanOrderingIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -157,31 +157,31 @@ impl ListGroupsOlderThanOrderingIdFluentBuilder {
     pub fn get_ordering_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_ordering_id()
     }
-    /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    /// <p>The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    /// <p>The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
+    /// <p>The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

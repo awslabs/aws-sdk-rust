@@ -8,7 +8,7 @@ pub struct TransitGatewayRouteAttachment {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment.</p>
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated. </p>
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
 }
 impl TransitGatewayRouteAttachment {
@@ -20,7 +20,7 @@ impl TransitGatewayRouteAttachment {
     pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_attachment_id.as_deref()
     }
-    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated. </p>
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
@@ -69,17 +69,17 @@ impl TransitGatewayRouteAttachmentBuilder {
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
-    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated. </p>
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn resource_type(mut self, input: crate::types::TransitGatewayAttachmentResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated. </p>
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated. </p>
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
         &self.resource_type
     }

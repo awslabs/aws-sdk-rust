@@ -22,7 +22,7 @@ impl DeleteVoiceConnectorOriginationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteVoiceConnectorOrigination`.
 ///
-/// <p>Deletes the origination settings for the specified Amazon Chime SDK Voice Connector. </p> <note>
+/// <p>Deletes the origination settings for the specified Amazon Chime SDK Voice Connector.</p> <note>
 /// <p>If emergency calling is configured for the Voice Connector, it must be deleted prior to deleting the origination settings.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

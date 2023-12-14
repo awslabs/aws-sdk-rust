@@ -22,12 +22,12 @@ impl AssociateNodeInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateNode`.
 ///
-/// <p> Associates a new node with the server. For more information about how to disassociate a node, see <code>DisassociateNode</code>.</p>
-/// <p> On a Chef server: This command is an alternative to <code>knife bootstrap</code>.</p>
-/// <p> Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default" "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code> </p>
-/// <p> On a Puppet server, this command is an alternative to the <code>puppet cert sign</code> command that signs a Puppet node CSR. </p>
-/// <p> Example (Puppet): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code> </p>
-/// <p> A node can can only be associated with servers that are in a <code>HEALTHY</code> state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. The AssociateNode API call can be integrated into Auto Scaling configurations, AWS Cloudformation templates, or the user data of a server's instance. </p>
+/// <p>Associates a new node with the server. For more information about how to disassociate a node, see <code>DisassociateNode</code>.</p>
+/// <p>On a Chef server: This command is an alternative to <code>knife bootstrap</code>.</p>
+/// <p>Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default" "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code></p>
+/// <p>On a Puppet server, this command is an alternative to the <code>puppet cert sign</code> command that signs a Puppet node CSR.</p>
+/// <p>Example (Puppet): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code></p>
+/// <p>A node can can only be associated with servers that are in a <code>HEALTHY</code> state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. The AssociateNode API call can be integrated into Auto Scaling configurations, AWS Cloudformation templates, or the user data of a server's instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateNodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,31 +113,31 @@ impl AssociateNodeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the server with which to associate the node. </p>
+    /// <p>The name of the server with which to associate the node.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
-    /// <p>The name of the server with which to associate the node. </p>
+    /// <p>The name of the server with which to associate the node.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
-    /// <p>The name of the server with which to associate the node. </p>
+    /// <p>The name of the server with which to associate the node.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_name()
     }
-    /// <p>The name of the node. </p>
+    /// <p>The name of the node.</p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_name(input.into());
         self
     }
-    /// <p>The name of the node. </p>
+    /// <p>The name of the node.</p>
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_name(input);
         self
     }
-    /// <p>The name of the node. </p>
+    /// <p>The name of the node.</p>
     pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_name()
     }
@@ -145,43 +145,43 @@ impl AssociateNodeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
     ///
-    /// <p>Engine attributes used for associating the node. </p>
-    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
+    /// <p>Engine attributes used for associating the node.</p>
+    /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
-    /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
+    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
-    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
+    /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
+    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         self.inner = self.inner.engine_attributes(input);
         self
     }
-    /// <p>Engine attributes used for associating the node. </p>
-    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
+    /// <p>Engine attributes used for associating the node.</p>
+    /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
-    /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
+    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
-    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
+    /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
+    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
     }
-    /// <p>Engine attributes used for associating the node. </p>
-    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
+    /// <p>Engine attributes used for associating the node.</p>
+    /// <p class="title"><b>Attributes accepted in a AssociateNode request for Chef</b></p>
     /// <ul>
-    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
-    /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
+    /// <li><p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist.</p></li>
+    /// <li><p><code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API.</p></li>
     /// </ul>
-    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
+    /// <p class="title"><b>Attributes accepted in a AssociateNode request for Puppet</b></p>
     /// <ul>
-    /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
+    /// <li><p><code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.</p></li>
     /// </ul>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         self.inner.get_engine_attributes()

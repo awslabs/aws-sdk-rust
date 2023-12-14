@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotScheduleInput {
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     pub schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct CreateSnapshotScheduleInput {
     pub next_invocations: ::std::option::Option<i32>,
 }
 impl CreateSnapshotScheduleInput {
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_definitions.is_none()`.
     pub fn schedule_definitions(&self) -> &[::std::string::String] {
@@ -69,19 +69,19 @@ impl CreateSnapshotScheduleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
     ///
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     pub fn schedule_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.schedule_definitions.unwrap_or_default();
         v.push(input.into());
         self.schedule_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.schedule_definitions = input;
         self
     }
-    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".</p>
     pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.schedule_definitions
     }

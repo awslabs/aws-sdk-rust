@@ -3,8 +3,8 @@
 /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
 /// <p>We don't recommend that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task. This task also uses either the <code>awsvpc</code> or <code>host</code> network mode. It does it for the following reasons.</p>
 /// <ul>
-/// <li> <p>For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that's started last determines which <code>systemControls</code> take effect.</p> </li>
-/// <li> <p>For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter and that of all containers of any tasks running on that container instance.</p> </li>
+/// <li><p>For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that's started last determines which <code>systemControls</code> take effect.</p></li>
+/// <li><p>For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter and that of all containers of any tasks running on that container instance.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -12,8 +12,8 @@ pub struct SystemControl {
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
-    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
     /// <p>All of these values are supported by Fargate.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
@@ -23,8 +23,8 @@ impl SystemControl {
         self.namespace.as_deref()
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
-    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
@@ -60,24 +60,24 @@ impl SystemControlBuilder {
         &self.namespace
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
-    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
-    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
-    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
-    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code></p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code></p>
     /// <p>All of these values are supported by Fargate.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value

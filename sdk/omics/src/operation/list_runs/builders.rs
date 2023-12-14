@@ -161,17 +161,17 @@ impl ListRunsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p> The status of a run. </p>
+    /// <p>The status of a run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
         self.inner.get_status()
     }

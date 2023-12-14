@@ -247,17 +247,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagResource
 pub enum UntagResourceError {
     /// <p>The application does not exist with the user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
-    /// <p> The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected. </p>
+    /// <p>The specified ARN is not supported. For example, it might be an ARN for a resource that is not expected.</p>
     ArnNotSupportedException(crate::types::error::ArnNotSupportedException),
     /// <p>The deployment configuration does not exist with the user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
     /// <p>The named deployment group with the user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::types::error::DeploymentGroupDoesNotExistException),
-    /// <p> The specified ARN is not in a valid format. </p>
+    /// <p>The specified ARN is not in a valid format.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
-    /// <p> The specified tags are not valid. </p>
+    /// <p>The specified tags are not valid.</p>
     InvalidTagsToAddException(crate::types::error::InvalidTagsToAddException),
-    /// <p> The ARN of a resource is required, but was not found. </p>
+    /// <p>The ARN of a resource is required, but was not found.</p>
     ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// <p>A tag was not specified.</p>
     TagRequiredException(crate::types::error::TagRequiredException),

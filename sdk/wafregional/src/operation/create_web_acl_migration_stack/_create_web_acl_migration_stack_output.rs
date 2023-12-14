@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWebAclMigrationStackOutput {
-    /// <p>The URL of the template created in Amazon S3. </p>
+    /// <p>The URL of the template created in Amazon S3.</p>
     pub s3_object_url: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateWebAclMigrationStackOutput {
-    /// <p>The URL of the template created in Amazon S3. </p>
+    /// <p>The URL of the template created in Amazon S3.</p>
     pub fn s3_object_url(&self) -> &str {
         use std::ops::Deref;
         self.s3_object_url.deref()
@@ -34,18 +34,18 @@ pub struct CreateWebAclMigrationStackOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateWebAclMigrationStackOutputBuilder {
-    /// <p>The URL of the template created in Amazon S3. </p>
+    /// <p>The URL of the template created in Amazon S3.</p>
     /// This field is required.
     pub fn s3_object_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_object_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the template created in Amazon S3. </p>
+    /// <p>The URL of the template created in Amazon S3.</p>
     pub fn set_s3_object_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_object_url = input;
         self
     }
-    /// <p>The URL of the template created in Amazon S3. </p>
+    /// <p>The URL of the template created in Amazon S3.</p>
     pub fn get_s3_object_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_object_url
     }

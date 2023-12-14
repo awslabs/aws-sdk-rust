@@ -17,7 +17,7 @@ pub struct CreateNotificationRuleInput {
     /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
     pub status: ::std::option::Option<crate::types::NotificationRuleStatus>,
@@ -53,7 +53,7 @@ impl CreateNotificationRuleInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -206,19 +206,19 @@ impl CreateNotificationRuleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
+    /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

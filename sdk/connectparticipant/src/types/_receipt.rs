@@ -8,7 +8,7 @@ pub struct Receipt {
     pub delivered_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The time when the message was read by the recipient.</p>
     pub read_timestamp: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the recipient of the message. </p>
+    /// <p>The identifier of the recipient of the message.</p>
     pub recipient_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl Receipt {
@@ -20,7 +20,7 @@ impl Receipt {
     pub fn read_timestamp(&self) -> ::std::option::Option<&str> {
         self.read_timestamp.as_deref()
     }
-    /// <p>The identifier of the recipient of the message. </p>
+    /// <p>The identifier of the recipient of the message.</p>
     pub fn recipient_participant_id(&self) -> ::std::option::Option<&str> {
         self.recipient_participant_id.as_deref()
     }
@@ -69,17 +69,17 @@ impl ReceiptBuilder {
     pub fn get_read_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         &self.read_timestamp
     }
-    /// <p>The identifier of the recipient of the message. </p>
+    /// <p>The identifier of the recipient of the message.</p>
     pub fn recipient_participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipient_participant_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the recipient of the message. </p>
+    /// <p>The identifier of the recipient of the message.</p>
     pub fn set_recipient_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipient_participant_id = input;
         self
     }
-    /// <p>The identifier of the recipient of the message. </p>
+    /// <p>The identifier of the recipient of the message.</p>
     pub fn get_recipient_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipient_participant_id
     }

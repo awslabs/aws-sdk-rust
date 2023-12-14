@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAttributeGroupsForApplicationOutput {
-    /// <p> The details related to a specific attribute group. </p>
+    /// <p>The details related to a specific attribute group.</p>
     pub attribute_groups_details: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>,
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAttributeGroupsForApplicationOutput {
-    /// <p> The details related to a specific attribute group. </p>
+    /// <p>The details related to a specific attribute group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_groups_details.is_none()`.
     pub fn attribute_groups_details(&self) -> &[crate::types::AttributeGroupDetails] {
@@ -46,19 +46,19 @@ impl ListAttributeGroupsForApplicationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_groups_details`](Self::set_attribute_groups_details).
     ///
-    /// <p> The details related to a specific attribute group. </p>
+    /// <p>The details related to a specific attribute group.</p>
     pub fn attribute_groups_details(mut self, input: crate::types::AttributeGroupDetails) -> Self {
         let mut v = self.attribute_groups_details.unwrap_or_default();
         v.push(input);
         self.attribute_groups_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The details related to a specific attribute group. </p>
+    /// <p>The details related to a specific attribute group.</p>
     pub fn set_attribute_groups_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>) -> Self {
         self.attribute_groups_details = input;
         self
     }
-    /// <p> The details related to a specific attribute group. </p>
+    /// <p>The details related to a specific attribute group.</p>
     pub fn get_attribute_groups_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>> {
         &self.attribute_groups_details
     }

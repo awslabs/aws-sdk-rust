@@ -16,13 +16,13 @@ pub struct WorldFailure {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -38,7 +38,7 @@ pub struct WorldFailure {
     /// </dd>
     /// </dl>
     pub failure_code: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>,
-    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
     pub sample_failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The number of failed worlds.</p>
     pub failure_count: i32,
@@ -56,13 +56,13 @@ impl WorldFailure {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -80,7 +80,7 @@ impl WorldFailure {
     pub fn failure_code(&self) -> ::std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
-    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
     pub fn sample_failure_reason(&self) -> ::std::option::Option<&str> {
         self.sample_failure_reason.as_deref()
     }
@@ -117,13 +117,13 @@ impl WorldFailureBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -154,13 +154,13 @@ impl WorldFailureBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -191,13 +191,13 @@ impl WorldFailureBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -215,17 +215,17 @@ impl WorldFailureBuilder {
     pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::WorldGenerationJobErrorCode> {
         &self.failure_code
     }
-    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
     pub fn sample_failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
     pub fn set_sample_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_failure_reason = input;
         self
     }
-    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
+    /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>.</p>
     pub fn get_sample_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_failure_reason
     }

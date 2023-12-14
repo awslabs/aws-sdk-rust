@@ -6,20 +6,20 @@
 pub struct Instance {
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>
-    /// <li> <p>You can use this value to update an existing instance.</p> </li>
-    /// <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>
-    /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p></li>
+    /// <li><p>You can use this value to update an existing instance.</p></li>
+    /// <li><p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service.</p></li>
+    /// <li><p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one.</p> <note>
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub id: ::std::string::String,
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
-    /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that apply to the records that are defined in the service.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul> <note>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
     /// </note>
@@ -32,18 +32,18 @@ pub struct Instance {
     /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
-    /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p> </li>
-    /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
+    /// <li><p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p></li>
+    /// <li><p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p></li>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p></li>
+    /// <li><p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p></li>
+    /// <li><p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID
     /// </dt>
     /// <dd>
-    /// <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+    /// <p><i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
     /// </dd>
     /// <dt>
     /// AWS_INIT_HEALTH_STATUS
@@ -77,7 +77,7 @@ pub struct Instance {
     /// </dt>
     /// <dd>
     /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to.</p>
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
@@ -86,12 +86,12 @@ pub struct Instance {
 impl Instance {
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>
-    /// <li> <p>You can use this value to update an existing instance.</p> </li>
-    /// <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>
-    /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p></li>
+    /// <li><p>You can use this value to update an existing instance.</p></li>
+    /// <li><p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service.</p></li>
+    /// <li><p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one.</p> <note>
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
@@ -103,8 +103,8 @@ impl Instance {
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
-    /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that apply to the records that are defined in the service.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul> <note>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
     /// </note>
@@ -117,18 +117,18 @@ impl Instance {
     /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
-    /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p> </li>
-    /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
+    /// <li><p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p></li>
+    /// <li><p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p></li>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p></li>
+    /// <li><p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p></li>
+    /// <li><p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID
     /// </dt>
     /// <dd>
-    /// <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+    /// <p><i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
     /// </dd>
     /// <dt>
     /// AWS_INIT_HEALTH_STATUS
@@ -162,7 +162,7 @@ impl Instance {
     /// </dt>
     /// <dd>
     /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to.</p>
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
@@ -188,12 +188,12 @@ pub struct InstanceBuilder {
 impl InstanceBuilder {
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>
-    /// <li> <p>You can use this value to update an existing instance.</p> </li>
-    /// <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>
-    /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p></li>
+    /// <li><p>You can use this value to update an existing instance.</p></li>
+    /// <li><p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service.</p></li>
+    /// <li><p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one.</p> <note>
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,12 +202,12 @@ impl InstanceBuilder {
     }
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>
-    /// <li> <p>You can use this value to update an existing instance.</p> </li>
-    /// <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>
-    /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p></li>
+    /// <li><p>You can use this value to update an existing instance.</p></li>
+    /// <li><p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service.</p></li>
+    /// <li><p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one.</p> <note>
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
@@ -215,12 +215,12 @@ impl InstanceBuilder {
     }
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>
-    /// <li> <p>You can use this value to update an existing instance.</p> </li>
-    /// <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>
-    /// <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p></li>
+    /// <li><p>You can use this value to update an existing instance.</p></li>
+    /// <li><p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service.</p></li>
+    /// <li><p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one.</p> <note>
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
-    /// </note> </li>
+    /// </note></li>
     /// </ul>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
@@ -245,8 +245,8 @@ impl InstanceBuilder {
     ///
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
-    /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that apply to the records that are defined in the service.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul> <note>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
     /// </note>
@@ -259,18 +259,18 @@ impl InstanceBuilder {
     /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
-    /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p> </li>
-    /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
+    /// <li><p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p></li>
+    /// <li><p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p></li>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p></li>
+    /// <li><p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p></li>
+    /// <li><p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID
     /// </dt>
     /// <dd>
-    /// <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+    /// <p><i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
     /// </dd>
     /// <dt>
     /// AWS_INIT_HEALTH_STATUS
@@ -304,7 +304,7 @@ impl InstanceBuilder {
     /// </dt>
     /// <dd>
     /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to.</p>
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
@@ -316,8 +316,8 @@ impl InstanceBuilder {
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
-    /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that apply to the records that are defined in the service.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul> <note>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
     /// </note>
@@ -330,18 +330,18 @@ impl InstanceBuilder {
     /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
-    /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p> </li>
-    /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
+    /// <li><p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p></li>
+    /// <li><p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p></li>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p></li>
+    /// <li><p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p></li>
+    /// <li><p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID
     /// </dt>
     /// <dd>
-    /// <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+    /// <p><i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
     /// </dd>
     /// <dt>
     /// AWS_INIT_HEALTH_STATUS
@@ -375,7 +375,7 @@ impl InstanceBuilder {
     /// </dt>
     /// <dd>
     /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to.</p>
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
@@ -385,8 +385,8 @@ impl InstanceBuilder {
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
-    /// <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>
-    /// <li> <p>For each attribute, the applicable value.</p> </li>
+    /// <li><p>The attributes that apply to the records that are defined in the service.</p></li>
+    /// <li><p>For each attribute, the applicable value.</p></li>
     /// </ul> <note>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
     /// </note>
@@ -399,18 +399,18 @@ impl InstanceBuilder {
     /// <p>If you want Cloud Map to create a Route&nbsp;53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a> in the <i>Route&nbsp;53 API Reference</i>.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
-    /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
-    /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p> </li>
-    /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
+    /// <li><p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p></li>
+    /// <li><p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p></li>
+    /// <li><p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map creates the health check, but it won't associate the health check with the alias record.</p></li>
+    /// <li><p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than ELB load balancers.</p></li>
+    /// <li><p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
     /// AWS_EC2_INSTANCE_ID
     /// </dt>
     /// <dd>
-    /// <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+    /// <p><i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
     /// </dd>
     /// <dt>
     /// AWS_INIT_HEALTH_STATUS
@@ -444,7 +444,7 @@ impl InstanceBuilder {
     /// </dt>
     /// <dd>
     /// <p>If the service includes an <code>SRV</code> record, the value that you want Route&nbsp;53 to return for the port.</p>
-    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to. </p>
+    /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route&nbsp;53 to send requests to.</p>
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>

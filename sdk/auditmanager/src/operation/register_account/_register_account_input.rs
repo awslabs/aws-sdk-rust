@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAccountInput {
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub delegated_admin_account: ::std::option::Option<::std::string::String>,
 }
 impl RegisterAccountInput {
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub fn delegated_admin_account(&self) -> ::std::option::Option<&str> {
         self.delegated_admin_account.as_deref()
     }
@@ -33,31 +33,31 @@ pub struct RegisterAccountInputBuilder {
     pub(crate) delegated_admin_account: ::std::option::Option<::std::string::String>,
 }
 impl RegisterAccountInputBuilder {
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p> The KMS key details. </p>
+    /// <p>The KMS key details.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub fn delegated_admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub fn set_delegated_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegated_admin_account = input;
         self
     }
-    /// <p> The delegated administrator account for Audit Manager. </p>
+    /// <p>The delegated administrator account for Audit Manager.</p>
     pub fn get_delegated_admin_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.delegated_admin_account
     }

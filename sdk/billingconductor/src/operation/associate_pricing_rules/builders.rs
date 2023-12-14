@@ -22,7 +22,7 @@ impl AssociatePricingRulesInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociatePricingRules`.
 ///
-/// <p>Connects an array of <code>PricingRuleArns</code> to a defined <code>PricingPlan</code>. The maximum number <code>PricingRuleArn</code> that can be associated in one call is 30. </p>
+/// <p>Connects an array of <code>PricingRuleArns</code> to a defined <code>PricingPlan</code>. The maximum number <code>PricingRuleArn</code> that can be associated in one call is 30.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociatePricingRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AssociatePricingRulesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
+    /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
@@ -126,17 +126,17 @@ impl AssociatePricingRulesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
-    /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
+    /// <p>The <code>PricingRuleArns</code> that are associated with the Pricing Plan.</p>
     pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_rule_arns(input.into());
         self
     }
-    /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
+    /// <p>The <code>PricingRuleArns</code> that are associated with the Pricing Plan.</p>
     pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
     }
-    /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
+    /// <p>The <code>PricingRuleArns</code> that are associated with the Pricing Plan.</p>
     pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pricing_rule_arns()
     }

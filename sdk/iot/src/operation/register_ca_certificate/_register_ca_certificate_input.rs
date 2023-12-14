@@ -6,10 +6,10 @@
 pub struct RegisterCaCertificateInput {
     /// <p>The CA certificate.</p>
     pub ca_certificate: ::std::option::Option<::std::string::String>,
-    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty.</p>
     pub verification_certificate: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     pub set_as_active: ::std::option::Option<bool>,
     /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     pub allow_auto_registration: ::std::option::Option<bool>,
@@ -21,7 +21,7 @@ pub struct RegisterCaCertificateInput {
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>.</p>
     pub certificate_mode: ::std::option::Option<crate::types::CertificateMode>,
 }
 impl RegisterCaCertificateInput {
@@ -29,12 +29,12 @@ impl RegisterCaCertificateInput {
     pub fn ca_certificate(&self) -> ::std::option::Option<&str> {
         self.ca_certificate.as_deref()
     }
-    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty.</p>
     pub fn verification_certificate(&self) -> ::std::option::Option<&str> {
         self.verification_certificate.as_deref()
     }
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     pub fn set_as_active(&self) -> ::std::option::Option<bool> {
         self.set_as_active
     }
@@ -56,7 +56,7 @@ impl RegisterCaCertificateInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>.</p>
     pub fn certificate_mode(&self) -> ::std::option::Option<&crate::types::CertificateMode> {
         self.certificate_mode.as_ref()
     }
@@ -96,34 +96,34 @@ impl RegisterCaCertificateInputBuilder {
     pub fn get_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.ca_certificate
     }
-    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty.</p>
     pub fn verification_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty.</p>
     pub fn set_verification_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_certificate = input;
         self
     }
-    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
+    /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty.</p>
     pub fn get_verification_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.verification_certificate
     }
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     pub fn set_as_active(mut self, input: bool) -> Self {
         self.set_as_active = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_as_active = input;
         self
     }
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
-    /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
+    /// <p>Valid values: <code>ACTIVE | INACTIVE</code></p>
     pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
         &self.set_as_active
     }
@@ -187,17 +187,17 @@ impl RegisterCaCertificateInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>.</p>
     pub fn certificate_mode(mut self, input: crate::types::CertificateMode) -> Self {
         self.certificate_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>.</p>
     pub fn set_certificate_mode(mut self, input: ::std::option::Option<crate::types::CertificateMode>) -> Self {
         self.certificate_mode = input;
         self
     }
-    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
+    /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>.</p>
     pub fn get_certificate_mode(&self) -> &::std::option::Option<crate::types::CertificateMode> {
         &self.certificate_mode
     }

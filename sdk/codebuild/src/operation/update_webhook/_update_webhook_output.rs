@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWebhookOutput {
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
+    /// <p>Information about a repository's webhook that is associated with a project in CodeBuild.</p>
     pub webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }
 impl UpdateWebhookOutput {
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
+    /// <p>Information about a repository's webhook that is associated with a project in CodeBuild.</p>
     pub fn webhook(&self) -> ::std::option::Option<&crate::types::Webhook> {
         self.webhook.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateWebhookOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateWebhookOutputBuilder {
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
+    /// <p>Information about a repository's webhook that is associated with a project in CodeBuild.</p>
     pub fn webhook(mut self, input: crate::types::Webhook) -> Self {
         self.webhook = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
+    /// <p>Information about a repository's webhook that is associated with a project in CodeBuild.</p>
     pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::Webhook>) -> Self {
         self.webhook = input;
         self
     }
-    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
+    /// <p>Information about a repository's webhook that is associated with a project in CodeBuild.</p>
     pub fn get_webhook(&self) -> &::std::option::Option<crate::types::Webhook> {
         &self.webhook
     }

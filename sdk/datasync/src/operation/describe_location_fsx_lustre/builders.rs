@@ -108,17 +108,17 @@ impl DescribeLocationFsxLustreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location_arn()
     }

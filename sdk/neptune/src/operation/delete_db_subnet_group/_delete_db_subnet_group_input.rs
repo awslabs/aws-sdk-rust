@@ -8,7 +8,7 @@ pub struct DeleteDbSubnetGroupInput {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {
@@ -17,7 +17,7 @@ impl DeleteDbSubnetGroupInput {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
@@ -41,7 +41,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     /// This field is required.
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
@@ -52,7 +52,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
@@ -62,7 +62,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_name
     }

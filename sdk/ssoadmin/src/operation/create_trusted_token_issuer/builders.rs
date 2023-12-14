@@ -23,7 +23,7 @@ impl CreateTrustedTokenIssuerInputBuilder {
 /// Fluent builder constructing a request to `CreateTrustedTokenIssuer`.
 ///
 /// <p>Creates a connection to a trusted token issuer in an instance of IAM Identity Center. A trusted token issuer enables trusted identity propagation to be used with applications that authenticate outside of Amazon Web Services.</p>
-/// <p>This trusted token issuer describes an external identity provider (IdP) that can generate claims or assertions in the form of access tokens for a user. Applications enabled for IAM Identity Center can use these tokens for authentication. </p>
+/// <p>This trusted token issuer describes an external identity provider (IdP) that can generate claims or assertions in the form of access tokens for a user. Applications enabled for IAM Identity Center can use these tokens for authentication.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrustedTokenIssuerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

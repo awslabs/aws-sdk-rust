@@ -7,7 +7,7 @@ pub struct SettingEntry {
     /// <p>The type, or category, of a directory setting. Similar settings have the same type. For example, <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your directory.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl SettingEntry {
         self.r#type.as_deref()
     }
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -118,19 +118,19 @@ impl SettingEntryBuilder {
         &self.r#type
     }
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the directory setting. For example:</p>
-    /// <p> <code>TLS_1_0</code> </p>
+    /// <p><code>TLS_1_0</code></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

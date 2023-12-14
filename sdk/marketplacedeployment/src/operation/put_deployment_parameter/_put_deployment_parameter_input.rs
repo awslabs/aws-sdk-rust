@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDeploymentParameterInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The product for which AWS Marketplace will save secrets for the buyer’s account.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct PutDeploymentParameterInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutDeploymentParameterInput {
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
@@ -68,18 +68,18 @@ pub struct PutDeploymentParameterInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutDeploymentParameterInputBuilder {
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
-    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code> </p>
+    /// <p>The catalog related to the request. Fixed value: <code>AWS Marketplace</code></p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }

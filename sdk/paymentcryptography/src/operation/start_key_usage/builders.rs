@@ -23,10 +23,10 @@ impl StartKeyUsageInputBuilder {
 /// Fluent builder constructing a request to `StartKeyUsage`.
 ///
 /// <p>Enables an Amazon Web Services Payment Cryptography key, which makes it active for cryptographic operations within Amazon Web Services Payment Cryptography</p>
-/// <p> <b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
-/// <p> <b>Related operations:</b> </p>
+/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li> <p> <code>StopKeyUsage</code> </p> </li>
+/// <li><p><code>StopKeyUsage</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartKeyUsageFluentBuilder {

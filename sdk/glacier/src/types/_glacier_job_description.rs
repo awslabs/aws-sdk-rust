@@ -8,7 +8,7 @@ pub struct GlacierJobDescription {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job description provided when initiating the job.</p>
     pub job_description: ::std::option::Option<::std::string::String>,
-    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>.</p>
     pub action: ::std::option::Option<crate::types::ActionCode>,
     /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
     pub archive_id: ::std::option::Option<::std::string::String>,
@@ -35,19 +35,19 @@ pub struct GlacierJobDescription {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
+    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
+    /// <li><p>Inventory jobs</p></li>
+    /// <li><p>Select jobs</p></li>
     /// </ul>
     pub sha256_tree_hash: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
     pub archive_sha256_tree_hash: ::std::option::Option<::std::string::String>,
-    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null.</p>
     pub retrieval_byte_range: ::std::option::Option<::std::string::String>,
     /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
     pub tier: ::std::option::Option<::std::string::String>,
@@ -69,7 +69,7 @@ impl GlacierJobDescription {
     pub fn job_description(&self) -> ::std::option::Option<&str> {
         self.job_description.as_deref()
     }
-    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::ActionCode> {
         self.action.as_ref()
     }
@@ -118,14 +118,14 @@ impl GlacierJobDescription {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
+    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
+    /// <li><p>Inventory jobs</p></li>
+    /// <li><p>Select jobs</p></li>
     /// </ul>
     pub fn sha256_tree_hash(&self) -> ::std::option::Option<&str> {
         self.sha256_tree_hash.as_deref()
@@ -134,7 +134,7 @@ impl GlacierJobDescription {
     pub fn archive_sha256_tree_hash(&self) -> ::std::option::Option<&str> {
         self.archive_sha256_tree_hash.as_deref()
     }
-    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null.</p>
     pub fn retrieval_byte_range(&self) -> ::std::option::Option<&str> {
         self.retrieval_byte_range.as_deref()
     }
@@ -221,17 +221,17 @@ impl GlacierJobDescriptionBuilder {
     pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_description
     }
-    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>.</p>
     pub fn action(mut self, input: crate::types::ActionCode) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionCode>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+    /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionCode> {
         &self.action
     }
@@ -380,14 +380,14 @@ impl GlacierJobDescriptionBuilder {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
+    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
+    /// <li><p>Inventory jobs</p></li>
+    /// <li><p>Select jobs</p></li>
     /// </ul>
     pub fn sha256_tree_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha256_tree_hash = ::std::option::Option::Some(input.into());
@@ -398,14 +398,14 @@ impl GlacierJobDescriptionBuilder {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
+    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
+    /// <li><p>Inventory jobs</p></li>
+    /// <li><p>Select jobs</p></li>
     /// </ul>
     pub fn set_sha256_tree_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256_tree_hash = input;
@@ -416,14 +416,14 @@ impl GlacierJobDescriptionBuilder {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
+    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
+    /// <li><p>Inventory jobs</p></li>
+    /// <li><p>Select jobs</p></li>
     /// </ul>
     pub fn get_sha256_tree_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.sha256_tree_hash
@@ -442,17 +442,17 @@ impl GlacierJobDescriptionBuilder {
     pub fn get_archive_sha256_tree_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.archive_sha256_tree_hash
     }
-    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null.</p>
     pub fn retrieval_byte_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_byte_range = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null.</p>
     pub fn set_retrieval_byte_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_byte_range = input;
         self
     }
-    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
+    /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null.</p>
     pub fn get_retrieval_byte_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.retrieval_byte_range
     }

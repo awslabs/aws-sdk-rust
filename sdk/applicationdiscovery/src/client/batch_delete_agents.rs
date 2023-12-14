@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteAgents`](crate::operation::batch_delete_agents::builders::BatchDeleteAgentsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delete_agents(DeleteAgent)`](crate::operation::batch_delete_agents::builders::BatchDeleteAgentsFluentBuilder::delete_agents) / [`set_delete_agents(Option<Vec::<DeleteAgent>>)`](crate::operation::batch_delete_agents::builders::BatchDeleteAgentsFluentBuilder::set_delete_agents):<br>required: **true**<br><p> The list of agents to delete. </p><br>
+    ///   - [`delete_agents(DeleteAgent)`](crate::operation::batch_delete_agents::builders::BatchDeleteAgentsFluentBuilder::delete_agents) / [`set_delete_agents(Option<Vec::<DeleteAgent>>)`](crate::operation::batch_delete_agents::builders::BatchDeleteAgentsFluentBuilder::set_delete_agents):<br>required: **true**<br><p>The list of agents to delete.</p><br>
     /// - On success, responds with [`BatchDeleteAgentsOutput`](crate::operation::batch_delete_agents::BatchDeleteAgentsOutput) with field(s):
-    ///   - [`errors(Option<Vec::<BatchDeleteAgentError>>)`](crate::operation::batch_delete_agents::BatchDeleteAgentsOutput::errors): <p> A list of agent IDs that failed to delete during the deletion task, each paired with an error message. </p>
+    ///   - [`errors(Option<Vec::<BatchDeleteAgentError>>)`](crate::operation::batch_delete_agents::BatchDeleteAgentsOutput::errors): <p>A list of agent IDs that failed to delete during the deletion task, each paired with an error message.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteAgentsError>`](crate::operation::batch_delete_agents::BatchDeleteAgentsError)
     pub fn batch_delete_agents(&self) -> crate::operation::batch_delete_agents::builders::BatchDeleteAgentsFluentBuilder {
         crate::operation::batch_delete_agents::builders::BatchDeleteAgentsFluentBuilder::new(self.handle.clone())

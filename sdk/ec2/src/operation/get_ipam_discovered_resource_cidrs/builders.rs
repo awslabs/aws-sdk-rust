@@ -22,7 +22,7 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIpamDiscoveredResourceCidrs`.
 ///
-/// <p>Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered resource is a resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses. </p>
+/// <p>Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered resource is a resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredResourceCidrsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

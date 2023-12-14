@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAttributeGroupInput {
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: ::std::option::Option<::std::string::String>,
 }
 impl GetAttributeGroupInput {
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn attribute_group(&self) -> ::std::option::Option<&str> {
         self.attribute_group.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetAttributeGroupInputBuilder {
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,
 }
 impl GetAttributeGroupInputBuilder {
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     /// This field is required.
     pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_group = input;
         self
     }
-    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_group
     }

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVehicleStatusOutput {
-    /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
+    /// <p>Lists information about the state of the vehicle with deployed campaigns.</p>
     pub campaigns: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>,
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetVehicleStatusOutput {
-    /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
+    /// <p>Lists information about the state of the vehicle with deployed campaigns.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.campaigns.is_none()`.
     pub fn campaigns(&self) -> &[crate::types::VehicleStatus] {
         self.campaigns.as_deref().unwrap_or_default()
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetVehicleStatusOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_campaigns`](Self::set_campaigns).
     ///
-    /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
+    /// <p>Lists information about the state of the vehicle with deployed campaigns.</p>
     pub fn campaigns(mut self, input: crate::types::VehicleStatus) -> Self {
         let mut v = self.campaigns.unwrap_or_default();
         v.push(input);
         self.campaigns = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
+    /// <p>Lists information about the state of the vehicle with deployed campaigns.</p>
     pub fn set_campaigns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>) -> Self {
         self.campaigns = input;
         self
     }
-    /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
+    /// <p>Lists information about the state of the vehicle with deployed campaigns.</p>
     pub fn get_campaigns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>> {
         &self.campaigns
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
+    /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

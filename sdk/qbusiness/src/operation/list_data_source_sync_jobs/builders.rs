@@ -114,17 +114,17 @@ impl ListDataSourceSyncJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator {
         crate::operation::list_data_source_sync_jobs::paginator::ListDataSourceSyncJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The identifier of the data source connector.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
-    /// <p> The identifier of the data source connector.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
-    /// <p> The identifier of the data source connector.</p>
+    /// <p>The identifier of the data source connector.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
@@ -184,31 +184,31 @@ impl ListDataSourceSyncJobsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> The start time of the data source connector sync. </p>
+    /// <p>The start time of the data source connector sync.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p> The start time of the data source connector sync. </p>
+    /// <p>The start time of the data source connector sync.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p> The start time of the data source connector sync. </p>
+    /// <p>The start time of the data source connector sync.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
-    /// <p> The end time of the data source connector sync.</p>
+    /// <p>The end time of the data source connector sync.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p> The end time of the data source connector sync.</p>
+    /// <p>The end time of the data source connector sync.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p> The end time of the data source connector sync.</p>
+    /// <p>The end time of the data source connector sync.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }

@@ -5,20 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub attack_layer: ::std::option::Option<crate::types::AttackLayer>,
     /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
     pub attack_property_identifier: ::std::option::Option<crate::types::AttackPropertyIdentifier>,
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
     pub top_contributors: ::std::option::Option<::std::vec::Vec<crate::types::Contributor>>,
-    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property.</p>
     pub unit: ::std::option::Option<crate::types::Unit>,
     /// <p>The total contributions made to this Shield event by all contributors.</p>
     pub total: i64,
 }
 impl AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn attack_layer(&self) -> ::std::option::Option<&crate::types::AttackLayer> {
         self.attack_layer.as_ref()
     }
@@ -32,7 +32,7 @@ impl AttackProperty {
     pub fn top_contributors(&self) -> &[crate::types::Contributor] {
         self.top_contributors.as_deref().unwrap_or_default()
     }
-    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property.</p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
         self.unit.as_ref()
     }
@@ -60,19 +60,19 @@ pub struct AttackPropertyBuilder {
 }
 impl AttackPropertyBuilder {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn attack_layer(mut self, input: crate::types::AttackLayer) -> Self {
         self.attack_layer = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_attack_layer(mut self, input: ::std::option::Option<crate::types::AttackLayer>) -> Self {
         self.attack_layer = input;
         self
     }
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn get_attack_layer(&self) -> &::std::option::Option<crate::types::AttackLayer> {
         &self.attack_layer
     }
@@ -110,17 +110,17 @@ impl AttackPropertyBuilder {
     pub fn get_top_contributors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Contributor>> {
         &self.top_contributors
     }
-    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
     }
-    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
         &self.unit
     }

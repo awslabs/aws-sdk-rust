@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsInput {
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsInput {
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
     pub fn tag_list(&self) -> &[crate::types::Tag] {
@@ -36,18 +36,18 @@ pub struct AddTagsInputBuilder {
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsInputBuilder {
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    /// <p>Specify the <code>ARN</code> for which you want to add the tags.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -55,19 +55,19 @@ impl AddTagsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
     ///
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
         self.tag_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
-    /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// <p>List of <code>Tag</code> that need to be added for the Elasticsearch domain.</p>
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }

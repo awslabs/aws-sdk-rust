@@ -23,10 +23,10 @@ impl GetConnectionInputBuilder {
 /// Fluent builder constructing a request to `GetConnection`.
 ///
 /// <note>
-/// <p> Amazon Web Services uses this action to install Outpost servers.</p>
+/// <p>Amazon Web Services uses this action to install Outpost servers.</p>
 /// </note>
-/// <p> Gets information about the specified connection. </p>
-/// <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
+/// <p>Gets information about the specified connection.</p>
+/// <p>Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl GetConnectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_id()
     }

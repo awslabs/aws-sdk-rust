@@ -22,7 +22,7 @@ impl DescribeListenerInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeListener`.
 ///
-/// <p>Describe a listener. </p>
+/// <p>Describe a listener.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeListenerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

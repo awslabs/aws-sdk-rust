@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlOutput {
-    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    /// <p>Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet.</p>
     pub pre_signed_url: ::std::option::Option<crate::types::Url>,
     _request_id: Option<String>,
 }
 impl GetAssessmentReportUrlOutput {
-    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    /// <p>Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet.</p>
     pub fn pre_signed_url(&self) -> ::std::option::Option<&crate::types::Url> {
         self.pre_signed_url.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetAssessmentReportUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAssessmentReportUrlOutputBuilder {
-    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    /// <p>Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet.</p>
     pub fn pre_signed_url(mut self, input: crate::types::Url) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    /// <p>Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet.</p>
     pub fn set_pre_signed_url(mut self, input: ::std::option::Option<crate::types::Url>) -> Self {
         self.pre_signed_url = input;
         self
     }
-    /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    /// <p>Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet.</p>
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<crate::types::Url> {
         &self.pre_signed_url
     }

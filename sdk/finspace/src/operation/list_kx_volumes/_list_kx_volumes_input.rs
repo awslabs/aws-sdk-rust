@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKxVolumesInput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
+    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub volume_type: ::std::option::Option<crate::types::KxVolumeType>,
 }
 impl ListKxVolumesInput {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
@@ -25,7 +25,7 @@ impl ListKxVolumesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
+    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::KxVolumeType> {
         self.volume_type.as_ref()
     }
@@ -47,18 +47,18 @@ pub struct ListKxVolumesInputBuilder {
     pub(crate) volume_type: ::std::option::Option<crate::types::KxVolumeType>,
 }
 impl ListKxVolumesInputBuilder {
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume. </p>
+    /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
@@ -90,17 +90,17 @@ impl ListKxVolumesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
+    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn volume_type(mut self, input: crate::types::KxVolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
+    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
         self.volume_type = input;
         self
     }
-    /// <p> The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type. </p>
+    /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
         &self.volume_type
     }

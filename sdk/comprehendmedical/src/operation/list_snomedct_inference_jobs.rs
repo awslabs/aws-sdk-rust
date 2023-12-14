@@ -257,11 +257,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListSNOMEDCTI
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListSNOMEDCTInferenceJobsError {
-    /// <p> An internal server error occurred. Retry your request. </p>
+    /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    /// <p>The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::types::error::ValidationException),

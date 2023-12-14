@@ -7,7 +7,7 @@ pub struct ListLanguagesOutput {
     pub languages: ::std::option::Option<::std::vec::Vec<crate::types::Language>>,
     /// <p>The language code passed in with the request.</p>
     pub display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
-    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -22,7 +22,7 @@ impl ListLanguagesOutput {
     pub fn display_language_code(&self) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {
         self.display_language_code.as_ref()
     }
-    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -83,17 +83,17 @@ impl ListLanguagesOutputBuilder {
     pub fn get_display_language_code(&self) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
         &self.display_language_code
     }
-    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
+    /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

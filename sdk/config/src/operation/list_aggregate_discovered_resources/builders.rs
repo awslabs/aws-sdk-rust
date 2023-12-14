@@ -115,17 +115,17 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator {
         crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the configuration aggregator. </p>
+    /// <p>The name of the configuration aggregator.</p>
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
-    /// <p>The name of the configuration aggregator. </p>
+    /// <p>The name of the configuration aggregator.</p>
     pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
-    /// <p>The name of the configuration aggregator. </p>
+    /// <p>The name of the configuration aggregator.</p>
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_aggregator_name()
     }

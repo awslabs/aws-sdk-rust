@@ -13,12 +13,12 @@ pub struct ReplicationTaskIndividualAssessment {
     /// <p>Individual assessment status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>"cancelled"</code> </p> </li>
-    /// <li> <p> <code>"error"</code> </p> </li>
-    /// <li> <p> <code>"failed"</code> </p> </li>
-    /// <li> <p> <code>"passed"</code> </p> </li>
-    /// <li> <p> <code>"pending"</code> </p> </li>
-    /// <li> <p> <code>"running"</code> </p> </li>
+    /// <li><p><code>"cancelled"</code></p></li>
+    /// <li><p><code>"error"</code></p></li>
+    /// <li><p><code>"failed"</code></p></li>
+    /// <li><p><code>"passed"</code></p></li>
+    /// <li><p><code>"pending"</code></p></li>
+    /// <li><p><code>"running"</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
@@ -40,12 +40,12 @@ impl ReplicationTaskIndividualAssessment {
     /// <p>Individual assessment status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>"cancelled"</code> </p> </li>
-    /// <li> <p> <code>"error"</code> </p> </li>
-    /// <li> <p> <code>"failed"</code> </p> </li>
-    /// <li> <p> <code>"passed"</code> </p> </li>
-    /// <li> <p> <code>"pending"</code> </p> </li>
-    /// <li> <p> <code>"running"</code> </p> </li>
+    /// <li><p><code>"cancelled"</code></p></li>
+    /// <li><p><code>"error"</code></p></li>
+    /// <li><p><code>"failed"</code></p></li>
+    /// <li><p><code>"passed"</code></p></li>
+    /// <li><p><code>"pending"</code></p></li>
+    /// <li><p><code>"running"</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -118,12 +118,12 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <p>Individual assessment status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>"cancelled"</code> </p> </li>
-    /// <li> <p> <code>"error"</code> </p> </li>
-    /// <li> <p> <code>"failed"</code> </p> </li>
-    /// <li> <p> <code>"passed"</code> </p> </li>
-    /// <li> <p> <code>"pending"</code> </p> </li>
-    /// <li> <p> <code>"running"</code> </p> </li>
+    /// <li><p><code>"cancelled"</code></p></li>
+    /// <li><p><code>"error"</code></p></li>
+    /// <li><p><code>"failed"</code></p></li>
+    /// <li><p><code>"passed"</code></p></li>
+    /// <li><p><code>"pending"</code></p></li>
+    /// <li><p><code>"running"</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -132,12 +132,12 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <p>Individual assessment status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>"cancelled"</code> </p> </li>
-    /// <li> <p> <code>"error"</code> </p> </li>
-    /// <li> <p> <code>"failed"</code> </p> </li>
-    /// <li> <p> <code>"passed"</code> </p> </li>
-    /// <li> <p> <code>"pending"</code> </p> </li>
-    /// <li> <p> <code>"running"</code> </p> </li>
+    /// <li><p><code>"cancelled"</code></p></li>
+    /// <li><p><code>"error"</code></p></li>
+    /// <li><p><code>"failed"</code></p></li>
+    /// <li><p><code>"passed"</code></p></li>
+    /// <li><p><code>"pending"</code></p></li>
+    /// <li><p><code>"running"</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -146,12 +146,12 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <p>Individual assessment status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>"cancelled"</code> </p> </li>
-    /// <li> <p> <code>"error"</code> </p> </li>
-    /// <li> <p> <code>"failed"</code> </p> </li>
-    /// <li> <p> <code>"passed"</code> </p> </li>
-    /// <li> <p> <code>"pending"</code> </p> </li>
-    /// <li> <p> <code>"running"</code> </p> </li>
+    /// <li><p><code>"cancelled"</code></p></li>
+    /// <li><p><code>"error"</code></p></li>
+    /// <li><p><code>"failed"</code></p></li>
+    /// <li><p><code>"passed"</code></p></li>
+    /// <li><p><code>"pending"</code></p></li>
+    /// <li><p><code>"running"</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

@@ -15,9 +15,9 @@ pub struct CreateExperimentTemplateTargetInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
-    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    /// <li><p>ALL - Run the action on all identified targets. This is the default.</p></li>
+    /// <li><p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p></li>
+    /// <li><p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p></li>
     /// </ul>
     pub selection_mode: ::std::string::String,
     /// <p>The resource type parameters.</p>
@@ -47,9 +47,9 @@ impl CreateExperimentTemplateTargetInput {
     }
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
-    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    /// <li><p>ALL - Run the action on all identified targets. This is the default.</p></li>
+    /// <li><p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p></li>
+    /// <li><p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p></li>
     /// </ul>
     pub fn selection_mode(&self) -> &str {
         use std::ops::Deref;
@@ -159,9 +159,9 @@ impl CreateExperimentTemplateTargetInputBuilder {
     }
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
-    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    /// <li><p>ALL - Run the action on all identified targets. This is the default.</p></li>
+    /// <li><p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p></li>
+    /// <li><p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p></li>
     /// </ul>
     /// This field is required.
     pub fn selection_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,9 +170,9 @@ impl CreateExperimentTemplateTargetInputBuilder {
     }
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
-    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    /// <li><p>ALL - Run the action on all identified targets. This is the default.</p></li>
+    /// <li><p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p></li>
+    /// <li><p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p></li>
     /// </ul>
     pub fn set_selection_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_mode = input;
@@ -180,9 +180,9 @@ impl CreateExperimentTemplateTargetInputBuilder {
     }
     /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
     /// <ul>
-    /// <li> <p>ALL - Run the action on all identified targets. This is the default.</p> </li>
-    /// <li> <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p> </li>
-    /// <li> <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p> </li>
+    /// <li><p>ALL - Run the action on all identified targets. This is the default.</p></li>
+    /// <li><p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random. For example, COUNT(1) selects one of the targets.</p></li>
+    /// <li><p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets at random. For example, PERCENT(25) selects 25% of the targets.</p></li>
     /// </ul>
     pub fn get_selection_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_mode

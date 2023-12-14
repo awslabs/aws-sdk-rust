@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventPredictionsOutput {
-    /// <p> The summary of the past predictions. </p>
+    /// <p>The summary of the past predictions.</p>
     pub event_prediction_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>,
-    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// <p>Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEventPredictionsOutput {
-    /// <p> The summary of the past predictions. </p>
+    /// <p>The summary of the past predictions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_prediction_summaries.is_none()`.
     pub fn event_prediction_summaries(&self) -> &[crate::types::EventPredictionSummary] {
         self.event_prediction_summaries.as_deref().unwrap_or_default()
     }
-    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// <p>Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListEventPredictionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_prediction_summaries`](Self::set_event_prediction_summaries).
     ///
-    /// <p> The summary of the past predictions. </p>
+    /// <p>The summary of the past predictions.</p>
     pub fn event_prediction_summaries(mut self, input: crate::types::EventPredictionSummary) -> Self {
         let mut v = self.event_prediction_summaries.unwrap_or_default();
         v.push(input);
         self.event_prediction_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The summary of the past predictions. </p>
+    /// <p>The summary of the past predictions.</p>
     pub fn set_event_prediction_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>>) -> Self {
         self.event_prediction_summaries = input;
         self
     }
-    /// <p> The summary of the past predictions. </p>
+    /// <p>The summary of the past predictions.</p>
     pub fn get_event_prediction_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPredictionSummary>> {
         &self.event_prediction_summaries
     }
-    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// <p>Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// <p>Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// <p>Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

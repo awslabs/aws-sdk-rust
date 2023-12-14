@@ -17,7 +17,7 @@ pub enum Error {
     CannotChangeImmutablePublicKeyFields(crate::types::error::CannotChangeImmutablePublicKeyFields),
     /// <p>The Key Value Store entity cannot be deleted while it is in use.</p>
     CannotDeleteEntityWhileInUse(crate::types::error::CannotDeleteEntityWhileInUse),
-    /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
+    /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.</p>
     CloudFrontOriginAccessIdentityAlreadyExists(crate::types::error::CloudFrontOriginAccessIdentityAlreadyExists),
     /// <p>The Origin Access Identity specified is already in use.</p>
     CloudFrontOriginAccessIdentityInUse(crate::types::error::CloudFrontOriginAccessIdentityInUse),

@@ -6,8 +6,8 @@
 pub struct DateTimeValueWhenUnsetConfiguration {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
-    /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
+    /// <li><p><code>RECOMMENDED</code>: The recommended value.</p></li>
+    /// <li><p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
     pub value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
@@ -16,8 +16,8 @@ pub struct DateTimeValueWhenUnsetConfiguration {
 impl DateTimeValueWhenUnsetConfiguration {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
-    /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
+    /// <li><p><code>RECOMMENDED</code>: The recommended value.</p></li>
+    /// <li><p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
     pub fn value_when_unset_option(&self) -> ::std::option::Option<&crate::types::ValueWhenUnsetOption> {
         self.value_when_unset_option.as_ref()
@@ -52,8 +52,8 @@ pub struct DateTimeValueWhenUnsetConfigurationBuilder {
 impl DateTimeValueWhenUnsetConfigurationBuilder {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
-    /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
+    /// <li><p><code>RECOMMENDED</code>: The recommended value.</p></li>
+    /// <li><p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
     pub fn value_when_unset_option(mut self, input: crate::types::ValueWhenUnsetOption) -> Self {
         self.value_when_unset_option = ::std::option::Option::Some(input);
@@ -61,8 +61,8 @@ impl DateTimeValueWhenUnsetConfigurationBuilder {
     }
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
-    /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
+    /// <li><p><code>RECOMMENDED</code>: The recommended value.</p></li>
+    /// <li><p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
     pub fn set_value_when_unset_option(mut self, input: ::std::option::Option<crate::types::ValueWhenUnsetOption>) -> Self {
         self.value_when_unset_option = input;
@@ -70,8 +70,8 @@ impl DateTimeValueWhenUnsetConfigurationBuilder {
     }
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
-    /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
+    /// <li><p><code>RECOMMENDED</code>: The recommended value.</p></li>
+    /// <li><p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
     pub fn get_value_when_unset_option(&self) -> &::std::option::Option<crate::types::ValueWhenUnsetOption> {
         &self.value_when_unset_option

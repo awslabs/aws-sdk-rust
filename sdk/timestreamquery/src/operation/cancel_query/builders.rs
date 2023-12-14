@@ -22,7 +22,7 @@ impl CancelQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelQuery`.
 ///
-/// <p> Cancels a query that has been issued. Cancellation is provided only if the query has not completed running before the cancellation request was issued. Because cancellation is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>, indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code sample</a> for details. </p>
+/// <p>Cancels a query that has been issued. Cancellation is provided only if the query has not completed running before the cancellation request was issued. Because cancellation is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>, indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code sample</a> for details.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CancelQueryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
+    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
         self
     }
-    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
+    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
     }
-    /// <p> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result. </p>
+    /// <p>The ID of the query that needs to be cancelled. <code>QueryID</code> is returned as part of the query result.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_id()
     }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngressConfiguration {
-    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
+    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>.</p>
     pub is_publicly_accessible: bool,
 }
 impl IngressConfiguration {
-    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
+    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>.</p>
     pub fn is_publicly_accessible(&self) -> bool {
         self.is_publicly_accessible
     }
@@ -27,17 +27,17 @@ pub struct IngressConfigurationBuilder {
     pub(crate) is_publicly_accessible: ::std::option::Option<bool>,
 }
 impl IngressConfigurationBuilder {
-    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
+    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>.</p>
     pub fn is_publicly_accessible(mut self, input: bool) -> Self {
         self.is_publicly_accessible = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
+    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>.</p>
     pub fn set_is_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_publicly_accessible = input;
         self
     }
-    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
+    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>.</p>
     pub fn get_is_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.is_publicly_accessible
     }

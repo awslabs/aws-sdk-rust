@@ -22,7 +22,7 @@ impl DeleteCustomLineItemInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCustomLineItem`.
 ///
-/// <p> Deletes the custom line item identified by the given ARN in the current, or previous billing period. </p>
+/// <p>Deletes the custom line item identified by the given ARN in the current, or previous billing period.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomLineItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteCustomLineItemFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ARN of the custom line item to be deleted. </p>
+    /// <p>The ARN of the custom line item to be deleted.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p> The ARN of the custom line item to be deleted. </p>
+    /// <p>The ARN of the custom line item to be deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> The ARN of the custom line item to be deleted. </p>
+    /// <p>The ARN of the custom line item to be deleted.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

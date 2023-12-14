@@ -10,11 +10,11 @@ pub struct NotificationConfiguration {
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following event notification types:</p>
     /// <ul>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li>
     /// </ul>
     pub notification_type: ::std::option::Option<::std::string::String>,
 }
@@ -29,11 +29,11 @@ impl NotificationConfiguration {
     }
     /// <p>One of the following event notification types:</p>
     /// <ul>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li>
     /// </ul>
     pub fn notification_type(&self) -> ::std::option::Option<&str> {
         self.notification_type.as_deref()
@@ -85,11 +85,11 @@ impl NotificationConfigurationBuilder {
     }
     /// <p>One of the following event notification types:</p>
     /// <ul>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li>
     /// </ul>
     pub fn notification_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_type = ::std::option::Option::Some(input.into());
@@ -97,11 +97,11 @@ impl NotificationConfigurationBuilder {
     }
     /// <p>One of the following event notification types:</p>
     /// <ul>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li>
     /// </ul>
     pub fn set_notification_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_type = input;
@@ -109,11 +109,11 @@ impl NotificationConfigurationBuilder {
     }
     /// <p>One of the following event notification types:</p>
     /// <ul>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li>
-    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
-    /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
+    /// <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
+    /// <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li>
     /// </ul>
     pub fn get_notification_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_type

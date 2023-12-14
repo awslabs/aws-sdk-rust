@@ -22,7 +22,7 @@ impl RemoveNotificationChannelInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveNotificationChannel`.
 ///
-/// <p> Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. </p>
+/// <p>Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveNotificationChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl RemoveNotificationChannelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The ID of the notification channel to be removed. </p>
+    /// <p>The ID of the notification channel to be removed.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p> The ID of the notification channel to be removed. </p>
+    /// <p>The ID of the notification channel to be removed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p> The ID of the notification channel to be removed. </p>
+    /// <p>The ID of the notification channel to be removed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

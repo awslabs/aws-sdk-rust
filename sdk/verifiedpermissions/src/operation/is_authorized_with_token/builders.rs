@@ -199,33 +199,33 @@ impl IsAuthorizedWithTokenFluentBuilder {
     pub fn get_context(&self) -> &::std::option::Option<crate::types::ContextDefinition> {
         self.inner.get_context()
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
     /// <ul>
-    /// <li> <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p> </li>
-    /// <li> <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>. </p> </li>
+    /// <li><p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
+    /// <li><p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn entities(mut self, input: crate::types::EntitiesDefinition) -> Self {
         self.inner = self.inner.entities(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
     /// <ul>
-    /// <li> <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p> </li>
-    /// <li> <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>. </p> </li>
+    /// <li><p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
+    /// <li><p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p> <note>
     /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
     /// <ul>
-    /// <li> <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p> </li>
-    /// <li> <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>. </p> </li>
+    /// <li><p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
+    /// <li><p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_entities(&self) -> &::std::option::Option<crate::types::EntitiesDefinition> {

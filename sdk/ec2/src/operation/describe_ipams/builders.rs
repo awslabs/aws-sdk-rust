@@ -23,7 +23,7 @@ impl DescribeIpamsInputBuilder {
 /// Fluent builder constructing a request to `DescribeIpams`.
 ///
 /// <p>Get information about your IPAM pools.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIpamsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

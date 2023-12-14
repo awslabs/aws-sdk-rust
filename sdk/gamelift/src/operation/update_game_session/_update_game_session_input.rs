@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGameSessionInput {
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub maximum_player_session_count: ::std::option::Option<i32>,
@@ -13,13 +13,13 @@ pub struct UpdateGameSessionInput {
     pub player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
 }
 impl UpdateGameSessionInput {
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
@@ -37,8 +37,8 @@ impl UpdateGameSessionInput {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.protection_policy.as_ref()
@@ -62,18 +62,18 @@ pub struct UpdateGameSessionInputBuilder {
     pub(crate) protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
 }
 impl UpdateGameSessionInputBuilder {
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     /// This field is required.
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session to update. </p>
+    /// <p>A unique identifier for the game session to update.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }
@@ -121,8 +121,8 @@ impl UpdateGameSessionInputBuilder {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.protection_policy = ::std::option::Option::Some(input);
@@ -130,8 +130,8 @@ impl UpdateGameSessionInputBuilder {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn set_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.protection_policy = input;
@@ -139,8 +139,8 @@ impl UpdateGameSessionInputBuilder {
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.protection_policy

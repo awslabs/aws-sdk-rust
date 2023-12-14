@@ -5,7 +5,7 @@
 pub struct CreateDeploymentInput {
     /// <p>The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter. </p>
+    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub deployment_pattern_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl CreateDeploymentInput {
     pub fn workload_name(&self) -> ::std::option::Option<&str> {
         self.workload_name.as_deref()
     }
-    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter. </p>
+    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub fn deployment_pattern_name(&self) -> ::std::option::Option<&str> {
         self.deployment_pattern_name.as_deref()
     }
@@ -80,18 +80,18 @@ impl CreateDeploymentInputBuilder {
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_name
     }
-    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter. </p>
+    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     /// This field is required.
     pub fn deployment_pattern_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_pattern_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter. </p>
+    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub fn set_deployment_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_pattern_name = input;
         self
     }
-    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter. </p>
+    /// <p>The name of the deployment pattern supported by a given workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html"> <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values for this parameter.</p>
     pub fn get_deployment_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_pattern_name
     }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexConfiguration {
     /// <important>
-    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// <p><b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
     /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub responds_to: ::std::option::Option<crate::types::RespondsTo>,
     /// <p>Specifies the type of message that triggers a bot.</p>
     pub invoked_by: ::std::option::Option<crate::types::InvokedBy>,
-    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
+    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code></p>
     pub lex_bot_alias_arn: ::std::string::String,
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
     pub locale_id: ::std::string::String,
@@ -20,7 +20,7 @@ pub struct LexConfiguration {
 }
 impl LexConfiguration {
     /// <important>
-    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// <p><b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
     /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn responds_to(&self) -> ::std::option::Option<&crate::types::RespondsTo> {
@@ -30,7 +30,7 @@ impl LexConfiguration {
     pub fn invoked_by(&self) -> ::std::option::Option<&crate::types::InvokedBy> {
         self.invoked_by.as_ref()
     }
-    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
+    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code></p>
     pub fn lex_bot_alias_arn(&self) -> &str {
         use std::ops::Deref;
         self.lex_bot_alias_arn.deref()
@@ -64,7 +64,7 @@ pub struct LexConfigurationBuilder {
 }
 impl LexConfigurationBuilder {
     /// <important>
-    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// <p><b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
     /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn responds_to(mut self, input: crate::types::RespondsTo) -> Self {
@@ -72,7 +72,7 @@ impl LexConfigurationBuilder {
         self
     }
     /// <important>
-    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// <p><b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
     /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn set_responds_to(mut self, input: ::std::option::Option<crate::types::RespondsTo>) -> Self {
@@ -80,7 +80,7 @@ impl LexConfigurationBuilder {
         self
     }
     /// <important>
-    /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+    /// <p><b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
     /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn get_responds_to(&self) -> &::std::option::Option<crate::types::RespondsTo> {
@@ -100,18 +100,18 @@ impl LexConfigurationBuilder {
     pub fn get_invoked_by(&self) -> &::std::option::Option<crate::types::InvokedBy> {
         &self.invoked_by
     }
-    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
+    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code></p>
     /// This field is required.
     pub fn lex_bot_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lex_bot_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
+    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code></p>
     pub fn set_lex_bot_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lex_bot_alias_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
+    /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code></p>
     pub fn get_lex_bot_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lex_bot_alias_arn
     }

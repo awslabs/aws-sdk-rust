@@ -6,9 +6,9 @@
 pub struct TrafficRoutingConfig {
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step. </p> </li>
-    /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
-    /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
+    /// <li><p><code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.</p></li>
+    /// <li><p><code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic.</p></li>
+    /// <li><p><code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::TrafficRoutingConfigType>,
     /// <p>The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.</p>
@@ -21,9 +21,9 @@ pub struct TrafficRoutingConfig {
 impl TrafficRoutingConfig {
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step. </p> </li>
-    /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
-    /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
+    /// <li><p><code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.</p></li>
+    /// <li><p><code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic.</p></li>
+    /// <li><p><code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TrafficRoutingConfigType> {
         self.r#type.as_ref()
@@ -60,9 +60,9 @@ pub struct TrafficRoutingConfigBuilder {
 impl TrafficRoutingConfigBuilder {
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step. </p> </li>
-    /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
-    /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
+    /// <li><p><code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.</p></li>
+    /// <li><p><code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic.</p></li>
+    /// <li><p><code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::TrafficRoutingConfigType) -> Self {
@@ -71,9 +71,9 @@ impl TrafficRoutingConfigBuilder {
     }
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step. </p> </li>
-    /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
-    /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
+    /// <li><p><code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.</p></li>
+    /// <li><p><code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic.</p></li>
+    /// <li><p><code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TrafficRoutingConfigType>) -> Self {
         self.r#type = input;
@@ -81,9 +81,9 @@ impl TrafficRoutingConfigBuilder {
     }
     /// <p>Traffic routing strategy type.</p>
     /// <ul>
-    /// <li> <p> <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step. </p> </li>
-    /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
-    /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
+    /// <li><p><code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.</p></li>
+    /// <li><p><code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic.</p></li>
+    /// <li><p><code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TrafficRoutingConfigType> {
         &self.r#type

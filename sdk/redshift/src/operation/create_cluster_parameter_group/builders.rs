@@ -23,7 +23,7 @@ impl CreateClusterParameterGroupInputBuilder {
 /// Fluent builder constructing a request to `CreateClusterParameterGroup`.
 ///
 /// <p>Creates an Amazon Redshift parameter group.</p>
-/// <p>Creating parameter groups is independent of creating clusters. You can associate a cluster with a parameter group when you create the cluster. You can also associate an existing cluster with a parameter group after the cluster is created by using <code>ModifyCluster</code>. </p>
+/// <p>Creating parameter groups is independent of creating clusters. You can associate a cluster with a parameter group when you create the cluster. You can also associate an existing cluster with a parameter group after the cluster is created by using <code>ModifyCluster</code>.</p>
 /// <p>Parameters in the parameter group define specific behavior that applies to the databases you create on the cluster. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterParameterGroupFluentBuilder {
@@ -113,10 +113,10 @@ impl CreateClusterParameterGroupFluentBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
@@ -127,10 +127,10 @@ impl CreateClusterParameterGroupFluentBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
@@ -141,10 +141,10 @@ impl CreateClusterParameterGroupFluentBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
+    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
@@ -152,19 +152,19 @@ impl CreateClusterParameterGroupFluentBuilder {
         self.inner.get_parameter_group_name()
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
-    /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+    /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0".</p>
     pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_family(input.into());
         self
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
-    /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+    /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0".</p>
     pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_family(input);
         self
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
-    /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+    /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0".</p>
     pub fn get_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parameter_group_family()
     }

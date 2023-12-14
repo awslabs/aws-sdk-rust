@@ -2,17 +2,17 @@
 
 /// <p>Contains information about one of the policies that determined an authorization decision.</p>
 /// <p>This data type is used as an element in a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>, <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorized.html">BatchIsAuthorized</a>, and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a> operations.</p>
-/// <p>Example: <code>"determiningPolicies":[{"policyId":"SPEXAMPLEabcdefg111111"}]</code> </p>
+/// <p>Example: <code>"determiningPolicies":[{"policyId":"SPEXAMPLEabcdefg111111"}]</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeterminingPolicyItem {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
-    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
+    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
     pub policy_id: ::std::string::String,
 }
 impl DeterminingPolicyItem {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
-    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
+    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
     pub fn policy_id(&self) -> &str {
         use std::ops::Deref;
         self.policy_id.deref()
@@ -33,20 +33,20 @@ pub struct DeterminingPolicyItemBuilder {
 }
 impl DeterminingPolicyItemBuilder {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
-    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
+    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
     /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of a policy that determined to an authorization decision.</p>
-    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
+    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
     }
     /// <p>The Id of a policy that determined to an authorization decision.</p>
-    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
+    /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code></p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }

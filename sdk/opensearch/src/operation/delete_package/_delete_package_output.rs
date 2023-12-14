@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackageOutput {
-    /// <p> Information about the deleted package.</p>
+    /// <p>Information about the deleted package.</p>
     pub package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
 }
 impl DeletePackageOutput {
-    /// <p> Information about the deleted package.</p>
+    /// <p>Information about the deleted package.</p>
     pub fn package_details(&self) -> ::std::option::Option<&crate::types::PackageDetails> {
         self.package_details.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct DeletePackageOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeletePackageOutputBuilder {
-    /// <p> Information about the deleted package.</p>
+    /// <p>Information about the deleted package.</p>
     pub fn package_details(mut self, input: crate::types::PackageDetails) -> Self {
         self.package_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Information about the deleted package.</p>
+    /// <p>Information about the deleted package.</p>
     pub fn set_package_details(mut self, input: ::std::option::Option<crate::types::PackageDetails>) -> Self {
         self.package_details = input;
         self
     }
-    /// <p> Information about the deleted package.</p>
+    /// <p>Information about the deleted package.</p>
     pub fn get_package_details(&self) -> &::std::option::Option<crate::types::PackageDetails> {
         &self.package_details
     }

@@ -279,7 +279,7 @@ pub enum ListDataSetsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The parameters provided in the request conflict with existing resources.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p> Failed to connect to server, or didn’t receive response within expected time period.</p>
+    /// <p>Failed to connect to server, or didn’t receive response within expected time period.</p>
     ExecutionTimeoutException(crate::types::error::ExecutionTimeoutException),
     /// <p>An unexpected error occurred during the processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),

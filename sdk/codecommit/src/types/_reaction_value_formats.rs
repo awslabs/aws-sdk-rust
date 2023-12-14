@@ -6,7 +6,7 @@
 pub struct ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
     pub emoji: ::std::option::Option<::std::string::String>,
-    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
+    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems.</p>
     pub short_code: ::std::option::Option<::std::string::String>,
     /// <p>The Unicode codepoint for the reaction.</p>
     pub unicode: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ReactionValueFormats {
     pub fn emoji(&self) -> ::std::option::Option<&str> {
         self.emoji.as_deref()
     }
-    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
+    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems.</p>
     pub fn short_code(&self) -> ::std::option::Option<&str> {
         self.short_code.as_deref()
     }
@@ -55,17 +55,17 @@ impl ReactionValueFormatsBuilder {
     pub fn get_emoji(&self) -> &::std::option::Option<::std::string::String> {
         &self.emoji
     }
-    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
+    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems.</p>
     pub fn short_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
+    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems.</p>
     pub fn set_short_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_code = input;
         self
     }
-    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
+    /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems.</p>
     pub fn get_short_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.short_code
     }

@@ -197,8 +197,8 @@ impl ImportWorkspaceImageFluentBuilder {
     ///
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Although this parameter is an array, only one item is allowed at this time.</p> </li>
-    /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+    /// <li><p>Although this parameter is an array, only one item is allowed at this time.</p></li>
+    /// <li><p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
@@ -207,8 +207,8 @@ impl ImportWorkspaceImageFluentBuilder {
     }
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Although this parameter is an array, only one item is allowed at this time.</p> </li>
-    /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+    /// <li><p>Although this parameter is an array, only one item is allowed at this time.</p></li>
+    /// <li><p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
@@ -217,8 +217,8 @@ impl ImportWorkspaceImageFluentBuilder {
     }
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
     /// <ul>
-    /// <li> <p>Although this parameter is an array, only one item is allowed at this time.</p> </li>
-    /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+    /// <li><p>Although this parameter is an array, only one item is allowed at this time.</p></li>
+    /// <li><p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {

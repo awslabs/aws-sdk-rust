@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerStrategiesOutput {
-    /// <p> A list of strategy recommendations for the server. </p>
+    /// <p>A list of strategy recommendations for the server.</p>
     pub server_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>,
     _request_id: Option<String>,
 }
 impl GetServerStrategiesOutput {
-    /// <p> A list of strategy recommendations for the server. </p>
+    /// <p>A list of strategy recommendations for the server.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_strategies.is_none()`.
     pub fn server_strategies(&self) -> &[crate::types::ServerStrategy] {
@@ -39,19 +39,19 @@ impl GetServerStrategiesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_server_strategies`](Self::set_server_strategies).
     ///
-    /// <p> A list of strategy recommendations for the server. </p>
+    /// <p>A list of strategy recommendations for the server.</p>
     pub fn server_strategies(mut self, input: crate::types::ServerStrategy) -> Self {
         let mut v = self.server_strategies.unwrap_or_default();
         v.push(input);
         self.server_strategies = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of strategy recommendations for the server. </p>
+    /// <p>A list of strategy recommendations for the server.</p>
     pub fn set_server_strategies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>>) -> Self {
         self.server_strategies = input;
         self
     }
-    /// <p> A list of strategy recommendations for the server. </p>
+    /// <p>A list of strategy recommendations for the server.</p>
     pub fn get_server_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerStrategy>> {
         &self.server_strategies
     }

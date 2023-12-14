@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestUploadCredentialsInput {
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
     pub build_id: ::std::option::Option<::std::string::String>,
 }
 impl RequestUploadCredentialsInput {
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
     pub fn build_id(&self) -> ::std::option::Option<&str> {
         self.build_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct RequestUploadCredentialsInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
 }
 impl RequestUploadCredentialsInputBuilder {
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
     /// This field is required.
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_id = input;
         self
     }
-    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.build_id
     }

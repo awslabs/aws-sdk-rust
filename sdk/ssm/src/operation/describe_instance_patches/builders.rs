@@ -135,10 +135,10 @@ impl DescribeInstancePatchesFluentBuilder {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
-    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
-    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
-    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </li>
+    /// <li><p><b> <code>Classification</code> </b></p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code></p></li>
+    /// <li><p><b> <code>KBId</code> </b></p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code></p></li>
+    /// <li><p><b> <code>Severity</code> </b></p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code></p></li>
+    /// <li><p><b> <code>State</code> </b></p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code></p> <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::PatchOrchestratorFilter) -> Self {
         self.inner = self.inner.filters(input);
@@ -147,10 +147,10 @@ impl DescribeInstancePatchesFluentBuilder {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
-    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
-    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
-    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </li>
+    /// <li><p><b> <code>Classification</code> </b></p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code></p></li>
+    /// <li><p><b> <code>KBId</code> </b></p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code></p></li>
+    /// <li><p><b> <code>Severity</code> </b></p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code></p></li>
+    /// <li><p><b> <code>State</code> </b></p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code></p> <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -159,10 +159,10 @@ impl DescribeInstancePatchesFluentBuilder {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
-    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
-    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
-    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </li>
+    /// <li><p><b> <code>Classification</code> </b></p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code></p></li>
+    /// <li><p><b> <code>KBId</code> </b></p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code></p></li>
+    /// <li><p><b> <code>Severity</code> </b></p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code></p></li>
+    /// <li><p><b> <code>State</code> </b></p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code></p> <p>For lists of all <code>State</code> values, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         self.inner.get_filters()

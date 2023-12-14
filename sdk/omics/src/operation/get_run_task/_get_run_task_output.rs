@@ -23,11 +23,11 @@ pub struct GetRunTaskOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The task's log stream.</p>
     pub log_stream: ::std::option::Option<::std::string::String>,
-    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    /// <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
     pub gpus: ::std::option::Option<i32>,
-    /// <p> The instance type for a task. </p>
+    /// <p>The instance type for a task.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
-    /// <p> The reason a task has failed. </p>
+    /// <p>The reason a task has failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -72,15 +72,15 @@ impl GetRunTaskOutput {
     pub fn log_stream(&self) -> ::std::option::Option<&str> {
         self.log_stream.as_deref()
     }
-    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    /// <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
     pub fn gpus(&self) -> ::std::option::Option<i32> {
         self.gpus
     }
-    /// <p> The instance type for a task. </p>
+    /// <p>The instance type for a task.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p> The reason a task has failed. </p>
+    /// <p>The reason a task has failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
@@ -257,45 +257,45 @@ impl GetRunTaskOutputBuilder {
     pub fn get_log_stream(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_stream
     }
-    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    /// <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
     pub fn gpus(mut self, input: i32) -> Self {
         self.gpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    /// <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
     pub fn set_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gpus = input;
         self
     }
-    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    /// <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
     pub fn get_gpus(&self) -> &::std::option::Option<i32> {
         &self.gpus
     }
-    /// <p> The instance type for a task. </p>
+    /// <p>The instance type for a task.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The instance type for a task. </p>
+    /// <p>The instance type for a task.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p> The instance type for a task. </p>
+    /// <p>The instance type for a task.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p> The reason a task has failed. </p>
+    /// <p>The reason a task has failed.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The reason a task has failed. </p>
+    /// <p>The reason a task has failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p> The reason a task has failed. </p>
+    /// <p>The reason a task has failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }

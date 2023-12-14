@@ -6,7 +6,7 @@
 pub struct TableRow {
     /// <p>The id of the row in the table.</p>
     pub row_id: ::std::string::String,
-    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
     pub cells: ::std::vec::Vec<crate::types::Cell>,
 }
 impl TableRow {
@@ -15,7 +15,7 @@ impl TableRow {
         use std::ops::Deref;
         self.row_id.deref()
     }
-    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
     pub fn cells(&self) -> &[crate::types::Cell] {
         use std::ops::Deref;
         self.cells.deref()
@@ -55,19 +55,19 @@ impl TableRowBuilder {
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
     ///
-    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
     pub fn cells(mut self, input: crate::types::Cell) -> Self {
         let mut v = self.cells.unwrap_or_default();
         v.push(input);
         self.cells = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
     pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>) -> Self {
         self.cells = input;
         self
     }
-    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
+    /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table.</p>
     pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cell>> {
         &self.cells
     }

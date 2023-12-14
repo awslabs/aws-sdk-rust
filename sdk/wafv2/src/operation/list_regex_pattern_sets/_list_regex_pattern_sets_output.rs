@@ -5,7 +5,7 @@
 pub struct ListRegexPatternSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
-    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub regex_pattern_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListRegexPatternSetsOutput {
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_pattern_sets.is_none()`.
     pub fn regex_pattern_sets(&self) -> &[crate::types::RegexPatternSetSummary] {
@@ -60,19 +60,19 @@ impl ListRegexPatternSetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_regex_pattern_sets`](Self::set_regex_pattern_sets).
     ///
-    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn regex_pattern_sets(mut self, input: crate::types::RegexPatternSetSummary) -> Self {
         let mut v = self.regex_pattern_sets.unwrap_or_default();
         v.push(input);
         self.regex_pattern_sets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn set_regex_pattern_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>) -> Self {
         self.regex_pattern_sets = input;
         self
     }
-    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn get_regex_pattern_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>> {
         &self.regex_pattern_sets
     }

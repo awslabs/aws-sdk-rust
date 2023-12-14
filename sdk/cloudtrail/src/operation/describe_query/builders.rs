@@ -140,17 +140,17 @@ impl DescribeQueryFluentBuilder {
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_id()
     }
-    /// <p> The alias that identifies a query template. </p>
+    /// <p>The alias that identifies a query template.</p>
     pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_alias(input.into());
         self
     }
-    /// <p> The alias that identifies a query template. </p>
+    /// <p>The alias that identifies a query template.</p>
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_alias(input);
         self
     }
-    /// <p> The alias that identifies a query template. </p>
+    /// <p>The alias that identifies a query template.</p>
     pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_alias()
     }

@@ -257,18 +257,18 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateLogging
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateLoggingConfigurationError {
-    /// <p>Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your request.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The operation failed because of a problem with your request. Examples include: </p>
+    /// <p>The operation failed because of a problem with your request. Examples include:</p>
     /// <ul>
-    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
-    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
-    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
+    /// <li><p>You specified an unsupported parameter name or value.</p></li>
+    /// <li><p>You tried to update a property with a value that isn't among the available types.</p></li>
+    /// <li><p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p></li>
     /// </ul>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The token you provided is stale or isn't valid for the operation. </p>
+    /// <p>The token you provided is stale or isn't valid for the operation.</p>
     InvalidTokenException(crate::types::error::InvalidTokenException),
-    /// <p>Unable to send logs to a configured logging destination. </p>
+    /// <p>Unable to send logs to a configured logging destination.</p>
     LogDestinationPermissionException(crate::types::error::LogDestinationPermissionException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

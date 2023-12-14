@@ -26,9 +26,9 @@ impl ChangeMessageVisibilityInputBuilder {
 /// <p>For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code> set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code> call. Thus, any attempt to change the visibility timeout or to delete that message 10 seconds after you initially change the visibility timeout (a total of 25 seconds) might result in an error.</p>
 /// <p>An Amazon SQS message has three basic states:</p>
 /// <ol>
-/// <li> <p>Sent to a queue by a producer.</p> </li>
-/// <li> <p>Received from the queue by a consumer.</p> </li>
-/// <li> <p>Deleted from the queue.</p> </li>
+/// <li><p>Sent to a queue by a producer.</p></li>
+/// <li><p>Received from the queue by a consumer.</p></li>
+/// <li><p>Deleted from the queue.</p></li>
 /// </ol>
 /// <p>A message is considered to be <i>stored</i> after it is sent to a queue by a producer, but not yet received from the queue by a consumer (that is, between states 1 and 2). There is no limit to the number of stored messages. A message is considered to be <i>in flight</i> after it is received from a queue by a consumer, but not yet deleted from the queue (that is, between states 2 and 3). There is a limit to the number of in flight messages.</p>
 /// <p>Limits that apply to in flight messages are unrelated to the <i>unlimited</i> number of stored messages.</p>

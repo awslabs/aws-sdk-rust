@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationProperties {
     /// <p>The ARN of the resource to publish to.</p>
-    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
+    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code></p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key to use for encryption.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl DestinationProperties {
     /// <p>The ARN of the resource to publish to.</p>
-    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
+    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code></p>
     pub fn destination_arn(&self) -> ::std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
@@ -37,19 +37,19 @@ pub struct DestinationPropertiesBuilder {
 }
 impl DestinationPropertiesBuilder {
     /// <p>The ARN of the resource to publish to.</p>
-    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
+    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code></p>
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource to publish to.</p>
-    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
+    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code></p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
     /// <p>The ARN of the resource to publish to.</p>
-    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
+    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code></p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_arn
     }

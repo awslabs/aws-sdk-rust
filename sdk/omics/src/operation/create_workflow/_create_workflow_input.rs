@@ -23,7 +23,7 @@ pub struct CreateWorkflowInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
 }
 impl CreateWorkflowInput {
@@ -67,7 +67,7 @@ impl CreateWorkflowInput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn accelerators(&self) -> ::std::option::Option<&crate::types::Accelerators> {
         self.accelerators.as_ref()
     }
@@ -254,17 +254,17 @@ impl CreateWorkflowInputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
         self.accelerators = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
         self.accelerators = input;
         self
     }
-    /// <p> The computational accelerator specified to run the workflow. </p>
+    /// <p>The computational accelerator specified to run the workflow.</p>
     pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
         &self.accelerators
     }

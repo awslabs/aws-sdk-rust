@@ -7,30 +7,30 @@
 pub struct LustreLogCreateConfiguration {
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
-    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
-    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
+    /// <li><p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
+    /// <li><p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
+    /// <li><p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
+    /// <li><p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
     /// </ul>
     pub level: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN, with the following requirements:</p>
     /// <ul>
-    /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
-    /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
-    /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-    /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
+    /// <li><p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p></li>
+    /// <li><p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p></li>
+    /// <li><p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p></li>
+    /// <li><p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p></li>
+    /// <li><p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p></li>
     /// </ul>
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl LustreLogCreateConfiguration {
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
-    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
-    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
+    /// <li><p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
+    /// <li><p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
+    /// <li><p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
+    /// <li><p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
     /// </ul>
     pub fn level(&self) -> ::std::option::Option<&crate::types::LustreAccessAuditLogLevel> {
         self.level.as_ref()
@@ -38,11 +38,11 @@ impl LustreLogCreateConfiguration {
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN, with the following requirements:</p>
     /// <ul>
-    /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
-    /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
-    /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-    /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
+    /// <li><p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p></li>
+    /// <li><p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p></li>
+    /// <li><p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p></li>
+    /// <li><p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p></li>
+    /// <li><p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p></li>
     /// </ul>
     pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
@@ -65,10 +65,10 @@ pub struct LustreLogCreateConfigurationBuilder {
 impl LustreLogCreateConfigurationBuilder {
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
-    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
-    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
+    /// <li><p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
+    /// <li><p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
+    /// <li><p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
+    /// <li><p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
     /// </ul>
     /// This field is required.
     pub fn level(mut self, input: crate::types::LustreAccessAuditLogLevel) -> Self {
@@ -77,10 +77,10 @@ impl LustreLogCreateConfigurationBuilder {
     }
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
-    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
-    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
+    /// <li><p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
+    /// <li><p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
+    /// <li><p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
+    /// <li><p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
     /// </ul>
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>) -> Self {
         self.level = input;
@@ -88,10 +88,10 @@ impl LustreLogCreateConfigurationBuilder {
     }
     /// <p>Sets which data repository events are logged by Amazon FSx.</p>
     /// <ul>
-    /// <li> <p> <code>WARN_ONLY</code> - only warning events are logged.</p> </li>
-    /// <li> <p> <code>ERROR_ONLY</code> - only error events are logged.</p> </li>
-    /// <li> <p> <code>WARN_ERROR</code> - both warning events and error events are logged.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
+    /// <li><p><code>WARN_ONLY</code> - only warning events are logged.</p></li>
+    /// <li><p><code>ERROR_ONLY</code> - only error events are logged.</p></li>
+    /// <li><p><code>WARN_ERROR</code> - both warning events and error events are logged.</p></li>
+    /// <li><p><code>DISABLED</code> - logging of data repository events is turned off.</p></li>
     /// </ul>
     pub fn get_level(&self) -> &::std::option::Option<crate::types::LustreAccessAuditLogLevel> {
         &self.level
@@ -99,11 +99,11 @@ impl LustreLogCreateConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN, with the following requirements:</p>
     /// <ul>
-    /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
-    /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
-    /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-    /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
+    /// <li><p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p></li>
+    /// <li><p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p></li>
+    /// <li><p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p></li>
+    /// <li><p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p></li>
+    /// <li><p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p></li>
     /// </ul>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -112,11 +112,11 @@ impl LustreLogCreateConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN, with the following requirements:</p>
     /// <ul>
-    /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
-    /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
-    /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-    /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
+    /// <li><p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p></li>
+    /// <li><p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p></li>
+    /// <li><p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p></li>
+    /// <li><p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p></li>
+    /// <li><p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p></li>
     /// </ul>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
@@ -125,11 +125,11 @@ impl LustreLogCreateConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs.</p>
     /// <p>The destination can be any Amazon CloudWatch Logs log group ARN, with the following requirements:</p>
     /// <ul>
-    /// <li> <p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p> </li>
-    /// <li> <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p> </li>
-    /// <li> <p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li>
-    /// <li> <p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p> </li>
-    /// <li> <p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p> </li>
+    /// <li><p>The destination ARN that you provide must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p></li>
+    /// <li><p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix.</p></li>
+    /// <li><p>If you do not provide a destination, Amazon FSx will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p></li>
+    /// <li><p>If <code>Destination</code> is provided and the resource does not exist, the request will fail with a <code>BadRequest</code> error.</p></li>
+    /// <li><p>If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination in <code>Destination</code>.</p></li>
     /// </ul>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination

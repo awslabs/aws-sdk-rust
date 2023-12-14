@@ -22,7 +22,7 @@ impl AcceptAttachmentInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptAttachment`.
 ///
-/// <p>Accepts a core network attachment request. </p>
+/// <p>Accepts a core network attachment request.</p>
 /// <p>Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptAttachmentFluentBuilder {
@@ -109,17 +109,17 @@ impl AcceptAttachmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the attachment. </p>
+    /// <p>The ID of the attachment.</p>
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
-    /// <p>The ID of the attachment. </p>
+    /// <p>The ID of the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }
-    /// <p>The ID of the attachment. </p>
+    /// <p>The ID of the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attachment_id()
     }

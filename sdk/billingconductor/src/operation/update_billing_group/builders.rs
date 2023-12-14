@@ -22,7 +22,7 @@ impl UpdateBillingGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateBillingGroup`.
 ///
-/// <p>This updates an existing billing group. </p>
+/// <p>This updates an existing billing group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBillingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl UpdateBillingGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group being updated.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group being updated.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group being updated.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The name of the billing group. The names must be unique to each billing group. </p>
+    /// <p>The name of the billing group. The names must be unique to each billing group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the billing group. The names must be unique to each billing group. </p>
+    /// <p>The name of the billing group. The names must be unique to each billing group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the billing group. The names must be unique to each billing group. </p>
+    /// <p>The name of the billing group. The names must be unique to each billing group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The status of the billing group. Only one of the valid values can be used. </p>
+    /// <p>The status of the billing group. Only one of the valid values can be used.</p>
     pub fn status(mut self, input: crate::types::BillingGroupStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status of the billing group. Only one of the valid values can be used. </p>
+    /// <p>The status of the billing group. Only one of the valid values can be used.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BillingGroupStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status of the billing group. Only one of the valid values can be used. </p>
+    /// <p>The status of the billing group. Only one of the valid values can be used.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BillingGroupStatus> {
         self.inner.get_status()
     }
-    /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
         self.inner = self.inner.computation_preference(input);
         self
     }
-    /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn set_computation_preference(mut self, input: ::std::option::Option<crate::types::ComputationPreference>) -> Self {
         self.inner = self.inner.set_computation_preference(input);
         self
     }
-    /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn get_computation_preference(&self) -> &::std::option::Option<crate::types::ComputationPreference> {
         self.inner.get_computation_preference()
     }
-    /// <p>A description of the billing group. </p>
+    /// <p>A description of the billing group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description of the billing group. </p>
+    /// <p>A description of the billing group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description of the billing group. </p>
+    /// <p>A description of the billing group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

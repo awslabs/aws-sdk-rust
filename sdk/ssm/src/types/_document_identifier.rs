@@ -14,7 +14,7 @@ pub struct DocumentIdentifier {
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
-    /// <p>The operating system platform. </p>
+    /// <p>The operating system platform.</p>
     pub platform_types: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     /// <p>The document version.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct DocumentIdentifier {
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The document format, either JSON or YAML.</p>
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
-    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The tags, or metadata, that have been applied to the document.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -56,7 +56,7 @@ impl DocumentIdentifier {
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The operating system platform. </p>
+    /// <p>The operating system platform.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_types.is_none()`.
     pub fn platform_types(&self) -> &[crate::types::PlatformType] {
@@ -78,7 +78,7 @@ impl DocumentIdentifier {
     pub fn document_format(&self) -> ::std::option::Option<&crate::types::DocumentFormat> {
         self.document_format.as_ref()
     }
-    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
     }
@@ -205,19 +205,19 @@ impl DocumentIdentifierBuilder {
     ///
     /// To override the contents of this collection use [`set_platform_types`](Self::set_platform_types).
     ///
-    /// <p>The operating system platform. </p>
+    /// <p>The operating system platform.</p>
     pub fn platform_types(mut self, input: crate::types::PlatformType) -> Self {
         let mut v = self.platform_types.unwrap_or_default();
         v.push(input);
         self.platform_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The operating system platform. </p>
+    /// <p>The operating system platform.</p>
     pub fn set_platform_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>) -> Self {
         self.platform_types = input;
         self
     }
-    /// <p>The operating system platform. </p>
+    /// <p>The operating system platform.</p>
     pub fn get_platform_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
         &self.platform_types
     }
@@ -277,17 +277,17 @@ impl DocumentIdentifierBuilder {
     pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
         &self.document_format
     }
-    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
     }
-    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_type
     }

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ResendContactReachabilityEmailOutput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput::domain_name): <p>The domain name for which you requested a confirmation email.</p>
     ///   - [`email_address(Option<String>)`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput::email_address): <p>The email address for the registrant contact at the time that we sent the verification email.</p>
-    ///   - [`is_already_verified(Option<bool>)`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput::is_already_verified): <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    ///   - [`is_already_verified(Option<bool>)`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput::is_already_verified): <p><code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     /// - On failure, responds with [`SdkError<ResendContactReachabilityEmailError>`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError)
     pub fn resend_contact_reachability_email(
         &self,

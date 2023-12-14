@@ -22,7 +22,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDisassociateResourcesFromCustomLineItem`.
 ///
-/// <p> Disassociates a batch of resources from a percentage custom line item. </p>
+/// <p>Disassociates a batch of resources from a percentage custom line item.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,17 +115,17 @@ impl BatchDisassociateResourcesFromCustomLineItemFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_arn(input.into());
         self
     }
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_arn(input);
         self
     }
-    /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// <p>A percentage custom line item ARN to disassociate the resources from.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_arn()
     }
@@ -133,17 +133,17 @@ impl BatchDisassociateResourcesFromCustomLineItemFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
-    /// <p> A list containing the ARNs of resources to be disassociated. </p>
+    /// <p>A list containing the ARNs of resources to be disassociated.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }

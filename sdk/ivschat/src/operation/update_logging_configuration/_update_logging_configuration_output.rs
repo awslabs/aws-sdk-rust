@@ -17,7 +17,7 @@ pub struct UpdateLoggingConfigurationOutput {
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
     pub state: ::std::option::Option<crate::types::UpdateLoggingConfigurationState>,
-    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -50,7 +50,7 @@ impl UpdateLoggingConfigurationOutput {
     pub fn state(&self) -> ::std::option::Option<&crate::types::UpdateLoggingConfigurationState> {
         self.state.as_ref()
     }
-    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -184,19 +184,19 @@ impl UpdateLoggingConfigurationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
+    /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentOutput {
-    /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
+    /// <p>The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     pub assessment: ::std::option::Option<crate::types::Assessment>,
     _request_id: Option<String>,
 }
 impl UpdateAssessmentOutput {
-    /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
+    /// <p>The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     pub fn assessment(&self) -> ::std::option::Option<&crate::types::Assessment> {
         self.assessment.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateAssessmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateAssessmentOutputBuilder {
-    /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
+    /// <p>The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     pub fn assessment(mut self, input: crate::types::Assessment) -> Self {
         self.assessment = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
+    /// <p>The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     pub fn set_assessment(mut self, input: ::std::option::Option<crate::types::Assessment>) -> Self {
         self.assessment = input;
         self
     }
-    /// <p> The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
+    /// <p>The response object for the <code>UpdateAssessment</code> API. This is the name of the updated assessment.</p>
     pub fn get_assessment(&self) -> &::std::option::Option<crate::types::Assessment> {
         &self.assessment
     }

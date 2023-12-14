@@ -22,7 +22,7 @@ impl GetExportInputBuilder {
 }
 /// Fluent builder constructing a request to `GetExport`.
 ///
-/// <p>Exports the contents of a Amazon Lex resource in a specified format. </p>
+/// <p>Exports the contents of a Amazon Lex resource in a specified format.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -130,17 +130,17 @@ impl GetExportFluentBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version()
     }
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         self.inner.get_resource_type()
     }

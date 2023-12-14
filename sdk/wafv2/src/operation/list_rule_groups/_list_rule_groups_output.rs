@@ -5,7 +5,7 @@
 pub struct ListRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
-    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListRuleGroupsOutput {
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_groups.is_none()`.
     pub fn rule_groups(&self) -> &[crate::types::RuleGroupSummary] {
@@ -60,19 +60,19 @@ impl ListRuleGroupsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
     ///
-    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn rule_groups(mut self, input: crate::types::RuleGroupSummary) -> Self {
         let mut v = self.rule_groups.unwrap_or_default();
         v.push(input);
         self.rule_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>) -> Self {
         self.rule_groups = input;
         self
     }
-    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>> {
         &self.rule_groups
     }

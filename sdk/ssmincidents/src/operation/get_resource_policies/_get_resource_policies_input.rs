@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesInput {
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resource policies to display for each page of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct GetResourcePoliciesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourcePoliciesInput {
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct GetResourcePoliciesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourcePoliciesInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

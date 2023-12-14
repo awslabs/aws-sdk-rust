@@ -14,7 +14,7 @@ pub struct CreateLocationSmbInput {
     /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub user: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub domain: ::std::option::Option<::std::string::String>,
@@ -45,7 +45,7 @@ impl CreateLocationSmbInput {
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
@@ -165,21 +165,21 @@ impl CreateLocationSmbInputBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
+    /// <p>Specifies the Windows domain name that your SMB file server belongs to.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right file server.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {

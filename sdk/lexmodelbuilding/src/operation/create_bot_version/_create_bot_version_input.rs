@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotVersionInput {
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
 }
 impl CreateBotVersionInput {
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct CreateBotVersionInputBuilder {
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
 }
 impl CreateBotVersionInputBuilder {
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

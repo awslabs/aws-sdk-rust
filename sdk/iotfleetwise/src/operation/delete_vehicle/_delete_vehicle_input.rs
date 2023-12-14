@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVehicleInput {
-    /// <p>The ID of the vehicle to delete. </p>
+    /// <p>The ID of the vehicle to delete.</p>
     pub vehicle_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVehicleInput {
-    /// <p>The ID of the vehicle to delete. </p>
+    /// <p>The ID of the vehicle to delete.</p>
     pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVehicleInputBuilder {
-    /// <p>The ID of the vehicle to delete. </p>
+    /// <p>The ID of the vehicle to delete.</p>
     /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the vehicle to delete. </p>
+    /// <p>The ID of the vehicle to delete.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
-    /// <p>The ID of the vehicle to delete. </p>
+    /// <p>The ID of the vehicle to delete.</p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vehicle_name
     }

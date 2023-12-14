@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleOutput {
-    /// <p>The firewall rule that you just updated. </p>
+    /// <p>The firewall rule that you just updated.</p>
     pub firewall_rule: ::std::option::Option<crate::types::FirewallRule>,
     _request_id: Option<String>,
 }
 impl UpdateFirewallRuleOutput {
-    /// <p>The firewall rule that you just updated. </p>
+    /// <p>The firewall rule that you just updated.</p>
     pub fn firewall_rule(&self) -> ::std::option::Option<&crate::types::FirewallRule> {
         self.firewall_rule.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateFirewallRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFirewallRuleOutputBuilder {
-    /// <p>The firewall rule that you just updated. </p>
+    /// <p>The firewall rule that you just updated.</p>
     pub fn firewall_rule(mut self, input: crate::types::FirewallRule) -> Self {
         self.firewall_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The firewall rule that you just updated. </p>
+    /// <p>The firewall rule that you just updated.</p>
     pub fn set_firewall_rule(mut self, input: ::std::option::Option<crate::types::FirewallRule>) -> Self {
         self.firewall_rule = input;
         self
     }
-    /// <p>The firewall rule that you just updated. </p>
+    /// <p>The firewall rule that you just updated.</p>
     pub fn get_firewall_rule(&self) -> &::std::option::Option<crate::types::FirewallRule> {
         &self.firewall_rule
     }

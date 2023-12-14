@@ -9,8 +9,8 @@ pub struct ListDevicePoolsInput {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
-    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
+    /// <li><p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
+    /// <li><p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::DevicePoolType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -24,8 +24,8 @@ impl ListDevicePoolsInput {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
-    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
+    /// <li><p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
+    /// <li><p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DevicePoolType> {
         self.r#type.as_ref()
@@ -69,8 +69,8 @@ impl ListDevicePoolsInputBuilder {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
-    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
+    /// <li><p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
+    /// <li><p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DevicePoolType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -79,8 +79,8 @@ impl ListDevicePoolsInputBuilder {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
-    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
+    /// <li><p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
+    /// <li><p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DevicePoolType>) -> Self {
         self.r#type = input;
@@ -89,8 +89,8 @@ impl ListDevicePoolsInputBuilder {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
-    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
+    /// <li><p>CURATED: A device pool that is created and managed by AWS Device Farm.</p></li>
+    /// <li><p>PRIVATE: A device pool that is created and managed by the device pool developer.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DevicePoolType> {
         &self.r#type

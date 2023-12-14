@@ -6,10 +6,10 @@
 pub struct BehaviorCriteria {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
-    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
+    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The value to be compared with the <code>metric</code>.</p>
@@ -22,16 +22,16 @@ pub struct BehaviorCriteria {
     pub consecutive_datapoints_to_clear: ::std::option::Option<i32>,
     /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
     pub statistical_threshold: ::std::option::Option<crate::types::StatisticalThreshold>,
-    /// <p> The configuration of an ML Detect </p>
+    /// <p>The configuration of an ML Detect</p>
     pub ml_detection_config: ::std::option::Option<crate::types::MachineLearningDetectionConfig>,
 }
 impl BehaviorCriteria {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
-    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
+    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
@@ -56,7 +56,7 @@ impl BehaviorCriteria {
     pub fn statistical_threshold(&self) -> ::std::option::Option<&crate::types::StatisticalThreshold> {
         self.statistical_threshold.as_ref()
     }
-    /// <p> The configuration of an ML Detect </p>
+    /// <p>The configuration of an ML Detect</p>
     pub fn ml_detection_config(&self) -> ::std::option::Option<&crate::types::MachineLearningDetectionConfig> {
         self.ml_detection_config.as_ref()
     }
@@ -83,10 +83,10 @@ pub struct BehaviorCriteriaBuilder {
 impl BehaviorCriteriaBuilder {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
-    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
+    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -94,10 +94,10 @@ impl BehaviorCriteriaBuilder {
     }
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
-    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
+    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
@@ -105,10 +105,10 @@ impl BehaviorCriteriaBuilder {
     }
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
-    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
-    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
+    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator
@@ -183,17 +183,17 @@ impl BehaviorCriteriaBuilder {
     pub fn get_statistical_threshold(&self) -> &::std::option::Option<crate::types::StatisticalThreshold> {
         &self.statistical_threshold
     }
-    /// <p> The configuration of an ML Detect </p>
+    /// <p>The configuration of an ML Detect</p>
     pub fn ml_detection_config(mut self, input: crate::types::MachineLearningDetectionConfig) -> Self {
         self.ml_detection_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The configuration of an ML Detect </p>
+    /// <p>The configuration of an ML Detect</p>
     pub fn set_ml_detection_config(mut self, input: ::std::option::Option<crate::types::MachineLearningDetectionConfig>) -> Self {
         self.ml_detection_config = input;
         self
     }
-    /// <p> The configuration of an ML Detect </p>
+    /// <p>The configuration of an ML Detect</p>
     pub fn get_ml_detection_config(&self) -> &::std::option::Option<crate::types::MachineLearningDetectionConfig> {
         &self.ml_detection_config
     }

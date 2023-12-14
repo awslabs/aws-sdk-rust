@@ -16,7 +16,7 @@ pub struct Blueprint {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the blueprint is active. Inactive blueprints are listed to support customers with existing instances but are not necessarily available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     pub is_active: ::std::option::Option<bool>,
-    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
+    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes.</p>
     pub min_power: ::std::option::Option<i32>,
     /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
     pub version: ::std::option::Option<::std::string::String>,
@@ -58,7 +58,7 @@ impl Blueprint {
     pub fn is_active(&self) -> ::std::option::Option<bool> {
         self.is_active
     }
-    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
+    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes.</p>
     pub fn min_power(&self) -> ::std::option::Option<i32> {
         self.min_power
     }
@@ -199,17 +199,17 @@ impl BlueprintBuilder {
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
         &self.is_active
     }
-    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
+    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes.</p>
     pub fn min_power(mut self, input: i32) -> Self {
         self.min_power = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
+    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes.</p>
     pub fn set_min_power(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_power = input;
         self
     }
-    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
+    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes.</p>
     pub fn get_min_power(&self) -> &::std::option::Option<i32> {
         &self.min_power
     }

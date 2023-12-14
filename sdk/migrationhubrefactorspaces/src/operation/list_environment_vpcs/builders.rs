@@ -22,7 +22,7 @@ impl ListEnvironmentVpcsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEnvironmentVpcs`.
 ///
-/// <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private clouds (VPCs) that are part of the environment. </p>
+/// <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private clouds (VPCs) that are part of the environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnvironmentVpcsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListEnvironmentVpcsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator {
         crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
-    /// <p>The ID of the environment. </p>
+    /// <p>The ID of the environment.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_identifier()
     }

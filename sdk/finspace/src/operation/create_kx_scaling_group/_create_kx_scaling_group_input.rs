@@ -5,15 +5,15 @@
 pub struct CreateKxScalingGroupInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group. </p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     pub scaling_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
+    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     pub host_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the availability zones.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
-    /// <p> A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group. </p>
+    /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKxScalingGroupInput {
@@ -21,15 +21,15 @@ impl CreateKxScalingGroupInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group. </p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.scaling_group_name.as_deref()
     }
-    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
+    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     pub fn host_type(&self) -> ::std::option::Option<&str> {
         self.host_type.as_deref()
     }
@@ -37,7 +37,7 @@ impl CreateKxScalingGroupInput {
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
-    /// <p> A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group. </p>
+    /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -76,48 +76,48 @@ impl CreateKxScalingGroupInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group. </p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
     /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group. </p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group. </p>
+    /// <p>A unique identifier for the kdb environment, where you want to create the scaling group.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     /// This field is required.
     pub fn scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_group_name = input;
         self
     }
-    /// <p>A unique identifier for the kdb scaling group. </p>
+    /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scaling_group_name
     }
-    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
+    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     /// This field is required.
     pub fn host_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
+    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     pub fn set_host_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_type = input;
         self
     }
-    /// <p> The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed. </p>
+    /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     pub fn get_host_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_type
     }
@@ -140,19 +140,19 @@ impl CreateKxScalingGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group. </p>
+    /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p> A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group. </p>
+    /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group. </p>
+    /// <p>A list of key-value pairs to label the scaling group. You can add up to 50 tags to a scaling group.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

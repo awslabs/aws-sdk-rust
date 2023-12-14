@@ -20,10 +20,10 @@ pub struct ScheduledActionResponse {
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end time of </p>
+    /// <p>The end time of</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub target_action: ::std::option::Option<crate::types::TargetAction>,
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
@@ -63,12 +63,12 @@ impl ScheduledActionResponse {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end time of </p>
+    /// <p>The end time of</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn target_action(&self) -> ::std::option::Option<&crate::types::TargetAction> {
         self.target_action.as_ref()
     }
@@ -215,34 +215,34 @@ impl ScheduledActionResponseBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end time of </p>
+    /// <p>The end time of</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time of </p>
+    /// <p>The end time of</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time of </p>
+    /// <p>The end time of</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn target_action(mut self, input: crate::types::TargetAction) -> Self {
         self.target_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::TargetAction>) -> Self {
         self.target_action = input;
         self
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
-    /// <p> <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code> </p>
+    /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn get_target_action(&self) -> &::std::option::Option<crate::types::TargetAction> {
         &self.target_action
     }

@@ -22,7 +22,7 @@ impl StartMetadataModelConversionInputBuilder {
 }
 /// Fluent builder constructing a request to `StartMetadataModelConversion`.
 ///
-/// <p>Converts your source database objects to a format compatible with the target database. </p>
+/// <p>Converts your source database objects to a format compatible with the target database.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMetadataModelConversionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

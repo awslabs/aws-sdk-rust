@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssessmentFrameworkShareInput {
-    /// <p> The unique identifier for the custom framework to be shared. </p>
+    /// <p>The unique identifier for the custom framework to be shared.</p>
     pub framework_id: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Web Services account of the recipient. </p>
+    /// <p>The Amazon Web Services account of the recipient.</p>
     pub destination_account: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Web Services Region of the recipient. </p>
+    /// <p>The Amazon Web Services Region of the recipient.</p>
     pub destination_region: ::std::option::Option<::std::string::String>,
-    /// <p> An optional comment from the sender about the share request. </p>
+    /// <p>An optional comment from the sender about the share request.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl StartAssessmentFrameworkShareInput {
-    /// <p> The unique identifier for the custom framework to be shared. </p>
+    /// <p>The unique identifier for the custom framework to be shared.</p>
     pub fn framework_id(&self) -> ::std::option::Option<&str> {
         self.framework_id.as_deref()
     }
-    /// <p> The Amazon Web Services account of the recipient. </p>
+    /// <p>The Amazon Web Services account of the recipient.</p>
     pub fn destination_account(&self) -> ::std::option::Option<&str> {
         self.destination_account.as_deref()
     }
-    /// <p> The Amazon Web Services Region of the recipient. </p>
+    /// <p>The Amazon Web Services Region of the recipient.</p>
     pub fn destination_region(&self) -> ::std::option::Option<&str> {
         self.destination_region.as_deref()
     }
-    /// <p> An optional comment from the sender about the share request. </p>
+    /// <p>An optional comment from the sender about the share request.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
@@ -47,62 +47,62 @@ pub struct StartAssessmentFrameworkShareInputBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl StartAssessmentFrameworkShareInputBuilder {
-    /// <p> The unique identifier for the custom framework to be shared. </p>
+    /// <p>The unique identifier for the custom framework to be shared.</p>
     /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier for the custom framework to be shared. </p>
+    /// <p>The unique identifier for the custom framework to be shared.</p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_id = input;
         self
     }
-    /// <p> The unique identifier for the custom framework to be shared. </p>
+    /// <p>The unique identifier for the custom framework to be shared.</p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.framework_id
     }
-    /// <p> The Amazon Web Services account of the recipient. </p>
+    /// <p>The Amazon Web Services account of the recipient.</p>
     /// This field is required.
     pub fn destination_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Web Services account of the recipient. </p>
+    /// <p>The Amazon Web Services account of the recipient.</p>
     pub fn set_destination_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_account = input;
         self
     }
-    /// <p> The Amazon Web Services account of the recipient. </p>
+    /// <p>The Amazon Web Services account of the recipient.</p>
     pub fn get_destination_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_account
     }
-    /// <p> The Amazon Web Services Region of the recipient. </p>
+    /// <p>The Amazon Web Services Region of the recipient.</p>
     /// This field is required.
     pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Web Services Region of the recipient. </p>
+    /// <p>The Amazon Web Services Region of the recipient.</p>
     pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_region = input;
         self
     }
-    /// <p> The Amazon Web Services Region of the recipient. </p>
+    /// <p>The Amazon Web Services Region of the recipient.</p>
     pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_region
     }
-    /// <p> An optional comment from the sender about the share request. </p>
+    /// <p>An optional comment from the sender about the share request.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> An optional comment from the sender about the share request. </p>
+    /// <p>An optional comment from the sender about the share request.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
-    /// <p> An optional comment from the sender about the share request. </p>
+    /// <p>An optional comment from the sender about the share request.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }

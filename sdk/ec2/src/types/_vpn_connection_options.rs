@@ -17,8 +17,8 @@ pub struct VpnConnectionOptions {
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     pub remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub outside_ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>The transit gateway attachment ID in use for the VPN tunnel.</p>
     pub transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
@@ -53,8 +53,8 @@ impl VpnConnectionOptions {
         self.remote_ipv6_network_cidr.as_deref()
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn outside_ip_address_type(&self) -> ::std::option::Option<&str> {
         self.outside_ip_address_type.as_deref()
     }
@@ -181,22 +181,22 @@ impl VpnConnectionOptionsBuilder {
         &self.remote_ipv6_network_cidr
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn outside_ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outside_ip_address_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn set_outside_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outside_ip_address_type = input;
         self
     }
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway.</p>
-    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
-    /// <p>Default: <code>PublicIpv4</code> </p>
+    /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code></p>
+    /// <p>Default: <code>PublicIpv4</code></p>
     pub fn get_outside_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.outside_ip_address_type
     }

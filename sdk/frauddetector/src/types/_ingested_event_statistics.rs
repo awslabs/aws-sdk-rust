@@ -12,7 +12,7 @@ pub struct IngestedEventStatistics {
     pub least_recent_event: ::std::option::Option<::std::string::String>,
     /// <p>The newest stored event.</p>
     pub most_recent_event: ::std::option::Option<::std::string::String>,
-    /// <p>Timestamp of when the stored event was last updated. </p>
+    /// <p>Timestamp of when the stored event was last updated.</p>
     pub last_updated_time: ::std::option::Option<::std::string::String>,
 }
 impl IngestedEventStatistics {
@@ -32,7 +32,7 @@ impl IngestedEventStatistics {
     pub fn most_recent_event(&self) -> ::std::option::Option<&str> {
         self.most_recent_event.as_deref()
     }
-    /// <p>Timestamp of when the stored event was last updated. </p>
+    /// <p>Timestamp of when the stored event was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
@@ -111,17 +111,17 @@ impl IngestedEventStatisticsBuilder {
     pub fn get_most_recent_event(&self) -> &::std::option::Option<::std::string::String> {
         &self.most_recent_event
     }
-    /// <p>Timestamp of when the stored event was last updated. </p>
+    /// <p>Timestamp of when the stored event was last updated.</p>
     pub fn last_updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Timestamp of when the stored event was last updated. </p>
+    /// <p>Timestamp of when the stored event was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>Timestamp of when the stored event was last updated. </p>
+    /// <p>Timestamp of when the stored event was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated_time
     }

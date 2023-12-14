@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSignalCatalogInput {
-    /// <p> The name of the signal catalog to delete. </p>
+    /// <p>The name of the signal catalog to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSignalCatalogInput {
-    /// <p> The name of the signal catalog to delete. </p>
+    /// <p>The name of the signal catalog to delete.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSignalCatalogInputBuilder {
-    /// <p> The name of the signal catalog to delete. </p>
+    /// <p>The name of the signal catalog to delete.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the signal catalog to delete. </p>
+    /// <p>The name of the signal catalog to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the signal catalog to delete. </p>
+    /// <p>The name of the signal catalog to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

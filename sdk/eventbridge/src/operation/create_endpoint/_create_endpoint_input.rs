@@ -11,7 +11,7 @@ pub struct CreateEndpointInput {
     pub routing_config: ::std::option::Option<crate::types::RoutingConfig>,
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     pub event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
@@ -35,7 +35,7 @@ impl CreateEndpointInput {
     pub fn replication_config(&self) -> ::std::option::Option<&crate::types::ReplicationConfig> {
         self.replication_config.as_ref()
     }
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     ///
@@ -129,7 +129,7 @@ impl CreateEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
     ///
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     pub fn event_buses(mut self, input: crate::types::EndpointEventBus) -> Self {
@@ -138,14 +138,14 @@ impl CreateEndpointInputBuilder {
         self.event_buses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.event_buses = input;
         self
     }
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {

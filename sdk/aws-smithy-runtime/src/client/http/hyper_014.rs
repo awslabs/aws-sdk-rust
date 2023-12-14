@@ -287,14 +287,19 @@ fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<Connect
         let mut extensions = Extensions::new();
         conn.get_extras(&mut extensions);
         let http_info = extensions.get::<HttpInfo>();
-        let smithy_connection = ConnectionMetadata::new(
-            conn.is_proxied(),
-            http_info.map(|info| info.remote_addr()),
-            move || match capture_conn.connection_metadata().as_ref() {
+        let mut builder = ConnectionMetadata::builder()
+            .proxied(conn.is_proxied())
+            .poison_fn(move || match capture_conn.connection_metadata().as_ref() {
                 Some(conn) => conn.poison(),
                 None => tracing::trace!("no connection existed to poison"),
-            },
-        );
+            });
+
+        builder
+            .set_local_addr(http_info.map(|info| info.local_addr()))
+            .set_remote_addr(http_info.map(|info| info.remote_addr()));
+
+        let smithy_connection = builder.build();
+
         Some(smithy_connection)
     } else {
         None

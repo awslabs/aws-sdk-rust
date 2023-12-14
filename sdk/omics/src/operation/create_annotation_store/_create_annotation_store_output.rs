@@ -15,7 +15,7 @@ pub struct CreateAnnotationStoreOutput {
     pub status: crate::types::StoreStatus,
     /// <p>The store's name.</p>
     pub name: ::std::string::String,
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub version_name: ::std::string::String,
     /// <p>When the store was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
@@ -48,7 +48,7 @@ impl CreateAnnotationStoreOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn version_name(&self) -> &str {
         use std::ops::Deref;
         self.version_name.deref()
@@ -172,18 +172,18 @@ impl CreateAnnotationStoreOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    /// <p>The name given to an annotation store version to distinguish it from other versions.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }

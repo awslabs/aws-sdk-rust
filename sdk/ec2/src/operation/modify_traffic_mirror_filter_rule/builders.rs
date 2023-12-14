@@ -23,7 +23,7 @@ impl ModifyTrafficMirrorFilterRuleInputBuilder {
 /// Fluent builder constructing a request to `ModifyTrafficMirrorFilterRule`.
 ///
 /// <p>Modifies the specified Traffic Mirror rule.</p>
-/// <p> <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an IPv4 range or an IPv6 range.</p>
+/// <p><code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an IPv4 range or an IPv6 range.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorFilterRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

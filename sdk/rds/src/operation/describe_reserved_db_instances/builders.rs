@@ -157,19 +157,19 @@ impl DescribeReservedDBInstancesFluentBuilder {
         self.inner.get_db_instance_class()
     }
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.duration(input.into());
         self
     }
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_duration(input);
         self
     }
     /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
-    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_duration()
     }
@@ -188,19 +188,19 @@ impl DescribeReservedDBInstancesFluentBuilder {
         self.inner.get_product_description()
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_type(input.into());
         self
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
-    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+    /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_offering_type()
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePricingRuleOutput {
-    /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
+    /// <p>The Amazon Resource Name (ARN) of the deleted pricing rule.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeletePricingRuleOutput {
-    /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
+    /// <p>The Amazon Resource Name (ARN) of the deleted pricing rule.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DeletePricingRuleOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeletePricingRuleOutputBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
+    /// <p>The Amazon Resource Name (ARN) of the deleted pricing rule.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
+    /// <p>The Amazon Resource Name (ARN) of the deleted pricing rule.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
+    /// <p>The Amazon Resource Name (ARN) of the deleted pricing rule.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

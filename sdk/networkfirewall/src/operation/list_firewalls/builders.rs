@@ -23,7 +23,7 @@ impl ListFirewallsInputBuilder {
 /// Fluent builder constructing a request to `ListFirewalls`.
 ///
 /// <p>Retrieves the metadata for the firewalls that you have defined. If you provide VPC identifiers in your request, this returns only the firewalls for those VPCs.</p>
-/// <p>Depending on your setting for max results and the number of firewalls, a single call might not return the full list. </p>
+/// <p>Depending on your setting for max results and the number of firewalls, a single call might not return the full list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetListElementsOutput {
-    /// <p> The list elements. </p>
+    /// <p>The list elements.</p>
     pub elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The next page token. </p>
+    /// <p>The next page token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetListElementsOutput {
-    /// <p> The list elements. </p>
+    /// <p>The list elements.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
     pub fn elements(&self) -> &[::std::string::String] {
         self.elements.as_deref().unwrap_or_default()
     }
-    /// <p> The next page token. </p>
+    /// <p>The next page token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetListElementsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
     ///
-    /// <p> The list elements. </p>
+    /// <p>The list elements.</p>
     pub fn elements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.elements.unwrap_or_default();
         v.push(input.into());
         self.elements = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list elements. </p>
+    /// <p>The list elements.</p>
     pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.elements = input;
         self
     }
-    /// <p> The list elements. </p>
+    /// <p>The list elements.</p>
     pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.elements
     }
-    /// <p> The next page token. </p>
+    /// <p>The next page token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The next page token. </p>
+    /// <p>The next page token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The next page token. </p>
+    /// <p>The next page token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

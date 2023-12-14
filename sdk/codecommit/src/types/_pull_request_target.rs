@@ -8,7 +8,7 @@ pub struct PullRequestTarget {
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub source_reference: ::std::option::Option<::std::string::String>,
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub destination_reference: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
     pub destination_commit: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl PullRequestTarget {
     pub fn source_reference(&self) -> ::std::option::Option<&str> {
         self.source_reference.as_deref()
     }
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn destination_reference(&self) -> ::std::option::Option<&str> {
         self.destination_reference.as_deref()
     }
@@ -97,17 +97,17 @@ impl PullRequestTargetBuilder {
     pub fn get_source_reference(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_reference
     }
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn destination_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_reference = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn set_destination_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_reference = input;
         self
     }
-    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn get_destination_reference(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_reference
     }

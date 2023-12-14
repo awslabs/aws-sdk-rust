@@ -245,9 +245,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateTableEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateTableError {
-    /// <p>You do not have sufficient access to perform this action. </p>
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an action and the same or a different action is already in progress, or if you try to create a resource that already exists. </p>
+    /// <p>Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an action and the same or a different action is already in progress, or if you try to create a resource that already exists.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Amazon Keyspaces was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),

@@ -17,7 +17,7 @@ pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The name of the task list used for the decision tasks of the child workflow execution.</p>
     pub task_list: ::std::option::Option<crate::types::TaskList>,
-    /// <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code> <code>Decision</code> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the cause of events.</p>
@@ -25,9 +25,9 @@ pub struct StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <code>TerminateWorkflowExecution</code> action or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub child_policy: crate::types::ChildPolicy,
     /// <p>The maximum duration allowed for the decision tasks for this workflow execution.</p>
@@ -65,7 +65,7 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
     pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
         self.task_list.as_ref()
     }
-    /// <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn task_priority(&self) -> ::std::option::Option<&str> {
         self.task_priority.as_deref()
@@ -77,9 +77,9 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
     /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <code>TerminateWorkflowExecution</code> action or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn child_policy(&self) -> &crate::types::ChildPolicy {
         &self.child_policy
@@ -215,19 +215,19 @@ impl StartChildWorkflowExecutionInitiatedEventAttributesBuilder {
     pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
         &self.task_list
     }
-    /// <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn task_priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_priority = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_priority = input;
         self
     }
-    /// <p> The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>The priority assigned for the decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_priority
@@ -250,9 +250,9 @@ impl StartChildWorkflowExecutionInitiatedEventAttributesBuilder {
     /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <code>TerminateWorkflowExecution</code> action or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     /// This field is required.
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
@@ -262,9 +262,9 @@ impl StartChildWorkflowExecutionInitiatedEventAttributesBuilder {
     /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <code>TerminateWorkflowExecution</code> action or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.child_policy = input;
@@ -273,9 +273,9 @@ impl StartChildWorkflowExecutionInitiatedEventAttributesBuilder {
     /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the <code>TerminateWorkflowExecution</code> action or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
-    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
-    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
         &self.child_policy

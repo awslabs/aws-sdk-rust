@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAccountOutput {
-    /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
+    /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     pub register_account_status: crate::types::RegistrationStatus,
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     pub timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
-    /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
+    /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     pub iam_resources: ::std::option::Option<crate::types::IamResources>,
-    /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl RegisterAccountOutput {
-    /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
+    /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     pub fn register_account_status(&self) -> &crate::types::RegistrationStatus {
         &self.register_account_status
     }
@@ -24,15 +24,15 @@ impl RegisterAccountOutput {
     pub fn timestream_resources(&self) -> ::std::option::Option<&crate::types::TimestreamResources> {
         self.timestream_resources.as_ref()
     }
-    /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
+    /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     pub fn iam_resources(&self) -> ::std::option::Option<&crate::types::IamResources> {
         self.iam_resources.as_ref()
     }
-    /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
@@ -61,18 +61,18 @@ pub struct RegisterAccountOutputBuilder {
     _request_id: Option<String>,
 }
 impl RegisterAccountOutputBuilder {
-    /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
+    /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     /// This field is required.
     pub fn register_account_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.register_account_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
+    /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     pub fn set_register_account_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.register_account_status = input;
         self
     }
-    /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
+    /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     pub fn get_register_account_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.register_account_status
     }
@@ -90,48 +90,48 @@ impl RegisterAccountOutputBuilder {
     pub fn get_timestream_resources(&self) -> &::std::option::Option<crate::types::TimestreamResources> {
         &self.timestream_resources
     }
-    /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
+    /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     /// This field is required.
     pub fn iam_resources(mut self, input: crate::types::IamResources) -> Self {
         self.iam_resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
+    /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     pub fn set_iam_resources(mut self, input: ::std::option::Option<crate::types::IamResources>) -> Self {
         self.iam_resources = input;
         self
     }
-    /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
+    /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     pub fn get_iam_resources(&self) -> &::std::option::Option<crate::types::IamResources> {
         &self.iam_resources
     }
-    /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     /// This field is required.
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
-    /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }

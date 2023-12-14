@@ -137,22 +137,22 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
         self.inner.get_association_type()
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
-    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
+    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
-    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
+    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
-    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
-    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
+    /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }

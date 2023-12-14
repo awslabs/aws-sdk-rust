@@ -15,7 +15,7 @@ pub struct UpdateAppInput {
     pub r#type: ::std::option::Option<crate::types::AppType>,
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub app_source: ::std::option::Option<crate::types::Source>,
-    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether SSL is enabled for the app.</p>
     pub enable_ssl: ::std::option::Option<bool>,
@@ -56,7 +56,7 @@ impl UpdateAppInput {
     pub fn app_source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.app_source.as_ref()
     }
-    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
     pub fn domains(&self) -> &[::std::string::String] {
@@ -203,19 +203,19 @@ impl UpdateAppInputBuilder {
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
-    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
         v.push(input.into());
         self.domains = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domains = input;
         self
     }
-    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code></p>
     pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domains
     }

@@ -5,10 +5,10 @@
 pub struct PutContainerPolicyInput {
     /// <p>The name of the container.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
-    /// <p>The contents of the policy, which includes the following: </p>
+    /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li> <p>One <code>Version</code> tag</p> </li>
-    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
+    /// <li><p>One <code>Version</code> tag</p></li>
+    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub policy: ::std::option::Option<::std::string::String>,
 }
@@ -17,10 +17,10 @@ impl PutContainerPolicyInput {
     pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>The contents of the policy, which includes the following: </p>
+    /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li> <p>One <code>Version</code> tag</p> </li>
-    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
+    /// <li><p>One <code>Version</code> tag</p></li>
+    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
@@ -56,29 +56,29 @@ impl PutContainerPolicyInputBuilder {
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }
-    /// <p>The contents of the policy, which includes the following: </p>
+    /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li> <p>One <code>Version</code> tag</p> </li>
-    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
+    /// <li><p>One <code>Version</code> tag</p></li>
+    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The contents of the policy, which includes the following: </p>
+    /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li> <p>One <code>Version</code> tag</p> </li>
-    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
+    /// <li><p>One <code>Version</code> tag</p></li>
+    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The contents of the policy, which includes the following: </p>
+    /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li> <p>One <code>Version</code> tag</p> </li>
-    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
+    /// <li><p>One <code>Version</code> tag</p></li>
+    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy

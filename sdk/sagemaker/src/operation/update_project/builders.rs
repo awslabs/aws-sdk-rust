@@ -138,12 +138,12 @@ impl UpdateProjectFluentBuilder {
     pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_description()
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     pub fn service_catalog_provisioning_update_details(mut self, input: crate::types::ServiceCatalogProvisioningUpdateDetails) -> Self {
         self.inner = self.inner.service_catalog_provisioning_update_details(input);
         self
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     pub fn set_service_catalog_provisioning_update_details(
         mut self,
         input: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
@@ -151,7 +151,7 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_service_catalog_provisioning_update_details(input);
         self
     }
-    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     pub fn get_service_catalog_provisioning_update_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails> {
         self.inner.get_service_catalog_provisioning_update_details()
     }

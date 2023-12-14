@@ -22,7 +22,7 @@ impl UpdateRuleVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRuleVersion`.
 ///
-/// <p>Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version (version 1, 2, 3 ...). </p>
+/// <p>Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version (version 1, 2, 3 ...).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRuleVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

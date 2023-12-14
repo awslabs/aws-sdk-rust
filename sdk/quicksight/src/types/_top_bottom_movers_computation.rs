@@ -20,8 +20,8 @@ pub struct TopBottomMoversComputation {
     pub sort_order: ::std::option::Option<crate::types::TopBottomSortOrder>,
     /// <p>The computation type. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p>TOP: Top movers computation.</p> </li>
-    /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
+    /// <li><p>TOP: Top movers computation.</p></li>
+    /// <li><p>BOTTOM: Bottom movers computation.</p></li>
     /// </ul>
     pub r#type: crate::types::TopBottomComputationType,
 }
@@ -57,8 +57,8 @@ impl TopBottomMoversComputation {
     }
     /// <p>The computation type. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p>TOP: Top movers computation.</p> </li>
-    /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
+    /// <li><p>TOP: Top movers computation.</p></li>
+    /// <li><p>BOTTOM: Bottom movers computation.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::TopBottomComputationType {
         &self.r#type
@@ -186,8 +186,8 @@ impl TopBottomMoversComputationBuilder {
     }
     /// <p>The computation type. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p>TOP: Top movers computation.</p> </li>
-    /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
+    /// <li><p>TOP: Top movers computation.</p></li>
+    /// <li><p>BOTTOM: Bottom movers computation.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::TopBottomComputationType) -> Self {
@@ -196,8 +196,8 @@ impl TopBottomMoversComputationBuilder {
     }
     /// <p>The computation type. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p>TOP: Top movers computation.</p> </li>
-    /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
+    /// <li><p>TOP: Top movers computation.</p></li>
+    /// <li><p>BOTTOM: Bottom movers computation.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TopBottomComputationType>) -> Self {
         self.r#type = input;
@@ -205,8 +205,8 @@ impl TopBottomMoversComputationBuilder {
     }
     /// <p>The computation type. Choose from the following options:</p>
     /// <ul>
-    /// <li> <p>TOP: Top movers computation.</p> </li>
-    /// <li> <p>BOTTOM: Bottom movers computation.</p> </li>
+    /// <li><p>TOP: Top movers computation.</p></li>
+    /// <li><p>BOTTOM: Bottom movers computation.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TopBottomComputationType> {
         &self.r#type

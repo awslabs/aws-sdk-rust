@@ -6,7 +6,7 @@
 pub struct SelfManagedActiveDirectoryConfiguration {
     /// <p>The fully qualified domain name of the self-managed AD directory, such as <code>corp.example.com</code>.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory. </p> <important>
+    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory.</p> <important>
     /// <p>Only Organizational Unit (OU) objects can be the direct parent of the file system that you're creating.</p>
     /// </important>
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct SelfManagedActiveDirectoryConfiguration {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.</p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory. </p>
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SelfManagedActiveDirectoryConfiguration {
@@ -24,7 +24,7 @@ impl SelfManagedActiveDirectoryConfiguration {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory. </p> <important>
+    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory.</p> <important>
     /// <p>Only Organizational Unit (OU) objects can be the direct parent of the file system that you're creating.</p>
     /// </important>
     pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<&str> {
@@ -42,7 +42,7 @@ impl SelfManagedActiveDirectoryConfiguration {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory. </p>
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
     pub fn dns_ips(&self) -> &[::std::string::String] {
@@ -95,21 +95,21 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory. </p> <important>
+    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory.</p> <important>
     /// <p>Only Organizational Unit (OU) objects can be the direct parent of the file system that you're creating.</p>
     /// </important>
     pub fn organizational_unit_distinguished_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_distinguished_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory. </p> <important>
+    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory.</p> <important>
     /// <p>Only Organizational Unit (OU) objects can be the direct parent of the file system that you're creating.</p>
     /// </important>
     pub fn set_organizational_unit_distinguished_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
     }
-    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory. </p> <important>
+    /// <p>(Optional) The fully qualified distinguished name of the organizational unit within your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the FSx file system is created in the default location of your self-managed AD directory.</p> <important>
     /// <p>Only Organizational Unit (OU) objects can be the direct parent of the file system that you're creating.</p>
     /// </important>
     pub fn get_organizational_unit_distinguished_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,19 +163,19 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
     ///
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory. </p>
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub fn dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ips.unwrap_or_default();
         v.push(input.into());
         self.dns_ips = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory. </p>
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ips = input;
         self
     }
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory. </p>
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ips
     }

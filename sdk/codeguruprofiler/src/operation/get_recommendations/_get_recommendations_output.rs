@@ -6,13 +6,13 @@
 pub struct GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
     pub profiling_group_name: ::std::string::String,
-    /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub profile_start_time: ::aws_smithy_types::DateTime,
-    /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub profile_end_time: ::aws_smithy_types::DateTime,
     /// <p>The list of recommendations that the analysis found for this profile.</p>
     pub recommendations: ::std::vec::Vec<crate::types::Recommendation>,
-    /// <p> The list of anomalies that the analysis has found for this profile. </p>
+    /// <p>The list of anomalies that the analysis has found for this profile.</p>
     pub anomalies: ::std::vec::Vec<crate::types::Anomaly>,
     _request_id: Option<String>,
 }
@@ -22,11 +22,11 @@ impl GetRecommendationsOutput {
         use std::ops::Deref;
         self.profiling_group_name.deref()
     }
-    /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn profile_start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.profile_start_time
     }
-    /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn profile_end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.profile_end_time
     }
@@ -35,7 +35,7 @@ impl GetRecommendationsOutput {
         use std::ops::Deref;
         self.recommendations.deref()
     }
-    /// <p> The list of anomalies that the analysis has found for this profile. </p>
+    /// <p>The list of anomalies that the analysis has found for this profile.</p>
     pub fn anomalies(&self) -> &[crate::types::Anomaly] {
         use std::ops::Deref;
         self.anomalies.deref()
@@ -80,33 +80,33 @@ impl GetRecommendationsOutputBuilder {
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.profiling_group_name
     }
-    /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     /// This field is required.
     pub fn profile_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.profile_start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_profile_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.profile_start_time = input;
         self
     }
-    /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_profile_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.profile_start_time
     }
-    /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     /// This field is required.
     pub fn profile_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.profile_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_profile_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.profile_end_time = input;
         self
     }
-    /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p>The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_profile_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.profile_end_time
     }
@@ -134,19 +134,19 @@ impl GetRecommendationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_anomalies`](Self::set_anomalies).
     ///
-    /// <p> The list of anomalies that the analysis has found for this profile. </p>
+    /// <p>The list of anomalies that the analysis has found for this profile.</p>
     pub fn anomalies(mut self, input: crate::types::Anomaly) -> Self {
         let mut v = self.anomalies.unwrap_or_default();
         v.push(input);
         self.anomalies = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of anomalies that the analysis has found for this profile. </p>
+    /// <p>The list of anomalies that the analysis has found for this profile.</p>
     pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>) -> Self {
         self.anomalies = input;
         self
     }
-    /// <p> The list of anomalies that the analysis has found for this profile. </p>
+    /// <p>The list of anomalies that the analysis has found for this profile.</p>
     pub fn get_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
         &self.anomalies
     }

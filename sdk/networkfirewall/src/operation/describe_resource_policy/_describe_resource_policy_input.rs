@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeResourcePolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeResourcePolicyInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

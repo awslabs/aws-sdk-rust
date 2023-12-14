@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput {
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to display for the list call.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,11 +13,11 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
@@ -47,33 +47,33 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_arn = input;
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
-    /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
     /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
-    /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_set_arn
     }

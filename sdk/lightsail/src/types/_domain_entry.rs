@@ -16,14 +16,14 @@ pub struct DomainEntry {
     /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
     /// <p>The following domain entry types can be used:</p>
     /// <ul>
-    /// <li> <p> <code>A</code> </p> </li>
-    /// <li> <p> <code>AAAA</code> </p> </li>
-    /// <li> <p> <code>CNAME</code> </p> </li>
-    /// <li> <p> <code>MX</code> </p> </li>
-    /// <li> <p> <code>NS</code> </p> </li>
-    /// <li> <p> <code>SOA</code> </p> </li>
-    /// <li> <p> <code>SRV</code> </p> </li>
-    /// <li> <p> <code>TXT</code> </p> </li>
+    /// <li><p><code>A</code></p></li>
+    /// <li><p><code>AAAA</code></p></li>
+    /// <li><p><code>CNAME</code></p></li>
+    /// <li><p><code>MX</code></p></li>
+    /// <li><p><code>NS</code></p></li>
+    /// <li><p><code>SOA</code></p></li>
+    /// <li><p><code>SRV</code></p></li>
+    /// <li><p><code>TXT</code></p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) The options for the domain entry.</p> <note>
@@ -53,14 +53,14 @@ impl DomainEntry {
     /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
     /// <p>The following domain entry types can be used:</p>
     /// <ul>
-    /// <li> <p> <code>A</code> </p> </li>
-    /// <li> <p> <code>AAAA</code> </p> </li>
-    /// <li> <p> <code>CNAME</code> </p> </li>
-    /// <li> <p> <code>MX</code> </p> </li>
-    /// <li> <p> <code>NS</code> </p> </li>
-    /// <li> <p> <code>SOA</code> </p> </li>
-    /// <li> <p> <code>SRV</code> </p> </li>
-    /// <li> <p> <code>TXT</code> </p> </li>
+    /// <li><p><code>A</code></p></li>
+    /// <li><p><code>AAAA</code></p></li>
+    /// <li><p><code>CNAME</code></p></li>
+    /// <li><p><code>MX</code></p></li>
+    /// <li><p><code>NS</code></p></li>
+    /// <li><p><code>SOA</code></p></li>
+    /// <li><p><code>SRV</code></p></li>
+    /// <li><p><code>TXT</code></p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -154,14 +154,14 @@ impl DomainEntryBuilder {
     /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
     /// <p>The following domain entry types can be used:</p>
     /// <ul>
-    /// <li> <p> <code>A</code> </p> </li>
-    /// <li> <p> <code>AAAA</code> </p> </li>
-    /// <li> <p> <code>CNAME</code> </p> </li>
-    /// <li> <p> <code>MX</code> </p> </li>
-    /// <li> <p> <code>NS</code> </p> </li>
-    /// <li> <p> <code>SOA</code> </p> </li>
-    /// <li> <p> <code>SRV</code> </p> </li>
-    /// <li> <p> <code>TXT</code> </p> </li>
+    /// <li><p><code>A</code></p></li>
+    /// <li><p><code>AAAA</code></p></li>
+    /// <li><p><code>CNAME</code></p></li>
+    /// <li><p><code>MX</code></p></li>
+    /// <li><p><code>NS</code></p></li>
+    /// <li><p><code>SOA</code></p></li>
+    /// <li><p><code>SRV</code></p></li>
+    /// <li><p><code>TXT</code></p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -170,14 +170,14 @@ impl DomainEntryBuilder {
     /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
     /// <p>The following domain entry types can be used:</p>
     /// <ul>
-    /// <li> <p> <code>A</code> </p> </li>
-    /// <li> <p> <code>AAAA</code> </p> </li>
-    /// <li> <p> <code>CNAME</code> </p> </li>
-    /// <li> <p> <code>MX</code> </p> </li>
-    /// <li> <p> <code>NS</code> </p> </li>
-    /// <li> <p> <code>SOA</code> </p> </li>
-    /// <li> <p> <code>SRV</code> </p> </li>
-    /// <li> <p> <code>TXT</code> </p> </li>
+    /// <li><p><code>A</code></p></li>
+    /// <li><p><code>AAAA</code></p></li>
+    /// <li><p><code>CNAME</code></p></li>
+    /// <li><p><code>MX</code></p></li>
+    /// <li><p><code>NS</code></p></li>
+    /// <li><p><code>SOA</code></p></li>
+    /// <li><p><code>SRV</code></p></li>
+    /// <li><p><code>TXT</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -186,14 +186,14 @@ impl DomainEntryBuilder {
     /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
     /// <p>The following domain entry types can be used:</p>
     /// <ul>
-    /// <li> <p> <code>A</code> </p> </li>
-    /// <li> <p> <code>AAAA</code> </p> </li>
-    /// <li> <p> <code>CNAME</code> </p> </li>
-    /// <li> <p> <code>MX</code> </p> </li>
-    /// <li> <p> <code>NS</code> </p> </li>
-    /// <li> <p> <code>SOA</code> </p> </li>
-    /// <li> <p> <code>SRV</code> </p> </li>
-    /// <li> <p> <code>TXT</code> </p> </li>
+    /// <li><p><code>A</code></p></li>
+    /// <li><p><code>AAAA</code></p></li>
+    /// <li><p><code>CNAME</code></p></li>
+    /// <li><p><code>MX</code></p></li>
+    /// <li><p><code>NS</code></p></li>
+    /// <li><p><code>SOA</code></p></li>
+    /// <li><p><code>SRV</code></p></li>
+    /// <li><p><code>TXT</code></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

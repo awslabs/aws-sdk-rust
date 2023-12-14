@@ -18,7 +18,7 @@ pub struct AwsEc2NetworkInterfaceAttachment {
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
     pub instance_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state.</p>
-    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
+    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code></p>
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceAttachment {
@@ -48,7 +48,7 @@ impl AwsEc2NetworkInterfaceAttachment {
         self.instance_owner_id.as_deref()
     }
     /// <p>The attachment state.</p>
-    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
+    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code></p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -161,19 +161,19 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
         &self.instance_owner_id
     }
     /// <p>The attachment state.</p>
-    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
+    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code></p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attachment state.</p>
-    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
+    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code></p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The attachment state.</p>
-    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
+    /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code></p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

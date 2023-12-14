@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NeptuneSettings {
-    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
+    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i></p>
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in these .csv files.</p>
     pub s3_bucket_name: ::std::string::String,
-    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
+    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code></p>
     pub s3_bucket_folder: ::std::string::String,
     /// <p>The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target database before raising an error. The default is 250.</p>
     pub error_retry_duration: ::std::option::Option<i32>,
@@ -20,7 +20,7 @@ pub struct NeptuneSettings {
     pub iam_auth_enabled: ::std::option::Option<bool>,
 }
 impl NeptuneSettings {
-    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
+    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i></p>
     pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
@@ -29,7 +29,7 @@ impl NeptuneSettings {
         use std::ops::Deref;
         self.s3_bucket_name.deref()
     }
-    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
+    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code></p>
     pub fn s3_bucket_folder(&self) -> &str {
         use std::ops::Deref;
         self.s3_bucket_folder.deref()
@@ -71,17 +71,17 @@ pub struct NeptuneSettingsBuilder {
     pub(crate) iam_auth_enabled: ::std::option::Option<bool>,
 }
 impl NeptuneSettingsBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
+    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i></p>
     pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
+    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i></p>
     pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_access_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
+    /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i></p>
     pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_access_role_arn
     }
@@ -100,18 +100,18 @@ impl NeptuneSettingsBuilder {
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_name
     }
-    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
+    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code></p>
     /// This field is required.
     pub fn s3_bucket_folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_folder = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
+    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code></p>
     pub fn set_s3_bucket_folder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_folder = input;
         self
     }
-    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
+    /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code></p>
     pub fn get_s3_bucket_folder(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_folder
     }

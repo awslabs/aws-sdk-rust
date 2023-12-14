@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateShareInput {
-    /// <p> The resource ARN for the analytics store to be shared. </p>
+    /// <p>The resource ARN for the analytics store to be shared.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The principal subscriber is the account being given access to the analytics store data through the share offer. </p>
+    /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
     pub principal_subscriber: ::std::option::Option<::std::string::String>,
-    /// <p> A name given to the share. </p>
+    /// <p>A name given to the share.</p>
     pub share_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateShareInput {
-    /// <p> The resource ARN for the analytics store to be shared. </p>
+    /// <p>The resource ARN for the analytics store to be shared.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p> The principal subscriber is the account being given access to the analytics store data through the share offer. </p>
+    /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
     pub fn principal_subscriber(&self) -> ::std::option::Option<&str> {
         self.principal_subscriber.as_deref()
     }
-    /// <p> A name given to the share. </p>
+    /// <p>A name given to the share.</p>
     pub fn share_name(&self) -> ::std::option::Option<&str> {
         self.share_name.as_deref()
     }
@@ -40,47 +40,47 @@ pub struct CreateShareInputBuilder {
     pub(crate) share_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateShareInputBuilder {
-    /// <p> The resource ARN for the analytics store to be shared. </p>
+    /// <p>The resource ARN for the analytics store to be shared.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The resource ARN for the analytics store to be shared. </p>
+    /// <p>The resource ARN for the analytics store to be shared.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p> The resource ARN for the analytics store to be shared. </p>
+    /// <p>The resource ARN for the analytics store to be shared.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p> The principal subscriber is the account being given access to the analytics store data through the share offer. </p>
+    /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
     /// This field is required.
     pub fn principal_subscriber(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_subscriber = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The principal subscriber is the account being given access to the analytics store data through the share offer. </p>
+    /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
     pub fn set_principal_subscriber(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_subscriber = input;
         self
     }
-    /// <p> The principal subscriber is the account being given access to the analytics store data through the share offer. </p>
+    /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
     pub fn get_principal_subscriber(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_subscriber
     }
-    /// <p> A name given to the share. </p>
+    /// <p>A name given to the share.</p>
     pub fn share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A name given to the share. </p>
+    /// <p>A name given to the share.</p>
     pub fn set_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_name = input;
         self
     }
-    /// <p> A name given to the share. </p>
+    /// <p>A name given to the share.</p>
     pub fn get_share_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_name
     }

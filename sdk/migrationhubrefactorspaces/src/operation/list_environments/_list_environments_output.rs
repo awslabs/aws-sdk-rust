@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
-    /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
+    /// <p>The list of <code>EnvironmentSummary</code> objects.</p>
     pub environment_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentsOutput {
-    /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
+    /// <p>The list of <code>EnvironmentSummary</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_summary_list.is_none()`.
     pub fn environment_summary_list(&self) -> &[crate::types::EnvironmentSummary] {
@@ -46,19 +46,19 @@ impl ListEnvironmentsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_summary_list`](Self::set_environment_summary_list).
     ///
-    /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
+    /// <p>The list of <code>EnvironmentSummary</code> objects.</p>
     pub fn environment_summary_list(mut self, input: crate::types::EnvironmentSummary) -> Self {
         let mut v = self.environment_summary_list.unwrap_or_default();
         v.push(input);
         self.environment_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
+    /// <p>The list of <code>EnvironmentSummary</code> objects.</p>
     pub fn set_environment_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>) -> Self {
         self.environment_summary_list = input;
         self
     }
-    /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
+    /// <p>The list of <code>EnvironmentSummary</code> objects.</p>
     pub fn get_environment_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
         &self.environment_summary_list
     }

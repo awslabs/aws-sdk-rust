@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSavingsPlanRatesOutput`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesOutput) with field(s):
     ///   - [`savings_plan_id(Option<String>)`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesOutput::savings_plan_id): <p>The ID of the Savings Plan.</p>
     ///   - [`search_results(Option<Vec::<SavingsPlanRate>>)`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesOutput::search_results): <p>Information about the Savings Plans rates.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    ///   - [`next_token(Option<String>)`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeSavingsPlanRatesError>`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError)
     pub fn describe_savings_plan_rates(&self) -> crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesFluentBuilder {
         crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesFluentBuilder::new(self.handle.clone())

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteShareOutput {
-    /// <p> The status of the share being deleted. </p>
+    /// <p>The status of the share being deleted.</p>
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     _request_id: Option<String>,
 }
 impl DeleteShareOutput {
-    /// <p> The status of the share being deleted. </p>
+    /// <p>The status of the share being deleted.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteShareOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteShareOutputBuilder {
-    /// <p> The status of the share being deleted. </p>
+    /// <p>The status of the share being deleted.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The status of the share being deleted. </p>
+    /// <p>The status of the share being deleted.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p> The status of the share being deleted. </p>
+    /// <p>The status of the share being deleted.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
         &self.status
     }

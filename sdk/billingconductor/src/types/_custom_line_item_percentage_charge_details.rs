@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetails {
-    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value.</p>
     pub percentage_value: f64,
     /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
     pub associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomLineItemPercentageChargeDetails {
-    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value.</p>
     pub fn percentage_value(&self) -> f64 {
         self.percentage_value
     }
@@ -36,18 +36,18 @@ pub struct CustomLineItemPercentageChargeDetailsBuilder {
     pub(crate) associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomLineItemPercentageChargeDetailsBuilder {
-    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value.</p>
     /// This field is required.
     pub fn percentage_value(mut self, input: f64) -> Self {
         self.percentage_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value.</p>
     pub fn set_percentage_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percentage_value = input;
         self
     }
-    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value.</p>
     pub fn get_percentage_value(&self) -> &::std::option::Option<f64> {
         &self.percentage_value
     }

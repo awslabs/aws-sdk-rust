@@ -25,7 +25,7 @@ impl GetGameSessionLogUrlInputBuilder {
 /// <p>Retrieves the location of stored game session logs for a specified game session on Amazon GameLift managed fleets. When a game session is terminated, Amazon GameLift automatically stores the logs in Amazon S3 and retains them for 14 days. Use this URL to download the logs.</p> <note>
 /// <p>See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">Amazon Web Services Service Limits</a> page for maximum log file sizes. Log files that exceed this limit are not saved.</p>
 /// </note>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGameSessionLogUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +111,17 @@ impl GetGameSessionLogUrlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the game session to get logs for. </p>
+    /// <p>A unique identifier for the game session to get logs for.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
-    /// <p>A unique identifier for the game session to get logs for. </p>
+    /// <p>A unique identifier for the game session to get logs for.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
-    /// <p>A unique identifier for the game session to get logs for. </p>
+    /// <p>A unique identifier for the game session to get logs for.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_id()
     }

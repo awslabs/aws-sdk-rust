@@ -249,7 +249,7 @@ pub enum PollForTaskError {
     InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The specified task was not found. </p>
+    /// <p>The specified task was not found.</p>
     TaskNotFoundException(crate::types::error::TaskNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

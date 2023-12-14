@@ -5,7 +5,7 @@
 pub struct ListFunctionsByCodeSigningConfigOutput {
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
-    /// <p>The function ARNs. </p>
+    /// <p>The function ARNs.</p>
     pub function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListFunctionsByCodeSigningConfigOutput {
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>The function ARNs. </p>
+    /// <p>The function ARNs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_arns.is_none()`.
     pub fn function_arns(&self) -> &[::std::string::String] {
@@ -60,19 +60,19 @@ impl ListFunctionsByCodeSigningConfigOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_function_arns`](Self::set_function_arns).
     ///
-    /// <p>The function ARNs. </p>
+    /// <p>The function ARNs.</p>
     pub fn function_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.function_arns.unwrap_or_default();
         v.push(input.into());
         self.function_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The function ARNs. </p>
+    /// <p>The function ARNs.</p>
     pub fn set_function_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.function_arns = input;
         self
     }
-    /// <p>The function ARNs. </p>
+    /// <p>The function ARNs.</p>
     pub fn get_function_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.function_arns
     }

@@ -24,7 +24,7 @@ impl DeleteServiceInputBuilder {
 ///
 /// <p>Delete an App Runner service.</p>
 /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p> <note>
-/// <p>Make sure that you don't have any active VPCIngressConnections associated with the service you want to delete. </p>
+/// <p>Make sure that you don't have any active VPCIngressConnections associated with the service you want to delete.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServiceFluentBuilder {

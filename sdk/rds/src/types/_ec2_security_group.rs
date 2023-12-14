@@ -2,9 +2,9 @@
 
 /// <p>This data type is used as a response element in the following actions:</p>
 /// <ul>
-/// <li> <p> <code>AuthorizeDBSecurityGroupIngress</code> </p> </li>
-/// <li> <p> <code>DescribeDBSecurityGroups</code> </p> </li>
-/// <li> <p> <code>RevokeDBSecurityGroupIngress</code> </p> </li>
+/// <li><p><code>AuthorizeDBSecurityGroupIngress</code></p></li>
+/// <li><p><code>DescribeDBSecurityGroups</code></p></li>
+/// <li><p><code>RevokeDBSecurityGroupIngress</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

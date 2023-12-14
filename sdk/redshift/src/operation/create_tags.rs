@@ -239,7 +239,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateTagsEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateTagsError {
-    /// <p>The specified cluster is not in the <code>available</code> state. </p>
+    /// <p>The specified cluster is not in the <code>available</code> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::types::error::InvalidTagFault),

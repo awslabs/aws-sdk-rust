@@ -12,7 +12,7 @@ pub struct EventSubscription {
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
-    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code></p>
     /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the Amazon DocumentDB event notification subscription was created.</p>
@@ -43,7 +43,7 @@ impl EventSubscription {
     }
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
-    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code></p>
     /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -144,7 +144,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
-    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code></p>
     /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -152,7 +152,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
-    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code></p>
     /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -160,7 +160,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The status of the Amazon DocumentDB event notification subscription.</p>
     /// <p>Constraints:</p>
-    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> </p>
+    /// <p>Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>, <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code></p>
     /// <p>The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates that the topic was deleted after the subscription was created.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

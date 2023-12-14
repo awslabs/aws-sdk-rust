@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVariablesOutput {
-    /// <p>The names of the variables returned. </p>
+    /// <p>The names of the variables returned.</p>
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
-    /// <p>The next page token to be used in subsequent requests. </p>
+    /// <p>The next page token to be used in subsequent requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetVariablesOutput {
-    /// <p>The names of the variables returned. </p>
+    /// <p>The names of the variables returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
     pub fn variables(&self) -> &[crate::types::Variable] {
         self.variables.as_deref().unwrap_or_default()
     }
-    /// <p>The next page token to be used in subsequent requests. </p>
+    /// <p>The next page token to be used in subsequent requests.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl GetVariablesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
-    /// <p>The names of the variables returned. </p>
+    /// <p>The names of the variables returned.</p>
     pub fn variables(mut self, input: crate::types::Variable) -> Self {
         let mut v = self.variables.unwrap_or_default();
         v.push(input);
         self.variables = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of the variables returned. </p>
+    /// <p>The names of the variables returned.</p>
     pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>) -> Self {
         self.variables = input;
         self
     }
-    /// <p>The names of the variables returned. </p>
+    /// <p>The names of the variables returned.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Variable>> {
         &self.variables
     }
-    /// <p>The next page token to be used in subsequent requests. </p>
+    /// <p>The next page token to be used in subsequent requests.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The next page token to be used in subsequent requests. </p>
+    /// <p>The next page token to be used in subsequent requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The next page token to be used in subsequent requests. </p>
+    /// <p>The next page token to be used in subsequent requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

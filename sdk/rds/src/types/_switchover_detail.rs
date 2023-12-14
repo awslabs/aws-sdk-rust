@@ -12,13 +12,13 @@ pub struct SwitchoverDetail {
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - The resource is being prepared to switch over.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The resource is ready to switch over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p> </li>
-    /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-    /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - The resource is being prepared to switch over.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The resource is ready to switch over.</p></li>
+    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p></li>
+    /// <li><p><code>MISSING_SOURCE</code> - The source resource has been deleted.</p></li>
+    /// <li><p><code>MISSING_TARGET</code> - The target resource has been deleted.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -34,13 +34,13 @@ impl SwitchoverDetail {
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - The resource is being prepared to switch over.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The resource is ready to switch over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p> </li>
-    /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-    /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - The resource is being prepared to switch over.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The resource is ready to switch over.</p></li>
+    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p></li>
+    /// <li><p><code>MISSING_SOURCE</code> - The source resource has been deleted.</p></li>
+    /// <li><p><code>MISSING_TARGET</code> - The target resource has been deleted.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -93,13 +93,13 @@ impl SwitchoverDetailBuilder {
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - The resource is being prepared to switch over.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The resource is ready to switch over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p> </li>
-    /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-    /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - The resource is being prepared to switch over.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The resource is ready to switch over.</p></li>
+    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p></li>
+    /// <li><p><code>MISSING_SOURCE</code> - The source resource has been deleted.</p></li>
+    /// <li><p><code>MISSING_TARGET</code> - The target resource has been deleted.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -108,13 +108,13 @@ impl SwitchoverDetailBuilder {
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - The resource is being prepared to switch over.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The resource is ready to switch over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p> </li>
-    /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-    /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - The resource is being prepared to switch over.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The resource is ready to switch over.</p></li>
+    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p></li>
+    /// <li><p><code>MISSING_SOURCE</code> - The source resource has been deleted.</p></li>
+    /// <li><p><code>MISSING_TARGET</code> - The target resource has been deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -123,13 +123,13 @@ impl SwitchoverDetailBuilder {
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code> - The resource is being prepared to switch over.</p> </li>
-    /// <li> <p> <code>AVAILABLE</code> - The resource is ready to switch over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p> </li>
-    /// <li> <p> <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p> </li>
-    /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-    /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
+    /// <li><p><code>PROVISIONING</code> - The resource is being prepared to switch over.</p></li>
+    /// <li><p><code>AVAILABLE</code> - The resource is ready to switch over.</p></li>
+    /// <li><p><code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.</p></li>
+    /// <li><p><code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.</p></li>
+    /// <li><p><code>MISSING_SOURCE</code> - The source resource has been deleted.</p></li>
+    /// <li><p><code>MISSING_TARGET</code> - The target resource has been deleted.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

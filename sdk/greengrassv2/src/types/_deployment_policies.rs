@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentPolicies {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
-    /// <p>Default: <code>ROLLBACK</code> </p>
+    /// <p>Default: <code>ROLLBACK</code></p>
     pub failure_handling_policy: ::std::option::Option<crate::types::DeploymentFailureHandlingPolicy>,
     /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
     pub component_update_policy: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicy>,
@@ -14,7 +14,7 @@ pub struct DeploymentPolicies {
 }
 impl DeploymentPolicies {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
-    /// <p>Default: <code>ROLLBACK</code> </p>
+    /// <p>Default: <code>ROLLBACK</code></p>
     pub fn failure_handling_policy(&self) -> ::std::option::Option<&crate::types::DeploymentFailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
@@ -44,19 +44,19 @@ pub struct DeploymentPoliciesBuilder {
 }
 impl DeploymentPoliciesBuilder {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
-    /// <p>Default: <code>ROLLBACK</code> </p>
+    /// <p>Default: <code>ROLLBACK</code></p>
     pub fn failure_handling_policy(mut self, input: crate::types::DeploymentFailureHandlingPolicy) -> Self {
         self.failure_handling_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
-    /// <p>Default: <code>ROLLBACK</code> </p>
+    /// <p>Default: <code>ROLLBACK</code></p>
     pub fn set_failure_handling_policy(mut self, input: ::std::option::Option<crate::types::DeploymentFailureHandlingPolicy>) -> Self {
         self.failure_handling_policy = input;
         self
     }
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
-    /// <p>Default: <code>ROLLBACK</code> </p>
+    /// <p>Default: <code>ROLLBACK</code></p>
     pub fn get_failure_handling_policy(&self) -> &::std::option::Option<crate::types::DeploymentFailureHandlingPolicy> {
         &self.failure_handling_policy
     }

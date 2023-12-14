@@ -7,11 +7,11 @@ pub struct ListReceivedGrantsInput {
     pub grant_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranterAccountId</code> </p> </li>
+    /// <li><p><code>ProductSKU</code></p></li>
+    /// <li><p><code>LicenseIssuerName</code></p></li>
+    /// <li><p><code>LicenseArn</code></p></li>
+    /// <li><p><code>GrantStatus</code></p></li>
+    /// <li><p><code>GranterAccountId</code></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -28,11 +28,11 @@ impl ListReceivedGrantsInput {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranterAccountId</code> </p> </li>
+    /// <li><p><code>ProductSKU</code></p></li>
+    /// <li><p><code>LicenseIssuerName</code></p></li>
+    /// <li><p><code>LicenseArn</code></p></li>
+    /// <li><p><code>GrantStatus</code></p></li>
+    /// <li><p><code>GranterAccountId</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -91,11 +91,11 @@ impl ListReceivedGrantsInputBuilder {
     ///
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranterAccountId</code> </p> </li>
+    /// <li><p><code>ProductSKU</code></p></li>
+    /// <li><p><code>LicenseIssuerName</code></p></li>
+    /// <li><p><code>LicenseArn</code></p></li>
+    /// <li><p><code>GrantStatus</code></p></li>
+    /// <li><p><code>GranterAccountId</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -105,11 +105,11 @@ impl ListReceivedGrantsInputBuilder {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranterAccountId</code> </p> </li>
+    /// <li><p><code>ProductSKU</code></p></li>
+    /// <li><p><code>LicenseIssuerName</code></p></li>
+    /// <li><p><code>LicenseArn</code></p></li>
+    /// <li><p><code>GrantStatus</code></p></li>
+    /// <li><p><code>GranterAccountId</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -117,11 +117,11 @@ impl ListReceivedGrantsInputBuilder {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
-    /// <li> <p> <code>LicenseArn</code> </p> </li>
-    /// <li> <p> <code>GrantStatus</code> </p> </li>
-    /// <li> <p> <code>GranterAccountId</code> </p> </li>
+    /// <li><p><code>ProductSKU</code></p></li>
+    /// <li><p><code>LicenseIssuerName</code></p></li>
+    /// <li><p><code>LicenseArn</code></p></li>
+    /// <li><p><code>GrantStatus</code></p></li>
+    /// <li><p><code>GranterAccountId</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

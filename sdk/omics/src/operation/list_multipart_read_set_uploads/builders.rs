@@ -22,7 +22,7 @@ impl ListMultipartReadSetUploadsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMultipartReadSetUploads`.
 ///
-/// <p> Lists all multipart read set uploads and their statuses. </p>
+/// <p>Lists all multipart read set uploads and their statuses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMultipartReadSetUploadsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListMultipartReadSetUploadsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_multipart_read_set_uploads::paginator::ListMultipartReadSetUploadsPaginator {
         crate::operation::list_multipart_read_set_uploads::paginator::ListMultipartReadSetUploadsPaginator::new(self.handle, self.inner)
     }
-    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
-    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
-    /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// <p>The Sequence Store ID used for the multipart uploads.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sequence_store_id()
     }
-    /// <p> The maximum number of multipart uploads returned in a page. </p>
+    /// <p>The maximum number of multipart uploads returned in a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of multipart uploads returned in a page. </p>
+    /// <p>The maximum number of multipart uploads returned in a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of multipart uploads returned in a page. </p>
+    /// <p>The maximum number of multipart uploads returned in a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    /// <p>Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

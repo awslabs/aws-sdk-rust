@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleOutput {
-    /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
+    /// <p>A list of information about a batch of created vehicles. For more information, see the API data type.</p>
     pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>>,
-    /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
+    /// <p>A list of information about creation errors, or an empty list if there aren't any errors.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateVehicleOutput {
-    /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
+    /// <p>A list of information about a batch of created vehicles. For more information, see the API data type.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
     pub fn vehicles(&self) -> &[crate::types::CreateVehicleResponseItem] {
         self.vehicles.as_deref().unwrap_or_default()
     }
-    /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
+    /// <p>A list of information about creation errors, or an empty list if there aren't any errors.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::CreateVehicleError] {
@@ -48,19 +48,19 @@ impl BatchCreateVehicleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vehicles`](Self::set_vehicles).
     ///
-    /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
+    /// <p>A list of information about a batch of created vehicles. For more information, see the API data type.</p>
     pub fn vehicles(mut self, input: crate::types::CreateVehicleResponseItem) -> Self {
         let mut v = self.vehicles.unwrap_or_default();
         v.push(input);
         self.vehicles = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
+    /// <p>A list of information about a batch of created vehicles. For more information, see the API data type.</p>
     pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>>) -> Self {
         self.vehicles = input;
         self
     }
-    /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
+    /// <p>A list of information about a batch of created vehicles. For more information, see the API data type.</p>
     pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>> {
         &self.vehicles
     }
@@ -68,19 +68,19 @@ impl BatchCreateVehicleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
+    /// <p>A list of information about creation errors, or an empty list if there aren't any errors.</p>
     pub fn errors(mut self, input: crate::types::CreateVehicleError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
+    /// <p>A list of information about creation errors, or an empty list if there aren't any errors.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
+    /// <p>A list of information about creation errors, or an empty list if there aren't any errors.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>> {
         &self.errors
     }

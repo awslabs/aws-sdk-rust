@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventCategoryGroup {
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub source_type: ::std::option::Option<::std::string::String>,
-    /// <p> A list of event categories from a source type that you've chosen.</p>
+    /// <p>A list of event categories from a source type that you've chosen.</p>
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EventCategoryGroup {
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
     }
-    /// <p> A list of event categories from a source type that you've chosen.</p>
+    /// <p>A list of event categories from a source type that you've chosen.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
     pub fn event_categories(&self) -> &[::std::string::String] {
@@ -38,19 +38,19 @@ pub struct EventCategoryGroupBuilder {
     pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EventCategoryGroupBuilder {
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_type
@@ -59,19 +59,19 @@ impl EventCategoryGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
-    /// <p> A list of event categories from a source type that you've chosen.</p>
+    /// <p>A list of event categories from a source type that you've chosen.</p>
     pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
         v.push(input.into());
         self.event_categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of event categories from a source type that you've chosen.</p>
+    /// <p>A list of event categories from a source type that you've chosen.</p>
     pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories = input;
         self
     }
-    /// <p> A list of event categories from a source type that you've chosen.</p>
+    /// <p>A list of event categories from a source type that you've chosen.</p>
     pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetOutput {
-    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fleet_attributes: ::std::option::Option<crate::types::FleetAttributes>,
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
     pub location_states: ::std::option::Option<::std::vec::Vec<crate::types::LocationState>>,
     _request_id: Option<String>,
 }
 impl CreateFleetOutput {
-    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fn fleet_attributes(&self) -> ::std::option::Option<&crate::types::FleetAttributes> {
         self.fleet_attributes.as_ref()
     }
@@ -42,17 +42,17 @@ pub struct CreateFleetOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateFleetOutputBuilder {
-    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fn fleet_attributes(mut self, input: crate::types::FleetAttributes) -> Self {
         self.fleet_attributes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fn set_fleet_attributes(mut self, input: ::std::option::Option<crate::types::FleetAttributes>) -> Self {
         self.fleet_attributes = input;
         self
     }
-    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation.</p>
     pub fn get_fleet_attributes(&self) -> &::std::option::Option<crate::types::FleetAttributes> {
         &self.fleet_attributes
     }

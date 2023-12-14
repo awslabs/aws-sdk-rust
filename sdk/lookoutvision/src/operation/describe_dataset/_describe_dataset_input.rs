@@ -5,7 +5,7 @@
 pub struct DescribeDatasetInput {
     /// <p>The name of the project that contains the dataset that you want to describe.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code></p>
     pub dataset_type: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInput {
@@ -13,7 +13,7 @@ impl DescribeDatasetInput {
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code></p>
     pub fn dataset_type(&self) -> ::std::option::Option<&str> {
         self.dataset_type.as_deref()
     }
@@ -48,18 +48,18 @@ impl DescribeDatasetInputBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
-    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code></p>
     /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code></p>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_type = input;
         self
     }
-    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code></p>
     pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_type
     }

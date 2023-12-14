@@ -23,7 +23,7 @@ impl ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
 /// Fluent builder constructing a request to `ModifyTrafficMirrorFilterNetworkServices`.
 ///
 /// <p>Allows or restricts mirroring network services.</p>
-/// <p> By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter, all traffic related to that network service will be mirrored. When you no longer want to mirror network services, use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter. </p>
+/// <p>By default, Amazon DNS network services are not eligible for Traffic Mirror. Use <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter. When a network service is added to the Traffic Mirror filter, all traffic related to that network service will be mirrored. When you no longer want to mirror network services, use <code>RemoveNetworkServices</code> to remove the network services from the Traffic Mirror filter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorFilterNetworkServicesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

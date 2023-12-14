@@ -116,8 +116,8 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li><p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
@@ -126,8 +126,8 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li><p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
@@ -136,8 +136,8 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li><p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_relational_database_name()
@@ -224,10 +224,10 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the database.</p> </li>
-    /// <li> <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
+    /// <li><p>Must be before the latest restorable time for the database.</p></li>
+    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn restore_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.restore_time(input);
@@ -236,10 +236,10 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the database.</p> </li>
-    /// <li> <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
+    /// <li><p>Must be before the latest restorable time for the database.</p></li>
+    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn set_restore_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_restore_time(input);
@@ -248,30 +248,30 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be before the latest restorable time for the database.</p> </li>
-    /// <li> <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p> </li>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
+    /// <li><p>Must be before the latest restorable time for the database.</p></li>
+    /// <li><p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p></li>
+    /// <li><p>Specified in Coordinated Universal Time (UTC).</p></li>
+    /// <li><p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p></li>
     /// </ul>
     pub fn get_restore_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_restore_time()
     }
-    /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time.</p>
+    /// <p>Default: <code>false</code></p>
     /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
     pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
         self.inner = self.inner.use_latest_restorable_time(input);
         self
     }
-    /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time.</p>
+    /// <p>Default: <code>false</code></p>
     /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_latest_restorable_time(input);
         self
     }
-    /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time.</p>
+    /// <p>Default: <code>false</code></p>
     /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
     pub fn get_use_latest_restorable_time(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_latest_restorable_time()

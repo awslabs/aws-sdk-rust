@@ -8,7 +8,7 @@ pub struct IdentityProviderOAuthSetting {
     pub data_source_name: ::std::option::Option<crate::types::DataSourceName>,
     /// <p>Describes whether OAuth for a data source is enabled or disabled in the Canvas application.</p>
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
-    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL. </p>
+    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderOAuthSetting {
@@ -20,7 +20,7 @@ impl IdentityProviderOAuthSetting {
     pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.status.as_ref()
     }
-    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL. </p>
+    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL.</p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -69,17 +69,17 @@ impl IdentityProviderOAuthSettingBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
         &self.status
     }
-    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL. </p>
+    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL. </p>
+    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
-    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL. </p>
+    /// <p>The ARN of an Amazon Web Services Secrets Manager secret that stores the credentials from your identity provider, such as the client ID and secret, authorization URL, and token URL.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }

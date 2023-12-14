@@ -7,14 +7,14 @@ pub struct UpdateKeyInput {
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Updates the description for the API key resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub expire_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
     pub no_expiry: ::std::option::Option<bool>,
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
-    /// <p> <code>False</code> if force update is not preferred</p>
-    /// <p>Default value: <code>False</code> </p>
+    /// <p><code>False</code> if force update is not preferred</p>
+    /// <p>Default value: <code>False</code></p>
     pub force_update: ::std::option::Option<bool>,
     /// <p>Updates the API key restrictions for the API key resource.</p>
     pub restrictions: ::std::option::Option<crate::types::ApiKeyRestrictions>,
@@ -28,7 +28,7 @@ impl UpdateKeyInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn expire_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expire_time.as_ref()
     }
@@ -38,8 +38,8 @@ impl UpdateKeyInput {
     }
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
-    /// <p> <code>False</code> if force update is not preferred</p>
-    /// <p>Default value: <code>False</code> </p>
+    /// <p><code>False</code> if force update is not preferred</p>
+    /// <p>Default value: <code>False</code></p>
     pub fn force_update(&self) -> ::std::option::Option<bool> {
         self.force_update
     }
@@ -96,17 +96,17 @@ impl UpdateKeyInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expire_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_expire_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expire_time = input;
         self
     }
-    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expire_time
     }
@@ -126,24 +126,24 @@ impl UpdateKeyInputBuilder {
     }
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
-    /// <p> <code>False</code> if force update is not preferred</p>
-    /// <p>Default value: <code>False</code> </p>
+    /// <p><code>False</code> if force update is not preferred</p>
+    /// <p>Default value: <code>False</code></p>
     pub fn force_update(mut self, input: bool) -> Self {
         self.force_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
-    /// <p> <code>False</code> if force update is not preferred</p>
-    /// <p>Default value: <code>False</code> </p>
+    /// <p><code>False</code> if force update is not preferred</p>
+    /// <p>Default value: <code>False</code></p>
     pub fn set_force_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_update = input;
         self
     }
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
-    /// <p> <code>False</code> if force update is not preferred</p>
-    /// <p>Default value: <code>False</code> </p>
+    /// <p><code>False</code> if force update is not preferred</p>
+    /// <p>Default value: <code>False</code></p>
     pub fn get_force_update(&self) -> &::std::option::Option<bool> {
         &self.force_update
     }

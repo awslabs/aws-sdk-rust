@@ -8,7 +8,7 @@ pub struct LinuxParameters {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
-    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p>
     pub init_process_enabled: ::std::option::Option<bool>,
     /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
@@ -26,11 +26,11 @@ pub struct LinuxParameters {
     /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
-    /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
-    /// </note> </li>
-    /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
+    /// <li><p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
+    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a></p>
+    /// </note></li>
+    /// <li><p>The swap space parameters are only supported for job definitions using EC2 resources.</p></li>
+    /// <li><p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p></li>
     /// </ul> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
@@ -45,7 +45,7 @@ impl LinuxParameters {
     pub fn devices(&self) -> &[crate::types::Device] {
         self.devices.as_deref().unwrap_or_default()
     }
-    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p>
     pub fn init_process_enabled(&self) -> ::std::option::Option<bool> {
         self.init_process_enabled
     }
@@ -73,11 +73,11 @@ impl LinuxParameters {
     /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
-    /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
-    /// </note> </li>
-    /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
+    /// <li><p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
+    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a></p>
+    /// </note></li>
+    /// <li><p>The swap space parameters are only supported for job definitions using EC2 resources.</p></li>
+    /// <li><p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p></li>
     /// </ul> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
@@ -130,17 +130,17 @@ impl LinuxParametersBuilder {
     pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
         &self.devices
     }
-    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p>
     pub fn init_process_enabled(mut self, input: bool) -> Self {
         self.init_process_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p>
     pub fn set_init_process_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.init_process_enabled = input;
         self
     }
-    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p>
+    /// <p>If true, run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p>
     pub fn get_init_process_enabled(&self) -> &::std::option::Option<bool> {
         &self.init_process_enabled
     }
@@ -216,11 +216,11 @@ impl LinuxParametersBuilder {
     /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
-    /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
-    /// </note> </li>
-    /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
+    /// <li><p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
+    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a></p>
+    /// </note></li>
+    /// <li><p>The swap space parameters are only supported for job definitions using EC2 resources.</p></li>
+    /// <li><p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p></li>
     /// </ul> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
@@ -231,11 +231,11 @@ impl LinuxParametersBuilder {
     /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
-    /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
-    /// </note> </li>
-    /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
+    /// <li><p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
+    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a></p>
+    /// </note></li>
+    /// <li><p>The swap space parameters are only supported for job definitions using EC2 resources.</p></li>
+    /// <li><p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p></li>
     /// </ul> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
@@ -246,11 +246,11 @@ impl LinuxParametersBuilder {
     /// <p>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code> value of <code>0</code> causes swapping to not occur unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively. Valid values are whole numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code> is used. If a value isn't specified for <code>maxSwap</code>, then this parameter is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     /// <p>Consider the following when you use a per-container swap configuration.</p>
     /// <ul>
-    /// <li> <p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
-    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a> </p>
-    /// </note> </li>
-    /// <li> <p>The swap space parameters are only supported for job definitions using EC2 resources.</p> </li>
-    /// <li> <p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p> </li>
+    /// <li><p>Swap space must be enabled and allocated on the container instance for the containers to use.</p> <note>
+    /// <p>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap file?</a></p>
+    /// </note></li>
+    /// <li><p>The swap space parameters are only supported for job definitions using EC2 resources.</p></li>
+    /// <li><p>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each container has a default <code>swappiness</code> value of 60. Moreover, the total swap usage is limited to two times the memory reservation of the container.</p></li>
     /// </ul> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>

@@ -22,8 +22,8 @@ impl RemoveTagsFromCertificateInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveTagsFromCertificate`.
 ///
-/// <p>Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value. </p>
-/// <p>To add tags to a certificate, use the <code>AddTagsToCertificate</code> action. To view all of the tags that have been applied to a specific ACM certificate, use the <code>ListTagsForCertificate</code> action. </p>
+/// <p>Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value.</p>
+/// <p>To add tags to a certificate, use the <code>AddTagsToCertificate</code> action. To view all of the tags that have been applied to a specific ACM certificate, use the <code>ListTagsForCertificate</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,21 +110,21 @@ impl RemoveTagsFromCertificateFluentBuilder {
         self
     }
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
-    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p><code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code></p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()

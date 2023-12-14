@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`application_id(impl Into<String>)`](crate::operation::get_retriever::builders::GetRetrieverFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_retriever::builders::GetRetrieverFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the Amazon Q application using the retriever.</p><br>
     ///   - [`retriever_id(impl Into<String>)`](crate::operation::get_retriever::builders::GetRetrieverFluentBuilder::retriever_id) / [`set_retriever_id(Option<String>)`](crate::operation::get_retriever::builders::GetRetrieverFluentBuilder::set_retriever_id):<br>required: **true**<br><p>The identifier of the retriever.</p><br>
     /// - On success, responds with [`GetRetrieverOutput`](crate::operation::get_retriever::GetRetrieverOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::operation::get_retriever::GetRetrieverOutput::application_id): <p>The identifier of the Amazon Q application using the retriever. </p>
+    ///   - [`application_id(Option<String>)`](crate::operation::get_retriever::GetRetrieverOutput::application_id): <p>The identifier of the Amazon Q application using the retriever.</p>
     ///   - [`retriever_id(Option<String>)`](crate::operation::get_retriever::GetRetrieverOutput::retriever_id): <p>The identifier of the retriever.</p>
     ///   - [`retriever_arn(Option<String>)`](crate::operation::get_retriever::GetRetrieverOutput::retriever_arn): <p>The Amazon Resource Name (ARN) of the IAM role associated with the retriever.</p>
     ///   - [`r#type(Option<RetrieverType>)`](crate::operation::get_retriever::GetRetrieverOutput::type): <p>The type of the retriever.</p>

@@ -14,7 +14,7 @@ pub struct Subnet {
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
     pub default_for_az: ::std::option::Option<bool>,
-    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
+    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub enable_lni_at_device_index: ::std::option::Option<i32>,
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
     pub map_public_ip_on_launch: ::std::option::Option<bool>,
@@ -68,7 +68,7 @@ impl Subnet {
     pub fn default_for_az(&self) -> ::std::option::Option<bool> {
         self.default_for_az
     }
-    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
+    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub fn enable_lni_at_device_index(&self) -> ::std::option::Option<i32> {
         self.enable_lni_at_device_index
     }
@@ -241,17 +241,17 @@ impl SubnetBuilder {
     pub fn get_default_for_az(&self) -> &::std::option::Option<bool> {
         &self.default_for_az
     }
-    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
+    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub fn enable_lni_at_device_index(mut self, input: i32) -> Self {
         self.enable_lni_at_device_index = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
+    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub fn set_enable_lni_at_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.enable_lni_at_device_index = input;
         self
     }
-    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
+    /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub fn get_enable_lni_at_device_index(&self) -> &::std::option::Option<i32> {
         &self.enable_lni_at_device_index
     }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringJsonDatasetFormat {
-    /// <p>Indicates if the file should be read as a JSON object per line. </p>
+    /// <p>Indicates if the file should be read as a JSON object per line.</p>
     pub line: ::std::option::Option<bool>,
 }
 impl MonitoringJsonDatasetFormat {
-    /// <p>Indicates if the file should be read as a JSON object per line. </p>
+    /// <p>Indicates if the file should be read as a JSON object per line.</p>
     pub fn line(&self) -> ::std::option::Option<bool> {
         self.line
     }
@@ -27,17 +27,17 @@ pub struct MonitoringJsonDatasetFormatBuilder {
     pub(crate) line: ::std::option::Option<bool>,
 }
 impl MonitoringJsonDatasetFormatBuilder {
-    /// <p>Indicates if the file should be read as a JSON object per line. </p>
+    /// <p>Indicates if the file should be read as a JSON object per line.</p>
     pub fn line(mut self, input: bool) -> Self {
         self.line = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the file should be read as a JSON object per line. </p>
+    /// <p>Indicates if the file should be read as a JSON object per line.</p>
     pub fn set_line(mut self, input: ::std::option::Option<bool>) -> Self {
         self.line = input;
         self
     }
-    /// <p>Indicates if the file should be read as a JSON object per line. </p>
+    /// <p>Indicates if the file should be read as a JSON object per line.</p>
     pub fn get_line(&self) -> &::std::option::Option<bool> {
         &self.line
     }

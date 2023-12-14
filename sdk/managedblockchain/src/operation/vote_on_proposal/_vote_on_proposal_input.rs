@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoteOnProposalInput {
-    /// <p> The unique identifier of the network. </p>
+    /// <p>The unique identifier of the network.</p>
     pub network_id: ::std::option::Option<::std::string::String>,
-    /// <p> The unique identifier of the proposal. </p>
+    /// <p>The unique identifier of the proposal.</p>
     pub proposal_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the member casting the vote. </p>
+    /// <p>The unique identifier of the member casting the vote.</p>
     pub voter_member_id: ::std::option::Option<::std::string::String>,
-    /// <p> The value of the vote. </p>
+    /// <p>The value of the vote.</p>
     pub vote: ::std::option::Option<crate::types::VoteValue>,
 }
 impl VoteOnProposalInput {
-    /// <p> The unique identifier of the network. </p>
+    /// <p>The unique identifier of the network.</p>
     pub fn network_id(&self) -> ::std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p> The unique identifier of the proposal. </p>
+    /// <p>The unique identifier of the proposal.</p>
     pub fn proposal_id(&self) -> ::std::option::Option<&str> {
         self.proposal_id.as_deref()
     }
-    /// <p>The unique identifier of the member casting the vote. </p>
+    /// <p>The unique identifier of the member casting the vote.</p>
     pub fn voter_member_id(&self) -> ::std::option::Option<&str> {
         self.voter_member_id.as_deref()
     }
-    /// <p> The value of the vote. </p>
+    /// <p>The value of the vote.</p>
     pub fn vote(&self) -> ::std::option::Option<&crate::types::VoteValue> {
         self.vote.as_ref()
     }
@@ -47,63 +47,63 @@ pub struct VoteOnProposalInputBuilder {
     pub(crate) vote: ::std::option::Option<crate::types::VoteValue>,
 }
 impl VoteOnProposalInputBuilder {
-    /// <p> The unique identifier of the network. </p>
+    /// <p>The unique identifier of the network.</p>
     /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier of the network. </p>
+    /// <p>The unique identifier of the network.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_id = input;
         self
     }
-    /// <p> The unique identifier of the network. </p>
+    /// <p>The unique identifier of the network.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_id
     }
-    /// <p> The unique identifier of the proposal. </p>
+    /// <p>The unique identifier of the proposal.</p>
     /// This field is required.
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique identifier of the proposal. </p>
+    /// <p>The unique identifier of the proposal.</p>
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposal_id = input;
         self
     }
-    /// <p> The unique identifier of the proposal. </p>
+    /// <p>The unique identifier of the proposal.</p>
     pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.proposal_id
     }
-    /// <p>The unique identifier of the member casting the vote. </p>
+    /// <p>The unique identifier of the member casting the vote.</p>
     /// This field is required.
     pub fn voter_member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voter_member_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the member casting the vote. </p>
+    /// <p>The unique identifier of the member casting the vote.</p>
     pub fn set_voter_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voter_member_id = input;
         self
     }
-    /// <p>The unique identifier of the member casting the vote. </p>
+    /// <p>The unique identifier of the member casting the vote.</p>
     pub fn get_voter_member_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.voter_member_id
     }
-    /// <p> The value of the vote. </p>
+    /// <p>The value of the vote.</p>
     /// This field is required.
     pub fn vote(mut self, input: crate::types::VoteValue) -> Self {
         self.vote = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The value of the vote. </p>
+    /// <p>The value of the vote.</p>
     pub fn set_vote(mut self, input: ::std::option::Option<crate::types::VoteValue>) -> Self {
         self.vote = input;
         self
     }
-    /// <p> The value of the vote. </p>
+    /// <p>The value of the vote.</p>
     pub fn get_vote(&self) -> &::std::option::Option<crate::types::VoteValue> {
         &self.vote
     }

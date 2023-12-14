@@ -108,31 +108,31 @@ impl GetSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the session. </p>
+    /// <p>The ID of the session.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The ID of the session. </p>
+    /// <p>The ID of the session.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>The ID of the session. </p>
+    /// <p>The ID of the session.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
-    /// <p>The origin of the request. </p>
+    /// <p>The origin of the request.</p>
     pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_origin(input.into());
         self
     }
-    /// <p>The origin of the request. </p>
+    /// <p>The origin of the request.</p>
     pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_origin(input);
         self
     }
-    /// <p>The origin of the request. </p>
+    /// <p>The origin of the request.</p>
     pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_origin()
     }

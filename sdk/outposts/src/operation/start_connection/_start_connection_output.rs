@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConnectionOutput {
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
-    /// <p> The underlay IP address. </p>
+    /// <p>The underlay IP address.</p>
     pub underlay_ip_address: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartConnectionOutput {
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p> The underlay IP address. </p>
+    /// <p>The underlay IP address.</p>
     pub fn underlay_ip_address(&self) -> ::std::option::Option<&str> {
         self.underlay_ip_address.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct StartConnectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartConnectionOutputBuilder {
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
-    /// <p> The ID of the connection. </p>
+    /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }
-    /// <p> The underlay IP address. </p>
+    /// <p>The underlay IP address.</p>
     pub fn underlay_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.underlay_ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The underlay IP address. </p>
+    /// <p>The underlay IP address.</p>
     pub fn set_underlay_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.underlay_ip_address = input;
         self
     }
-    /// <p> The underlay IP address. </p>
+    /// <p>The underlay IP address.</p>
     pub fn get_underlay_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.underlay_ip_address
     }

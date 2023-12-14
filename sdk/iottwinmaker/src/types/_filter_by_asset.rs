@@ -6,7 +6,7 @@
 pub struct FilterByAsset {
     /// <p>Filter by asset Id.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
-    /// <p>The external-Id property of an asset. </p>
+    /// <p>The external-Id property of an asset.</p>
     pub asset_external_id: ::std::option::Option<::std::string::String>,
     /// <p>Includes sub-assets.[need description hekp for this]</p>
     pub include_offspring: ::std::option::Option<bool>,
@@ -18,7 +18,7 @@ impl FilterByAsset {
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p>The external-Id property of an asset. </p>
+    /// <p>The external-Id property of an asset.</p>
     pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
         self.asset_external_id.as_deref()
     }
@@ -62,17 +62,17 @@ impl FilterByAssetBuilder {
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
-    /// <p>The external-Id property of an asset. </p>
+    /// <p>The external-Id property of an asset.</p>
     pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_external_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The external-Id property of an asset. </p>
+    /// <p>The external-Id property of an asset.</p>
     pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_external_id = input;
         self
     }
-    /// <p>The external-Id property of an asset. </p>
+    /// <p>The external-Id property of an asset.</p>
     pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_external_id
     }

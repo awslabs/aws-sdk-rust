@@ -10,7 +10,7 @@ pub struct ThemeSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub theme_id: ::std::option::Option<::std::string::String>,
-    /// <p>The latest version number for the theme. </p>
+    /// <p>The latest version number for the theme.</p>
     pub latest_version_number: ::std::option::Option<i64>,
     /// <p>The date and time that this theme was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,7 +30,7 @@ impl ThemeSummary {
     pub fn theme_id(&self) -> ::std::option::Option<&str> {
         self.theme_id.as_deref()
     }
-    /// <p>The latest version number for the theme. </p>
+    /// <p>The latest version number for the theme.</p>
     pub fn latest_version_number(&self) -> ::std::option::Option<i64> {
         self.latest_version_number
     }
@@ -104,17 +104,17 @@ impl ThemeSummaryBuilder {
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.theme_id
     }
-    /// <p>The latest version number for the theme. </p>
+    /// <p>The latest version number for the theme.</p>
     pub fn latest_version_number(mut self, input: i64) -> Self {
         self.latest_version_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The latest version number for the theme. </p>
+    /// <p>The latest version number for the theme.</p>
     pub fn set_latest_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.latest_version_number = input;
         self
     }
-    /// <p>The latest version number for the theme. </p>
+    /// <p>The latest version number for the theme.</p>
     pub fn get_latest_version_number(&self) -> &::std::option::Option<i64> {
         &self.latest_version_number
     }

@@ -22,7 +22,7 @@ impl PutConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `PutConfiguration`.
 ///
-/// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+/// <p>Associates a <code>TagKey</code> configuration to an account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl PutConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
     pub fn configuration(mut self, input: crate::types::AppRegistryConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AppRegistryConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
         self.inner.get_configuration()
     }

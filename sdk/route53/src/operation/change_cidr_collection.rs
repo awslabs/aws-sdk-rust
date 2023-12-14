@@ -258,7 +258,7 @@ pub enum ChangeCidrCollectionError {
     CidrBlockInUseException(crate::types::error::CidrBlockInUseException),
     /// <p>The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code> operation.</p>
     CidrCollectionVersionMismatchException(crate::types::error::CidrCollectionVersionMismatchException),
-    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request. </p>
+    /// <p>Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the request.</p>
     ConcurrentModification(crate::types::error::ConcurrentModification),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::types::error::InvalidInput),

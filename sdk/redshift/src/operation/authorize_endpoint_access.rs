@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AuthorizeEndp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AuthorizeEndpointAccessError {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The authorization already exists for this endpoint.</p>
     EndpointAuthorizationAlreadyExistsFault(crate::types::error::EndpointAuthorizationAlreadyExistsFault),
@@ -251,7 +251,7 @@ pub enum AuthorizeEndpointAccessError {
     EndpointAuthorizationsPerClusterLimitExceededFault(crate::types::error::EndpointAuthorizationsPerClusterLimitExceededFault),
     /// <p>The status of the authorization is not valid.</p>
     InvalidAuthorizationStateFault(crate::types::error::InvalidAuthorizationStateFault),
-    /// <p>The specified cluster is not in the <code>available</code> state. </p>
+    /// <p>The specified cluster is not in the <code>available</code> state.</p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),

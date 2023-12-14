@@ -8,19 +8,19 @@ pub struct RegistrationVersionInformation {
     pub version_number: i64,
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li> <p> <code>DRAFT</code>: The initial status of a registration version after it’s created.</p> </li>
-    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted.</p> </li>
-    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
-    /// <li> <p> <code>APPROVED</code>: Your registration has been approved.</p> </li>
-    /// <li> <p> <code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version. </p> </li>
-    /// <li> <p> <code>DENIED</code>: You must fix your registration and resubmit it.</p> </li>
-    /// <li> <p> <code>REVOKED</code>: Your previously approved registration has been revoked.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p> </li>
+    /// <li><p><code>DRAFT</code>: The initial status of a registration version after it’s created.</p></li>
+    /// <li><p><code>SUBMITTED</code>: Your registration has been submitted.</p></li>
+    /// <li><p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
+    /// <li><p><code>APPROVED</code>: Your registration has been approved.</p></li>
+    /// <li><p><code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version.</p></li>
+    /// <li><p><code>DENIED</code>: You must fix your registration and resubmit it.</p></li>
+    /// <li><p><code>REVOKED</code>: Your previously approved registration has been revoked.</p></li>
+    /// <li><p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
     pub registration_version_status: crate::types::RegistrationVersionStatus,
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
     pub registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
-    /// <p>An array of RegistrationDeniedReasonInformation objects. </p>
+    /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
     pub denied_reasons: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>>,
 }
 impl RegistrationVersionInformation {
@@ -30,14 +30,14 @@ impl RegistrationVersionInformation {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li> <p> <code>DRAFT</code>: The initial status of a registration version after it’s created.</p> </li>
-    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted.</p> </li>
-    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
-    /// <li> <p> <code>APPROVED</code>: Your registration has been approved.</p> </li>
-    /// <li> <p> <code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version. </p> </li>
-    /// <li> <p> <code>DENIED</code>: You must fix your registration and resubmit it.</p> </li>
-    /// <li> <p> <code>REVOKED</code>: Your previously approved registration has been revoked.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p> </li>
+    /// <li><p><code>DRAFT</code>: The initial status of a registration version after it’s created.</p></li>
+    /// <li><p><code>SUBMITTED</code>: Your registration has been submitted.</p></li>
+    /// <li><p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
+    /// <li><p><code>APPROVED</code>: Your registration has been approved.</p></li>
+    /// <li><p><code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version.</p></li>
+    /// <li><p><code>DENIED</code>: You must fix your registration and resubmit it.</p></li>
+    /// <li><p><code>REVOKED</code>: Your previously approved registration has been revoked.</p></li>
+    /// <li><p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
     pub fn registration_version_status(&self) -> &crate::types::RegistrationVersionStatus {
         &self.registration_version_status
@@ -46,7 +46,7 @@ impl RegistrationVersionInformation {
     pub fn registration_version_status_history(&self) -> ::std::option::Option<&crate::types::RegistrationVersionStatusHistory> {
         self.registration_version_status_history.as_ref()
     }
-    /// <p>An array of RegistrationDeniedReasonInformation objects. </p>
+    /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.denied_reasons.is_none()`.
     pub fn denied_reasons(&self) -> &[crate::types::RegistrationDeniedReasonInformation] {
@@ -87,14 +87,14 @@ impl RegistrationVersionInformationBuilder {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li> <p> <code>DRAFT</code>: The initial status of a registration version after it’s created.</p> </li>
-    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted.</p> </li>
-    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
-    /// <li> <p> <code>APPROVED</code>: Your registration has been approved.</p> </li>
-    /// <li> <p> <code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version. </p> </li>
-    /// <li> <p> <code>DENIED</code>: You must fix your registration and resubmit it.</p> </li>
-    /// <li> <p> <code>REVOKED</code>: Your previously approved registration has been revoked.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p> </li>
+    /// <li><p><code>DRAFT</code>: The initial status of a registration version after it’s created.</p></li>
+    /// <li><p><code>SUBMITTED</code>: Your registration has been submitted.</p></li>
+    /// <li><p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
+    /// <li><p><code>APPROVED</code>: Your registration has been approved.</p></li>
+    /// <li><p><code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version.</p></li>
+    /// <li><p><code>DENIED</code>: You must fix your registration and resubmit it.</p></li>
+    /// <li><p><code>REVOKED</code>: Your previously approved registration has been revoked.</p></li>
+    /// <li><p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
     /// This field is required.
     pub fn registration_version_status(mut self, input: crate::types::RegistrationVersionStatus) -> Self {
@@ -103,14 +103,14 @@ impl RegistrationVersionInformationBuilder {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li> <p> <code>DRAFT</code>: The initial status of a registration version after it’s created.</p> </li>
-    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted.</p> </li>
-    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
-    /// <li> <p> <code>APPROVED</code>: Your registration has been approved.</p> </li>
-    /// <li> <p> <code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version. </p> </li>
-    /// <li> <p> <code>DENIED</code>: You must fix your registration and resubmit it.</p> </li>
-    /// <li> <p> <code>REVOKED</code>: Your previously approved registration has been revoked.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p> </li>
+    /// <li><p><code>DRAFT</code>: The initial status of a registration version after it’s created.</p></li>
+    /// <li><p><code>SUBMITTED</code>: Your registration has been submitted.</p></li>
+    /// <li><p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
+    /// <li><p><code>APPROVED</code>: Your registration has been approved.</p></li>
+    /// <li><p><code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version.</p></li>
+    /// <li><p><code>DENIED</code>: You must fix your registration and resubmit it.</p></li>
+    /// <li><p><code>REVOKED</code>: Your previously approved registration has been revoked.</p></li>
+    /// <li><p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
     pub fn set_registration_version_status(mut self, input: ::std::option::Option<crate::types::RegistrationVersionStatus>) -> Self {
         self.registration_version_status = input;
@@ -118,14 +118,14 @@ impl RegistrationVersionInformationBuilder {
     }
     /// <p>The status of the registration.</p>
     /// <ul>
-    /// <li> <p> <code>DRAFT</code>: The initial status of a registration version after it’s created.</p> </li>
-    /// <li> <p> <code>SUBMITTED</code>: Your registration has been submitted.</p> </li>
-    /// <li> <p> <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p> </li>
-    /// <li> <p> <code>APPROVED</code>: Your registration has been approved.</p> </li>
-    /// <li> <p> <code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version. </p> </li>
-    /// <li> <p> <code>DENIED</code>: You must fix your registration and resubmit it.</p> </li>
-    /// <li> <p> <code>REVOKED</code>: Your previously approved registration has been revoked.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p> </li>
+    /// <li><p><code>DRAFT</code>: The initial status of a registration version after it’s created.</p></li>
+    /// <li><p><code>SUBMITTED</code>: Your registration has been submitted.</p></li>
+    /// <li><p><code>REVIEWING</code>: Your registration has been accepted and is being reviewed.</p></li>
+    /// <li><p><code>APPROVED</code>: Your registration has been approved.</p></li>
+    /// <li><p><code>DISCARDED</code>: You've abandon this version of their registration to start over with a new version.</p></li>
+    /// <li><p><code>DENIED</code>: You must fix your registration and resubmit it.</p></li>
+    /// <li><p><code>REVOKED</code>: Your previously approved registration has been revoked.</p></li>
+    /// <li><p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
     pub fn get_registration_version_status(&self) -> &::std::option::Option<crate::types::RegistrationVersionStatus> {
         &self.registration_version_status
@@ -149,19 +149,19 @@ impl RegistrationVersionInformationBuilder {
     ///
     /// To override the contents of this collection use [`set_denied_reasons`](Self::set_denied_reasons).
     ///
-    /// <p>An array of RegistrationDeniedReasonInformation objects. </p>
+    /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
     pub fn denied_reasons(mut self, input: crate::types::RegistrationDeniedReasonInformation) -> Self {
         let mut v = self.denied_reasons.unwrap_or_default();
         v.push(input);
         self.denied_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of RegistrationDeniedReasonInformation objects. </p>
+    /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
     pub fn set_denied_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>>) -> Self {
         self.denied_reasons = input;
         self
     }
-    /// <p>An array of RegistrationDeniedReasonInformation objects. </p>
+    /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
     pub fn get_denied_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>> {
         &self.denied_reasons
     }

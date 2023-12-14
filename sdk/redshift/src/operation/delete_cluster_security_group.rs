@@ -251,7 +251,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteCluster
 pub enum DeleteClusterSecurityGroupError {
     /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::types::error::ClusterSecurityGroupNotFoundFault),
-    /// <p>The state of the cluster security group is not <code>available</code>. </p>
+    /// <p>The state of the cluster security group is not <code>available</code>.</p>
     InvalidClusterSecurityGroupStateFault(crate::types::error::InvalidClusterSecurityGroupStateFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

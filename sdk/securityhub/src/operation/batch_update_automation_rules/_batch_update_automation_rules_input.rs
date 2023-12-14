@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateAutomationRulesInput {
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     pub update_automation_rules_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>>,
 }
 impl BatchUpdateAutomationRulesInput {
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_automation_rules_request_items.is_none()`.
     pub fn update_automation_rules_request_items(&self) -> &[crate::types::UpdateAutomationRulesRequestItem] {
@@ -32,14 +32,14 @@ impl BatchUpdateAutomationRulesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_update_automation_rules_request_items`](Self::set_update_automation_rules_request_items).
     ///
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     pub fn update_automation_rules_request_items(mut self, input: crate::types::UpdateAutomationRulesRequestItem) -> Self {
         let mut v = self.update_automation_rules_request_items.unwrap_or_default();
         v.push(input);
         self.update_automation_rules_request_items = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     pub fn set_update_automation_rules_request_items(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>>,
@@ -47,7 +47,7 @@ impl BatchUpdateAutomationRulesInputBuilder {
         self.update_automation_rules_request_items = input;
         self
     }
-    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    /// <p>An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>.</p>
     pub fn get_update_automation_rules_request_items(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>> {

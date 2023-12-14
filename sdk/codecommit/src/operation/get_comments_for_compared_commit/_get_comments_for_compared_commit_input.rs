@@ -9,7 +9,7 @@ pub struct GetCommentsForComparedCommitInput {
     pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
     pub after_commit_id: ::std::option::Option<::std::string::String>,
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -27,7 +27,7 @@ impl GetCommentsForComparedCommitInput {
     pub fn after_commit_id(&self) -> ::std::option::Option<&str> {
         self.after_commit_id.as_deref()
     }
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -98,17 +98,17 @@ impl GetCommentsForComparedCommitInputBuilder {
     pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_commit_id
     }
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

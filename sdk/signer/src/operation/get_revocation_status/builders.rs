@@ -122,17 +122,17 @@ impl GetRevocationStatusFluentBuilder {
     pub fn get_signature_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_signature_timestamp()
     }
-    /// <p>The ID of a signing platform. </p>
+    /// <p>The ID of a signing platform.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_id(input.into());
         self
     }
-    /// <p>The ID of a signing platform. </p>
+    /// <p>The ID of a signing platform.</p>
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_id(input);
         self
     }
-    /// <p>The ID of a signing platform. </p>
+    /// <p>The ID of a signing platform.</p>
     pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_id()
     }
@@ -170,36 +170,36 @@ impl GetRevocationStatusFluentBuilder {
     ///
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    /// <p>The following example shows how to calculate a hash for this parameter using OpenSSL commands: </p>
-    /// <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</code> </p>
-    /// <p> <code>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</code> </p>
-    /// <p> <code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code> </p>
-    /// <p> <code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code> </p>
-    /// <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
+    /// <p>The following example shows how to calculate a hash for this parameter using OpenSSL commands:</p>
+    /// <p><code>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</code></p>
+    /// <p><code>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</code></p>
+    /// <p><code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code></p>
+    /// <p><code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code></p>
+    /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
     pub fn certificate_hashes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_hashes(input.into());
         self
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    /// <p>The following example shows how to calculate a hash for this parameter using OpenSSL commands: </p>
-    /// <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</code> </p>
-    /// <p> <code>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</code> </p>
-    /// <p> <code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code> </p>
-    /// <p> <code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code> </p>
-    /// <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
+    /// <p>The following example shows how to calculate a hash for this parameter using OpenSSL commands:</p>
+    /// <p><code>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</code></p>
+    /// <p><code>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</code></p>
+    /// <p><code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code></p>
+    /// <p><code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code></p>
+    /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
     pub fn set_certificate_hashes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_hashes(input);
         self
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    /// <p>The following example shows how to calculate a hash for this parameter using OpenSSL commands: </p>
-    /// <p> <code>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</code> </p>
-    /// <p> <code>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</code> </p>
-    /// <p> <code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code> </p>
-    /// <p> <code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code> </p>
-    /// <p> <code>cat certificateHash.hex | tr -d '\n'</code> </p>
+    /// <p>The following example shows how to calculate a hash for this parameter using OpenSSL commands:</p>
+    /// <p><code>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</code></p>
+    /// <p><code>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</code></p>
+    /// <p><code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code></p>
+    /// <p><code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code></p>
+    /// <p><code>cat certificateHash.hex | tr -d '\n'</code></p>
     pub fn get_certificate_hashes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificate_hashes()
     }

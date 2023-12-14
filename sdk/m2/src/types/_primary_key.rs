@@ -8,7 +8,7 @@ pub struct PrimaryKey {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A positive integer value representing the offset to mark the start of the primary key in the record byte array.</p>
     pub offset: i32,
-    /// <p>A strictly positive integer value representing the length of the primary key. </p>
+    /// <p>A strictly positive integer value representing the length of the primary key.</p>
     pub length: i32,
 }
 impl PrimaryKey {
@@ -20,7 +20,7 @@ impl PrimaryKey {
     pub fn offset(&self) -> i32 {
         self.offset
     }
-    /// <p>A strictly positive integer value representing the length of the primary key. </p>
+    /// <p>A strictly positive integer value representing the length of the primary key.</p>
     pub fn length(&self) -> i32 {
         self.length
     }
@@ -70,18 +70,18 @@ impl PrimaryKeyBuilder {
     pub fn get_offset(&self) -> &::std::option::Option<i32> {
         &self.offset
     }
-    /// <p>A strictly positive integer value representing the length of the primary key. </p>
+    /// <p>A strictly positive integer value representing the length of the primary key.</p>
     /// This field is required.
     pub fn length(mut self, input: i32) -> Self {
         self.length = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A strictly positive integer value representing the length of the primary key. </p>
+    /// <p>A strictly positive integer value representing the length of the primary key.</p>
     pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.length = input;
         self
     }
-    /// <p>A strictly positive integer value representing the length of the primary key. </p>
+    /// <p>A strictly positive integer value representing the length of the primary key.</p>
     pub fn get_length(&self) -> &::std::option::Option<i32> {
         &self.length
     }

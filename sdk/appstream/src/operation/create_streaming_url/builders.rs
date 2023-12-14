@@ -22,7 +22,7 @@ impl CreateStreamingUrlInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateStreamingURL`.
 ///
-/// <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup. </p>
+/// <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStreamingURLFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

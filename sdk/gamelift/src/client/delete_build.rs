@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBuild`](crate::operation::delete_build::builders::DeleteBuildFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`build_id(impl Into<String>)`](crate::operation::delete_build::builders::DeleteBuildFluentBuilder::build_id) / [`set_build_id(Option<String>)`](crate::operation::delete_build::builders::DeleteBuildFluentBuilder::set_build_id):<br>required: **true**<br><p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p><br>
+    ///   - [`build_id(impl Into<String>)`](crate::operation::delete_build::builders::DeleteBuildFluentBuilder::build_id) / [`set_build_id(Option<String>)`](crate::operation::delete_build::builders::DeleteBuildFluentBuilder::set_build_id):<br>required: **true**<br><p>A unique identifier for the build to delete. You can use either the build ID or ARN value.</p><br>
     /// - On success, responds with [`DeleteBuildOutput`](crate::operation::delete_build::DeleteBuildOutput)
     /// - On failure, responds with [`SdkError<DeleteBuildError>`](crate::operation::delete_build::DeleteBuildError)
     pub fn delete_build(&self) -> crate::operation::delete_build::builders::DeleteBuildFluentBuilder {

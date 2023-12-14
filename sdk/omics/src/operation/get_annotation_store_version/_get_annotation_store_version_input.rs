@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnnotationStoreVersionInput {
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
 }
 impl GetAnnotationStoreVersionInput {
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetAnnotationStoreVersionInputBuilder {
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
 }
 impl GetAnnotationStoreVersionInputBuilder {
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
     }
-    /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }

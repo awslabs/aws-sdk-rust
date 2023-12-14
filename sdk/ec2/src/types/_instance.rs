@@ -24,7 +24,7 @@ pub struct Instance {
     pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
-    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.</p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address assigned to the instance.</p>
@@ -165,7 +165,7 @@ impl Instance {
     pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
         self.platform.as_ref()
     }
-    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.</p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
@@ -586,19 +586,19 @@ impl InstanceBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
         &self.platform
     }
-    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.</p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.</p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_dns_name = input;
         self
     }
-    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.</p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_dns_name

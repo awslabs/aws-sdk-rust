@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentsInput {
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code> </p>
+    /// <p>Default: <code>PRIVATE</code></p>
     pub scope: ::std::option::Option<crate::types::ComponentVisibilityScope>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,7 +13,7 @@ pub struct ListComponentsInput {
 }
 impl ListComponentsInput {
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code> </p>
+    /// <p>Default: <code>PRIVATE</code></p>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::ComponentVisibilityScope> {
         self.scope.as_ref()
     }
@@ -43,19 +43,19 @@ pub struct ListComponentsInputBuilder {
 }
 impl ListComponentsInputBuilder {
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code> </p>
+    /// <p>Default: <code>PRIVATE</code></p>
     pub fn scope(mut self, input: crate::types::ComponentVisibilityScope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code> </p>
+    /// <p>Default: <code>PRIVATE</code></p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ComponentVisibilityScope>) -> Self {
         self.scope = input;
         self
     }
     /// <p>The scope of the components to list.</p>
-    /// <p>Default: <code>PRIVATE</code> </p>
+    /// <p>Default: <code>PRIVATE</code></p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::ComponentVisibilityScope> {
         &self.scope
     }

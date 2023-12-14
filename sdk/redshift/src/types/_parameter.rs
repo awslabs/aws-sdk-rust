@@ -18,7 +18,7 @@ pub struct Parameter {
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub apply_type: ::std::option::Option<crate::types::ParameterApplyType>,
-    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub is_modifiable: ::std::option::Option<bool>,
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl Parameter {
     pub fn apply_type(&self) -> ::std::option::Option<&crate::types::ParameterApplyType> {
         self.apply_type.as_ref()
     }
-    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
@@ -181,17 +181,17 @@ impl ParameterBuilder {
     pub fn get_apply_type(&self) -> &::std::option::Option<crate::types::ParameterApplyType> {
         &self.apply_type
     }
-    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
     }
-    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
+    /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
         &self.is_modifiable
     }

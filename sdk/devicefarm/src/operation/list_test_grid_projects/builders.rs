@@ -128,17 +128,17 @@ impl ListTestGridProjectsFluentBuilder {
     pub fn get_max_result(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_result()
     }
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>From a response, used to continue a paginated listing. </p>
+    /// <p>From a response, used to continue a paginated listing.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

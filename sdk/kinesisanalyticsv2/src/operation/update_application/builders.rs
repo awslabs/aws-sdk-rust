@@ -22,8 +22,8 @@ impl UpdateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code, input configuration, and output configuration. </p>
-/// <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application. </p> <note>
+/// <p>Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code, input configuration, and output configuration.</p>
+/// <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.</p> <note>
 /// <p>You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you need to update an application's <code>RuntimeEnvironment</code>, you must delete the application and create it again.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

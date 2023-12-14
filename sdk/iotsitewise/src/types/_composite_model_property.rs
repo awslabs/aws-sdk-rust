@@ -10,7 +10,7 @@ pub struct CompositeModelProperty {
     pub r#type: ::std::string::String,
     /// <p>Contains asset property information.</p>
     pub asset_property: ::std::option::Option<crate::types::Property>,
-    /// <p> The ID of the composite model that contains the property. </p>
+    /// <p>The ID of the composite model that contains the property.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl CompositeModelProperty {
     pub fn asset_property(&self) -> ::std::option::Option<&crate::types::Property> {
         self.asset_property.as_ref()
     }
-    /// <p> The ID of the composite model that contains the property. </p>
+    /// <p>The ID of the composite model that contains the property.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -102,17 +102,17 @@ impl CompositeModelPropertyBuilder {
     pub fn get_asset_property(&self) -> &::std::option::Option<crate::types::Property> {
         &self.asset_property
     }
-    /// <p> The ID of the composite model that contains the property. </p>
+    /// <p>The ID of the composite model that contains the property.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the composite model that contains the property. </p>
+    /// <p>The ID of the composite model that contains the property.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> The ID of the composite model that contains the property. </p>
+    /// <p>The ID of the composite model that contains the property.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

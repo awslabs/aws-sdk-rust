@@ -5,8 +5,8 @@
 pub struct ListCachePoliciesInput {
     /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::CachePolicyType>,
     /// <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
@@ -17,8 +17,8 @@ pub struct ListCachePoliciesInput {
 impl ListCachePoliciesInput {
     /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CachePolicyType> {
         self.r#type.as_ref()
@@ -50,8 +50,8 @@ pub struct ListCachePoliciesInputBuilder {
 impl ListCachePoliciesInputBuilder {
     /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::CachePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -59,8 +59,8 @@ impl ListCachePoliciesInputBuilder {
     }
     /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CachePolicyType>) -> Self {
         self.r#type = input;
@@ -68,8 +68,8 @@ impl ListCachePoliciesInputBuilder {
     }
     /// <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>
     /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <li><p><code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p></li>
+    /// <li><p><code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CachePolicyType> {
         &self.r#type

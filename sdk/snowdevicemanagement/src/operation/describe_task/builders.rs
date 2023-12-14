@@ -22,7 +22,7 @@ impl DescribeTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTask`.
 ///
-/// <p>Checks the metadata for a given task on a device. </p>
+/// <p>Checks the metadata for a given task on a device.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

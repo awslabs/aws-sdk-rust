@@ -7,21 +7,21 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// <p>The log driver to use for the container.</p>
     /// <p>Valid values on Fargate are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
     /// </ul>
     /// <p>Valid values on Amazon EC2 are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>fluentd</code> </p> </li>
-    /// <li> <p> <code>gelf</code> </p> </li>
-    /// <li> <p> <code>journald</code> </p> </li>
-    /// <li> <p> <code>json-file</code> </p> </li>
-    /// <li> <p> <code>logentries</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
-    /// <li> <p> <code>syslog</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>fluentd</code></p></li>
+    /// <li><p><code>gelf</code></p></li>
+    /// <li><p><code>journald</code></p></li>
+    /// <li><p><code>json-file</code></p></li>
+    /// <li><p><code>logentries</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
+    /// <li><p><code>syslog</code></p></li>
     /// </ul>
     pub log_driver: ::std::option::Option<::std::string::String>,
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
@@ -34,21 +34,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// <p>The log driver to use for the container.</p>
     /// <p>Valid values on Fargate are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
     /// </ul>
     /// <p>Valid values on Amazon EC2 are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>fluentd</code> </p> </li>
-    /// <li> <p> <code>gelf</code> </p> </li>
-    /// <li> <p> <code>journald</code> </p> </li>
-    /// <li> <p> <code>json-file</code> </p> </li>
-    /// <li> <p> <code>logentries</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
-    /// <li> <p> <code>syslog</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>fluentd</code></p></li>
+    /// <li><p><code>gelf</code></p></li>
+    /// <li><p><code>journald</code></p></li>
+    /// <li><p><code>json-file</code></p></li>
+    /// <li><p><code>logentries</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
+    /// <li><p><code>syslog</code></p></li>
     /// </ul>
     pub fn log_driver(&self) -> ::std::option::Option<&str> {
         self.log_driver.as_deref()
@@ -84,21 +84,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <p>The log driver to use for the container.</p>
     /// <p>Valid values on Fargate are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
     /// </ul>
     /// <p>Valid values on Amazon EC2 are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>fluentd</code> </p> </li>
-    /// <li> <p> <code>gelf</code> </p> </li>
-    /// <li> <p> <code>journald</code> </p> </li>
-    /// <li> <p> <code>json-file</code> </p> </li>
-    /// <li> <p> <code>logentries</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
-    /// <li> <p> <code>syslog</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>fluentd</code></p></li>
+    /// <li><p><code>gelf</code></p></li>
+    /// <li><p><code>journald</code></p></li>
+    /// <li><p><code>json-file</code></p></li>
+    /// <li><p><code>logentries</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
+    /// <li><p><code>syslog</code></p></li>
     /// </ul>
     pub fn log_driver(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_driver = ::std::option::Option::Some(input.into());
@@ -107,21 +107,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <p>The log driver to use for the container.</p>
     /// <p>Valid values on Fargate are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
     /// </ul>
     /// <p>Valid values on Amazon EC2 are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>fluentd</code> </p> </li>
-    /// <li> <p> <code>gelf</code> </p> </li>
-    /// <li> <p> <code>journald</code> </p> </li>
-    /// <li> <p> <code>json-file</code> </p> </li>
-    /// <li> <p> <code>logentries</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
-    /// <li> <p> <code>syslog</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>fluentd</code></p></li>
+    /// <li><p><code>gelf</code></p></li>
+    /// <li><p><code>journald</code></p></li>
+    /// <li><p><code>json-file</code></p></li>
+    /// <li><p><code>logentries</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
+    /// <li><p><code>syslog</code></p></li>
     /// </ul>
     pub fn set_log_driver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_driver = input;
@@ -130,21 +130,21 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <p>The log driver to use for the container.</p>
     /// <p>Valid values on Fargate are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
     /// </ul>
     /// <p>Valid values on Amazon EC2 are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>awsfirelens</code> </p> </li>
-    /// <li> <p> <code>awslogs</code> </p> </li>
-    /// <li> <p> <code>fluentd</code> </p> </li>
-    /// <li> <p> <code>gelf</code> </p> </li>
-    /// <li> <p> <code>journald</code> </p> </li>
-    /// <li> <p> <code>json-file</code> </p> </li>
-    /// <li> <p> <code>logentries</code> </p> </li>
-    /// <li> <p> <code>splunk</code> </p> </li>
-    /// <li> <p> <code>syslog</code> </p> </li>
+    /// <li><p><code>awsfirelens</code></p></li>
+    /// <li><p><code>awslogs</code></p></li>
+    /// <li><p><code>fluentd</code></p></li>
+    /// <li><p><code>gelf</code></p></li>
+    /// <li><p><code>journald</code></p></li>
+    /// <li><p><code>json-file</code></p></li>
+    /// <li><p><code>logentries</code></p></li>
+    /// <li><p><code>splunk</code></p></li>
+    /// <li><p><code>syslog</code></p></li>
     /// </ul>
     pub fn get_log_driver(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_driver

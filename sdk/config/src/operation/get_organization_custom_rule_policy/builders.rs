@@ -108,17 +108,17 @@ impl GetOrganizationCustomRulePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_config_rule_name(input.into());
         self
     }
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn set_organization_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_config_rule_name(input);
         self
     }
-    /// <p>The name of your organization Config Custom Policy rule. </p>
+    /// <p>The name of your organization Config Custom Policy rule.</p>
     pub fn get_organization_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organization_config_rule_name()
     }

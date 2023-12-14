@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdeConfiguration {
-    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>A link to the IDE runtime image.</p> <note>
     /// <p>This parameter is not required for <code>VSCode</code>.</p>
     /// </note>
     pub runtime: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct IdeConfiguration {
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl IdeConfiguration {
-    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>A link to the IDE runtime image.</p> <note>
     /// <p>This parameter is not required for <code>VSCode</code>.</p>
     /// </note>
     pub fn runtime(&self) -> ::std::option::Option<&str> {
@@ -38,21 +38,21 @@ pub struct IdeConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl IdeConfigurationBuilder {
-    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>A link to the IDE runtime image.</p> <note>
     /// <p>This parameter is not required for <code>VSCode</code>.</p>
     /// </note>
     pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>A link to the IDE runtime image.</p> <note>
     /// <p>This parameter is not required for <code>VSCode</code>.</p>
     /// </note>
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime = input;
         self
     }
-    /// <p>A link to the IDE runtime image. </p> <note>
+    /// <p>A link to the IDE runtime image.</p> <note>
     /// <p>This parameter is not required for <code>VSCode</code>.</p>
     /// </note>
     pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {

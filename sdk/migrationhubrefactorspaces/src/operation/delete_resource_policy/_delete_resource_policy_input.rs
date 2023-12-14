@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteResourcePolicyInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInputBuilder {
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// <p>Amazon Resource Name (ARN) of the resource associated with the policy.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

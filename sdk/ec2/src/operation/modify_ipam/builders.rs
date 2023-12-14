@@ -22,7 +22,7 @@ impl ModifyIpamInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyIpam`.
 ///
-/// <p>Modify the configurations of an IPAM. </p>
+/// <p>Modify the configurations of an IPAM.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyIpamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

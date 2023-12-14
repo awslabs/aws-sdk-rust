@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVehicleInput {
-    /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// <p>The ID of the vehicle to retrieve information about.</p>
     pub vehicle_name: ::std::option::Option<::std::string::String>,
 }
 impl GetVehicleInput {
-    /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// <p>The ID of the vehicle to retrieve information about.</p>
     pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
 }
 impl GetVehicleInputBuilder {
-    /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// <p>The ID of the vehicle to retrieve information about.</p>
     /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// <p>The ID of the vehicle to retrieve information about.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
-    /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// <p>The ID of the vehicle to retrieve information about.</p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vehicle_name
     }

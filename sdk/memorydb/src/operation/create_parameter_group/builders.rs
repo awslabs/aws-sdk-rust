@@ -22,7 +22,7 @@ impl CreateParameterGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateParameterGroup`.
 ///
-/// <p>Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring engine parameters using parameter groups</a>. </p>
+/// <p>Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring engine parameters using parameter groups</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

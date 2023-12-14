@@ -22,7 +22,7 @@ impl ListCustomRoutingAcceleratorsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCustomRoutingAccelerators`.
 ///
-/// <p>List the custom routing accelerators for an Amazon Web Services account. </p>
+/// <p>List the custom routing accelerators for an Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

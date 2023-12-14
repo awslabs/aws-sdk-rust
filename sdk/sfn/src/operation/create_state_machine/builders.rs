@@ -26,7 +26,7 @@ impl CreateStateMachineInputBuilder {
 /// <p>If you set the <code>publish</code> parameter of this API action to <code>true</code>, it publishes version <code>1</code> as the first revision of the state machine.</p> <note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note> <note>
-/// <p> <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code>, and <code>TracingConfiguration</code>. The check is also based on the <code>publish</code> and <code>versionDescription</code> parameters. If a following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.</p>
+/// <p><code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code>, and <code>TracingConfiguration</code>. The check is also based on the <code>publish</code> and <code>versionDescription</code> parameters. If a following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStateMachineFluentBuilder {
@@ -113,42 +113,42 @@ impl CreateStateMachineFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the state machine. </p>
+    /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the state machine. </p>
+    /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the state machine. </p>
+    /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// <li><p>white space</p></li>
+    /// <li><p>brackets <code>&lt; &gt; { } [ ]</code></p></li>
+    /// <li><p>wildcard characters <code>? *</code></p></li>
+    /// <li><p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code></p></li>
+    /// <li><p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

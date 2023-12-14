@@ -22,7 +22,7 @@ impl AssociateAccountsInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateAccounts`.
 ///
-/// <p>Connects an array of account IDs in a consolidated billing family to a predefined billing group. The account IDs must be a part of the consolidated billing family during the current month, and not already associated with another billing group. The maximum number of accounts that can be associated in one call is 30. </p>
+/// <p>Connects an array of account IDs in a consolidated billing family to a predefined billing group. The account IDs must be a part of the consolidated billing family during the current month, and not already associated with another billing group. The maximum number of accounts that can be associated in one call is 30.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AssociateAccountsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    /// <p>The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
@@ -126,17 +126,17 @@ impl AssociateAccountsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p> The associating array of account IDs. </p>
+    /// <p>The associating array of account IDs.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p> The associating array of account IDs. </p>
+    /// <p>The associating array of account IDs.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p> The associating array of account IDs. </p>
+    /// <p>The associating array of account IDs.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }

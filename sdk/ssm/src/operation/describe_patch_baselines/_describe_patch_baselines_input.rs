@@ -6,9 +6,9 @@ pub struct DescribePatchBaselinesInput {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <li><p><b> <code>NAME_PREFIX</code> </b></p> <p>Sample values: <code>AWS-</code> | <code>My-</code></p></li>
+    /// <li><p><b> <code>OWNER</code> </b></p> <p>Sample values: <code>AWS</code> | <code>Self</code></p></li>
+    /// <li><p><b> <code>OPERATING_SYSTEM</code> </b></p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patch baselines to return (per page).</p>
@@ -20,9 +20,9 @@ impl DescribePatchBaselinesInput {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <li><p><b> <code>NAME_PREFIX</code> </b></p> <p>Sample values: <code>AWS-</code> | <code>My-</code></p></li>
+    /// <li><p><b> <code>OWNER</code> </b></p> <p>Sample values: <code>AWS</code> | <code>Self</code></p></li>
+    /// <li><p><b> <code>OPERATING_SYSTEM</code> </b></p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -61,9 +61,9 @@ impl DescribePatchBaselinesInputBuilder {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <li><p><b> <code>NAME_PREFIX</code> </b></p> <p>Sample values: <code>AWS-</code> | <code>My-</code></p></li>
+    /// <li><p><b> <code>OWNER</code> </b></p> <p>Sample values: <code>AWS</code> | <code>Self</code></p></li>
+    /// <li><p><b> <code>OPERATING_SYSTEM</code> </b></p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::PatchOrchestratorFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -74,9 +74,9 @@ impl DescribePatchBaselinesInputBuilder {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <li><p><b> <code>NAME_PREFIX</code> </b></p> <p>Sample values: <code>AWS-</code> | <code>My-</code></p></li>
+    /// <li><p><b> <code>OWNER</code> </b></p> <p>Sample values: <code>AWS</code> | <code>Self</code></p></li>
+    /// <li><p><b> <code>OPERATING_SYSTEM</code> </b></p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.filters = input;
@@ -85,9 +85,9 @@ impl DescribePatchBaselinesInputBuilder {
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
     /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <li><p><b> <code>NAME_PREFIX</code> </b></p> <p>Sample values: <code>AWS-</code> | <code>My-</code></p></li>
+    /// <li><p><b> <code>OWNER</code> </b></p> <p>Sample values: <code>AWS</code> | <code>Self</code></p></li>
+    /// <li><p><b> <code>OPERATING_SYSTEM</code> </b></p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         &self.filters

@@ -22,16 +22,16 @@ impl DescribeFleetLocationAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeFleetLocationAttributes`.
 ///
-/// <p>Retrieves information on a fleet's remote locations, including life-cycle status and any suspended fleet activity. </p>
-/// <p>This operation can be used in the following ways: </p>
+/// <p>Retrieves information on a fleet's remote locations, including life-cycle status and any suspended fleet activity.</p>
+/// <p>This operation can be used in the following ways:</p>
 /// <ul>
-/// <li> <p>To get data for specific locations, provide a fleet identifier and a list of locations. Location data is returned in the order that it is requested. </p> </li>
-/// <li> <p>To get data for all locations, provide a fleet identifier only. Location data is returned in no particular order. </p> </li>
+/// <li><p>To get data for specific locations, provide a fleet identifier and a list of locations. Location data is returned in the order that it is requested.</p></li>
+/// <li><p>To get data for all locations, provide a fleet identifier only. Location data is returned in no particular order.</p></li>
 /// </ul>
-/// <p>When requesting attributes for multiple locations, use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>When requesting attributes for multiple locations, use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a <code>LocationAttributes</code> object is returned for each requested location. If the fleet does not have a requested location, no information is returned. This operation does not return the home Region. To get information on a fleet's home Region, call <code>DescribeFleetAttributes</code>.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

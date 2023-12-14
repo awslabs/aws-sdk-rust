@@ -13,7 +13,7 @@ pub struct DescribeInstanceOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date the instance was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The status of the instance. </p>
+    /// <p>The status of the instance.</p>
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     _request_id: Option<String>,
 }
@@ -38,7 +38,7 @@ impl DescribeInstanceOutput {
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>The status of the instance. </p>
+    /// <p>The status of the instance.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.status.as_ref()
     }
@@ -138,17 +138,17 @@ impl DescribeInstanceOutputBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
-    /// <p>The status of the instance. </p>
+    /// <p>The status of the instance.</p>
     pub fn status(mut self, input: crate::types::InstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the instance. </p>
+    /// <p>The status of the instance.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the instance. </p>
+    /// <p>The status of the instance.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
         &self.status
     }

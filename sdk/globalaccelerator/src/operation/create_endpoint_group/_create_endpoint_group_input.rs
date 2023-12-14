@@ -9,7 +9,7 @@ pub struct CreateEndpointGroupInput {
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>The list of endpoint objects.</p>
     pub endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
-    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub traffic_dial_percentage: ::std::option::Option<f32>,
@@ -44,7 +44,7 @@ impl CreateEndpointGroupInput {
     pub fn endpoint_configurations(&self) -> &[crate::types::EndpointConfiguration] {
         self.endpoint_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub fn traffic_dial_percentage(&self) -> ::std::option::Option<f32> {
@@ -156,21 +156,21 @@ impl CreateEndpointGroupInputBuilder {
     pub fn get_endpoint_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>> {
         &self.endpoint_configurations
     }
-    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
         self.traffic_dial_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub fn set_traffic_dial_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
         self.traffic_dial_percentage = input;
         self
     }
-    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.</p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
     pub fn get_traffic_dial_percentage(&self) -> &::std::option::Option<f32> {

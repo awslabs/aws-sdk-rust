@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsOutput {
-    /// <p>A unique identifier for the fleet that was requested. </p>
+    /// <p>A unique identifier for the fleet that was requested.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
@@ -14,12 +14,12 @@ pub struct DescribeFleetPortSettingsOutput {
     pub inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub update_status: ::std::option::Option<crate::types::LocationUpdateStatus>,
-    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeFleetPortSettingsOutput {
-    /// <p>A unique identifier for the fleet that was requested. </p>
+    /// <p>A unique identifier for the fleet that was requested.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -40,7 +40,7 @@ impl DescribeFleetPortSettingsOutput {
     pub fn update_status(&self) -> ::std::option::Option<&crate::types::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
-    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -69,17 +69,17 @@ pub struct DescribeFleetPortSettingsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFleetPortSettingsOutputBuilder {
-    /// <p>A unique identifier for the fleet that was requested. </p>
+    /// <p>A unique identifier for the fleet that was requested.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the fleet that was requested. </p>
+    /// <p>A unique identifier for the fleet that was requested.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>A unique identifier for the fleet that was requested. </p>
+    /// <p>A unique identifier for the fleet that was requested.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
@@ -140,17 +140,17 @@ impl DescribeFleetPortSettingsOutputBuilder {
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::LocationUpdateStatus> {
         &self.update_status
     }
-    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

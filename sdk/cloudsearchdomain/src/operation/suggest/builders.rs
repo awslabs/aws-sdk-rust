@@ -22,9 +22,9 @@ impl SuggestInputBuilder {
 }
 /// Fluent builder constructing a request to `Suggest`.
 ///
-/// <p>Retrieves autocomplete suggestions for a partial query string. You can use suggestions enable you to display likely matches before users finish typing. In Amazon CloudSearch, suggestions are based on the contents of a particular text field. When you request suggestions, Amazon CloudSearch finds all of the documents whose values in the suggester field start with the specified query string. The beginning of the field must match the query string to be considered a match. </p>
-/// <p>For more information about configuring suggesters and retrieving suggestions, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html">Getting Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-/// <p>The endpoint for submitting <code>Suggest</code> requests is domain-specific. You submit suggest requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>
+/// <p>Retrieves autocomplete suggestions for a partial query string. You can use suggestions enable you to display likely matches before users finish typing. In Amazon CloudSearch, suggestions are based on the contents of a particular text field. When you request suggestions, Amazon CloudSearch finds all of the documents whose values in the suggester field start with the specified query string. The beginning of the field must match the query string to be considered a match.</p>
+/// <p>For more information about configuring suggesters and retrieving suggestions, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html">Getting Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+/// <p>The endpoint for submitting <code>Suggest</code> requests is domain-specific. You submit suggest requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SuggestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -129,17 +129,17 @@ impl SuggestFluentBuilder {
     pub fn get_suggester(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_suggester()
     }
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.inner = self.inner.size(input);
         self
     }
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_size(input);
         self
     }
-    /// <p>Specifies the maximum number of suggestions to return. </p>
+    /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
         self.inner.get_size()
     }

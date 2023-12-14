@@ -22,7 +22,7 @@ impl CreateDataProviderInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDataProvider`.
 ///
-/// <p>Creates a data provider using the provided settings. A data provider stores a data store type and location information about your database. </p>
+/// <p>Creates a data provider using the provided settings. A data provider stores a data store type and location information about your database.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

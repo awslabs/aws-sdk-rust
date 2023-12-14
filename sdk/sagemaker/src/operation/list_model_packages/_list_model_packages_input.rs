@@ -17,9 +17,9 @@ pub struct ListModelPackagesInput {
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <li><p><code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p></li>
+    /// <li><p><code>VERSIONED</code> - List only versioned models.</p></li>
+    /// <li><p><code>BOTH</code> - List both versioned and unversioned models.</p></li>
     /// </ul>
     pub model_package_type: ::std::option::Option<crate::types::ModelPackageType>,
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
@@ -56,9 +56,9 @@ impl ListModelPackagesInput {
     }
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <li><p><code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p></li>
+    /// <li><p><code>VERSIONED</code> - List only versioned models.</p></li>
+    /// <li><p><code>BOTH</code> - List both versioned and unversioned models.</p></li>
     /// </ul>
     pub fn model_package_type(&self) -> ::std::option::Option<&crate::types::ModelPackageType> {
         self.model_package_type.as_ref()
@@ -185,9 +185,9 @@ impl ListModelPackagesInputBuilder {
     }
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <li><p><code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p></li>
+    /// <li><p><code>VERSIONED</code> - List only versioned models.</p></li>
+    /// <li><p><code>BOTH</code> - List both versioned and unversioned models.</p></li>
     /// </ul>
     pub fn model_package_type(mut self, input: crate::types::ModelPackageType) -> Self {
         self.model_package_type = ::std::option::Option::Some(input);
@@ -195,9 +195,9 @@ impl ListModelPackagesInputBuilder {
     }
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <li><p><code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p></li>
+    /// <li><p><code>VERSIONED</code> - List only versioned models.</p></li>
+    /// <li><p><code>BOTH</code> - List both versioned and unversioned models.</p></li>
     /// </ul>
     pub fn set_model_package_type(mut self, input: ::std::option::Option<crate::types::ModelPackageType>) -> Self {
         self.model_package_type = input;
@@ -205,9 +205,9 @@ impl ListModelPackagesInputBuilder {
     }
     /// <p>A filter that returns only the model packages of the specified type. This can be one of the following values.</p>
     /// <ul>
-    /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p> </li>
-    /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
-    /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
+    /// <li><p><code>UNVERSIONED</code> - List only unversioined models. This is the default value if no <code>ModelPackageType</code> is specified.</p></li>
+    /// <li><p><code>VERSIONED</code> - List only versioned models.</p></li>
+    /// <li><p><code>BOTH</code> - List both versioned and unversioned models.</p></li>
     /// </ul>
     pub fn get_model_package_type(&self) -> &::std::option::Option<crate::types::ModelPackageType> {
         &self.model_package_type

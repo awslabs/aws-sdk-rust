@@ -254,7 +254,7 @@ pub enum EvaluateExpressionError {
     PipelineDeletedException(crate::types::error::PipelineDeletedException),
     /// <p>The specified pipeline was not found. Verify that you used the correct user and account identifiers.</p>
     PipelineNotFoundException(crate::types::error::PipelineNotFoundException),
-    /// <p>The specified task was not found. </p>
+    /// <p>The specified task was not found.</p>
     TaskNotFoundException(crate::types::error::TaskNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

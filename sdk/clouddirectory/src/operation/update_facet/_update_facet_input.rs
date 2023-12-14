@@ -7,7 +7,7 @@ pub struct UpdateFacetInput {
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the facet.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>,
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub object_type: ::std::option::Option<crate::types::ObjectType>,
@@ -21,7 +21,7 @@ impl UpdateFacetInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_updates.is_none()`.
     pub fn attribute_updates(&self) -> &[crate::types::FacetAttributeUpdate] {
@@ -83,19 +83,19 @@ impl UpdateFacetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
     ///
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub fn attribute_updates(mut self, input: crate::types::FacetAttributeUpdate) -> Self {
         let mut v = self.attribute_updates.unwrap_or_default();
         v.push(input);
         self.attribute_updates = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>) -> Self {
         self.attribute_updates = input;
         self
     }
-    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>> {
         &self.attribute_updates
     }

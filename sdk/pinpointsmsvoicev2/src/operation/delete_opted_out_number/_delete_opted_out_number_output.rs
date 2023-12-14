@@ -11,7 +11,7 @@ pub struct DeleteOptedOutNumberOutput {
     pub opted_out_number: ::std::option::Option<::std::string::String>,
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub opted_out_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    /// <p>This is true if it was the end user who requested their phone number be removed.</p>
     pub end_user_opted_out: bool,
     _request_id: Option<String>,
 }
@@ -32,7 +32,7 @@ impl DeleteOptedOutNumberOutput {
     pub fn opted_out_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.opted_out_timestamp.as_ref()
     }
-    /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    /// <p>This is true if it was the end user who requested their phone number be removed.</p>
     pub fn end_user_opted_out(&self) -> bool {
         self.end_user_opted_out
     }
@@ -117,17 +117,17 @@ impl DeleteOptedOutNumberOutputBuilder {
     pub fn get_opted_out_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.opted_out_timestamp
     }
-    /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    /// <p>This is true if it was the end user who requested their phone number be removed.</p>
     pub fn end_user_opted_out(mut self, input: bool) -> Self {
         self.end_user_opted_out = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    /// <p>This is true if it was the end user who requested their phone number be removed.</p>
     pub fn set_end_user_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
         self.end_user_opted_out = input;
         self
     }
-    /// <p>This is true if it was the end user who requested their phone number be removed. </p>
+    /// <p>This is true if it was the end user who requested their phone number be removed.</p>
     pub fn get_end_user_opted_out(&self) -> &::std::option::Option<bool> {
         &self.end_user_opted_out
     }

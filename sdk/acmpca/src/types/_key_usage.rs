@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyUsage {
-    /// <p> Key can be used for digital signing.</p>
+    /// <p>Key can be used for digital signing.</p>
     pub digital_signature: bool,
     /// <p>Key can be used for non-repudiation.</p>
     pub non_repudiation: bool,
@@ -24,7 +24,7 @@ pub struct KeyUsage {
     pub decipher_only: bool,
 }
 impl KeyUsage {
-    /// <p> Key can be used for digital signing.</p>
+    /// <p>Key can be used for digital signing.</p>
     pub fn digital_signature(&self) -> bool {
         self.digital_signature
     }
@@ -83,17 +83,17 @@ pub struct KeyUsageBuilder {
     pub(crate) decipher_only: ::std::option::Option<bool>,
 }
 impl KeyUsageBuilder {
-    /// <p> Key can be used for digital signing.</p>
+    /// <p>Key can be used for digital signing.</p>
     pub fn digital_signature(mut self, input: bool) -> Self {
         self.digital_signature = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Key can be used for digital signing.</p>
+    /// <p>Key can be used for digital signing.</p>
     pub fn set_digital_signature(mut self, input: ::std::option::Option<bool>) -> Self {
         self.digital_signature = input;
         self
     }
-    /// <p> Key can be used for digital signing.</p>
+    /// <p>Key can be used for digital signing.</p>
     pub fn get_digital_signature(&self) -> &::std::option::Option<bool> {
         &self.digital_signature
     }

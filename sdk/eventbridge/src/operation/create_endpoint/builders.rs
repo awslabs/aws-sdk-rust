@@ -168,21 +168,21 @@ impl CreateEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
     ///
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     pub fn event_buses(mut self, input: crate::types::EndpointEventBus) -> Self {
         self.inner = self.inner.event_buses(input);
         self
     }
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.inner = self.inner.set_event_buses(input);
         self
     }
-    /// <p>Define the event buses used. </p> <important>
+    /// <p>Define the event buses used.</p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
     pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {

@@ -253,7 +253,7 @@ pub enum ImportTerminologyError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
+    /// <p>You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>You have added too many tags to this resource. The maximum is 50 tags.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),

@@ -33,7 +33,7 @@ pub struct GetModelCustomizationJobOutput {
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
     /// <p>Array of up to 10 validators.</p>
     pub validation_data_config: ::std::option::Option<crate::types::ValidationDataConfig>,
-    /// <p>Output data configuration </p>
+    /// <p>Output data configuration</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The type of model customization.</p>
     pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
@@ -113,7 +113,7 @@ impl GetModelCustomizationJobOutput {
     pub fn validation_data_config(&self) -> ::std::option::Option<&crate::types::ValidationDataConfig> {
         self.validation_data_config.as_ref()
     }
-    /// <p>Output data configuration </p>
+    /// <p>Output data configuration</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -411,18 +411,18 @@ impl GetModelCustomizationJobOutputBuilder {
     pub fn get_validation_data_config(&self) -> &::std::option::Option<crate::types::ValidationDataConfig> {
         &self.validation_data_config
     }
-    /// <p>Output data configuration </p>
+    /// <p>Output data configuration</p>
     /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Output data configuration </p>
+    /// <p>Output data configuration</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
-    /// <p>Output data configuration </p>
+    /// <p>Output data configuration</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.output_data_config
     }

@@ -163,19 +163,19 @@ impl PutSnapshotBlockFluentBuilder {
         self.inner.get_block_data()
     }
     /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
-    /// <p>Valid values: <code>524288</code> </p>
+    /// <p>Valid values: <code>524288</code></p>
     pub fn data_length(mut self, input: i32) -> Self {
         self.inner = self.inner.data_length(input);
         self
     }
     /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
-    /// <p>Valid values: <code>524288</code> </p>
+    /// <p>Valid values: <code>524288</code></p>
     pub fn set_data_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_data_length(input);
         self
     }
     /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
-    /// <p>Valid values: <code>524288</code> </p>
+    /// <p>Valid values: <code>524288</code></p>
     pub fn get_data_length(&self) -> &::std::option::Option<i32> {
         self.inner.get_data_length()
     }

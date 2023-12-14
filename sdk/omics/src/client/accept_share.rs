@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AcceptShare`](crate::operation::accept_share::builders::AcceptShareFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`share_id(impl Into<String>)`](crate::operation::accept_share::builders::AcceptShareFluentBuilder::share_id) / [`set_share_id(Option<String>)`](crate::operation::accept_share::builders::AcceptShareFluentBuilder::set_share_id):<br>required: **true**<br><p> The ID for a share offer for analytics store data. </p><br>
+    ///   - [`share_id(impl Into<String>)`](crate::operation::accept_share::builders::AcceptShareFluentBuilder::share_id) / [`set_share_id(Option<String>)`](crate::operation::accept_share::builders::AcceptShareFluentBuilder::set_share_id):<br>required: **true**<br><p>The ID for a share offer for analytics store data.</p><br>
     /// - On success, responds with [`AcceptShareOutput`](crate::operation::accept_share::AcceptShareOutput) with field(s):
-    ///   - [`status(Option<ShareStatus>)`](crate::operation::accept_share::AcceptShareOutput::status): <p> The status of an analytics store share. </p>
+    ///   - [`status(Option<ShareStatus>)`](crate::operation::accept_share::AcceptShareOutput::status): <p>The status of an analytics store share.</p>
     /// - On failure, responds with [`SdkError<AcceptShareError>`](crate::operation::accept_share::AcceptShareError)
     pub fn accept_share(&self) -> crate::operation::accept_share::builders::AcceptShareFluentBuilder {
         crate::operation::accept_share::builders::AcceptShareFluentBuilder::new(self.handle.clone())

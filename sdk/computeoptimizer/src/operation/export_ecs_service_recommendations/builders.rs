@@ -22,7 +22,7 @@ impl ExportEcsServiceRecommendationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ExportECSServiceRecommendations`.
 ///
-/// <p> Exports optimization recommendations for Amazon ECS services on Fargate. </p>
+/// <p>Exports optimization recommendations for Amazon ECS services on Fargate.</p>
 /// <p>Recommendations are exported in a CSV file, and its metadata in a JSON file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p>
 /// <p>You can only have one Amazon ECS service export job in progress per Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -114,7 +114,7 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
+    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -123,7 +123,7 @@ impl ExportECSServiceRecommendationsFluentBuilder {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
+    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -132,7 +132,7 @@ impl ExportECSServiceRecommendationsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
+    /// <p>The Amazon Web Services account IDs for the export Amazon ECS service recommendations.</p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
     /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
@@ -144,17 +144,17 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
     pub fn filters(mut self, input: crate::types::EcsServiceRecommendationFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
         self.inner.get_filters()
     }
@@ -193,19 +193,19 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     pub fn get_s3_destination_config(&self) -> &::std::option::Option<crate::types::S3DestinationConfig> {
         self.inner.get_s3_destination_config()
     }
-    /// <p> The format of the export file. </p>
+    /// <p>The format of the export file.</p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub fn file_format(mut self, input: crate::types::FileFormat) -> Self {
         self.inner = self.inner.file_format(input);
         self
     }
-    /// <p> The format of the export file. </p>
+    /// <p>The format of the export file.</p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
     }
-    /// <p> The format of the export file. </p>
+    /// <p>The format of the export file.</p>
     /// <p>The CSV file is the only export file format currently supported.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
         self.inner.get_file_format()

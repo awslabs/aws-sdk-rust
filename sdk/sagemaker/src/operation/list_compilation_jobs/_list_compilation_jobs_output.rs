@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCompilationJobsOutput {
-    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job.</p>
     pub compilation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCompilationJobsOutput {
-    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compilation_job_summaries.is_none()`.
     pub fn compilation_job_summaries(&self) -> &[crate::types::CompilationJobSummary] {
@@ -46,19 +46,19 @@ impl ListCompilationJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_compilation_job_summaries`](Self::set_compilation_job_summaries).
     ///
-    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job.</p>
     pub fn compilation_job_summaries(mut self, input: crate::types::CompilationJobSummary) -> Self {
         let mut v = self.compilation_job_summaries.unwrap_or_default();
         v.push(input);
         self.compilation_job_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job.</p>
     pub fn set_compilation_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>>) -> Self {
         self.compilation_job_summaries = input;
         self
     }
-    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job.</p>
     pub fn get_compilation_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompilationJobSummary>> {
         &self.compilation_job_summaries
     }

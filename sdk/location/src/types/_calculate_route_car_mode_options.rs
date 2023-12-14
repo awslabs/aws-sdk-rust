@@ -5,24 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculateRouteCarModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub avoid_ferries: ::std::option::Option<bool>,
     /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub avoid_tolls: ::std::option::Option<bool>,
 }
 impl CalculateRouteCarModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn avoid_ferries(&self) -> ::std::option::Option<bool> {
         self.avoid_ferries
     }
     /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn avoid_tolls(&self) -> ::std::option::Option<bool> {
         self.avoid_tolls
     }
@@ -43,42 +43,42 @@ pub struct CalculateRouteCarModeOptionsBuilder {
 }
 impl CalculateRouteCarModeOptionsBuilder {
     /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn avoid_ferries(mut self, input: bool) -> Self {
         self.avoid_ferries = ::std::option::Option::Some(input);
         self
     }
     /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn set_avoid_ferries(mut self, input: ::std::option::Option<bool>) -> Self {
         self.avoid_ferries = input;
         self
     }
     /// <p>Avoids ferries when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn get_avoid_ferries(&self) -> &::std::option::Option<bool> {
         &self.avoid_ferries
     }
     /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn avoid_tolls(mut self, input: bool) -> Self {
         self.avoid_tolls = ::std::option::Option::Some(input);
         self
     }
     /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn set_avoid_tolls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.avoid_tolls = input;
         self
     }
     /// <p>Avoids tolls when calculating routes.</p>
-    /// <p>Default Value: <code>false</code> </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
+    /// <p>Default Value: <code>false</code></p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code></p>
     pub fn get_avoid_tolls(&self) -> &::std::option::Option<bool> {
         &self.avoid_tolls
     }

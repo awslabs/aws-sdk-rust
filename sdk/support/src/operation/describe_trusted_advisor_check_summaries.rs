@@ -263,7 +263,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeTrust
 pub enum DescribeTrustedAdvisorCheckSummariesError {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p> You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations. </p>
+    /// <p>You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

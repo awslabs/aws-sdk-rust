@@ -7,49 +7,49 @@
 /// <p>The health check is designed to make sure that your containers survive agent restarts, upgrades, or temporary unavailability.</p>
 /// <p>The following describes the possible <code>healthStatus</code> values for a container:</p>
 /// <ul>
-/// <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li>
-/// <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li>
-/// <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated, there's no container health check defined, or Amazon ECS doesn't have the health status of the container.</p> </li>
+/// <li><p><code>HEALTHY</code>-The container health check has passed successfully.</p></li>
+/// <li><p><code>UNHEALTHY</code>-The container health check has failed.</p></li>
+/// <li><p><code>UNKNOWN</code>-The container health check is being evaluated, there's no container health check defined, or Amazon ECS doesn't have the health status of the container.</p></li>
 /// </ul>
 /// <p>The following describes the possible <code>healthStatus</code> values based on the container health checker status of essential containers in the task with the following priority order (high to low):</p>
 /// <ul>
-/// <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li>
-/// <li> <p> <code>UNKNOWN</code>-Any essential container running within the task is in an <code>UNKNOWN</code> state and no other essential containers have an <code>UNHEALTHY</code> state.</p> </li>
-/// <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li>
+/// <li><p><code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p></li>
+/// <li><p><code>UNKNOWN</code>-Any essential container running within the task is in an <code>UNKNOWN</code> state and no other essential containers have an <code>UNHEALTHY</code> state.</p></li>
+/// <li><p><code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p></li>
 /// </ul>
 /// <p>Consider the following task health example with 2 containers.</p>
 /// <ul>
-/// <li> <p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, the task health is <code>UNHEALTHY</code>.</p> </li>
-/// <li> <p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.</p> </li>
-/// <li> <p>If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, the task health is <code>UNKNOWN</code>.</p> </li>
-/// <li> <p>If Container1 is <code>HEALTHY</code> and Container2 is <code>HEALTHY</code>, the task health is <code>HEALTHY</code>.</p> </li>
+/// <li><p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, the task health is <code>UNHEALTHY</code>.</p></li>
+/// <li><p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.</p></li>
+/// <li><p>If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, the task health is <code>UNKNOWN</code>.</p></li>
+/// <li><p>If Container1 is <code>HEALTHY</code> and Container2 is <code>HEALTHY</code>, the task health is <code>HEALTHY</code>.</p></li>
 /// </ul>
 /// <p>Consider the following task health example with 3 containers.</p>
 /// <ul>
-/// <li> <p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>UNKNOWN</code>, the task health is <code>UNHEALTHY</code>.</p> </li>
-/// <li> <p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.</p> </li>
-/// <li> <p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>HEALTHY</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.</p> </li>
-/// <li> <p>If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>UNKNOWN</code>.</p> </li>
-/// <li> <p>If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>UNKNOWN</code>, the task health is <code>UNKNOWN</code>.</p> </li>
-/// <li> <p>If Container1 is <code>HEALTHY</code> and Container2 is <code>HEALTHY</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>HEALTHY</code>.</p> </li>
+/// <li><p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>UNKNOWN</code>, the task health is <code>UNHEALTHY</code>.</p></li>
+/// <li><p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.</p></li>
+/// <li><p>If Container1 is <code>UNHEALTHY</code> and Container2 is <code>HEALTHY</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>UNHEALTHY</code>.</p></li>
+/// <li><p>If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>UNKNOWN</code>.</p></li>
+/// <li><p>If Container1 is <code>HEALTHY</code> and Container2 is <code>UNKNOWN</code>, and Container3 is <code>UNKNOWN</code>, the task health is <code>UNKNOWN</code>.</p></li>
+/// <li><p>If Container1 is <code>HEALTHY</code> and Container2 is <code>HEALTHY</code>, and Container3 is <code>HEALTHY</code>, the task health is <code>HEALTHY</code>.</p></li>
 /// </ul>
 /// <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p>
 /// <p>The following are notes about container health check support:</p>
 /// <ul>
-/// <li> <p>When the Amazon ECS agent cannot connect to the Amazon ECS service, the service reports the container as <code>UNHEALTHY</code>. </p> </li>
-/// <li> <p>The health check statuses are the "last heard from" response from the Amazon ECS agent. There are no assumptions made about the status of the container health checks.</p> </li>
-/// <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS container agent</a>.</p> </li>
-/// <li> <p>Container health checks are supported for Fargate tasks if you're using platform version <code>1.1.0</code> or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a>.</p> </li>
-/// <li> <p>Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.</p> </li>
+/// <li><p>When the Amazon ECS agent cannot connect to the Amazon ECS service, the service reports the container as <code>UNHEALTHY</code>.</p></li>
+/// <li><p>The health check statuses are the "last heard from" response from the Amazon ECS agent. There are no assumptions made about the status of the container health checks.</p></li>
+/// <li><p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS container agent</a>.</p></li>
+/// <li><p>Container health checks are supported for Fargate tasks if you're using platform version <code>1.1.0</code> or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a>.</p></li>
+/// <li><p>Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheck {
-    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
-    /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p> <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p>
+    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
+    /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
+    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
-    /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
+    /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     pub command: ::std::vec::Vec<::std::string::String>,
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
@@ -64,11 +64,11 @@ pub struct HealthCheck {
     pub start_period: ::std::option::Option<i32>,
 }
 impl HealthCheck {
-    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
-    /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p> <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p>
+    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
+    /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
+    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
-    /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
+    /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     pub fn command(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -115,11 +115,11 @@ impl HealthCheckBuilder {
     ///
     /// To override the contents of this collection use [`set_command`](Self::set_command).
     ///
-    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
-    /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p> <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p>
+    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
+    /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
+    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
-    /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
+    /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
@@ -127,21 +127,21 @@ impl HealthCheckBuilder {
         self.command = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
-    /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p> <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p>
+    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
+    /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
+    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
-    /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
+    /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
-    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
-    /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
-    /// <p> <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p>
+    /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
+    /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
+    /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
-    /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
+    /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.command

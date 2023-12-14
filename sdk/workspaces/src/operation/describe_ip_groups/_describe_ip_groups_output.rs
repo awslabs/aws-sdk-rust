@@ -5,7 +5,7 @@
 pub struct DescribeIpGroupsOutput {
     /// <p>Information about the IP access control groups.</p>
     pub result: ::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl DescribeIpGroupsOutput {
     pub fn result(&self) -> &[crate::types::WorkspacesIpGroup] {
         self.result.as_deref().unwrap_or_default()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl DescribeIpGroupsOutputBuilder {
     pub fn get_result(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspacesIpGroup>> {
         &self.result
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

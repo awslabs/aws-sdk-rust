@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionOutput {
-    /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     pub policy: ::std::string::String,
-    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub revision_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl PutPermissionOutput {
-    /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     pub fn policy(&self) -> &str {
         use std::ops::Deref;
         self.policy.deref()
     }
-    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub fn revision_id(&self) -> &str {
         use std::ops::Deref;
         self.revision_id.deref()
@@ -43,33 +43,33 @@ pub struct PutPermissionOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutPermissionOutputBuilder {
-    /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    /// <p>The JSON-formatted resource-based policy on the profiling group that includes the added permissions.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
-    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
-    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }

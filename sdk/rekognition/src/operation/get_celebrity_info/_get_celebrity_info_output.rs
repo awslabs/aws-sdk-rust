@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCelebrityInfoOutput {
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the celebrity.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetCelebrityInfoOutput {
     _request_id: Option<String>,
 }
 impl GetCelebrityInfoOutput {
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.urls.is_none()`.
     pub fn urls(&self) -> &[::std::string::String] {
@@ -53,19 +53,19 @@ impl GetCelebrityInfoOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_urls`](Self::set_urls).
     ///
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub fn urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.urls.unwrap_or_default();
         v.push(input.into());
         self.urls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub fn set_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.urls = input;
         self
     }
-    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    /// <p>An array of URLs pointing to additional celebrity information.</p>
     pub fn get_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.urls
     }

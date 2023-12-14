@@ -6,7 +6,7 @@
 pub struct InventoryItemAttribute {
     /// <p>Name of the inventory item attribute.</p>
     pub name: ::std::string::String,
-    /// <p>The data type of the inventory item attribute. </p>
+    /// <p>The data type of the inventory item attribute.</p>
     pub data_type: crate::types::InventoryAttributeDataType,
 }
 impl InventoryItemAttribute {
@@ -15,7 +15,7 @@ impl InventoryItemAttribute {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The data type of the inventory item attribute. </p>
+    /// <p>The data type of the inventory item attribute.</p>
     pub fn data_type(&self) -> &crate::types::InventoryAttributeDataType {
         &self.data_type
     }
@@ -50,18 +50,18 @@ impl InventoryItemAttributeBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The data type of the inventory item attribute. </p>
+    /// <p>The data type of the inventory item attribute.</p>
     /// This field is required.
     pub fn data_type(mut self, input: crate::types::InventoryAttributeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data type of the inventory item attribute. </p>
+    /// <p>The data type of the inventory item attribute.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::InventoryAttributeDataType>) -> Self {
         self.data_type = input;
         self
     }
-    /// <p>The data type of the inventory item attribute. </p>
+    /// <p>The data type of the inventory item attribute.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::InventoryAttributeDataType> {
         &self.data_type
     }

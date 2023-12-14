@@ -5,7 +5,7 @@
 pub struct DescribePatchPropertiesInput {
     /// <p>The operating system type for which to list patches.</p>
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     pub property: ::std::option::Option<crate::types::PatchProperty>,
     /// <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
     pub patch_set: ::std::option::Option<crate::types::PatchSet>,
@@ -19,7 +19,7 @@ impl DescribePatchPropertiesInput {
     pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     pub fn property(&self) -> ::std::option::Option<&crate::types::PatchProperty> {
         self.property.as_ref()
     }
@@ -69,18 +69,18 @@ impl DescribePatchPropertiesInputBuilder {
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         &self.operating_system
     }
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     /// This field is required.
     pub fn property(mut self, input: crate::types::PatchProperty) -> Self {
         self.property = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     pub fn set_property(mut self, input: ::std::option::Option<crate::types::PatchProperty>) -> Self {
         self.property = input;
         self
     }
-    /// <p>The patch property for which you want to view patch details. </p>
+    /// <p>The patch property for which you want to view patch details.</p>
     pub fn get_property(&self) -> &::std::option::Option<crate::types::PatchProperty> {
         &self.property
     }

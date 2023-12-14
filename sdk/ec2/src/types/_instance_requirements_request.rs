@@ -5,8 +5,8 @@
 /// <p>When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.</p>
 /// <p>To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:</p>
 /// <ul>
-/// <li> <p> <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p> </li>
-/// <li> <p> <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p> </li>
+/// <li><p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
+/// <li><p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
 /// </ul> <note>
 /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
 /// <p>Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.</p>
@@ -21,9 +21,9 @@ pub struct InstanceRequirementsRequest {
     pub memory_mib: ::std::option::Option<crate::types::MemoryMiBRequest>,
     /// <p>The CPU manufacturers to include.</p>
     /// <ul>
-    /// <li> <p>For instance types with Intel CPUs, specify <code>intel</code>.</p> </li>
-    /// <li> <p>For instance types with AMD CPUs, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
     /// </ul> <note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -50,7 +50,7 @@ pub struct InstanceRequirementsRequest {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub spot_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
@@ -58,45 +58,45 @@ pub struct InstanceRequirementsRequest {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>20</code> </p>
+    /// <p>Default: <code>20</code></p>
     pub on_demand_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     /// <ul>
-    /// <li> <p>To include bare metal instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only bare metal instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude bare metal instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include bare metal instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only bare metal instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude bare metal instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub bare_metal: ::std::option::Option<crate::types::BareMetal>,
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     /// <ul>
-    /// <li> <p>To include burstable performance instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only burstable performance instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude burstable performance instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include burstable performance instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only burstable performance instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude burstable performance instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub burstable_performance: ::std::option::Option<crate::types::BurstablePerformance>,
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub require_hibernate_support: ::std::option::Option<bool>,
     /// <p>The minimum and maximum number of network interfaces.</p>
     /// <p>Default: No minimum or maximum limits</p>
     pub network_interface_count: ::std::option::Option<crate::types::NetworkInterfaceCountRequest>,
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <ul>
-    /// <li> <p>To include instance types with instance store volumes, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only instance types with instance store volumes, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include instance types with instance store volumes, specify <code>included</code>.</p></li>
+    /// <li><p>To require only instance types with instance store volumes, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>included</code> </p>
+    /// <p>Default: <code>included</code></p>
     pub local_storage: ::std::option::Option<crate::types::LocalStorage>,
     /// <p>The type of local storage that is required.</p>
     /// <ul>
-    /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
+    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>hdd</code> and <code>ssd</code> </p>
+    /// <p>Default: <code>hdd</code> and <code>ssd</code></p>
     pub local_storage_types: ::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>>,
     /// <p>The minimum and maximum amount of total local storage, in GB.</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -106,9 +106,9 @@ pub struct InstanceRequirementsRequest {
     pub baseline_ebs_bandwidth_mbps: ::std::option::Option<crate::types::BaselineEbsBandwidthMbpsRequest>,
     /// <p>The accelerator types that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p> </li>
-    /// <li> <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p> </li>
-    /// <li> <p>To include instance types with inference hardware, specify <code>inference</code>.</p> </li>
+    /// <li><p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
+    /// <li><p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
+    /// <li><p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
@@ -118,28 +118,28 @@ pub struct InstanceRequirementsRequest {
     pub accelerator_count: ::std::option::Option<crate::types::AcceleratorCountRequest>,
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
+    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Habana devices, specify <code>habana</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>>,
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
+    /// <li><p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub accelerator_names: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>,
@@ -168,9 +168,9 @@ impl InstanceRequirementsRequest {
     }
     /// <p>The CPU manufacturers to include.</p>
     /// <ul>
-    /// <li> <p>For instance types with Intel CPUs, specify <code>intel</code>.</p> </li>
-    /// <li> <p>For instance types with AMD CPUs, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
     /// </ul> <note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -211,7 +211,7 @@ impl InstanceRequirementsRequest {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn spot_max_price_percentage_over_lowest_price(&self) -> ::std::option::Option<i32> {
         self.spot_max_price_percentage_over_lowest_price
     }
@@ -221,33 +221,33 @@ impl InstanceRequirementsRequest {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>20</code> </p>
+    /// <p>Default: <code>20</code></p>
     pub fn on_demand_max_price_percentage_over_lowest_price(&self) -> ::std::option::Option<i32> {
         self.on_demand_max_price_percentage_over_lowest_price
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     /// <ul>
-    /// <li> <p>To include bare metal instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only bare metal instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude bare metal instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include bare metal instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only bare metal instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude bare metal instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn bare_metal(&self) -> ::std::option::Option<&crate::types::BareMetal> {
         self.bare_metal.as_ref()
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     /// <ul>
-    /// <li> <p>To include burstable performance instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only burstable performance instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude burstable performance instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include burstable performance instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only burstable performance instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude burstable performance instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn burstable_performance(&self) -> ::std::option::Option<&crate::types::BurstablePerformance> {
         self.burstable_performance.as_ref()
     }
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn require_hibernate_support(&self) -> ::std::option::Option<bool> {
         self.require_hibernate_support
     }
@@ -258,20 +258,20 @@ impl InstanceRequirementsRequest {
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <ul>
-    /// <li> <p>To include instance types with instance store volumes, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only instance types with instance store volumes, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include instance types with instance store volumes, specify <code>included</code>.</p></li>
+    /// <li><p>To require only instance types with instance store volumes, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>included</code> </p>
+    /// <p>Default: <code>included</code></p>
     pub fn local_storage(&self) -> ::std::option::Option<&crate::types::LocalStorage> {
         self.local_storage.as_ref()
     }
     /// <p>The type of local storage that is required.</p>
     /// <ul>
-    /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
+    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>hdd</code> and <code>ssd</code> </p>
+    /// <p>Default: <code>hdd</code> and <code>ssd</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_storage_types.is_none()`.
     pub fn local_storage_types(&self) -> &[crate::types::LocalStorageType] {
@@ -289,9 +289,9 @@ impl InstanceRequirementsRequest {
     }
     /// <p>The accelerator types that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p> </li>
-    /// <li> <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p> </li>
-    /// <li> <p>To include instance types with inference hardware, specify <code>inference</code>.</p> </li>
+    /// <li><p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
+    /// <li><p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
+    /// <li><p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     ///
@@ -307,11 +307,11 @@ impl InstanceRequirementsRequest {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
+    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Habana devices, specify <code>habana</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     ///
@@ -321,18 +321,18 @@ impl InstanceRequirementsRequest {
     }
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
+    /// <li><p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     ///
@@ -434,9 +434,9 @@ impl InstanceRequirementsRequestBuilder {
     ///
     /// <p>The CPU manufacturers to include.</p>
     /// <ul>
-    /// <li> <p>For instance types with Intel CPUs, specify <code>intel</code>.</p> </li>
-    /// <li> <p>For instance types with AMD CPUs, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
     /// </ul> <note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -449,9 +449,9 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The CPU manufacturers to include.</p>
     /// <ul>
-    /// <li> <p>For instance types with Intel CPUs, specify <code>intel</code>.</p> </li>
-    /// <li> <p>For instance types with AMD CPUs, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
     /// </ul> <note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -462,9 +462,9 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The CPU manufacturers to include.</p>
     /// <ul>
-    /// <li> <p>For instance types with Intel CPUs, specify <code>intel</code>.</p> </li>
-    /// <li> <p>For instance types with AMD CPUs, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
     /// </ul> <note>
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
@@ -559,7 +559,7 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn spot_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
         self.spot_max_price_percentage_over_lowest_price = ::std::option::Option::Some(input);
         self
@@ -570,7 +570,7 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn set_spot_max_price_percentage_over_lowest_price(mut self, input: ::std::option::Option<i32>) -> Self {
         self.spot_max_price_percentage_over_lowest_price = input;
         self
@@ -581,7 +581,7 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn get_spot_max_price_percentage_over_lowest_price(&self) -> &::std::option::Option<i32> {
         &self.spot_max_price_percentage_over_lowest_price
     }
@@ -591,7 +591,7 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>20</code> </p>
+    /// <p>Default: <code>20</code></p>
     pub fn on_demand_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
         self.on_demand_max_price_percentage_over_lowest_price = ::std::option::Option::Some(input);
         self
@@ -602,7 +602,7 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>20</code> </p>
+    /// <p>Default: <code>20</code></p>
     pub fn set_on_demand_max_price_percentage_over_lowest_price(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_max_price_percentage_over_lowest_price = input;
         self
@@ -613,91 +613,91 @@ impl InstanceRequirementsRequestBuilder {
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
     /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
     /// </note>
-    /// <p>Default: <code>20</code> </p>
+    /// <p>Default: <code>20</code></p>
     pub fn get_on_demand_max_price_percentage_over_lowest_price(&self) -> &::std::option::Option<i32> {
         &self.on_demand_max_price_percentage_over_lowest_price
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     /// <ul>
-    /// <li> <p>To include bare metal instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only bare metal instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude bare metal instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include bare metal instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only bare metal instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude bare metal instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn bare_metal(mut self, input: crate::types::BareMetal) -> Self {
         self.bare_metal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     /// <ul>
-    /// <li> <p>To include bare metal instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only bare metal instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude bare metal instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include bare metal instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only bare metal instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude bare metal instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn set_bare_metal(mut self, input: ::std::option::Option<crate::types::BareMetal>) -> Self {
         self.bare_metal = input;
         self
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     /// <ul>
-    /// <li> <p>To include bare metal instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only bare metal instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude bare metal instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include bare metal instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only bare metal instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude bare metal instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn get_bare_metal(&self) -> &::std::option::Option<crate::types::BareMetal> {
         &self.bare_metal
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     /// <ul>
-    /// <li> <p>To include burstable performance instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only burstable performance instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude burstable performance instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include burstable performance instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only burstable performance instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude burstable performance instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn burstable_performance(mut self, input: crate::types::BurstablePerformance) -> Self {
         self.burstable_performance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     /// <ul>
-    /// <li> <p>To include burstable performance instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only burstable performance instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude burstable performance instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include burstable performance instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only burstable performance instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude burstable performance instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn set_burstable_performance(mut self, input: ::std::option::Option<crate::types::BurstablePerformance>) -> Self {
         self.burstable_performance = input;
         self
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     /// <ul>
-    /// <li> <p>To include burstable performance instance types, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only burstable performance instance types, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude burstable performance instance types, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include burstable performance instance types, specify <code>included</code>.</p></li>
+    /// <li><p>To require only burstable performance instance types, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude burstable performance instance types, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>excluded</code> </p>
+    /// <p>Default: <code>excluded</code></p>
     pub fn get_burstable_performance(&self) -> &::std::option::Option<crate::types::BurstablePerformance> {
         &self.burstable_performance
     }
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn require_hibernate_support(mut self, input: bool) -> Self {
         self.require_hibernate_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_require_hibernate_support(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_hibernate_support = input;
         self
     }
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_require_hibernate_support(&self) -> &::std::option::Option<bool> {
         &self.require_hibernate_support
     }
@@ -720,33 +720,33 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <ul>
-    /// <li> <p>To include instance types with instance store volumes, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only instance types with instance store volumes, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include instance types with instance store volumes, specify <code>included</code>.</p></li>
+    /// <li><p>To require only instance types with instance store volumes, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>included</code> </p>
+    /// <p>Default: <code>included</code></p>
     pub fn local_storage(mut self, input: crate::types::LocalStorage) -> Self {
         self.local_storage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <ul>
-    /// <li> <p>To include instance types with instance store volumes, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only instance types with instance store volumes, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include instance types with instance store volumes, specify <code>included</code>.</p></li>
+    /// <li><p>To require only instance types with instance store volumes, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>included</code> </p>
+    /// <p>Default: <code>included</code></p>
     pub fn set_local_storage(mut self, input: ::std::option::Option<crate::types::LocalStorage>) -> Self {
         self.local_storage = input;
         self
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <ul>
-    /// <li> <p>To include instance types with instance store volumes, specify <code>included</code>.</p> </li>
-    /// <li> <p>To require only instance types with instance store volumes, specify <code>required</code>.</p> </li>
-    /// <li> <p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p> </li>
+    /// <li><p>To include instance types with instance store volumes, specify <code>included</code>.</p></li>
+    /// <li><p>To require only instance types with instance store volumes, specify <code>required</code>.</p></li>
+    /// <li><p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>included</code> </p>
+    /// <p>Default: <code>included</code></p>
     pub fn get_local_storage(&self) -> &::std::option::Option<crate::types::LocalStorage> {
         &self.local_storage
     }
@@ -756,10 +756,10 @@ impl InstanceRequirementsRequestBuilder {
     ///
     /// <p>The type of local storage that is required.</p>
     /// <ul>
-    /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
+    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>hdd</code> and <code>ssd</code> </p>
+    /// <p>Default: <code>hdd</code> and <code>ssd</code></p>
     pub fn local_storage_types(mut self, input: crate::types::LocalStorageType) -> Self {
         let mut v = self.local_storage_types.unwrap_or_default();
         v.push(input);
@@ -768,20 +768,20 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The type of local storage that is required.</p>
     /// <ul>
-    /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
+    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>hdd</code> and <code>ssd</code> </p>
+    /// <p>Default: <code>hdd</code> and <code>ssd</code></p>
     pub fn set_local_storage_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>>) -> Self {
         self.local_storage_types = input;
         self
     }
     /// <p>The type of local storage that is required.</p>
     /// <ul>
-    /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
+    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>hdd</code> and <code>ssd</code> </p>
+    /// <p>Default: <code>hdd</code> and <code>ssd</code></p>
     pub fn get_local_storage_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>> {
         &self.local_storage_types
     }
@@ -825,9 +825,9 @@ impl InstanceRequirementsRequestBuilder {
     ///
     /// <p>The accelerator types that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p> </li>
-    /// <li> <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p> </li>
-    /// <li> <p>To include instance types with inference hardware, specify <code>inference</code>.</p> </li>
+    /// <li><p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
+    /// <li><p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
+    /// <li><p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn accelerator_types(mut self, input: crate::types::AcceleratorType) -> Self {
@@ -838,9 +838,9 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The accelerator types that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p> </li>
-    /// <li> <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p> </li>
-    /// <li> <p>To include instance types with inference hardware, specify <code>inference</code>.</p> </li>
+    /// <li><p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
+    /// <li><p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
+    /// <li><p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>) -> Self {
@@ -849,9 +849,9 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The accelerator types that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>To include instance types with GPU hardware, specify <code>gpu</code>.</p> </li>
-    /// <li> <p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p> </li>
-    /// <li> <p>To include instance types with inference hardware, specify <code>inference</code>.</p> </li>
+    /// <li><p>To include instance types with GPU hardware, specify <code>gpu</code>.</p></li>
+    /// <li><p>To include instance types with FPGA hardware, specify <code>fpga</code>.</p></li>
+    /// <li><p>To include instance types with inference hardware, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {
@@ -883,11 +883,11 @@ impl InstanceRequirementsRequestBuilder {
     ///
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
+    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Habana devices, specify <code>habana</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub fn accelerator_manufacturers(mut self, input: crate::types::AcceleratorManufacturer) -> Self {
@@ -898,11 +898,11 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
+    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Habana devices, specify <code>habana</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub fn set_accelerator_manufacturers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>>) -> Self {
@@ -911,11 +911,11 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
-    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
+    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li><p>For instance types with Habana devices, specify <code>habana</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub fn get_accelerator_manufacturers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>> {
@@ -927,18 +927,18 @@ impl InstanceRequirementsRequestBuilder {
     ///
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
+    /// <li><p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn accelerator_names(mut self, input: crate::types::AcceleratorName) -> Self {
@@ -949,18 +949,18 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
+    /// <li><p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn set_accelerator_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>) -> Self {
@@ -969,18 +969,18 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
-    /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
+    /// <li><p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p></li>
+    /// <li><p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn get_accelerator_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>> {

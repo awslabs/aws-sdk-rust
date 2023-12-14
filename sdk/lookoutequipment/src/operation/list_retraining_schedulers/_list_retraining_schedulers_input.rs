@@ -3,21 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRetrainingSchedulersInput {
-    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.</p>
     pub model_name_begins_with: ::std::option::Option<::std::string::String>,
-    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify.</p>
     pub status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
     /// <p>If the number of results exceeds the maximum, a pagination token is returned. Use the token in the request to show the next page of retraining schedulers.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the maximum number of retraining schedulers to list. </p>
+    /// <p>Specifies the maximum number of retraining schedulers to list.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRetrainingSchedulersInput {
-    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.</p>
     pub fn model_name_begins_with(&self) -> ::std::option::Option<&str> {
         self.model_name_begins_with.as_deref()
     }
-    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RetrainingSchedulerStatus> {
         self.status.as_ref()
     }
@@ -25,7 +25,7 @@ impl ListRetrainingSchedulersInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies the maximum number of retraining schedulers to list. </p>
+    /// <p>Specifies the maximum number of retraining schedulers to list.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -47,31 +47,31 @@ pub struct ListRetrainingSchedulersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListRetrainingSchedulersInputBuilder {
-    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.</p>
     pub fn model_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.</p>
     pub fn set_model_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name_begins_with = input;
         self
     }
-    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.</p>
     pub fn get_model_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name_begins_with
     }
-    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify.</p>
     pub fn status(mut self, input: crate::types::RetrainingSchedulerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RetrainingSchedulerStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify. </p>
+    /// <p>Specify this field to only list retraining schedulers whose status matches the value you specify.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RetrainingSchedulerStatus> {
         &self.status
     }
@@ -89,17 +89,17 @@ impl ListRetrainingSchedulersInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Specifies the maximum number of retraining schedulers to list. </p>
+    /// <p>Specifies the maximum number of retraining schedulers to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum number of retraining schedulers to list. </p>
+    /// <p>Specifies the maximum number of retraining schedulers to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specifies the maximum number of retraining schedulers to list. </p>
+    /// <p>Specifies the maximum number of retraining schedulers to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

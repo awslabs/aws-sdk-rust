@@ -22,11 +22,11 @@ impl CreateAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAlias`.
 ///
-/// <p>Creates an alias for a fleet. In most situations, you can use an alias ID in place of a fleet ID. An alias provides a level of abstraction for a fleet that is useful when redirecting player traffic from one fleet to another, such as when updating your game build. </p>
-/// <p>Amazon GameLift supports two types of routing strategies for aliases: simple and terminal. A simple alias points to an active fleet. A terminal alias is used to display messaging or link to a URL instead of routing players to an active fleet. For example, you might use a terminal alias when a game version is no longer supported and you want to direct players to an upgrade site. </p>
+/// <p>Creates an alias for a fleet. In most situations, you can use an alias ID in place of a fleet ID. An alias provides a level of abstraction for a fleet that is useful when redirecting player traffic from one fleet to another, such as when updating your game build.</p>
+/// <p>Amazon GameLift supports two types of routing strategies for aliases: simple and terminal. A simple alias points to an active fleet. A terminal alias is used to display messaging or link to a URL instead of routing players to an active fleet. For example, you might use a terminal alias when a game version is no longer supported and you want to direct players to an upgrade site.</p>
 /// <p>To create a fleet alias, specify an alias name, routing strategy, and optional description. Each simple alias can point to only one fleet, but a fleet can have multiple aliases. If successful, a new alias record is returned, including an alias ID and an ARN. You can reassign an alias to another fleet by calling <code>UpdateAlias</code>.</p>
-/// <p> <b>Related actions</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p><b>Related actions</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -140,17 +140,17 @@ impl CreateAliasFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
         self.inner = self.inner.routing_strategy(input);
         self
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
         self.inner = self.inner.set_routing_strategy(input);
         self
     }
-    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
         self.inner.get_routing_strategy()
     }

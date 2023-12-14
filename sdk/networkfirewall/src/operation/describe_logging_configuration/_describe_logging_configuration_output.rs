@@ -5,7 +5,7 @@
 pub struct DescribeLoggingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
+    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl DescribeLoggingConfigurationOutput {
     pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
+    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
@@ -54,17 +54,17 @@ impl DescribeLoggingConfigurationOutputBuilder {
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_arn
     }
-    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
+    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
+    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
-    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
+    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
         &self.logging_configuration
     }

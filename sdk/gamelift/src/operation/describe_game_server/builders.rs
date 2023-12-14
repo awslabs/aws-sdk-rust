@@ -22,11 +22,11 @@ impl DescribeGameServerInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeGameServer`.
 ///
-/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>
-/// <p>Retrieves information for a registered game server. Information includes game server status, health check info, and the instance that the game server is running on. </p>
-/// <p>To retrieve game server information, specify the game server ID. If successful, the requested game server object is returned. </p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a> </p>
+/// <p><b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b></p>
+/// <p>Retrieves information for a registered game server. Information includes game server status, health check info, and the instance that the game server is running on.</p>
+/// <p>To retrieve game server information, specify the game server ID. If successful, the requested game server object is returned.</p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGameServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

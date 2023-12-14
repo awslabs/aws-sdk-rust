@@ -6,7 +6,7 @@ pub struct CreatePortalOutput {
     /// <p>The ID of the created portal.</p>
     pub portal_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
     pub portal_arn: ::std::string::String,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub portal_start_url: ::std::string::String,
@@ -23,7 +23,7 @@ impl CreatePortalOutput {
         self.portal_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
     pub fn portal_arn(&self) -> &str {
         use std::ops::Deref;
         self.portal_arn.deref()
@@ -83,20 +83,20 @@ impl CreatePortalOutputBuilder {
         &self.portal_id
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
     /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_arn = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
-    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
+    /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code></p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.portal_arn
     }

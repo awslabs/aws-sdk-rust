@@ -25,8 +25,8 @@ impl CreateBotVersionInputBuilder {
 /// <p>Creates a new version of the bot based on the <code>$LATEST</code> version. If the <code>$LATEST</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version. It returns the last created version.</p> <note>
 /// <p>You can update only the <code>$LATEST</code> version of the bot. You can't update the numbered versions that you create with the <code>CreateBotVersion</code> operation.</p>
 /// </note>
-/// <p> When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>. </p>
-/// <p> This operation requires permission for the <code>lex:CreateBotVersion</code> action. </p>
+/// <p>When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>.</p>
+/// <p>This operation requires permission for the <code>lex:CreateBotVersion</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBotVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl CreateBotVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

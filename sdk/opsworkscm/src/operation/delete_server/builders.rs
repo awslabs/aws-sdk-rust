@@ -22,10 +22,10 @@ impl DeleteServerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteServer`.
 ///
-/// <p> Deletes the server and the underlying AWS CloudFormation stacks (including the server's EC2 instance). When you run this command, the server state is updated to <code>DELETING</code>. After the server is deleted, it is no longer returned by <code>DescribeServer</code> requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be deleted. </p>
-/// <p> This operation is asynchronous. </p>
-/// <p> An <code>InvalidStateException</code> is thrown when a server deletion is already in progress. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
-/// <p> </p>
+/// <p>Deletes the server and the underlying AWS CloudFormation stacks (including the server's EC2 instance). When you run this command, the server state is updated to <code>DELETING</code>. After the server is deleted, it is no longer returned by <code>DescribeServer</code> requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be deleted.</p>
+/// <p>This operation is asynchronous.</p>
+/// <p>An <code>InvalidStateException</code> is thrown when a server deletion is already in progress. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.</p>
+/// <p></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteServerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

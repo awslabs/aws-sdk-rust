@@ -242,11 +242,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopyDBSnapsho
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CopyDBSnapshotError {
-    /// <p> <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
+    /// <p><code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.</p>
     CustomAvailabilityZoneNotFoundFault(crate::types::error::CustomAvailabilityZoneNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
+    /// <p><code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
-    /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
+    /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::types::error::InvalidDbSnapshotStateFault),

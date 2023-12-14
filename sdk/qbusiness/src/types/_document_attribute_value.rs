@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DocumentAttributeValue {
     /// <p>A date expressed as an ISO 8601 string.</p>
-    /// <p>It's important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time. </p>
+    /// <p>It's important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
     DateValue(::aws_smithy_types::DateTime),
-    /// <p>A long integer value. </p>
+    /// <p>A long integer value.</p>
     LongValue(i64),
     /// <p>A list of strings.</p>
     StringListValue(::std::vec::Vec<::std::string::String>),

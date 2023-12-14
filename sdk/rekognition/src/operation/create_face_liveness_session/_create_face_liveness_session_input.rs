@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFaceLivenessSessionInput {
-    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
     pub settings: ::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>,
@@ -11,7 +11,7 @@ pub struct CreateFaceLivenessSessionInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateFaceLivenessSessionInput {
-    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct CreateFaceLivenessSessionInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateFaceLivenessSessionInputBuilder {
-    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

@@ -28,8 +28,8 @@ pub struct Stack {
     pub stack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: disable rollback.</p> </li>
-    /// <li> <p> <code>false</code>: enable rollback.</p> </li>
+    /// <li><p><code>true</code>: disable rollback.</p></li>
+    /// <li><p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub disable_rollback: ::std::option::Option<bool>,
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
@@ -56,7 +56,7 @@ pub struct Stack {
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub retain_except_on_create: ::std::option::Option<bool>,
 }
 impl Stack {
@@ -108,8 +108,8 @@ impl Stack {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: disable rollback.</p> </li>
-    /// <li> <p> <code>false</code>: enable rollback.</p> </li>
+    /// <li><p><code>true</code>: disable rollback.</p></li>
+    /// <li><p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn disable_rollback(&self) -> ::std::option::Option<bool> {
         self.disable_rollback
@@ -166,7 +166,7 @@ impl Stack {
         self.drift_information.as_ref()
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
         self.retain_except_on_create
     }
@@ -372,8 +372,8 @@ impl StackBuilder {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: disable rollback.</p> </li>
-    /// <li> <p> <code>false</code>: enable rollback.</p> </li>
+    /// <li><p><code>true</code>: disable rollback.</p></li>
+    /// <li><p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn disable_rollback(mut self, input: bool) -> Self {
         self.disable_rollback = ::std::option::Option::Some(input);
@@ -381,8 +381,8 @@ impl StackBuilder {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: disable rollback.</p> </li>
-    /// <li> <p> <code>false</code>: enable rollback.</p> </li>
+    /// <li><p><code>true</code>: disable rollback.</p></li>
+    /// <li><p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn set_disable_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_rollback = input;
@@ -390,8 +390,8 @@ impl StackBuilder {
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
-    /// <li> <p> <code>true</code>: disable rollback.</p> </li>
-    /// <li> <p> <code>false</code>: enable rollback.</p> </li>
+    /// <li><p><code>true</code>: disable rollback.</p></li>
+    /// <li><p><code>false</code>: enable rollback.</p></li>
     /// </ul>
     pub fn get_disable_rollback(&self) -> &::std::option::Option<bool> {
         &self.disable_rollback
@@ -570,19 +570,19 @@ impl StackBuilder {
         &self.drift_information
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn retain_except_on_create(mut self, input: bool) -> Self {
         self.retain_except_on_create = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_except_on_create = input;
         self
     }
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
-    /// <p>Default: <code>false</code> </p>
+    /// <p>Default: <code>false</code></p>
     pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
         &self.retain_except_on_create
     }

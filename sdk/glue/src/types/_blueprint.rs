@@ -20,10 +20,10 @@ pub struct Blueprint {
     pub blueprint_service_location: ::std::option::Option<::std::string::String>,
     /// <p>The status of the blueprint registration.</p>
     /// <ul>
-    /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
-    /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
-    /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
-    /// <li> <p>Failed — The blueprint registration failed.</p> </li>
+    /// <li><p>Creating — The blueprint registration is in progress.</p></li>
+    /// <li><p>Active — The blueprint has been successfully registered.</p></li>
+    /// <li><p>Updating — An update to the blueprint registration is in progress.</p></li>
+    /// <li><p>Failed — The blueprint registration failed.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::BlueprintStatus>,
     /// <p>An error message.</p>
@@ -62,10 +62,10 @@ impl Blueprint {
     }
     /// <p>The status of the blueprint registration.</p>
     /// <ul>
-    /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
-    /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
-    /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
-    /// <li> <p>Failed — The blueprint registration failed.</p> </li>
+    /// <li><p>Creating — The blueprint registration is in progress.</p></li>
+    /// <li><p>Active — The blueprint has been successfully registered.</p></li>
+    /// <li><p>Updating — An update to the blueprint registration is in progress.</p></li>
+    /// <li><p>Failed — The blueprint registration failed.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::BlueprintStatus> {
         self.status.as_ref()
@@ -202,10 +202,10 @@ impl BlueprintBuilder {
     }
     /// <p>The status of the blueprint registration.</p>
     /// <ul>
-    /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
-    /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
-    /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
-    /// <li> <p>Failed — The blueprint registration failed.</p> </li>
+    /// <li><p>Creating — The blueprint registration is in progress.</p></li>
+    /// <li><p>Active — The blueprint has been successfully registered.</p></li>
+    /// <li><p>Updating — An update to the blueprint registration is in progress.</p></li>
+    /// <li><p>Failed — The blueprint registration failed.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::BlueprintStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -213,10 +213,10 @@ impl BlueprintBuilder {
     }
     /// <p>The status of the blueprint registration.</p>
     /// <ul>
-    /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
-    /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
-    /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
-    /// <li> <p>Failed — The blueprint registration failed.</p> </li>
+    /// <li><p>Creating — The blueprint registration is in progress.</p></li>
+    /// <li><p>Active — The blueprint has been successfully registered.</p></li>
+    /// <li><p>Updating — An update to the blueprint registration is in progress.</p></li>
+    /// <li><p>Failed — The blueprint registration failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BlueprintStatus>) -> Self {
         self.status = input;
@@ -224,10 +224,10 @@ impl BlueprintBuilder {
     }
     /// <p>The status of the blueprint registration.</p>
     /// <ul>
-    /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
-    /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
-    /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
-    /// <li> <p>Failed — The blueprint registration failed.</p> </li>
+    /// <li><p>Creating — The blueprint registration is in progress.</p></li>
+    /// <li><p>Active — The blueprint has been successfully registered.</p></li>
+    /// <li><p>Updating — An update to the blueprint registration is in progress.</p></li>
+    /// <li><p>Failed — The blueprint registration failed.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BlueprintStatus> {
         &self.status

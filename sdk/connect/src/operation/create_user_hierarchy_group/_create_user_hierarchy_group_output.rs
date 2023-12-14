@@ -5,7 +5,7 @@
 pub struct CreateUserHierarchyGroupOutput {
     /// <p>The identifier of the hierarchy group.</p>
     pub hierarchy_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub hierarchy_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl CreateUserHierarchyGroupOutput {
     pub fn hierarchy_group_id(&self) -> ::std::option::Option<&str> {
         self.hierarchy_group_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn hierarchy_group_arn(&self) -> ::std::option::Option<&str> {
         self.hierarchy_group_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl CreateUserHierarchyGroupOutputBuilder {
     pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hierarchy_group_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn hierarchy_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn set_hierarchy_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
     pub fn get_hierarchy_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hierarchy_group_arn
     }

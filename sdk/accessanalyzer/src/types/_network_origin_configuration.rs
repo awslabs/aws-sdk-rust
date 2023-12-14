@@ -6,7 +6,7 @@
 pub enum NetworkOriginConfiguration {
     /// <p>The configuration for the Amazon S3 access point or multi-region access point with an <code>Internet</code> origin.</p>
     InternetConfiguration(crate::types::InternetConfiguration),
-    /// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
+    /// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>.</p>
     VpcConfiguration(crate::types::VpcConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

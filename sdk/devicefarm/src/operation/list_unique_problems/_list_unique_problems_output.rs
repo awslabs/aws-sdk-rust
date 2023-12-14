@@ -7,13 +7,13 @@ pub struct ListUniqueProblemsOutput {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>PASSED</p></li>
+    /// <li><p>WARNED</p></li>
+    /// <li><p>FAILED</p></li>
+    /// <li><p>SKIPPED</p></li>
+    /// <li><p>ERRORED</p></li>
+    /// <li><p>STOPPED</p></li>
     /// </ul>
     pub unique_problems:
         ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
@@ -25,13 +25,13 @@ impl ListUniqueProblemsOutput {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>PASSED</p></li>
+    /// <li><p>WARNED</p></li>
+    /// <li><p>FAILED</p></li>
+    /// <li><p>SKIPPED</p></li>
+    /// <li><p>ERRORED</p></li>
+    /// <li><p>STOPPED</p></li>
     /// </ul>
     pub fn unique_problems(
         &self,
@@ -72,13 +72,13 @@ impl ListUniqueProblemsOutputBuilder {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>PASSED</p></li>
+    /// <li><p>WARNED</p></li>
+    /// <li><p>FAILED</p></li>
+    /// <li><p>SKIPPED</p></li>
+    /// <li><p>ERRORED</p></li>
+    /// <li><p>STOPPED</p></li>
     /// </ul>
     pub fn unique_problems(mut self, k: crate::types::ExecutionResult, v: ::std::vec::Vec<crate::types::UniqueProblem>) -> Self {
         let mut hash_map = self.unique_problems.unwrap_or_default();
@@ -89,13 +89,13 @@ impl ListUniqueProblemsOutputBuilder {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>PASSED</p></li>
+    /// <li><p>WARNED</p></li>
+    /// <li><p>FAILED</p></li>
+    /// <li><p>SKIPPED</p></li>
+    /// <li><p>ERRORED</p></li>
+    /// <li><p>STOPPED</p></li>
     /// </ul>
     pub fn set_unique_problems(
         mut self,
@@ -107,13 +107,13 @@ impl ListUniqueProblemsOutputBuilder {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <li><p>PENDING</p></li>
+    /// <li><p>PASSED</p></li>
+    /// <li><p>WARNED</p></li>
+    /// <li><p>FAILED</p></li>
+    /// <li><p>SKIPPED</p></li>
+    /// <li><p>ERRORED</p></li>
+    /// <li><p>STOPPED</p></li>
     /// </ul>
     pub fn get_unique_problems(
         &self,

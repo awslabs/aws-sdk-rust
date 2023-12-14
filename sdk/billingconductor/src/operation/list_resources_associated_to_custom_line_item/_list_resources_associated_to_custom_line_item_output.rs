@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemOutput {
-    /// <p> The custom line item ARN for which the resource associations are listed. </p>
+    /// <p>The custom line item ARN for which the resource associations are listed.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
+    /// <p>A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved.</p>
     pub associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,
-    /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
+    /// <p>The pagination token to be used in subsequent requests to retrieve additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResourcesAssociatedToCustomLineItemOutput {
-    /// <p> The custom line item ARN for which the resource associations are listed. </p>
+    /// <p>The custom line item ARN for which the resource associations are listed.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
+    /// <p>A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resources.is_none()`.
     pub fn associated_resources(&self) -> &[crate::types::ListResourcesAssociatedToCustomLineItemResponseElement] {
         self.associated_resources.as_deref().unwrap_or_default()
     }
-    /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
+    /// <p>The pagination token to be used in subsequent requests to retrieve additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50,17 +50,17 @@ pub struct ListResourcesAssociatedToCustomLineItemOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
-    /// <p> The custom line item ARN for which the resource associations are listed. </p>
+    /// <p>The custom line item ARN for which the resource associations are listed.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The custom line item ARN for which the resource associations are listed. </p>
+    /// <p>The custom line item ARN for which the resource associations are listed.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> The custom line item ARN for which the resource associations are listed. </p>
+    /// <p>The custom line item ARN for which the resource associations are listed.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -68,14 +68,14 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_associated_resources`](Self::set_associated_resources).
     ///
-    /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
+    /// <p>A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved.</p>
     pub fn associated_resources(mut self, input: crate::types::ListResourcesAssociatedToCustomLineItemResponseElement) -> Self {
         let mut v = self.associated_resources.unwrap_or_default();
         v.push(input);
         self.associated_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
+    /// <p>A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved.</p>
     pub fn set_associated_resources(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,
@@ -83,23 +83,23 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
         self.associated_resources = input;
         self
     }
-    /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
+    /// <p>A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved.</p>
     pub fn get_associated_resources(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>> {
         &self.associated_resources
     }
-    /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
+    /// <p>The pagination token to be used in subsequent requests to retrieve additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
+    /// <p>The pagination token to be used in subsequent requests to retrieve additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
+    /// <p>The pagination token to be used in subsequent requests to retrieve additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

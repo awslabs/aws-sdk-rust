@@ -13,7 +13,7 @@ pub struct GetSecretValueOutput {
     /// <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
     pub secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
-    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
+    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
     pub secret_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
     pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -40,7 +40,7 @@ impl GetSecretValueOutput {
         self.secret_binary.as_ref()
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
-    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
+    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
     pub fn secret_string(&self) -> ::std::option::Option<&str> {
         self.secret_string.as_deref()
     }
@@ -155,19 +155,19 @@ impl GetSecretValueOutputBuilder {
         &self.secret_binary
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
-    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
+    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
     pub fn secret_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
-    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
+    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_string = input;
         self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
-    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
+    /// <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs.</p>
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_string
     }

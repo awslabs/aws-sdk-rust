@@ -6,7 +6,7 @@
 pub struct DefineExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.</p>
     pub expression: ::std::option::Option<crate::types::Expression>,
 }
 impl DefineExpressionInput {
@@ -14,7 +14,7 @@ impl DefineExpressionInput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.</p>
     pub fn expression(&self) -> ::std::option::Option<&crate::types::Expression> {
         self.expression.as_ref()
     }
@@ -49,18 +49,18 @@ impl DefineExpressionInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.</p>
     /// This field is required.
     pub fn expression(mut self, input: crate::types::Expression) -> Self {
         self.expression = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.expression = input;
         self
     }
-    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+    /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.</p>
     pub fn get_expression(&self) -> &::std::option::Option<crate::types::Expression> {
         &self.expression
     }

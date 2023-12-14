@@ -16,7 +16,7 @@ pub struct SavingsPlansPurchaseRecommendation {
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
     pub savings_plans_purchase_recommendation_details: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>>,
-    /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    /// <p>Summary metrics for your Savings Plans Recommendations.</p>
     pub savings_plans_purchase_recommendation_summary: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
 }
 impl SavingsPlansPurchaseRecommendation {
@@ -46,7 +46,7 @@ impl SavingsPlansPurchaseRecommendation {
     pub fn savings_plans_purchase_recommendation_details(&self) -> &[crate::types::SavingsPlansPurchaseRecommendationDetail] {
         self.savings_plans_purchase_recommendation_details.as_deref().unwrap_or_default()
     }
-    /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    /// <p>Summary metrics for your Savings Plans Recommendations.</p>
     pub fn savings_plans_purchase_recommendation_summary(&self) -> ::std::option::Option<&crate::types::SavingsPlansPurchaseRecommendationSummary> {
         self.savings_plans_purchase_recommendation_summary.as_ref()
     }
@@ -167,12 +167,12 @@ impl SavingsPlansPurchaseRecommendationBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>> {
         &self.savings_plans_purchase_recommendation_details
     }
-    /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    /// <p>Summary metrics for your Savings Plans Recommendations.</p>
     pub fn savings_plans_purchase_recommendation_summary(mut self, input: crate::types::SavingsPlansPurchaseRecommendationSummary) -> Self {
         self.savings_plans_purchase_recommendation_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    /// <p>Summary metrics for your Savings Plans Recommendations.</p>
     pub fn set_savings_plans_purchase_recommendation_summary(
         mut self,
         input: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
@@ -180,7 +180,7 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self.savings_plans_purchase_recommendation_summary = input;
         self
     }
-    /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    /// <p>Summary metrics for your Savings Plans Recommendations.</p>
     pub fn get_savings_plans_purchase_recommendation_summary(
         &self,
     ) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary> {

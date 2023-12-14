@@ -25,54 +25,54 @@ impl UpdateFileSystemInputBuilder {
 /// <p>Use this operation to update the configuration of an existing Amazon FSx file system. You can update multiple properties in a single request.</p>
 /// <p>For FSx for Windows File Server file systems, you can update the following properties:</p>
 /// <ul>
-/// <li> <p> <code>AuditLogConfiguration</code> </p> </li>
-/// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
-/// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
-/// <li> <p> <code>SelfManagedActiveDirectoryConfiguration</code> </p> </li>
-/// <li> <p> <code>StorageCapacity</code> </p> </li>
-/// <li> <p> <code>StorageType</code> </p> </li>
-/// <li> <p> <code>ThroughputCapacity</code> </p> </li>
-/// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
-/// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
+/// <li><p><code>AuditLogConfiguration</code></p></li>
+/// <li><p><code>AutomaticBackupRetentionDays</code></p></li>
+/// <li><p><code>DailyAutomaticBackupStartTime</code></p></li>
+/// <li><p><code>SelfManagedActiveDirectoryConfiguration</code></p></li>
+/// <li><p><code>StorageCapacity</code></p></li>
+/// <li><p><code>StorageType</code></p></li>
+/// <li><p><code>ThroughputCapacity</code></p></li>
+/// <li><p><code>DiskIopsConfiguration</code></p></li>
+/// <li><p><code>WeeklyMaintenanceStartTime</code></p></li>
 /// </ul>
 /// <p>For FSx for Lustre file systems, you can update the following properties:</p>
 /// <ul>
-/// <li> <p> <code>AutoImportPolicy</code> </p> </li>
-/// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
-/// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
-/// <li> <p> <code>DataCompressionType</code> </p> </li>
-/// <li> <p> <code>LogConfiguration</code> </p> </li>
-/// <li> <p> <code>LustreRootSquashConfiguration</code> </p> </li>
-/// <li> <p> <code>PerUnitStorageThroughput</code> </p> </li>
-/// <li> <p> <code>StorageCapacity</code> </p> </li>
-/// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
+/// <li><p><code>AutoImportPolicy</code></p></li>
+/// <li><p><code>AutomaticBackupRetentionDays</code></p></li>
+/// <li><p><code>DailyAutomaticBackupStartTime</code></p></li>
+/// <li><p><code>DataCompressionType</code></p></li>
+/// <li><p><code>LogConfiguration</code></p></li>
+/// <li><p><code>LustreRootSquashConfiguration</code></p></li>
+/// <li><p><code>PerUnitStorageThroughput</code></p></li>
+/// <li><p><code>StorageCapacity</code></p></li>
+/// <li><p><code>WeeklyMaintenanceStartTime</code></p></li>
 /// </ul>
 /// <p>For FSx for ONTAP file systems, you can update the following properties:</p>
 /// <ul>
-/// <li> <p> <code>AddRouteTableIds</code> </p> </li>
-/// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
-/// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
-/// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
-/// <li> <p> <code>FsxAdminPassword</code> </p> </li>
-/// <li> <p> <code>HAPairs</code> </p> </li>
-/// <li> <p> <code>RemoveRouteTableIds</code> </p> </li>
-/// <li> <p> <code>StorageCapacity</code> </p> </li>
-/// <li> <p> <code>ThroughputCapacity</code> </p> </li>
-/// <li> <p> <code>ThroughputCapacityPerHAPair</code> </p> </li>
-/// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
+/// <li><p><code>AddRouteTableIds</code></p></li>
+/// <li><p><code>AutomaticBackupRetentionDays</code></p></li>
+/// <li><p><code>DailyAutomaticBackupStartTime</code></p></li>
+/// <li><p><code>DiskIopsConfiguration</code></p></li>
+/// <li><p><code>FsxAdminPassword</code></p></li>
+/// <li><p><code>HAPairs</code></p></li>
+/// <li><p><code>RemoveRouteTableIds</code></p></li>
+/// <li><p><code>StorageCapacity</code></p></li>
+/// <li><p><code>ThroughputCapacity</code></p></li>
+/// <li><p><code>ThroughputCapacityPerHAPair</code></p></li>
+/// <li><p><code>WeeklyMaintenanceStartTime</code></p></li>
 /// </ul>
 /// <p>For FSx for OpenZFS file systems, you can update the following properties:</p>
 /// <ul>
-/// <li> <p> <code>AddRouteTableIds</code> </p> </li>
-/// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
-/// <li> <p> <code>CopyTagsToBackups</code> </p> </li>
-/// <li> <p> <code>CopyTagsToVolumes</code> </p> </li>
-/// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
-/// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
-/// <li> <p> <code>RemoveRouteTableIds</code> </p> </li>
-/// <li> <p> <code>StorageCapacity</code> </p> </li>
-/// <li> <p> <code>ThroughputCapacity</code> </p> </li>
-/// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
+/// <li><p><code>AddRouteTableIds</code></p></li>
+/// <li><p><code>AutomaticBackupRetentionDays</code></p></li>
+/// <li><p><code>CopyTagsToBackups</code></p></li>
+/// <li><p><code>CopyTagsToVolumes</code></p></li>
+/// <li><p><code>DailyAutomaticBackupStartTime</code></p></li>
+/// <li><p><code>DiskIopsConfiguration</code></p></li>
+/// <li><p><code>RemoveRouteTableIds</code></p></li>
+/// <li><p><code>StorageCapacity</code></p></li>
+/// <li><p><code>ThroughputCapacity</code></p></li>
+/// <li><p><code>WeeklyMaintenanceStartTime</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFileSystemFluentBuilder {
@@ -187,14 +187,14 @@ impl UpdateFileSystemFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
-    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating.</p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
     /// </note>
     /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
     /// <ul>
-    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
-    /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
-    /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
+    /// <li><p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p></li>
+    /// <li><p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p></li>
+    /// <li><p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>FSx for Lustre User Guide</i>.</p>
     /// <p>For FSx for OpenZFS file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.</p>
@@ -204,14 +204,14 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating.</p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
     /// </note>
     /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
     /// <ul>
-    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
-    /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
-    /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
+    /// <li><p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p></li>
+    /// <li><p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p></li>
+    /// <li><p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>FSx for Lustre User Guide</i>.</p>
     /// <p>For FSx for OpenZFS file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.</p>
@@ -221,14 +221,14 @@ impl UpdateFileSystemFluentBuilder {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
-    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+    /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating.</p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
     /// </note>
     /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
     /// <ul>
-    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
-    /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
-    /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
+    /// <li><p>For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p></li>
+    /// <li><p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p></li>
+    /// <li><p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>FSx for Lustre User Guide</i>.</p>
     /// <p>For FSx for OpenZFS file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.</p>

@@ -109,17 +109,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+    /// <p>The ARN of the resource from which to remove metadata tags. Required.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+    /// <p>The ARN of the resource from which to remove metadata tags. Required.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+    /// <p>The ARN of the resource from which to remove metadata tags. Required.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
@@ -127,17 +127,17 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
-    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
+    /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }

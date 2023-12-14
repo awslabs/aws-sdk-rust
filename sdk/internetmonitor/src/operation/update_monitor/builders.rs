@@ -109,17 +109,17 @@ impl UpdateMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the monitor. </p>
+    /// <p>The name of the monitor.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
         self
     }
-    /// <p>The name of the monitor. </p>
+    /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
-    /// <p>The name of the monitor. </p>
+    /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }

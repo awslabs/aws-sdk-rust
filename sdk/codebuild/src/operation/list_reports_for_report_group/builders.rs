@@ -22,7 +22,7 @@ impl ListReportsForReportGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `ListReportsForReportGroup`.
 ///
-/// <p> Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>. </p>
+/// <p>Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReportsForReportGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl ListReportsForReportGroupFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator {
         crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator::new(self.handle, self.inner)
     }
-    /// <p> The ARN of the report group for which you want to return report ARNs. </p>
+    /// <p>The ARN of the report group for which you want to return report ARNs.</p>
     pub fn report_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_group_arn(input.into());
         self
     }
-    /// <p> The ARN of the report group for which you want to return report ARNs. </p>
+    /// <p>The ARN of the report group for which you want to return report ARNs.</p>
     pub fn set_report_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_group_arn(input);
         self
     }
-    /// <p> The ARN of the report group for which you want to return report ARNs. </p>
+    /// <p>The ARN of the report group for which you want to return report ARNs.</p>
     pub fn get_report_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_report_group_arn()
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
+    /// <p>Use to specify whether the results are returned in ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
+    /// <p>Use to specify whether the results are returned in ascending or descending order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
+    /// <p>Use to specify whether the results are returned in ascending or descending order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         self.inner.get_sort_order()
     }
-    /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    /// <p>The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>ReportFilter</code> object used to filter the returned reports.</p>
     pub fn filter(mut self, input: crate::types::ReportFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>ReportFilter</code> object used to filter the returned reports.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReportFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    /// <p>A <code>ReportFilter</code> object used to filter the returned reports.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReportFilter> {
         self.inner.get_filter()
     }

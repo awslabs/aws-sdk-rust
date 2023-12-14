@@ -28,7 +28,7 @@ pub struct ServiceNetworkServiceAssociationSummary {
     pub service_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>DNS information about the service.</p>
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
-    /// <p> The custom domain name of the service. </p>
+    /// <p>The custom domain name of the service.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNetworkServiceAssociationSummary {
@@ -80,7 +80,7 @@ impl ServiceNetworkServiceAssociationSummary {
     pub fn dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
         self.dns_entry.as_ref()
     }
-    /// <p> The custom domain name of the service. </p>
+    /// <p>The custom domain name of the service.</p>
     pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
         self.custom_domain_name.as_deref()
     }
@@ -279,17 +279,17 @@ impl ServiceNetworkServiceAssociationSummaryBuilder {
     pub fn get_dns_entry(&self) -> &::std::option::Option<crate::types::DnsEntry> {
         &self.dns_entry
     }
-    /// <p> The custom domain name of the service. </p>
+    /// <p>The custom domain name of the service.</p>
     pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The custom domain name of the service. </p>
+    /// <p>The custom domain name of the service.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_name = input;
         self
     }
-    /// <p> The custom domain name of the service. </p>
+    /// <p>The custom domain name of the service.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_name
     }

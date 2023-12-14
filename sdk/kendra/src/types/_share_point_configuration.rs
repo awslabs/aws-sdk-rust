@@ -10,9 +10,9 @@ pub struct SharePointConfiguration {
     pub urls: ::std::vec::Vec<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft SharePoint</a>.</p>
     pub secret_arn: ::std::string::String,
-    /// <p> <code>TRUE</code> to index document attachments.</p>
+    /// <p><code>TRUE</code> to index document attachments.</p>
     pub crawl_attachments: bool,
-    /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
+    /// <p><code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
     pub use_change_log: bool,
     /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The regex applies to the display URL of the SharePoint document.</p>
@@ -26,7 +26,7 @@ pub struct SharePointConfiguration {
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>The Microsoft SharePoint attribute field that contains the title of the document.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
-    /// <p> <code>TRUE</code> to disable local groups information.</p>
+    /// <p><code>TRUE</code> to disable local groups information.</p>
     pub disable_local_groups: bool,
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if you require a secure SSL connection.</p>
     /// <p>You can generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
@@ -54,11 +54,11 @@ impl SharePointConfiguration {
         use std::ops::Deref;
         self.secret_arn.deref()
     }
-    /// <p> <code>TRUE</code> to index document attachments.</p>
+    /// <p><code>TRUE</code> to index document attachments.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
-    /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
+    /// <p><code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
     pub fn use_change_log(&self) -> bool {
         self.use_change_log
     }
@@ -90,7 +90,7 @@ impl SharePointConfiguration {
     pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
         self.document_title_field_name.as_deref()
     }
-    /// <p> <code>TRUE</code> to disable local groups information.</p>
+    /// <p><code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(&self) -> bool {
         self.disable_local_groups
     }
@@ -188,31 +188,31 @@ impl SharePointConfigurationBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
-    /// <p> <code>TRUE</code> to index document attachments.</p>
+    /// <p><code>TRUE</code> to index document attachments.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
         self.crawl_attachments = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to index document attachments.</p>
+    /// <p><code>TRUE</code> to index document attachments.</p>
     pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
     }
-    /// <p> <code>TRUE</code> to index document attachments.</p>
+    /// <p><code>TRUE</code> to index document attachments.</p>
     pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
         &self.crawl_attachments
     }
-    /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
+    /// <p><code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
+    /// <p><code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
     }
-    /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
+    /// <p><code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
     pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
         &self.use_change_log
     }
@@ -310,17 +310,17 @@ impl SharePointConfigurationBuilder {
     pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_title_field_name
     }
-    /// <p> <code>TRUE</code> to disable local groups information.</p>
+    /// <p><code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(mut self, input: bool) -> Self {
         self.disable_local_groups = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to disable local groups information.</p>
+    /// <p><code>TRUE</code> to disable local groups information.</p>
     pub fn set_disable_local_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_local_groups = input;
         self
     }
-    /// <p> <code>TRUE</code> to disable local groups information.</p>
+    /// <p><code>TRUE</code> to disable local groups information.</p>
     pub fn get_disable_local_groups(&self) -> &::std::option::Option<bool> {
         &self.disable_local_groups
     }

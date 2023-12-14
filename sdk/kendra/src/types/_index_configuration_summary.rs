@@ -8,7 +8,7 @@ pub struct IndexConfigurationSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
+    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index.</p>
     pub edition: ::std::option::Option<crate::types::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -26,7 +26,7 @@ impl IndexConfigurationSummary {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
+    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index.</p>
     pub fn edition(&self) -> ::std::option::Option<&crate::types::IndexEdition> {
         self.edition.as_ref()
     }
@@ -90,17 +90,17 @@ impl IndexConfigurationSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
+    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index.</p>
     pub fn edition(mut self, input: crate::types::IndexEdition) -> Self {
         self.edition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
+    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index.</p>
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::IndexEdition>) -> Self {
         self.edition = input;
         self
     }
-    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index. </p>
+    /// <p>Indicates whether the index is a Enterprise Edition index or a Developer Edition index.</p>
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::IndexEdition> {
         &self.edition
     }

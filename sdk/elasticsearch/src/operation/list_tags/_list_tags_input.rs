@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsInput {
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInput {
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct ListTagsInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInputBuilder {
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// <p>Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

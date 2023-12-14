@@ -245,7 +245,7 @@ pub enum PutFileError {
     BranchNameIsTagNameException(crate::types::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
     BranchNameRequiredException(crate::types::error::BranchNameRequiredException),
-    /// <p>The commit message is too long. Provide a shorter string. </p>
+    /// <p>The commit message is too long. Provide a shorter string.</p>
     CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
     DirectoryNameConflictsWithFileNameException(crate::types::error::DirectoryNameConflictsWithFileNameException),
@@ -275,7 +275,7 @@ pub enum PutFileError {
     InvalidDeletionParameterException(crate::types::error::InvalidDeletionParameterException),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::types::error::InvalidEmailException),
-    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
+    /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>.</p>
     InvalidFileModeException(crate::types::error::InvalidFileModeException),
     /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
     InvalidParentCommitIdException(crate::types::error::InvalidParentCommitIdException),
@@ -285,7 +285,7 @@ pub enum PutFileError {
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
-    /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
+    /// <p>The user name is not valid because it has exceeded the character limit for author names.</p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
     ParentCommitDoesNotExistException(crate::types::error::ParentCommitDoesNotExistException),

@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub struct UploadReadSetPartInput {
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     pub part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     pub part_number: ::std::option::Option<i32>,
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     pub payload: ::aws_smithy_types::byte_stream::ByteStream,
 }
 impl UploadReadSetPartInput {
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
         self.sequence_store_id.as_deref()
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn upload_id(&self) -> ::std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     pub fn part_source(&self) -> ::std::option::Option<&crate::types::ReadSetPartSource> {
         self.part_source.as_ref()
     }
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     pub fn part_number(&self) -> ::std::option::Option<i32> {
         self.part_number
     }
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
@@ -54,78 +54,78 @@ pub struct UploadReadSetPartInputBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
 }
 impl UploadReadSetPartInputBuilder {
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
-    /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// <p>The Sequence Store ID used for the multipart upload.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_store_id
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
     }
-    /// <p> The ID for the initiated multipart upload. </p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     /// This field is required.
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.part_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.part_source = input;
         self
     }
-    /// <p> The source file for an upload part. </p>
+    /// <p>The source file for an upload part.</p>
     pub fn get_part_source(&self) -> &::std::option::Option<crate::types::ReadSetPartSource> {
         &self.part_source
     }
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     /// This field is required.
     pub fn part_number(mut self, input: i32) -> Self {
         self.part_number = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.part_number = input;
         self
     }
-    /// <p> The number of the part being uploaded. </p>
+    /// <p>The number of the part being uploaded.</p>
     pub fn get_part_number(&self) -> &::std::option::Option<i32> {
         &self.part_number
     }
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.payload = input;
         self
     }
-    /// <p> The read set data to upload for a part. </p>
+    /// <p>The read set data to upload for a part.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.payload
     }

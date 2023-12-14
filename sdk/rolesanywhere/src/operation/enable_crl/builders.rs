@@ -23,7 +23,7 @@ impl EnableCrlInputBuilder {
 /// Fluent builder constructing a request to `EnableCrl`.
 ///
 /// <p>Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:EnableCrl</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:EnableCrl</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableCrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

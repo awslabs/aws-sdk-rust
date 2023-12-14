@@ -22,8 +22,8 @@ impl ListTagsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p> Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model. </p>
-/// <p>This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code> action. </p>
+/// <p>Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model.</p>
+/// <p>This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl ListTagsForResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
+    /// <p>Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
+    /// <p>Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
+    /// <p>Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

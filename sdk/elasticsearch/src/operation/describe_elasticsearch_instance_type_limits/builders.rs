@@ -22,7 +22,7 @@ impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeElasticsearchInstanceTypeLimits`.
 ///
-/// <p> Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <code>DomainName</code> </code> to know what Limits are supported for modifying. </p>
+/// <p>Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <code>DomainName</code> </code> to know what Limits are supported for modifying.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,45 +112,45 @@ impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
+    /// <p>The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed.</p>
     pub fn instance_type(mut self, input: crate::types::EsPartitionInstanceType) -> Self {
         self.inner = self.inner.instance_type(input);
         self
     }
-    /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
+    /// <p>The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::EsPartitionInstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
-    /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
+    /// <p>The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
         self.inner.get_instance_type()
     }
-    /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
+    /// <p>Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed.</p>
     pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.elasticsearch_version(input.into());
         self
     }
-    /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
+    /// <p>Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed.</p>
     pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_elasticsearch_version(input);
         self
     }
-    /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
+    /// <p>Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed.</p>
     pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_elasticsearch_version()
     }

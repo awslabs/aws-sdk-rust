@@ -122,17 +122,17 @@ impl CreateRoomFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
         self.inner = self.inner.maximum_message_rate_per_second(input);
         self
     }
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn set_maximum_message_rate_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_message_rate_per_second(input);
         self
     }
-    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn get_maximum_message_rate_per_second(&self) -> &::std::option::Option<i32> {
         self.inner.get_maximum_message_rate_per_second()
     }

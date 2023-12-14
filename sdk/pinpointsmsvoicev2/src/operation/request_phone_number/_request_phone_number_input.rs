@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberInput {
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub message_type: ::std::option::Option<crate::types::MessageType>,
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
     pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of phone number to request.</p>
     pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this field to attach your phone number for an external registration process.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RequestPhoneNumberInput {
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
@@ -33,7 +33,7 @@ impl RequestPhoneNumberInput {
     pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
     pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
@@ -47,7 +47,7 @@ impl RequestPhoneNumberInput {
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
@@ -59,7 +59,7 @@ impl RequestPhoneNumberInput {
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -93,18 +93,18 @@ pub struct RequestPhoneNumberInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl RequestPhoneNumberInputBuilder {
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }
@@ -127,19 +127,19 @@ impl RequestPhoneNumberInputBuilder {
     ///
     /// To override the contents of this collection use [`set_number_capabilities`](Self::set_number_capabilities).
     ///
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
         v.push(input);
         self.number_capabilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
     pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
         self.number_capabilities = input;
         self
     }
-    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
+    /// <p>Indicates if the phone number will be used for text messages, voice messages, or both.</p>
     pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
@@ -172,17 +172,17 @@ impl RequestPhoneNumberInputBuilder {
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
-    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
+    /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }
@@ -218,19 +218,19 @@ impl RequestPhoneNumberInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
+    /// <p>An array of tags (key and value pairs) associate with the requested phone number.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

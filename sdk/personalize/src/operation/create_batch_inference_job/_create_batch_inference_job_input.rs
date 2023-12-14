@@ -22,7 +22,7 @@ pub struct CreateBatchInferenceJobInput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
-    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    /// <p>When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub batch_inference_job_mode: ::std::option::Option<crate::types::BatchInferenceJobMode>,
     /// <p>For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.</p>
     pub theme_generation_config: ::std::option::Option<crate::types::ThemeGenerationConfig>,
@@ -67,7 +67,7 @@ impl CreateBatchInferenceJobInput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
-    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    /// <p>When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn batch_inference_job_mode(&self) -> ::std::option::Option<&crate::types::BatchInferenceJobMode> {
         self.batch_inference_job_mode.as_ref()
     }
@@ -238,19 +238,19 @@ impl CreateBatchInferenceJobInputBuilder {
         &self.tags
     }
     /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
-    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    /// <p>When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn batch_inference_job_mode(mut self, input: crate::types::BatchInferenceJobMode) -> Self {
         self.batch_inference_job_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
-    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    /// <p>When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn set_batch_inference_job_mode(mut self, input: ::std::option::Option<crate::types::BatchInferenceJobMode>) -> Self {
         self.batch_inference_job_mode = input;
         self
     }
     /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
-    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    /// <p>When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn get_batch_inference_job_mode(&self) -> &::std::option::Option<crate::types::BatchInferenceJobMode> {
         &self.batch_inference_job_mode
     }

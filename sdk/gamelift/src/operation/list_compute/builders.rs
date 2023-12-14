@@ -22,7 +22,7 @@ impl ListComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCompute`.
 ///
-/// <p>Retrieves the compute resources in an Amazon GameLift fleet. You can request information for either managed EC2 fleets or Anywhere fleets. </p>
+/// <p>Retrieves the compute resources in an Amazon GameLift fleet. You can request information for either managed EC2 fleets or Anywhere fleets.</p>
 /// <p>To request a list of computes, specify the fleet ID. You can filter the result set by location. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
 /// <p>If successful, this operation returns the compute resource for the requested fleet. For managed EC2 fleets, it returns a list of EC2 instances. For Anywhere fleets, it returns a list of registered compute names.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelCustomizationJobsInput {
-    /// <p>Return customization jobs created after the specified time. </p>
+    /// <p>Return customization jobs created after the specified time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Return customization jobs created before the specified time. </p>
+    /// <p>Return customization jobs created before the specified time.</p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Return customization jobs with the specified status. </p>
+    /// <p>Return customization jobs with the specified status.</p>
     pub status_equals: ::std::option::Option<crate::types::FineTuningJobStatus>,
     /// <p>Return customization jobs only if the job name contains these characters.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
@@ -21,15 +21,15 @@ pub struct ListModelCustomizationJobsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListModelCustomizationJobsInput {
-    /// <p>Return customization jobs created after the specified time. </p>
+    /// <p>Return customization jobs created after the specified time.</p>
     pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
-    /// <p>Return customization jobs created before the specified time. </p>
+    /// <p>Return customization jobs created before the specified time.</p>
     pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
-    /// <p>Return customization jobs with the specified status. </p>
+    /// <p>Return customization jobs with the specified status.</p>
     pub fn status_equals(&self) -> ::std::option::Option<&crate::types::FineTuningJobStatus> {
         self.status_equals.as_ref()
     }
@@ -75,45 +75,45 @@ pub struct ListModelCustomizationJobsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListModelCustomizationJobsInputBuilder {
-    /// <p>Return customization jobs created after the specified time. </p>
+    /// <p>Return customization jobs created after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return customization jobs created after the specified time. </p>
+    /// <p>Return customization jobs created after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
-    /// <p>Return customization jobs created after the specified time. </p>
+    /// <p>Return customization jobs created after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_after
     }
-    /// <p>Return customization jobs created before the specified time. </p>
+    /// <p>Return customization jobs created before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return customization jobs created before the specified time. </p>
+    /// <p>Return customization jobs created before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
-    /// <p>Return customization jobs created before the specified time. </p>
+    /// <p>Return customization jobs created before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_before
     }
-    /// <p>Return customization jobs with the specified status. </p>
+    /// <p>Return customization jobs with the specified status.</p>
     pub fn status_equals(mut self, input: crate::types::FineTuningJobStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return customization jobs with the specified status. </p>
+    /// <p>Return customization jobs with the specified status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::FineTuningJobStatus>) -> Self {
         self.status_equals = input;
         self
     }
-    /// <p>Return customization jobs with the specified status. </p>
+    /// <p>Return customization jobs with the specified status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::FineTuningJobStatus> {
         &self.status_equals
     }

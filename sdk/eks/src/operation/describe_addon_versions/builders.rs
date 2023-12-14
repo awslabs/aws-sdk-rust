@@ -22,7 +22,7 @@ impl DescribeAddonVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAddonVersions`.
 ///
-/// <p>Describes the versions for an add-on. Information such as the Kubernetes versions that you can use the add-on with, the <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on are returned. </p>
+/// <p>Describes the versions for an add-on. Information such as the Kubernetes versions that you can use the add-on with, the <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAddonVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

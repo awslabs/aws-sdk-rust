@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIndexOutput {
-    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
+    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
     /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
@@ -14,7 +14,7 @@ pub struct CreateIndexOutput {
     _request_id: Option<String>,
 }
 impl CreateIndexOutput {
-    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
+    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -51,17 +51,17 @@ pub struct CreateIndexOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateIndexOutputBuilder {
-    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
+    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
+    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
+    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code></p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

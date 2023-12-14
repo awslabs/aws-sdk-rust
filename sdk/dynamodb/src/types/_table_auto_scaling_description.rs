@@ -8,10 +8,10 @@ pub struct TableAutoScalingDescription {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The table is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The table is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub table_status: ::std::option::Option<crate::types::TableStatus>,
     /// <p>Represents replicas of the global table.</p>
@@ -24,10 +24,10 @@ impl TableAutoScalingDescription {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The table is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The table is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn table_status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
         self.table_status.as_ref()
@@ -71,10 +71,10 @@ impl TableAutoScalingDescriptionBuilder {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The table is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The table is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn table_status(mut self, input: crate::types::TableStatus) -> Self {
         self.table_status = ::std::option::Option::Some(input);
@@ -82,10 +82,10 @@ impl TableAutoScalingDescriptionBuilder {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The table is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The table is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn set_table_status(mut self, input: ::std::option::Option<crate::types::TableStatus>) -> Self {
         self.table_status = input;
@@ -93,10 +93,10 @@ impl TableAutoScalingDescriptionBuilder {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
-    /// <li> <p> <code>UPDATING</code> - The table is being updated.</p> </li>
-    /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
+    /// <li><p><code>CREATING</code> - The table is being created.</p></li>
+    /// <li><p><code>UPDATING</code> - The table is being updated.</p></li>
+    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn get_table_status(&self) -> &::std::option::Option<crate::types::TableStatus> {
         &self.table_status

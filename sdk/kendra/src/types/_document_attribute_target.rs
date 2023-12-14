@@ -10,7 +10,7 @@ pub struct DocumentAttributeTarget {
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
     pub target_document_attribute_key: ::std::option::Option<::std::string::String>,
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub target_document_attribute_value_deletion: bool,
     /// <p>The target value you want to create for the target attribute.</p>
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
@@ -22,7 +22,7 @@ impl DocumentAttributeTarget {
     pub fn target_document_attribute_key(&self) -> ::std::option::Option<&str> {
         self.target_document_attribute_key.as_deref()
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub fn target_document_attribute_value_deletion(&self) -> bool {
         self.target_document_attribute_value_deletion
     }
@@ -65,17 +65,17 @@ impl DocumentAttributeTargetBuilder {
     pub fn get_target_document_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_document_attribute_key
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub fn target_document_attribute_value_deletion(mut self, input: bool) -> Self {
         self.target_document_attribute_value_deletion = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub fn set_target_document_attribute_value_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.target_document_attribute_value_deletion = input;
         self
     }
-    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
+    /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub fn get_target_document_attribute_value_deletion(&self) -> &::std::option::Option<bool> {
         &self.target_document_attribute_value_deletion
     }

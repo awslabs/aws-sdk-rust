@@ -5,7 +5,7 @@
 pub struct ListFirewallConfigsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub firewall_configs: ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListFirewallConfigsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_configs.is_none()`.
     pub fn firewall_configs(&self) -> &[crate::types::FirewallConfig] {
@@ -60,19 +60,19 @@ impl ListFirewallConfigsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_firewall_configs`](Self::set_firewall_configs).
     ///
-    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub fn firewall_configs(mut self, input: crate::types::FirewallConfig) -> Self {
         let mut v = self.firewall_configs.unwrap_or_default();
         v.push(input);
         self.firewall_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub fn set_firewall_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>>) -> Self {
         self.firewall_configs = input;
         self
     }
-    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub fn get_firewall_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallConfig>> {
         &self.firewall_configs
     }

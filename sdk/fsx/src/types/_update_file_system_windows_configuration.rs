@@ -6,7 +6,7 @@
 pub struct UpdateFileSystemWindowsConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
-    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
+    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl UpdateFileSystemWindowsConfiguration {
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
-    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
+    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
     pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
@@ -85,17 +85,17 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_start_time
     }
-    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
+    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
     pub fn daily_automatic_backup_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.daily_automatic_backup_start_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
+    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
     pub fn set_daily_automatic_backup_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.daily_automatic_backup_start_time = input;
         self
     }
-    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code> </p>
+    /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code></p>
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_automatic_backup_start_time
     }

@@ -22,7 +22,7 @@ impl GetChannelMessageStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `GetChannelMessageStatus`.
 ///
-/// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p>
+/// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket.</p>
 /// <p>Messages can have any one of these statuses.</p>
 /// <dl>
 /// <dt>
@@ -51,9 +51,9 @@ impl GetChannelMessageStatusInputBuilder {
 /// </dd>
 /// </dl> <note>
 /// <ul>
-/// <li> <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p> </li>
-/// <li> <p>Only the message sender can invoke this API.</p> </li>
-/// <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </li>
+/// <li><p>This API does not return statuses for denied messages, because we don't store them once the processor denies them.</p></li>
+/// <li><p>Only the message sender can invoke this API.</p></li>
+/// <li><p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -22,7 +22,7 @@ impl StartInferenceSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `StartInferenceScheduler`.
 ///
-/// <p>Starts an inference scheduler. </p>
+/// <p>Starts an inference scheduler.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StartInferenceSchedulerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the inference scheduler to be started. </p>
+    /// <p>The name of the inference scheduler to be started.</p>
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
-    /// <p>The name of the inference scheduler to be started. </p>
+    /// <p>The name of the inference scheduler to be started.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
-    /// <p>The name of the inference scheduler to be started. </p>
+    /// <p>The name of the inference scheduler to be started.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_scheduler_name()
     }

@@ -23,23 +23,23 @@ impl CreatePredictorInputBuilder {
 /// Fluent builder constructing a request to `CreatePredictor`.
 ///
 /// <note>
-/// <p> This operation creates a legacy predictor that does not include all the predictor functionalities provided by Amazon Forecast. To create a predictor that is compatible with all aspects of Forecast, use <code>CreateAutoPredictor</code>.</p>
+/// <p>This operation creates a legacy predictor that does not include all the predictor functionalities provided by Amazon Forecast. To create a predictor that is compatible with all aspects of Forecast, use <code>CreateAutoPredictor</code>.</p>
 /// </note>
 /// <p>Creates an Amazon Forecast predictor.</p>
 /// <p>In the request, provide a dataset group and either specify an algorithm or let Amazon Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you also can override algorithm-specific hyperparameters.</p>
 /// <p>Amazon Forecast uses the algorithm to train a predictor using the latest version of the datasets in the specified dataset group. You can then generate a forecast using the <code>CreateForecast</code> operation.</p>
-/// <p> To see the evaluation metrics, use the <code>GetAccuracyMetrics</code> operation. </p>
+/// <p>To see the evaluation metrics, use the <code>GetAccuracyMetrics</code> operation.</p>
 /// <p>You can specify a featurization configuration to fill and aggregate the data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more information, see <code>FeaturizationConfig</code>.</p>
 /// <p>For RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the <code>DataFrequency</code> specified when the dataset was created matches the <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this restriction. Amazon Forecast also verifies the delimiter and timestamp format. For more information, see <code>howitworks-datasets-groups</code>.</p>
-/// <p>By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your predictor by setting the <code>ForecastTypes</code>. </p>
-/// <p> <b>AutoML</b> </p>
+/// <p>By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your predictor by setting the <code>ForecastTypes</code>.</p>
+/// <p><b>AutoML</b></p>
 /// <p>If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>. The <code>objective function</code> is defined as the mean of the weighted losses over the forecast types. By default, these are the p10, p50, and p90 quantile losses. For more information, see <code>EvaluationResult</code>.</p>
 /// <p>When AutoML is enabled, the following properties are disallowed:</p>
 /// <ul>
-/// <li> <p> <code>AlgorithmArn</code> </p> </li>
-/// <li> <p> <code>HPOConfig</code> </p> </li>
-/// <li> <p> <code>PerformHPO</code> </p> </li>
-/// <li> <p> <code>TrainingParameters</code> </p> </li>
+/// <li><p><code>AlgorithmArn</code></p></li>
+/// <li><p><code>HPOConfig</code></p></li>
+/// <li><p><code>PerformHPO</code></p></li>
+/// <li><p><code>TrainingParameters</code></p></li>
 /// </ul>
 /// <p>To get a list of all of your predictors, use the <code>ListPredictors</code> operation.</p> <note>
 /// <p>Before you can use the predictor to create a forecast, the <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying that training has completed. To get the status, use the <code>DescribePredictor</code> operation.</p>
@@ -144,42 +144,42 @@ impl CreatePredictorFluentBuilder {
         self.inner.get_predictor_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-    /// <p class="title"> <b>Supported algorithms:</b> </p>
+    /// <p class="title"><b>Supported algorithms:</b></p>
     /// <ul>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/ARIMA</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/CNN-QR</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/ETS</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/NPTS</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/Prophet</code></p></li>
     /// </ul>
     pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.algorithm_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-    /// <p class="title"> <b>Supported algorithms:</b> </p>
+    /// <p class="title"><b>Supported algorithms:</b></p>
     /// <ul>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/ARIMA</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/CNN-QR</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/ETS</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/NPTS</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/Prophet</code></p></li>
     /// </ul>
     pub fn set_algorithm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_algorithm_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>
-    /// <p class="title"> <b>Supported algorithms:</b> </p>
+    /// <p class="title"><b>Supported algorithms:</b></p>
     /// <ul>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
-    /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/ARIMA</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/CNN-QR</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/ETS</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/NPTS</code></p></li>
+    /// <li><p><code>arn:aws:forecast:::algorithm/Prophet</code></p></li>
     /// </ul>
     pub fn get_algorithm_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_algorithm_arn()
@@ -208,19 +208,19 @@ impl CreatePredictorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
     ///
-    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
+    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
     pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_types(input.into());
         self
     }
-    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
+    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
     pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_forecast_types(input);
         self
     }
-    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
+    /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_forecast_types()
@@ -246,7 +246,7 @@ impl CreatePredictorFluentBuilder {
         self.inner.get_perform_auto_ml()
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
+    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -255,7 +255,7 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
+    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -264,7 +264,7 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <note>
-    /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
+    /// <p>The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
@@ -276,8 +276,8 @@ impl CreatePredictorFluentBuilder {
     /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
     /// <p>The following algorithms support HPO:</p>
     /// <ul>
-    /// <li> <p>DeepAR+</p> </li>
-    /// <li> <p>CNN-QR</p> </li>
+    /// <li><p>DeepAR+</p></li>
+    /// <li><p>CNN-QR</p></li>
     /// </ul>
     pub fn perform_hpo(mut self, input: bool) -> Self {
         self.inner = self.inner.perform_hpo(input);
@@ -288,8 +288,8 @@ impl CreatePredictorFluentBuilder {
     /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
     /// <p>The following algorithms support HPO:</p>
     /// <ul>
-    /// <li> <p>DeepAR+</p> </li>
-    /// <li> <p>CNN-QR</p> </li>
+    /// <li><p>DeepAR+</p></li>
+    /// <li><p>CNN-QR</p></li>
     /// </ul>
     pub fn set_perform_hpo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_perform_hpo(input);
@@ -300,8 +300,8 @@ impl CreatePredictorFluentBuilder {
     /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>
     /// <p>The following algorithms support HPO:</p>
     /// <ul>
-    /// <li> <p>DeepAR+</p> </li>
-    /// <li> <p>CNN-QR</p> </li>
+    /// <li><p>DeepAR+</p></li>
+    /// <li><p>CNN-QR</p></li>
     /// </ul>
     pub fn get_perform_hpo(&self) -> &::std::option::Option<bool> {
         self.inner.get_perform_hpo()
@@ -411,13 +411,13 @@ impl CreatePredictorFluentBuilder {
     /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -426,13 +426,13 @@ impl CreatePredictorFluentBuilder {
     /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -441,13 +441,13 @@ impl CreatePredictorFluentBuilder {
     /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <li><p>Maximum number of tags per resource - 50.</p></li>
+    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li><p>Tag keys and values are case sensitive.</p></li>
+    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

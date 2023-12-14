@@ -13,8 +13,8 @@ pub struct UpdateQuickResponseInput {
     pub content: ::std::option::Option<crate::types::QuickResponseDataProvider>,
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The updated grouping configuration of the quick response.</p>
@@ -29,11 +29,11 @@ pub struct UpdateQuickResponseInput {
     pub shortcut_key: ::std::option::Option<::std::string::String>,
     /// <p>Whether to remove the shortcut key of the quick response.</p>
     pub remove_shortcut_key: ::std::option::Option<bool>,
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub is_active: ::std::option::Option<bool>,
     /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
     pub channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub language: ::std::option::Option<::std::string::String>,
 }
 impl UpdateQuickResponseInput {
@@ -55,8 +55,8 @@ impl UpdateQuickResponseInput {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
@@ -85,7 +85,7 @@ impl UpdateQuickResponseInput {
     pub fn remove_shortcut_key(&self) -> ::std::option::Option<bool> {
         self.remove_shortcut_key
     }
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub fn is_active(&self) -> ::std::option::Option<bool> {
         self.is_active
     }
@@ -95,7 +95,7 @@ impl UpdateQuickResponseInput {
     pub fn channels(&self) -> &[::std::string::String] {
         self.channels.as_deref().unwrap_or_default()
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -187,8 +187,8 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -196,8 +196,8 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
@@ -205,8 +205,8 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li> <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p> </li>
-    /// <li> <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p> </li>
+    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
@@ -295,17 +295,17 @@ impl UpdateQuickResponseInputBuilder {
     pub fn get_remove_shortcut_key(&self) -> &::std::option::Option<bool> {
         &self.remove_shortcut_key
     }
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.is_active = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
     }
-    /// <p>Whether the quick response is active. </p>
+    /// <p>Whether the quick response is active.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
         &self.is_active
     }
@@ -329,17 +329,17 @@ impl UpdateQuickResponseInputBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.channels
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
-    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> </p>
+    /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }

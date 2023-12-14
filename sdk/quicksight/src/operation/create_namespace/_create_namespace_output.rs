@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNamespaceOutput {
-    /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
+    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
     pub capacity_region: ::std::option::Option<::std::string::String>,
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
     pub creation_status: ::std::option::Option<crate::types::NamespaceStatus>,
@@ -20,7 +20,7 @@ pub struct CreateNamespaceOutput {
     _request_id: Option<String>,
 }
 impl CreateNamespaceOutput {
-    /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
+    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -28,7 +28,7 @@ impl CreateNamespaceOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
     pub fn capacity_region(&self) -> ::std::option::Option<&str> {
         self.capacity_region.as_deref()
     }
@@ -75,17 +75,17 @@ pub struct CreateNamespaceOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateNamespaceOutputBuilder {
-    /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
+    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
+    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
+    /// <p>The ARN of the Amazon QuickSight namespace you created.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -103,17 +103,17 @@ impl CreateNamespaceOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
     pub fn capacity_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
     pub fn set_capacity_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_region = input;
         self
     }
-    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in.</p>
     pub fn get_capacity_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_region
     }

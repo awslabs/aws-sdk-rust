@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DownlinkQueueMessage {
-    /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
+    /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub transmit_mode: ::std::option::Option<i32>,
@@ -14,7 +14,7 @@ pub struct DownlinkQueueMessage {
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
 }
 impl DownlinkQueueMessage {
-    /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
+    /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -48,17 +48,17 @@ pub struct DownlinkQueueMessageBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
 }
 impl DownlinkQueueMessageBuilder {
-    /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
+    /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
+    /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
-    /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
+    /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }

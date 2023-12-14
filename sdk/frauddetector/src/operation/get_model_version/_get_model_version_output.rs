@@ -13,22 +13,22 @@ pub struct GetModelVersionOutput {
     pub training_data_source: ::std::option::Option<crate::types::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
     pub training_data_schema: ::std::option::Option<crate::types::TrainingDataSchema>,
-    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code></p>
     pub external_events_detail: ::std::option::Option<crate::types::ExternalEventsDetail>,
     /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub ingested_events_detail: ::std::option::Option<crate::types::IngestedEventsDetail>,
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>INACTIVE</code> </p> </li>
-    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>INACTIVE</code></p></li>
+    /// <li><p><code>ERROR</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The model version ARN.</p>
@@ -56,7 +56,7 @@ impl GetModelVersionOutput {
     pub fn training_data_schema(&self) -> ::std::option::Option<&crate::types::TrainingDataSchema> {
         self.training_data_schema.as_ref()
     }
-    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code></p>
     pub fn external_events_detail(&self) -> ::std::option::Option<&crate::types::ExternalEventsDetail> {
         self.external_events_detail.as_ref()
     }
@@ -67,15 +67,15 @@ impl GetModelVersionOutput {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>INACTIVE</code> </p> </li>
-    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>INACTIVE</code></p></li>
+    /// <li><p><code>ERROR</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -183,17 +183,17 @@ impl GetModelVersionOutputBuilder {
     pub fn get_training_data_schema(&self) -> &::std::option::Option<crate::types::TrainingDataSchema> {
         &self.training_data_schema
     }
-    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code></p>
     pub fn external_events_detail(mut self, input: crate::types::ExternalEventsDetail) -> Self {
         self.external_events_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code></p>
     pub fn set_external_events_detail(mut self, input: ::std::option::Option<crate::types::ExternalEventsDetail>) -> Self {
         self.external_events_detail = input;
         self
     }
-    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
+    /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code></p>
     pub fn get_external_events_detail(&self) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
         &self.external_events_detail
     }
@@ -214,15 +214,15 @@ impl GetModelVersionOutputBuilder {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>INACTIVE</code> </p> </li>
-    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>INACTIVE</code></p></li>
+    /// <li><p><code>ERROR</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -231,15 +231,15 @@ impl GetModelVersionOutputBuilder {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>INACTIVE</code> </p> </li>
-    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>INACTIVE</code></p></li>
+    /// <li><p><code>ERROR</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -248,15 +248,15 @@ impl GetModelVersionOutputBuilder {
     /// <p>The model version status.</p>
     /// <p>Possible values are:</p>
     /// <ul>
-    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>INACTIVE</code> </p> </li>
-    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <li><p><code>TRAINING_IN_PROGRESS</code></p></li>
+    /// <li><p><code>TRAINING_COMPLETE</code></p></li>
+    /// <li><p><code>ACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>ACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>ACTIVE</code></p></li>
+    /// <li><p><code>INACTIVATE_REQUESTED</code></p></li>
+    /// <li><p><code>INACTIVATE_IN_PROGRESS</code></p></li>
+    /// <li><p><code>INACTIVE</code></p></li>
+    /// <li><p><code>ERROR</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

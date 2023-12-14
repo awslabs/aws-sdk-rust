@@ -8,13 +8,13 @@ pub struct PartitionIndexDescriptor {
     pub index_name: ::std::string::String,
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
     pub keys: ::std::vec::Vec<crate::types::KeySchemaElement>,
-    /// <p>The status of the partition index. </p>
+    /// <p>The status of the partition index.</p>
     /// <p>The possible statuses are:</p>
     /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <li><p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p></li>
+    /// <li><p>ACTIVE: The index creation succeeds.</p></li>
+    /// <li><p>FAILED: The index creation fails.</p></li>
+    /// <li><p>DELETING: The index is deleted from the list of indexes.</p></li>
     /// </ul>
     pub index_status: crate::types::PartitionIndexStatus,
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
@@ -31,13 +31,13 @@ impl PartitionIndexDescriptor {
         use std::ops::Deref;
         self.keys.deref()
     }
-    /// <p>The status of the partition index. </p>
+    /// <p>The status of the partition index.</p>
     /// <p>The possible statuses are:</p>
     /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <li><p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p></li>
+    /// <li><p>ACTIVE: The index creation succeeds.</p></li>
+    /// <li><p>FAILED: The index creation fails.</p></li>
+    /// <li><p>DELETING: The index is deleted from the list of indexes.</p></li>
     /// </ul>
     pub fn index_status(&self) -> &crate::types::PartitionIndexStatus {
         &self.index_status
@@ -101,38 +101,38 @@ impl PartitionIndexDescriptorBuilder {
     pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
         &self.keys
     }
-    /// <p>The status of the partition index. </p>
+    /// <p>The status of the partition index.</p>
     /// <p>The possible statuses are:</p>
     /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <li><p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p></li>
+    /// <li><p>ACTIVE: The index creation succeeds.</p></li>
+    /// <li><p>FAILED: The index creation fails.</p></li>
+    /// <li><p>DELETING: The index is deleted from the list of indexes.</p></li>
     /// </ul>
     /// This field is required.
     pub fn index_status(mut self, input: crate::types::PartitionIndexStatus) -> Self {
         self.index_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the partition index. </p>
+    /// <p>The status of the partition index.</p>
     /// <p>The possible statuses are:</p>
     /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <li><p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p></li>
+    /// <li><p>ACTIVE: The index creation succeeds.</p></li>
+    /// <li><p>FAILED: The index creation fails.</p></li>
+    /// <li><p>DELETING: The index is deleted from the list of indexes.</p></li>
     /// </ul>
     pub fn set_index_status(mut self, input: ::std::option::Option<crate::types::PartitionIndexStatus>) -> Self {
         self.index_status = input;
         self
     }
-    /// <p>The status of the partition index. </p>
+    /// <p>The status of the partition index.</p>
     /// <p>The possible statuses are:</p>
     /// <ul>
-    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
-    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
-    /// <li> <p>FAILED: The index creation fails. </p> </li>
-    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
+    /// <li><p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p></li>
+    /// <li><p>ACTIVE: The index creation succeeds.</p></li>
+    /// <li><p>FAILED: The index creation fails.</p></li>
+    /// <li><p>DELETING: The index is deleted from the list of indexes.</p></li>
     /// </ul>
     pub fn get_index_status(&self) -> &::std::option::Option<crate::types::PartitionIndexStatus> {
         &self.index_status

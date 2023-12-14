@@ -3,30 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReportGroupInput {
-    /// <p> The name of the report group. </p>
+    /// <p>The name of the report group.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The type of report group. </p>
+    /// <p>The type of report group.</p>
     pub r#type: ::std::option::Option<crate::types::ReportType>,
-    /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
-    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateReportGroupInput {
-    /// <p> The name of the report group. </p>
+    /// <p>The name of the report group.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The type of report group. </p>
+    /// <p>The type of report group.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ReportType> {
         self.r#type.as_ref()
     }
-    /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
     pub fn export_config(&self) -> ::std::option::Option<&crate::types::ReportExportConfig> {
         self.export_config.as_ref()
     }
-    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -51,48 +51,48 @@ pub struct CreateReportGroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateReportGroupInputBuilder {
-    /// <p> The name of the report group. </p>
+    /// <p>The name of the report group.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the report group. </p>
+    /// <p>The name of the report group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the report group. </p>
+    /// <p>The name of the report group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> The type of report group. </p>
+    /// <p>The type of report group.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of report group. </p>
+    /// <p>The type of report group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p> The type of report group. </p>
+    /// <p>The type of report group.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ReportType> {
         &self.r#type
     }
-    /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
     /// This field is required.
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
         self.export_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
     pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.export_config = input;
         self
     }
-    /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
     pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
         &self.export_config
     }
@@ -100,7 +100,7 @@ impl CreateReportGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -108,13 +108,13 @@ impl CreateReportGroupInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p> A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

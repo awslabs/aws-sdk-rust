@@ -11,9 +11,9 @@ pub struct ActionDeclaration {
     /// <p>The order in which actions are run.</p>
     pub run_order: ::std::option::Option<i32>,
     /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
-    /// <p> <code>"Configuration" : { Key : Value },</code> </p>
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows:</p>
+    /// <p><i>JSON:</i></p>
+    /// <p><code>"Configuration" : { Key : Value },</code></p>
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
@@ -41,9 +41,9 @@ impl ActionDeclaration {
         self.run_order
     }
     /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
-    /// <p> <code>"Configuration" : { Key : Value },</code> </p>
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows:</p>
+    /// <p><i>JSON:</i></p>
+    /// <p><code>"Configuration" : { Key : Value },</code></p>
     pub fn configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.configuration.as_ref()
     }
@@ -143,9 +143,9 @@ impl ActionDeclarationBuilder {
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
     ///
     /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
-    /// <p> <code>"Configuration" : { Key : Value },</code> </p>
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows:</p>
+    /// <p><i>JSON:</i></p>
+    /// <p><code>"Configuration" : { Key : Value },</code></p>
     pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -153,9 +153,9 @@ impl ActionDeclarationBuilder {
         self
     }
     /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
-    /// <p> <code>"Configuration" : { Key : Value },</code> </p>
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows:</p>
+    /// <p><i>JSON:</i></p>
+    /// <p><code>"Configuration" : { Key : Value },</code></p>
     pub fn set_configuration(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -164,9 +164,9 @@ impl ActionDeclarationBuilder {
         self
     }
     /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
-    /// <p> <code>"Configuration" : { Key : Value },</code> </p>
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows:</p>
+    /// <p><i>JSON:</i></p>
+    /// <p><code>"Configuration" : { Key : Value },</code></p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.configuration
     }

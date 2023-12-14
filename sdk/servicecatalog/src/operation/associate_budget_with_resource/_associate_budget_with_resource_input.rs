@@ -5,7 +5,7 @@
 pub struct AssociateBudgetWithResourceInput {
     /// <p>The name of the budget you want to associate.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
-    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateBudgetWithResourceInput {
@@ -13,7 +13,7 @@ impl AssociateBudgetWithResourceInput {
     pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl AssociateBudgetWithResourceInputBuilder {
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
-    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
+    /// <p>The resource identifier. Either a portfolio-id or a product-id.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }

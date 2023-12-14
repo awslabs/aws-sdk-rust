@@ -24,9 +24,9 @@ impl RegisterTypeInputBuilder {
 ///
 /// <p>Registers an extension with the CloudFormation service. Registering an extension makes it available for use in CloudFormation templates in your Amazon Web Services account, and includes:</p>
 /// <ul>
-/// <li> <p>Validating the extension schema.</p> </li>
-/// <li> <p>Determining which handlers, if any, have been specified for the extension.</p> </li>
-/// <li> <p>Making the extension available for use in your account.</p> </li>
+/// <li><p>Validating the extension schema.</p></li>
+/// <li><p>Determining which handlers, if any, have been specified for the extension.</p></li>
+/// <li><p>Making the extension available for use in your account.</p></li>
 /// </ul>
 /// <p>For more information about how to develop extensions and ready them for registration, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p>
 /// <p>You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and per Region. Use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to deregister specific extension versions if necessary.</p>
@@ -134,18 +134,18 @@ impl RegisterTypeFluentBuilder {
     /// <p>The name of the extension being registered.</p>
     /// <p>We suggest that extension names adhere to the following patterns:</p>
     /// <ul>
-    /// <li> <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-    /// <li> <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-    /// <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p> </li>
+    /// <li><p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p></li>
+    /// <li><p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p></li>
+    /// <li><p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p></li>
     /// </ul> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
-    /// <li> <p> <code>Alexa</code> </p> </li>
-    /// <li> <p> <code>AMZN</code> </p> </li>
-    /// <li> <p> <code>Amazon</code> </p> </li>
-    /// <li> <p> <code>AWS</code> </p> </li>
-    /// <li> <p> <code>Custom</code> </p> </li>
-    /// <li> <p> <code>Dev</code> </p> </li>
+    /// <li><p><code>Alexa</code></p></li>
+    /// <li><p><code>AMZN</code></p></li>
+    /// <li><p><code>Amazon</code></p></li>
+    /// <li><p><code>AWS</code></p></li>
+    /// <li><p><code>Custom</code></p></li>
+    /// <li><p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,18 +155,18 @@ impl RegisterTypeFluentBuilder {
     /// <p>The name of the extension being registered.</p>
     /// <p>We suggest that extension names adhere to the following patterns:</p>
     /// <ul>
-    /// <li> <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-    /// <li> <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-    /// <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p> </li>
+    /// <li><p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p></li>
+    /// <li><p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p></li>
+    /// <li><p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p></li>
     /// </ul> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
-    /// <li> <p> <code>Alexa</code> </p> </li>
-    /// <li> <p> <code>AMZN</code> </p> </li>
-    /// <li> <p> <code>Amazon</code> </p> </li>
-    /// <li> <p> <code>AWS</code> </p> </li>
-    /// <li> <p> <code>Custom</code> </p> </li>
-    /// <li> <p> <code>Dev</code> </p> </li>
+    /// <li><p><code>Alexa</code></p></li>
+    /// <li><p><code>AMZN</code></p></li>
+    /// <li><p><code>Amazon</code></p></li>
+    /// <li><p><code>AWS</code></p></li>
+    /// <li><p><code>Custom</code></p></li>
+    /// <li><p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -176,18 +176,18 @@ impl RegisterTypeFluentBuilder {
     /// <p>The name of the extension being registered.</p>
     /// <p>We suggest that extension names adhere to the following patterns:</p>
     /// <ul>
-    /// <li> <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
-    /// <li> <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
-    /// <li> <p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p> </li>
+    /// <li><p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p></li>
+    /// <li><p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p></li>
+    /// <li><p>For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.</p></li>
     /// </ul> <note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
-    /// <li> <p> <code>Alexa</code> </p> </li>
-    /// <li> <p> <code>AMZN</code> </p> </li>
-    /// <li> <p> <code>Amazon</code> </p> </li>
-    /// <li> <p> <code>AWS</code> </p> </li>
-    /// <li> <p> <code>Custom</code> </p> </li>
-    /// <li> <p> <code>Dev</code> </p> </li>
+    /// <li><p><code>Alexa</code></p></li>
+    /// <li><p><code>AMZN</code></p></li>
+    /// <li><p><code>Amazon</code></p></li>
+    /// <li><p><code>AWS</code></p></li>
+    /// <li><p><code>Custom</code></p></li>
+    /// <li><p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {

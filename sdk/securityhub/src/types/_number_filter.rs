@@ -4,31 +4,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberFilter {
-    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings.</p>
     pub gte: ::std::option::Option<f64>,
-    /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than-equal condition to be applied to a single field when querying for findings.</p>
     pub lte: ::std::option::Option<f64>,
-    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub gt: ::std::option::Option<f64>,
-    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than condition to be applied to a single field when querying for findings.</p>
     pub lt: ::std::option::Option<f64>,
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
     pub eq: ::std::option::Option<f64>,
 }
 impl NumberFilter {
-    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn gte(&self) -> ::std::option::Option<f64> {
         self.gte
     }
-    /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn lte(&self) -> ::std::option::Option<f64> {
         self.lte
     }
-    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub fn gt(&self) -> ::std::option::Option<f64> {
         self.gt
     }
-    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than condition to be applied to a single field when querying for findings.</p>
     pub fn lt(&self) -> ::std::option::Option<f64> {
         self.lt
     }
@@ -55,59 +55,59 @@ pub struct NumberFilterBuilder {
     pub(crate) eq: ::std::option::Option<f64>,
 }
 impl NumberFilterBuilder {
-    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn gte(mut self, input: f64) -> Self {
         self.gte = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn set_gte(mut self, input: ::std::option::Option<f64>) -> Self {
         self.gte = input;
         self
     }
-    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn get_gte(&self) -> &::std::option::Option<f64> {
         &self.gte
     }
-    /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn lte(mut self, input: f64) -> Self {
         self.lte = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn set_lte(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lte = input;
         self
     }
-    /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than-equal condition to be applied to a single field when querying for findings.</p>
     pub fn get_lte(&self) -> &::std::option::Option<f64> {
         &self.lte
     }
-    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub fn gt(mut self, input: f64) -> Self {
         self.gt = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub fn set_gt(mut self, input: ::std::option::Option<f64>) -> Self {
         self.gt = input;
         self
     }
-    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub fn get_gt(&self) -> &::std::option::Option<f64> {
         &self.gt
     }
-    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than condition to be applied to a single field when querying for findings.</p>
     pub fn lt(mut self, input: f64) -> Self {
         self.lt = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than condition to be applied to a single field when querying for findings.</p>
     pub fn set_lt(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lt = input;
         self
     }
-    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    /// <p>The less-than condition to be applied to a single field when querying for findings.</p>
     pub fn get_lt(&self) -> &::std::option::Option<f64> {
         &self.lt
     }

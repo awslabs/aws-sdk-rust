@@ -9,7 +9,7 @@ pub struct ListLogPatternSetsOutput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of log pattern sets.</p>
     pub log_pattern_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl ListLogPatternSetsOutput {
     pub fn log_pattern_sets(&self) -> &[::std::string::String] {
         self.log_pattern_sets.as_deref().unwrap_or_default()
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -104,17 +104,17 @@ impl ListLogPatternSetsOutputBuilder {
     pub fn get_log_pattern_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_pattern_sets
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

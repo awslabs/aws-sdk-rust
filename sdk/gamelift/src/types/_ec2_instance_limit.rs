@@ -4,21 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceLimit {
-    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
+    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
-    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
+    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account.</p>
     pub current_instances: ::std::option::Option<i32>,
     /// <p>The number of instances that is allowed for the specified instance type and location.</p>
     pub instance_limit: ::std::option::Option<i32>,
-    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl Ec2InstanceLimit {
-    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
+    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn ec2_instance_type(&self) -> ::std::option::Option<&crate::types::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
-    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
+    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account.</p>
     pub fn current_instances(&self) -> ::std::option::Option<i32> {
         self.current_instances
     }
@@ -26,7 +26,7 @@ impl Ec2InstanceLimit {
     pub fn instance_limit(&self) -> ::std::option::Option<i32> {
         self.instance_limit
     }
-    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -48,31 +48,31 @@ pub struct Ec2InstanceLimitBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl Ec2InstanceLimitBuilder {
-    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
+    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn ec2_instance_type(mut self, input: crate::types::Ec2InstanceType) -> Self {
         self.ec2_instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
+    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.ec2_instance_type = input;
         self
     }
-    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
+    /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn get_ec2_instance_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
         &self.ec2_instance_type
     }
-    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
+    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account.</p>
     pub fn current_instances(mut self, input: i32) -> Self {
         self.current_instances = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
+    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account.</p>
     pub fn set_current_instances(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_instances = input;
         self
     }
-    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
+    /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account.</p>
     pub fn get_current_instances(&self) -> &::std::option::Option<i32> {
         &self.current_instances
     }
@@ -90,17 +90,17 @@ impl Ec2InstanceLimitBuilder {
     pub fn get_instance_limit(&self) -> &::std::option::Option<i32> {
         &self.instance_limit
     }
-    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

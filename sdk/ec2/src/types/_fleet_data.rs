@@ -26,13 +26,13 @@ pub struct FleetData {
     pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfig>>,
     /// <p>The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
     pub target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecification>,
-    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
+    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub terminate_instances_with_expiration: ::std::option::Option<bool>,
     /// <p>The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.</p>
     pub r#type: ::std::option::Option<crate::types::FleetType>,
-    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
+    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
+    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date.</p>
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub replace_unhealthy_instances: ::std::option::Option<bool>,
@@ -94,7 +94,7 @@ impl FleetData {
     pub fn target_capacity_specification(&self) -> ::std::option::Option<&crate::types::TargetCapacitySpecification> {
         self.target_capacity_specification.as_ref()
     }
-    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
+    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub fn terminate_instances_with_expiration(&self) -> ::std::option::Option<bool> {
         self.terminate_instances_with_expiration
     }
@@ -102,11 +102,11 @@ impl FleetData {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::FleetType> {
         self.r#type.as_ref()
     }
-    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
+    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub fn valid_from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_from.as_ref()
     }
-    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
+    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date.</p>
     pub fn valid_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
@@ -334,17 +334,17 @@ impl FleetDataBuilder {
     pub fn get_target_capacity_specification(&self) -> &::std::option::Option<crate::types::TargetCapacitySpecification> {
         &self.target_capacity_specification
     }
-    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
+    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub fn terminate_instances_with_expiration(mut self, input: bool) -> Self {
         self.terminate_instances_with_expiration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
+    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub fn set_terminate_instances_with_expiration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate_instances_with_expiration = input;
         self
     }
-    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
+    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub fn get_terminate_instances_with_expiration(&self) -> &::std::option::Option<bool> {
         &self.terminate_instances_with_expiration
     }
@@ -362,31 +362,31 @@ impl FleetDataBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FleetType> {
         &self.r#type
     }
-    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
+    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub fn valid_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_from = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
+    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_from = input;
         self
     }
-    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
+    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub fn get_valid_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_from
     }
-    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
+    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date.</p>
     pub fn valid_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_until = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
+    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date.</p>
     pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_until = input;
         self
     }
-    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
+    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date.</p>
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_until
     }

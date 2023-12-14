@@ -12,7 +12,7 @@ pub struct TlsInspectionConfigurationResponse {
     pub tls_inspection_configuration_id: ::std::string::String,
     /// <p>Detailed information about the current status of a <code>TLSInspectionConfiguration</code>. You can retrieve this for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code> and providing the TLS inspection configuration name and ARN.</p>
     pub tls_inspection_configuration_status: ::std::option::Option<crate::types::ResourceStatus>,
-    /// <p>A description of the TLS inspection configuration. </p>
+    /// <p>A description of the TLS inspection configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -47,7 +47,7 @@ impl TlsInspectionConfigurationResponse {
     pub fn tls_inspection_configuration_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.tls_inspection_configuration_status.as_ref()
     }
-    /// <p>A description of the TLS inspection configuration. </p>
+    /// <p>A description of the TLS inspection configuration.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -163,17 +163,17 @@ impl TlsInspectionConfigurationResponseBuilder {
     pub fn get_tls_inspection_configuration_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.tls_inspection_configuration_status
     }
-    /// <p>A description of the TLS inspection configuration. </p>
+    /// <p>A description of the TLS inspection configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the TLS inspection configuration. </p>
+    /// <p>A description of the TLS inspection configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the TLS inspection configuration. </p>
+    /// <p>A description of the TLS inspection configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

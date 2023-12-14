@@ -5,7 +5,7 @@
 pub struct DescribePermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribePermissionSetInput {
@@ -13,7 +13,7 @@ impl DescribePermissionSetInput {
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
@@ -48,18 +48,18 @@ impl DescribePermissionSetInputBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
-    /// <p>The ARN of the permission set. </p>
+    /// <p>The ARN of the permission set.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_set_arn
     }

@@ -8,7 +8,7 @@ pub struct TransitGatewayRoute {
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list used for destination matches.</p>
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the transit gateway route table announcement. </p>
+    /// <p>The ID of the transit gateway route table announcement.</p>
     pub transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachments.</p>
     pub transit_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteAttachment>>,
@@ -26,7 +26,7 @@ impl TransitGatewayRoute {
     pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.prefix_list_id.as_deref()
     }
-    /// <p>The ID of the transit gateway route table announcement. </p>
+    /// <p>The ID of the transit gateway route table announcement.</p>
     pub fn transit_gateway_route_table_announcement_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_route_table_announcement_id.as_deref()
     }
@@ -92,17 +92,17 @@ impl TransitGatewayRouteBuilder {
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix_list_id
     }
-    /// <p>The ID of the transit gateway route table announcement. </p>
+    /// <p>The ID of the transit gateway route table announcement.</p>
     pub fn transit_gateway_route_table_announcement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_announcement_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the transit gateway route table announcement. </p>
+    /// <p>The ID of the transit gateway route table announcement.</p>
     pub fn set_transit_gateway_route_table_announcement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_announcement_id = input;
         self
     }
-    /// <p>The ID of the transit gateway route table announcement. </p>
+    /// <p>The ID of the transit gateway route table announcement.</p>
     pub fn get_transit_gateway_route_table_announcement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_announcement_id
     }

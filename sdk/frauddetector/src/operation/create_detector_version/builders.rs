@@ -193,7 +193,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>The rule execution mode for the rules included in the detector version.</p>
     /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules.</p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
     pub fn rule_execution_mode(mut self, input: crate::types::RuleExecutionMode) -> Self {
         self.inner = self.inner.rule_execution_mode(input);
@@ -202,7 +202,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>The rule execution mode for the rules included in the detector version.</p>
     /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules.</p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
     pub fn set_rule_execution_mode(mut self, input: ::std::option::Option<crate::types::RuleExecutionMode>) -> Self {
         self.inner = self.inner.set_rule_execution_mode(input);
@@ -211,7 +211,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>The rule execution mode for the rules included in the detector version.</p>
     /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
-    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules.</p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
     pub fn get_rule_execution_mode(&self) -> &::std::option::Option<crate::types::RuleExecutionMode> {
         self.inner.get_rule_execution_mode()

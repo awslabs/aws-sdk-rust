@@ -17,19 +17,19 @@ pub struct CreateWorldGenerationJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running. </p>
+    /// <p>The world generator job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed. </p>
+    /// <p>The world generator job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -65,13 +65,13 @@ pub struct CreateWorldGenerationJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -91,7 +91,7 @@ pub struct CreateWorldGenerationJobOutput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub template: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the world count. </p>
+    /// <p>Information about the world count.</p>
     pub world_count: ::std::option::Option<crate::types::WorldCount>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -116,19 +116,19 @@ impl CreateWorldGenerationJobOutput {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running. </p>
+    /// <p>The world generator job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed. </p>
+    /// <p>The world generator job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -168,13 +168,13 @@ impl CreateWorldGenerationJobOutput {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -200,7 +200,7 @@ impl CreateWorldGenerationJobOutput {
     pub fn template(&self) -> ::std::option::Option<&str> {
         self.template.as_deref()
     }
-    /// <p>Information about the world count. </p>
+    /// <p>Information about the world count.</p>
     pub fn world_count(&self) -> ::std::option::Option<&crate::types::WorldCount> {
         self.world_count.as_ref()
     }
@@ -267,19 +267,19 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running. </p>
+    /// <p>The world generator job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed. </p>
+    /// <p>The world generator job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -316,19 +316,19 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running. </p>
+    /// <p>The world generator job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed. </p>
+    /// <p>The world generator job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -365,19 +365,19 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// Running
     /// </dt>
     /// <dd>
-    /// <p>The world generator job is running. </p>
+    /// <p>The world generator job is running.</p>
     /// </dd>
     /// <dt>
     /// Completed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job completed. </p>
+    /// <p>The world generator job completed.</p>
     /// </dd>
     /// <dt>
     /// Failed
     /// </dt>
     /// <dd>
-    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information.</p>
     /// </dd>
     /// <dt>
     /// PartialFailed
@@ -427,13 +427,13 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -464,13 +464,13 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -501,13 +501,13 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// LimitExceeded
     /// </dt>
     /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.</p>
     /// </dd>
     /// <dt>
     /// ResourceNotFound
     /// </dt>
     /// <dd>
-    /// <p>The specified resource could not be found. </p>
+    /// <p>The specified resource could not be found.</p>
     /// </dd>
     /// <dt>
     /// RequestThrottled
@@ -553,17 +553,17 @@ impl CreateWorldGenerationJobOutputBuilder {
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.template
     }
-    /// <p>Information about the world count. </p>
+    /// <p>Information about the world count.</p>
     pub fn world_count(mut self, input: crate::types::WorldCount) -> Self {
         self.world_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the world count. </p>
+    /// <p>Information about the world count.</p>
     pub fn set_world_count(mut self, input: ::std::option::Option<crate::types::WorldCount>) -> Self {
         self.world_count = input;
         self
     }
-    /// <p>Information about the world count. </p>
+    /// <p>Information about the world count.</p>
     pub fn get_world_count(&self) -> &::std::option::Option<crate::types::WorldCount> {
         &self.world_count
     }

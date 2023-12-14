@@ -23,8 +23,8 @@ impl DeleteSlotTypeInputBuilder {
 /// Fluent builder constructing a request to `DeleteSlotType`.
 ///
 /// <p>Deletes all versions of the slot type, including the <code>$LATEST</code> version. To delete a specific version of the slot type, use the <code>DeleteSlotTypeVersion</code> operation.</p>
-/// <p> You can delete a version of a slot type only if it is not referenced. To delete a slot type that is referred to in one or more intents, you must remove those references first. </p> <note>
-/// <p> If you get the <code>ResourceInUseException</code> exception, the exception provides an example reference that shows the intent where the slot type is referenced. To remove the reference to the slot type, either update the intent or delete it. If you get the same exception when you attempt to delete the slot type again, repeat until the slot type has no references and the <code>DeleteSlotType</code> call is successful. </p>
+/// <p>You can delete a version of a slot type only if it is not referenced. To delete a slot type that is referred to in one or more intents, you must remove those references first.</p> <note>
+/// <p>If you get the <code>ResourceInUseException</code> exception, the exception provides an example reference that shows the intent where the slot type is referenced. To remove the reference to the slot type, either update the intent or delete it. If you get the same exception when you attempt to delete the slot type again, repeat until the slot type has no references and the <code>DeleteSlotType</code> call is successful.</p>
 /// </note>
 /// <p>This operation requires permission for the <code>lex:DeleteSlotType</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -112,17 +112,17 @@ impl DeleteSlotTypeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

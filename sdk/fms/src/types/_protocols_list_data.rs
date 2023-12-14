@@ -8,7 +8,7 @@ pub struct ProtocolsListData {
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Firewall Manager protocols list.</p>
     pub list_name: ::std::string::String,
-    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
     pub list_update_token: ::std::option::Option<::std::string::String>,
     /// <p>The time that the Firewall Manager protocols list was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -29,7 +29,7 @@ impl ProtocolsListData {
         use std::ops::Deref;
         self.list_name.deref()
     }
-    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
     pub fn list_update_token(&self) -> ::std::option::Option<&str> {
         self.list_update_token.as_deref()
     }
@@ -103,17 +103,17 @@ impl ProtocolsListDataBuilder {
     pub fn get_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.list_name
     }
-    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
     pub fn list_update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_update_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
     pub fn set_list_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_update_token = input;
         self
     }
-    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
+    /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list.</p>
     pub fn get_list_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.list_update_token
     }

@@ -19,7 +19,7 @@ pub struct CreateApplicationVersionOutput {
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     pub resources_supported: ::std::option::Option<bool>,
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
@@ -61,7 +61,7 @@ impl CreateApplicationVersionOutput {
         self.resources_supported
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(&self) -> ::std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
@@ -205,19 +205,19 @@ impl CreateApplicationVersionOutputBuilder {
         &self.resources_supported
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
     /// <p>The semantic version of the application:</p>
-    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    /// <p><a href="https://semver.org/">https://semver.org/</a></p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.semantic_version
     }

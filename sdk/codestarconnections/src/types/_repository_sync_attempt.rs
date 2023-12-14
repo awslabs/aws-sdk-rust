@@ -8,11 +8,11 @@ pub struct RepositorySyncAttempt {
     pub started_at: ::aws_smithy_types::DateTime,
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
     /// <ul>
-    /// <li> <p>INITIATED - A repository sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p> </li>
-    /// <li> <p>SUCCEEDED - The repository sync attempt has completed successfully.</p> </li>
-    /// <li> <p>FAILED - The repository sync attempt has failed.</p> </li>
-    /// <li> <p>QUEUED - The repository sync attempt didn't execute and was queued.</p> </li>
+    /// <li><p>INITIATED - A repository sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p></li>
+    /// <li><p>SUCCEEDED - The repository sync attempt has completed successfully.</p></li>
+    /// <li><p>FAILED - The repository sync attempt has failed.</p></li>
+    /// <li><p>QUEUED - The repository sync attempt didn't execute and was queued.</p></li>
     /// </ul>
     pub status: crate::types::RepositorySyncStatus,
     /// <p>The events associated with a specific sync attempt.</p>
@@ -25,11 +25,11 @@ impl RepositorySyncAttempt {
     }
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
     /// <ul>
-    /// <li> <p>INITIATED - A repository sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p> </li>
-    /// <li> <p>SUCCEEDED - The repository sync attempt has completed successfully.</p> </li>
-    /// <li> <p>FAILED - The repository sync attempt has failed.</p> </li>
-    /// <li> <p>QUEUED - The repository sync attempt didn't execute and was queued.</p> </li>
+    /// <li><p>INITIATED - A repository sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p></li>
+    /// <li><p>SUCCEEDED - The repository sync attempt has completed successfully.</p></li>
+    /// <li><p>FAILED - The repository sync attempt has failed.</p></li>
+    /// <li><p>QUEUED - The repository sync attempt didn't execute and was queued.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::RepositorySyncStatus {
         &self.status
@@ -73,11 +73,11 @@ impl RepositorySyncAttemptBuilder {
     }
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
     /// <ul>
-    /// <li> <p>INITIATED - A repository sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p> </li>
-    /// <li> <p>SUCCEEDED - The repository sync attempt has completed successfully.</p> </li>
-    /// <li> <p>FAILED - The repository sync attempt has failed.</p> </li>
-    /// <li> <p>QUEUED - The repository sync attempt didn't execute and was queued.</p> </li>
+    /// <li><p>INITIATED - A repository sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p></li>
+    /// <li><p>SUCCEEDED - The repository sync attempt has completed successfully.</p></li>
+    /// <li><p>FAILED - The repository sync attempt has failed.</p></li>
+    /// <li><p>QUEUED - The repository sync attempt didn't execute and was queued.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::RepositorySyncStatus) -> Self {
@@ -86,11 +86,11 @@ impl RepositorySyncAttemptBuilder {
     }
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
     /// <ul>
-    /// <li> <p>INITIATED - A repository sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p> </li>
-    /// <li> <p>SUCCEEDED - The repository sync attempt has completed successfully.</p> </li>
-    /// <li> <p>FAILED - The repository sync attempt has failed.</p> </li>
-    /// <li> <p>QUEUED - The repository sync attempt didn't execute and was queued.</p> </li>
+    /// <li><p>INITIATED - A repository sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p></li>
+    /// <li><p>SUCCEEDED - The repository sync attempt has completed successfully.</p></li>
+    /// <li><p>FAILED - The repository sync attempt has failed.</p></li>
+    /// <li><p>QUEUED - The repository sync attempt didn't execute and was queued.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RepositorySyncStatus>) -> Self {
         self.status = input;
@@ -98,11 +98,11 @@ impl RepositorySyncAttemptBuilder {
     }
     /// <p>The status of a specific sync attempt. The following are valid statuses:</p>
     /// <ul>
-    /// <li> <p>INITIATED - A repository sync attempt has been created and will begin soon.</p> </li>
-    /// <li> <p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p> </li>
-    /// <li> <p>SUCCEEDED - The repository sync attempt has completed successfully.</p> </li>
-    /// <li> <p>FAILED - The repository sync attempt has failed.</p> </li>
-    /// <li> <p>QUEUED - The repository sync attempt didn't execute and was queued.</p> </li>
+    /// <li><p>INITIATED - A repository sync attempt has been created and will begin soon.</p></li>
+    /// <li><p>IN_PROGRESS - A repository sync attempt has started and work is being done to reconcile the branch.</p></li>
+    /// <li><p>SUCCEEDED - The repository sync attempt has completed successfully.</p></li>
+    /// <li><p>FAILED - The repository sync attempt has failed.</p></li>
+    /// <li><p>QUEUED - The repository sync attempt didn't execute and was queued.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RepositorySyncStatus> {
         &self.status

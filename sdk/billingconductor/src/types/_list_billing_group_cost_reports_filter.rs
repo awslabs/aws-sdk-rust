@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsFilter {
-    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
+    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
     pub billing_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListBillingGroupCostReportsFilter {
-    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
+    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_group_arns.is_none()`.
     pub fn billing_group_arns(&self) -> &[::std::string::String] {
@@ -33,19 +33,19 @@ impl ListBillingGroupCostReportsFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_billing_group_arns`](Self::set_billing_group_arns).
     ///
-    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
+    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
     pub fn billing_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.billing_group_arns.unwrap_or_default();
         v.push(input.into());
         self.billing_group_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
+    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
     pub fn set_billing_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.billing_group_arns = input;
         self
     }
-    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
+    /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
     pub fn get_billing_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.billing_group_arns
     }

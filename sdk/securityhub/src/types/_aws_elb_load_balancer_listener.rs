@@ -7,14 +7,14 @@ pub struct AwsElbLoadBalancerListener {
     /// <p>The port on which the instance is listening.</p>
     pub instance_port: ::std::option::Option<i32>,
     /// <p>The protocol to use to route traffic to instances.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub instance_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the load balancer is listening.</p>
     /// <p>On EC2-VPC, you can specify any port from the range 1-65535.</p>
     /// <p>On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub load_balancer_port: ::std::option::Option<i32>,
     /// <p>The load balancer transport protocol to use for routing.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the server certificate.</p>
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl AwsElbLoadBalancerListener {
         self.instance_port
     }
     /// <p>The protocol to use to route traffic to instances.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn instance_protocol(&self) -> ::std::option::Option<&str> {
         self.instance_protocol.as_deref()
     }
@@ -36,7 +36,7 @@ impl AwsElbLoadBalancerListener {
         self.load_balancer_port
     }
     /// <p>The load balancer transport protocol to use for routing.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -78,19 +78,19 @@ impl AwsElbLoadBalancerListenerBuilder {
         &self.instance_port
     }
     /// <p>The protocol to use to route traffic to instances.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn instance_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol to use to route traffic to instances.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn set_instance_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_protocol = input;
         self
     }
     /// <p>The protocol to use to route traffic to instances.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn get_instance_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_protocol
     }
@@ -115,19 +115,19 @@ impl AwsElbLoadBalancerListenerBuilder {
         &self.load_balancer_port
     }
     /// <p>The load balancer transport protocol to use for routing.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The load balancer transport protocol to use for routing.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The load balancer transport protocol to use for routing.</p>
-    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
+    /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code></p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }

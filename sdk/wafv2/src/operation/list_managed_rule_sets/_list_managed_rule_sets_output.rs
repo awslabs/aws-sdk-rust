@@ -5,7 +5,7 @@
 pub struct ListManagedRuleSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
-    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub managed_rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListManagedRuleSetsOutput {
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rule_sets.is_none()`.
     pub fn managed_rule_sets(&self) -> &[crate::types::ManagedRuleSetSummary] {
@@ -60,19 +60,19 @@ impl ListManagedRuleSetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_rule_sets`](Self::set_managed_rule_sets).
     ///
-    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn managed_rule_sets(mut self, input: crate::types::ManagedRuleSetSummary) -> Self {
         let mut v = self.managed_rule_sets.unwrap_or_default();
         v.push(input);
         self.managed_rule_sets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn set_managed_rule_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>) -> Self {
         self.managed_rule_sets = input;
         self
     }
-    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn get_managed_rule_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>> {
         &self.managed_rule_sets
     }

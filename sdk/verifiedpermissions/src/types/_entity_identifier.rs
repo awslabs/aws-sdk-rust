@@ -2,26 +2,26 @@
 
 /// <p>Contains the identifier of an entity, including its ID and type.</p>
 /// <p>This data type is used as a request parameter for <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a> operation, and as a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a>, <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetPolicy.html">GetPolicy</a>, and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicy.html">UpdatePolicy</a> operations.</p>
-/// <p>Example: <code>{"entityId":"<i>string</i>","entityType":"<i>string</i>"}</code> </p>
+/// <p>Example: <code>{"entityId":"<i>string</i>","entityType":"<i>string</i>"}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EntityIdentifier {
     /// <p>The type of an entity.</p>
-    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
+    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
     pub entity_type: ::std::string::String,
     /// <p>The identifier of an entity.</p>
-    /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
+    /// <p><code>"entityId":"<i>identifier</i>"</code></p>
     pub entity_id: ::std::string::String,
 }
 impl EntityIdentifier {
     /// <p>The type of an entity.</p>
-    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
+    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
     pub fn entity_type(&self) -> &str {
         use std::ops::Deref;
         self.entity_type.deref()
     }
     /// <p>The identifier of an entity.</p>
-    /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
+    /// <p><code>"entityId":"<i>identifier</i>"</code></p>
     pub fn entity_id(&self) -> &str {
         use std::ops::Deref;
         self.entity_id.deref()
@@ -51,38 +51,38 @@ pub struct EntityIdentifierBuilder {
 }
 impl EntityIdentifierBuilder {
     /// <p>The type of an entity.</p>
-    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
+    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
     /// This field is required.
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of an entity.</p>
-    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
+    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_type = input;
         self
     }
     /// <p>The type of an entity.</p>
-    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
+    /// <p>Example: <code>"entityType":"<i>typeName</i>"</code></p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_type
     }
     /// <p>The identifier of an entity.</p>
-    /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
+    /// <p><code>"entityId":"<i>identifier</i>"</code></p>
     /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an entity.</p>
-    /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
+    /// <p><code>"entityId":"<i>identifier</i>"</code></p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }
     /// <p>The identifier of an entity.</p>
-    /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
+    /// <p><code>"entityId":"<i>identifier</i>"</code></p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id
     }

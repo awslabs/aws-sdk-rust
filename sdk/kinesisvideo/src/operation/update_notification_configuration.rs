@@ -260,11 +260,11 @@ pub enum UpdateNotificationConfigurationError {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The Stream data retention in hours is equal to zero.</p>
     NoDataRetentionException(crate::types::error::NoDataRetentionException),
-    /// <p>When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is already mapped to a different Kinesis Video Stream resource, or if the provided input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following : </p>
+    /// <p>When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is already mapped to a different Kinesis Video Stream resource, or if the provided input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :</p>
     /// <ol>
-    /// <li> <p>The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is mapped to. </p> </li>
-    /// <li> <p>The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream is mapped to. </p> </li>
-    /// <li> <p>The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of the resource. </p> </li>
+    /// <li><p>The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is mapped to.</p></li>
+    /// <li><p>The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream is mapped to.</p></li>
+    /// <li><p>The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of the resource.</p></li>
     /// </ol>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Amazon Kinesis Video Streams can't find the stream that you specified.</p>

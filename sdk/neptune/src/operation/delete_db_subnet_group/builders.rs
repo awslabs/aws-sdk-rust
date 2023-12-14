@@ -115,7 +115,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
@@ -125,7 +125,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
@@ -135,7 +135,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
     /// </note>
     /// <p>Constraints:</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
-    /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// <p>Example: <code>mySubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_subnet_group_name()
     }

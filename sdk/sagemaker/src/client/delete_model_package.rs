@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteModelPackage`](crate::operation::delete_model_package::builders::DeleteModelPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_package_name(impl Into<String>)`](crate::operation::delete_model_package::builders::DeleteModelPackageFluentBuilder::model_package_name) / [`set_model_package_name(Option<String>)`](crate::operation::delete_model_package::builders::DeleteModelPackageFluentBuilder::set_model_package_name):<br>required: **true**<br><p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>  <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p><br>
+    ///   - [`model_package_name(impl Into<String>)`](crate::operation::delete_model_package::builders::DeleteModelPackageFluentBuilder::model_package_name) / [`set_model_package_name(Option<String>)`](crate::operation::delete_model_package::builders::DeleteModelPackageFluentBuilder::set_model_package_name):<br>required: **true**<br><p>The name or Amazon Resource Name (ARN) of the model package to delete.</p> <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p><br>
     /// - On success, responds with [`DeleteModelPackageOutput`](crate::operation::delete_model_package::DeleteModelPackageOutput)
     /// - On failure, responds with [`SdkError<DeleteModelPackageError>`](crate::operation::delete_model_package::DeleteModelPackageError)
     pub fn delete_model_package(&self) -> crate::operation::delete_model_package::builders::DeleteModelPackageFluentBuilder {

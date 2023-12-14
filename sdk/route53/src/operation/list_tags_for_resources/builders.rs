@@ -111,8 +111,8 @@ impl ListTagsForResourcesFluentBuilder {
     }
     /// <p>The type of the resources.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::TagResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -120,8 +120,8 @@ impl ListTagsForResourcesFluentBuilder {
     }
     /// <p>The type of the resources.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -129,8 +129,8 @@ impl ListTagsForResourcesFluentBuilder {
     }
     /// <p>The type of the resources.</p>
     /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
         self.inner.get_resource_type()

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightSummary {
-    /// <p>The insights unique identifier. </p>
+    /// <p>The insights unique identifier.</p>
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     pub group_arn: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct InsightSummary {
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub root_cause_service_id: ::std::option::Option<crate::types::ServiceId>,
-    /// <p> Categories The categories that label and describe the type of insight.</p>
+    /// <p>Categories The categories that label and describe the type of insight.</p>
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>>,
     /// <p>The current state of the insight.</p>
     pub state: ::std::option::Option<crate::types::InsightState>,
@@ -22,9 +22,9 @@ pub struct InsightSummary {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
     pub summary: ::std::option::Option<::std::string::String>,
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub client_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub root_cause_service_request_impact_statistics: ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
     pub top_anomalous_services: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
@@ -32,7 +32,7 @@ pub struct InsightSummary {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InsightSummary {
-    /// <p>The insights unique identifier. </p>
+    /// <p>The insights unique identifier.</p>
     pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
@@ -48,7 +48,7 @@ impl InsightSummary {
     pub fn root_cause_service_id(&self) -> ::std::option::Option<&crate::types::ServiceId> {
         self.root_cause_service_id.as_ref()
     }
-    /// <p> Categories The categories that label and describe the type of insight.</p>
+    /// <p>Categories The categories that label and describe the type of insight.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
     pub fn categories(&self) -> &[crate::types::InsightCategory] {
@@ -70,11 +70,11 @@ impl InsightSummary {
     pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn client_request_impact_statistics(&self) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn root_cause_service_request_impact_statistics(&self) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
@@ -115,17 +115,17 @@ pub struct InsightSummaryBuilder {
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InsightSummaryBuilder {
-    /// <p>The insights unique identifier. </p>
+    /// <p>The insights unique identifier.</p>
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The insights unique identifier. </p>
+    /// <p>The insights unique identifier.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
-    /// <p>The insights unique identifier. </p>
+    /// <p>The insights unique identifier.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }
@@ -175,19 +175,19 @@ impl InsightSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
     ///
-    /// <p> Categories The categories that label and describe the type of insight.</p>
+    /// <p>Categories The categories that label and describe the type of insight.</p>
     pub fn categories(mut self, input: crate::types::InsightCategory) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input);
         self.categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Categories The categories that label and describe the type of insight.</p>
+    /// <p>Categories The categories that label and describe the type of insight.</p>
     pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>>) -> Self {
         self.categories = input;
         self
     }
-    /// <p> Categories The categories that label and describe the type of insight.</p>
+    /// <p>Categories The categories that label and describe the type of insight.</p>
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>> {
         &self.categories
     }
@@ -247,31 +247,31 @@ impl InsightSummaryBuilder {
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
         &self.summary
     }
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn client_request_impact_statistics(mut self, input: crate::types::RequestImpactStatistics) -> Self {
         self.client_request_impact_statistics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_client_request_impact_statistics(mut self, input: ::std::option::Option<crate::types::RequestImpactStatistics>) -> Self {
         self.client_request_impact_statistics = input;
         self
     }
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn get_client_request_impact_statistics(&self) -> &::std::option::Option<crate::types::RequestImpactStatistics> {
         &self.client_request_impact_statistics
     }
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn root_cause_service_request_impact_statistics(mut self, input: crate::types::RequestImpactStatistics) -> Self {
         self.root_cause_service_request_impact_statistics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_root_cause_service_request_impact_statistics(mut self, input: ::std::option::Option<crate::types::RequestImpactStatistics>) -> Self {
         self.root_cause_service_request_impact_statistics = input;
         self
     }
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn get_root_cause_service_request_impact_statistics(&self) -> &::std::option::Option<crate::types::RequestImpactStatistics> {
         &self.root_cause_service_request_impact_statistics
     }

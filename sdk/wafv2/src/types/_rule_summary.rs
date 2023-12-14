@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleSummary {
-    /// <p>The name of the rule. </p>
+    /// <p>The name of the rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.</p>
     pub action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleSummary {
-    /// <p>The name of the rule. </p>
+    /// <p>The name of the rule.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.action.as_ref()
     }
@@ -34,31 +34,31 @@ pub struct RuleSummaryBuilder {
     pub(crate) action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleSummaryBuilder {
-    /// <p>The name of the rule. </p>
+    /// <p>The name of the rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the rule. </p>
+    /// <p>The name of the rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the rule. </p>
+    /// <p>The name of the rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         &self.action
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConformancePackComplianceSummaryOutput {
-    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects.</p>
     pub conformance_pack_compliance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceSummary>>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetConformancePackComplianceSummaryOutput {
-    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_compliance_summary_list.is_none()`.
     pub fn conformance_pack_compliance_summary_list(&self) -> &[crate::types::ConformancePackComplianceSummary] {
@@ -46,14 +46,14 @@ impl GetConformancePackComplianceSummaryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_conformance_pack_compliance_summary_list`](Self::set_conformance_pack_compliance_summary_list).
     ///
-    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects.</p>
     pub fn conformance_pack_compliance_summary_list(mut self, input: crate::types::ConformancePackComplianceSummary) -> Self {
         let mut v = self.conformance_pack_compliance_summary_list.unwrap_or_default();
         v.push(input);
         self.conformance_pack_compliance_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects.</p>
     pub fn set_conformance_pack_compliance_summary_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceSummary>>,
@@ -61,7 +61,7 @@ impl GetConformancePackComplianceSummaryOutputBuilder {
         self.conformance_pack_compliance_summary_list = input;
         self
     }
-    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    /// <p>A list of <code>ConformancePackComplianceSummary</code> objects.</p>
     pub fn get_conformance_pack_compliance_summary_list(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceSummary>> {

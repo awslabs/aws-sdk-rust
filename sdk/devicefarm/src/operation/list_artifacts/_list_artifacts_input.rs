@@ -9,9 +9,9 @@ pub struct ListArtifactsInput {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>FILE</p> </li>
-    /// <li> <p>LOG</p> </li>
-    /// <li> <p>SCREENSHOT</p> </li>
+    /// <li><p>FILE</p></li>
+    /// <li><p>LOG</p></li>
+    /// <li><p>SCREENSHOT</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ArtifactCategory>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -25,9 +25,9 @@ impl ListArtifactsInput {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>FILE</p> </li>
-    /// <li> <p>LOG</p> </li>
-    /// <li> <p>SCREENSHOT</p> </li>
+    /// <li><p>FILE</p></li>
+    /// <li><p>LOG</p></li>
+    /// <li><p>SCREENSHOT</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactCategory> {
         self.r#type.as_ref()
@@ -71,9 +71,9 @@ impl ListArtifactsInputBuilder {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>FILE</p> </li>
-    /// <li> <p>LOG</p> </li>
-    /// <li> <p>SCREENSHOT</p> </li>
+    /// <li><p>FILE</p></li>
+    /// <li><p>LOG</p></li>
+    /// <li><p>SCREENSHOT</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ArtifactCategory) -> Self {
@@ -83,9 +83,9 @@ impl ListArtifactsInputBuilder {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>FILE</p> </li>
-    /// <li> <p>LOG</p> </li>
-    /// <li> <p>SCREENSHOT</p> </li>
+    /// <li><p>FILE</p></li>
+    /// <li><p>LOG</p></li>
+    /// <li><p>SCREENSHOT</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactCategory>) -> Self {
         self.r#type = input;
@@ -94,9 +94,9 @@ impl ListArtifactsInputBuilder {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li> <p>FILE</p> </li>
-    /// <li> <p>LOG</p> </li>
-    /// <li> <p>SCREENSHOT</p> </li>
+    /// <li><p>FILE</p></li>
+    /// <li><p>LOG</p></li>
+    /// <li><p>SCREENSHOT</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactCategory> {
         &self.r#type

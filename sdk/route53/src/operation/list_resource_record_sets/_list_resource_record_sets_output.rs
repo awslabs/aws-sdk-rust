@@ -9,12 +9,12 @@ pub struct ListResourceRecordSetsOutput {
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
     pub is_truncated: bool,
     /// <p>If the results were truncated, the name of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub next_record_name: ::std::option::Option<::std::string::String>,
     /// <p>If the results were truncated, the type of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub next_record_type: ::std::option::Option<crate::types::RrType>,
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub next_record_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records you requested.</p>
@@ -32,16 +32,16 @@ impl ListResourceRecordSetsOutput {
         self.is_truncated
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn next_record_name(&self) -> ::std::option::Option<&str> {
         self.next_record_name.as_deref()
     }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn next_record_type(&self) -> ::std::option::Option<&crate::types::RrType> {
         self.next_record_type.as_ref()
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn next_record_identifier(&self) -> ::std::option::Option<&str> {
         self.next_record_identifier.as_deref()
@@ -112,52 +112,52 @@ impl ListResourceRecordSetsOutputBuilder {
         &self.is_truncated
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn next_record_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_record_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn set_next_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_record_name = input;
         self
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn get_next_record_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_record_name
     }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn next_record_type(mut self, input: crate::types::RrType) -> Self {
         self.next_record_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn set_next_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.next_record_type = input;
         self
     }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
-    /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    /// <p>This element is present only if <code>IsTruncated</code> is true.</p>
     pub fn get_next_record_type(&self) -> &::std::option::Option<crate::types::RrType> {
         &self.next_record_type
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn next_record_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_record_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn set_next_record_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_record_identifier = input;
         self
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn get_next_record_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_record_identifier

@@ -257,7 +257,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetFeatureEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetFeatureError {
-    /// <p>You do not have sufficient permissions to perform this action. </p>
+    /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

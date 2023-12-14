@@ -6,7 +6,7 @@
 pub struct InvalidNetworkInterface {
     /// <p>The ID of the interface that isn't valid.</p>
     pub interface_id: ::std::option::Option<::std::string::String>,
-    /// <p>A message about why the interface isn't valid. </p>
+    /// <p>A message about why the interface isn't valid.</p>
     pub reason: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,
 }
 impl InvalidNetworkInterface {
@@ -14,7 +14,7 @@ impl InvalidNetworkInterface {
     pub fn interface_id(&self) -> ::std::option::Option<&str> {
         self.interface_id.as_deref()
     }
-    /// <p>A message about why the interface isn't valid. </p>
+    /// <p>A message about why the interface isn't valid.</p>
     pub fn reason(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceFailureReason> {
         self.reason.as_ref()
     }
@@ -48,17 +48,17 @@ impl InvalidNetworkInterfaceBuilder {
     pub fn get_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.interface_id
     }
-    /// <p>A message about why the interface isn't valid. </p>
+    /// <p>A message about why the interface isn't valid.</p>
     pub fn reason(mut self, input: crate::types::NetworkInterfaceFailureReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A message about why the interface isn't valid. </p>
+    /// <p>A message about why the interface isn't valid.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>) -> Self {
         self.reason = input;
         self
     }
-    /// <p>A message about why the interface isn't valid. </p>
+    /// <p>A message about why the interface isn't valid.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::NetworkInterfaceFailureReason> {
         &self.reason
     }

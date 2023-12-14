@@ -6,8 +6,8 @@
 pub struct ExportDestination {
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
-    /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
+    /// <li><p><code>CSV</code> - A comma-separated values file.</p></li>
+    /// <li><p><code>JSON</code> - A Json file.</p></li>
     /// </ul>
     pub data_format: crate::types::DataFormat,
     /// <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
@@ -16,8 +16,8 @@ pub struct ExportDestination {
 impl ExportDestination {
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
-    /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
+    /// <li><p><code>CSV</code> - A comma-separated values file.</p></li>
+    /// <li><p><code>JSON</code> - A Json file.</p></li>
     /// </ul>
     pub fn data_format(&self) -> &crate::types::DataFormat {
         &self.data_format
@@ -44,8 +44,8 @@ pub struct ExportDestinationBuilder {
 impl ExportDestinationBuilder {
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
-    /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
+    /// <li><p><code>CSV</code> - A comma-separated values file.</p></li>
+    /// <li><p><code>JSON</code> - A Json file.</p></li>
     /// </ul>
     /// This field is required.
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
@@ -54,8 +54,8 @@ impl ExportDestinationBuilder {
     }
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
-    /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
+    /// <li><p><code>CSV</code> - A comma-separated values file.</p></li>
+    /// <li><p><code>JSON</code> - A Json file.</p></li>
     /// </ul>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
@@ -63,8 +63,8 @@ impl ExportDestinationBuilder {
     }
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>CSV</code> - A comma-separated values file.</p> </li>
-    /// <li> <p> <code>JSON</code> - A Json file.</p> </li>
+    /// <li><p><code>CSV</code> - A comma-separated values file.</p></li>
+    /// <li><p><code>JSON</code> - A Json file.</p></li>
     /// </ul>
     pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
         &self.data_format

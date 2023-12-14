@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStandardsControlAssociationsOutput {
-    /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
+    /// <p>An array that provides the enablement status and other details for each security control that applies to each enabled standard.</p>
     pub standards_control_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
-    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
+    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStandardsControlAssociationsOutput {
-    /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
+    /// <p>An array that provides the enablement status and other details for each security control that applies to each enabled standard.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_summaries.is_none()`.
     pub fn standards_control_association_summaries(&self) -> &[crate::types::StandardsControlAssociationSummary] {
         self.standards_control_association_summaries.as_deref().unwrap_or_default()
     }
-    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
+    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,14 +46,14 @@ impl ListStandardsControlAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_standards_control_association_summaries`](Self::set_standards_control_association_summaries).
     ///
-    /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
+    /// <p>An array that provides the enablement status and other details for each security control that applies to each enabled standard.</p>
     pub fn standards_control_association_summaries(mut self, input: crate::types::StandardsControlAssociationSummary) -> Self {
         let mut v = self.standards_control_association_summaries.unwrap_or_default();
         v.push(input);
         self.standards_control_association_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
+    /// <p>An array that provides the enablement status and other details for each security control that applies to each enabled standard.</p>
     pub fn set_standards_control_association_summaries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
@@ -61,23 +61,23 @@ impl ListStandardsControlAssociationsOutputBuilder {
         self.standards_control_association_summaries = input;
         self
     }
-    /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
+    /// <p>An array that provides the enablement status and other details for each security control that applies to each enabled standard.</p>
     pub fn get_standards_control_association_summaries(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationSummary>> {
         &self.standards_control_association_summaries
     }
-    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
+    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
+    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
+    /// <p>A pagination parameter that's included in the response only if it was included in the request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

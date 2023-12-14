@@ -8,9 +8,9 @@ pub struct S3ExportConfiguration {
     pub role_name: ::std::string::String,
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// <li><p><b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p></li>
+    /// <li><p><b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p></li>
+    /// <li><p><b>Raw</b> – Raw format.</p></li>
     /// </ul>
     pub disk_image_format: crate::types::DiskImageFormat,
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
@@ -26,9 +26,9 @@ impl S3ExportConfiguration {
     }
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// <li><p><b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p></li>
+    /// <li><p><b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p></li>
+    /// <li><p><b>Raw</b> – Raw format.</p></li>
     /// </ul>
     pub fn disk_image_format(&self) -> &crate::types::DiskImageFormat {
         &self.disk_image_format
@@ -77,9 +77,9 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// <li><p><b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p></li>
+    /// <li><p><b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p></li>
+    /// <li><p><b>Raw</b> – Raw format.</p></li>
     /// </ul>
     /// This field is required.
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
@@ -88,9 +88,9 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// <li><p><b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p></li>
+    /// <li><p><b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p></li>
+    /// <li><p><b>Raw</b> – Raw format.</p></li>
     /// </ul>
     pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
         self.disk_image_format = input;
@@ -98,9 +98,9 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>Export the updated image to one of the following supported disk image formats:</p>
     /// <ul>
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
+    /// <li><p><b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p></li>
+    /// <li><p><b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p></li>
+    /// <li><p><b>Raw</b> – Raw format.</p></li>
     /// </ul>
     pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
         &self.disk_image_format

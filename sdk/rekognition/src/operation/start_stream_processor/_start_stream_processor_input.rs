@@ -5,10 +5,10 @@
 pub struct StartStreamProcessorInput {
     /// <p>The name of the stream processor to start processing.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+    /// <p>Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub start_selector: ::std::option::Option<crate::types::StreamProcessingStartSelector>,
-    /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
+    /// <p>Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub stop_selector: ::std::option::Option<crate::types::StreamProcessingStopSelector>,
 }
@@ -17,12 +17,12 @@ impl StartStreamProcessorInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+    /// <p>Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn start_selector(&self) -> ::std::option::Option<&crate::types::StreamProcessingStartSelector> {
         self.start_selector.as_ref()
     }
-    /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
+    /// <p>Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn stop_selector(&self) -> ::std::option::Option<&crate::types::StreamProcessingStopSelector> {
         self.stop_selector.as_ref()
@@ -59,36 +59,36 @@ impl StartStreamProcessorInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+    /// <p>Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn start_selector(mut self, input: crate::types::StreamProcessingStartSelector) -> Self {
         self.start_selector = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+    /// <p>Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn set_start_selector(mut self, input: ::std::option::Option<crate::types::StreamProcessingStartSelector>) -> Self {
         self.start_selector = input;
         self
     }
-    /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
+    /// <p>Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn get_start_selector(&self) -> &::std::option::Option<crate::types::StreamProcessingStartSelector> {
         &self.start_selector
     }
-    /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
+    /// <p>Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn stop_selector(mut self, input: crate::types::StreamProcessingStopSelector) -> Self {
         self.stop_selector = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
+    /// <p>Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn set_stop_selector(mut self, input: ::std::option::Option<crate::types::StreamProcessingStopSelector>) -> Self {
         self.stop_selector = input;
         self
     }
-    /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
+    /// <p>Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video.</p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn get_stop_selector(&self) -> &::std::option::Option<crate::types::StreamProcessingStopSelector> {
         &self.stop_selector

@@ -22,7 +22,7 @@ impl UpdateCostAllocationTagsStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCostAllocationTagsStatus`.
 ///
-/// <p>Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag status (for example, activating the active tag). </p>
+/// <p>Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag status (for example, activating the active tag).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,12 +112,12 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_cost_allocation_tags_status`](Self::set_cost_allocation_tags_status).
     ///
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub fn cost_allocation_tags_status(mut self, input: crate::types::CostAllocationTagStatusEntry) -> Self {
         self.inner = self.inner.cost_allocation_tags_status(input);
         self
     }
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub fn set_cost_allocation_tags_status(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
@@ -125,7 +125,7 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
         self.inner = self.inner.set_cost_allocation_tags_status(input);
         self
     }
-    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
+    /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request.</p>
     pub fn get_cost_allocation_tags_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>> {
         self.inner.get_cost_allocation_tags_status()
     }

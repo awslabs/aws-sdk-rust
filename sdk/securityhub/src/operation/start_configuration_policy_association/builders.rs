@@ -22,7 +22,7 @@ impl StartConfigurationPolicyAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `StartConfigurationPolicyAssociation`.
 ///
-/// <p> Associates a target account, organizational unit, or the root with a specified configuration. The target can be associated with a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region. </p>
+/// <p>Associates a target account, organizational unit, or the root with a specified configuration. The target can be associated with a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigurationPolicyAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,31 +109,31 @@ impl StartConfigurationPolicyAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
+    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn configuration_policy_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_policy_identifier(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
+    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn set_configuration_policy_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_policy_identifier(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
+    /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn get_configuration_policy_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_policy_identifier()
     }
-    /// <p> The identifier of the target account, organizational unit, or the root to associate with the specified configuration. </p>
+    /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.inner = self.inner.target(input);
         self
     }
-    /// <p> The identifier of the target account, organizational unit, or the root to associate with the specified configuration. </p>
+    /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
-    /// <p> The identifier of the target account, organizational unit, or the root to associate with the specified configuration. </p>
+    /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         self.inner.get_target()
     }

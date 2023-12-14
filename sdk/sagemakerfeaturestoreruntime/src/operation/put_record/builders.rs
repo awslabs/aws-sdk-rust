@@ -22,9 +22,9 @@ impl PutRecordInputBuilder {
 }
 /// Fluent builder constructing a request to `PutRecord`.
 ///
-/// <p>The <code>PutRecord</code> API is used to ingest a list of <code>Records</code> into your feature group. </p>
-/// <p>If a new record’s <code>EventTime</code> is greater, the new record is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. Otherwise, the record is a historic record and it is written only to the <code>OfflineStore</code>. </p>
-/// <p>You can specify the ingestion to be applied to the <code>OnlineStore</code>, <code>OfflineStore</code>, or both by using the <code>TargetStores</code> request parameter. </p>
+/// <p>The <code>PutRecord</code> API is used to ingest a list of <code>Records</code> into your feature group.</p>
+/// <p>If a new record’s <code>EventTime</code> is greater, the new record is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. Otherwise, the record is a historic record and it is written only to the <code>OfflineStore</code>.</p>
+/// <p>You can specify the ingestion to be applied to the <code>OnlineStore</code>, <code>OfflineStore</code>, or both by using the <code>TargetStores</code> request parameter.</p>
 /// <p>You can set the ingested record to expire at a given time to live (TTL) duration after the record’s event time, <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>, by specifying the <code>TtlDuration</code> parameter. A record level <code>TtlDuration</code> is set when specifying the <code>TtlDuration</code> parameter using the <code>PutRecord</code> API call. If the input <code>TtlDuration</code> is <code>null</code> or unspecified, <code>TtlDuration</code> is set to the default feature group level <code>TtlDuration</code>. A record level <code>TtlDuration</code> supersedes the group level <code>TtlDuration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecordFluentBuilder {
@@ -125,9 +125,9 @@ impl PutRecordFluentBuilder {
     ///
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// <li><p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
+    /// <li><p>Update the record returned from <code>GetRecord</code>.</p></li>
+    /// <li><p>Use <code>PutRecord</code> to update feature values.</p></li>
     /// </ul>
     pub fn record(mut self, input: crate::types::FeatureValue) -> Self {
         self.inner = self.inner.record(input);
@@ -135,9 +135,9 @@ impl PutRecordFluentBuilder {
     }
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// <li><p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
+    /// <li><p>Update the record returned from <code>GetRecord</code>.</p></li>
+    /// <li><p>Use <code>PutRecord</code> to update feature values.</p></li>
     /// </ul>
     pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>) -> Self {
         self.inner = self.inner.set_record(input);
@@ -145,9 +145,9 @@ impl PutRecordFluentBuilder {
     }
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
-    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
-    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// <li><p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
+    /// <li><p>Update the record returned from <code>GetRecord</code>.</p></li>
+    /// <li><p>Use <code>PutRecord</code> to update feature values.</p></li>
     /// </ul>
     pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
         self.inner.get_record()

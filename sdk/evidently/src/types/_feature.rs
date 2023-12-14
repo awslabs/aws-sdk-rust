@@ -20,7 +20,7 @@ pub struct Feature {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub evaluation_strategy: crate::types::FeatureEvaluationStrategy,
-    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
+    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     pub value_type: crate::types::VariationValueType,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
     pub variations: ::std::vec::Vec<crate::types::Variation>,
@@ -71,7 +71,7 @@ impl Feature {
     pub fn evaluation_strategy(&self) -> &crate::types::FeatureEvaluationStrategy {
         &self.evaluation_strategy
     }
-    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
+    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     pub fn value_type(&self) -> &crate::types::VariationValueType {
         &self.value_type
     }
@@ -247,18 +247,18 @@ impl FeatureBuilder {
     pub fn get_evaluation_strategy(&self) -> &::std::option::Option<crate::types::FeatureEvaluationStrategy> {
         &self.evaluation_strategy
     }
-    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
+    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     /// This field is required.
     pub fn value_type(mut self, input: crate::types::VariationValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
+    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::VariationValueType>) -> Self {
         self.value_type = input;
         self
     }
-    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
+    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     pub fn get_value_type(&self) -> &::std::option::Option<crate::types::VariationValueType> {
         &self.value_type
     }

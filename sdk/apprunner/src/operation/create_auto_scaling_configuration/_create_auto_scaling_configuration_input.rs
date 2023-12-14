@@ -4,56 +4,56 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAutoScalingConfigurationInput {
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
-    /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p> </li>
-    /// <li> <p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p> </li>
+    /// <li><p>Create new revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p></li>
+    /// <li><p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p></li>
     /// </ul>
     /// </note>
     pub auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub max_concurrency: ::std::option::Option<i32>,
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    /// <p>Default: <code>25</code> </p>
+    /// <p>Default: <code>25</code></p>
     pub max_size: ::std::option::Option<i32>,
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAutoScalingConfigurationInput {
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
-    /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p> </li>
-    /// <li> <p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p> </li>
+    /// <li><p>Create new revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p></li>
+    /// <li><p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p></li>
     /// </ul>
     /// </note>
     pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_configuration_name.as_deref()
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn max_concurrency(&self) -> ::std::option::Option<i32> {
         self.max_concurrency
     }
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn min_size(&self) -> ::std::option::Option<i32> {
         self.min_size
     }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    /// <p>Default: <code>25</code> </p>
+    /// <p>Default: <code>25</code></p>
     pub fn max_size(&self) -> ::std::option::Option<i32> {
         self.max_size
     }
@@ -83,13 +83,13 @@ pub struct CreateAutoScalingConfigurationInputBuilder {
 }
 impl CreateAutoScalingConfigurationInputBuilder {
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
-    /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p> </li>
-    /// <li> <p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p> </li>
+    /// <li><p>Create new revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p></li>
+    /// <li><p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p></li>
     /// </ul>
     /// </note>
     /// This field is required.
@@ -98,13 +98,13 @@ impl CreateAutoScalingConfigurationInputBuilder {
         self
     }
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
-    /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p> </li>
-    /// <li> <p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p> </li>
+    /// <li><p>Create new revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p></li>
+    /// <li><p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p></li>
     /// </ul>
     /// </note>
     pub fn set_auto_scaling_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -112,69 +112,69 @@ impl CreateAutoScalingConfigurationInputBuilder {
         self
     }
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved.</p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
-    /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the revisions of the <code>DefaultConfiguration</code>.</p> </li>
-    /// <li> <p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p> </li>
-    /// <li> <p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p> </li>
+    /// <li><p>Create new revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the revisions of the <code>DefaultConfiguration</code>.</p></li>
+    /// <li><p>Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code> was created.</p></li>
+    /// <li><p>If you delete the auto scaling configuration you can create another custom auto scaling configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code> resource provided by App Runner remains in your account unless you make changes to it.</p></li>
     /// </ul>
     /// </note>
     pub fn get_auto_scaling_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_configuration_name
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrency = input;
         self
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
-    /// <p>Default: <code>100</code> </p>
+    /// <p>Default: <code>100</code></p>
     pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
         &self.max_concurrency
     }
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn min_size(mut self, input: i32) -> Self {
         self.min_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_size = input;
         self
     }
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    /// <p>Default: <code>1</code> </p>
+    /// <p>Default: <code>1</code></p>
     pub fn get_min_size(&self) -> &::std::option::Option<i32> {
         &self.min_size
     }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    /// <p>Default: <code>25</code> </p>
+    /// <p>Default: <code>25</code></p>
     pub fn max_size(mut self, input: i32) -> Self {
         self.max_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    /// <p>Default: <code>25</code> </p>
+    /// <p>Default: <code>25</code></p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_size = input;
         self
     }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    /// <p>Default: <code>25</code> </p>
+    /// <p>Default: <code>25</code></p>
     pub fn get_max_size(&self) -> &::std::option::Option<i32> {
         &self.max_size
     }

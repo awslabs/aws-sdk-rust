@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDirectoryConfigsOutput {
-    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
+    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
     pub directory_configs: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDirectoryConfigsOutput {
-    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
+    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_configs.is_none()`.
     pub fn directory_configs(&self) -> &[crate::types::DirectoryConfig] {
@@ -46,19 +46,19 @@ impl DescribeDirectoryConfigsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_directory_configs`](Self::set_directory_configs).
     ///
-    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
+    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
     pub fn directory_configs(mut self, input: crate::types::DirectoryConfig) -> Self {
         let mut v = self.directory_configs.unwrap_or_default();
         v.push(input);
         self.directory_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
+    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
     pub fn set_directory_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>>) -> Self {
         self.directory_configs = input;
         self
     }
-    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
+    /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
     pub fn get_directory_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectoryConfig>> {
         &self.directory_configs
     }

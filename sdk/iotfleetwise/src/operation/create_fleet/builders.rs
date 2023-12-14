@@ -22,8 +22,8 @@ impl CreateFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFleet`.
 ///
-/// <p> Creates a fleet that represents a group of vehicles. </p> <note>
-/// <p>You must create both a signal catalog and vehicles before you can create a fleet. </p>
+/// <p>Creates a fleet that represents a group of vehicles.</p> <note>
+/// <p>You must create both a signal catalog and vehicles before you can create a fleet.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleets.html">Fleets</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -111,45 +111,45 @@ impl CreateFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique ID of the fleet to create. </p>
+    /// <p>The unique ID of the fleet to create.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p> The unique ID of the fleet to create. </p>
+    /// <p>The unique ID of the fleet to create.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p> The unique ID of the fleet to create. </p>
+    /// <p>The unique ID of the fleet to create.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p> A brief description of the fleet to create. </p>
+    /// <p>A brief description of the fleet to create.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> A brief description of the fleet to create. </p>
+    /// <p>A brief description of the fleet to create.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> A brief description of the fleet to create. </p>
+    /// <p>A brief description of the fleet to create.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signal_catalog_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    /// <p>The Amazon Resource Name (ARN) of a signal catalog.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_signal_catalog_arn()
     }

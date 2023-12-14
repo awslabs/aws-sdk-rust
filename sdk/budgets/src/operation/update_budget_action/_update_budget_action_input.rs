@@ -5,21 +5,21 @@
 pub struct UpdateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
-    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: ::std::option::Option<crate::types::NotificationType>,
-    /// <p>The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action.</p>
     pub action_threshold: ::std::option::Option<crate::types::ActionThreshold>,
-    /// <p>Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters.</p>
     pub definition: ::std::option::Option<crate::types::Definition>,
-    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p> This specifies if the action needs manual or automatic approval. </p>
+    /// <p>This specifies if the action needs manual or automatic approval.</p>
     pub approval_model: ::std::option::Option<crate::types::ApprovalModel>,
-    /// <p> A list of subscribers.</p>
+    /// <p>A list of subscribers.</p>
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
 }
 impl UpdateBudgetActionInput {
@@ -27,35 +27,35 @@ impl UpdateBudgetActionInput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn action_id(&self) -> ::std::option::Option<&str> {
         self.action_id.as_deref()
     }
-    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action.</p>
     pub fn action_threshold(&self) -> ::std::option::Option<&crate::types::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p>Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::Definition> {
         self.definition.as_ref()
     }
-    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p> This specifies if the action needs manual or automatic approval. </p>
+    /// <p>This specifies if the action needs manual or automatic approval.</p>
     pub fn approval_model(&self) -> ::std::option::Option<&crate::types::ApprovalModel> {
         self.approval_model.as_ref()
     }
-    /// <p> A list of subscribers.</p>
+    /// <p>A list of subscribers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
     pub fn subscribers(&self) -> &[crate::types::Subscriber] {
@@ -99,103 +99,103 @@ impl UpdateBudgetActionInputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
     }
-    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_id
     }
-    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.notification_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
         self
     }
-    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         &self.notification_type
     }
-    /// <p>The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action.</p>
     pub fn action_threshold(mut self, input: crate::types::ActionThreshold) -> Self {
         self.action_threshold = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action.</p>
     pub fn set_action_threshold(mut self, input: ::std::option::Option<crate::types::ActionThreshold>) -> Self {
         self.action_threshold = input;
         self
     }
-    /// <p>The trigger threshold of the action. </p>
+    /// <p>The trigger threshold of the action.</p>
     pub fn get_action_threshold(&self) -> &::std::option::Option<crate::types::ActionThreshold> {
         &self.action_threshold
     }
-    /// <p>Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters.</p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>Specifies all of the type-specific parameters. </p>
+    /// <p>Specifies all of the type-specific parameters.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
         &self.definition
     }
-    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
-    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p> This specifies if the action needs manual or automatic approval. </p>
+    /// <p>This specifies if the action needs manual or automatic approval.</p>
     pub fn approval_model(mut self, input: crate::types::ApprovalModel) -> Self {
         self.approval_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p> This specifies if the action needs manual or automatic approval. </p>
+    /// <p>This specifies if the action needs manual or automatic approval.</p>
     pub fn set_approval_model(mut self, input: ::std::option::Option<crate::types::ApprovalModel>) -> Self {
         self.approval_model = input;
         self
     }
-    /// <p> This specifies if the action needs manual or automatic approval. </p>
+    /// <p>This specifies if the action needs manual or automatic approval.</p>
     pub fn get_approval_model(&self) -> &::std::option::Option<crate::types::ApprovalModel> {
         &self.approval_model
     }
@@ -203,19 +203,19 @@ impl UpdateBudgetActionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
     ///
-    /// <p> A list of subscribers.</p>
+    /// <p>A list of subscribers.</p>
     pub fn subscribers(mut self, input: crate::types::Subscriber) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
         v.push(input);
         self.subscribers = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of subscribers.</p>
+    /// <p>A list of subscribers.</p>
     pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.subscribers = input;
         self
     }
-    /// <p> A list of subscribers.</p>
+    /// <p>A list of subscribers.</p>
     pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }

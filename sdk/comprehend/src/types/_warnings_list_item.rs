@@ -2,8 +2,8 @@
 
 /// <p>The system identified one of the following warnings while processing the input document:</p>
 /// <ul>
-/// <li> <p>The document to classify is plain text, but the classifier is a native document model.</p> </li>
-/// <li> <p>The document to classify is semi-structured, but the classifier is a plain-text model.</p> </li>
+/// <li><p>The document to classify is plain text, but the classifier is a native document model.</p></li>
+/// <li><p>The document to classify is semi-structured, but the classifier is a plain-text model.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

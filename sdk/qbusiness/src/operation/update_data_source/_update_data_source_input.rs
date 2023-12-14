@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSourceInput {
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index attached to the data source connector.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct UpdateDataSourceInput {
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInput {
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -91,18 +91,18 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInputBuilder {
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p> The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }

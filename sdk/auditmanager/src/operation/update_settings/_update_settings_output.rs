@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSettingsOutput {
-    /// <p> The current list of settings. </p>
+    /// <p>The current list of settings.</p>
     pub settings: ::std::option::Option<crate::types::Settings>,
     _request_id: Option<String>,
 }
 impl UpdateSettingsOutput {
-    /// <p> The current list of settings. </p>
+    /// <p>The current list of settings.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::Settings> {
         self.settings.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateSettingsOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateSettingsOutputBuilder {
-    /// <p> The current list of settings. </p>
+    /// <p>The current list of settings.</p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The current list of settings. </p>
+    /// <p>The current list of settings.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.settings = input;
         self
     }
-    /// <p> The current list of settings. </p>
+    /// <p>The current list of settings.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
         &self.settings
     }

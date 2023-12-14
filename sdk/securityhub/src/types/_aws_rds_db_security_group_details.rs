@@ -16,7 +16,7 @@ pub struct AwsRdsDbSecurityGroupDetails {
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>,
     /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
-    /// <p>Provides VPC ID associated with the DB security group. </p>
+    /// <p>Provides VPC ID associated with the DB security group.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSecurityGroupDetails {
@@ -48,7 +48,7 @@ impl AwsRdsDbSecurityGroupDetails {
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>Provides VPC ID associated with the DB security group. </p>
+    /// <p>Provides VPC ID associated with the DB security group.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -172,17 +172,17 @@ impl AwsRdsDbSecurityGroupDetailsBuilder {
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_id
     }
-    /// <p>Provides VPC ID associated with the DB security group. </p>
+    /// <p>Provides VPC ID associated with the DB security group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Provides VPC ID associated with the DB security group. </p>
+    /// <p>Provides VPC ID associated with the DB security group.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>Provides VPC ID associated with the DB security group. </p>
+    /// <p>Provides VPC ID associated with the DB security group.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }

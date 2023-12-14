@@ -124,19 +124,19 @@ impl UpdateCACertificateFluentBuilder {
         self.inner.get_certificate_id()
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(mut self, input: crate::types::CaCertificateStatus) -> Self {
         self.inner = self.inner.new_status(input);
         self
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn set_new_status(mut self, input: ::std::option::Option<crate::types::CaCertificateStatus>) -> Self {
         self.inner = self.inner.set_new_status(input);
         self
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    /// <p><b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn get_new_status(&self) -> &::std::option::Option<crate::types::CaCertificateStatus> {
         self.inner.get_new_status()
     }

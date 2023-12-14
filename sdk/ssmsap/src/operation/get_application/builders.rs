@@ -122,17 +122,17 @@ impl GetApplicationFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. </p>
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. </p>
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. </p>
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_arn()
     }

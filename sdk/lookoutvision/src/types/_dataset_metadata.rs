@@ -6,7 +6,7 @@
 pub struct DatasetMetadata {
     /// <p>The type of the dataset.</p>
     pub dataset_type: ::std::option::Option<::std::string::String>,
-    /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
+    /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status for the dataset.</p>
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
@@ -18,7 +18,7 @@ impl DatasetMetadata {
     pub fn dataset_type(&self) -> ::std::option::Option<&str> {
         self.dataset_type.as_deref()
     }
-    /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
+    /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
@@ -62,17 +62,17 @@ impl DatasetMetadataBuilder {
     pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_type
     }
-    /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
+    /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
+    /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
-    /// <p>The Unix timestamp for the date and time that the dataset was created. </p>
+    /// <p>The Unix timestamp for the date and time that the dataset was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_timestamp
     }

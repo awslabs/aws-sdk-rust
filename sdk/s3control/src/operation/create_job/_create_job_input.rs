@@ -21,7 +21,7 @@ pub struct CreateJobInput {
     pub priority: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
     pub manifest_generator: ::std::option::Option<crate::types::JobManifestGenerator>,
@@ -63,7 +63,7 @@ impl CreateJobInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::S3Tag] {
@@ -234,19 +234,19 @@ impl CreateJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
     pub fn tags(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
         &self.tags
     }

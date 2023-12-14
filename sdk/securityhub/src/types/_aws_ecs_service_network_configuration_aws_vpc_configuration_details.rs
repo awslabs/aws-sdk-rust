@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
-    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
+    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code></p>
     pub assign_public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups associated with the task or service.</p>
     /// <p>You can provide up to five security groups.</p>
@@ -16,7 +16,7 @@ pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
 }
 impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
-    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
+    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code></p>
     pub fn assign_public_ip(&self) -> ::std::option::Option<&str> {
         self.assign_public_ip.as_deref()
     }
@@ -52,19 +52,19 @@ pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
 }
 impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetailsBuilder {
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
-    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
+    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code></p>
     pub fn assign_public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assign_public_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
-    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
+    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code></p>
     pub fn set_assign_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assign_public_ip = input;
         self
     }
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
-    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
+    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code></p>
     pub fn get_assign_public_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.assign_public_ip
     }

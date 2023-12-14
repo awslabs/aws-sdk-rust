@@ -22,7 +22,7 @@ impl UpdateContactEvaluationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateContactEvaluation`.
 ///
-/// <p>Updates details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object (<code>{}</code>) to the question identifier. </p>
+/// <p>Updates details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object (<code>{}</code>) to the question identifier.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContactEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

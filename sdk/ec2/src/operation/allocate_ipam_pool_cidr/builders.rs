@@ -141,8 +141,8 @@ impl AllocateIpamPoolCidrFluentBuilder {
     }
     /// <p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
-    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
-    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// <li><p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p></li>
+    /// <li><p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p></li>
     /// </ul>
     /// <p>Possible values: Any available IPv4 or IPv6 CIDR.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +151,8 @@ impl AllocateIpamPoolCidrFluentBuilder {
     }
     /// <p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
-    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
-    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// <li><p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p></li>
+    /// <li><p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p></li>
     /// </ul>
     /// <p>Possible values: Any available IPv4 or IPv6 CIDR.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -161,8 +161,8 @@ impl AllocateIpamPoolCidrFluentBuilder {
     }
     /// <p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
-    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
-    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// <li><p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p></li>
+    /// <li><p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p></li>
     /// </ul>
     /// <p>Possible values: Any available IPv4 or IPv6 CIDR.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +170,8 @@ impl AllocateIpamPoolCidrFluentBuilder {
     }
     /// <p>The netmask length of the CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
-    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
-    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// <li><p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p></li>
+    /// <li><p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p></li>
     /// </ul>
     /// <p>Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
@@ -180,8 +180,8 @@ impl AllocateIpamPoolCidrFluentBuilder {
     }
     /// <p>The netmask length of the CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
-    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
-    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// <li><p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p></li>
+    /// <li><p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p></li>
     /// </ul>
     /// <p>Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
     pub fn set_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -190,8 +190,8 @@ impl AllocateIpamPoolCidrFluentBuilder {
     }
     /// <p>The netmask length of the CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
-    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
-    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// <li><p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p></li>
+    /// <li><p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p></li>
     /// </ul>
     /// <p>Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
     pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {

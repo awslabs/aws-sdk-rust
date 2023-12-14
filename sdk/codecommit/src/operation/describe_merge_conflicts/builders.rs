@@ -184,17 +184,17 @@ impl DescribeMergeConflictsFluentBuilder {
     pub fn get_max_merge_hunks(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_merge_hunks()
     }
-    /// <p>The path of the target files used to describe the conflicts. </p>
+    /// <p>The path of the target files used to describe the conflicts.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_path(input.into());
         self
     }
-    /// <p>The path of the target files used to describe the conflicts. </p>
+    /// <p>The path of the target files used to describe the conflicts.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_path(input);
         self
     }
-    /// <p>The path of the target files used to describe the conflicts. </p>
+    /// <p>The path of the target files used to describe the conflicts.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_path()
     }

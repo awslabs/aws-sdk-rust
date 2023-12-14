@@ -6,21 +6,21 @@
 pub struct DescribeVpnGatewaysInput {
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
-    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li>
-    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p></li>
+    /// <li><p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p></li>
+    /// <li><p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p></li>
+    /// <li><p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
-    /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
+    /// </key></p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li><p><code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p></li>
+    /// <li><p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>One or more virtual private gateway IDs.</p>
@@ -32,21 +32,21 @@ pub struct DescribeVpnGatewaysInput {
 impl DescribeVpnGatewaysInput {
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
-    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li>
-    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p></li>
+    /// <li><p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p></li>
+    /// <li><p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p></li>
+    /// <li><p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
-    /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
+    /// </key></p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li><p><code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p></li>
+    /// <li><p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -87,21 +87,21 @@ impl DescribeVpnGatewaysInputBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
-    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li>
-    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p></li>
+    /// <li><p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p></li>
+    /// <li><p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p></li>
+    /// <li><p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
-    /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
+    /// </key></p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li><p><code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p></li>
+    /// <li><p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -111,21 +111,21 @@ impl DescribeVpnGatewaysInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
-    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li>
-    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p></li>
+    /// <li><p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p></li>
+    /// <li><p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p></li>
+    /// <li><p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
-    /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
+    /// </key></p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li><p><code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p></li>
+    /// <li><p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -133,21 +133,21 @@ impl DescribeVpnGatewaysInputBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li> <p> <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p> </li>
-    /// <li> <p> <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p> </li>
-    /// <li> <p> <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p> </li>
-    /// <li> <p> <code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
-    /// <li> <p> <code>tag</code>:<key>
+    /// <li><p><code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.</p></li>
+    /// <li><p><code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (<code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).</p></li>
+    /// <li><p><code>attachment.vpc-id</code> - The ID of an attached VPC.</p></li>
+    /// <li><p><code>availability-zone</code> - The Availability Zone for the virtual private gateway (if applicable).</p></li>
+    /// <li><p><code>state</code> - The state of the virtual private gateway (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li><p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li>
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
-    /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
-    /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
+    /// </key></p></li>
+    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li><p><code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p></li>
+    /// <li><p><code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

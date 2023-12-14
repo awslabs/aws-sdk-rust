@@ -6,7 +6,7 @@ pub struct GetTerminologyOutput {
     /// <p>The properties of the custom terminology being retrieved.</p>
     pub terminology_properties: ::std::option::Option<crate::types::TerminologyProperties>,
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -21,7 +21,7 @@ impl GetTerminologyOutput {
         self.terminology_properties.as_ref()
     }
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -70,7 +70,7 @@ impl GetTerminologyOutputBuilder {
         &self.terminology_properties
     }
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -79,7 +79,7 @@ impl GetTerminologyOutputBuilder {
         self
     }
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
@@ -88,7 +88,7 @@ impl GetTerminologyOutputBuilder {
         self
     }
     /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.</p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>

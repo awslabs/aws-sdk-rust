@@ -22,7 +22,7 @@ impl DeleteFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteFleet`.
 ///
-/// <p>Deletes a fleet. Prevents users from accessing previously associated websites. </p>
+/// <p>Deletes a fleet. Prevents users from accessing previously associated websites.</p>
 #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFleetFluentBuilder {

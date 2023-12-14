@@ -24,10 +24,10 @@ impl CreateDecoderManifestInputBuilder {
 ///
 /// <p>Creates the decoder manifest associated with a model manifest. To create a decoder manifest, the following must be true:</p>
 /// <ul>
-/// <li> <p>Every signal decoder has a unique name.</p> </li>
-/// <li> <p>Each signal decoder is associated with a network interface.</p> </li>
-/// <li> <p>Each network interface has a unique ID.</p> </li>
-/// <li> <p>The signal decoders are specified in the model manifest.</p> </li>
+/// <li><p>Every signal decoder has a unique name.</p></li>
+/// <li><p>Each signal decoder is associated with a network interface.</p></li>
+/// <li><p>Each network interface has a unique ID.</p></li>
+/// <li><p>The signal decoders are specified in the model manifest.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDecoderManifestFluentBuilder {
@@ -114,45 +114,45 @@ impl CreateDecoderManifestFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique name of the decoder manifest to create.</p>
+    /// <p>The unique name of the decoder manifest to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p> The unique name of the decoder manifest to create.</p>
+    /// <p>The unique name of the decoder manifest to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p> The unique name of the decoder manifest to create.</p>
+    /// <p>The unique name of the decoder manifest to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p> A brief description of the decoder manifest. </p>
+    /// <p>A brief description of the decoder manifest.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p> A brief description of the decoder manifest. </p>
+    /// <p>A brief description of the decoder manifest.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> A brief description of the decoder manifest. </p>
+    /// <p>A brief description of the decoder manifest.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
+    /// <p>The Amazon Resource Name (ARN) of the vehicle model (model manifest).</p>
     pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_manifest_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
+    /// <p>The Amazon Resource Name (ARN) of the vehicle model (model manifest).</p>
     pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
+    /// <p>The Amazon Resource Name (ARN) of the vehicle model (model manifest).</p>
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_manifest_arn()
     }
@@ -160,17 +160,17 @@ impl CreateDecoderManifestFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_signal_decoders`](Self::set_signal_decoders).
     ///
-    /// <p> A list of information about signal decoders. </p>
+    /// <p>A list of information about signal decoders.</p>
     pub fn signal_decoders(mut self, input: crate::types::SignalDecoder) -> Self {
         self.inner = self.inner.signal_decoders(input);
         self
     }
-    /// <p> A list of information about signal decoders. </p>
+    /// <p>A list of information about signal decoders.</p>
     pub fn set_signal_decoders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
         self.inner = self.inner.set_signal_decoders(input);
         self
     }
-    /// <p> A list of information about signal decoders. </p>
+    /// <p>A list of information about signal decoders.</p>
     pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
         self.inner.get_signal_decoders()
     }
@@ -178,17 +178,17 @@ impl CreateDecoderManifestFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p> A list of information about available network interfaces. </p>
+    /// <p>A list of information about available network interfaces.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         self.inner = self.inner.network_interfaces(input);
         self
     }
-    /// <p> A list of information about available network interfaces. </p>
+    /// <p>A list of information about available network interfaces.</p>
     pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.inner = self.inner.set_network_interfaces(input);
         self
     }
-    /// <p> A list of information about available network interfaces. </p>
+    /// <p>A list of information about available network interfaces.</p>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         self.inner.get_network_interfaces()
     }

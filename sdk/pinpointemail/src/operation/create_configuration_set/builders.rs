@@ -22,7 +22,7 @@ impl CreateConfigurationSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateConfigurationSet`.
 ///
-/// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>
+/// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

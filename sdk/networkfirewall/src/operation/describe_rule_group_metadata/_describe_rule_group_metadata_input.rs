@@ -4,28 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadataInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
 }
 impl DescribeRuleGroupMetadataInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
@@ -49,54 +49,54 @@ pub struct DescribeRuleGroupMetadataInputBuilder {
 }
 impl DescribeRuleGroupMetadataInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_name = input;
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_group_name
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_group_arn
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {

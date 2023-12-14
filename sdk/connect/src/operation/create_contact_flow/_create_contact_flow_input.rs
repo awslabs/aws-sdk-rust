@@ -9,9 +9,9 @@ pub struct CreateContactFlowInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub r#type: ::std::option::Option<crate::types::ContactFlowType>,
-    /// <p>The description of the flow. </p>
+    /// <p>The description of the flow.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
@@ -30,11 +30,11 @@ impl CreateContactFlowInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactFlowType> {
         self.r#type.as_ref()
     }
-    /// <p>The description of the flow. </p>
+    /// <p>The description of the flow.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
@@ -108,34 +108,34 @@ impl CreateContactFlowInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactFlowType> {
         &self.r#type
     }
-    /// <p>The description of the flow. </p>
+    /// <p>The description of the flow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the flow. </p>
+    /// <p>The description of the flow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the flow. </p>
+    /// <p>The description of the flow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content

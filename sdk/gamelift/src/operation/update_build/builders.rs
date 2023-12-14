@@ -23,9 +23,9 @@ impl UpdateBuildInputBuilder {
 /// Fluent builder constructing a request to `UpdateBuild`.
 ///
 /// <p>Updates metadata in a build resource, including the build name and version. To update the metadata, specify the build ID to update and provide the new values. If successful, a build object containing the updated metadata is returned.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
+/// <p><b>Learn more</b></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html"> Upload a Custom Server Build</a></p>
+/// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBuildFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,31 +111,31 @@ impl UpdateBuildFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.build_id(input.into());
         self
     }
-    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_id(input);
         self
     }
-    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
+    /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_build_id()
     }
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique. </p>
+    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique. </p>
+    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A descriptive label associated with a build. Build names don't need to be unique. </p>
+    /// <p>A descriptive label associated with a build. Build names don't need to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

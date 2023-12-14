@@ -23,14 +23,14 @@ pub struct MaintenanceWindowTask {
     /// </tag></code>.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub task_parameters:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub priority: i32,
     /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
@@ -49,7 +49,7 @@ pub struct MaintenanceWindowTask {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the task.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     pub cutoff_behavior: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
     /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
@@ -86,7 +86,7 @@ impl MaintenanceWindowTask {
         self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
         &self,
@@ -98,7 +98,7 @@ impl MaintenanceWindowTask {
         self.priority
     }
     /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(&self) -> ::std::option::Option<&crate::types::LoggingInfo> {
         self.logging_info.as_ref()
@@ -129,7 +129,7 @@ impl MaintenanceWindowTask {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     pub fn cutoff_behavior(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskCutoffBehavior> {
         self.cutoff_behavior.as_ref()
     }
@@ -293,7 +293,7 @@ impl MaintenanceWindowTaskBuilder {
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
     ///
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
         mut self,
@@ -306,7 +306,7 @@ impl MaintenanceWindowTaskBuilder {
         self
     }
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_task_parameters(
         mut self,
@@ -316,7 +316,7 @@ impl MaintenanceWindowTaskBuilder {
         self
     }
     /// <p>The parameters that should be passed to the task when it is run.</p> <note>
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_task_parameters(
         &self,
@@ -338,21 +338,21 @@ impl MaintenanceWindowTaskBuilder {
         &self.priority
     }
     /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.logging_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
     /// <p>Information about an S3 bucket to write task-level logs to.</p> <note>
-    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
         &self.logging_info
@@ -445,17 +445,17 @@ impl MaintenanceWindowTaskBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     pub fn cutoff_behavior(mut self, input: crate::types::MaintenanceWindowTaskCutoffBehavior) -> Self {
         self.cutoff_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     pub fn set_cutoff_behavior(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>) -> Self {
         self.cutoff_behavior = input;
         self
     }
-    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached.</p>
     pub fn get_cutoff_behavior(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
         &self.cutoff_behavior
     }

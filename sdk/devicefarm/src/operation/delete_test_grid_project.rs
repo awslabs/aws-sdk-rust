@@ -252,7 +252,7 @@ pub enum DeleteTestGridProjectError {
     ArgumentException(crate::types::error::ArgumentException),
     /// <p>The requested object could not be deleted.</p>
     CannotDeleteException(crate::types::error::CannotDeleteException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::types::error::NotFoundException),

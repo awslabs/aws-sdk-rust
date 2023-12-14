@@ -9,7 +9,7 @@ pub struct ExportVectorEnrichmentJobInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     pub output_config: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
 }
 impl ExportVectorEnrichmentJobInput {
@@ -25,7 +25,7 @@ impl ExportVectorEnrichmentJobInput {
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::ExportVectorEnrichmentJobOutputConfig> {
         self.output_config.as_ref()
     }
@@ -91,18 +91,18 @@ impl ExportVectorEnrichmentJobInputBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     /// This field is required.
     pub fn output_config(mut self, input: crate::types::ExportVectorEnrichmentJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>) -> Self {
         self.output_config = input;
         self
     }
-    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
         &self.output_config
     }

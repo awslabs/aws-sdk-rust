@@ -136,17 +136,17 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }

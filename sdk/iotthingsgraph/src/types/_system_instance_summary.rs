@@ -16,7 +16,7 @@ pub struct SystemInstanceSummary {
     pub greengrass_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the system instance was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The date and time when the system instance was last updated.</p>
+    /// <p>The date and time when the system instance was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub greengrass_group_id: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ impl SystemInstanceSummary {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p> The date and time when the system instance was last updated.</p>
+    /// <p>The date and time when the system instance was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -167,17 +167,17 @@ impl SystemInstanceSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p> The date and time when the system instance was last updated.</p>
+    /// <p>The date and time when the system instance was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The date and time when the system instance was last updated.</p>
+    /// <p>The date and time when the system instance was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p> The date and time when the system instance was last updated.</p>
+    /// <p>The date and time when the system instance was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

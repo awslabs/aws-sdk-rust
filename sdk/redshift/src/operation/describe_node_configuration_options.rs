@@ -258,11 +258,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeNodeC
 pub enum DescribeNodeConfigurationOptionsError {
     /// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
     AccessToSnapshotDeniedFault(crate::types::error::AccessToSnapshotDeniedFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.</p>
     ClusterNotFoundFault(crate::types::error::ClusterNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::types::error::ClusterSnapshotNotFoundFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot.</p>
     InvalidClusterSnapshotStateFault(crate::types::error::InvalidClusterSnapshotStateFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::types::error::UnsupportedOperationFault),

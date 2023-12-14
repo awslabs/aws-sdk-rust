@@ -6,9 +6,9 @@
 pub struct JobTemplateData {
     /// <p>The execution role ARN of the job run.</p>
     pub execution_role_arn: ::std::string::String,
-    /// <p> The release version of Amazon EMR.</p>
+    /// <p>The release version of Amazon EMR.</p>
     pub release_label: ::std::string::String,
-    /// <p> The configuration settings that are used to override defaults configuration.</p>
+    /// <p>The configuration settings that are used to override defaults configuration.</p>
     pub configuration_overrides: ::std::option::Option<crate::types::ParametricConfigurationOverrides>,
     /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
@@ -24,12 +24,12 @@ impl JobTemplateData {
         use std::ops::Deref;
         self.execution_role_arn.deref()
     }
-    /// <p> The release version of Amazon EMR.</p>
+    /// <p>The release version of Amazon EMR.</p>
     pub fn release_label(&self) -> &str {
         use std::ops::Deref;
         self.release_label.deref()
     }
-    /// <p> The configuration settings that are used to override defaults configuration.</p>
+    /// <p>The configuration settings that are used to override defaults configuration.</p>
     pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ParametricConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
@@ -83,32 +83,32 @@ impl JobTemplateDataBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p> The release version of Amazon EMR.</p>
+    /// <p>The release version of Amazon EMR.</p>
     /// This field is required.
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The release version of Amazon EMR.</p>
+    /// <p>The release version of Amazon EMR.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
-    /// <p> The release version of Amazon EMR.</p>
+    /// <p>The release version of Amazon EMR.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_label
     }
-    /// <p> The configuration settings that are used to override defaults configuration.</p>
+    /// <p>The configuration settings that are used to override defaults configuration.</p>
     pub fn configuration_overrides(mut self, input: crate::types::ParametricConfigurationOverrides) -> Self {
         self.configuration_overrides = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The configuration settings that are used to override defaults configuration.</p>
+    /// <p>The configuration settings that are used to override defaults configuration.</p>
     pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ParametricConfigurationOverrides>) -> Self {
         self.configuration_overrides = input;
         self
     }
-    /// <p> The configuration settings that are used to override defaults configuration.</p>
+    /// <p>The configuration settings that are used to override defaults configuration.</p>
     pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ParametricConfigurationOverrides> {
         &self.configuration_overrides
     }

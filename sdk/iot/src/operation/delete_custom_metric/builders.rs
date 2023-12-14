@@ -22,7 +22,7 @@ impl DeleteCustomMetricInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCustomMetric`.
 ///
-/// <p> Deletes a Device Defender detect custom metric. </p>
+/// <p>Deletes a Device Defender detect custom metric.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a> action.</p> <note>
 /// <p>Before you can delete a custom metric, you must first remove the custom metric from all security profiles it's a part of. The security profile associated with the custom metric can be found using the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a> API with <code>metricName</code> set to your custom metric name.</p>
 /// </note>
@@ -111,17 +111,17 @@ impl DeleteCustomMetricFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
-    /// <p> The name of the custom metric. </p>
+    /// <p>The name of the custom metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metric_name()
     }

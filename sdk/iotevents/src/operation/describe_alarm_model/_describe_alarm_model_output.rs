@@ -13,13 +13,13 @@ pub struct DescribeAlarmModelOutput {
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <li><p><code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p></li>
+    /// <li><p><code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p></li>
+    /// <li><p><code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p></li>
+    /// <li><p><code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::AlarmModelVersionStatus>,
-    /// <p> Contains information about the status of the alarm model. </p>
+    /// <p>Contains information about the status of the alarm model.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
@@ -60,15 +60,15 @@ impl DescribeAlarmModelOutput {
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <li><p><code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p></li>
+    /// <li><p><code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p></li>
+    /// <li><p><code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p></li>
+    /// <li><p><code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AlarmModelVersionStatus> {
         self.status.as_ref()
     }
-    /// <p> Contains information about the status of the alarm model. </p>
+    /// <p>Contains information about the status of the alarm model.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
@@ -201,10 +201,10 @@ impl DescribeAlarmModelOutputBuilder {
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <li><p><code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p></li>
+    /// <li><p><code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p></li>
+    /// <li><p><code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p></li>
+    /// <li><p><code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AlarmModelVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -212,10 +212,10 @@ impl DescribeAlarmModelOutputBuilder {
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <li><p><code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p></li>
+    /// <li><p><code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p></li>
+    /// <li><p><code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p></li>
+    /// <li><p><code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AlarmModelVersionStatus>) -> Self {
         self.status = input;
@@ -223,25 +223,25 @@ impl DescribeAlarmModelOutputBuilder {
     }
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>
-    /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
+    /// <li><p><code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p></li>
+    /// <li><p><code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p></li>
+    /// <li><p><code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p></li>
+    /// <li><p><code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AlarmModelVersionStatus> {
         &self.status
     }
-    /// <p> Contains information about the status of the alarm model. </p>
+    /// <p>Contains information about the status of the alarm model.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Contains information about the status of the alarm model. </p>
+    /// <p>Contains information about the status of the alarm model.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
-    /// <p> Contains information about the status of the alarm model. </p>
+    /// <p>Contains information about the status of the alarm model.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }

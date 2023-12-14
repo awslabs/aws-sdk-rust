@@ -10,12 +10,12 @@ pub struct ScalingPolicy {
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
-    /// <p>One of the following policy types: </p>
+    /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
-    /// <li> <p> <code>StepScaling</code> </p> </li>
-    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
-    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
+    /// <li><p><code>TargetTrackingScaling</code></p></li>
+    /// <li><p><code>StepScaling</code></p></li>
+    /// <li><p><code>SimpleScaling</code> (default)</p></li>
+    /// <li><p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub policy_type: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct ScalingPolicy {
     pub adjustment_type: ::std::option::Option<::std::string::String>,
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
     pub min_adjustment_step: ::std::option::Option<i32>,
-    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
+    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.</p>
     pub min_adjustment_magnitude: ::std::option::Option<i32>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     pub scaling_adjustment: ::std::option::Option<i32>,
@@ -57,12 +57,12 @@ impl ScalingPolicy {
     pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>One of the following policy types: </p>
+    /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
-    /// <li> <p> <code>StepScaling</code> </p> </li>
-    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
-    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
+    /// <li><p><code>TargetTrackingScaling</code></p></li>
+    /// <li><p><code>StepScaling</code></p></li>
+    /// <li><p><code>SimpleScaling</code> (default)</p></li>
+    /// <li><p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn policy_type(&self) -> ::std::option::Option<&str> {
@@ -76,7 +76,7 @@ impl ScalingPolicy {
     pub fn min_adjustment_step(&self) -> ::std::option::Option<i32> {
         self.min_adjustment_step
     }
-    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
+    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.</p>
     pub fn min_adjustment_magnitude(&self) -> ::std::option::Option<i32> {
         self.min_adjustment_magnitude
     }
@@ -192,36 +192,36 @@ impl ScalingPolicyBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
-    /// <p>One of the following policy types: </p>
+    /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
-    /// <li> <p> <code>StepScaling</code> </p> </li>
-    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
-    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
+    /// <li><p><code>TargetTrackingScaling</code></p></li>
+    /// <li><p><code>StepScaling</code></p></li>
+    /// <li><p><code>SimpleScaling</code> (default)</p></li>
+    /// <li><p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>One of the following policy types: </p>
+    /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
-    /// <li> <p> <code>StepScaling</code> </p> </li>
-    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
-    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
+    /// <li><p><code>TargetTrackingScaling</code></p></li>
+    /// <li><p><code>StepScaling</code></p></li>
+    /// <li><p><code>SimpleScaling</code> (default)</p></li>
+    /// <li><p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type = input;
         self
     }
-    /// <p>One of the following policy types: </p>
+    /// <p>One of the following policy types:</p>
     /// <ul>
-    /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
-    /// <li> <p> <code>StepScaling</code> </p> </li>
-    /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
-    /// <li> <p> <code>PredictiveScaling</code> </p> </li>
+    /// <li><p><code>TargetTrackingScaling</code></p></li>
+    /// <li><p><code>StepScaling</code></p></li>
+    /// <li><p><code>SimpleScaling</code> (default)</p></li>
+    /// <li><p><code>PredictiveScaling</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,17 +255,17 @@ impl ScalingPolicyBuilder {
     pub fn get_min_adjustment_step(&self) -> &::std::option::Option<i32> {
         &self.min_adjustment_step
     }
-    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
+    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.</p>
     pub fn min_adjustment_magnitude(mut self, input: i32) -> Self {
         self.min_adjustment_magnitude = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
+    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.</p>
     pub fn set_min_adjustment_magnitude(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_adjustment_magnitude = input;
         self
     }
-    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
+    /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.</p>
     pub fn get_min_adjustment_magnitude(&self) -> &::std::option::Option<i32> {
         &self.min_adjustment_magnitude
     }

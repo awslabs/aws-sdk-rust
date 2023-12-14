@@ -2,9 +2,9 @@
 
 /// <p>Describes an endpoint of a database instance in response to operations such as the following:</p>
 /// <ul>
-/// <li> <p> <code>CreateEndpoint</code> </p> </li>
-/// <li> <p> <code>DescribeEndpoint</code> </p> </li>
-/// <li> <p> <code>ModifyEndpoint</code> </p> </li>
+/// <li><p><code>CreateEndpoint</code></p></li>
+/// <li><p><code>DescribeEndpoint</code></p></li>
+/// <li><p><code>ModifyEndpoint</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -43,13 +43,13 @@ pub struct Endpoint {
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The external table definition.</p>
     pub external_table_definition: ::std::option::Option<::std::string::String>,
-    /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
+    /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
     pub dynamo_db_settings: ::std::option::Option<crate::types::DynamoDbSettings>,
     /// <p>The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.</p>
     pub s3_settings: ::std::option::Option<crate::types::S3Settings>,
-    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
+    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.</p>
     pub dms_transfer_settings: ::std::option::Option<crate::types::DmsTransferSettings>,
     /// <p>The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code> structure.</p>
     pub mongo_db_settings: ::std::option::Option<crate::types::MongoDbSettings>,
@@ -73,7 +73,7 @@ pub struct Endpoint {
     pub sybase_settings: ::std::option::Option<crate::types::SybaseSettings>,
     /// <p>The settings for the Microsoft SQL Server source and target endpoint. For more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
     pub microsoft_sql_server_settings: ::std::option::Option<crate::types::MicrosoftSqlServerSettings>,
-    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
+    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure.</p>
     pub ibm_db2_settings: ::std::option::Option<crate::types::IbmDb2Settings>,
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
     pub doc_db_settings: ::std::option::Option<crate::types::DocDbSettings>,
@@ -151,7 +151,7 @@ impl Endpoint {
     pub fn external_table_definition(&self) -> ::std::option::Option<&str> {
         self.external_table_definition.as_deref()
     }
-    /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
+    /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -163,7 +163,7 @@ impl Endpoint {
     pub fn s3_settings(&self) -> ::std::option::Option<&crate::types::S3Settings> {
         self.s3_settings.as_ref()
     }
-    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
+    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.</p>
     pub fn dms_transfer_settings(&self) -> ::std::option::Option<&crate::types::DmsTransferSettings> {
         self.dms_transfer_settings.as_ref()
     }
@@ -211,7 +211,7 @@ impl Endpoint {
     pub fn microsoft_sql_server_settings(&self) -> ::std::option::Option<&crate::types::MicrosoftSqlServerSettings> {
         self.microsoft_sql_server_settings.as_ref()
     }
-    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
+    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure.</p>
     pub fn ibm_db2_settings(&self) -> ::std::option::Option<&crate::types::IbmDb2Settings> {
         self.ibm_db2_settings.as_ref()
     }
@@ -511,17 +511,17 @@ impl EndpointBuilder {
     pub fn get_external_table_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_table_definition
     }
-    /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
+    /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
+    /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
     }
-    /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
+    /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
     }
@@ -553,17 +553,17 @@ impl EndpointBuilder {
     pub fn get_s3_settings(&self) -> &::std::option::Option<crate::types::S3Settings> {
         &self.s3_settings
     }
-    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
+    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.</p>
     pub fn dms_transfer_settings(mut self, input: crate::types::DmsTransferSettings) -> Self {
         self.dms_transfer_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
+    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.</p>
     pub fn set_dms_transfer_settings(mut self, input: ::std::option::Option<crate::types::DmsTransferSettings>) -> Self {
         self.dms_transfer_settings = input;
         self
     }
-    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
+    /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure.</p>
     pub fn get_dms_transfer_settings(&self) -> &::std::option::Option<crate::types::DmsTransferSettings> {
         &self.dms_transfer_settings
     }
@@ -721,17 +721,17 @@ impl EndpointBuilder {
     pub fn get_microsoft_sql_server_settings(&self) -> &::std::option::Option<crate::types::MicrosoftSqlServerSettings> {
         &self.microsoft_sql_server_settings
     }
-    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
+    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure.</p>
     pub fn ibm_db2_settings(mut self, input: crate::types::IbmDb2Settings) -> Self {
         self.ibm_db2_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
+    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure.</p>
     pub fn set_ibm_db2_settings(mut self, input: ::std::option::Option<crate::types::IbmDb2Settings>) -> Self {
         self.ibm_db2_settings = input;
         self
     }
-    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
+    /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure.</p>
     pub fn get_ibm_db2_settings(&self) -> &::std::option::Option<crate::types::IbmDb2Settings> {
         &self.ibm_db2_settings
     }

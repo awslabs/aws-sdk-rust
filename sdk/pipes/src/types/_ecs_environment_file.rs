@@ -4,8 +4,8 @@
 /// <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying environment variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
 /// <ul>
-/// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
-/// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
+/// <li><p>Linux platform version <code>1.4.0</code> or later.</p></li>
+/// <li><p>Windows platform version <code>1.0.0</code> or later.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

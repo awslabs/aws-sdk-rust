@@ -11,7 +11,7 @@ pub struct UpdateSecretVersionStageInput {
     /// <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
     pub remove_from_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
     pub move_to_version_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecretVersionStageInput {
@@ -29,7 +29,7 @@ impl UpdateSecretVersionStageInput {
         self.remove_from_version_id.as_deref()
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
     pub fn move_to_version_id(&self) -> ::std::option::Option<&str> {
         self.move_to_version_id.as_deref()
     }
@@ -99,19 +99,19 @@ impl UpdateSecretVersionStageInputBuilder {
         &self.remove_from_version_id
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
     pub fn move_to_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.move_to_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
     pub fn set_move_to_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.move_to_version_id = input;
         self
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
-    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter.</p>
     pub fn get_move_to_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.move_to_version_id
     }

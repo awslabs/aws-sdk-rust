@@ -8,13 +8,13 @@
 pub struct InstanceFleetStatus {
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p> </li>
-    /// <li> <p> <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-    /// <li> <p> <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p> </li>
-    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p> </li>
-    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p> </li>
-    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p> </li>
+    /// <li><p><code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p></li>
+    /// <li><p><code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p></li>
+    /// <li><p><code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p></li>
+    /// <li><p><code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p></li>
+    /// <li><p><code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p></li>
+    /// <li><p><code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p></li>
+    /// <li><p><code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::InstanceFleetState>,
     /// <p>Provides status change reason details for the instance fleet.</p>
@@ -25,13 +25,13 @@ pub struct InstanceFleetStatus {
 impl InstanceFleetStatus {
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p> </li>
-    /// <li> <p> <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-    /// <li> <p> <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p> </li>
-    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p> </li>
-    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p> </li>
-    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p> </li>
+    /// <li><p><code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p></li>
+    /// <li><p><code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p></li>
+    /// <li><p><code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p></li>
+    /// <li><p><code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p></li>
+    /// <li><p><code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p></li>
+    /// <li><p><code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p></li>
+    /// <li><p><code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceFleetState> {
         self.state.as_ref()
@@ -63,13 +63,13 @@ pub struct InstanceFleetStatusBuilder {
 impl InstanceFleetStatusBuilder {
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p> </li>
-    /// <li> <p> <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-    /// <li> <p> <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p> </li>
-    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p> </li>
-    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p> </li>
-    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p> </li>
+    /// <li><p><code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p></li>
+    /// <li><p><code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p></li>
+    /// <li><p><code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p></li>
+    /// <li><p><code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p></li>
+    /// <li><p><code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p></li>
+    /// <li><p><code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p></li>
+    /// <li><p><code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::InstanceFleetState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -77,13 +77,13 @@ impl InstanceFleetStatusBuilder {
     }
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p> </li>
-    /// <li> <p> <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-    /// <li> <p> <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p> </li>
-    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p> </li>
-    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p> </li>
-    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p> </li>
+    /// <li><p><code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p></li>
+    /// <li><p><code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p></li>
+    /// <li><p><code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p></li>
+    /// <li><p><code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p></li>
+    /// <li><p><code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p></li>
+    /// <li><p><code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p></li>
+    /// <li><p><code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceFleetState>) -> Self {
         self.state = input;
@@ -91,13 +91,13 @@ impl InstanceFleetStatusBuilder {
     }
     /// <p>A code representing the instance fleet status.</p>
     /// <ul>
-    /// <li> <p> <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p> </li>
-    /// <li> <p> <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p> </li>
-    /// <li> <p> <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p> </li>
-    /// <li> <p> <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p> </li>
-    /// <li> <p> <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p> </li>
-    /// <li> <p> <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p> </li>
-    /// <li> <p> <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p> </li>
+    /// <li><p><code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources and is not yet ready to run jobs.</p></li>
+    /// <li><p><code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned and the bootstrap actions specified for the instances are underway.</p></li>
+    /// <li><p><code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are either executing jobs or waiting to execute jobs.</p></li>
+    /// <li><p><code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either being added or removed.</p></li>
+    /// <li><p><code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2 instances are running, but instances can't be added or removed.</p></li>
+    /// <li><p><code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.</p></li>
+    /// <li><p><code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2 instances have been terminated.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceFleetState> {
         &self.state

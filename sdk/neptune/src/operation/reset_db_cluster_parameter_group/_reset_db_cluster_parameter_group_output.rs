@@ -6,9 +6,9 @@ pub struct ResetDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -19,9 +19,9 @@ impl ResetDbClusterParameterGroupOutput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -52,9 +52,9 @@ impl ResetDbClusterParameterGroupOutputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -65,9 +65,9 @@ impl ResetDbClusterParameterGroupOutputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -78,9 +78,9 @@ impl ResetDbClusterParameterGroupOutputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters or numbers.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>

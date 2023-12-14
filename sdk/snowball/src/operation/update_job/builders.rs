@@ -144,17 +144,17 @@ impl UpdateJobFluentBuilder {
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
         self.inner.get_notification()
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
         self.inner = self.inner.resources(input);
         self
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<crate::types::JobResource>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object.</p>
     pub fn get_resources(&self) -> &::std::option::Option<crate::types::JobResource> {
         self.inner.get_resources()
     }

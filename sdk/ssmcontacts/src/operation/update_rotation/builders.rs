@@ -126,19 +126,19 @@ impl UpdateRotationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_ids(input.into());
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_contact_ids(input);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_contact_ids()

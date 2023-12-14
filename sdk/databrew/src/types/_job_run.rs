@@ -32,9 +32,9 @@ pub struct JobRun {
     pub database_outputs: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseOutput>>,
     /// <p>The set of steps processed by the job.</p>
     pub recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
-    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
+    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the job run began. </p>
+    /// <p>The date and time when the job run began.</p>
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
     pub job_sample: ::std::option::Option<crate::types::JobSample>,
@@ -104,11 +104,11 @@ impl JobRun {
     pub fn recipe_reference(&self) -> ::std::option::Option<&crate::types::RecipeReference> {
         self.recipe_reference.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
+    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
     pub fn started_by(&self) -> ::std::option::Option<&str> {
         self.started_by.as_deref()
     }
-    /// <p>The date and time when the job run began. </p>
+    /// <p>The date and time when the job run began.</p>
     pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
@@ -368,31 +368,31 @@ impl JobRunBuilder {
     pub fn get_recipe_reference(&self) -> &::std::option::Option<crate::types::RecipeReference> {
         &self.recipe_reference
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
+    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
     pub fn started_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.started_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
+    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.started_by = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
+    /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run.</p>
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.started_by
     }
-    /// <p>The date and time when the job run began. </p>
+    /// <p>The date and time when the job run began.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_on = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the job run began. </p>
+    /// <p>The date and time when the job run began.</p>
     pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
-    /// <p>The date and time when the job run began. </p>
+    /// <p>The date and time when the job run began.</p>
     pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_on
     }

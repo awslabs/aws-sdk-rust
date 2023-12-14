@@ -7,7 +7,7 @@ pub struct DeleteLaunchProfileInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLaunchProfileInput {
@@ -19,7 +19,7 @@ impl DeleteLaunchProfileInput {
     pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
@@ -69,18 +69,18 @@ impl DeleteLaunchProfileInputBuilder {
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_profile_id
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
-    /// <p>The studio ID. </p>
+    /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }

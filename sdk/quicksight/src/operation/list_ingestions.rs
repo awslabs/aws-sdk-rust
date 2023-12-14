@@ -290,7 +290,7 @@ pub enum ListIngestionsError {
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The resource specified already exists. </p>
+    /// <p>The resource specified already exists.</p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

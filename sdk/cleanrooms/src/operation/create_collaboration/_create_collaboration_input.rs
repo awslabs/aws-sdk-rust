@@ -19,7 +19,7 @@ pub struct CreateCollaborationInput {
     pub query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't specified anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub creator_payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
@@ -60,7 +60,7 @@ impl CreateCollaborationInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't specified anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn creator_payment_configuration(&self) -> ::std::option::Option<&crate::types::PaymentConfiguration> {
         self.creator_payment_configuration.as_ref()
@@ -222,19 +222,19 @@ impl CreateCollaborationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't specified anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn creator_payment_configuration(mut self, input: crate::types::PaymentConfiguration) -> Self {
         self.creator_payment_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't specified anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn set_creator_payment_configuration(mut self, input: ::std::option::Option<crate::types::PaymentConfiguration>) -> Self {
         self.creator_payment_configuration = input;
         self
     }
-    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator. </p>
+    /// <p>The collaboration creator's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't specified anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn get_creator_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
         &self.creator_payment_configuration

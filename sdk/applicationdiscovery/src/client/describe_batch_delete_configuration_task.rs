@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBatchDeleteConfigurationTask`](crate::operation::describe_batch_delete_configuration_task::builders::DescribeBatchDeleteConfigurationTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_batch_delete_configuration_task::builders::DescribeBatchDeleteConfigurationTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_batch_delete_configuration_task::builders::DescribeBatchDeleteConfigurationTaskFluentBuilder::set_task_id):<br>required: **true**<br><p> The ID of the task to delete. </p><br>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_batch_delete_configuration_task::builders::DescribeBatchDeleteConfigurationTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_batch_delete_configuration_task::builders::DescribeBatchDeleteConfigurationTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The ID of the task to delete.</p><br>
     /// - On success, responds with [`DescribeBatchDeleteConfigurationTaskOutput`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskOutput) with field(s):
-    ///   - [`task(Option<BatchDeleteConfigurationTask>)`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskOutput::task): <p> The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed. </p>
+    ///   - [`task(Option<BatchDeleteConfigurationTask>)`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskOutput::task): <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchDeleteConfigurationTaskError>`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError)
     pub fn describe_batch_delete_configuration_task(
         &self,

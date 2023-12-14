@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>The <code>UntagResource</code> operation removes the association of the tag with the Amazon Managed Grafana resource. </p>
+/// <p>The <code>UntagResource</code> operation removes the association of the tag with the Amazon Managed Grafana resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the resource the tag association is removed from. </p>
+    /// <p>The ARN of the resource the tag association is removed from.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The ARN of the resource the tag association is removed from. </p>
+    /// <p>The ARN of the resource the tag association is removed from.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The ARN of the resource the tag association is removed from. </p>
+    /// <p>The ARN of the resource the tag association is removed from.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

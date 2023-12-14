@@ -11,9 +11,9 @@ pub struct CreateGameSessionQueueInput {
     pub player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     /// <p>Information to be added to all events that are related to this game session queue.</p>
     pub custom_event_data: ::std::option::Option<::std::string::String>,
@@ -43,11 +43,11 @@ impl CreateGameSessionQueueInput {
     pub fn destinations(&self) -> &[crate::types::GameSessionQueueDestination] {
         self.destinations.as_deref().unwrap_or_default()
     }
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn priority_configuration(&self) -> ::std::option::Option<&crate::types::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
@@ -157,31 +157,31 @@ impl CreateGameSessionQueueInputBuilder {
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>> {
         &self.destinations
     }
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub fn filter_configuration(mut self, input: crate::types::FilterConfiguration) -> Self {
         self.filter_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
         self.filter_configuration = input;
         self
     }
-    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn priority_configuration(mut self, input: crate::types::PriorityConfiguration) -> Self {
         self.priority_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
         self.priority_configuration = input;
         self
     }
-    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
+    /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
         &self.priority_configuration
     }

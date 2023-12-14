@@ -6,7 +6,7 @@
 pub struct SetIdentityDkimEnabledInput {
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
     pub identity: ::std::option::Option<::std::string::String>,
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
     pub dkim_enabled: ::std::option::Option<bool>,
 }
 impl SetIdentityDkimEnabledInput {
@@ -14,7 +14,7 @@ impl SetIdentityDkimEnabledInput {
     pub fn identity(&self) -> ::std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
     pub fn dkim_enabled(&self) -> ::std::option::Option<bool> {
         self.dkim_enabled
     }
@@ -49,18 +49,18 @@ impl SetIdentityDkimEnabledInputBuilder {
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
     /// This field is required.
     pub fn dkim_enabled(mut self, input: bool) -> Self {
         self.dkim_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
     pub fn set_dkim_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dkim_enabled = input;
         self
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it.</p>
     pub fn get_dkim_enabled(&self) -> &::std::option::Option<bool> {
         &self.dkim_enabled
     }

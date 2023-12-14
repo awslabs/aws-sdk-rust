@@ -18,10 +18,10 @@ pub struct Command {
     pub completed_at: ::std::option::Option<::std::string::String>,
     /// <p>The command status:</p>
     /// <ul>
-    /// <li> <p>failed</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>skipped</p> </li>
-    /// <li> <p>pending</p> </li>
+    /// <li><p>failed</p></li>
+    /// <li><p>successful</p></li>
+    /// <li><p>skipped</p></li>
+    /// <li><p>pending</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The command exit code.</p>
@@ -30,18 +30,18 @@ pub struct Command {
     pub log_url: ::std::option::Option<::std::string::String>,
     /// <p>The command type:</p>
     /// <ul>
-    /// <li> <p> <code>configure</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>execute_recipes</code> </p> </li>
-    /// <li> <p> <code>install_dependencies</code> </p> </li>
-    /// <li> <p> <code>restart</code> </p> </li>
-    /// <li> <p> <code>rollback</code> </p> </li>
-    /// <li> <p> <code>setup</code> </p> </li>
-    /// <li> <p> <code>start</code> </p> </li>
-    /// <li> <p> <code>stop</code> </p> </li>
-    /// <li> <p> <code>undeploy</code> </p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// <li><p><code>configure</code></p></li>
+    /// <li><p><code>deploy</code></p></li>
+    /// <li><p><code>execute_recipes</code></p></li>
+    /// <li><p><code>install_dependencies</code></p></li>
+    /// <li><p><code>restart</code></p></li>
+    /// <li><p><code>rollback</code></p></li>
+    /// <li><p><code>setup</code></p></li>
+    /// <li><p><code>start</code></p></li>
+    /// <li><p><code>stop</code></p></li>
+    /// <li><p><code>undeploy</code></p></li>
+    /// <li><p><code>update_custom_cookbooks</code></p></li>
+    /// <li><p><code>update_dependencies</code></p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
@@ -72,10 +72,10 @@ impl Command {
     }
     /// <p>The command status:</p>
     /// <ul>
-    /// <li> <p>failed</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>skipped</p> </li>
-    /// <li> <p>pending</p> </li>
+    /// <li><p>failed</p></li>
+    /// <li><p>successful</p></li>
+    /// <li><p>skipped</p></li>
+    /// <li><p>pending</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -90,18 +90,18 @@ impl Command {
     }
     /// <p>The command type:</p>
     /// <ul>
-    /// <li> <p> <code>configure</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>execute_recipes</code> </p> </li>
-    /// <li> <p> <code>install_dependencies</code> </p> </li>
-    /// <li> <p> <code>restart</code> </p> </li>
-    /// <li> <p> <code>rollback</code> </p> </li>
-    /// <li> <p> <code>setup</code> </p> </li>
-    /// <li> <p> <code>start</code> </p> </li>
-    /// <li> <p> <code>stop</code> </p> </li>
-    /// <li> <p> <code>undeploy</code> </p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// <li><p><code>configure</code></p></li>
+    /// <li><p><code>deploy</code></p></li>
+    /// <li><p><code>execute_recipes</code></p></li>
+    /// <li><p><code>install_dependencies</code></p></li>
+    /// <li><p><code>restart</code></p></li>
+    /// <li><p><code>rollback</code></p></li>
+    /// <li><p><code>setup</code></p></li>
+    /// <li><p><code>start</code></p></li>
+    /// <li><p><code>stop</code></p></li>
+    /// <li><p><code>undeploy</code></p></li>
+    /// <li><p><code>update_custom_cookbooks</code></p></li>
+    /// <li><p><code>update_dependencies</code></p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -216,10 +216,10 @@ impl CommandBuilder {
     }
     /// <p>The command status:</p>
     /// <ul>
-    /// <li> <p>failed</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>skipped</p> </li>
-    /// <li> <p>pending</p> </li>
+    /// <li><p>failed</p></li>
+    /// <li><p>successful</p></li>
+    /// <li><p>skipped</p></li>
+    /// <li><p>pending</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -227,10 +227,10 @@ impl CommandBuilder {
     }
     /// <p>The command status:</p>
     /// <ul>
-    /// <li> <p>failed</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>skipped</p> </li>
-    /// <li> <p>pending</p> </li>
+    /// <li><p>failed</p></li>
+    /// <li><p>successful</p></li>
+    /// <li><p>skipped</p></li>
+    /// <li><p>pending</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -238,10 +238,10 @@ impl CommandBuilder {
     }
     /// <p>The command status:</p>
     /// <ul>
-    /// <li> <p>failed</p> </li>
-    /// <li> <p>successful</p> </li>
-    /// <li> <p>skipped</p> </li>
-    /// <li> <p>pending</p> </li>
+    /// <li><p>failed</p></li>
+    /// <li><p>successful</p></li>
+    /// <li><p>skipped</p></li>
+    /// <li><p>pending</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -276,18 +276,18 @@ impl CommandBuilder {
     }
     /// <p>The command type:</p>
     /// <ul>
-    /// <li> <p> <code>configure</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>execute_recipes</code> </p> </li>
-    /// <li> <p> <code>install_dependencies</code> </p> </li>
-    /// <li> <p> <code>restart</code> </p> </li>
-    /// <li> <p> <code>rollback</code> </p> </li>
-    /// <li> <p> <code>setup</code> </p> </li>
-    /// <li> <p> <code>start</code> </p> </li>
-    /// <li> <p> <code>stop</code> </p> </li>
-    /// <li> <p> <code>undeploy</code> </p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// <li><p><code>configure</code></p></li>
+    /// <li><p><code>deploy</code></p></li>
+    /// <li><p><code>execute_recipes</code></p></li>
+    /// <li><p><code>install_dependencies</code></p></li>
+    /// <li><p><code>restart</code></p></li>
+    /// <li><p><code>rollback</code></p></li>
+    /// <li><p><code>setup</code></p></li>
+    /// <li><p><code>start</code></p></li>
+    /// <li><p><code>stop</code></p></li>
+    /// <li><p><code>undeploy</code></p></li>
+    /// <li><p><code>update_custom_cookbooks</code></p></li>
+    /// <li><p><code>update_dependencies</code></p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -295,18 +295,18 @@ impl CommandBuilder {
     }
     /// <p>The command type:</p>
     /// <ul>
-    /// <li> <p> <code>configure</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>execute_recipes</code> </p> </li>
-    /// <li> <p> <code>install_dependencies</code> </p> </li>
-    /// <li> <p> <code>restart</code> </p> </li>
-    /// <li> <p> <code>rollback</code> </p> </li>
-    /// <li> <p> <code>setup</code> </p> </li>
-    /// <li> <p> <code>start</code> </p> </li>
-    /// <li> <p> <code>stop</code> </p> </li>
-    /// <li> <p> <code>undeploy</code> </p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// <li><p><code>configure</code></p></li>
+    /// <li><p><code>deploy</code></p></li>
+    /// <li><p><code>execute_recipes</code></p></li>
+    /// <li><p><code>install_dependencies</code></p></li>
+    /// <li><p><code>restart</code></p></li>
+    /// <li><p><code>rollback</code></p></li>
+    /// <li><p><code>setup</code></p></li>
+    /// <li><p><code>start</code></p></li>
+    /// <li><p><code>stop</code></p></li>
+    /// <li><p><code>undeploy</code></p></li>
+    /// <li><p><code>update_custom_cookbooks</code></p></li>
+    /// <li><p><code>update_dependencies</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -314,18 +314,18 @@ impl CommandBuilder {
     }
     /// <p>The command type:</p>
     /// <ul>
-    /// <li> <p> <code>configure</code> </p> </li>
-    /// <li> <p> <code>deploy</code> </p> </li>
-    /// <li> <p> <code>execute_recipes</code> </p> </li>
-    /// <li> <p> <code>install_dependencies</code> </p> </li>
-    /// <li> <p> <code>restart</code> </p> </li>
-    /// <li> <p> <code>rollback</code> </p> </li>
-    /// <li> <p> <code>setup</code> </p> </li>
-    /// <li> <p> <code>start</code> </p> </li>
-    /// <li> <p> <code>stop</code> </p> </li>
-    /// <li> <p> <code>undeploy</code> </p> </li>
-    /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
-    /// <li> <p> <code>update_dependencies</code> </p> </li>
+    /// <li><p><code>configure</code></p></li>
+    /// <li><p><code>deploy</code></p></li>
+    /// <li><p><code>execute_recipes</code></p></li>
+    /// <li><p><code>install_dependencies</code></p></li>
+    /// <li><p><code>restart</code></p></li>
+    /// <li><p><code>rollback</code></p></li>
+    /// <li><p><code>setup</code></p></li>
+    /// <li><p><code>start</code></p></li>
+    /// <li><p><code>stop</code></p></li>
+    /// <li><p><code>undeploy</code></p></li>
+    /// <li><p><code>update_custom_cookbooks</code></p></li>
+    /// <li><p><code>update_dependencies</code></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

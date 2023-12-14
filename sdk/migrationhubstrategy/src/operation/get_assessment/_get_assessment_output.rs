@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentOutput {
-    /// <p> The ID for the specific assessment task. </p>
+    /// <p>The ID for the specific assessment task.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p> Detailed information about the assessment. </p>
+    /// <p>Detailed information about the assessment.</p>
     pub data_collection_details: ::std::option::Option<crate::types::DataCollectionDetails>,
     /// <p>List of criteria for assessment.</p>
     pub assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
     _request_id: Option<String>,
 }
 impl GetAssessmentOutput {
-    /// <p> The ID for the specific assessment task. </p>
+    /// <p>The ID for the specific assessment task.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p> Detailed information about the assessment. </p>
+    /// <p>Detailed information about the assessment.</p>
     pub fn data_collection_details(&self) -> ::std::option::Option<&crate::types::DataCollectionDetails> {
         self.data_collection_details.as_ref()
     }
@@ -49,31 +49,31 @@ pub struct GetAssessmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAssessmentOutputBuilder {
-    /// <p> The ID for the specific assessment task. </p>
+    /// <p>The ID for the specific assessment task.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID for the specific assessment task. </p>
+    /// <p>The ID for the specific assessment task.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p> The ID for the specific assessment task. </p>
+    /// <p>The ID for the specific assessment task.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p> Detailed information about the assessment. </p>
+    /// <p>Detailed information about the assessment.</p>
     pub fn data_collection_details(mut self, input: crate::types::DataCollectionDetails) -> Self {
         self.data_collection_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Detailed information about the assessment. </p>
+    /// <p>Detailed information about the assessment.</p>
     pub fn set_data_collection_details(mut self, input: ::std::option::Option<crate::types::DataCollectionDetails>) -> Self {
         self.data_collection_details = input;
         self
     }
-    /// <p> Detailed information about the assessment. </p>
+    /// <p>Detailed information about the assessment.</p>
     pub fn get_data_collection_details(&self) -> &::std::option::Option<crate::types::DataCollectionDetails> {
         &self.data_collection_details
     }

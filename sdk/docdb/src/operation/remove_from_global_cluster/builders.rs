@@ -22,7 +22,7 @@ impl RemoveFromGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveFromGlobalCluster`.
 ///
-/// <p>Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary in a different region. </p> <note>
+/// <p>Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary in a different region.</p> <note>
 /// <p>This action only applies to Amazon DocumentDB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,31 +110,31 @@ impl RemoveFromGlobalClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster. </p>
+    /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.</p>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
-    /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster. </p>
+    /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.</p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
-    /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster. </p>
+    /// <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.</p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()
     }
-    /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </p>
+    /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster.</p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </p>
+    /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </p>
+    /// <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }

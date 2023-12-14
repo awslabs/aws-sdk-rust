@@ -17,13 +17,13 @@ pub struct CreateRouteOutput {
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application in which the route is created.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration for the URI path route type. </p>
+    /// <p>Configuration for the URI path route type.</p>
     pub uri_path_route: ::std::option::Option<crate::types::UriPathRouteInput>,
     /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
     pub state: ::std::option::Option<crate::types::RouteState>,
-    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the route is created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,7 +58,7 @@ impl CreateRouteOutput {
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>Configuration for the URI path route type. </p>
+    /// <p>Configuration for the URI path route type.</p>
     pub fn uri_path_route(&self) -> ::std::option::Option<&crate::types::UriPathRouteInput> {
         self.uri_path_route.as_ref()
     }
@@ -66,11 +66,11 @@ impl CreateRouteOutput {
     pub fn state(&self) -> ::std::option::Option<&crate::types::RouteState> {
         self.state.as_ref()
     }
-    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
@@ -227,17 +227,17 @@ impl CreateRouteOutputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>Configuration for the URI path route type. </p>
+    /// <p>Configuration for the URI path route type.</p>
     pub fn uri_path_route(mut self, input: crate::types::UriPathRouteInput) -> Self {
         self.uri_path_route = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration for the URI path route type. </p>
+    /// <p>Configuration for the URI path route type.</p>
     pub fn set_uri_path_route(mut self, input: ::std::option::Option<crate::types::UriPathRouteInput>) -> Self {
         self.uri_path_route = input;
         self
     }
-    /// <p>Configuration for the URI path route type. </p>
+    /// <p>Configuration for the URI path route type.</p>
     pub fn get_uri_path_route(&self) -> &::std::option::Option<crate::types::UriPathRouteInput> {
         &self.uri_path_route
     }
@@ -259,33 +259,33 @@ impl CreateRouteOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>A timestamp that indicates when the route was last updated. </p>
+    /// <p>A timestamp that indicates when the route was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }

@@ -10,17 +10,17 @@ pub struct Scope {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p> </li>
-    /// <li> <p> <code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p> </li>
+    /// <li><p><code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p></li>
+    /// <li><p><code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p></li>
+    /// <li><p><code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::ScopeName>,
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p> </li>
-    /// <li> <p> <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p> </li>
+    /// <li><p><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p></li>
+    /// <li><p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
+    /// <li><p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub value: ::std::option::Option<::std::string::String>,
@@ -29,9 +29,9 @@ impl Scope {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p> </li>
-    /// <li> <p> <code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p> </li>
+    /// <li><p><code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p></li>
+    /// <li><p><code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p></li>
+    /// <li><p><code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::ScopeName> {
         self.name.as_ref()
@@ -39,9 +39,9 @@ impl Scope {
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p> </li>
-    /// <li> <p> <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p> </li>
+    /// <li><p><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p></li>
+    /// <li><p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
+    /// <li><p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -66,9 +66,9 @@ impl ScopeBuilder {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p> </li>
-    /// <li> <p> <code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p> </li>
+    /// <li><p><code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p></li>
+    /// <li><p><code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p></li>
+    /// <li><p><code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::ScopeName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -77,9 +77,9 @@ impl ScopeBuilder {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p> </li>
-    /// <li> <p> <code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p> </li>
+    /// <li><p><code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p></li>
+    /// <li><p><code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p></li>
+    /// <li><p><code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ScopeName>) -> Self {
         self.name = input;
@@ -88,9 +88,9 @@ impl ScopeBuilder {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p> </li>
-    /// <li> <p> <code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p> </li>
+    /// <li><p><code>Organization</code> - Specifies that the recommendation preference applies at the organization level, for all member accounts of an organization.</p></li>
+    /// <li><p><code>AccountId</code> - Specifies that the recommendation preference applies at the account level, for all resources of a given resource type in an account.</p></li>
+    /// <li><p><code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ScopeName> {
         &self.name
@@ -98,9 +98,9 @@ impl ScopeBuilder {
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p> </li>
-    /// <li> <p> <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p> </li>
+    /// <li><p><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p></li>
+    /// <li><p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
+    /// <li><p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,9 +110,9 @@ impl ScopeBuilder {
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p> </li>
-    /// <li> <p> <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p> </li>
+    /// <li><p><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p></li>
+    /// <li><p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
+    /// <li><p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -122,9 +122,9 @@ impl ScopeBuilder {
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
     /// <ul>
-    /// <li> <p> <code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p> </li>
-    /// <li> <p> <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p> </li>
+    /// <li><p><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</p></li>
+    /// <li><p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
+    /// <li><p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {

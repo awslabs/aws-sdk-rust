@@ -260,18 +260,18 @@ pub enum BatchGetDeploymentTargetsError {
     DeploymentIdRequiredException(crate::types::error::DeploymentIdRequiredException),
     /// <p>The specified deployment has not started.</p>
     DeploymentNotStartedException(crate::types::error::DeploymentNotStartedException),
-    /// <p> The provided target ID does not belong to the attempted deployment. </p>
+    /// <p>The provided target ID does not belong to the attempted deployment.</p>
     DeploymentTargetDoesNotExistException(crate::types::error::DeploymentTargetDoesNotExistException),
-    /// <p> A deployment target ID was not provided. </p>
+    /// <p>A deployment target ID was not provided.</p>
     DeploymentTargetIdRequiredException(crate::types::error::DeploymentTargetIdRequiredException),
-    /// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
+    /// <p>The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments.</p>
     DeploymentTargetListSizeExceededException(crate::types::error::DeploymentTargetListSizeExceededException),
     /// <p>The specified instance does not exist in the deployment group.</p>
     #[deprecated(note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead.")]
     InstanceDoesNotExistException(crate::types::error::InstanceDoesNotExistException),
     /// <p>At least one of the deployment IDs was specified in an invalid format.</p>
     InvalidDeploymentIdException(crate::types::error::InvalidDeploymentIdException),
-    /// <p> The target ID provided was not valid. </p>
+    /// <p>The target ID provided was not valid.</p>
     InvalidDeploymentTargetIdException(crate::types::error::InvalidDeploymentTargetIdException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

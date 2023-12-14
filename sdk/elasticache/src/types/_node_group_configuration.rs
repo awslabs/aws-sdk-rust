@@ -7,7 +7,7 @@ pub struct NodeGroupConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
-    /// <p>Example: <code>"0-3999"</code> </p>
+    /// <p>Example: <code>"0-3999"</code></p>
     pub slots: ::std::option::Option<::std::string::String>,
     /// <p>The number of read replica nodes in this node group (shard).</p>
     pub replica_count: ::std::option::Option<i32>,
@@ -26,7 +26,7 @@ impl NodeGroupConfiguration {
         self.node_group_id.as_deref()
     }
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
-    /// <p>Example: <code>"0-3999"</code> </p>
+    /// <p>Example: <code>"0-3999"</code></p>
     pub fn slots(&self) -> ::std::option::Option<&str> {
         self.slots.as_deref()
     }
@@ -90,19 +90,19 @@ impl NodeGroupConfigurationBuilder {
         &self.node_group_id
     }
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
-    /// <p>Example: <code>"0-3999"</code> </p>
+    /// <p>Example: <code>"0-3999"</code></p>
     pub fn slots(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slots = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
-    /// <p>Example: <code>"0-3999"</code> </p>
+    /// <p>Example: <code>"0-3999"</code></p>
     pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slots = input;
         self
     }
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
-    /// <p>Example: <code>"0-3999"</code> </p>
+    /// <p>Example: <code>"0-3999"</code></p>
     pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
         &self.slots
     }

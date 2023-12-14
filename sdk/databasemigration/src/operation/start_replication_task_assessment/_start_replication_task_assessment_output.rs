@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentOutput {
-    /// <p> The assessed replication task. </p>
+    /// <p>The assessed replication task.</p>
     pub replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
 }
 impl StartReplicationTaskAssessmentOutput {
-    /// <p> The assessed replication task. </p>
+    /// <p>The assessed replication task.</p>
     pub fn replication_task(&self) -> ::std::option::Option<&crate::types::ReplicationTask> {
         self.replication_task.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct StartReplicationTaskAssessmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartReplicationTaskAssessmentOutputBuilder {
-    /// <p> The assessed replication task. </p>
+    /// <p>The assessed replication task.</p>
     pub fn replication_task(mut self, input: crate::types::ReplicationTask) -> Self {
         self.replication_task = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The assessed replication task. </p>
+    /// <p>The assessed replication task.</p>
     pub fn set_replication_task(mut self, input: ::std::option::Option<crate::types::ReplicationTask>) -> Self {
         self.replication_task = input;
         self
     }
-    /// <p> The assessed replication task. </p>
+    /// <p>The assessed replication task.</p>
     pub fn get_replication_task(&self) -> &::std::option::Option<crate::types::ReplicationTask> {
         &self.replication_task
     }

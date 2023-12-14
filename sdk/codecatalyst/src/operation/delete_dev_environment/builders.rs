@@ -22,7 +22,7 @@ impl DeleteDevEnvironmentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDevEnvironment`.
 ///
-/// <p>Deletes a Dev Environment. </p>
+/// <p>Deletes a Dev Environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDevEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

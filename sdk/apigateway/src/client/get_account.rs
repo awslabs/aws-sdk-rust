@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_account::builders::GetAccountFluentBuilder::send) it.
     /// - On success, responds with [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput) with field(s):
-    ///   - [`cloudwatch_role_arn(Option<String>)`](crate::operation::get_account::GetAccountOutput::cloudwatch_role_arn): <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
+    ///   - [`cloudwatch_role_arn(Option<String>)`](crate::operation::get_account::GetAccountOutput::cloudwatch_role_arn): <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     ///   - [`throttle_settings(Option<ThrottleSettings>)`](crate::operation::get_account::GetAccountOutput::throttle_settings): <p>Specifies the API request limits configured for the current Account.</p>
     ///   - [`features(Option<Vec::<String>>)`](crate::operation::get_account::GetAccountOutput::features): <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
     ///   - [`api_key_version(Option<String>)`](crate::operation::get_account::GetAccountOutput::api_key_version): <p>The version of the API keys used for the account.</p>

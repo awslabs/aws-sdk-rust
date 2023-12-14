@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentChild {
-    /// <p>The type of the child component. </p>
+    /// <p>The type of the child component.</p>
     pub component_type: ::std::string::String,
     /// <p>The name of the child component.</p>
     pub name: ::std::string::String,
@@ -18,7 +18,7 @@ pub struct ComponentChild {
     pub source_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentChild {
-    /// <p>The type of the child component. </p>
+    /// <p>The type of the child component.</p>
     pub fn component_type(&self) -> &str {
         use std::ops::Deref;
         self.component_type.deref()
@@ -66,18 +66,18 @@ pub struct ComponentChildBuilder {
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentChildBuilder {
-    /// <p>The type of the child component. </p>
+    /// <p>The type of the child component.</p>
     /// This field is required.
     pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the child component. </p>
+    /// <p>The type of the child component.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type = input;
         self
     }
-    /// <p>The type of the child component. </p>
+    /// <p>The type of the child component.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_type
     }

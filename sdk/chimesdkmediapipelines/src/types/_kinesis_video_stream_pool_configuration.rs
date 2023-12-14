@@ -10,7 +10,7 @@ pub struct KinesisVideoStreamPoolConfiguration {
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the video stream pool in the configuration.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the video stream pool in the configuration. </p>
+    /// <p>The status of the video stream pool in the configuration.</p>
     pub pool_status: ::std::option::Option<crate::types::KinesisVideoStreamPoolStatus>,
     /// <p>The size of the video stream pool in the configuration.</p>
     pub pool_size: ::std::option::Option<i32>,
@@ -34,7 +34,7 @@ impl KinesisVideoStreamPoolConfiguration {
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
-    /// <p>The status of the video stream pool in the configuration. </p>
+    /// <p>The status of the video stream pool in the configuration.</p>
     pub fn pool_status(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamPoolStatus> {
         self.pool_status.as_ref()
     }
@@ -132,17 +132,17 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id
     }
-    /// <p>The status of the video stream pool in the configuration. </p>
+    /// <p>The status of the video stream pool in the configuration.</p>
     pub fn pool_status(mut self, input: crate::types::KinesisVideoStreamPoolStatus) -> Self {
         self.pool_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the video stream pool in the configuration. </p>
+    /// <p>The status of the video stream pool in the configuration.</p>
     pub fn set_pool_status(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamPoolStatus>) -> Self {
         self.pool_status = input;
         self
     }
-    /// <p>The status of the video stream pool in the configuration. </p>
+    /// <p>The status of the video stream pool in the configuration.</p>
     pub fn get_pool_status(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamPoolStatus> {
         &self.pool_status
     }

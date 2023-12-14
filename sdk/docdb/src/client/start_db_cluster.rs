@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartDBCluster`](crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::set_db_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p><br>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::set_db_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code></p><br>
     /// - On success, responds with [`StartDbClusterOutput`](crate::operation::start_db_cluster::StartDbClusterOutput) with field(s):
-    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::start_db_cluster::StartDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::start_db_cluster::StartDbClusterOutput::db_cluster): <p>Detailed information about a cluster.</p>
     /// - On failure, responds with [`SdkError<StartDBClusterError>`](crate::operation::start_db_cluster::StartDBClusterError)
     pub fn start_db_cluster(&self) -> crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder {
         crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::new(self.handle.clone())

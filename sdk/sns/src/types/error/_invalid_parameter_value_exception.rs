@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidParameterValueException {
-    /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
+    /// <p>The parameter of an entry in a request doesn't abide by the specification.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -52,17 +52,17 @@ pub struct InvalidParameterValueExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidParameterValueExceptionBuilder {
-    /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
+    /// <p>The parameter of an entry in a request doesn't abide by the specification.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
+    /// <p>The parameter of an entry in a request doesn't abide by the specification.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>The parameter of an entry in a request doesn't abide by the specification. </p>
+    /// <p>The parameter of an entry in a request doesn't abide by the specification.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

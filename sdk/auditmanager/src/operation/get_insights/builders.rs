@@ -22,7 +22,7 @@ impl GetInsightsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetInsights`.
 ///
-/// <p>Gets the latest analytics data for all your current active assessments. </p>
+/// <p>Gets the latest analytics data for all your current active assessments.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

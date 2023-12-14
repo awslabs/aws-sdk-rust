@@ -29,9 +29,9 @@ pub struct UpdateKxEnvironmentNetworkOutput {
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfiguration>,
     /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
     pub custom_dns_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>>,
-    /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
+    /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp at which the kdb environment was updated. </p>
+    /// <p>The timestamp at which the kdb environment was updated.</p>
     pub update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
     pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -92,11 +92,11 @@ impl UpdateKxEnvironmentNetworkOutput {
     pub fn custom_dns_configuration(&self) -> &[crate::types::CustomDnsServer] {
         self.custom_dns_configuration.as_deref().unwrap_or_default()
     }
-    /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
+    /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
-    /// <p>The timestamp at which the kdb environment was updated. </p>
+    /// <p>The timestamp at which the kdb environment was updated.</p>
     pub fn update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_timestamp.as_ref()
     }
@@ -330,31 +330,31 @@ impl UpdateKxEnvironmentNetworkOutputBuilder {
     pub fn get_custom_dns_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
         &self.custom_dns_configuration
     }
-    /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
+    /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
+    /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
-    /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
+    /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_timestamp
     }
-    /// <p>The timestamp at which the kdb environment was updated. </p>
+    /// <p>The timestamp at which the kdb environment was updated.</p>
     pub fn update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the kdb environment was updated. </p>
+    /// <p>The timestamp at which the kdb environment was updated.</p>
     pub fn set_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_timestamp = input;
         self
     }
-    /// <p>The timestamp at which the kdb environment was updated. </p>
+    /// <p>The timestamp at which the kdb environment was updated.</p>
     pub fn get_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_timestamp
     }

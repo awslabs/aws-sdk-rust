@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBuildOutput {
-    /// <p>The newly created build resource, including a unique build IDs and status. </p>
+    /// <p>The newly created build resource, including a unique build IDs and status.</p>
     ///
     /// _Note: This member has been renamed from `build`._
     pub build_value: ::std::option::Option<crate::types::Build>,
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
     pub upload_credentials: ::std::option::Option<crate::types::AwsCredentials>,
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,
 }
 impl CreateBuildOutput {
-    /// <p>The newly created build resource, including a unique build IDs and status. </p>
+    /// <p>The newly created build resource, including a unique build IDs and status.</p>
     ///
     /// _Note: This member has been renamed from `build`._
     pub fn build_value(&self) -> ::std::option::Option<&crate::types::Build> {
         self.build_value.as_ref()
     }
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
     pub fn upload_credentials(&self) -> ::std::option::Option<&crate::types::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
@@ -61,31 +61,31 @@ pub struct CreateBuildOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateBuildOutputBuilder {
-    /// <p>The newly created build resource, including a unique build IDs and status. </p>
+    /// <p>The newly created build resource, including a unique build IDs and status.</p>
     pub fn build_value(mut self, input: crate::types::Build) -> Self {
         self.build_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The newly created build resource, including a unique build IDs and status. </p>
+    /// <p>The newly created build resource, including a unique build IDs and status.</p>
     pub fn set_build(mut self, input: ::std::option::Option<crate::types::Build>) -> Self {
         self.build_value = input;
         self
     }
-    /// <p>The newly created build resource, including a unique build IDs and status. </p>
+    /// <p>The newly created build resource, including a unique build IDs and status.</p>
     pub fn get_build(&self) -> &::std::option::Option<crate::types::Build> {
         &self.build_value
     }
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
     pub fn upload_credentials(mut self, input: crate::types::AwsCredentials) -> Self {
         self.upload_credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
     pub fn set_upload_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
         self.upload_credentials = input;
         self
     }
-    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
+    /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
     pub fn get_upload_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
         &self.upload_credentials
     }

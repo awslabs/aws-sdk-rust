@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`environment_id(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_id): <p>The unique identifier of the environment.</p>
     ///   - [`network_fabric_type(Option<NetworkFabricType>)`](crate::operation::create_environment::CreateEnvironmentOutput::network_fabric_type): <p>The network fabric type of the environment.</p>
     ///   - [`owner_account_id(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::owner_account_id): <p>The Amazon Web Services account ID of environment owner.</p>
-    ///   - [`state(Option<EnvironmentState>)`](crate::operation::create_environment::CreateEnvironmentOutput::state): <p>The current state of the environment. </p>
+    ///   - [`state(Option<EnvironmentState>)`](crate::operation::create_environment::CreateEnvironmentOutput::state): <p>The current state of the environment.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_environment::CreateEnvironmentOutput::tags): <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::create_environment::CreateEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated.</p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::create_environment::CreateEnvironmentOutput::created_time): <p>A timestamp that indicates when the environment is created.</p>

@@ -8,7 +8,7 @@ pub struct RollbackInfo {
     pub rollback_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
     pub rollback_triggering_deployment_id: ::std::option::Option<::std::string::String>,
-    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded).</p>
     pub rollback_message: ::std::option::Option<::std::string::String>,
 }
 impl RollbackInfo {
@@ -20,7 +20,7 @@ impl RollbackInfo {
     pub fn rollback_triggering_deployment_id(&self) -> ::std::option::Option<&str> {
         self.rollback_triggering_deployment_id.as_deref()
     }
-    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded).</p>
     pub fn rollback_message(&self) -> ::std::option::Option<&str> {
         self.rollback_message.as_deref()
     }
@@ -69,17 +69,17 @@ impl RollbackInfoBuilder {
     pub fn get_rollback_triggering_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rollback_triggering_deployment_id
     }
-    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded).</p>
     pub fn rollback_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rollback_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded).</p>
     pub fn set_rollback_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rollback_message = input;
         self
     }
-    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
+    /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded).</p>
     pub fn get_rollback_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.rollback_message
     }

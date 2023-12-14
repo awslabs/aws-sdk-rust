@@ -37,7 +37,7 @@ pub struct HyperParameterTrainingJobDefinition {
     pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
     pub enable_managed_spot_training: ::std::option::Option<bool>,
-    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
@@ -112,7 +112,7 @@ impl HyperParameterTrainingJobDefinition {
     pub fn enable_managed_spot_training(&self) -> ::std::option::Option<bool> {
         self.enable_managed_spot_training
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     pub fn checkpoint_config(&self) -> ::std::option::Option<&crate::types::CheckpointConfig> {
         self.checkpoint_config.as_ref()
     }
@@ -396,17 +396,17 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn get_enable_managed_spot_training(&self) -> &::std::option::Option<bool> {
         &self.enable_managed_spot_training
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     pub fn checkpoint_config(mut self, input: crate::types::CheckpointConfig) -> Self {
         self.checkpoint_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     pub fn set_checkpoint_config(mut self, input: ::std::option::Option<crate::types::CheckpointConfig>) -> Self {
         self.checkpoint_config = input;
         self
     }
-    /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
+    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::CheckpointConfig> {
         &self.checkpoint_config
     }

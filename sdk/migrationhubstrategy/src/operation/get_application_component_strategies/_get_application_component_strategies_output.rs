@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesOutput {
-    /// <p> A list of application component strategy recommendations. </p>
+    /// <p>A list of application component strategy recommendations.</p>
     pub application_component_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
     _request_id: Option<String>,
 }
 impl GetApplicationComponentStrategiesOutput {
-    /// <p> A list of application component strategy recommendations. </p>
+    /// <p>A list of application component strategy recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_component_strategies.is_none()`.
     pub fn application_component_strategies(&self) -> &[crate::types::ApplicationComponentStrategy] {
@@ -39,14 +39,14 @@ impl GetApplicationComponentStrategiesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_component_strategies`](Self::set_application_component_strategies).
     ///
-    /// <p> A list of application component strategy recommendations. </p>
+    /// <p>A list of application component strategy recommendations.</p>
     pub fn application_component_strategies(mut self, input: crate::types::ApplicationComponentStrategy) -> Self {
         let mut v = self.application_component_strategies.unwrap_or_default();
         v.push(input);
         self.application_component_strategies = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of application component strategy recommendations. </p>
+    /// <p>A list of application component strategy recommendations.</p>
     pub fn set_application_component_strategies(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
@@ -54,7 +54,7 @@ impl GetApplicationComponentStrategiesOutputBuilder {
         self.application_component_strategies = input;
         self
     }
-    /// <p> A list of application component strategy recommendations. </p>
+    /// <p>A list of application component strategy recommendations.</p>
     pub fn get_application_component_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>> {
         &self.application_component_strategies
     }

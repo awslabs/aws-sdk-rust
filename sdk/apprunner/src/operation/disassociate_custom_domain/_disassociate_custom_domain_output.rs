@@ -9,7 +9,7 @@ pub struct DisassociateCustomDomainOutput {
     pub service_arn: ::std::string::String,
     /// <p>A description of the domain name that's being disassociated.</p>
     pub custom_domain: ::std::option::Option<crate::types::CustomDomain>,
-    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    /// <p>DNS Target records for the custom domains of this Amazon VPC.</p>
     pub vpc_dns_targets: ::std::vec::Vec<crate::types::VpcDnsTarget>,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl DisassociateCustomDomainOutput {
     pub fn custom_domain(&self) -> ::std::option::Option<&crate::types::CustomDomain> {
         self.custom_domain.as_ref()
     }
-    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    /// <p>DNS Target records for the custom domains of this Amazon VPC.</p>
     pub fn vpc_dns_targets(&self) -> &[crate::types::VpcDnsTarget] {
         use std::ops::Deref;
         self.vpc_dns_targets.deref()
@@ -106,19 +106,19 @@ impl DisassociateCustomDomainOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_dns_targets`](Self::set_vpc_dns_targets).
     ///
-    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    /// <p>DNS Target records for the custom domains of this Amazon VPC.</p>
     pub fn vpc_dns_targets(mut self, input: crate::types::VpcDnsTarget) -> Self {
         let mut v = self.vpc_dns_targets.unwrap_or_default();
         v.push(input);
         self.vpc_dns_targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    /// <p>DNS Target records for the custom domains of this Amazon VPC.</p>
     pub fn set_vpc_dns_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>) -> Self {
         self.vpc_dns_targets = input;
         self
     }
-    /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+    /// <p>DNS Target records for the custom domains of this Amazon VPC.</p>
     pub fn get_vpc_dns_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>> {
         &self.vpc_dns_targets
     }

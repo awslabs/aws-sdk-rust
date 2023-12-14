@@ -9,7 +9,7 @@ pub struct Place {
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
     pub geometry: ::std::option::Option<crate::types::PlaceGeometry>,
-    /// <p>The numerical portion of an address, such as a building number. </p>
+    /// <p>The numerical portion of an address, such as a building number.</p>
     pub address_number: ::std::option::Option<::std::string::String>,
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
     pub street: ::std::option::Option<::std::string::String>,
@@ -23,12 +23,12 @@ pub struct Place {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
     pub country: ::std::option::Option<::std::string::String>,
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
     pub postal_code: ::std::option::Option<::std::string::String>,
-    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-    /// <p> <code>False</code> if the Place is a known place.</p>
+    /// <p><code>True</code> if the result is interpolated from other known places.</p>
+    /// <p><code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
     pub interpolated: ::std::option::Option<bool>,
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
@@ -59,7 +59,7 @@ impl Place {
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::PlaceGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>The numerical portion of an address, such as a building number. </p>
+    /// <p>The numerical portion of an address, such as a building number.</p>
     pub fn address_number(&self) -> ::std::option::Option<&str> {
         self.address_number.as_deref()
     }
@@ -87,14 +87,14 @@ impl Place {
     pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
     pub fn postal_code(&self) -> ::std::option::Option<&str> {
         self.postal_code.as_deref()
     }
-    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-    /// <p> <code>False</code> if the Place is a known place.</p>
+    /// <p><code>True</code> if the result is interpolated from other known places.</p>
+    /// <p><code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
     pub fn interpolated(&self) -> ::std::option::Option<bool> {
         self.interpolated
     }
@@ -193,17 +193,17 @@ impl PlaceBuilder {
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::PlaceGeometry> {
         &self.geometry
     }
-    /// <p>The numerical portion of an address, such as a building number. </p>
+    /// <p>The numerical portion of an address, such as a building number.</p>
     pub fn address_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The numerical portion of an address, such as a building number. </p>
+    /// <p>The numerical portion of an address, such as a building number.</p>
     pub fn set_address_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_number = input;
         self
     }
-    /// <p>The numerical portion of an address, such as a building number. </p>
+    /// <p>The numerical portion of an address, such as a building number.</p>
     pub fn get_address_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.address_number
     }
@@ -291,40 +291,40 @@ impl PlaceBuilder {
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
     }
-    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
+    /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.postal_code
     }
-    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-    /// <p> <code>False</code> if the Place is a known place.</p>
+    /// <p><code>True</code> if the result is interpolated from other known places.</p>
+    /// <p><code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
     pub fn interpolated(mut self, input: bool) -> Self {
         self.interpolated = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-    /// <p> <code>False</code> if the Place is a known place.</p>
+    /// <p><code>True</code> if the result is interpolated from other known places.</p>
+    /// <p><code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
     pub fn set_interpolated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.interpolated = input;
         self
     }
-    /// <p> <code>True</code> if the result is interpolated from other known places.</p>
-    /// <p> <code>False</code> if the Place is a known place.</p>
+    /// <p><code>True</code> if the result is interpolated from other known places.</p>
+    /// <p><code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
-    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
+    /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
     pub fn get_interpolated(&self) -> &::std::option::Option<bool> {
         &self.interpolated
     }

@@ -128,35 +128,35 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
     }
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
-    /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+    /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.manual_snapshot_retention_period(input);
         self
     }
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
-    /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+    /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
-    /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+    /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option.</p>
     pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_manual_snapshot_retention_period()
     }
-    /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
+    /// <p>A boolean value indicating whether to override an exception if the retention period has passed.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
-    /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
+    /// <p>A boolean value indicating whether to override an exception if the retention period has passed.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
-    /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
+    /// <p>A boolean value indicating whether to override an exception if the retention period has passed.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }

@@ -9,8 +9,8 @@ pub struct UpdateIpSetInput {
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
+    /// <li><p><code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code></p></li>
+    /// <li><p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>,
@@ -26,8 +26,8 @@ impl UpdateIpSetInput {
     }
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
+    /// <li><p><code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code></p></li>
+    /// <li><p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     ///
@@ -88,8 +88,8 @@ impl UpdateIpSetInputBuilder {
     ///
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
+    /// <li><p><code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code></p></li>
+    /// <li><p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub fn updates(mut self, input: crate::types::IpSetUpdate) -> Self {
@@ -100,8 +100,8 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
+    /// <li><p><code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code></p></li>
+    /// <li><p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>) -> Self {
@@ -110,8 +110,8 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
-    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
+    /// <li><p><code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code></p></li>
+    /// <li><p><code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code></p></li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>> {

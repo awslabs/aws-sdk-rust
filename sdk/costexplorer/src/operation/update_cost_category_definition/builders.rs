@@ -154,17 +154,17 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     pub fn rules(mut self, input: crate::types::CostCategoryRule) -> Self {
         self.inner = self.inner.rules(input);
         self
     }
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
-    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
+    /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>.</p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>> {
         self.inner.get_rules()
     }
@@ -186,17 +186,17 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
     ///
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     pub fn split_charge_rules(mut self, input: crate::types::CostCategorySplitChargeRule) -> Self {
         self.inner = self.inner.split_charge_rules(input);
         self
     }
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
         self.inner = self.inner.set_split_charge_rules(input);
         self
     }
-    /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
+    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
     pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
         self.inner.get_split_charge_rules()
     }

@@ -114,59 +114,59 @@ impl ListElasticsearchInstanceTypesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator {
         crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
+    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed.</p>
     pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.elasticsearch_version(input.into());
         self
     }
-    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
+    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed.</p>
     pub fn set_elasticsearch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_elasticsearch_version(input);
         self
     }
-    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
+    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed.</p>
     pub fn get_elasticsearch_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_elasticsearch_version()
     }
-    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
+    /// <p>Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
+    /// <p>Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
+    /// <p>Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

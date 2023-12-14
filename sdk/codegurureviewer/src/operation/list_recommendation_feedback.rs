@@ -298,7 +298,7 @@ pub enum ListRecommendationFeedbackError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p> The resource specified in the request was not found. </p>
+    /// <p>The resource specified in the request was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

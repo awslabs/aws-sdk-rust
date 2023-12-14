@@ -11,7 +11,7 @@ pub struct Setting {
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
-    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    /// <p><code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
     pub r#type: ::std::option::Option<crate::types::SettingType>,
 }
 impl Setting {
@@ -28,7 +28,7 @@ impl Setting {
         self.principal_arn.as_deref()
     }
     /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
-    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    /// <p><code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SettingType> {
         self.r#type.as_ref()
     }
@@ -93,19 +93,19 @@ impl SettingBuilder {
         &self.principal_arn
     }
     /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
-    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    /// <p><code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
     pub fn r#type(mut self, input: crate::types::SettingType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
-    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    /// <p><code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SettingType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
-    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    /// <p><code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SettingType> {
         &self.r#type
     }

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`cname_prefix(impl Into<String>)`](crate::operation::check_dns_availability::builders::CheckDNSAvailabilityFluentBuilder::cname_prefix) / [`set_cname_prefix(Option<String>)`](crate::operation::check_dns_availability::builders::CheckDNSAvailabilityFluentBuilder::set_cname_prefix):<br>required: **true**<br><p>The prefix used when this CNAME is reserved.</p><br>
     /// - On success, responds with [`CheckDnsAvailabilityOutput`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput) with field(s):
-    ///   - [`available(Option<bool>)`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput::available): <p>Indicates if the specified CNAME is available:</p>  <ul>   <li> <p> <code>true</code> : The CNAME is available.</p> </li>   <li> <p> <code>false</code> : The CNAME is not available.</p> </li>  </ul>
+    ///   - [`available(Option<bool>)`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput::available): <p>Indicates if the specified CNAME is available:</p> <ul>  <li><p><code>true</code> : The CNAME is available.</p></li>  <li><p><code>false</code> : The CNAME is not available.</p></li> </ul>
     ///   - [`fully_qualified_cname(Option<String>)`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput::fully_qualified_cname): <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     /// - On failure, responds with [`SdkError<CheckDNSAvailabilityError>`](crate::operation::check_dns_availability::CheckDNSAvailabilityError)
     pub fn check_dns_availability(&self) -> crate::operation::check_dns_availability::builders::CheckDNSAvailabilityFluentBuilder {

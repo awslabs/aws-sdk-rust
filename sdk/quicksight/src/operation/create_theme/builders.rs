@@ -109,17 +109,17 @@ impl CreateThemeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
@@ -151,17 +151,17 @@ impl CreateThemeFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_theme_id(input.into());
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn set_base_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_theme_id(input);
         self
     }
-    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.</p>
     pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_base_theme_id()
     }
@@ -197,17 +197,17 @@ impl CreateThemeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         self.inner = self.inner.permissions(input);
         self
     }
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
-    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    /// <p>A valid grouping of resource permissions to apply to the new theme.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_permissions()
     }

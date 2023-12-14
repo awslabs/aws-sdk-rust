@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsParameters {
-    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task.</p>
     pub task_definition_arn: ::std::string::String,
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
     pub task_count: ::std::option::Option<i32>,
@@ -19,17 +19,17 @@ pub struct EcsParameters {
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The capacity provider strategy to use for the task.</p>
-    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide.</p>
     pub enable_ecs_managed_tags: bool,
     /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
     pub enable_execute_command: bool,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.</p>
     pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>The reference ID to use for the task.</p>
     pub reference_id: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ pub struct EcsParameters {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsParameters {
-    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task.</p>
     pub fn task_definition_arn(&self) -> &str {
         use std::ops::Deref;
         self.task_definition_arn.deref()
@@ -65,13 +65,13 @@ impl EcsParameters {
         self.group.as_deref()
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
     pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
         self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide.</p>
     pub fn enable_ecs_managed_tags(&self) -> bool {
         self.enable_ecs_managed_tags
     }
@@ -85,13 +85,13 @@ impl EcsParameters {
     pub fn placement_constraints(&self) -> &[crate::types::PlacementConstraint] {
         self.placement_constraints.as_deref().unwrap_or_default()
     }
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_strategy.is_none()`.
     pub fn placement_strategy(&self) -> &[crate::types::PlacementStrategy] {
         self.placement_strategy.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action.</p>
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
@@ -133,18 +133,18 @@ pub struct EcsParametersBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsParametersBuilder {
-    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task.</p>
     /// This field is required.
     pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task.</p>
     pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition_arn = input;
         self
     }
-    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task.</p>
     pub fn get_task_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_definition_arn
     }
@@ -229,7 +229,7 @@ impl EcsParametersBuilder {
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
     ///
     /// <p>The capacity provider strategy to use for the task.</p>
-    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
         v.push(input);
@@ -237,7 +237,7 @@ impl EcsParametersBuilder {
         self
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
@@ -246,21 +246,21 @@ impl EcsParametersBuilder {
         self
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
-    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
         self.enable_ecs_managed_tags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide.</p>
     pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_ecs_managed_tags = input;
         self
     }
-    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide.</p>
     pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
         &self.enable_ecs_managed_tags
     }
@@ -302,33 +302,33 @@ impl EcsParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
     ///
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.</p>
     pub fn placement_strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
         let mut v = self.placement_strategy.unwrap_or_default();
         v.push(input);
         self.placement_strategy = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.</p>
     pub fn set_placement_strategy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>) -> Self {
         self.placement_strategy = input;
         self
     }
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task.</p>
     pub fn get_placement_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>> {
         &self.placement_strategy
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
         self.propagate_tags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action.</p>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
         self.propagate_tags = input;
         self
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action.</p>
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
         &self.propagate_tags
     }

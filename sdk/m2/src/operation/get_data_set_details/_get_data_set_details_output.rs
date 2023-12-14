@@ -11,7 +11,7 @@ pub struct GetDataSetDetailsOutput {
     pub record_length: ::std::option::Option<i32>,
     /// <p>The location where the data set is stored.</p>
     pub location: ::std::option::Option<::std::string::String>,
-    /// <p>The size of the block on disk. </p>
+    /// <p>The size of the block on disk.</p>
     pub blocksize: ::std::option::Option<i32>,
     /// <p>The timestamp when the data set was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -41,7 +41,7 @@ impl GetDataSetDetailsOutput {
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>The size of the block on disk. </p>
+    /// <p>The size of the block on disk.</p>
     pub fn blocksize(&self) -> ::std::option::Option<i32> {
         self.blocksize
     }
@@ -147,17 +147,17 @@ impl GetDataSetDetailsOutputBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
-    /// <p>The size of the block on disk. </p>
+    /// <p>The size of the block on disk.</p>
     pub fn blocksize(mut self, input: i32) -> Self {
         self.blocksize = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the block on disk. </p>
+    /// <p>The size of the block on disk.</p>
     pub fn set_blocksize(mut self, input: ::std::option::Option<i32>) -> Self {
         self.blocksize = input;
         self
     }
-    /// <p>The size of the block on disk. </p>
+    /// <p>The size of the block on disk.</p>
     pub fn get_blocksize(&self) -> &::std::option::Option<i32> {
         &self.blocksize
     }

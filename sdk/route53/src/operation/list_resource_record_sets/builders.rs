@@ -23,13 +23,13 @@ impl ListResourceRecordSetsInputBuilder {
 /// Fluent builder constructing a request to `ListResourceRecordSets`.
 ///
 /// <p>Lists the resource record sets in a specified hosted zone.</p>
-/// <p> <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code> elements.</p>
-/// <p> <b>Sort order</b> </p>
-/// <p> <code>ListResourceRecordSets</code> sorts results first by DNS name with the labels reversed, for example:</p>
-/// <p> <code>com.example.www.</code> </p>
-/// <p>Note the trailing dot, which can change the sort order when the record name contains characters that appear before <code>.</code> (decimal 46) in the ASCII table. These characters include the following: <code>! " # $ % &amp; ' ( ) * + , -</code> </p>
+/// <p><code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code> elements.</p>
+/// <p><b>Sort order</b></p>
+/// <p><code>ListResourceRecordSets</code> sorts results first by DNS name with the labels reversed, for example:</p>
+/// <p><code>com.example.www.</code></p>
+/// <p>Note the trailing dot, which can change the sort order when the record name contains characters that appear before <code>.</code> (decimal 46) in the ASCII table. These characters include the following: <code>! " # $ % &amp; ' ( ) * + , -</code></p>
 /// <p>When multiple records have the same DNS name, <code>ListResourceRecordSets</code> sorts results by the record type.</p>
-/// <p> <b>Specifying where to start listing records</b> </p>
+/// <p><b>Specifying where to start listing records</b></p>
 /// <p>You can use the name and type elements to specify the resource record set that the list begins with:</p>
 /// <dl>
 /// <dt>
@@ -57,11 +57,11 @@ impl ListResourceRecordSetsInputBuilder {
 /// <p>The results begin with the first resource record set in the list whose name is greater than or equal to <code>Name</code>, and whose type is greater than or equal to <code>Type</code>.</p>
 /// </dd>
 /// </dl>
-/// <p> <b>Resource record sets that are PENDING</b> </p>
+/// <p><b>Resource record sets that are PENDING</b></p>
 /// <p>This action returns the most current version of the records. This includes records that are <code>PENDING</code>, and that are not yet available on all Route 53 DNS servers.</p>
-/// <p> <b>Changing resource record sets</b> </p>
+/// <p><b>Changing resource record sets</b></p>
 /// <p>To ensure that you get an accurate listing of the resource record sets for a hosted zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request while you're paging through the results of a <code>ListResourceRecordSets</code> request. If you do, some pages may display results without the latest changes while other pages display results with the latest changes.</p>
-/// <p> <b>Displaying the next page of results</b> </p>
+/// <p><b>Displaying the next page of results</b></p>
 /// <p>If a <code>ListResourceRecordSets</code> command returns more than one page of results, the value of <code>IsTruncated</code> is <code>true</code>. To display the next page of results, get the values of <code>NextRecordName</code>, <code>NextRecordType</code>, and <code>NextRecordIdentifier</code> (if any) from the response. Then submit another <code>ListResourceRecordSets</code> request, and specify those values for <code>StartRecordName</code>, <code>StartRecordType</code>, and <code>StartRecordIdentifier</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourceRecordSetsFluentBuilder {
@@ -177,17 +177,17 @@ impl ListResourceRecordSetsFluentBuilder {
         self.inner.get_start_record_name()
     }
     /// <p>The type of resource record set to begin the record listing from.</p>
-    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for alias resource record sets: </p>
+    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
+    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
+    /// <p>Values for alias resource record sets:</p>
     /// <ul>
-    /// <li> <p> <b>API Gateway custom regional API or edge-optimized API</b>: A</p> </li>
-    /// <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
-    /// <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p> </li>
-    /// <li> <p> <b>Elastic Load Balancing load balancer</b>: A | AAAA</p> </li>
-    /// <li> <p> <b>S3 bucket</b>: A</p> </li>
-    /// <li> <p> <b>VPC interface VPC endpoint</b>: A</p> </li>
-    /// <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>
+    /// <li><p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
+    /// <li><p><b>CloudFront distribution</b>: A or AAAA</p></li>
+    /// <li><p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
+    /// <li><p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
+    /// <li><p><b>S3 bucket</b>: A</p></li>
+    /// <li><p><b>VPC interface VPC endpoint</b>: A</p></li>
+    /// <li><p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
     pub fn start_record_type(mut self, input: crate::types::RrType) -> Self {
@@ -195,17 +195,17 @@ impl ListResourceRecordSetsFluentBuilder {
         self
     }
     /// <p>The type of resource record set to begin the record listing from.</p>
-    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for alias resource record sets: </p>
+    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
+    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
+    /// <p>Values for alias resource record sets:</p>
     /// <ul>
-    /// <li> <p> <b>API Gateway custom regional API or edge-optimized API</b>: A</p> </li>
-    /// <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
-    /// <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p> </li>
-    /// <li> <p> <b>Elastic Load Balancing load balancer</b>: A | AAAA</p> </li>
-    /// <li> <p> <b>S3 bucket</b>: A</p> </li>
-    /// <li> <p> <b>VPC interface VPC endpoint</b>: A</p> </li>
-    /// <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>
+    /// <li><p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
+    /// <li><p><b>CloudFront distribution</b>: A or AAAA</p></li>
+    /// <li><p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
+    /// <li><p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
+    /// <li><p><b>S3 bucket</b>: A</p></li>
+    /// <li><p><b>VPC interface VPC endpoint</b>: A</p></li>
+    /// <li><p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
     pub fn set_start_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
@@ -213,33 +213,33 @@ impl ListResourceRecordSetsFluentBuilder {
         self
     }
     /// <p>The type of resource record set to begin the record listing from.</p>
-    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for alias resource record sets: </p>
+    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
+    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
+    /// <p>Values for alias resource record sets:</p>
     /// <ul>
-    /// <li> <p> <b>API Gateway custom regional API or edge-optimized API</b>: A</p> </li>
-    /// <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
-    /// <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p> </li>
-    /// <li> <p> <b>Elastic Load Balancing load balancer</b>: A | AAAA</p> </li>
-    /// <li> <p> <b>S3 bucket</b>: A</p> </li>
-    /// <li> <p> <b>VPC interface VPC endpoint</b>: A</p> </li>
-    /// <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>
+    /// <li><p><b>API Gateway custom regional API or edge-optimized API</b>: A</p></li>
+    /// <li><p><b>CloudFront distribution</b>: A or AAAA</p></li>
+    /// <li><p><b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p></li>
+    /// <li><p><b>Elastic Load Balancing load balancer</b>: A | AAAA</p></li>
+    /// <li><p><b>S3 bucket</b>: A</p></li>
+    /// <li><p><b>VPC interface VPC endpoint</b>: A</p></li>
+    /// <li><p><b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p></li>
     /// </ul>
     /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
     pub fn get_start_record_type(&self) -> &::std::option::Option<crate::types::RrType> {
         self.inner.get_start_record_type()
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
     pub fn start_record_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_record_identifier(input.into());
         self
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
     pub fn set_start_record_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_record_identifier(input);
         self
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
+    /// <p><i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
     pub fn get_start_record_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_start_record_identifier()
     }

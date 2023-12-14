@@ -8,18 +8,18 @@ pub struct CreateDbInstanceInput {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>neptune</code> </p>
+    /// <p>Valid Values: <code>neptune</code></p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
@@ -32,16 +32,16 @@ pub struct CreateDbInstanceInput {
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The EC2 Availability Zone that the DB instance is created in</p>
+    /// <p>The EC2 Availability Zone that the DB instance is created in</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
-    /// <p> Example: <code>us-east-1d</code> </p>
-    /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
+    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -49,9 +49,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automated backups are retained.</p>
@@ -59,16 +59,16 @@ pub struct CreateDbInstanceInput {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35</p> </li>
-    /// <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+    /// <li><p>Must be a value from 0 to 35</p></li>
+    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub backup_retention_period: ::std::option::Option<i32>,
-    /// <p> The daily time range during which automated backups are created.</p>
+    /// <p>The daily time range during which automated backups are created.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p> Default: <code>8182</code> </p>
+    /// <p>Default: <code>8182</code></p>
     /// <p>Type: Integer</p>
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
@@ -76,16 +76,16 @@ pub struct CreateDbInstanceInput {
     /// <p>The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>License model information for this DB instance.</p>
-    /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
     pub iops: ::std::option::Option<i32>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
@@ -118,14 +118,14 @@ pub struct CreateDbInstanceInput {
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
-    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code></p>
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
-    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub promotion_tier: ::std::option::Option<i32>,
@@ -133,9 +133,9 @@ pub struct CreateDbInstanceInput {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune (ignored).</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub enable_performance_insights: ::std::option::Option<bool>,
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -151,11 +151,11 @@ impl CreateDbInstanceInput {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -168,7 +168,7 @@ impl CreateDbInstanceInput {
         self.db_instance_class.as_deref()
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>neptune</code> </p>
+    /// <p>Valid Values: <code>neptune</code></p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -195,10 +195,10 @@ impl CreateDbInstanceInput {
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
         self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p> The EC2 Availability Zone that the DB instance is created in</p>
+    /// <p>The EC2 Availability Zone that the DB instance is created in</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
-    /// <p> Example: <code>us-east-1d</code> </p>
-    /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
+    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -208,7 +208,7 @@ impl CreateDbInstanceInput {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -218,9 +218,9 @@ impl CreateDbInstanceInput {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
@@ -230,20 +230,20 @@ impl CreateDbInstanceInput {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35</p> </li>
-    /// <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+    /// <li><p>Must be a value from 0 to 35</p></li>
+    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
-    /// <p> The daily time range during which automated backups are created.</p>
+    /// <p>The daily time range during which automated backups are created.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p> Default: <code>8182</code> </p>
+    /// <p>Default: <code>8182</code></p>
     /// <p>Type: Integer</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
@@ -257,12 +257,12 @@ impl CreateDbInstanceInput {
         self.engine_version.as_deref()
     }
     /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>License model information for this DB instance.</p>
-    /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
@@ -270,11 +270,11 @@ impl CreateDbInstanceInput {
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn character_set_name(&self) -> ::std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
@@ -331,7 +331,7 @@ impl CreateDbInstanceInput {
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
-    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code></p>
     pub fn monitoring_interval(&self) -> ::std::option::Option<i32> {
         self.monitoring_interval
     }
@@ -344,7 +344,7 @@ impl CreateDbInstanceInput {
     pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
-    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
@@ -358,11 +358,11 @@ impl CreateDbInstanceInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn enable_performance_insights(&self) -> ::std::option::Option<bool> {
         self.enable_performance_insights
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
@@ -500,11 +500,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
@@ -513,11 +513,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
@@ -525,11 +525,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter.</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    /// <p>Example: <code>mydbinstance</code> </p>
+    /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
@@ -563,20 +563,20 @@ impl CreateDbInstanceInputBuilder {
         &self.db_instance_class
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>neptune</code> </p>
+    /// <p>Valid Values: <code>neptune</code></p>
     /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>neptune</code> </p>
+    /// <p>Valid Values: <code>neptune</code></p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
-    /// <p>Valid Values: <code>neptune</code> </p>
+    /// <p>Valid Values: <code>neptune</code></p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
@@ -657,26 +657,26 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
-    /// <p> The EC2 Availability Zone that the DB instance is created in</p>
+    /// <p>The EC2 Availability Zone that the DB instance is created in</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
-    /// <p> Example: <code>us-east-1d</code> </p>
-    /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
+    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The EC2 Availability Zone that the DB instance is created in</p>
+    /// <p>The EC2 Availability Zone that the DB instance is created in</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
-    /// <p> Example: <code>us-east-1d</code> </p>
-    /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
+    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p> The EC2 Availability Zone that the DB instance is created in</p>
+    /// <p>The EC2 Availability Zone that the DB instance is created in</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
-    /// <p> Example: <code>us-east-1d</code> </p>
-    /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
+    /// <p>Example: <code>us-east-1d</code></p>
+    /// <p>Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -698,7 +698,7 @@ impl CreateDbInstanceInputBuilder {
         &self.db_subnet_group_name
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -707,7 +707,7 @@ impl CreateDbInstanceInputBuilder {
         self
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -716,7 +716,7 @@ impl CreateDbInstanceInputBuilder {
         self
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
@@ -726,9 +726,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -737,9 +737,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -748,9 +748,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li><p>First character must be a letter</p></li>
+    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
@@ -760,8 +760,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35</p> </li>
-    /// <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+    /// <li><p>Must be a value from 0 to 35</p></li>
+    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -772,8 +772,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35</p> </li>
-    /// <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+    /// <li><p>Must be a value from 0 to 35</p></li>
+    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
@@ -784,32 +784,32 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be a value from 0 to 35</p> </li>
-    /// <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+    /// <li><p>Must be a value from 0 to 35</p></li>
+    /// <li><p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
     }
-    /// <p> The daily time range during which automated backups are created.</p>
+    /// <p>The daily time range during which automated backups are created.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The daily time range during which automated backups are created.</p>
+    /// <p>The daily time range during which automated backups are created.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
-    /// <p> The daily time range during which automated backups are created.</p>
+    /// <p>The daily time range during which automated backups are created.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p> Default: <code>8182</code> </p>
+    /// <p>Default: <code>8182</code></p>
     /// <p>Type: Integer</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -817,7 +817,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p> Default: <code>8182</code> </p>
+    /// <p>Default: <code>8182</code></p>
     /// <p>Type: Integer</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
@@ -825,7 +825,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    /// <p> Default: <code>8182</code> </p>
+    /// <p>Default: <code>8182</code></p>
     /// <p>Type: Integer</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
@@ -859,36 +859,36 @@ impl CreateDbInstanceInputBuilder {
         &self.engine_version
     }
     /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
     /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>
-    /// <p>Default: <code>true</code> </p>
+    /// <p>Default: <code>true</code></p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }
     /// <p>License model information for this DB instance.</p>
-    /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License model information for this DB instance.</p>
-    /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
     /// <p>License model information for this DB instance.</p>
-    /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code></p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }
@@ -906,31 +906,31 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.option_group_name
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn character_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.character_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_character_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.character_set_name = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.character_set_name
     }
@@ -1110,21 +1110,21 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
-    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code></p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
         self.monitoring_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
-    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code></p>
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_interval = input;
         self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
-    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code></p>
     pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
         &self.monitoring_interval
     }
@@ -1159,21 +1159,21 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_iam_role_name
     }
-    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
     }
-    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
@@ -1207,31 +1207,31 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn enable_performance_insights(mut self, input: bool) -> Self {
         self.enable_performance_insights = ::std::option::Option::Some(input);
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_performance_insights = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_enable_performance_insights(&self) -> &::std::option::Option<bool> {
         &self.enable_performance_insights
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn performance_insights_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.performance_insights_kms_key_id = input;
         self
     }
-    /// <p> <i>(Not supported by Neptune)</i> </p>
+    /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.performance_insights_kms_key_id
     }

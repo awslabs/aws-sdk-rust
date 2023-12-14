@@ -12,11 +12,11 @@ pub struct Finding {
     pub generator_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a finding.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
+    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The type of finding. </p>
+    /// <p>The type of finding.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the finding. A finding status can be open or closed. </p>
+    /// <p>The status of the finding. A finding status can be open or closed.</p>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The resource where Amazon CodeGuru Security detected a finding.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
@@ -30,9 +30,9 @@ pub struct Finding {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency.</p>
     pub detector_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
+    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the detector that identified the security vulnerability in your code. </p>
+    /// <p>The name of the detector that identified the security vulnerability in your code.</p>
     pub detector_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the rule that generated the finding.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
@@ -54,15 +54,15 @@ impl Finding {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
+    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The type of finding. </p>
+    /// <p>The type of finding.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The status of the finding. A finding status can be open or closed. </p>
+    /// <p>The status of the finding. A finding status can be open or closed.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
@@ -92,11 +92,11 @@ impl Finding {
     pub fn detector_tags(&self) -> &[::std::string::String] {
         self.detector_tags.as_deref().unwrap_or_default()
     }
-    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
+    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>The name of the detector that identified the security vulnerability in your code. </p>
+    /// <p>The name of the detector that identified the security vulnerability in your code.</p>
     pub fn detector_name(&self) -> ::std::option::Option<&str> {
         self.detector_name.as_deref()
     }
@@ -190,45 +190,45 @@ impl FindingBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
+    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
+    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
+    /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The type of finding. </p>
+    /// <p>The type of finding.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of finding. </p>
+    /// <p>The type of finding.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of finding. </p>
+    /// <p>The type of finding.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>The status of the finding. A finding status can be open or closed. </p>
+    /// <p>The status of the finding. A finding status can be open or closed.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the finding. A finding status can be open or closed. </p>
+    /// <p>The status of the finding. A finding status can be open or closed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the finding. A finding status can be open or closed. </p>
+    /// <p>The status of the finding. A finding status can be open or closed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
@@ -322,31 +322,31 @@ impl FindingBuilder {
     pub fn get_detector_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.detector_tags
     }
-    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
+    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
+    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
-    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
+    /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>The name of the detector that identified the security vulnerability in your code. </p>
+    /// <p>The name of the detector that identified the security vulnerability in your code.</p>
     pub fn detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the detector that identified the security vulnerability in your code. </p>
+    /// <p>The name of the detector that identified the security vulnerability in your code.</p>
     pub fn set_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_name = input;
         self
     }
-    /// <p>The name of the detector that identified the security vulnerability in your code. </p>
+    /// <p>The name of the detector that identified the security vulnerability in your code.</p>
     pub fn get_detector_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_name
     }

@@ -15,7 +15,7 @@ pub enum Error {
     InvalidDeviceException(crate::types::error::InvalidDeviceException),
     /// <p>A password in SecretsManager is in an invalid state.</p>
     InvalidSecretsManagerResourceException(crate::types::error::InvalidSecretsManagerResourceException),
-    /// <p>The service linked role is locked for deletion. </p>
+    /// <p>The service linked role is locked for deletion.</p>
     InvalidServiceLinkedRoleStateException(crate::types::error::InvalidServiceLinkedRoleStateException),
     /// <p>The attempt to update a user is invalid due to the user's current status.</p>
     InvalidUserStatusException(crate::types::error::InvalidUserStatusException),

@@ -7,7 +7,7 @@ pub struct GetExportInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to export.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The format of the exported data.</p>
     pub export_type: ::std::option::Option<crate::types::ExportType>,
@@ -21,7 +21,7 @@ impl GetExportInput {
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -77,18 +77,18 @@ impl GetExportInputBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of resource to export. </p>
+    /// <p>The type of resource to export.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

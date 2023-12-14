@@ -5,7 +5,7 @@
 pub struct UpdatePortfolioShareOutput {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
     pub portfolio_share_token: ::std::option::Option<::std::string::String>,
-    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.</p>
     pub status: ::std::option::Option<crate::types::ShareStatus>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl UpdatePortfolioShareOutput {
     pub fn portfolio_share_token(&self) -> ::std::option::Option<&str> {
         self.portfolio_share_token.as_deref()
     }
-    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
@@ -54,17 +54,17 @@ impl UpdatePortfolioShareOutputBuilder {
     pub fn get_portfolio_share_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.portfolio_share_token
     }
-    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
+    /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
         &self.status
     }

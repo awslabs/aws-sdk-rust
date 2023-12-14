@@ -10,14 +10,14 @@ pub struct AttackDetail {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
     pub sub_resources: ::std::option::Option<::std::vec::Vec<crate::types::SubResourceSummary>>,
-    /// <p>The time the attack started, in Unix time in seconds. </p>
+    /// <p>The time the attack started, in Unix time in seconds.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time the attack ended, in Unix time in seconds. </p>
+    /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>List of counters that describe the attack for the specified time period.</p>
     pub attack_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
-    /// <p>The array of objects that provide details of the Shield event. </p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>The array of objects that provide details of the Shield event.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub attack_properties: ::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>>,
     /// <p>List of mitigation actions taken for the attack.</p>
     pub mitigations: ::std::option::Option<::std::vec::Vec<crate::types::Mitigation>>,
@@ -37,11 +37,11 @@ impl AttackDetail {
     pub fn sub_resources(&self) -> &[crate::types::SubResourceSummary] {
         self.sub_resources.as_deref().unwrap_or_default()
     }
-    /// <p>The time the attack started, in Unix time in seconds. </p>
+    /// <p>The time the attack started, in Unix time in seconds.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time the attack ended, in Unix time in seconds. </p>
+    /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -51,8 +51,8 @@ impl AttackDetail {
     pub fn attack_counters(&self) -> &[crate::types::SummarizedCounter] {
         self.attack_counters.as_deref().unwrap_or_default()
     }
-    /// <p>The array of objects that provide details of the Shield event. </p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>The array of objects that provide details of the Shield event.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_properties.is_none()`.
     pub fn attack_properties(&self) -> &[crate::types::AttackProperty] {
@@ -134,31 +134,31 @@ impl AttackDetailBuilder {
     pub fn get_sub_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubResourceSummary>> {
         &self.sub_resources
     }
-    /// <p>The time the attack started, in Unix time in seconds. </p>
+    /// <p>The time the attack started, in Unix time in seconds.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the attack started, in Unix time in seconds. </p>
+    /// <p>The time the attack started, in Unix time in seconds.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The time the attack started, in Unix time in seconds. </p>
+    /// <p>The time the attack started, in Unix time in seconds.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The time the attack ended, in Unix time in seconds. </p>
+    /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time the attack ended, in Unix time in seconds. </p>
+    /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The time the attack ended, in Unix time in seconds. </p>
+    /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
@@ -186,22 +186,22 @@ impl AttackDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_attack_properties`](Self::set_attack_properties).
     ///
-    /// <p>The array of objects that provide details of the Shield event. </p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>The array of objects that provide details of the Shield event.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn attack_properties(mut self, input: crate::types::AttackProperty) -> Self {
         let mut v = self.attack_properties.unwrap_or_default();
         v.push(input);
         self.attack_properties = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The array of objects that provide details of the Shield event. </p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>The array of objects that provide details of the Shield event.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_attack_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>>) -> Self {
         self.attack_properties = input;
         self
     }
-    /// <p>The array of objects that provide details of the Shield event. </p>
-    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>The array of objects that provide details of the Shield event.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn get_attack_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>> {
         &self.attack_properties
     }

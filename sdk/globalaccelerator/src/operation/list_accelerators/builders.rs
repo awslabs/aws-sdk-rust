@@ -22,7 +22,7 @@ impl ListAcceleratorsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAccelerators`.
 ///
-/// <p>List the accelerators for an Amazon Web Services account. </p>
+/// <p>List the accelerators for an Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAcceleratorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

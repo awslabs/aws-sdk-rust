@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesOutput {
-    /// <p> A list of rule details for the provided rule ARNs. </p>
+    /// <p>A list of rule details for the provided rule ARNs.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
-    /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
+    /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
     pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
 impl BatchGetAutomationRulesOutput {
-    /// <p> A list of rule details for the provided rule ARNs. </p>
+    /// <p>A list of rule details for the provided rule ARNs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
     pub fn rules(&self) -> &[crate::types::AutomationRulesConfig] {
         self.rules.as_deref().unwrap_or_default()
     }
-    /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
+    /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_automation_rules.is_none()`.
     pub fn unprocessed_automation_rules(&self) -> &[crate::types::UnprocessedAutomationRule] {
@@ -48,19 +48,19 @@ impl BatchGetAutomationRulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p> A list of rule details for the provided rule ARNs. </p>
+    /// <p>A list of rule details for the provided rule ARNs.</p>
     pub fn rules(mut self, input: crate::types::AutomationRulesConfig) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of rule details for the provided rule ARNs. </p>
+    /// <p>A list of rule details for the provided rule ARNs.</p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p> A list of rule details for the provided rule ARNs. </p>
+    /// <p>A list of rule details for the provided rule ARNs.</p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>> {
         &self.rules
     }
@@ -68,14 +68,14 @@ impl BatchGetAutomationRulesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unprocessed_automation_rules`](Self::set_unprocessed_automation_rules).
     ///
-    /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
+    /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
     pub fn unprocessed_automation_rules(mut self, input: crate::types::UnprocessedAutomationRule) -> Self {
         let mut v = self.unprocessed_automation_rules.unwrap_or_default();
         v.push(input);
         self.unprocessed_automation_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
+    /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
     pub fn set_unprocessed_automation_rules(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
@@ -83,7 +83,7 @@ impl BatchGetAutomationRulesOutputBuilder {
         self.unprocessed_automation_rules = input;
         self
     }
-    /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
+    /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
     pub fn get_unprocessed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
         &self.unprocessed_automation_rules
     }

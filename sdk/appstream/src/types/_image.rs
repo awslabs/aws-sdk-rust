@@ -32,7 +32,7 @@ pub struct Image {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
     pub public_base_image_released_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
+    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
     pub image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
@@ -98,7 +98,7 @@ impl Image {
     pub fn public_base_image_released_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.public_base_image_released_date.as_ref()
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
+    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
     pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
         self.appstream_agent_version.as_deref()
     }
@@ -346,17 +346,17 @@ impl ImageBuilder {
     pub fn get_public_base_image_released_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.public_base_image_released_date
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
+    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
     pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
+    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
+    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.appstream_agent_version
     }

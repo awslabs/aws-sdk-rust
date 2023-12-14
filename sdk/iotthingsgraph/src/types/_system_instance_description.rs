@@ -6,7 +6,7 @@
 pub struct SystemInstanceDescription {
     /// <p>An object that contains summary information about a system instance.</p>
     pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
-    /// <p>A document that defines an entity. </p>
+    /// <p>A document that defines an entity.</p>
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl SystemInstanceDescription {
     pub fn summary(&self) -> ::std::option::Option<&crate::types::SystemInstanceSummary> {
         self.summary.as_ref()
     }
-    /// <p>A document that defines an entity. </p>
+    /// <p>A document that defines an entity.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
@@ -85,17 +85,17 @@ impl SystemInstanceDescriptionBuilder {
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemInstanceSummary> {
         &self.summary
     }
-    /// <p>A document that defines an entity. </p>
+    /// <p>A document that defines an entity.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A document that defines an entity. </p>
+    /// <p>A document that defines an entity.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>A document that defines an entity. </p>
+    /// <p>A document that defines an entity.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
         &self.definition
     }

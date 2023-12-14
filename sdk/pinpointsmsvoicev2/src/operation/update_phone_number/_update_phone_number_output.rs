@@ -11,7 +11,7 @@ pub struct UpdatePhoneNumberOutput {
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the request.</p>
     pub status: ::std::option::Option<crate::types::NumberStatus>,
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub message_type: ::std::option::Option<crate::types::MessageType>,
@@ -56,7 +56,7 @@ impl UpdatePhoneNumberOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::NumberStatus> {
         self.status.as_ref()
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
@@ -203,17 +203,17 @@ impl UpdatePhoneNumberOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NumberStatus> {
         &self.status
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }

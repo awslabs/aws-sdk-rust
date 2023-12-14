@@ -253,7 +253,7 @@ pub enum CreateDatasetGroupError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>You have exceeded the maximum number of tags you can apply to this resource. </p>
+    /// <p>You have exceeded the maximum number of tags you can apply to this resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

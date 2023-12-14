@@ -12,7 +12,7 @@ pub struct PipeSourceKinesisStreamParameters {
     pub on_partial_batch_item_failure: ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records.</p>
     pub maximum_record_age_in_seconds: ::std::option::Option<i32>,
     /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: ::std::option::Option<i32>,
@@ -40,7 +40,7 @@ impl PipeSourceKinesisStreamParameters {
     pub fn maximum_batching_window_in_seconds(&self) -> ::std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records.</p>
     pub fn maximum_record_age_in_seconds(&self) -> ::std::option::Option<i32> {
         self.maximum_record_age_in_seconds
     }
@@ -139,17 +139,17 @@ impl PipeSourceKinesisStreamParametersBuilder {
     pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.maximum_batching_window_in_seconds
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records.</p>
     pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
         self.maximum_record_age_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records.</p>
     pub fn set_maximum_record_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_record_age_in_seconds = input;
         self
     }
-    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records.</p>
     pub fn get_maximum_record_age_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.maximum_record_age_in_seconds
     }

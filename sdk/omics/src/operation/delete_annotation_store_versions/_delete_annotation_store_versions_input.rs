@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreVersionsInput {
-    /// <p> The name of the annotation store from which versions are being deleted. </p>
+    /// <p>The name of the annotation store from which versions are being deleted.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The versions of an annotation store to be deleted. </p>
+    /// <p>The versions of an annotation store to be deleted.</p>
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
+    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub force: ::std::option::Option<bool>,
 }
 impl DeleteAnnotationStoreVersionsInput {
-    /// <p> The name of the annotation store from which versions are being deleted. </p>
+    /// <p>The name of the annotation store from which versions are being deleted.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The versions of an annotation store to be deleted. </p>
+    /// <p>The versions of an annotation store to be deleted.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
     pub fn versions(&self) -> &[::std::string::String] {
         self.versions.as_deref().unwrap_or_default()
     }
-    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
+    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
@@ -42,18 +42,18 @@ pub struct DeleteAnnotationStoreVersionsInputBuilder {
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl DeleteAnnotationStoreVersionsInputBuilder {
-    /// <p> The name of the annotation store from which versions are being deleted. </p>
+    /// <p>The name of the annotation store from which versions are being deleted.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the annotation store from which versions are being deleted. </p>
+    /// <p>The name of the annotation store from which versions are being deleted.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the annotation store from which versions are being deleted. </p>
+    /// <p>The name of the annotation store from which versions are being deleted.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -61,33 +61,33 @@ impl DeleteAnnotationStoreVersionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
     ///
-    /// <p> The versions of an annotation store to be deleted. </p>
+    /// <p>The versions of an annotation store to be deleted.</p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
         v.push(input.into());
         self.versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The versions of an annotation store to be deleted. </p>
+    /// <p>The versions of an annotation store to be deleted.</p>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.versions = input;
         self
     }
-    /// <p> The versions of an annotation store to be deleted. </p>
+    /// <p>The versions of an annotation store to be deleted.</p>
     pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.versions
     }
-    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
+    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
+    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p> Forces the deletion of an annotation store version when imports are in-progress.. </p>
+    /// <p>Forces the deletion of an annotation store version when imports are in-progress..</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }

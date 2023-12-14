@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteSchedul
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteScheduledActionError {
-    /// <p>The scheduled action cannot be found. </p>
+    /// <p>The scheduled action cannot be found.</p>
     ScheduledActionNotFoundFault(crate::types::error::ScheduledActionNotFoundFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::types::error::UnauthorizedOperation),

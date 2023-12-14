@@ -16,13 +16,13 @@ pub struct AwsRdsDbInstanceDetails {
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
     pub db_instance_port: ::std::option::Option<i32>,
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed.</p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
+    /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance. </p>
+    /// <p><b>Oracle</b></p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has deletion protection enabled.</p>
     /// <p>When deletion protection is enabled, the database cannot be deleted.</p>
@@ -36,9 +36,9 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-    /// <li> <p>Aurora 5.6 or higher</p> </li>
+    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li><p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>Indicates when the DB instance was created.</p>
@@ -48,7 +48,7 @@ pub struct AwsRdsDbInstanceDetails {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
-    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
+    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Specifies whether the DB instance is encrypted.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
@@ -171,15 +171,15 @@ impl AwsRdsDbInstanceDetails {
     pub fn db_instance_port(&self) -> ::std::option::Option<i32> {
         self.db_instance_port
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed.</p>
     pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
         self.dbi_resource_id.as_deref()
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
+    /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance. </p>
+    /// <p><b>Oracle</b></p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
@@ -203,9 +203,9 @@ impl AwsRdsDbInstanceDetails {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-    /// <li> <p>Aurora 5.6 or higher</p> </li>
+    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li><p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
@@ -221,7 +221,7 @@ impl AwsRdsDbInstanceDetails {
     }
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
-    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
+    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
@@ -581,43 +581,43 @@ impl AwsRdsDbInstanceDetailsBuilder {
     pub fn get_db_instance_port(&self) -> &::std::option::Option<i32> {
         &self.db_instance_port
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed.</p>
     pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dbi_resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed.</p>
     pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dbi_resource_id = input;
         self
     }
-    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed.</p>
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dbi_resource_id
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
+    /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance. </p>
+    /// <p><b>Oracle</b></p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
+    /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance. </p>
+    /// <p><b>Oracle</b></p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> </p>
+    /// <p><b>MySQL, MariaDB, SQL Server, PostgreSQL</b></p>
     /// <p>Contains the name of the initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the life of the DB instance.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance. </p>
+    /// <p><b>Oracle</b></p>
+    /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
     }
@@ -683,9 +683,9 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-    /// <li> <p>Aurora 5.6 or higher</p> </li>
+    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li><p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
@@ -694,9 +694,9 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-    /// <li> <p>Aurora 5.6 or higher</p> </li>
+    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li><p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
@@ -705,9 +705,9 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
-    /// <li> <p>Aurora 5.6 or higher</p> </li>
+    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li><p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
@@ -745,21 +745,21 @@ impl AwsRdsDbInstanceDetailsBuilder {
     }
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
-    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
+    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
-    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
+    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
-    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
+    /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         &self.publicly_accessible
     }

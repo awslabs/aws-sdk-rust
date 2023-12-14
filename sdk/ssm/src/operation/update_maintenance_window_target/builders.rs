@@ -24,12 +24,12 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
 ///
 /// <p>Modifies the target of an existing maintenance window. You can change the following:</p>
 /// <ul>
-/// <li> <p>Name</p> </li>
-/// <li> <p>Description</p> </li>
-/// <li> <p>Owner</p> </li>
-/// <li> <p>IDs for an ID target</p> </li>
-/// <li> <p>Tags for a Tag target</p> </li>
-/// <li> <p>From any supported tag type to another. The three supported tag types are ID target, Tag target, and resource group. For more information, see <code>Target</code>.</p> </li>
+/// <li><p>Name</p></li>
+/// <li><p>Description</p></li>
+/// <li><p>Owner</p></li>
+/// <li><p>IDs for an ID target</p></li>
+/// <li><p>Tags for a Tag target</p></li>
+/// <li><p>From any supported tag type to another. The three supported tag types are ID target, Tag target, and resource group. For more information, see <code>Target</code>.</p></li>
 /// </ul> <note>
 /// <p>If a parameter is null, then the corresponding field isn't modified.</p>
 /// </note>

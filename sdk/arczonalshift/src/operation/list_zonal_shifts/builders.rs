@@ -132,9 +132,9 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
-    /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
-    /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
+    /// <li><p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <li><p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
+    /// <li><p><b>CANCELED</b>: The zonal shift was canceled.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ZonalShiftStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -143,9 +143,9 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
-    /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
-    /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
+    /// <li><p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <li><p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
+    /// <li><p><b>CANCELED</b>: The zonal shift was canceled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ZonalShiftStatus>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -154,9 +154,9 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
-    /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
-    /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
+    /// <li><p><b>ACTIVE</b>: The zonal shift has been started and active.</p></li>
+    /// <li><p><b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p></li>
+    /// <li><p><b>CANCELED</b>: The zonal shift was canceled.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ZonalShiftStatus> {
         self.inner.get_status()

@@ -22,7 +22,7 @@ impl BatchGetReportsInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetReports`.
 ///
-/// <p> Returns an array of reports. </p>
+/// <p>Returns an array of reports.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetReportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl BatchGetReportsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_report_arns`](Self::set_report_arns).
     ///
-    /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
     pub fn report_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_arns(input.into());
         self
     }
-    /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
     pub fn set_report_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_report_arns(input);
         self
     }
-    /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    /// <p>An array of ARNs that identify the <code>Report</code> objects to return.</p>
     pub fn get_report_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_report_arns()
     }

@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateControlInput {
-    /// <p> The identifier for the control. </p>
+    /// <p>The identifier for the control.</p>
     pub control_id: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the updated control. </p>
+    /// <p>The name of the updated control.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p> The optional description of the control. </p>
+    /// <p>The optional description of the control.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p> The steps that you should follow to determine if the control is met. </p>
+    /// <p>The steps that you should follow to determine if the control is met.</p>
     pub testing_information: ::std::option::Option<::std::string::String>,
-    /// <p> The title of the action plan for remediating the control. </p>
+    /// <p>The title of the action plan for remediating the control.</p>
     pub action_plan_title: ::std::option::Option<::std::string::String>,
-    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    /// <p>The recommended actions to carry out if the control isn't fulfilled.</p>
     pub action_plan_instructions: ::std::option::Option<::std::string::String>,
-    /// <p> The data mapping sources for the control. </p>
+    /// <p>The data mapping sources for the control.</p>
     pub control_mapping_sources: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
 }
 impl UpdateControlInput {
-    /// <p> The identifier for the control. </p>
+    /// <p>The identifier for the control.</p>
     pub fn control_id(&self) -> ::std::option::Option<&str> {
         self.control_id.as_deref()
     }
-    /// <p> The name of the updated control. </p>
+    /// <p>The name of the updated control.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p> The optional description of the control. </p>
+    /// <p>The optional description of the control.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The steps that you should follow to determine if the control is met. </p>
+    /// <p>The steps that you should follow to determine if the control is met.</p>
     pub fn testing_information(&self) -> ::std::option::Option<&str> {
         self.testing_information.as_deref()
     }
-    /// <p> The title of the action plan for remediating the control. </p>
+    /// <p>The title of the action plan for remediating the control.</p>
     pub fn action_plan_title(&self) -> ::std::option::Option<&str> {
         self.action_plan_title.as_deref()
     }
-    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    /// <p>The recommended actions to carry out if the control isn't fulfilled.</p>
     pub fn action_plan_instructions(&self) -> ::std::option::Option<&str> {
         self.action_plan_instructions.as_deref()
     }
-    /// <p> The data mapping sources for the control. </p>
+    /// <p>The data mapping sources for the control.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_mapping_sources.is_none()`.
     pub fn control_mapping_sources(&self) -> &[crate::types::ControlMappingSource] {
@@ -83,89 +83,89 @@ pub struct UpdateControlInputBuilder {
     pub(crate) control_mapping_sources: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
 }
 impl UpdateControlInputBuilder {
-    /// <p> The identifier for the control. </p>
+    /// <p>The identifier for the control.</p>
     /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The identifier for the control. </p>
+    /// <p>The identifier for the control.</p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_id = input;
         self
     }
-    /// <p> The identifier for the control. </p>
+    /// <p>The identifier for the control.</p>
     pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_id
     }
-    /// <p> The name of the updated control. </p>
+    /// <p>The name of the updated control.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the updated control. </p>
+    /// <p>The name of the updated control.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the updated control. </p>
+    /// <p>The name of the updated control.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p> The optional description of the control. </p>
+    /// <p>The optional description of the control.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The optional description of the control. </p>
+    /// <p>The optional description of the control.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p> The optional description of the control. </p>
+    /// <p>The optional description of the control.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p> The steps that you should follow to determine if the control is met. </p>
+    /// <p>The steps that you should follow to determine if the control is met.</p>
     pub fn testing_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.testing_information = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The steps that you should follow to determine if the control is met. </p>
+    /// <p>The steps that you should follow to determine if the control is met.</p>
     pub fn set_testing_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.testing_information = input;
         self
     }
-    /// <p> The steps that you should follow to determine if the control is met. </p>
+    /// <p>The steps that you should follow to determine if the control is met.</p>
     pub fn get_testing_information(&self) -> &::std::option::Option<::std::string::String> {
         &self.testing_information
     }
-    /// <p> The title of the action plan for remediating the control. </p>
+    /// <p>The title of the action plan for remediating the control.</p>
     pub fn action_plan_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_plan_title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The title of the action plan for remediating the control. </p>
+    /// <p>The title of the action plan for remediating the control.</p>
     pub fn set_action_plan_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_plan_title = input;
         self
     }
-    /// <p> The title of the action plan for remediating the control. </p>
+    /// <p>The title of the action plan for remediating the control.</p>
     pub fn get_action_plan_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_plan_title
     }
-    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    /// <p>The recommended actions to carry out if the control isn't fulfilled.</p>
     pub fn action_plan_instructions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_plan_instructions = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    /// <p>The recommended actions to carry out if the control isn't fulfilled.</p>
     pub fn set_action_plan_instructions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_plan_instructions = input;
         self
     }
-    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    /// <p>The recommended actions to carry out if the control isn't fulfilled.</p>
     pub fn get_action_plan_instructions(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_plan_instructions
     }
@@ -173,19 +173,19 @@ impl UpdateControlInputBuilder {
     ///
     /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).
     ///
-    /// <p> The data mapping sources for the control. </p>
+    /// <p>The data mapping sources for the control.</p>
     pub fn control_mapping_sources(mut self, input: crate::types::ControlMappingSource) -> Self {
         let mut v = self.control_mapping_sources.unwrap_or_default();
         v.push(input);
         self.control_mapping_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The data mapping sources for the control. </p>
+    /// <p>The data mapping sources for the control.</p>
     pub fn set_control_mapping_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>) -> Self {
         self.control_mapping_sources = input;
         self
     }
-    /// <p> The data mapping sources for the control. </p>
+    /// <p>The data mapping sources for the control.</p>
     pub fn get_control_mapping_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>> {
         &self.control_mapping_sources
     }

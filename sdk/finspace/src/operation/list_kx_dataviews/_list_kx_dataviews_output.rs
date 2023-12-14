@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKxDataviewsOutput {
-    /// <p> The list of kdb dataviews that are currently active for the given database. </p>
+    /// <p>The list of kdb dataviews that are currently active for the given database.</p>
     pub kx_dataviews: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewListEntry>>,
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKxDataviewsOutput {
-    /// <p> The list of kdb dataviews that are currently active for the given database. </p>
+    /// <p>The list of kdb dataviews that are currently active for the given database.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kx_dataviews.is_none()`.
     pub fn kx_dataviews(&self) -> &[crate::types::KxDataviewListEntry] {
         self.kx_dataviews.as_deref().unwrap_or_default()
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListKxDataviewsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_kx_dataviews`](Self::set_kx_dataviews).
     ///
-    /// <p> The list of kdb dataviews that are currently active for the given database. </p>
+    /// <p>The list of kdb dataviews that are currently active for the given database.</p>
     pub fn kx_dataviews(mut self, input: crate::types::KxDataviewListEntry) -> Self {
         let mut v = self.kx_dataviews.unwrap_or_default();
         v.push(input);
         self.kx_dataviews = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The list of kdb dataviews that are currently active for the given database. </p>
+    /// <p>The list of kdb dataviews that are currently active for the given database.</p>
     pub fn set_kx_dataviews(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewListEntry>>) -> Self {
         self.kx_dataviews = input;
         self
     }
-    /// <p> The list of kdb dataviews that are currently active for the given database. </p>
+    /// <p>The list of kdb dataviews that are currently active for the given database.</p>
     pub fn get_kx_dataviews(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewListEntry>> {
         &self.kx_dataviews
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p> A token that indicates where a results page should begin. </p>
+    /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -111,16 +111,16 @@ impl DescribeEndpointFluentBuilder {
     }
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
-    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
+    /// <li><p><code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
+    /// <li><p><code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
+    /// <li><p><code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
+    /// <li><p><code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p></li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities. ATS Signed Certificates are more secure and are trusted by most popular browsers.</p>
     pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,16 +129,16 @@ impl DescribeEndpointFluentBuilder {
     }
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
-    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
+    /// <li><p><code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
+    /// <li><p><code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
+    /// <li><p><code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
+    /// <li><p><code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p></li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities. ATS Signed Certificates are more secure and are trusted by most popular browsers.</p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -147,16 +147,16 @@ impl DescribeEndpointFluentBuilder {
     }
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
-    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
+    /// <li><p><code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
+    /// <li><p><code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
+    /// <li><p><code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p></li>
     /// </ul>
     /// <ul>
-    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
+    /// <li><p><code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p></li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities. ATS Signed Certificates are more secure and are trusted by most popular browsers.</p>
     pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {

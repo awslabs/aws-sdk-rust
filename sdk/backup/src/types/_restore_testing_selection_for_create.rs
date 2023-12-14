@@ -4,16 +4,16 @@
 /// <p>ProtectedResourceType is required, such as Amazon EBS or Amazon EC2.</p>
 /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
 /// <ul>
-/// <li> <p> <code>ProtectedResourceArns</code> </p> </li>
-/// <li> <p> <code>ProtectedResourceConditions</code> </p> </li>
+/// <li><p><code>ProtectedResourceArns</code></p></li>
+/// <li><p><code>ProtectedResourceConditions</code></p></li>
 /// </ul>
 /// <p>Each protected resource type can have one single value.</p>
 /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
-/// <p> <code>ProtectedResourceConditions</code> examples include as <code>StringEquals</code> and <code>StringNotEquals</code>.</p>
+/// <p><code>ProtectedResourceConditions</code> examples include as <code>StringEquals</code> and <code>StringNotEquals</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RestoreTestingSelectionForCreate {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::string::String,
     /// <p>Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or by a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
     pub protected_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -22,16 +22,16 @@ pub struct RestoreTestingSelectionForCreate {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub protected_resource_type: ::std::string::String,
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
@@ -43,7 +43,7 @@ pub struct RestoreTestingSelectionForCreate {
     pub validation_window_hours: i32,
 }
 impl RestoreTestingSelectionForCreate {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(&self) -> &str {
         use std::ops::Deref;
         self.iam_role_arn.deref()
@@ -61,16 +61,16 @@ impl RestoreTestingSelectionForCreate {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub fn protected_resource_type(&self) -> &str {
         use std::ops::Deref;
@@ -124,18 +124,18 @@ pub struct RestoreTestingSelectionForCreateBuilder {
     pub(crate) validation_window_hours: ::std::option::Option<i32>,
 }
 impl RestoreTestingSelectionForCreateBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>. </p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
@@ -176,16 +176,16 @@ impl RestoreTestingSelectionForCreateBuilder {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     /// This field is required.
     pub fn protected_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,16 +195,16 @@ impl RestoreTestingSelectionForCreateBuilder {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub fn set_protected_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protected_resource_type = input;
@@ -213,16 +213,16 @@ impl RestoreTestingSelectionForCreateBuilder {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li><p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub fn get_protected_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.protected_resource_type

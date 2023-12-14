@@ -12,7 +12,7 @@ pub struct SlotValueElicitationSetting {
     pub prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
-    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input.</p>
     pub wait_and_continue_specification: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
     /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
     pub slot_capture_setting: ::std::option::Option<crate::types::SlotCaptureSetting>,
@@ -36,7 +36,7 @@ impl SlotValueElicitationSetting {
     pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
         self.sample_utterances.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input.</p>
     pub fn wait_and_continue_specification(&self) -> ::std::option::Option<&crate::types::WaitAndContinueSpecification> {
         self.wait_and_continue_specification.as_ref()
     }
@@ -127,17 +127,17 @@ impl SlotValueElicitationSettingBuilder {
     pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
         &self.sample_utterances
     }
-    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input.</p>
     pub fn wait_and_continue_specification(mut self, input: crate::types::WaitAndContinueSpecification) -> Self {
         self.wait_and_continue_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input.</p>
     pub fn set_wait_and_continue_specification(mut self, input: ::std::option::Option<crate::types::WaitAndContinueSpecification>) -> Self {
         self.wait_and_continue_specification = input;
         self
     }
-    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input.</p>
     pub fn get_wait_and_continue_specification(&self) -> &::std::option::Option<crate::types::WaitAndContinueSpecification> {
         &self.wait_and_continue_specification
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLifecyclePolicyInput {
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     /// <p>The name of the policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct UpdateLifecyclePolicyInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLifecyclePolicyInput {
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
         self.r#type.as_ref()
     }
@@ -61,18 +61,18 @@ pub struct UpdateLifecyclePolicyInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLifecyclePolicyInputBuilder {
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p> The type of lifecycle policy.</p>
+    /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
         &self.r#type
     }

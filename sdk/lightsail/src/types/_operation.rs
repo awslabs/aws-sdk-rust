@@ -8,7 +8,7 @@ pub struct Operation {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The resource name.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The resource type. </p>
+    /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,9 +18,9 @@ pub struct Operation {
     pub is_terminal: ::std::option::Option<bool>,
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
     pub operation_details: ::std::option::Option<::std::string::String>,
-    /// <p>The type of operation. </p>
+    /// <p>The type of operation.</p>
     pub operation_type: ::std::option::Option<crate::types::OperationType>,
-    /// <p>The status of the operation. </p>
+    /// <p>The status of the operation.</p>
     pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
     pub status_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -38,7 +38,7 @@ impl Operation {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The resource type. </p>
+    /// <p>The resource type.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -58,11 +58,11 @@ impl Operation {
     pub fn operation_details(&self) -> ::std::option::Option<&str> {
         self.operation_details.as_deref()
     }
-    /// <p>The type of operation. </p>
+    /// <p>The type of operation.</p>
     pub fn operation_type(&self) -> ::std::option::Option<&crate::types::OperationType> {
         self.operation_type.as_ref()
     }
-    /// <p>The status of the operation. </p>
+    /// <p>The status of the operation.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.status.as_ref()
     }
@@ -132,17 +132,17 @@ impl OperationBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>The resource type. </p>
+    /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type. </p>
+    /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type. </p>
+    /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
@@ -202,31 +202,31 @@ impl OperationBuilder {
     pub fn get_operation_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_details
     }
-    /// <p>The type of operation. </p>
+    /// <p>The type of operation.</p>
     pub fn operation_type(mut self, input: crate::types::OperationType) -> Self {
         self.operation_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of operation. </p>
+    /// <p>The type of operation.</p>
     pub fn set_operation_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.operation_type = input;
         self
     }
-    /// <p>The type of operation. </p>
+    /// <p>The type of operation.</p>
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::OperationType> {
         &self.operation_type
     }
-    /// <p>The status of the operation. </p>
+    /// <p>The status of the operation.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the operation. </p>
+    /// <p>The status of the operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the operation. </p>
+    /// <p>The status of the operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
         &self.status
     }

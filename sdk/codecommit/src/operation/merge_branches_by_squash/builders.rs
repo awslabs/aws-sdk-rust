@@ -150,17 +150,17 @@ impl MergeBranchesBySquashFluentBuilder {
     pub fn get_destination_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_commit_specifier()
     }
-    /// <p>The branch where the merge is applied. </p>
+    /// <p>The branch where the merge is applied.</p>
     pub fn target_branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_branch(input.into());
         self
     }
-    /// <p>The branch where the merge is applied. </p>
+    /// <p>The branch where the merge is applied.</p>
     pub fn set_target_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_branch(input);
         self
     }
-    /// <p>The branch where the merge is applied. </p>
+    /// <p>The branch where the merge is applied.</p>
     pub fn get_target_branch(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_branch()
     }

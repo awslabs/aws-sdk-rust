@@ -23,7 +23,7 @@ impl UntagResourceInputBuilder {
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Removes tags from the resource.</p>
-/// <p> <b>Required permissions: </b> <code>rolesanywhere:UntagResource</code>. </p>
+/// <p><b>Required permissions: </b> <code>rolesanywhere:UntagResource</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>A list of keys. Tag keys are the unique identifiers of tags. </p>
+    /// <p>A list of keys. Tag keys are the unique identifiers of tags.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// <p>A list of keys. Tag keys are the unique identifiers of tags. </p>
+    /// <p>A list of keys. Tag keys are the unique identifiers of tags.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
-    /// <p>A list of keys. Tag keys are the unique identifiers of tags. </p>
+    /// <p>A list of keys. Tag keys are the unique identifiers of tags.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }

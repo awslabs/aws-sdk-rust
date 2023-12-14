@@ -22,7 +22,7 @@ impl DeauthorizeDataShareInputBuilder {
 }
 /// Fluent builder constructing a request to `DeauthorizeDataShare`.
 ///
-/// <p>From a datashare producer account, removes authorization from the specified datashare. </p>
+/// <p>From a datashare producer account, removes authorization from the specified datashare.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeauthorizeDataShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

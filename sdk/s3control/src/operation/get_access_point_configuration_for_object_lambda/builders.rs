@@ -25,7 +25,7 @@ impl GetAccessPointConfigurationForObjectLambdaInputBuilder {
 /// <p>Returns configuration for an Object Lambda Access Point.</p>
 /// <p>The following actions are related to <code>GetAccessPointConfigurationForObjectLambda</code>:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccessPointConfigurationForObjectLambdaFluentBuilder {

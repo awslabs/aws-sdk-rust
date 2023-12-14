@@ -7,7 +7,7 @@ pub struct AwsEc2VolumeDetails {
     /// <p>Indicates when the volume was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub create_time: ::std::option::Option<::std::string::String>,
-    /// <p>The device name for the volume that is attached to the instance. </p>
+    /// <p>The device name for the volume that is attached to the instance.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the volume is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
@@ -17,23 +17,23 @@ pub struct AwsEc2VolumeDetails {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleted</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>error</code> </p> </li>
-    /// <li> <p> <code>in-use</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleted</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>error</code></p></li>
+    /// <li><p><code>in-use</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume attachments.</p>
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
-    /// <p>The ID of the volume. </p>
+    /// <p>The ID of the volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
-    /// <p>The volume type. </p>
+    /// <p>The volume type.</p>
     pub volume_type: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the volume was scanned or skipped. </p>
+    /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub volume_scan_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VolumeDetails {
@@ -42,7 +42,7 @@ impl AwsEc2VolumeDetails {
     pub fn create_time(&self) -> ::std::option::Option<&str> {
         self.create_time.as_deref()
     }
-    /// <p>The device name for the volume that is attached to the instance. </p>
+    /// <p>The device name for the volume that is attached to the instance.</p>
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
@@ -60,12 +60,12 @@ impl AwsEc2VolumeDetails {
     }
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleted</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>error</code> </p> </li>
-    /// <li> <p> <code>in-use</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleted</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>error</code></p></li>
+    /// <li><p><code>in-use</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -80,15 +80,15 @@ impl AwsEc2VolumeDetails {
     pub fn attachments(&self) -> &[crate::types::AwsEc2VolumeAttachment] {
         self.attachments.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of the volume. </p>
+    /// <p>The ID of the volume.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
-    /// <p>The volume type. </p>
+    /// <p>The volume type.</p>
     pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
     }
-    /// <p>Indicates whether the volume was scanned or skipped. </p>
+    /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub fn volume_scan_status(&self) -> ::std::option::Option<&str> {
         self.volume_scan_status.as_deref()
     }
@@ -134,17 +134,17 @@ impl AwsEc2VolumeDetailsBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.create_time
     }
-    /// <p>The device name for the volume that is attached to the instance. </p>
+    /// <p>The device name for the volume that is attached to the instance.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The device name for the volume that is attached to the instance. </p>
+    /// <p>The device name for the volume that is attached to the instance.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
-    /// <p>The device name for the volume that is attached to the instance. </p>
+    /// <p>The device name for the volume that is attached to the instance.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
@@ -192,12 +192,12 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleted</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>error</code> </p> </li>
-    /// <li> <p> <code>in-use</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleted</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>error</code></p></li>
+    /// <li><p><code>in-use</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -205,12 +205,12 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleted</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>error</code> </p> </li>
-    /// <li> <p> <code>in-use</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleted</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>error</code></p></li>
+    /// <li><p><code>in-use</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -218,12 +218,12 @@ impl AwsEc2VolumeDetailsBuilder {
     }
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
-    /// <li> <p> <code>available</code> </p> </li>
-    /// <li> <p> <code>creating</code> </p> </li>
-    /// <li> <p> <code>deleted</code> </p> </li>
-    /// <li> <p> <code>deleting</code> </p> </li>
-    /// <li> <p> <code>error</code> </p> </li>
-    /// <li> <p> <code>in-use</code> </p> </li>
+    /// <li><p><code>available</code></p></li>
+    /// <li><p><code>creating</code></p></li>
+    /// <li><p><code>deleted</code></p></li>
+    /// <li><p><code>deleting</code></p></li>
+    /// <li><p><code>error</code></p></li>
+    /// <li><p><code>in-use</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -262,45 +262,45 @@ impl AwsEc2VolumeDetailsBuilder {
     pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>> {
         &self.attachments
     }
-    /// <p>The ID of the volume. </p>
+    /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the volume. </p>
+    /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
     }
-    /// <p>The ID of the volume. </p>
+    /// <p>The ID of the volume.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
-    /// <p>The volume type. </p>
+    /// <p>The volume type.</p>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The volume type. </p>
+    /// <p>The volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
     }
-    /// <p>The volume type. </p>
+    /// <p>The volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_type
     }
-    /// <p>Indicates whether the volume was scanned or skipped. </p>
+    /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub fn volume_scan_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_scan_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates whether the volume was scanned or skipped. </p>
+    /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub fn set_volume_scan_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_scan_status = input;
         self
     }
-    /// <p>Indicates whether the volume was scanned or skipped. </p>
+    /// <p>Indicates whether the volume was scanned or skipped.</p>
     pub fn get_volume_scan_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_scan_status
     }

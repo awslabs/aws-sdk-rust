@@ -32,7 +32,7 @@ impl GetObjectTorrentInputBuilder {
 /// <p>This functionality is not supported for Amazon S3 on Outposts.</p>
 /// <p>The following action is related to <code>GetObjectTorrent</code>:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li>
+/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetObjectTorrentFluentBuilder {

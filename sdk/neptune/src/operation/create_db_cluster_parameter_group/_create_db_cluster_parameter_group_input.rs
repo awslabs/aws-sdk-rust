@@ -6,7 +6,7 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>Must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -22,7 +22,7 @@ impl CreateDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>Must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -64,7 +64,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>Must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -76,7 +76,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>Must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
@@ -87,7 +87,7 @@ impl CreateDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the name of an existing DBClusterParameterGroup.</p> </li>
+    /// <li><p>Must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>

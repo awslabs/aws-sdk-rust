@@ -22,7 +22,7 @@ impl UpdatePricingPlanInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePricingPlan`.
 ///
-/// <p>This updates an existing pricing plan. </p>
+/// <p>This updates an existing pricing plan.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePricingPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdatePricingPlanFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the pricing plan. </p>
+    /// <p>The description of the pricing plan.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

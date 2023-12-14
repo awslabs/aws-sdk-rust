@@ -5,7 +5,7 @@
 pub struct StopFleetActionsInput {
     /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>List of actions to suspend on the fleet. </p>
+    /// <p>List of actions to suspend on the fleet.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
     /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl StopFleetActionsInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>List of actions to suspend on the fleet. </p>
+    /// <p>List of actions to suspend on the fleet.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
     pub fn actions(&self) -> &[crate::types::FleetAction] {
@@ -61,19 +61,19 @@ impl StopFleetActionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
-    /// <p>List of actions to suspend on the fleet. </p>
+    /// <p>List of actions to suspend on the fleet.</p>
     pub fn actions(mut self, input: crate::types::FleetAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
         self.actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of actions to suspend on the fleet. </p>
+    /// <p>List of actions to suspend on the fleet.</p>
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>) -> Self {
         self.actions = input;
         self
     }
-    /// <p>List of actions to suspend on the fleet. </p>
+    /// <p>List of actions to suspend on the fleet.</p>
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
         &self.actions
     }

@@ -22,7 +22,7 @@ impl GetConfigurationPolicyAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetConfigurationPolicyAssociation`.
 ///
-/// <p> Returns the association between a configuration and a target account, organizational unit, or the root. The configuration can be a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region. </p>
+/// <p>Returns the association between a configuration and a target account, organizational unit, or the root. The configuration can be a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationPolicyAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetConfigurationPolicyAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.inner = self.inner.target(input);
         self
     }
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
-    /// <p> The target account ID, organizational unit ID, or the root ID to retrieve the association for. </p>
+    /// <p>The target account ID, organizational unit ID, or the root ID to retrieve the association for.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         self.inner.get_target()
     }

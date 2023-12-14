@@ -8,7 +8,7 @@ pub struct CopyJob {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a copy job.</p>
     pub copy_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub source_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub source_recovery_point_arn: ::std::option::Option<::std::string::String>,
@@ -49,7 +49,7 @@ pub struct CopyJob {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
     pub message_category: ::std::option::Option<::std::string::String>,
 }
 impl CopyJob {
@@ -61,7 +61,7 @@ impl CopyJob {
     pub fn copy_job_id(&self) -> ::std::option::Option<&str> {
         self.copy_job_id.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn source_backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.source_backup_vault_arn.as_deref()
     }
@@ -140,7 +140,7 @@ impl CopyJob {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
     pub fn message_category(&self) -> ::std::option::Option<&str> {
         self.message_category.as_deref()
     }
@@ -208,17 +208,17 @@ impl CopyJobBuilder {
     pub fn get_copy_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.copy_job_id
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn source_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_backup_vault_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn set_source_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_backup_vault_arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_source_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_backup_vault_arn
     }
@@ -483,7 +483,7 @@ impl CopyJobBuilder {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
     pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_category = ::std::option::Option::Some(input.into());
         self
@@ -491,7 +491,7 @@ impl CopyJobBuilder {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_category = input;
         self
@@ -499,7 +499,7 @@ impl CopyJobBuilder {
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
-    /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
+    /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum</p>
     pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_category
     }

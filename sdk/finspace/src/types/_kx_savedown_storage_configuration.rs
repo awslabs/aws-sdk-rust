@@ -6,18 +6,18 @@
 pub struct KxSavedownStorageConfiguration {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
+    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
     /// <p>The size of temporary storage in gibibytes.</p>
     pub size: ::std::option::Option<i32>,
-    /// <p> The name of the kdb volume that you want to use as writeable save-down storage for clusters. </p>
+    /// <p>The name of the kdb volume that you want to use as writeable save-down storage for clusters.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
 }
 impl KxSavedownStorageConfiguration {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
+    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::KxSavedownStorageType> {
         self.r#type.as_ref()
@@ -26,7 +26,7 @@ impl KxSavedownStorageConfiguration {
     pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
-    /// <p> The name of the kdb volume that you want to use as writeable save-down storage for clusters. </p>
+    /// <p>The name of the kdb volume that you want to use as writeable save-down storage for clusters.</p>
     pub fn volume_name(&self) -> ::std::option::Option<&str> {
         self.volume_name.as_deref()
     }
@@ -49,7 +49,7 @@ pub struct KxSavedownStorageConfigurationBuilder {
 impl KxSavedownStorageConfigurationBuilder {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
+    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::KxSavedownStorageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,7 +57,7 @@ impl KxSavedownStorageConfigurationBuilder {
     }
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
+    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KxSavedownStorageType>) -> Self {
         self.r#type = input;
@@ -65,7 +65,7 @@ impl KxSavedownStorageConfigurationBuilder {
     }
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
-    /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
+    /// <li><p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KxSavedownStorageType> {
         &self.r#type
@@ -84,17 +84,17 @@ impl KxSavedownStorageConfigurationBuilder {
     pub fn get_size(&self) -> &::std::option::Option<i32> {
         &self.size
     }
-    /// <p> The name of the kdb volume that you want to use as writeable save-down storage for clusters. </p>
+    /// <p>The name of the kdb volume that you want to use as writeable save-down storage for clusters.</p>
     pub fn volume_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the kdb volume that you want to use as writeable save-down storage for clusters. </p>
+    /// <p>The name of the kdb volume that you want to use as writeable save-down storage for clusters.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_name = input;
         self
     }
-    /// <p> The name of the kdb volume that you want to use as writeable save-down storage for clusters. </p>
+    /// <p>The name of the kdb volume that you want to use as writeable save-down storage for clusters.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_name
     }

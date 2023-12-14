@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBatchImportJobInput {
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBatchImportJobInput {
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteBatchImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBatchImportJobInputBuilder {
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The ID of the batch import job to delete. </p>
+    /// <p>The ID of the batch import job to delete.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }

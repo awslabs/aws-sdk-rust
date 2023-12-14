@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectDetails {
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
-    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
+    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name).</p>
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Information about the build artifacts for the CodeBuild project.</p>
     pub artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
@@ -26,7 +26,7 @@ pub struct AwsCodeBuildProjectDetails {
 }
 impl AwsCodeBuildProjectDetails {
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
-    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
+    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name).</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
@@ -90,19 +90,19 @@ pub struct AwsCodeBuildProjectDetailsBuilder {
 }
 impl AwsCodeBuildProjectDetailsBuilder {
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
-    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
+    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name).</p>
     pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
-    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
+    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name).</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
     /// <p>The KMS key used to encrypt the build output artifacts.</p>
-    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name). </p>
+    /// <p>You can specify either the ARN of the KMS key or, if available, the KMS key alias (using the format alias/alias-name).</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key
     }

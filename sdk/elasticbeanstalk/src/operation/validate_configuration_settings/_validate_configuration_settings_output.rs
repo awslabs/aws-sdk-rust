@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsOutput {
-    /// <p> A list of <code>ValidationMessage</code>. </p>
+    /// <p>A list of <code>ValidationMessage</code>.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
 }
 impl ValidateConfigurationSettingsOutput {
-    /// <p> A list of <code>ValidationMessage</code>. </p>
+    /// <p>A list of <code>ValidationMessage</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
     pub fn messages(&self) -> &[crate::types::ValidationMessage] {
@@ -40,19 +40,19 @@ impl ValidateConfigurationSettingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
     ///
-    /// <p> A list of <code>ValidationMessage</code>. </p>
+    /// <p>A list of <code>ValidationMessage</code>.</p>
     pub fn messages(mut self, input: crate::types::ValidationMessage) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
         self.messages = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A list of <code>ValidationMessage</code>. </p>
+    /// <p>A list of <code>ValidationMessage</code>.</p>
     pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>) -> Self {
         self.messages = input;
         self
     }
-    /// <p> A list of <code>ValidationMessage</code>. </p>
+    /// <p>A list of <code>ValidationMessage</code>.</p>
     pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
         &self.messages
     }

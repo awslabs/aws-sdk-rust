@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorInfo {
-    /// <p>Specifies the error message that appears if a flow fails. </p>
+    /// <p>Specifies the error message that appears if a flow fails.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of error.</p>
     pub error_type: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ErrorInfo {
-    /// <p>Specifies the error message that appears if a flow fails. </p>
+    /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct ErrorInfoBuilder {
     pub(crate) error_type: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ErrorInfoBuilder {
-    /// <p>Specifies the error message that appears if a flow fails. </p>
+    /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the error message that appears if a flow fails. </p>
+    /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
-    /// <p>Specifies the error message that appears if a flow fails. </p>
+    /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }

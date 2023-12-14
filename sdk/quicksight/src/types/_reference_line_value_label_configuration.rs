@@ -6,8 +6,8 @@
 pub struct ReferenceLineValueLabelConfiguration {
     /// <p>The relative position of the value label. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>BEFORE_CUSTOM_LABEL</code> </p> </li>
-    /// <li> <p> <code>AFTER_CUSTOM_LABEL</code> </p> </li>
+    /// <li><p><code>BEFORE_CUSTOM_LABEL</code></p></li>
+    /// <li><p><code>AFTER_CUSTOM_LABEL</code></p></li>
     /// </ul>
     pub relative_position: ::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
     /// <p>The format configuration of the value label.</p>
@@ -16,8 +16,8 @@ pub struct ReferenceLineValueLabelConfiguration {
 impl ReferenceLineValueLabelConfiguration {
     /// <p>The relative position of the value label. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>BEFORE_CUSTOM_LABEL</code> </p> </li>
-    /// <li> <p> <code>AFTER_CUSTOM_LABEL</code> </p> </li>
+    /// <li><p><code>BEFORE_CUSTOM_LABEL</code></p></li>
+    /// <li><p><code>AFTER_CUSTOM_LABEL</code></p></li>
     /// </ul>
     pub fn relative_position(&self) -> ::std::option::Option<&crate::types::ReferenceLineValueLabelRelativePosition> {
         self.relative_position.as_ref()
@@ -44,8 +44,8 @@ pub struct ReferenceLineValueLabelConfigurationBuilder {
 impl ReferenceLineValueLabelConfigurationBuilder {
     /// <p>The relative position of the value label. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>BEFORE_CUSTOM_LABEL</code> </p> </li>
-    /// <li> <p> <code>AFTER_CUSTOM_LABEL</code> </p> </li>
+    /// <li><p><code>BEFORE_CUSTOM_LABEL</code></p></li>
+    /// <li><p><code>AFTER_CUSTOM_LABEL</code></p></li>
     /// </ul>
     pub fn relative_position(mut self, input: crate::types::ReferenceLineValueLabelRelativePosition) -> Self {
         self.relative_position = ::std::option::Option::Some(input);
@@ -53,8 +53,8 @@ impl ReferenceLineValueLabelConfigurationBuilder {
     }
     /// <p>The relative position of the value label. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>BEFORE_CUSTOM_LABEL</code> </p> </li>
-    /// <li> <p> <code>AFTER_CUSTOM_LABEL</code> </p> </li>
+    /// <li><p><code>BEFORE_CUSTOM_LABEL</code></p></li>
+    /// <li><p><code>AFTER_CUSTOM_LABEL</code></p></li>
     /// </ul>
     pub fn set_relative_position(mut self, input: ::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>) -> Self {
         self.relative_position = input;
@@ -62,8 +62,8 @@ impl ReferenceLineValueLabelConfigurationBuilder {
     }
     /// <p>The relative position of the value label. Choose one of the following options:</p>
     /// <ul>
-    /// <li> <p> <code>BEFORE_CUSTOM_LABEL</code> </p> </li>
-    /// <li> <p> <code>AFTER_CUSTOM_LABEL</code> </p> </li>
+    /// <li><p><code>BEFORE_CUSTOM_LABEL</code></p></li>
+    /// <li><p><code>AFTER_CUSTOM_LABEL</code></p></li>
     /// </ul>
     pub fn get_relative_position(&self) -> &::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition> {
         &self.relative_position

@@ -7,8 +7,8 @@ pub struct UpdateServiceNetworkInput {
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IAM policy.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// <li><p><code>NONE</code>: The resource does not use an IAM policy. This is the default.</p></li>
+    /// <li><p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
 }
@@ -19,8 +19,8 @@ impl UpdateServiceNetworkInput {
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// <li><p><code>NONE</code>: The resource does not use an IAM policy. This is the default.</p></li>
+    /// <li><p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
@@ -58,8 +58,8 @@ impl UpdateServiceNetworkInputBuilder {
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// <li><p><code>NONE</code>: The resource does not use an IAM policy. This is the default.</p></li>
+    /// <li><p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     /// This field is required.
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
@@ -68,8 +68,8 @@ impl UpdateServiceNetworkInputBuilder {
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// <li><p><code>NONE</code>: The resource does not use an IAM policy. This is the default.</p></li>
+    /// <li><p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.auth_type = input;
@@ -77,8 +77,8 @@ impl UpdateServiceNetworkInputBuilder {
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// <li><p><code>NONE</code>: The resource does not use an IAM policy. This is the default.</p></li>
+    /// <li><p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
         &self.auth_type

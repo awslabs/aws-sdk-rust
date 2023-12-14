@@ -22,7 +22,7 @@ impl DescribeModelInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeModel`.
 ///
-/// <p>Provides a JSON containing the overall information about a specific machine learning model, including model name and ARN, dataset, training and evaluation information, status, and so on. </p>
+/// <p>Provides a JSON containing the overall information about a specific machine learning model, including model name and ARN, dataset, training and evaluation information, status, and so on.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeModelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the machine learning model to be described. </p>
+    /// <p>The name of the machine learning model to be described.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name of the machine learning model to be described. </p>
+    /// <p>The name of the machine learning model to be described.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name of the machine learning model to be described. </p>
+    /// <p>The name of the machine learning model to be described.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }

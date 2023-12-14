@@ -18,7 +18,7 @@ pub struct ConfigRule {
     /// <p>The description that you provide for the Config rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
-    /// <p>The scope can be empty. </p>
+    /// <p>The scope can be empty.</p>
     /// </note>
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
@@ -27,8 +27,8 @@ pub struct ConfigRule {
     pub input_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
-    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
-    /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
+    /// <li><p>This is for an Config managed rule that is triggered at a periodic frequency.</p></li>
+    /// <li><p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p></li>
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
@@ -63,7 +63,7 @@ impl ConfigRule {
         self.description.as_deref()
     }
     /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
-    /// <p>The scope can be empty. </p>
+    /// <p>The scope can be empty.</p>
     /// </note>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
@@ -78,8 +78,8 @@ impl ConfigRule {
     }
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
-    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
-    /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
+    /// <li><p>This is for an Config managed rule that is triggered at a periodic frequency.</p></li>
+    /// <li><p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p></li>
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
@@ -187,21 +187,21 @@ impl ConfigRuleBuilder {
         &self.description
     }
     /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
-    /// <p>The scope can be empty. </p>
+    /// <p>The scope can be empty.</p>
     /// </note>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
-    /// <p>The scope can be empty. </p>
+    /// <p>The scope can be empty.</p>
     /// </note>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
     }
     /// <p>Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource types, a combination of one resource type and one resource ID, or a combination of a tag key and value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
-    /// <p>The scope can be empty. </p>
+    /// <p>The scope can be empty.</p>
     /// </note>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
@@ -237,8 +237,8 @@ impl ConfigRuleBuilder {
     }
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
-    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
-    /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
+    /// <li><p>This is for an Config managed rule that is triggered at a periodic frequency.</p></li>
+    /// <li><p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p></li>
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
@@ -248,8 +248,8 @@ impl ConfigRuleBuilder {
     }
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
-    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
-    /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
+    /// <li><p>This is for an Config managed rule that is triggered at a periodic frequency.</p></li>
+    /// <li><p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p></li>
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
@@ -259,8 +259,8 @@ impl ConfigRuleBuilder {
     }
     /// <p>The maximum frequency with which Config runs evaluations for a rule. You can specify a value for <code>MaximumExecutionFrequency</code> when:</p>
     /// <ul>
-    /// <li> <p>This is for an Config managed rule that is triggered at a periodic frequency.</p> </li>
-    /// <li> <p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p> </li>
+    /// <li><p>This is for an Config managed rule that is triggered at a periodic frequency.</p></li>
+    /// <li><p>Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p></li>
     /// </ul> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>

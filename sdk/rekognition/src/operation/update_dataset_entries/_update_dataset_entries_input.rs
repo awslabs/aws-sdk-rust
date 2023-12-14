@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatasetEntriesInput {
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
-    /// <p> The changes that you want to make to the dataset. </p>
+    /// <p>The changes that you want to make to the dataset.</p>
     pub changes: ::std::option::Option<crate::types::DatasetChanges>,
 }
 impl UpdateDatasetEntriesInput {
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
     pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p> The changes that you want to make to the dataset. </p>
+    /// <p>The changes that you want to make to the dataset.</p>
     pub fn changes(&self) -> ::std::option::Option<&crate::types::DatasetChanges> {
         self.changes.as_ref()
     }
@@ -33,33 +33,33 @@ pub struct UpdateDatasetEntriesInputBuilder {
     pub(crate) changes: ::std::option::Option<crate::types::DatasetChanges>,
 }
 impl UpdateDatasetEntriesInputBuilder {
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
     /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_arn
     }
-    /// <p> The changes that you want to make to the dataset. </p>
+    /// <p>The changes that you want to make to the dataset.</p>
     /// This field is required.
     pub fn changes(mut self, input: crate::types::DatasetChanges) -> Self {
         self.changes = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The changes that you want to make to the dataset. </p>
+    /// <p>The changes that you want to make to the dataset.</p>
     pub fn set_changes(mut self, input: ::std::option::Option<crate::types::DatasetChanges>) -> Self {
         self.changes = input;
         self
     }
-    /// <p> The changes that you want to make to the dataset. </p>
+    /// <p>The changes that you want to make to the dataset.</p>
     pub fn get_changes(&self) -> &::std::option::Option<crate::types::DatasetChanges> {
         &self.changes
     }

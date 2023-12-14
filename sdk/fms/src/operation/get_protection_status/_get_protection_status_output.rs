@@ -9,16 +9,16 @@ pub struct GetProtectionStatusOutput {
     pub service_type: ::std::option::Option<crate::types::SecurityServiceType>,
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li> <p>Attack type</p> </li>
-    /// <li> <p>Account ID</p> </li>
-    /// <li> <p>ARN of the resource attacked</p> </li>
-    /// <li> <p>Start time of the attack</p> </li>
-    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
+    /// <li><p>Attack type</p></li>
+    /// <li><p>Account ID</p></li>
+    /// <li><p>ARN of the resource attacked</p></li>
+    /// <li><p>Start time of the attack</p></li>
+    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
-    /// <p>The details are in JSON format. </p>
+    /// <p>The details are in JSON format.</p>
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -33,18 +33,18 @@ impl GetProtectionStatusOutput {
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li> <p>Attack type</p> </li>
-    /// <li> <p>Account ID</p> </li>
-    /// <li> <p>ARN of the resource attacked</p> </li>
-    /// <li> <p>Start time of the attack</p> </li>
-    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
+    /// <li><p>Attack type</p></li>
+    /// <li><p>Account ID</p></li>
+    /// <li><p>ARN of the resource attacked</p></li>
+    /// <li><p>Start time of the attack</p></li>
+    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
-    /// <p>The details are in JSON format. </p>
+    /// <p>The details are in JSON format.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -102,56 +102,56 @@ impl GetProtectionStatusOutputBuilder {
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li> <p>Attack type</p> </li>
-    /// <li> <p>Account ID</p> </li>
-    /// <li> <p>ARN of the resource attacked</p> </li>
-    /// <li> <p>Start time of the attack</p> </li>
-    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
+    /// <li><p>Attack type</p></li>
+    /// <li><p>Account ID</p></li>
+    /// <li><p>ARN of the resource attacked</p></li>
+    /// <li><p>Start time of the attack</p></li>
+    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
-    /// <p>The details are in JSON format. </p>
+    /// <p>The details are in JSON format.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li> <p>Attack type</p> </li>
-    /// <li> <p>Account ID</p> </li>
-    /// <li> <p>ARN of the resource attacked</p> </li>
-    /// <li> <p>Start time of the attack</p> </li>
-    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
+    /// <li><p>Attack type</p></li>
+    /// <li><p>Account ID</p></li>
+    /// <li><p>ARN of the resource attacked</p></li>
+    /// <li><p>Start time of the attack</p></li>
+    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
-    /// <p>The details are in JSON format. </p>
+    /// <p>The details are in JSON format.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
-    /// <li> <p>Attack type</p> </li>
-    /// <li> <p>Account ID</p> </li>
-    /// <li> <p>ARN of the resource attacked</p> </li>
-    /// <li> <p>Start time of the attack</p> </li>
-    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
+    /// <li><p>Attack type</p></li>
+    /// <li><p>Account ID</p></li>
+    /// <li><p>ARN of the resource attacked</p></li>
+    /// <li><p>Start time of the attack</p></li>
+    /// <li><p>End time of the attack (ongoing attacks will not have an end time)</p></li>
     /// </ul>
-    /// <p>The details are in JSON format. </p>
+    /// <p>The details are in JSON format.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.data
     }
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

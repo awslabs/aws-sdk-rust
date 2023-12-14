@@ -10,16 +10,16 @@ pub struct SupportedAssociation {
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The association behavior.</p>
     /// <ul>
-    /// <li> <p> <code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes. </p> </li>
+    /// <li><p><code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p></li>
+    /// <li><p><code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p></li>
+    /// <li><p><code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes.</p></li>
     /// </ul>
     pub association_behavior: crate::types::RegistrationAssociationBehavior,
     /// <p>The disassociation behavior.</p>
     /// <ul>
-    /// <li> <p> <code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p> </li>
-    /// <li> <p> <code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p> </li>
-    /// <li> <p> <code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p> </li>
+    /// <li><p><code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p></li>
+    /// <li><p><code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p></li>
+    /// <li><p><code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p></li>
     /// </ul>
     pub disassociation_behavior: crate::types::RegistrationDisassociationBehavior,
 }
@@ -35,18 +35,18 @@ impl SupportedAssociation {
     }
     /// <p>The association behavior.</p>
     /// <ul>
-    /// <li> <p> <code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes. </p> </li>
+    /// <li><p><code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p></li>
+    /// <li><p><code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p></li>
+    /// <li><p><code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes.</p></li>
     /// </ul>
     pub fn association_behavior(&self) -> &crate::types::RegistrationAssociationBehavior {
         &self.association_behavior
     }
     /// <p>The disassociation behavior.</p>
     /// <ul>
-    /// <li> <p> <code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p> </li>
-    /// <li> <p> <code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p> </li>
-    /// <li> <p> <code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p> </li>
+    /// <li><p><code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p></li>
+    /// <li><p><code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p></li>
+    /// <li><p><code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p></li>
     /// </ul>
     pub fn disassociation_behavior(&self) -> &crate::types::RegistrationDisassociationBehavior {
         &self.disassociation_behavior
@@ -100,9 +100,9 @@ impl SupportedAssociationBuilder {
     }
     /// <p>The association behavior.</p>
     /// <ul>
-    /// <li> <p> <code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes. </p> </li>
+    /// <li><p><code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p></li>
+    /// <li><p><code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p></li>
+    /// <li><p><code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes.</p></li>
     /// </ul>
     /// This field is required.
     pub fn association_behavior(mut self, input: crate::types::RegistrationAssociationBehavior) -> Self {
@@ -111,9 +111,9 @@ impl SupportedAssociationBuilder {
     }
     /// <p>The association behavior.</p>
     /// <ul>
-    /// <li> <p> <code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes. </p> </li>
+    /// <li><p><code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p></li>
+    /// <li><p><code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p></li>
+    /// <li><p><code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes.</p></li>
     /// </ul>
     pub fn set_association_behavior(mut self, input: ::std::option::Option<crate::types::RegistrationAssociationBehavior>) -> Self {
         self.association_behavior = input;
@@ -121,18 +121,18 @@ impl SupportedAssociationBuilder {
     }
     /// <p>The association behavior.</p>
     /// <ul>
-    /// <li> <p> <code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p> </li>
-    /// <li> <p> <code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes. </p> </li>
+    /// <li><p><code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied when creating a registration.</p></li>
+    /// <li><p><code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations. The short code will be automatically provisioned once the registration is approved.</p></li>
+    /// <li><p><code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations when you must complete a registration first, then associate one or more phone numbers later. For example 10DLC campaigns and long codes.</p></li>
     /// </ul>
     pub fn get_association_behavior(&self) -> &::std::option::Option<crate::types::RegistrationAssociationBehavior> {
         &self.association_behavior
     }
     /// <p>The disassociation behavior.</p>
     /// <ul>
-    /// <li> <p> <code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p> </li>
-    /// <li> <p> <code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p> </li>
-    /// <li> <p> <code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p> </li>
+    /// <li><p><code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p></li>
+    /// <li><p><code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p></li>
+    /// <li><p><code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p></li>
     /// </ul>
     /// This field is required.
     pub fn disassociation_behavior(mut self, input: crate::types::RegistrationDisassociationBehavior) -> Self {
@@ -141,9 +141,9 @@ impl SupportedAssociationBuilder {
     }
     /// <p>The disassociation behavior.</p>
     /// <ul>
-    /// <li> <p> <code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p> </li>
-    /// <li> <p> <code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p> </li>
-    /// <li> <p> <code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p> </li>
+    /// <li><p><code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p></li>
+    /// <li><p><code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p></li>
+    /// <li><p><code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p></li>
     /// </ul>
     pub fn set_disassociation_behavior(mut self, input: ::std::option::Option<crate::types::RegistrationDisassociationBehavior>) -> Self {
         self.disassociation_behavior = input;
@@ -151,9 +151,9 @@ impl SupportedAssociationBuilder {
     }
     /// <p>The disassociation behavior.</p>
     /// <ul>
-    /// <li> <p> <code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p> </li>
-    /// <li> <p> <code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p> </li>
-    /// <li> <p> <code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p> </li>
+    /// <li><p><code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be closed.</p></li>
+    /// <li><p><code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities must be disassociated from the registration before the registration can be deleted.</p></li>
+    /// <li><p><code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and all origination identities will be disasscoiated.</p></li>
     /// </ul>
     pub fn get_disassociation_behavior(&self) -> &::std::option::Option<crate::types::RegistrationDisassociationBehavior> {
         &self.disassociation_behavior

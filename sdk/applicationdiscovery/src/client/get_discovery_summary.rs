@@ -10,8 +10,8 @@ impl super::Client {
     ///   - [`servers_mappedto_tags(i64)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::servers_mappedto_tags): <p>The number of servers mapped to tags.</p>
     ///   - [`agent_summary(Option<CustomerAgentInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::agent_summary): <p>Details about discovered agents, including agent status and health.</p>
     ///   - [`connector_summary(Option<CustomerConnectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::connector_summary): <p>Details about discovered connectors, including connector status and health.</p>
-    ///   - [`me_collector_summary(Option<CustomerMeCollectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::me_collector_summary): <p> Details about Migration Evaluator collectors, including collector status and health. </p>
-    ///   - [`agentless_collector_summary(Option<CustomerAgentlessCollectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::agentless_collector_summary): <p> Details about Agentless Collector collectors, including status. </p>
+    ///   - [`me_collector_summary(Option<CustomerMeCollectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::me_collector_summary): <p>Details about Migration Evaluator collectors, including collector status and health.</p>
+    ///   - [`agentless_collector_summary(Option<CustomerAgentlessCollectorInfo>)`](crate::operation::get_discovery_summary::GetDiscoverySummaryOutput::agentless_collector_summary): <p>Details about Agentless Collector collectors, including status.</p>
     /// - On failure, responds with [`SdkError<GetDiscoverySummaryError>`](crate::operation::get_discovery_summary::GetDiscoverySummaryError)
     pub fn get_discovery_summary(&self) -> crate::operation::get_discovery_summary::builders::GetDiscoverySummaryFluentBuilder {
         crate::operation::get_discovery_summary::builders::GetDiscoverySummaryFluentBuilder::new(self.handle.clone())

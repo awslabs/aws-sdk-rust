@@ -22,7 +22,7 @@ impl UpdateResourceCollectionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateResourceCollection`.
 ///
-/// <p> Updates the collection of resources that DevOps Guru analyzes. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for you to use DevOps Guru. </p>
+/// <p>Updates the collection of resources that DevOps Guru analyzes. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for you to use DevOps Guru.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateResourceCollectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    /// <p>Specifies if the resource collection in the request is added or deleted to the resource collection.</p>
     pub fn action(mut self, input: crate::types::UpdateResourceCollectionAction) -> Self {
         self.inner = self.inner.action(input);
         self
     }
-    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    /// <p>Specifies if the resource collection in the request is added or deleted to the resource collection.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateResourceCollectionAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    /// <p>Specifies if the resource collection in the request is added or deleted to the resource collection.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateResourceCollectionAction> {
         self.inner.get_action()
     }
-    /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    /// <p>Contains information used to update a collection of Amazon Web Services resources.</p>
     pub fn resource_collection(mut self, input: crate::types::UpdateResourceCollectionFilter) -> Self {
         self.inner = self.inner.resource_collection(input);
         self
     }
-    /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    /// <p>Contains information used to update a collection of Amazon Web Services resources.</p>
     pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>) -> Self {
         self.inner = self.inner.set_resource_collection(input);
         self
     }
-    /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    /// <p>Contains information used to update a collection of Amazon Web Services resources.</p>
     pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::UpdateResourceCollectionFilter> {
         self.inner.get_resource_collection()
     }

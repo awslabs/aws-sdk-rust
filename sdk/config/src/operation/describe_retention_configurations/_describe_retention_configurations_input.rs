@@ -7,7 +7,7 @@ pub struct DescribeRetentionConfigurationsInput {
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub retention_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRetentionConfigurationsInput {
@@ -19,7 +19,7 @@ impl DescribeRetentionConfigurationsInput {
     pub fn retention_configuration_names(&self) -> &[::std::string::String] {
         self.retention_configuration_names.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -65,17 +65,17 @@ impl DescribeRetentionConfigurationsInputBuilder {
     pub fn get_retention_configuration_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.retention_configuration_names
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

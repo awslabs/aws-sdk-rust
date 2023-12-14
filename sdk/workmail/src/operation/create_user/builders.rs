@@ -195,17 +195,17 @@ impl CreateUserFluentBuilder {
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_first_name()
     }
-    /// <p>The last name of the new user. </p>
+    /// <p>The last name of the new user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.last_name(input.into());
         self
     }
-    /// <p>The last name of the new user. </p>
+    /// <p>The last name of the new user.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_last_name(input);
         self
     }
-    /// <p>The last name of the new user. </p>
+    /// <p>The last name of the new user.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_last_name()
     }

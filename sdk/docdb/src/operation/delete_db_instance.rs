@@ -242,13 +242,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDBInsta
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDBInstanceError {
-    /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing instance. </p>
+    /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
-    /// <p> <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot. </p>
+    /// <p><code>DBSnapshotIdentifier</code> is already being used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
     /// <p>The cluster isn't in a valid state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
-    /// <p> The specified instance isn't in the <i>available</i> state. </p>
+    /// <p>The specified instance isn't in the <i>available</i> state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>The request would cause you to exceed the allowed number of snapshots.</p>
     SnapshotQuotaExceededFault(crate::types::error::SnapshotQuotaExceededFault),

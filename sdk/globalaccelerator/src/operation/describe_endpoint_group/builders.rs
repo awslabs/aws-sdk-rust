@@ -22,7 +22,7 @@ impl DescribeEndpointGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeEndpointGroup`.
 ///
-/// <p>Describe an endpoint group. </p>
+/// <p>Describe an endpoint group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

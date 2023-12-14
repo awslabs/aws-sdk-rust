@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendRawEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     pub message_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl SendRawEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     pub fn message_id(&self) -> &str {
         use std::ops::Deref;
         self.message_id.deref()
@@ -35,18 +35,18 @@ pub struct SendRawEmailOutputBuilder {
     _request_id: Option<String>,
 }
 impl SendRawEmailOutputBuilder {
-    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
-    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }

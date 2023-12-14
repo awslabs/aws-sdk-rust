@@ -9,10 +9,10 @@ pub struct DescribeCompilationJobOutput {
     pub compilation_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the model compilation job.</p>
     pub compilation_job_status: ::std::option::Option<crate::types::CompilationJobStatus>,
-    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
-    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
+    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances.</p>
+    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container.</p>
     pub compilation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
+    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed.</p>
     pub compilation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
@@ -24,7 +24,7 @@ pub struct DescribeCompilationJobOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the status of the model compilation job was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If a model compilation job failed, the reason it failed. </p>
+    /// <p>If a model compilation job failed, the reason it failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location in Amazon S3 that has been configured for storing the model artifacts used in the compilation job.</p>
     pub model_artifacts: ::std::option::Option<crate::types::ModelArtifacts>,
@@ -55,12 +55,12 @@ impl DescribeCompilationJobOutput {
     pub fn compilation_job_status(&self) -> ::std::option::Option<&crate::types::CompilationJobStatus> {
         self.compilation_job_status.as_ref()
     }
-    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
-    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
+    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances.</p>
+    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container.</p>
     pub fn compilation_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.compilation_start_time.as_ref()
     }
-    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
+    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed.</p>
     pub fn compilation_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.compilation_end_time.as_ref()
     }
@@ -84,7 +84,7 @@ impl DescribeCompilationJobOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>If a model compilation job failed, the reason it failed. </p>
+    /// <p>If a model compilation job failed, the reason it failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
@@ -199,34 +199,34 @@ impl DescribeCompilationJobOutputBuilder {
     pub fn get_compilation_job_status(&self) -> &::std::option::Option<crate::types::CompilationJobStatus> {
         &self.compilation_job_status
     }
-    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
-    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
+    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances.</p>
+    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container.</p>
     pub fn compilation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.compilation_start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
-    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
+    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances.</p>
+    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container.</p>
     pub fn set_compilation_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.compilation_start_time = input;
         self
     }
-    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
-    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
+    /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances.</p>
+    /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container.</p>
     pub fn get_compilation_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.compilation_start_time
     }
-    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
+    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed.</p>
     pub fn compilation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.compilation_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
+    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed.</p>
     pub fn set_compilation_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.compilation_end_time = input;
         self
     }
-    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
+    /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed.</p>
     pub fn get_compilation_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.compilation_end_time
     }
@@ -303,18 +303,18 @@ impl DescribeCompilationJobOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>If a model compilation job failed, the reason it failed. </p>
+    /// <p>If a model compilation job failed, the reason it failed.</p>
     /// This field is required.
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If a model compilation job failed, the reason it failed. </p>
+    /// <p>If a model compilation job failed, the reason it failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>If a model compilation job failed, the reason it failed. </p>
+    /// <p>If a model compilation job failed, the reason it failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
