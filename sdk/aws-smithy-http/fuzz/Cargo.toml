@@ -21,7 +21,7 @@ http = "0.2.3"
 
 [dependencies.aws-smithy-http]
 path = ".."
-version = "0.61.0"
+version = "0.60.1"
 
 [workspace]
 members = ["."]
