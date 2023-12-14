@@ -21,17 +21,85 @@ use std::fmt;
 use tracing::trace;
 
 #[derive(Debug)]
+struct NoMatchingAuthSchemeError(ExploredList);
+
+impl fmt::Display for NoMatchingAuthSchemeError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let explored = &self.0;
+
+        // Use the information we have about the auth options that were explored to construct
+        // as helpful of an error message as possible.
+        if explored.items().count() == 0 {
+            return f.write_str(
+                "no auth options are available. This can happen if there's \
+                    a problem with the service model, or if there is a codegen bug.",
+            );
+        }
+        if explored
+            .items()
+            .all(|explored| matches!(explored.result, ExploreResult::NoAuthScheme))
+        {
+            return f.write_str(
+                "no auth schemes are registered. This can happen if there's \
+                    a problem with the service model, or if there is a codegen bug.",
+            );
+        }
+
+        let mut try_add_identity = false;
+        let mut likely_bug = false;
+        f.write_str("failed to select an auth scheme to sign the request with.")?;
+        for item in explored.items() {
+            write!(
+                f,
+                " \"{}\" wasn't a valid option because ",
+                item.scheme_id.as_str()
+            )?;
+            f.write_str(match item.result {
+                ExploreResult::NoAuthScheme => {
+                    likely_bug = true;
+                    "no auth scheme was registered for it."
+                }
+                ExploreResult::NoIdentityResolver => {
+                    try_add_identity = true;
+                    "there was no identity resolver for it."
+                }
+                ExploreResult::MissingEndpointConfig => {
+                    likely_bug = true;
+                    "there is auth config in the endpoint config, but this scheme wasn't listed in it \
+                    (see https://github.com/smithy-lang/smithy-rs/discussions/3281 for more details)."
+                }
+                ExploreResult::NotExplored => {
+                    debug_assert!(false, "this should be unreachable");
+                    "<unknown>"
+                }
+            })?;
+        }
+        if try_add_identity {
+            f.write_str(" Be sure to set an identity, such as credentials, auth token, or other identity type that is required for this service.")?;
+        } else if likely_bug {
+            f.write_str(" This is likely a bug.")?;
+        }
+        if explored.truncated {
+            f.write_str(" Note: there were other auth schemes that were evaluated that weren't listed here.")?;
+        }
+
+        Ok(())
+    }
+}
+
+impl StdError for NoMatchingAuthSchemeError {}
+
+#[derive(Debug)]
 enum AuthOrchestrationError {
-    NoMatchingAuthScheme,
+    MissingEndpointConfig,
     BadAuthSchemeEndpointConfig(Cow<'static, str>),
 }
 
 impl fmt::Display for AuthOrchestrationError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::NoMatchingAuthScheme => f.write_str(
-                "no auth scheme matched auth scheme options. This is a bug. Please file an issue.",
-            ),
+            // This error is never bubbled up
+            Self::MissingEndpointConfig => f.write_str("missing endpoint config"),
             Self::BadAuthSchemeEndpointConfig(message) => f.write_str(message),
         }
     }
@@ -58,6 +126,8 @@ pub(super) async fn orchestrate_auth(
         auth_scheme_options = ?options,
         "orchestrating auth",
     );
+
+    let mut explored = ExploredList::default();
 
     // Iterate over IDs of possibly-supported auth schemes
     for &scheme_id in options.as_ref() {
@@ -95,16 +165,21 @@ pub(super) async fn orchestrate_auth(
                         )?;
                         return Ok(());
                     }
-                    Err(AuthOrchestrationError::NoMatchingAuthScheme) => {
+                    Err(AuthOrchestrationError::MissingEndpointConfig) => {
+                        explored.push(scheme_id, ExploreResult::MissingEndpointConfig);
                         continue;
                     }
                     Err(other_err) => return Err(other_err.into()),
                 }
+            } else {
+                explored.push(scheme_id, ExploreResult::NoIdentityResolver);
             }
+        } else {
+            explored.push(scheme_id, ExploreResult::NoAuthScheme);
         }
     }
 
-    Err(AuthOrchestrationError::NoMatchingAuthScheme.into())
+    Err(NoMatchingAuthSchemeError(explored).into())
 }
 
 fn extract_endpoint_auth_scheme_config(
@@ -135,8 +210,64 @@ fn extract_endpoint_auth_scheme_config(
                 .and_then(Document::as_string);
             config_scheme_id == Some(scheme_id.as_str())
         })
-        .ok_or(AuthOrchestrationError::NoMatchingAuthScheme)?;
+        .ok_or(AuthOrchestrationError::MissingEndpointConfig)?;
     Ok(AuthSchemeEndpointConfig::from(Some(auth_scheme_config)))
+}
+
+#[derive(Debug)]
+enum ExploreResult {
+    NotExplored,
+    NoAuthScheme,
+    NoIdentityResolver,
+    MissingEndpointConfig,
+}
+
+/// Information about an evaluated auth option.
+/// This should be kept small so it can fit in an array on the stack.
+#[derive(Debug)]
+struct ExploredAuthOption {
+    scheme_id: AuthSchemeId,
+    result: ExploreResult,
+}
+impl Default for ExploredAuthOption {
+    fn default() -> Self {
+        Self {
+            scheme_id: AuthSchemeId::new(""),
+            result: ExploreResult::NotExplored,
+        }
+    }
+}
+
+const MAX_EXPLORED_LIST_LEN: usize = 8;
+
+/// Stack allocated list of explored auth options for error messaging
+#[derive(Default)]
+struct ExploredList {
+    items: [ExploredAuthOption; MAX_EXPLORED_LIST_LEN],
+    len: usize,
+    truncated: bool,
+}
+impl ExploredList {
+    fn items(&self) -> impl Iterator<Item = &ExploredAuthOption> {
+        self.items.iter().take(self.len)
+    }
+
+    fn push(&mut self, scheme_id: AuthSchemeId, result: ExploreResult) {
+        if self.len + 1 >= self.items.len() {
+            self.truncated = true;
+        } else {
+            self.items[self.len] = ExploredAuthOption { scheme_id, result };
+            self.len += 1;
+        }
+    }
+}
+impl fmt::Debug for ExploredList {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("ExploredList")
+            .field("items", &&self.items[0..self.len])
+            .field("truncated", &self.truncated)
+            .finish()
+    }
 }
 
 #[cfg(all(test, feature = "test-util"))]
@@ -480,5 +611,87 @@ mod tests {
                 .get("Authorization")
                 .unwrap()
         );
+    }
+
+    #[test]
+    fn friendly_error_messages() {
+        let err = NoMatchingAuthSchemeError(ExploredList::default());
+        assert_eq!(
+            "no auth options are available. This can happen if there's a problem with \
+            the service model, or if there is a codegen bug.",
+            err.to_string()
+        );
+
+        let mut list = ExploredList::default();
+        list.push(
+            AuthSchemeId::new("SigV4"),
+            ExploreResult::NoIdentityResolver,
+        );
+        list.push(
+            AuthSchemeId::new("SigV4a"),
+            ExploreResult::NoIdentityResolver,
+        );
+        let err = NoMatchingAuthSchemeError(list);
+        assert_eq!(
+            "failed to select an auth scheme to sign the request with. \
+            \"SigV4\" wasn't a valid option because there was no identity resolver for it. \
+            \"SigV4a\" wasn't a valid option because there was no identity resolver for it. \
+            Be sure to set an identity, such as credentials, auth token, or other identity \
+            type that is required for this service.",
+            err.to_string()
+        );
+
+        // It should prioritize the suggestion to try an identity before saying it's a bug
+        let mut list = ExploredList::default();
+        list.push(
+            AuthSchemeId::new("SigV4"),
+            ExploreResult::NoIdentityResolver,
+        );
+        list.push(
+            AuthSchemeId::new("SigV4a"),
+            ExploreResult::MissingEndpointConfig,
+        );
+        let err = NoMatchingAuthSchemeError(list);
+        assert_eq!(
+            "failed to select an auth scheme to sign the request with. \
+            \"SigV4\" wasn't a valid option because there was no identity resolver for it. \
+            \"SigV4a\" wasn't a valid option because there is auth config in the endpoint \
+            config, but this scheme wasn't listed in it (see \
+            https://github.com/smithy-lang/smithy-rs/discussions/3281 for more details). \
+            Be sure to set an identity, such as credentials, auth token, or other identity \
+            type that is required for this service.",
+            err.to_string()
+        );
+
+        // Otherwise, it should suggest it's a bug
+        let mut list = ExploredList::default();
+        list.push(
+            AuthSchemeId::new("SigV4a"),
+            ExploreResult::MissingEndpointConfig,
+        );
+        let err = NoMatchingAuthSchemeError(list);
+        assert_eq!(
+            "failed to select an auth scheme to sign the request with. \
+            \"SigV4a\" wasn't a valid option because there is auth config in the endpoint \
+            config, but this scheme wasn't listed in it (see \
+            https://github.com/smithy-lang/smithy-rs/discussions/3281 for more details). \
+            This is likely a bug.",
+            err.to_string()
+        );
+
+        // Truncation should be indicated
+        let mut list = ExploredList::default();
+        for _ in 0..=MAX_EXPLORED_LIST_LEN {
+            list.push(
+                AuthSchemeId::new("dontcare"),
+                ExploreResult::MissingEndpointConfig,
+            );
+        }
+        let err = NoMatchingAuthSchemeError(list).to_string();
+        if !err.contains(
+            "Note: there were other auth schemes that were evaluated that weren't listed here",
+        ) {
+            panic!("The error should indicate that the explored list was truncated.");
+        }
     }
 }

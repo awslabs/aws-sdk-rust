@@ -561,7 +561,11 @@ impl RuntimeComponentsBuilder {
         self
     }
 
-    /// Adds an identity resolver.
+    /// This method is broken since it does not replace an existing identity resolver of the given auth scheme ID.
+    /// Use `set_identity_resolver` instead.
+    #[deprecated(
+        note = "This method is broken since it does not replace an existing identity resolver of the given auth scheme ID. Use `set_identity_resolver` instead."
+    )]
     pub fn push_identity_resolver(
         &mut self,
         scheme_id: AuthSchemeId,
@@ -574,13 +578,40 @@ impl RuntimeComponentsBuilder {
         self
     }
 
+    /// Sets the identity resolver for a given `scheme_id`.
+    ///
+    /// If there is already an identity resolver for that `scheme_id`, this method will replace
+    /// the existing one with the passed-in `identity_resolver`.
+    pub fn set_identity_resolver(
+        &mut self,
+        scheme_id: AuthSchemeId,
+        identity_resolver: impl ResolveIdentity + 'static,
+    ) -> &mut Self {
+        let tracked = Tracked::new(
+            self.builder_name,
+            ConfiguredIdentityResolver::new(scheme_id, identity_resolver.into_shared()),
+        );
+
+        if let Some(s) = self
+            .identity_resolvers
+            .iter_mut()
+            .find(|s| s.value.scheme_id() == scheme_id)
+        {
+            *s = tracked;
+        } else {
+            self.identity_resolvers.push(tracked);
+        }
+
+        self
+    }
+
     /// Adds an identity resolver.
     pub fn with_identity_resolver(
         mut self,
         scheme_id: AuthSchemeId,
         identity_resolver: impl ResolveIdentity + 'static,
     ) -> Self {
-        self.push_identity_resolver(scheme_id, identity_resolver);
+        self.set_identity_resolver(scheme_id, identity_resolver);
         self
     }
 
@@ -1134,5 +1165,46 @@ mod tests {
     #[test]
     fn building_test_builder_should_not_panic() {
         let _ = RuntimeComponentsBuilder::for_tests().build(); // should not panic
+    }
+
+    #[test]
+    fn set_identity_resolver_should_replace_existing_resolver_for_given_auth_scheme() {
+        use crate::client::auth::AuthSchemeId;
+        use crate::client::identity::{Identity, IdentityFuture, ResolveIdentity};
+        use crate::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
+        use aws_smithy_types::config_bag::ConfigBag;
+        use tokio::runtime::Runtime;
+
+        #[derive(Debug)]
+        struct AnotherFakeIdentityResolver;
+        impl ResolveIdentity for AnotherFakeIdentityResolver {
+            fn resolve_identity<'a>(
+                &'a self,
+                _: &'a RuntimeComponents,
+                _: &'a ConfigBag,
+            ) -> IdentityFuture<'a> {
+                IdentityFuture::ready(Ok(Identity::new("doesntmatter", None)))
+            }
+        }
+
+        // Set a different `IdentityResolver` for the `fake` auth scheme already configured in
+        // a test runtime components builder
+        let rc = RuntimeComponentsBuilder::for_tests()
+            .with_identity_resolver(AuthSchemeId::new("fake"), AnotherFakeIdentityResolver)
+            .build()
+            .expect("should build RuntimeComponents");
+
+        let resolver = rc
+            .identity_resolver(AuthSchemeId::new("fake"))
+            .expect("identity resolver should be found");
+
+        let identity = Runtime::new().unwrap().block_on(async {
+            resolver
+                .resolve_identity(&rc, &ConfigBag::base())
+                .await
+                .expect("identity should be resolved")
+        });
+
+        assert_eq!(Some(&"doesntmatter"), identity.data::<&str>());
     }
 }

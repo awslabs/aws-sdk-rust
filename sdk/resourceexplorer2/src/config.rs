@@ -119,9 +119,12 @@ impl Config {
     pub fn region(&self) -> ::std::option::Option<&crate::config::Region> {
         self.config.load::<crate::config::Region>()
     }
-    /// Returns the credentials provider for this service
+    /// This function was intended to be removed, and has been broken since release-2023-11-15 as it always returns a `None`. Do not use.
+    #[deprecated(
+        note = "This function was intended to be removed, and has been broken since release-2023-11-15 as it always returns a `None`. Do not use."
+    )]
     pub fn credentials_provider(&self) -> Option<crate::config::SharedCredentialsProvider> {
-        self.config.load::<crate::config::SharedCredentialsProvider>().cloned()
+        ::std::option::Option::None
     }
 }
 /// Builder for creating a `Config`.
@@ -934,7 +937,7 @@ impl Builder {
     pub fn set_credentials_provider(&mut self, credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>) -> &mut Self {
         if let Some(credentials_provider) = credentials_provider {
             self.runtime_components
-                .push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
+                .set_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
         }
         self
     }
@@ -1039,6 +1042,7 @@ impl Builder {
         self.set_credentials_provider(Some(crate::config::SharedCredentialsProvider::new(
             ::aws_credential_types::Credentials::for_tests(),
         )));
+        self.behavior_version = ::std::option::Option::Some(crate::config::BehaviorVersion::latest());
         self
     }
     #[cfg(any(feature = "test-util", test))]

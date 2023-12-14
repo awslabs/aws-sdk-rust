@@ -18,7 +18,7 @@ convert-time = ["aws-smithy-types", "time"]
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 optional = true
-version = "1.0.2"
+version = "1.0.3"
 
 [dependencies.chrono]
 version = "0.4.26"
