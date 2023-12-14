@@ -212,6 +212,7 @@ mod loader {
     use crate::profile::profile_file::ProfileFiles;
     use crate::provider_config::ProviderConfig;
     use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
+    use aws_credential_types::Credentials;
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
     use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
@@ -458,6 +459,10 @@ mod loader {
         /// anonymous auth for S3, calling operations in STS that don't require a signature,
         /// or using token-based auth.
         ///
+        /// **Note**: For tests, e.g. with a service like DynamoDB Local, this is **not** what you
+        /// want. If credentials are disabled, requests cannot be signed. For these use cases, use
+        /// [`test_credentials`](Self::test_credentials).
+        ///
         /// # Examples
         ///
         /// Turn off credentials in order to call a service without signing:
@@ -472,6 +477,11 @@ mod loader {
         pub fn no_credentials(mut self) -> Self {
             self.credentials_provider = CredentialsProviderOption::ExplicitlyUnset;
             self
+        }
+
+        /// Set test credentials for use when signing requests
+        pub fn test_credentials(self) -> Self {
+            self.credentials_provider(Credentials::for_tests())
         }
 
         /// Override the name of the app used to build [`SdkConfig`](aws_types::SdkConfig).
