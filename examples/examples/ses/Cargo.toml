@@ -7,8 +7,8 @@ edition = "2021"
 publish = false
 
 [dependencies]
+aws-sdk-sesv2 = { version = "1.7.0", path = "../../../sdk/sesv2" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-sesv2= { version = "1.7.0", path = "../../../sdk/sesv2" }
 
 [dependencies.tokio]
 version = "1.20.1"

@@ -12,6 +12,9 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
+aws-smithy-async = { version = "1.1.1", path = "../../sdk/aws-smithy-async" }
+aws-smithy-runtime-api = { version = "1.1.1", path = "../../sdk/aws-smithy-runtime-api" }
+aws-smithy-types = { version = "1.1.1", path = "../../sdk/aws-smithy-types" }
 async-trait = "0.1.63"
 console_error_panic_hook = "0.1.7"
 http = "0.2.8"
@@ -25,10 +28,6 @@ tracing = "0.1.37"
 aws-config= { version = "1.1.1", path = "../../sdk/aws-config", default-features = false }
 aws-credential-types= { version = "1.1.1", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-sdk-lambda= { version = "1.7.0", path = "../../sdk/lambda", default-features = false }
-aws-smithy-async= { version = "1.1.1", path = "../../sdk/aws-smithy-async" }
-aws-smithy-http= { version = "0.60.1", path = "../../sdk/aws-smithy-http", features = ["event-stream"] }
-aws-smithy-runtime-api= { version = "1.1.1", path = "../../sdk/aws-smithy-runtime-api" }
-aws-smithy-types= { version = "1.1.1", path = "../../sdk/aws-smithy-types" }
 
 [dependencies.serde]
 version = "1.0.152"

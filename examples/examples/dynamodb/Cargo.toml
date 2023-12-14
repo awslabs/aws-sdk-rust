@@ -7,6 +7,8 @@ edition = "2021"
 publish = false
 
 [dependencies]
+aws-sdk-dynamodb = { version = "1.7.0", path = "../../../sdk/dynamodb" }
+aws-smithy-types = { version = "1.1.1", path = "../../../sdk/aws-smithy-types" }
 axum = "0.5.16"
 futures = "0.3"
 http = "0.2.5"
@@ -18,9 +20,7 @@ tokio-stream = "0.1.8"
 tracing = "0.1"
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-http= { version = "0.60.1", path = "../../../sdk/aws-http" }
-aws-sdk-dynamodb= { version = "1.7.0", path = "../../../sdk/dynamodb" }
 aws-smithy-runtime= { version = "1.1.1", path = "../../../sdk/aws-smithy-runtime", features = ["test-util"] }
-aws-smithy-types= { version = "1.1.1", path = "../../../sdk/aws-smithy-types" }
 
 [dependencies.clap]
 version = "~4.4"

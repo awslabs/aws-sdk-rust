@@ -7,9 +7,9 @@ edition = "2021"
 publish = false
 
 [dependencies]
+aws-sdk-globalaccelerator = { version = "1.7.0", path = "../../../sdk/globalaccelerator" }
 tokio-stream = "0.1.8"
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-globalaccelerator= { version = "1.7.0", path = "../../../sdk/globalaccelerator" }
 
 [dependencies.tokio]
 version = "1.20.1"

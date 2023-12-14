@@ -7,8 +7,8 @@ version = "0.1.0"
 publish = false
 
 [dependencies]
+aws-sdk-rdsdata = { version = "1.7.0", path = "../../../sdk/rdsdata" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-rdsdata= { version = "1.7.0", path = "../../../sdk/rdsdata" }
 
 [dependencies.tokio]
 version = "1.20.1"

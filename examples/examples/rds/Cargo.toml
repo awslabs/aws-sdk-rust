@@ -10,14 +10,13 @@ publish = false
 anyhow = "1.0.75"
 assert_matches = "1.5.0"
 async-trait = "0.1.73"
+aws-smithy-runtime-api = { version = "1.1.1", path = "../../../sdk/aws-smithy-runtime-api" }
+aws-sdk-rds = { version = "1.7.0", path = "../../../sdk/rds" }
 inquire = "0.6.2"
 mockall = "0.11.4"
 secrecy = "0.8.0"
 tracing = "0.1.37"
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-smithy-http= { version = "0.60.1", path = "../../../sdk/aws-smithy-http" }
-aws-smithy-runtime-api= { version = "1.1.1", path = "../../../sdk/aws-smithy-runtime-api" }
-aws-sdk-rds= { version = "1.7.0", path = "../../../sdk/rds" }
 
 [dependencies.clap]
 version = "~4.4"
