@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! The WorkMail Message Flow API provides access to email messages as they are being sent and received by a WorkMail organization.
 //!
 //! ## Getting Started

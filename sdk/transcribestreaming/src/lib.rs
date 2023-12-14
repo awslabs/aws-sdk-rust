@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Amazon Transcribe streaming offers three main types of real-time transcription: __Standard__, __Medical__, and __Call Analytics__.
 //!   - __Standard transcriptions__ are the most common option. Refer to for details.
 //!   - __Medical transcriptions__ are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue in real time, so doctors can focus on their patient instead of taking notes. Refer to for details.

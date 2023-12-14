@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! AppSync provides API actions for creating and interacting with data sources using GraphQL from your application.
 //!
 //! ## Getting Started

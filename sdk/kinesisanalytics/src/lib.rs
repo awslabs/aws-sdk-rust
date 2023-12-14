@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! __Overview__
 //!
 //! This is the _Amazon Kinesis Analytics v1 API Reference_. The Amazon Kinesis Analytics Developer Guide provides additional information.

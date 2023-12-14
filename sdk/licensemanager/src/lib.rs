@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! License Manager makes it easier to manage licenses from software vendors across multiple Amazon Web Services accounts and on-premises servers.
 //!
 //! ## Getting Started

@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! This is the _AWS HealthOmics API Reference_. For an introduction to the service, see [What is AWS HealthOmics?](https://docs.aws.amazon.com/omics/latest/dev/) in the _AWS HealthOmics User Guide_.
 //!
 //! ## Getting Started

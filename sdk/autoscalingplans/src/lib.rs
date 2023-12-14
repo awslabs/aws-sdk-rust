@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Use AWS Auto Scaling to create scaling plans for your applications to automatically scale your scalable AWS resources.
 //!
 //! __API Summary__

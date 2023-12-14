@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! AWS Signer is a fully managed code-signing service to help you ensure the trust and integrity of your code.
 //!
 //! Signer supports the following applications:

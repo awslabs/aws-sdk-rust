@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Organizations is a web service that enables you to consolidate your multiple Amazon Web Services accounts into an _organization_ and centrally manage your accounts and their resources.
 //!
 //! This guide provides descriptions of the Organizations operations. For more information about using this service, see the [Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html).

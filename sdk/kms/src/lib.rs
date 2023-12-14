@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! Key Management Service (KMS) is an encryption and key management web service. This guide describes the KMS operations that you can call programmatically. For general information about KMS, see the [_Key Management Service Developer Guide_](https://docs.aws.amazon.com/kms/latest/developerguide/).
 //!
 //! We recommend that you use the Amazon Web Services SDKs to make programmatic API calls to KMS.

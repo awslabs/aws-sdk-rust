@@ -12,6 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 //! __Most of these APIs are no longer supported and will not be updated.__ We recommend using the latest versions in the [Amazon Chime SDK API reference](https://docs.aws.amazon.com/chime-sdk/latest/APIReference/welcome.html), in the Amazon Chime SDK.
 //!
 //! Using the latest versions requires migrating to dedicated namespaces. For more information, refer to [Migrating from the Amazon Chime namespace](https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html) in the _Amazon Chime SDK Developer Guide_.
